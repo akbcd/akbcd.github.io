@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="akbcd博客">
 <meta property="og:description" content="GITHUB+HEXO搭建个人博客上课老师教我们用GitHub+hexo搭建个人博客的方法，起初觉得没有用，因为一个谈话，顿时觉得这个博客很有用，而且还是免费的，为何不用呢？以此作为上课的笔记，也可以提高代码输入速度，何乐而不为。 网上有很多用GITHUB+HEXO搭建个人博客，具体可点击hexo+github如何搭建博客以下内容作为补充(也可以按我的操作来)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T06:50:23.127Z">
+<meta property="og:updated_time" content="2018-09-27T07:45:26.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GITHUB+HEXO搭建个人博客">
 <meta name="twitter:description" content="GITHUB+HEXO搭建个人博客上课老师教我们用GitHub+hexo搭建个人博客的方法，起初觉得没有用，因为一个谈话，顿时觉得这个博客很有用，而且还是免费的，为何不用呢？以此作为上课的笔记，也可以提高代码输入速度，何乐而不为。 网上有很多用GITHUB+HEXO搭建个人博客，具体可点击hexo+github如何搭建博客以下内容作为补充(也可以按我的操作来)">
@@ -184,7 +184,7 @@
 </ul>
 <p>右键任意地方选择git bash here 输入以下命令：</p>
 <ul>
-<li>npm install -g cnpm – registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
+<li>npm install -g cnpm <code>--</code>registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
 <li>npm install -g hexo</li>
 <li>hexo g(安装全局hexo)</li>
 <li>hexo -v(hexo是否已安装)</li>
@@ -198,15 +198,18 @@
 </ul>
 <p>进入GitHub网站创建账户 点击<a href="https://github.com/" target="_blank" rel="noopener">github</a>进入<br>在git命令中继续执行代码</p>
 <ul>
-<li>ssh-keygen -t rsa -C “<a href="mailto:2226227487@qq.com" target="_blank" rel="noopener">2226227487@qq.com</a>“（“GitHub创建时用的邮箱“）<br>进入c/Users/apple/.ssh/id_rsa.pub 应该是这个路径，可以在c盘根目录下查找id_rsa.pub，用编译器打开，复制里面的内容，并保存下来<br>进入GitHub网站 创建一个repository 进入页面 Repository name下输入Owner下的名字+.github.io<br>Owner下的名字,我的是akbcd,以下用akbcd代替，即在Repository name下输入akbcd.github.io<br>在GitHub网站中找到Settings,进入。选择SSH and GPG keys,进入点击New SSH key,title任意，key输入自己刚才复制并保存的那段，之后保存，会向注册邮箱发验证码，验证一下<br>git中继续</li>
-<li>hexo g（先生成）</li>
-<li>npm install hexo-deployer-git –save</li>
-<li>hexo d（后部署,然后在github上查看文件是否已提交）<br>用编译软件打开blog文件夹，在根目录中找到_config.yml<br>用编译软件打开，在里面找到Deploy,更改</li>
+<li>ssh-keygen -t rsa -C “<a href="mailto:2226227487@qq.com" target="_blank" rel="noopener">2226227487@qq.com</a>“（“GitHub创建时用的邮箱“）<br>进入c/Users/apple/.ssh/id_rsa.pub 应该是这个路径，可以在c盘根目录下查找id_rsa.pub，用编译器打开，复制里面的内容，并保存下来<br>进入GitHub网站,创建一个repository,进入相应页面，在Repository name下输入Owner下的名字+.github.io(可能说的有些复杂)<br>Owner下的名字,我的是akbcd,以下用akbcd代替，即在Repository name下输入akbcd.github.io<br>在GitHub网站中找到Settings,进入。选择SSH and GPG keys,进入点击New SSH key,title任意，key输入自己刚才复制并保存的那段，之后保存，会向注册邮箱发验证码，验证一下<br>用编译软件打开blog文件夹，在根目录中找到_config.yml<br>用编译软件打开，在里面找到Deploy,更改</li>
 <li>type: git</li>
 <li>repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:akbcd/akbcd.github.io.git</li>
-<li>branch: master<br>在git中输入以下代码</li>
-<li>git config –global user.email “<a href="mailto:2226227487@qq.com" target="_blank" rel="noopener">2226227487@qq.com</a>“</li>
-<li>git config –global user.name “akbcd”<br>期间弹出对话框，输入yes 点击ok(忘记在哪出现了)<br>最后在地址栏输入：<a href="https://akbcd.github.io" target="_blank" rel="noopener">https://akbcd.github.io</a><br>到此，GITHUB+HEXO搭建个人博客就完成了</li>
+<li>branch: master</li>
+</ul>
+<p>在git中输入以下代码</p>
+<ul>
+<li>git config <code>--</code>global user.email “<a href="mailto:2226227487@qq.com" target="_blank" rel="noopener">2226227487@qq.com</a>“</li>
+<li>git config <code>--</code>global user.name “akbcd”<br>git中继续</li>
+<li>hexo g（先生成）</li>
+<li>npm install hexo-deployer-git <code>--</code>save</li>
+<li>hexo d（后部署,然后在github上查看文件是否已提交）<br>弹出对话框，输入yes 点击ok<br>最后在地址栏输入：<a href="https://akbcd.github.io" target="_blank" rel="noopener">https://akbcd.github.io</a><br>到此，GITHUB+HEXO搭建个人博客就完成了<br>注：如果本地blog文件夹内容上传不了，需要从<code>ssh-keygen -t rsa -C “2226227487@qq.com“</code>重新开始。</li>
 </ul>
 
       
