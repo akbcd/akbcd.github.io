@@ -172,102 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="GITHUB-HEXO搭建的博客-markdown基本语法"><a href="#GITHUB-HEXO搭建的博客-markdown基本语法" class="headerlink" title="GITHUB+HEXO搭建的博客 markdown基本语法"></a>GITHUB+HEXO搭建的博客 markdown基本语法</h1><p>网上有很多markdown语法的文章，详情可以点击简书上的一篇文章<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">markdown基本语法</a><br>以下列出一些常用的markdown语法</p>
-<h1 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h1><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。<br>注：标准语法一般在#后跟个空格再写文字<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><p>从这里的效果可以看出，在这个页面显示与简书的那个不一样，从二级标题开始有分隔线，而且五、六级标题文字大小相同，六级标题是斜体标题</p>
-<h1 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h1><ul>
-<li>斜体<br>要倾斜的文字左右分别用一个*号包起来</li>
-<li>加粗<br>要加粗的文字左右分别用两个*号包起来</li>
-<li>斜体加粗<br>要倾斜和加粗的文字左右分别用三个*号包起来</li>
-<li>删除线<br>要加删除线的文字左右分别用两个~~号包起来<br>示例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*这是倾斜的文字*</span><br><span class="line">**这是加粗的文字**</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>效果如下：<br><em>这是倾斜的文字</em><br><strong>这是加粗的文字</strong><br><strong><em>这是斜体加粗的文字</em></strong><br><del>这是加删除线的文字</del></p>
-<h1 id="三、分隔线"><a href="#三、分隔线" class="headerlink" title="三、分隔线"></a>三、分隔线</h1><p>三个或者三个以上的 - 或者 * 都可以。<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure></p>
-<h2 id="效果如下："><a href="#效果如下：" class="headerlink" title="效果如下："></a>效果如下：</h2><hr>
-<hr>
-<hr>
-<p>可以看到，显示效果是一样的。<br>补充一下，在我的文章里经常出现more的选项，这个代码其实很简单。<br>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果就不进行展示了</p>
-<h1 id="四、图片"><a href="#四、图片" class="headerlink" title="四、图片"></a>四、图片</h1><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片地址 &apos;&apos;图片title&apos;&apos;)</span><br><span class="line">图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</span><br></pre></td></tr></table></figure></p>
-<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</span><br><span class="line">u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：<br><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
-u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链"><br>与简书的那个页面对比可以知道blockchain在图片下面是不能显示的，所以在这里面的语法可以简写如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![](图片地址 &quot;图片title&quot;)</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure></p>
-<p>补充：上传本地图片，推荐一个网站，点击<a href="https://pic.xiaojianjian.net/" target="_blank" rel="noopener">小贱贱图床</a><br>在这个网站可以免费上传自己的图片，也可以直接在百度上搜索图床，会出现很多的相关网站</p>
-<h1 id="五、网站链接"><a href="#五、网站链接" class="headerlink" title="五、网站链接"></a>五、网站链接</h1><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[网站名](网站链接地址 &quot;网站title&quot;)</span><br><span class="line">title即鼠标悬停显示title,可加可不加，网站是在新页面打开</span><br></pre></td></tr></table></figure></p>
-<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[百度](https://www.baidu.com &quot;百度&quot;)</span><br><span class="line">[歌曲大全-音乐聚合搜索引擎](http://www.gequdaquan.net/gqss/)</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：<br><a href="https://www.baidu.com" title="百度" target="_blank" rel="noopener">百度</a><br><a href="http://www.gequdaquan.net/gqss/" target="_blank" rel="noopener">歌曲大全-音乐聚合搜索引擎</a></p>
-<h1 id="六、列表"><a href="#六、列表" class="headerlink" title="六、列表"></a>六、列表</h1><p><strong>无序列表</strong></p>
-<p>语法：<br>无序列表用 - + * 任何一种都可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<ul>
-<li>列表内容</li>
-</ul>
-<ul>
-<li>列表内容</li>
-</ul>
-<ul>
-<li>列表内容<br><strong>有序列表</strong></li>
-</ul>
-<p>语法：<br>数字加点<br>注：序列.后保持空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 列表内容</span><br><span class="line">2. 列表内容</span><br><span class="line">3. 列表内容</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<ol>
-<li>列表内容</li>
-<li>列表内容</li>
-<li>列表内容</li>
-</ol>
-<p><strong>序表嵌套</strong><br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. one</span><br><span class="line">    1. one-1</span><br><span class="line">    2. two-2</span><br><span class="line">2. two </span><br><span class="line">    * two-1</span><br><span class="line">    * two-2</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<ol>
-<li>one<ol>
-<li>one-1</li>
-<li>two-2</li>
-</ol>
-</li>
-<li>two <ul>
-<li>two-1</li>
-<li>two-2</li>
-</ul>
-</li>
-</ol>
-<h1 id="七、引用"><a href="#七、引用" class="headerlink" title="七、引用"></a>七、引用</h1><p><strong>文字引用</strong><br>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>n个…<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><strong>代码引用</strong></p>
-<ul>
-<li>代码块<br>语法：代码块开头结尾加三个反引号<br>示例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">&lt;div&gt;   </span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;   </span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>单行代码<br>语法：<br>单行代码：代码之间分别用一个反引号包起来<br>示例:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div&gt;&lt;/div&gt;`</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>效果如下：<br><code>&lt;div&gt;&lt;/div&gt;</code><br>总结：在这个页面上有的语法预览与简书页面不同，应该是语法解析的不一样。创建这个页面发现了一个问题，在多次应用三个反引号语法时，如果出现两个内容连在了一起，这个可能需要换行解决。<br>以上是我经常写文章所应用的语法，不是很全，后续可能还会更新</p>
-
+        <h1 id="GITHUB-HEXO搭建的博客-markdown基本语法"><a href="#GITHUB-HEXO搭建的博客-markdown基本语法" class="headerlink" title="GITHUB+HEXO搭建的博客 markdown基本语法"></a>GITHUB+HEXO搭建的博客 markdown基本语法</h1><p>网上有很多markdown语法的文章，详情可以点击简书上的一篇文章<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">markdown基本语法</a><br>以下列出一些常用的markdown语法<br>
+        
+          <a class="article-more-a" href="/2018/10/28/GITHUB-HEXO搭建个人博客那些事-3/#more">more >></a>
+        
       
 
       
