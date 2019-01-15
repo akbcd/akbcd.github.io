@@ -31,9 +31,6 @@ tags: 博客
 - `git push origin hexo` 
 来提交hexo网站源文件
 - `hexo g -d` (详解：**hexo空格g空格-d**)
-此时会提示错误，根据提示执行：
-- `npm install hexo --save`(如果没有提示报错，请忽略此步骤)
-- `hexo g -d`
 生成静态网页部署至Github上,下面是操作图片:
 ![](http://wx3.sinaimg.cn/mw690/0060lm7Tly1fz75222tc2j30km0cjwhj.jpg)
 ***
@@ -50,6 +47,9 @@ tags: 博客
 - `git add .` (详解：**git空格add空格.**，切记不要打错，否则命令就错了)
 - `git commit -m"..."` (详解：**git空格commit空格-m"..."**)
 - `git push origin hexo` 
+- `hexo g -d`
+此时会提示错误，根据提示执行：
+- `npm install hexo --save`(如果没有提示报错，请忽略此步骤)
 - `hexo g -d`
 先上传源代码再发布文章，即完成了边发布边保存。可以上自己的GitHub官网页面查看，hexo和master分支均进行了更新。
 本地文件丢失，通过克隆将源代码文件克隆到本地，保证了文件的备份。
