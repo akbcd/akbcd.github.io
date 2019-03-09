@@ -3,10 +3,12 @@
 menu:
   主页: /
   随笔: /tags/随笔/
+  文献: /tags/文献/
+  博客: /tags/博客/
 
 # SubNav
 subnav:
-  github: "#"
+  github: http://github.com/
   weibo: "#"
   rss: "#"
   zhihu: "#"
@@ -120,11 +122,7 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1（小贱贱图床）: https://pic.xiaojianjian.net/
-  友情链接2（歌曲大全-音乐聚合搜索引擎）: http://www.gequdaquan.net/gqss/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  小贱贱图床: http://pic.xiaojianjian.net/
+  歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
