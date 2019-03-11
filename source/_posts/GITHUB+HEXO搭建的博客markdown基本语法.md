@@ -1,9 +1,8 @@
 ---
-title: GITHUB+HEXO搭建个人博客那些事4
+title: GITHUB+HEXO搭建的博客markdown基本语法
 date: 2018-10-28 21:22:43
 tags: 博客
 ---
-## GITHUB+HEXO搭建的博客 markdown基本语法
 
 网上有很多markdown语法的文章，详情可以点击简书上的一篇文章[markdown基本语法](https://www.jianshu.com/p/191d1e21f7ed)
 以下列出一些常用的markdown语法
@@ -213,3 +212,10 @@ n个...
 ```
 效果如下：
 &emsp;&emsp;你好！
+## 友情链接
+[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
+[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
+[GITHUB+HEXO搭建的博客更换主题](https://akbcd.github.io/2018/09/24/GITHUB+HEXO搭建的博客更换主题/)
+[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
+[GITHUB+HEXO搭建的博客hexo最常用的几个命令](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客hexo最常用的几个命令/)
+[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)

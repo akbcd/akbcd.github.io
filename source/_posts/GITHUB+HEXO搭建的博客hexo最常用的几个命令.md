@@ -1,11 +1,10 @@
 ---
-title: GITHUB+HEXO搭建个人博客那些事3
+title: GITHUB+HEXO搭建的博客hexo最常用的几个命令
 date: 2018-10-27 21:48:32
 tags: 博客
 ---
-## GITHUB+HEXO搭建的博客 hexo 最常用的几个命令
-<!--more-->
 ## hexo 最常用的几个命令
+<!--more-->
 ## hexo s
 - 启动本地服务器，用于预览主题。默认地址： http://localhost:4000/
 - hexo s 是 hexo server 的缩写，命令效果一致；
@@ -32,3 +31,10 @@ tags: 博客
 ## hexo 本地文章不能上传经验
 就像我之前的文章所说，需要从`ssh-keygen -t rsa -C “2226227487@qq.com“`重新开始，只需要输入这行代码，然后回车几下，找到那个文件，复制里面的内容，将内容添加到GitHub官网上，之后就可以上传了，创建的那个文件最好不要删除
 通过上面的命令可以看出，同步数据应该是先`hexo g`后`hexo d`
+## 友情链接
+[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
+[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
+[GITHUB+HEXO搭建的博客更换主题](https://akbcd.github.io/2018/09/24/GITHUB+HEXO搭建的博客更换主题/)
+[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
+[GITHUB+HEXO搭建的博客markdown基本语法](https://akbcd.github.io/2018/10/28/GITHUB+HEXO搭建的博客markdown基本语法/)
+[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)

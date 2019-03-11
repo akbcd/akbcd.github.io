@@ -1,12 +1,12 @@
 ---
-title: GITHUB+HEXO搭建个人博客那些事
+title: GITHUB+HEXO搭建的博客更换主题
 date: 2018-09-24 16:16:17
 tags: 博客
 ---
 
 之前讲述了一下如何用GITHUB+HEXO搭建个人博客，今天来讲述一下GITHUB+HEXO搭建个人博客的一些使用方法（当然，不是全部，这里没有的可以去网上查找）
 
-## GITHUB+HEXO搭建的博客更换主题
+---
 <!--more-->
 最初搭建的博客是系统默认的主题，觉得不是很好看，所以就想换一个主题
 ## 先选一个新的主题
@@ -34,3 +34,10 @@ tags: 博客
 输入 hexo g回车，一顿翻滚平静之后
 输入 hexo d回车（就是将数据上传到云端）
 字幕滚完，新博客也就可以访问了。
+## 友情链接
+[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
+[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
+[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
+[GITHUB+HEXO搭建的博客hexo最常用的几个命令](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客hexo最常用的几个命令/)
+[GITHUB+HEXO搭建的博客markdown基本语法](https://akbcd.github.io/2018/10/28/GITHUB+HEXO搭建的博客markdown基本语法/)
+[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)
