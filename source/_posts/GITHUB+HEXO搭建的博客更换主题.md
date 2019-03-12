@@ -1,0 +1,44 @@
+---
+title: GITHUB+HEXO搭建的博客更换主题
+date: 2018-09-24 16:16:17
+tags: 博客
+---
+
+之前讲述了一下如何用GITHUB+HEXO搭建个人博客，今天来讲述一下GITHUB+HEXO搭建个人博客的一些使用方法（当然，不是全部，这里没有的可以去网上查找）
+
+---
+<!--more-->
+最初搭建的博客是系统默认的主题，觉得不是很好看，所以就想换一个主题
+## 先选一个新的主题
+好的主题有很多，比方说看看这篇知乎的文章：[有哪些好看的hexo主题](https://www.zhihu.com/question/24422335)
+HEXO主题官方网站：[https://hexo.io/themes/](https://hexo.io/themes/)
+我们就以yilia主题为例来美化我们的博客吧！(因为我用的就是这个)
+- 首先进入知乎文章，点击相应的主题，进入下载页面 点击Clone or download 选择Download ZIP下载后解压
+- 进入自己搭建博客的本地文件夹，将自己的解压后的文件夹复制到themes文件夹内，在此文件夹里你应该看到的是hexo-theme-yilia-master(可以将此文件夹重命名为yilia)和landscape
+
+## 安装主题
+- 首先我们要修改博客的配置文件（注意，是整个博客的配置文件，也就是博客最底层目录下的_config.yml）
+- 用编译软件打开自己博客的本地文件夹，在文件夹根目录下找到_config.yml。
+- 在_config.yml中找到theme选项，把主题切换为.如下图,将原来的landscape删掉，改为yilia,然后保存即可。
+![](http://wx1.sinaimg.cn/mw690/0060lm7Tly1fvkqb1a4wxj30ao02rq2t.jpg)
+完成之后主题就可以用啦，是不是有些迫不及待。正巧我们应该做一些本地测试来看看主题是否完备。话不多说，开始吧。
+- 选中自己博客的本地文件夹，如果没改的话，应该是blog，右键git bash here
+- 在git中输入 hexo s回车
+在本地浏览器输入相应的网址，观察一下效果，如果成功，那就差最后一步了
+## 主题上传到云端
+- 没问题的话，按照yilia的官方指导教程，我们顺便修改一下站点配置文件（即根目录下的_config.yml）里面的语言（也就是整个博客的语言）
+将language后面的内容修改为 zh-Hans。
+注意，冒号之后必有空格哦！
+![](http://wx2.sinaimg.cn/mw690/0060lm7Tly1fvkqpht79vj305l05b0sn.jpg)
+- 然后就是将新主题发布到自己的网站上，操作如下：
+还是在git里
+输入 hexo g回车，一顿翻滚平静之后
+输入 hexo d回车（就是将数据上传到云端）
+字幕滚完，新博客也就可以访问了。
+## 友情链接
+[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
+[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
+[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
+[GITHUB+HEXO搭建的博客hexo最常用的几个命令](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客hexo最常用的几个命令/)
+[GITHUB+HEXO搭建的博客markdown基本语法](https://akbcd.github.io/2018/10/28/GITHUB+HEXO搭建的博客markdown基本语法/)
+[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)
