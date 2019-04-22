@@ -28,6 +28,7 @@ tags: 博客
 6.文件夹**akbcd.github.io**右键**Git Bash Here**,在git里面输入(观看akbcd.github.io后面是否有蓝色hexo字样，如果没有就错了)：
 - `git add .` (详解：**git空格add空格.**，切记不要打错，否则命令就错了)
 - `git commit -m"..."` (详解：**git空格commit空格-m"..."**)
+提交修改，`...`为对修改的描述。
 - `git push origin hexo` 
 来提交hexo网站源文件
 - `hexo g -d` (详解：**hexo空格g空格-d**)
