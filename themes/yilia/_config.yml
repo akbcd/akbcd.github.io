@@ -7,9 +7,9 @@ menu:
 # SubNav
 subnav:
   github: http://github.com/
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  weibo: https://weibo.com/
+  #rss: "#"
+  zhihu: https://www.zhihu.com/explore
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
