@@ -45,7 +45,7 @@ tags: 博客
 ## hexo引用本地视频
 代码
 ```
-<videoo src="视频.mp4" controls></video>
+<video src="视频.mp4" controls></video>
 ```
 不推荐使用，github数据库引用本地图片、音乐很慢，看到这里也应该知道视频的速度
 注：markdown语法中video标签在个别的浏览器中不支持
