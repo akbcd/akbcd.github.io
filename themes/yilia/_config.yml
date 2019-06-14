@@ -2,8 +2,8 @@
 
 menu:
   主页: /
+  所有文章: /archives/
   随笔: /tags/随笔/
-  #所有文章: /archives/
 
 # SubNav
 subnav:
