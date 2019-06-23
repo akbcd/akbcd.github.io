@@ -53,18 +53,19 @@ tags: 博客
 <video width="100%" height="100%" src="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_2.mp4" controls="controls" poster="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_5.jpg" webkit-playsinline="true"></video>
 ```
 poster是视频的封面
-video标签加个webkit-playsinline属性是是使视频可以在浏览器视窗内全屏
+webkit-playsinline属性是使视频可以在浏览器视窗内全屏
+***
 不推荐使用，github数据库引用本地图片、音乐很慢，看到这里也应该知道视频的速度，而且在网页打开时便开始加载，文件过大，会从云端下载很多数据
-**注：markdown语法中video标签在个别的浏览器中不支持**
+**注：markdown语法中video标签在个别的浏览器中可能不支持**
 其它方法可自行去网络查找。
 如果你有网上视频URL，直接把URL地址粘到src里即可
 例子（引用的云端url）：
 ```
-<video src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls">
+<video width="100%" height="100%" src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls" webkit-playsinline="true">
 您的浏览器不支持video标签！
 </video>
 ```
 效果：
-<video src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls">
+<video width="100%" height="100%" src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls" webkit-playsinline="true">
 您的浏览器不支持video标签！
 </video>
