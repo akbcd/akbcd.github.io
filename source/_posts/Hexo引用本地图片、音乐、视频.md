@@ -45,23 +45,24 @@ tags: 博客
 ## hexo引用本地视频
 代码
 ```
-<video src="视频.mp4" controls></video>
+<video width="100%" height="100%" src="视频.mp4" controls="controls"></video>
 ```
 在这里详细讲解一下video标签
 完整的video标签中应该有
 ```
 <video width="100%" height="100%" src="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_2.mp4" controls="controls" poster="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_5.jpg" webkit-playsinline="true"></video>
 ```
-poster是视频的封面
-webkit-playsinline属性是使视频可以在浏览器视窗内全屏
+`width="100%" height="100%"`必须要有，不然个别浏览器无法显示视频
+`controls="controls"`必须要有，`="controls"`可以省略，但是controls属性必须写，不然无法加载出视频播放器
+`poster`是视频的封面，可有可无，如果没有的话，视频未播放前显示的是黑色页面，如果有封面，显示的则是封面
+`webkit-playsinline`属性是使视频可以在浏览器视窗内全屏(html5)
 ***
 不推荐使用，github数据库引用本地图片、音乐很慢，看到这里也应该知道视频的速度，而且在网页打开时便开始加载，文件过大，会从云端下载很多数据
-**注：markdown语法中video标签在个别的浏览器中可能不支持**
 其它方法可自行去网络查找。
 如果你有网上视频URL，直接把URL地址粘到src里即可
 例子（引用的云端url）：
 ```
-<video width="100%" height="100%" src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls" webkit-playsinline="true">
+<video width="100%" height="100%" src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls>
 您的浏览器不支持video标签！
 </video>
 ```
