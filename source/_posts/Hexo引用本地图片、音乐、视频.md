@@ -47,6 +47,13 @@ tags: 博客
 ```
 <video src="视频.mp4" controls></video>
 ```
+在这里详细讲解一下video标签
+完整的video标签中应该有
+```
+<video width="100%" height="100%" src="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_2.mp4" controls="controls" poster="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_5.jpg" webkit-playsinline="true"></video>
+```
+poster是视频的封面
+video标签加个webkit-playsinline属性是是使视频可以在浏览器视窗内全屏
 不推荐使用，github数据库引用本地图片、音乐很慢，看到这里也应该知道视频的速度，而且在网页打开时便开始加载，文件过大，会从云端下载很多数据
 **注：markdown语法中video标签在个别的浏览器中不支持**
 其它方法可自行去网络查找。
