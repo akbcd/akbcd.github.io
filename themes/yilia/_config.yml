@@ -3,7 +3,7 @@
 menu:
   主页: /
   所有文章: /archives/
-  #随笔: /tags/随笔/
+  随笔: /tags/随笔/
 
 # SubNav
 subnav:
@@ -69,7 +69,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: /img/avatar.jpg
+avatar: /img/avatar.png
 
 #是否开启分享
 share_jia: true
