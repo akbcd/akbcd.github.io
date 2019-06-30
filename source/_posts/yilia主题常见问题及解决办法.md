@@ -6,10 +6,10 @@ tags: 博客
 这个主题本身挺好的，可是也有一些问题。
 以下内容为自己发现的问题及解决办法(作者很长时间不更新主题了，所以有问题就要自己动手解决)
 <!--more-->
-**1.主题首页，第一页的底部，出现了prev选项**
+**1.主题首页，第一页的底部，出现了Prev选项**
 ![](1.png)
 ***
-明明没有上一页，为什么有这个没用的选项。
+明明没有上一页，为什么要有这个没用的选项。
 最后一页也有同样的问题
 ***
 ![](2.png)
@@ -28,15 +28,16 @@ tags: 博客
 删除后效果
 ***
 ![](5.png)
+***
 **2.语言配置问题**
 查了各种资料，hexo博客修改语言，做了很多尝试，都不好使。既然是国人写的，为什么默认上一页和下一页是英文，反正我是看不惯。网上修改主题语言可能对别的主题有效，但是对yilia主题一点效果也没有。
 - 解决方法（将上一页和下一页改为中文）
 在主题文件中用编译器查找`&laquo; Prev`和`Next &raquo;`，然后将所有的`Prev`修改为上一页，`Next`修改为下一页（好多文件中都有这几个标签）
 **3.随笔a标签点击后样式不改变（移动端）**
 从github网站cloning最新的yilia主题，配置成功后，应该还记得两个a标签：主页、随笔
-主页还好，你点击后，进入相应的页面，主页a标签的样式变了，但是当你点随笔的时候，进入相应的页面后，随笔a标签样式没有变。这个问题困惑了我很久，最开始以为，只有主页的样式能变，但是我错了，作者的那个博客，里面有相册这个标签，它的样式是可以变的，还有所有文章(有的起名为归档 `所有文章: /archives/`)标签，样式也可以变，唯独自己的tag标签的a标签被点击时，样式没有任何变化。
+主页还好，你点击后，进入相应的页面，主页a标签的样式变了，但是当你点随笔的时候，进入相应的页面后，随笔a标签样式没有变。这个问题困惑了我很久，最开始以为，只有主页的样式能变，但是我错了，作者的那个博客，里面有相册这个标签，它的样式是可以变的，还有所有文章(有的起名为归档 `所有文章: /archives/`)标签，样式也可以变，唯独自己的随笔a标签被点击时，样式没有任何变化。
 感觉这个是主题作者知道的问题，但是还没有修复，可能不会修复了
-观察了一下，当你点完标签后，那些标签都被加了一个class属性，值为：active，唯独你点tag中的标签，它就不加那个class属性，添加class属性的函数找到了一个，不知道是不是，感觉没有什么问题，文件目录`themes\yilia\source-src\js\mobile.js`，重点是修改不起作用
+观察了一下，当你点完标签后，那些标签都被加了一个class属性，值为：active，唯独你随笔标签，它就不加那个class属性，添加class属性的函数找到了一个，不知道是不是，感觉没有什么问题，文件目录`themes\yilia\source-src\js\mobile.js`，重点是修改不起作用
 ***
 ![](6.png)
 - 解决办法
@@ -61,10 +62,10 @@ function i(t, n) {
         }
     }
 ```
-没错，就是这两个函数，通过替换字符串来判断，如果返回值为真，即添加class样式。
+没错，就是这两个函数，通过`return t.replace(r, "") === n.replace(r, "")`来判断，如果返回值为真，即添加class样式。
 问题就出现在了`n.replace(r, "")`，用alert语句，当你点随笔时，界面会出现`tags%E9%9A%8F%E7%AC%94`,没错，就是中文乱码问题，
 添加alert语句`alert(t.replace(r, ""))`，显示`tags随笔`
-从这你也就会看出来了当你点随笔时,语句`return t.replace(r, "") === n.replace(r, "")`不可能为真，因此也就不会执行`(0,h.default)(o, "active")`代码，即不会添加active属性。（归档标签为archives,没有中文，所以能添加样式）
+从这你应该看出,当你点随笔时,语句`return t.replace(r, "") === n.replace(r, "")`不可能为真，因此也就不会执行`(0,h.default)(o, "active")`代码，即不会添加active属性。（归档标签为archives,没有中文，所以能添加样式）
 - 解决方法
 `n = window.location.pathname`获取url路径，有中文时出现乱码，解决中文乱码问题。中文乱码原因：url中文编译语言问题
 运用url解码函数`decodeURI()`,将乱码的中文翻译回中文
@@ -121,6 +122,7 @@ css和js代码，在编译器中打开，我也真是无语，代码全部写在
 ```
 `<script src="<%=config.root%>./mobile.992cbe.js"></script>`语句用于引入`mobile.992cbe.js`
 之前在`script.ejs`修改的代码在`mobile.992cbe.js`中再修改一遍，或者，将`script.ejs`中第一个script标签中的js代码去替换`mobile.992cbe.js`中的代码，在最后一句加上一个`;`（其它js文件中代码结尾都有`;`）。
+***
 **5.手机浏览器，网页中的代码有兼容问题，当然，电脑端的也有**
 * 先说一下电脑端的问题，个人觉得不需要解决，看以下两张图片
 ![](10.png)
@@ -155,6 +157,148 @@ Google Chrome浏览器
 ![](15.png)
 ***
 按钮加了一个背景色，背景色透明，让人能够清晰地看到那个按钮（个人觉得不是很好看），在动画不生效的手机浏览器中这样显示，生效的浏览器会显示生效的动画页面
+**皇天不负有心人，经过我的多番探索，找到了解决方法**
+- 问题分析
+既然是代码兼容问题，就要先找到执行此动画的代码，也是js代码
+因为是a标签悬停，所以要找到a标签样式属性。在浏览器控制台可以看到`class="header-menu js-header-menu"`,开发者对代码的规范性还是有的，用到js的样式，都有js标注。
+- 定位文件。在主题中，用编译器查找`js-header-menu`，如果你照着我之前将`mobile.992cbe.js`导入代替`script.ejs`中第一个script标签中的js代码，那么会在`mobile.992cbe.js`中找到如下代码,如果没有照做，代码应该在`script.ejs`文件中
+***
+![](16.png)
+***
+这个函数与上面的函数关联
+***
+![](17.png)
+***
+问题就出现在了这几个函数上了。通过使用alert语句，查询出了端倪。
+***
+![](16.png)
+***
+这个函数中
+```
+function a() {
+        var t = document.querySelector(".js-overlay")
+            , n = document.querySelector(".js-header-menu")
+            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+        f(t, document.body.scrollTop, -63, 2, 0),
+        f(n, document.body.scrollTop, 1, 3, 0)
+    }
+```
+`document.body.scrollTop`的值始终为0，导致了上面对应的函数
+```
+function f(t, n, r, e, i) {
+        var o = u(t)
+            , f = c(t) - n;
+        if (f - r <= i) {
+            var a = t.$newDom;
+            a || (a = t.cloneNode(!0),
+            (0,
+            d.default)(t, a),
+            t.$newDom = a,
+            a.style.position = "fixed",
+            a.style.top = (r || f) + "px",
+            a.style.left = o + "px",
+            a.style.zIndex = e || 2,
+            a.style.width = "100%",
+            a.style.color = "#fff"),
+            a.style.visibility = "visible",
+            t.style.visibility = "hidden"
+        } else {
+            t.style.visibility = "visible";
+            var s = t.$newDom;
+            s && (s.style.visibility = "hidden")
+        }
+    }
+```
+`if (f - r <= i)`的判定始终为false，从而执行else语句，导致没有了那个动画效果
+相关代码（可自行分析）
+```
+function u(t) {
+        for (var n = t.offsetLeft, r = t.offsetParent; null !== r; )
+            n += r.offsetLeft,
+            r = r.offsetParent;
+        return n
+    }
+    function c(t) {
+        for (var n = t.offsetTop, r = t.offsetParent; null !== r; )
+            n += r.offsetTop,
+            r = r.offsetParent;
+        return n
+    }
+    function f(t, n, r, e, i) {
+        var o = u(t)
+            , f = c(t) - n;
+        if (f - r <= i) {
+            var a = t.$newDom;
+            a || (a = t.cloneNode(!0),
+            (0,
+            d.default)(t, a),
+            t.$newDom = a,
+            a.style.position = "fixed",
+            a.style.top = (r || f) + "px",
+            a.style.left = o + "px",
+            a.style.zIndex = e || 2,
+            a.style.width = "100%",
+            a.style.color = "#fff"),
+            a.style.visibility = "visible",
+            t.style.visibility = "hidden"
+        } else {
+            t.style.visibility = "visible";
+            var s = t.$newDom;
+            s && (s.style.visibility = "hidden")
+        }
+    }
+    function a() {
+        var t = document.querySelector(".js-overlay")
+            , n = document.querySelector(".js-header-menu")
+            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+        f(t, document.body.scrollTop, -63, 2, 0),
+        f(n, document.body.scrollTop, 1, 3, 0)
+    }
+```
+- 解决方法
+`document.body.scrollTop`的值始终为0，那就查询一下这段代码是什么意思
+>获取当前页面滚动条纵坐标的位置：document.body.scrollTop与document.documentElement.scrollTop
+获取当前页面滚动条横坐标的位置：document.body.scrollLeft与document.documentElement.scrollLeft
+1.各浏览器下 scrollTop的差异:
+IE6/7/8：
+可以使用 document.documentElement.scrollTop； 
+IE9及以上：
+可以使用window.pageYOffset或者document.documentElement.scrollTop 
+Safari: 
+safari： window.pageYOffset 与document.body.scrollTop都可以； 
+Firefox: 
+火狐等等相对标准些的浏览器就省心多了，直接用window.pageYOffset 或者 document.documentElement.scrollTop ；
+Chrome：
+谷歌浏览器只认识document.body.scrollTop;
+注：标准浏览器是只认识documentElement.scrollTop的，但chrome虽然我感觉比firefox还标准，但却不认识这个，在有文档声明时，chrome也只认识document.body.scrollTop.
+由于在不同情况下，document.body.scrollTop与document.documentElement.scrollTop都有可能取不到值，那到底网页的scrollTop值怎么得到呢？难道又要用JavaScript进行判断？
+其实不必。因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。所以，如果要得到网页的真正的scrollTop值，如果不考虑safari，可以这样：
+var sTop=document.body.scrollTop+document.documentElement.scrollTop;
+这两个值总会有一个恒为0，所以不用担心会对真正的scrollTop造成影响。一点小技巧，但很实用。
+***
+这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了
+代码修改如下：
+```
+function a() {
+        var t = document.querySelector(".js-overlay")
+            , n = document.querySelector(".js-header-menu")
+            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+        f(t, sTop, -63, 2, 0),
+        f(n, sTop, 1, 3, 0)
+    }
+```
+声明一个sTop变量其值为：`document.body.scrollTop+document.documentElement.scrollTop;`，将这个变量传到**f函数**中，在浏览器上测试出现了效果。（js效果实现）
+***
+![](18.png)
+***
+补充：个人觉得作者开发这个效果其实是省去了回到顶端按钮的实现，因为那几个悬停在顶部的a标签就是回到顶部后所拥有的标签，而且效果很好，看着也很舒服
+回到上面**解决方法（自己研究）**，将按钮添加背景色属性删除（效果实现后，这段代码很显然是用不到了）
+**6.yilia主题分享的一些问题**
+接着上面的效果实现，发现了一个问题。手机端进入到某个文章，上面的那几个a标签有时不能点击。电脑浏览器控制台发现，在那几个a标签上隐藏了一个微信分享的div标签（里面有微信分享二维码），虽然看不到，但是它却在那几个a标签的上面。看了一下开发者的博客，标签没有在那个地方隐藏，而是真正的隐藏。这个让我很困惑。
+折腾了几次，找到了问题。如果微信分享二维码存在（即图片路径有效），那么微信分享的div标签即真正隐藏，如果无效，那它就会在顶部的那几个a标签上面隐藏，而使你不能点击那几个a标签
+- 解决方法
+在主题配置文件中关闭分享（我认为分享这个功能没有什么用，想分享直接把url地址分享出去就可以了）或者给微信分享的那个图片添加地址路径
+***
 **主题的开发者好久没有更新主题了，有什么问题就要自己动手解决**
 ***
 以下内容为一个补充

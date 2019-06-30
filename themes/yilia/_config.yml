@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  所有文章: /archives/
+  归档: /archives/
   随笔: /tags/随笔/
 
 # SubNav
@@ -72,7 +72,7 @@ favicon: /favicon.png
 avatar: /img/avatar.png
 
 #是否开启分享
-share_jia: true
+share_jia: false
 
 #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
 #不需要使用某项，直接设置值为false，或注释掉

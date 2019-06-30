@@ -3767,9 +3767,10 @@
     }
     function a() {
         var t = document.querySelector(".js-overlay")
-            , n = document.querySelector(".js-header-menu");
-        f(t, document.body.scrollTop, -63, 2, 0),
-        f(n, document.body.scrollTop, 1, 3, 0)
+            , n = document.querySelector(".js-header-menu")
+            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+        f(t, sTop, -63, 2, 0),
+        f(n, sTop, 1, 3, 0)
     }
     function s() {
         document.querySelector("#container").addEventListener("scroll", function(t) {
