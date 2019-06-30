@@ -3,7 +3,7 @@ title: yilia主题常见问题及解决办法
 date: 2019-06-27 21:45:30
 tags: 博客
 ---
-先说一下自己的无奈吧。这个主题本身挺好的，可是也有一些问题。
+这个主题本身挺好的，可是也有一些问题。
 以下内容为自己发现的问题及解决办法(作者很长时间不更新主题了，所以有问题就要自己动手解决)
 <!--more-->
 **1.主题首页，第一页的底部，出现了prev选项**
@@ -43,6 +43,55 @@ tags: 博客
 既然tag标签样式不能变，那就都不让变，像pc端那样，加一个手指单击切换样式，不改变样式，在`themes\yilia\source\main.0cf68a.css`中查找`.header-menu li a.active`，把`a.active`改为`a:active`
 ***
 ![](7.png)
+***
+**皇天不负有心人，经过我的多番探索，找到了解决方法**
+- 问题分析
+1.首先，这个是点击a标签后，在a标签上添加了一个class属性：active,然后通过css改变点击后a标签的样式。（添加样式的方法只能是js语句）
+2.定位文件 在主题文件中用编译器查找`.header-menu li a`，在文件目录`themes\yilia\layout\_partial`找到`script.ejs`文件，你会查询到以下代码(我的代码经过规范化整理，并非在一行显示)
+```
+function i(t, n) {
+        var r = /\/|index.html/g;
+        return t.replace(r, "") === n.replace(r, "")
+    }
+    function o() {
+        for (var t = document.querySelectorAll(".js-header-menu li a"), n = window.location.pathname, r = 0, e = t.length; r < e; r++) {
+            var o = t[r];
+            i(n, o.getAttribute("href")) && (0,
+            h.default)(o, "active")
+        }
+    }
+```
+没错，就是这两个函数，通过替换字符串来判断，如果返回值为真，即添加class样式。
+问题就出现在了`n.replace(r, "")`，用alert语句，当你点随笔时，界面会出现`tags%E9%9A%8F%E7%AC%94`,没错，就是中文乱码问题，
+添加alert语句`alert(t.replace(r, ""))`，显示`tags随笔`
+从这你也就会看出来了当你点随笔时,语句`return t.replace(r, "") === n.replace(r, "")`不可能为真，因此也就不会执行`(0,h.default)(o, "active")`代码，即不会添加active属性。（归档标签为archives,没有中文，所以能添加样式）
+- 解决方法
+`n = window.location.pathname`获取url路径，有中文时出现乱码，解决中文乱码问题。中文乱码原因：url中文编译语言问题
+运用url解码函数`decodeURI()`,将乱码的中文翻译回中文
+修改**i函数**传参`i(n, o.getAttribute("href"))`,把n改为`decodeURI(n)`
+```
+function i(t, n) {
+        var r = /\/|index.html/g;
+        return t.replace(r, "") === n.replace(r, "")
+    }
+    function o() {
+        for (var t = document.querySelectorAll(".js-header-menu li a"), n = window.location.pathname, r = 0, e = t.length; r < e; r++) {
+            var o = t[r];
+            i(decodeURI(n), o.getAttribute("href")) && (0,
+            h.default)(o, "active")
+        }
+    }
+```
+运用alert语句`alert(n.replace(r, ""))`，界面显示`tags随笔`，到此问题解决
+在`themes\yilia\source\main.0cf68a.css`中，`.header-menu li a:active`，把`a:active`改回`a,active`,或者添加语句`,.header-menu li a:active`
+```
+.header-menu li a:active,.header-menu li a.active {
+    color: #eaeaea;
+    background: #a0a0a0
+}
+```
+即保留`.header-menu li a:active`，解释一下为什么要保留，这个是点击事件样式，加上的话效果显示更好
+***
 **4.css和js文件中的代码看不懂**
 css和js代码，在编译器中打开，我也真是无语，代码全部写在一行里，放眼望去，根本看不懂，好在我还是学过前端的人，但是，我看着都很费劲。主题作者，您是为了省空间吗？难道没有行业规范这个词，还是你就是特意这样做的，为的就是不让我们看懂？
 观察了一下，代码全部写在一行里，节省了将近一半的空间，但是，我不缺空间。
@@ -56,7 +105,22 @@ css和js代码，在编译器中打开，我也真是无语，代码全部写在
 ***
 ![](9.png)
 ***
-以上都是之前发现的问题，觉得无伤大雅，没有特殊要求的人可以不用解决。最近又发现了一个新的问题。
+定位文件`themes\yilia\layout\_partial\script.ejs`,这个是ejs文件，ejs是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。里面第一个script标签中有很多js代码，而且写在一行。比较了一下，这里面的js语句与`themes\yilia\source\mobile.992cbe.js`中的语句几乎是一模一样（特地比较了一下，就是把个别参数换了个名字，有的代码简写，本质上根本没变化）。这里我就不太理解了,`script.ejs`写了那么多js代码，为什么不把`mobile.992cbe.js`导入代替script标签中的js代码？这个就同为什么不把css样式直接写在style标签中，而是要link导入一个道理。
+修改文件`script.ejs`,将`mobile.992cbe.js`导入代替script标签中的js代码，并将第一个script标签和其中的js代码删除（script是双标签）
+```
+<script src="<%=config.root%>./mobile.992cbe.js"></script>
+<script src="<%=config.root%>./main.0cf68a.js"></script>
+<script>
+    !function(){
+        !function(e){
+            var t=document.createElement("script");
+            document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
+        }("<%=config.root%>slider.e37972.js")
+    }()
+</script>
+```
+`<script src="<%=config.root%>./mobile.992cbe.js"></script>`语句用于引入`mobile.992cbe.js`
+之前在`script.ejs`修改的代码在`mobile.992cbe.js`中再修改一遍，或者，将`script.ejs`中第一个script标签中的js代码去替换`mobile.992cbe.js`中的代码，在最后一句加上一个`;`（其它js文件中代码结尾都有`;`）。
 **5.手机浏览器，网页中的代码有兼容问题，当然，电脑端的也有**
 * 先说一下电脑端的问题，个人觉得不需要解决，看以下两张图片
 ![](10.png)

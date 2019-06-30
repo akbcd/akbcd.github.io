@@ -3372,7 +3372,7 @@ pre .css~* .id,pre .id {
         color: #a0a0a0
     }
 
-    .header-menu li a.active {
+    .header-menu li a:active,.header-menu li a.active {
         color: #eaeaea;
         background: #a0a0a0
     }
