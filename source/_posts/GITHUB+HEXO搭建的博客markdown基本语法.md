@@ -92,6 +92,32 @@ title可加可不加
 ```
 补充：上传本地图片，推荐一个网站，点击[小贱贱图床](https://pic.xiaojianjian.net/)
 在这个网站可以免费上传自己的图片，也可以直接在百度上搜索图床，会出现很多的相关网站
+## 两张图片在一行显示
+语法：
+markdown语法中，很多的html标签都支持，直接用div和img标签控制两张图片在一行显示
+示例：
+```
+<div><img width=50% src ="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg"/><img width=50% src ="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg"/></div>
+```
+效果如下：
+<div><img width=50% src ="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg"/><img width=50% src ="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg"/></div>
+
+## 图片居中显示
+语法：
+运用div标签控制图片居中显示
+示例：
+```
+<div align="center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
+```
+效果如下：
+<div align="center"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
+
 # 五、网站链接
 语法：
 ```
@@ -204,7 +230,8 @@ n个...
 总结：在这个页面上有的语法预览与简书页面不同，应该是语法解析的不一样。创建这个页面发现了一个问题，在多次应用三个反引号语法时，如果出现两个内容连在了一起，这个可能需要换行解决。
 以上是我经常写文章所应用的语法，不是很全，后续可能还会更新
 ***
-# 八、文字首行缩进
+# 八、文字
+## 文字首行缩进
 中文缩进：一个`&emsp;`缩进一个文字
 示例：
 ```
@@ -212,7 +239,17 @@ n个...
 ```
 效果如下：
 &emsp;&emsp;你好！
-## 友情链接
+## 文字居中
+语法：
+运用center标签
+示例：
+```
+<center>这是居中的文字</center>
+```
+效果如下：
+<center>这是居中的文字</center>
+
+### 友情链接
 [GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
 [GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
 [GITHUB+HEXO搭建的博客更换主题](https://akbcd.github.io/2018/09/24/GITHUB+HEXO搭建的博客更换主题/)
