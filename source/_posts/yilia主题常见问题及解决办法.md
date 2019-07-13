@@ -124,13 +124,13 @@ css和js代码，在编译器中打开，我也真是无语，代码全部写在
 ***
 ### 5.手机浏览器，网页中的代码有兼容问题，当然，电脑端的也有
 **先说一下电脑端的问题，个人觉得不需要解决，看以下两张图片**
-![](10.png)
 ***
+![](10.png)
 Microsoft Edge浏览器
 ***
 ![](11.png)
-***
 Google Chrome浏览器
+***
 很明显的tag标签样式不兼容，一个是方框，一个是按钮，暂时没找到解决方法，其实没什么影响
 **手机端的兼容问题比较严重**
 在我的手机自带浏览器中，博客页面往下滑，你会看到一个效果
@@ -277,12 +277,12 @@ var sTop=document.body.scrollTop+document.documentElement.scrollTop;
 function a() {
         var t = document.querySelector(".js-overlay")
             , n = document.querySelector(".js-header-menu")
-            , sTop=document.body.scrollTop||document.documentElement.scrollTop;
+            , sTop = document.body.scrollTop || document.documentElement.scrollTop;
         f(t, sTop, -63, 2, 0),
         f(n, sTop, 1, 3, 0)
     }
 ```
-- 声明一个sTop变量，`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`，将这个变量传到**f函数**中，在浏览器上测试出现了效果。（js效果实现）
+- 声明一个sTop变量，`var sTop = document.body.scrollTop || document.documentElement.scrollTop;`，将这个变量传到**f函数**中，在浏览器上测试出现了效果。（js效果实现）
 ***
 ![](18.png)
 ***
@@ -361,6 +361,7 @@ function a() {
 - `(t || window).onscroll`,`(t || window)`出了问题，这段代码只在pc端生效，到移动端就不生效了。尝试把`||`换成`|`,问题没解决，反而在控制台报错了。
 - 简单说一下，这段代码和后面的`o()`怎么联系起来的我是没看明白，感觉`(t || window).onscroll`是一个判断，onscroll是在元素轴滚动时触发的。
 - 测试结果显示：`(t || window).onscroll`,`(t || window)`控制后面`o()`函数的调用（我也不太理解这段代码为什么会控制o()的调用，但事实就是如此），`t.onscroll`适用于pc端，`window.onscroll`适用于移动端。
+- `alert(t)`提示：`[object HTMLDivElement]``alert(window)`提示：`[object Window]`，pc端与移动端均是此提示，由此可见`(t || window)`判断出了问题，它会一直执行t,而不是window。
 - o()作用是将标签`<div class="jump-container" id="js-jump-container" style="display: none;"></div>`的`style="display: none;"`改为`style="display: block;"`，从而显示出返回顶部的i标签，点击返回顶部的i标签触发下面返回顶部函数的实现。但是，在移动端样式中，aside标签是被加了`display: none`的，这个div标签被嵌套在aside标签里面。所以，如果想在移动端添加返回顶部标签，`display: none`不能留。
 - 到此，问题查明
 ***

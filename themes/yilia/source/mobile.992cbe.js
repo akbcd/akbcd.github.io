@@ -3768,7 +3768,7 @@
     function a() {
         var t = document.querySelector(".js-overlay")
             , n = document.querySelector(".js-header-menu")
-            , sTop=document.body.scrollTop||document.documentElement.scrollTop;
+            , sTop = document.body.scrollTop || document.documentElement.scrollTop;
         f(t, sTop, -63, 2, 0),
         f(n, sTop, 1, 3, 0)
     }
