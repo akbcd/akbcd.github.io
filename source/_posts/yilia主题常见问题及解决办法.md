@@ -136,14 +136,10 @@ Google Chrome浏览器
 在我的手机自带浏览器中，博客页面往下滑，你会看到一个效果
 当顶部主页和随笔标签要滑出屏外时，那两个标签会自动在顶端悬停，看图片（主题作者博客测试 网址：[http://litten.me/](http://litten.me/)）
 ***
-![](12.jpg)
-***
-这个是手机自带浏览器显示的效果，这个动画设计的很好，代码我不会。
-有兼容问题的浏览器(Microsoft Edge测试，Google Chrome显示效果相同)
-***
-![](13.jpg)
-***
-动画直接没有，那两个标签直接就滑上去了，但是有一个标签下来了，最左边那个多功能标签，没有背景色，白色的字体，不仔细看都看不出来
+左面是是手机自带浏览器显示的效果，这个动画设计的很好，代码我不会。右面是有兼容问题的浏览器(Microsoft Edge测试，Google Chrome显示效果相同)
+<div><img width=50% src="12.jpg"/><img width=50% src="13.jpg"/></div>
+
+右面的没有左面的效果，那两个标签直接就滑上去了，但是有一个标签下来了，最左边那个多功能标签，没有背景色，白色的字体，不仔细看都看不出来
 这个问题起初我以为是我把主题某个配置文件改了导致的，但是作者博客在Chrome浏览器中测试的结果跟我一样，看来不是我以为的问题，而是这个博客的通病。某个动画效果在这几个浏览器中不兼容。整了将近一下午，也没找到解决办法，主要是前端的知识学的不够，现在学java了，前端的知识忘得更多了。
 **解决方法（自己研究）**
 - 既然有一个标签能下来，有时可能看不见，那就让它可见，添加一个背景色，与上面的颜色相同（因为这个标签是从上面移动下来的，如果颜色不一样，看着很不协调），将背景色改为透明
@@ -275,18 +271,18 @@ Chrome：
 var sTop=document.body.scrollTop+document.documentElement.scrollTop;
 这两个值总会有一个恒为0，所以不用担心会对真正的scrollTop造成影响。一点小技巧，但很实用。
 ***
-- 这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了
+- 这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了。当然，可能会有浏览器`document.body.scrollTop`和`document.documentElement.scrollTop`都识别的情况，因此，提供一个`||`语句判断，即`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`。
 - 代码修改如下：
 ```
 function a() {
         var t = document.querySelector(".js-overlay")
             , n = document.querySelector(".js-header-menu")
-            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+            , sTop=document.body.scrollTop||document.documentElement.scrollTop;
         f(t, sTop, -63, 2, 0),
         f(n, sTop, 1, 3, 0)
     }
 ```
-- 声明一个sTop变量，`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`，将这个变量传到**f函数**中，在浏览器上测试出现了效果。（js效果实现）
+- 声明一个sTop变量，`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`，将这个变量传到**f函数**中，在浏览器上测试出现了效果。（js效果实现）
 ***
 ![](18.png)
 ***
@@ -297,6 +293,176 @@ function a() {
 折腾了几次，找到了问题。如果微信分享二维码存在（即图片路径有效），那么微信分享的div标签即真正隐藏，如果无效，那它就会在顶部的那几个a标签上面隐藏，而使你不能点击那几个a标签
 **解决方法**
 在主题配置文件中关闭分享（我认为分享这个功能没有什么用，想分享直接把url地址分享出去就可以了）或者给微信分享的那个图片添加地址路径
+### 7.yillia主题移动端页面没有返回顶部按钮
+说到这个返回顶部按钮，其实开发者最初开发这款主题时就没有返回顶部按钮，返回顶部按钮是开发者后期加上去的。但是返回顶部按钮只出现在pc端，移动端并没有出现。自己折腾了一下，改了几行代码，解决了移动端没有返回顶部按钮的问题。
+**问题分析**
+- pc端页面按钮出现，移动端按钮不出现。pc浏览器控制台发现，返回顶部按钮是在aside标签中实现的。在pc端页面，aside标签样式display为block，但是在移动端页面，aside标签display值为none。none值为隐藏（这里说明一下，开发者刻意在移动端样式中加了这段代码，这段代码的加入，即使之后的那个o函数被调用，返回顶部的按钮也不会出现）。
+```
+    .wrap-side-operation {
+        display: none
+    }
+```
+- 在aside标签中的div标签看到了`js-jump-container`，依然是调用了script。用编译器打开主题文件，在里面查找`js-jump-container`。在`themes\yilia\source\main.0cf68a.js`中找到相应函数
+```
+    189: function(e, t) {
+        "use strict";
+        function n() {
+            o(document.getElementById("js-jump-container"), document.getElementById("container"))
+        }
+        var o = function(e, t, n) {
+            function o() {
+                e.style.display = (t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > (n || 500) ? "block" : "none"
+            }
+            function r(e, t) {
+                var n = null;
+                return function() {
+                    var o = this
+                      , r = arguments;
+                    n && clearTimeout(n),
+                    n = setTimeout(function() {
+                        return "function" == typeof e && e.apply(o, r)
+                    }, t)
+                }
+            }
+            if (e) {
+                var i = null
+                  , a = window.onscroll
+                  , u = e.onclick;
+                (t || window).onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                e.onclick = function() {
+                    "function" == typeof u && u.apply(this, arguments);
+                    t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+                    i = setInterval(function() {
+                        var e = t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop
+                          , n = Math.max(10, e / 6);
+                        e -= n,
+                        e > 0 ? (t.scrollTop = t.scrollTop - n,
+                        window.scrollTo(0, e)) : (t.scrollTop = 0,
+                        window.scrollTo(0, 0),
+                        clearInterval(i))
+                    }, 10)
+                }
+            }
+        };
+        e.exports = {
+            init: n
+        }
+    },
+```
+***
+- 问题就出现在o函数调用上
+![](19.png)
+- 移动端o函数始终不被调用，起初以为是匿名函数在移动端不会被调用，强制调用后，问题没解决
+- 经查询，问题出现在了这上面
+![](20.png)
+- `(t || window).onscroll`,`(t || window)`出了问题，这段代码只在pc端生效，到移动端就不生效了。尝试把`||`换成`|`,问题没解决，反而在控制台报错了。
+- 简单说一下，这段代码和后面的`o()`怎么联系起来的我是没看明白，感觉`(t || window).onscroll`是一个判断，onscroll是在元素轴滚动时触发的。
+- 测试结果显示：`(t || window).onscroll`,`(t || window)`控制后面`o()`函数的调用（我也不太理解这段代码为什么会控制o()的调用，但事实就是如此），`t.onscroll`适用于pc端，`window.onscroll`适用于移动端。
+- o()作用是将标签`<div class="jump-container" id="js-jump-container" style="display: none;"></div>`的`style="display: none;"`改为`style="display: block;"`，从而显示出返回顶部的i标签，点击返回顶部的i标签触发下面返回顶部函数的实现。但是，在移动端样式中，aside标签是被加了`display: none`的，这个div标签被嵌套在aside标签里面。所以，如果想在移动端添加返回顶部标签，`display: none`不能留。
+- 到此，问题查明
+***
+**解决方法**
+- 定位文件`themes\yilia\source\main.0cf68a.css`,在里面查找`.wrap-side-operation`，找到`@media screen and (max-width: 800px)`下的`.wrap-side-operation`，因为要在移动端页面添加返回顶部按钮，所以要在移动端的样式下修改，`@media screen and (max-width: 800px)`即为移动端不同于pc端的样式，在移动端页面时，`@media screen and (max-width: 800px)`样式的权重是高于非`@media screen and (max-width: 800px)`下样式的权重的。
+![](21.png)
+- 修改内容如下：
+```
+    .wrap-side-operation {
+        right: 0
+    }
+
+    .jump-container:hover .icon-back {
+        background: #ccc
+    }
+
+    .jump-container:active .icon-back {
+        background: rgba(36,193,246,.9)
+    }
+```
+- 将`display: none`去掉添加`right: 0`,right控制按钮距离右面的距离，pc端样式right为40px,根据需要更改。以下图片为pc端`right: 40px`与移动端`rigth: 0`效果
+
+<div><img width=50% src ="22.png"/><img width=50% src ="23.png"/></div>
+
+- 添加`.jump-container:hover .icon-back {background: #ccc}`和`.jump-container:active .icon-back {background: rgba(36,193,246,.9)}`的原因是修改点击返回顶部按钮样式。pc端样式代码：
+```
+.jump-container:hover .icon-back {
+    background: rgba(36,193,246,.9)
+}
+```
+- 如果不单独添加那两段代码，移动端返回顶部按钮被点击时，按钮会变为蓝色，且不会还原(刷新页面后会还原)，pc端那个变蓝色是鼠标悬停样式，到移动端会出问题，也有可能会不变色。利用权重的关系，在移动端样式添加这两段代码，只在移动端生效。`:active`为鼠标单击时样式，`:hover`为鼠标悬停时样式。个人感觉`:active`更适用于移动端。
+- `themes\yilia\source\main.0cf68a.js`文件中修改`(t || window).onscroll`。将`(t || window).onscroll`拆开，写成两个
+```
+                t.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                window.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+```
+- 修改后的函数为
+```
+    189: function(e, t) {
+        "use strict";
+        function n() {
+            o(document.getElementById("js-jump-container"), document.getElementById("container"))
+        }
+        var o = function(e, t, n) {
+            function o() {
+                e.style.display = (t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > (n || 500) ? "block" : "none"
+            }
+            function r(e, t) {
+                var n = null;
+                return function() {
+                    var o = this
+                      , r = arguments;
+                    n && clearTimeout(n),
+                    n = setTimeout(function() {
+                        return "function" == typeof e && e.apply(o, r)
+                    }, t)
+                }
+            }
+            if (e) {
+                var i = null
+                  , a = window.onscroll
+                  , u = e.onclick;
+                t.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                window.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                e.onclick = function() {
+                    "function" == typeof u && u.apply(this, arguments);
+                    t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+                    i = setInterval(function() {
+                        var e = t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop
+                          , n = Math.max(10, e / 6);
+                        e -= n,
+                        e > 0 ? (t.scrollTop = t.scrollTop - n,
+                        window.scrollTo(0, e)) : (t.scrollTop = 0,
+                        window.scrollTo(0, 0),
+                        clearInterval(i))
+                    }, 10)
+                }
+            }
+        };
+        e.exports = {
+            init: n
+        }
+    },
+```
+- 到此，移动端返回顶部按钮添加成功（主题配置文件依然控制返回顶部按钮的实现）
+***
+通过几次修改主题功能做出以下总结：
+1.开发者很用心，用到js的地方均有js标注，为查找函数省去了一定的麻烦
+2.开发者也考虑到了部分标签在不同浏览器不兼容的情况，开发者运用的是`||`语句，这一点启发了我
+3.ejs文件是导入html代码用的
 ***
 **主题的开发者好久没有更新主题了，有什么问题就要自己动手解决**
 ***

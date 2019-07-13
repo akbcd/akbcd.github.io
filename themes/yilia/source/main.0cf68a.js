@@ -1135,7 +1135,11 @@
                 var i = null
                   , a = window.onscroll
                   , u = e.onclick;
-                (t || window).onscroll = r(function() {
+                t.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                window.onscroll = r(function() {
                     "function" == typeof a && a.apply(this, arguments),
                     o()
                 }, 100),

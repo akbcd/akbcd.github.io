@@ -2966,7 +2966,15 @@ pre .css~* .id,pre .id {
     }
 
     .wrap-side-operation {
-        display: none
+        right: 0
+    }
+
+    .jump-container:hover .icon-back {
+        background: #ccc
+    }
+
+    .jump-container:active .icon-back {
+        background: rgba(36,193,246,.9)
     }
 
     .cloud-tie-wrapper {
