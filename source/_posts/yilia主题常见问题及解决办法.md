@@ -361,7 +361,7 @@ function a() {
 - `(t || window).onscroll`,`(t || window)`出了问题，这段代码只在pc端生效，到移动端就不生效了。尝试把`||`换成`|`,问题没解决，反而在控制台报错了。
 - 简单说一下，这段代码和后面的`o()`怎么联系起来的我是没看明白，感觉`(t || window).onscroll`是一个判断，onscroll是在元素轴滚动时触发的。
 - 测试结果显示：`(t || window).onscroll`,`(t || window)`控制后面`o()`函数的调用（我也不太理解这段代码为什么会控制o()的调用，但事实就是如此），`t.onscroll`适用于pc端，`window.onscroll`适用于移动端。
-- `alert(t)`提示：`[object HTMLDivElement]``alert(window)`提示：`[object Window]`，pc端与移动端均是此提示，由此可见`(t || window)`判断出了问题，它会一直执行t,而不是window。
+- `alert(t)`提示：`[object HTMLDivElement]`，`alert(window)`提示：`[object Window]`，pc端与移动端均是此提示，由此可见`(t || window)`判断出了问题，它会一直执行t,而不是window。
 - o()作用是将标签`<div class="jump-container" id="js-jump-container" style="display: none;"></div>`的`style="display: none;"`改为`style="display: block;"`，从而显示出返回顶部的i标签，点击返回顶部的i标签触发下面返回顶部函数的实现。但是，在移动端样式中，aside标签是被加了`display: none`的，这个div标签被嵌套在aside标签里面。所以，如果想在移动端添加返回顶部标签，`display: none`不能留。
 - 到此，问题查明
 ***
