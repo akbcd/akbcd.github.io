@@ -1,5 +1,5 @@
 ---
-title: GITHUB+HEXO搭建的博客markdown基本语法
+title: markdown基本语法（GITHUB+HEXO搭建的博客）
 date: 2018-10-28 21:22:43
 tags: 博客
 ---
@@ -248,11 +248,4 @@ n个...
 ```
 效果如下：
 <center>这是居中的文字</center>
-
-### 友情链接
-[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
-[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
-[GITHUB+HEXO搭建的博客更换主题](https://akbcd.github.io/2018/09/24/GITHUB+HEXO搭建的博客更换主题/)
-[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
-[GITHUB+HEXO搭建的博客hexo最常用的几个命令](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客hexo最常用的几个命令/)
-[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)
+***

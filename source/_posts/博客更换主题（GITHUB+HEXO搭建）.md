@@ -1,5 +1,5 @@
 ---
-title: GITHUB+HEXO搭建的博客更换主题
+title: 博客更换主题（GITHUB+HEXO搭建）
 date: 2018-09-24 16:16:17
 tags: 博客
 ---
@@ -35,10 +35,4 @@ HEXO主题官方网站：[https://hexo.io/themes/](https://hexo.io/themes/)
 输入 hexo g回车，一顿翻滚平静之后
 输入 hexo d回车（就是将数据上传到云端）
 字幕滚完，新博客也就可以访问了。
-## 友情链接
-[GITHUB+HEXO搭建个人博客](https://akbcd.github.io/2018/09/22/GITHUB+HEXO搭建个人博客/)
-[GITHUB+HEXO搭建个人博客2](https://akbcd.github.io/2019/01/08/GITHUB+HEXO搭建个人博客2/)
-[GITHUB+HEXO搭建的博客新建文章](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客新建文章/)
-[GITHUB+HEXO搭建的博客hexo最常用的几个命令](https://akbcd.github.io/2018/10/27/GITHUB+HEXO搭建的博客hexo最常用的几个命令/)
-[GITHUB+HEXO搭建的博客markdown基本语法](https://akbcd.github.io/2018/10/28/GITHUB+HEXO搭建的博客markdown基本语法/)
-[GITHUB-HEXO搭建的个人博客备份](https://akbcd.github.io/2019/01/15/GITHUB-HEXO搭建的个人博客备份/)
+***
