@@ -62,5 +62,12 @@ git commit -m"..." //增加提交信息，""里面的内容为本次提交信息
 git push origin hexo //将环境文件推送到hexo分支
 hexo g -d //先部署，后生成
 ```
+## 云端hexo博客分支同步到本地
+如果在多台电脑上都建有hexo博客分支，在一台电脑上进行了修改，那么其它电脑如何与云端hexo分支同步呢？
+**这里提供一个方法**
+在想要与云端hexo分支同步的博客上，右键，`git bash here`
+输入命令
+`git pull origin hexo --allow-unrelated-histories` 分支合并
+输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）
 **至此，讲解到此结束，感谢大家的阅读。**
 ***
