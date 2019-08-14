@@ -48,7 +48,8 @@ public class TestCode {
 ## 内部类（了解性内容）
 + **成员内部类**：相当于成员变量
 特点：不允许在内部类里面定义静态的成员和方法
-创建对象方式 内部类类型 对象名=外部类对象.new 内部类类型();
+创建对象方式 
+内部类类型 对象名=外部类对象.new 内部类类型();
 ```
 public class TestMemeberClass{
     //属性
@@ -165,7 +166,7 @@ class JavaT implements Teacher{
     @Override
     //重写接口方法
     public void teach(){
-         System.out.println()
+         System.out.println("java课程");
     }
 }
 ```
@@ -316,7 +317,7 @@ a） 学包装类的目的？
 b） 在java web开发的时候，从前台获取的数据都是String类型
 八种数据类型对应的包装类
 int==>Integer
-char==>character
+char==>Character
 boolean==>Boolean
 只有int和char不是首字母大写，其余与boolean类似，均是首字母大写
 c） 要求会的3对转换
