@@ -130,9 +130,9 @@ public class TestStaticClass{
 ```
 public class TestNoNameClass{
 //完成一个功能
-//学校选课老师 输入偶数，上java课，输入奇数，上html课
+//学校选上课老师 输入偶数，上java课，输入奇数，上html课
     //功能测试
-    public static void main(Sting[] args){
+    public static void main(String[] args){
         School s=new School();
         Teacher t=s.getT(12);//填数值进行判断
         t.teach();//多态
@@ -153,8 +153,20 @@ class School{
                 public void teach(){
                      System.out.println("html课程");
                 }
-            }
+            };
         }
+    }
+}
+//将老师定义为接口
+interface Teacher{
+    //教课
+    void teach();
+}
+class JavaT implements Teacher{
+    @Override
+    //重写接口方法
+    public void teach(){
+         System.out.println("java课程");
     }
 }
 //将老师定义为接口
