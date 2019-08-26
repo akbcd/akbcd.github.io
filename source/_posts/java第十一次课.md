@@ -3,7 +3,7 @@ title: java第十一次课
 date: 2019-08-20 14:46:16
 tags: java
 ---
-本节课主要内容：IO流、Buffered流、Date流、Object流、Print流、转换流
+本节课主要内容：IO流、Buffered流、Data流、Object流、Print流、转换流
 <!--more-->
 ## IO流
 I==》input
@@ -35,7 +35,7 @@ public class TestFile {
 	}
 }
 ```
-### 在某盘下创建一个文件夹，在文件夹里创建文件和文件夹，判断此文件夹下下有多少个文件和文件夹
+### 在某盘下创建一个文件夹，在文件夹里创建文件和文件夹，判断此文件夹下有多少个文件和文件夹
 ```
 import java.io.File;
 import java.io.IOException;
@@ -118,7 +118,9 @@ d:\test\test.txt
 * 按功能分 节点流和处理流
 * 按单位分 字节流和字符流
 ### 四大抽象流
+**字节流**
 * InputStream
+读数据 FileInputStream
 读取26个英文字母
 ```
 import java.io.File;
@@ -175,6 +177,7 @@ public class TestInputStream {
 
 ```
 * OutputStream（不能添加字符）
+写数据 FileOutputStream
 写入26个英文字母
 ```
 import java.io.File;
@@ -218,7 +221,9 @@ public class TestOutputStream {
 }
 
 ```
+**字符流**
 * Reader
+读数据 FileReader
 ```
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -260,6 +265,7 @@ public class TestReader {
 }
 ```
 * Writer（可以添加字符）
+写数据 FileWriter
 ```
 import java.io.File;
 import java.io.FileWriter;
@@ -297,10 +303,10 @@ public class TestWriter {
 ```
 ## Buffered流
 处理流又叫高级流，必须套接在其它节点之上
-特点：对于字符的操作，可以读写一行，，而且还可以减少对硬盘的刷新，因为它带有缓冲区
-子类
-    * BufferedInputStream/OutputStream
-    * Reader/Writer
+特点：对于字符的操作，可以读写一行，而且还可以减少对硬盘的刷新，因为它带有缓冲区
+**子类**
+* BufferedInputStream/OutputStream
+* Reader/Writer
 java设计模式 可以套接一串的对象
 ```
 import java.io.BufferedWriter;
@@ -342,7 +348,7 @@ public class TestBuffered {
 }
 
 ```
-## Date流
+## Data流
 数据流
 特点：能读写和机器无关的8种基本数据类型
 ```
