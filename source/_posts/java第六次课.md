@@ -1,7 +1,7 @@
 ---
 title: java第六次课
 date: 2019-06-26 19:21:42
-tags: java
+tags: java基础
 ---
 ## 回顾
 抽象的关键字？

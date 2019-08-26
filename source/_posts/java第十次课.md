@@ -1,7 +1,7 @@
 ---
 title: java第十次课
 date: 2019-08-20 11:08:34
-tags: java
+tags: java基础
 ---
 本次课主要内容：集合Collection、Map，Collections的一些方法以及与集合相关的几个问题
 <!--more-->

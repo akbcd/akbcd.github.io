@@ -1,7 +1,7 @@
 ---
 title: java第一次课
 date: 2019-05-21 21:08:30
-tags: java
+tags: java基础
 ---
 ## java
 ### 什么是Java语言？

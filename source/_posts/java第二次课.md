@@ -1,7 +1,7 @@
 ---
 title: java第二次课
 date: 2019-05-27 15:21:18
-tags: java
+tags: java基础
 ---
 ## 上节课回顾
 1.变量的三要素

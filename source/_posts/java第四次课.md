@@ -1,7 +1,7 @@
 ---
 title: java第四次课
 date: 2019-06-04 21:34:09
-tags: java
+tags: java基础
 ---
 ## 回顾
 1.类里面有什么？
