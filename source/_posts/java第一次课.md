@@ -3,6 +3,7 @@ title: java第一次课
 date: 2019-05-21 21:08:30
 tags: java基础
 ---
+java基础内容，总共十四次课，这是第一次课
 ## java
 ### 什么是Java语言？
 是计算机语言，比如：c、c++、python、c#等等
