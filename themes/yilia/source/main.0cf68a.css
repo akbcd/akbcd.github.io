@@ -2590,7 +2590,7 @@ pre .css~* .id,pre .id {
     background: rgba(36,193,246,.9)
 }
 
-.jump-container,.toc-container {
+.jump-container, .toc-container {
     position: relative;
     cursor: pointer;
     width: 40px;
@@ -2975,6 +2975,10 @@ pre .css~* .id,pre .id {
 
     .jump-container:active .icon-back {
         background: rgba(36,193,246,.9)
+    }
+
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article{
+        font-size: x-small
     }
 
     .cloud-tie-wrapper {
