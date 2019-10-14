@@ -6,6 +6,11 @@
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
+        <% if(theme.word_count && !post.no_word_count){%>
+          <div>
+            字数：<%= wordcount(post.content) %>字
+          </div>
+        <% } %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">

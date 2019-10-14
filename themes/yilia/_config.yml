@@ -63,6 +63,10 @@ toc_empty_wording: '目录，不存在的…'
 # 是否有快速回到顶部的按钮
 top: true
 
+#是否开启字数统计
+#不需要使用，直接设置值为false，或注释掉
+word_count: true
+
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
