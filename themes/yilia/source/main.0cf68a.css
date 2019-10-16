@@ -1792,7 +1792,7 @@ pre .css~* .id,pre .id {
     position: relative
 }
 
-.tools-col .tools-section .search-wrap .search-ipt {
+.tools-col .tools-section .search-wrap .search-ipt,.search-header .search-ipt {
     width: 310px;
     color: #fff;
     background: none;
@@ -1814,7 +1814,7 @@ pre .css~* .id,pre .id {
     transform: scale(1.2)
 }
 
-.tools-col .tools-section .search-wrap ::-webkit-input-placeholder {
+.tools-col .tools-section .search-wrap ::-webkit-input-placeholder,.search-header ::-webkit-input-placeholder {
     color: #ededed
 }
 

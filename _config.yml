@@ -93,6 +93,10 @@ jsonContent:
       categories: false
       tags: true
 
+search:
+  path: search.xml
+  field: post
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

@@ -44,7 +44,7 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 1
+reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -66,6 +66,12 @@ top: true
 #是否开启字数统计
 #不需要使用，直接设置值为false，或注释掉
 word_count: true
+
+#是否开启全局搜索
+#不开启值为false，开启，值为true
+#使用方法：点击所有文章中的搜索图标
+local_search:
+  enable: true
 
 # Miscellaneous
 baidu_analytics: ''
