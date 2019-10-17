@@ -326,3 +326,66 @@ local_search:
 这里对css的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
 yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有成功实现(实现了搜索弹窗淡入效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
+# yilia主题常见问题及解决办法 下
+## 微信分享二维码失效
+微信分享二维码不显示，是百度生成二维码失效导致，换一个在线生成网址二维码的API接口即可
+### 解决方法
+* 定位文件`themes\yilia\layout\_partial\post\share.ejs`，修改微信分享img标签
+* 将`//pan.baidu.com/share/qrcode?url=`改为`//qr.liantu.com/api.php?text=`即可
+
+这里分享一个文章：[在线生成网址二维码的API接口](https://blog.csdn.net/wang1006008051/article/details/79753051)
+根据自己的需求更改在线生成网址二维码的API接口
+## 浏览器控制台出现`GET https://litten.me:9005/badj`错误提示问题
+关于访问litten.me:9005的问题，这个主题的作者之前为了更好地完善这个主题，有时候会收集用户的客户端信息，详情请见[https://github.com/litten/hexo-theme-yilia/issues/528](https://github.com/litten/hexo-theme-yilia/issues/528)，不过这个请求是异步的，不会影响博客加载速度，而且作者已经不维护了，所以关不关都行。
+如果不想被统计（或不想让控制台报错），看解决办法
+### 解决办法
+* 定位文件`themes\yilia\source\main.0cf68a.js`
+* 在文件中查找`//litten.me:9005/badjs/`
+* 将这段代码所在的函数删除
+
+我删除的内容（就是将`192:`到`193`之间的内容全部删除）
+```
+192: function(e, t, n) {
+        "use strict";
+        function o(e) {
+            var t = new RegExp("(^|&)" + e + "=([^&]*)(&|$)","i")
+              , n = window.location.search.substr(1).match(t);
+            return null != n ? unescape(n[2]) : null
+        }
+        var r = n(388);
+        if (n(197),
+        window.BJ_REPORT) {
+            BJ_REPORT.init({
+                id: 1
+            }),
+            BJ_REPORT.init({
+                id: 1,
+                uin: window.location.origin,
+                combo: 0,
+                delay: 1e3,
+                url: "//litten.me:9005/badjs/",
+                ignore: [/Script error/i],
+                random: 1,
+                repeat: 5e5,
+                onReport: function(e, t) {},
+                ext: {}
+            });
+            var i = window.location.host
+              , a = top === window
+              , u = !(/localhost/i.test(i) || /127.0.0.1/i.test(i) || /0.0.0.0/i.test(i));
+            a && u && BJ_REPORT.report("yilia-" + window.location.host);
+            var l = o("f")
+              , c = "yilia-from";
+            l ? (a && BJ_REPORT.report("from-" + l),
+            r.set(c, l)) : document.referrer.indexOf(window.location.host) >= 0 ? (l = r.get(c),
+            l && a && BJ_REPORT.report("from-" + l)) : r.remove(c)
+        }
+        e.exports = {
+            init: function() {}
+        }
+    },
+```
+* 删除函数的调用
+* 依然是这个文件搜索`192`，会看到`n(386),n(192);`，将`n(192);`删除，`n(386),`改为`n(386);`
+
+到此，问题解决
