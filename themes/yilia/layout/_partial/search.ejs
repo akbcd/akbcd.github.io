@@ -1,5 +1,5 @@
 <% if (theme.local_search && theme.local_search.enable){ %>
-<div id="js-searchModal" style="display: none; opacity: 1; top: 10%;">
+<div id="js-searchModal" style="display: none;">
     <div style="padding: 24px;">
         <div class="search-header">
             <span><i class="icon-search icon"></i>&nbsp;&nbsp;搜索</span>
@@ -15,21 +15,23 @@
         $(function(){
             //背景层样式
             $("#js-modal-overlay").css({
+                "visibility": "visible",
                 "position": "fixed",
-                "z-index": "1002",
-                "top": "-25%",
+                "z-index": "1000",
+                "top": "0",
                 "left": "0",
                 "bottom": "0",
                 "right": "0",
                 "width": "100%",
-                "background": "rgba(0,0,0,0.6)",
-                "will-change": "opacity",
+                "background": "#000",
+                "opacity": ".3",
             });
             //搜索弹窗样式
             $("#js-searchModal").css({
+                "top": "10%",
                 "min-height": "500px",
                 "width": "80%",
-                "z-index": "1003",
+                "z-index": "1001",
                 "position": "fixed",
                 "left": "0",
                 "right": "0",
@@ -39,8 +41,7 @@
                 "margin": "auto",
                 "overflow-x": "hidden",
                 "overflow-y": "auto",
-                "border-radius": "2px",
-                "will-change": "top, opacity"
+                "border-radius": "2px"
             });
             //修改搜索框样式
             $("#js-searchInput").css({"width":"100%"});
@@ -153,12 +154,12 @@
                     });
                     str += "</ul>";
                     $resultContent.innerHTML = str;
-                    //搜索结果样式修改
+                    //搜索结果样式（li标签）修改
                     $(".search-result-list li").css({
                         "border-bottom":"1px dotted #dcdcdc",
                         "padding-top": "5px"
                     });
-                    //搜索结果标题样式
+                    //搜索结果标题（a标签）样式
                     $(".search-result-list a").css({
                         "color": "#fff",
                         "font-size":"18px",

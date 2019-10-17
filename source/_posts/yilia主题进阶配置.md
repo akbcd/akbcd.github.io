@@ -4,6 +4,7 @@ date: 2019-10-14 11:13:55
 tags: 博客
 ---
 这篇文章添加几个适用于yilia主题的功能
+本篇文章可与[yilia主题常见问题及解决办法](https://akbcd.github.io/2019/06/27/yilia主题常见问题及解决办法/)结合着看
 <!--more-->
 ## yilia主题添加本地头像
 如果你的头像是引用网络的，那就要注意了，网络上的图片随时都有可能被删除，删除之后，头像就没有了
@@ -88,7 +89,7 @@ search:
 在`search.ejs`中添加以下内容（总共183行，粘贴到`search.ejs`中即可）
 ```
 <% if (theme.local_search && theme.local_search.enable){ %>
-<div id="js-searchModal" style="display: none; opacity: 1; top: 10%;">
+<div id="js-searchModal" style="display: none;">
     <div style="padding: 24px;">
         <div class="search-header">
             <span><i class="icon-search icon"></i>&nbsp;&nbsp;搜索</span>
@@ -104,21 +105,23 @@ search:
         $(function(){
             //背景层样式
             $("#js-modal-overlay").css({
+                "visibility": "visible",
                 "position": "fixed",
-                "z-index": "1002",
-                "top": "-25%",
+                "z-index": "1000",
+                "top": "0",
                 "left": "0",
                 "bottom": "0",
                 "right": "0",
                 "width": "100%",
-                "background": "rgba(0,0,0,0.6)",
-                "will-change": "opacity",
+                "background": "#000",
+                "opacity": ".3",
             });
             //搜索弹窗样式
             $("#js-searchModal").css({
+                "top": "10%",
                 "min-height": "500px",
                 "width": "80%",
-                "z-index": "1003",
+                "z-index": "1001",
                 "position": "fixed",
                 "left": "0",
                 "right": "0",
@@ -128,8 +131,7 @@ search:
                 "margin": "auto",
                 "overflow-x": "hidden",
                 "overflow-y": "auto",
-                "border-radius": "2px",
-                "will-change": "top, opacity"
+                "border-radius": "2px"
             });
             //修改搜索框样式
             $("#js-searchInput").css({"width":"100%"});
@@ -242,12 +244,12 @@ search:
                     });
                     str += "</ul>";
                     $resultContent.innerHTML = str;
-                    //搜索结果样式修改
+                    //搜索结果样式（li标签）修改
                     $(".search-result-list li").css({
                         "border-bottom":"1px dotted #dcdcdc",
                         "padding-top": "5px"
                     });
-                    //搜索结果标题样式
+                    //搜索结果标题（a标签）样式
                     $(".search-result-list a").css({
                         "color": "#fff",
                         "font-size":"18px",
@@ -275,7 +277,7 @@ search:
 </script>
 <% } %>
 ```
-* 定位文件`themes\yilia\layout\layout.ejs`，在里面的body标签下添加内容：`<%- partial('_partial/search') %>`
+* 定位文件`themes\yilia\layout\layout.ejs`，在里面的body标签下添加内容：`<%- partial('_partial/search') %>`（添加位置可以根据需求更改）
 
 ```
 <body>
@@ -286,7 +288,7 @@ search:
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 ```
 * 修改搜索弹窗的样式，定位文件`themes\yilia\source\main.0cf68a.css`，在里面查找
-`.tools-col .tools-section .search-wrap .search-ipt`，在后面添加`,.search-header .search-ipt`
+`.tools-col .tools-section .search-wrap .search-ipt`，在后面添加`,.search-header .search-ipt`（导入所有文章中搜索框样式）
 ```
 .tools-col .tools-section .search-wrap .search-ipt,.search-header .search-ipt {
     width: 310px;
@@ -298,17 +300,18 @@ search:
 }
 ```
 * 依然是这里面，查找
-`.tools-col .tools-section .search-wrap ::-webkit-input-placeholder`，后面添加`,.search-header ::-webkit-input-placeholder`
+`.tools-col .tools-section .search-wrap ::-webkit-input-placeholder`，后面添加`,.search-header ::-webkit-input-placeholder`（修改输入搜索文字的颜色与所有文章中的相同）
 ```
 .tools-col .tools-section .search-wrap ::-webkit-input-placeholder,.search-header ::-webkit-input-placeholder {
     color: #ededed
 }
 ```
-* 定位文件`themes\yilia\layout\_partial\tools.ejs`，在里面找到搜索图标的i标签，在标签里添加一个id：`js-icon-search`
+* 定位文件`themes\yilia\layout\_partial\tools.ejs`，在里面找到搜索图标的i标签，在标签里添加一个id：`js-icon-search`（添加搜索弹窗事件）
 这里实现的是点击搜索图标出现搜索框
 ```
 <div class="search-wrap">
   <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+  <!--修改位置-->
   <i class="icon-search icon" q-show="search|isEmptyStr" id="js-icon-search"></i>
   <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
 </div>
@@ -321,17 +324,17 @@ search:
 local_search:
   enable: true
 ```
-简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层，在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
+简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
-这里对css的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
-yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有成功实现(实现了搜索弹窗淡入效果)
+这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
+yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(实现了搜索弹窗淡入效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
 # yilia主题常见问题及解决办法 下
 ## 微信分享二维码失效
 微信分享二维码不显示，是百度生成二维码失效导致，换一个在线生成网址二维码的API接口即可
 ### 解决方法
 * 定位文件`themes\yilia\layout\_partial\post\share.ejs`，修改微信分享img标签
-* 将`//pan.baidu.com/share/qrcode?url=`改为`//qr.liantu.com/api.php?text=`即可
+* 将`//pan.baidu.com/share/qrcode?url=`改为`//qr.liantu.com/api.php?text=`即可（如果依然不显示，修改为`http://qr.liantu.com/api.php?text=`再试）
 
 这里分享一个文章：[在线生成网址二维码的API接口](https://blog.csdn.net/wang1006008051/article/details/79753051)
 根据自己的需求更改在线生成网址二维码的API接口
