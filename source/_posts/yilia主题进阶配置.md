@@ -64,9 +64,9 @@ hexo-theme-matery主题开发者：[https://blinkfox.github.io/](https://blinkfo
 
 ### 效果图
 pc页面
-![](search1.png)
+![](pc-search.png)
 手机页面
-![](search2.png)
+![](phone-search.png)
 
 ### 实现方法
 本功能的实现需要导入jquery，我用的版本是`jquery-3.4.1.js`
