@@ -101,17 +101,7 @@ search:
 <div id="js-modal-overlay" style="display: none;"></div>
 <script type="text/javascript">
     window.onload=function(){
-        var jsm = document.getElementById('js-searchModal');
-        var jmo = document.getElementById('js-modal-overlay');
-        //给搜索图标添加点击事件
-        var open = document.getElementById('js-icon-search');
-        open.onclick = function(){
-            //弹出搜索    
-            jsm.style.display = 'block';
-            jmo.style.display = 'block';
-            document.body.style.position = 'fixed';
-            jmo.style.width = document.body.scrollWidth;
-            $("#" + 'js-modal-overlay').height($(document).height());
+        $(function(){
             //背景层样式
             $("#js-modal-overlay").css({
                 "position": "fixed",
@@ -120,12 +110,11 @@ search:
                 "left": "0",
                 "bottom": "0",
                 "right": "0",
-                "height": "125%",
                 "width": "100%",
                 "background": "rgba(0,0,0,0.6)",
                 "will-change": "opacity",
             });
-            //搜索弹窗
+            //搜索弹窗样式
             $("#js-searchModal").css({
                 "min-height": "500px",
                 "width": "80%",
@@ -144,14 +133,27 @@ search:
             });
             //修改搜索框样式
             $("#js-searchInput").css({"width":"100%"});
-            $(".search-header").css({"color": "#fff"});
+            $(".search-header,.search-header i").css({
+                "color": "#fff",
+                "font-size": "18px"
+            });
+        })
+        var jsm = document.getElementById('js-searchModal');
+        var jmo = document.getElementById('js-modal-overlay');
+        //给搜索图标添加点击事件
+        var open = document.getElementById('js-icon-search');
+        open.onclick = function(){
+            //弹窗出现时淡入动画
+            $("#js-searchModal").fadeIn(2000);
+            //弹出搜索    
+            jsm.style.display = 'block';
+            jmo.style.display = 'block';
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
             jsm.style.display = 'none';
             jmo.style.display = 'none';
-            $('body').removeAttr('style');
         }
     }
 </script>
@@ -247,13 +249,15 @@ search:
                     });
                     //搜索结果标题样式
                     $(".search-result-list a").css({
-                        "color": "#fffff8",
+                        "color": "#fff",
                         "font-size":"18px",
                         "font-weight": "300",
                         "line-height": "35px"
                     });
+                    //搜索结果内容样式
                     $(".search-result-list .search-result").css({
                         "font-size": "16px",
+                        "line-height": "20px",
                         "color": "#fffdd8"
                     });
                     $(".search-result-list .search-keyword").css({
@@ -320,5 +324,5 @@ local_search:
 简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层，在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
 这里对css的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
-yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有成功实现
+yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有成功实现(实现了搜索弹窗淡入效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能

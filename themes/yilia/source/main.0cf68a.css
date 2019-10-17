@@ -2966,7 +2966,7 @@ pre .css~* .id,pre .id {
     }
 
     .wrap-side-operation {
-        right: 0
+        right: 10px
     }
 
     .jump-container:hover .icon-back {
