@@ -769,8 +769,7 @@ body {
 
 #container,body,html {
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto
+    overflow-x: hidden
 }
 
 #mobile-nav {
@@ -2978,7 +2977,16 @@ pre .css~* .id,pre .id {
     }
 
     .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article{
+        max-height: 400px;
         font-size: x-small
+    }
+
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc {
+        width: 250px
+    }
+
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
+        white-space: normal
     }
 
     .cloud-tie-wrapper {

@@ -2,6 +2,8 @@
 title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
+toc: true
+top: true
 ---
 这篇文章添加几个适用于yilia主题的功能
 本篇文章可与[yilia主题常见问题及解决办法](https://akbcd.github.io/2019/06/27/yilia主题常见问题及解决办法/)结合着看
@@ -57,9 +59,11 @@ word_count: true
 
 ## 安装全局搜索功能
 yilia博客拥有一个搜索功能，这个功能只能匹配到标题和标签，不是很强大，接下来介绍一个能匹配到文章内容的搜索功能
-这个功能的实现，感谢以下网站：
-全局搜索功能的开发者： [jQuery-based Local Search Engine for Hexo](https://www.hahack.com/codes/local-search-engine-for-hexo/)
-hexo-theme-matery主题开发者：[https://blinkfox.github.io/](https://blinkfox.github.io/)
+这个功能的实现，感谢：
+全局搜索功能的开发者： 
+[jQuery-based Local Search Engine for Hexo](https://www.hahack.com/codes/local-search-engine-for-hexo/)
+hexo-theme-matery主题开发者：
+[https://blinkfox.github.io/](https://blinkfox.github.io/)
 没有他们的贡献，我自己实现不了这个功能，本功能实现效果与hexo-theme-matery主题类似
 
 ### 效果图
@@ -86,7 +90,7 @@ search:
 * 在主题路径`themes\yilia\layout\_partial`下创建`search.ejs`文件
 * 上jquery官网下载jquery，将`jquery-3.4.1.js`放在`themes\yilia\source`路径下
 
-在`search.ejs`中添加以下内容（总共183行，粘贴到`search.ejs`中即可）
+在`search.ejs`中添加以下内容（粘贴到`search.ejs`中即可）
 ```
 <% if (theme.local_search && theme.local_search.enable){ %>
 <div id="js-searchModal" style="display: none;">
@@ -279,6 +283,8 @@ search:
 ```
 * 定位文件`themes\yilia\layout\layout.ejs`，在里面的body标签下添加内容：`<%- partial('_partial/search') %>`（添加位置可以根据需求更改）
 
+**注意：不要添加在body标签内的最后，即主题导入js之后，这样会导致主题的部分js失效**
+
 ```
 <body>
   <!--开始添加-->
@@ -329,6 +335,33 @@ local_search:
 这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
 yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(实现了搜索弹窗淡入效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
+## yilia主题添加博客文章置顶功能和置顶标签
+目前已经有了博客文章置顶的插件，觉得这个功能很好用，在这里分享一下
+参考链接
+[hexo博客优化之文章置顶+置顶标签](https://blog.csdn.net/qwerty200696/article/details/79010629)
+感谢插件的制作者
+[hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
+### 实现方法
+* 安装插件（博客根目录git安装）
+`npm uninstall hexo-generator-index --save`
+`npm install hexo-generator-index-pin-top --save`
+安装完成后
+* 在需要置顶的文章中加上`top: true`即可
+
+```
+---
+title: jsp第一次课
+date: 2019-10-09 09:54:51
+tags: jsp
+top: true
+---
+```
+* 本地预览`hexo s`，你会看到yilia主题自带置顶标签，不需要进行额外的添加
+![](top.png)
+* 到此，功能实现完成
+
+还有一种方法，修改`Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js`文件，个人感觉没有这个简单，这里不进行介绍。
+感兴趣的话，点击[新增Hexo博客文章置顶功能](https://zhousiwei.gitee.io/2019/02/25/新增Hexo博客文章置顶功能/)
 # yilia主题常见问题及解决办法 下
 ## 微信分享二维码失效
 微信分享二维码不显示，是百度生成二维码失效导致，换一个在线生成网址二维码的API接口即可
@@ -392,3 +425,31 @@ yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现
 * 依然是这个文件搜索`192`，会看到`n(386),n(192);`，将`n(192);`删除，`n(386),`改为`n(386);`
 
 到此，问题解决
+## yilia主题移动端目录问题
+如果目录文字过长，你会发现如下问题
+![](before-toc.png)
+目录左侧溢出，如果想解决，参看以下解决办法
+### 解决办法
+* 修改移动端css
+* 定位文件`themes\yilia\source\main.0cf68a.css`，查找`@media screen and (max-width: 800px)`，在下面添加以下内容
+
+```
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article{
+    max-height: 400px;
+    font-size: x-small
+}
+
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc {
+    width: 250px
+}
+
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
+    white-space: normal
+}
+```
+* 第一个样式是修改目录高度以及文字大小
+* 第二个样式是修改目录宽度
+* 第三个样式修改目录文字是否换行（pc端页面，标题文字设置的不换行，所以出现了目录左侧溢出）
+
+修改完效果如下：
+![](after-toc.png)
