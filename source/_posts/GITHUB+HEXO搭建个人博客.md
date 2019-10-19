@@ -21,8 +21,8 @@ tags: 博客
 
 右键任意地方选择git bash here 输入以下命令：
 - npm install -g cnpm `--`registry=https://registry.npm.taobao.org
-- npm install -g hexo
-- hexo g(安装全局hexo)
+- npm install -g hexo(安装全局hexo)
+- `npm install hexo --save`(本地hexo安装)
 - hexo -v(hexo是否已安装)
 
 找到自己创建的blog文件夹-右键打开选择git bash here 输入以下命令:
