@@ -3721,12 +3721,12 @@
     }
     function i(t, n) {
         var r = /\/|index.html/g;
-        return t.replace(r, "") === n.replace(r, "")
+        return decodeURI(t).replace(r, "") === decodeURI(n).replace(r, "")
     }
     function o() {
         for (var t = document.querySelectorAll(".js-header-menu li a"), n = window.location.pathname, r = 0, e = t.length; r < e; r++) {
             var o = t[r];
-            i(decodeURI(n), o.getAttribute("href")) && (0,
+            i(n, o.getAttribute("href")) && (0,
             h.default)(o, "active")
         }
     }

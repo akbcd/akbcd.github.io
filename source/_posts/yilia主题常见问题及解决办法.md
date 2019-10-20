@@ -60,7 +60,7 @@ yilia主题网页语言配置有一个问题，谷歌浏览器每次刷新页面
 **皇天不负有心人，经过我的多番探索，找到了解决方法**
 **问题分析**
 - 1.首先，这个是点击a标签后，在a标签上添加了一个class属性：active,然后通过css改变点击后a标签的样式。（添加样式的方法只能是js语句）
-- 2.定位文件 在主题文件中用编译器查找`.header-menu li a`，在文件目录`themes\yilia\layout\_partial`找到`script.ejs`文件，你会查询到以下代码(我的代码经过规范化整理，并非在一行显示)
+- 2.定位文件 在主题文件中用编译器查找`.js-header-menu li a`，在文件目录`themes\yilia\layout\_partial`找到`script.ejs`文件，你会查询到以下代码(我的代码经过规范化整理，并非在一行显示)
 ```
 function i(t, n) {
         var r = /\/|index.html/g;
