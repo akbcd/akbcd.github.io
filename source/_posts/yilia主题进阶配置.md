@@ -148,6 +148,7 @@ search:
         var jmo = document.getElementById('js-modal-overlay');
         //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
+        open.setAttribute("title","搜索")
         open.onclick = function(){
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(2000);

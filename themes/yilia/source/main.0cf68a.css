@@ -2563,7 +2563,7 @@ pre .css~* .id,pre .id {
 
 .wrap-side-operation {
     position: fixed;
-    right: 40px;
+    right: 50px;
     bottom: 50px;
     z-index: 999;
     font-size: 14px

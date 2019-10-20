@@ -17,7 +17,7 @@
     <% var divide = 100 / count + '%' %>
     <% for (var i in theme.smart_menu){ %>
       <% if(theme.smart_menu[i]){ %>
-      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
+      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a style="cursor:pointer" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
       <% } %>
         <%}%>
     </ul>
@@ -38,7 +38,7 @@
           <ul class="article-tag-list" q-show="showTags">
             <% site.tags.forEach(function(tag, i){ %> 
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+                <a style="cursor:pointer" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
               </li>
             <% }) %>
             <div class="clearfix"></div>
