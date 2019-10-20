@@ -108,13 +108,10 @@ search:
         $(function(){
             //背景层样式
             $("#js-modal-overlay").css({
-                "visibility": "visible",
                 "position": "fixed",
                 "z-index": "1000",
                 "top": "0",
-                "left": "0",
                 "bottom": "0",
-                "right": "0",
                 "width": "100%",
                 "background": "#000",
                 "opacity": ".3",
@@ -149,6 +146,9 @@ search:
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
+            if(screen.width<=800){
+                document.body.style.position = 'fixed';
+            }
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(2000);
             //弹出搜索    
@@ -158,6 +158,7 @@ search:
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
+            document.body.removeAttribute('style');
             jsm.style.display = 'none';
             jmo.style.display = 'none';
         }
