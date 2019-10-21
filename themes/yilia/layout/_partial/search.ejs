@@ -47,27 +47,27 @@
                 "font-size": "18px"
             });
         })
-        var jsm = document.getElementById('js-searchModal');
-        var jmo = document.getElementById('js-modal-overlay');
         //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            if(screen.width<=800){
+            //pc端body标签添加fixed会出问题，这里只给移动端添加
+            if(/Mobile/i.test(navigator.userAgent)&&screen.width < 800){
+                //移动端页面固定滚动条，pc端滚动条不需要额外固定
                 document.body.style.position = 'fixed';
             }
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(2000);
-            //弹出搜索 
-            jsm.style.display = 'block';
-            jmo.style.display = 'block';
+            $("#js-modal-overlay").fadeIn(2000);
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
+            //移除移动端页面固定滚动条
             document.body.removeAttribute('style');
-            jsm.style.display = 'none';
-            jmo.style.display = 'none';
+            //弹窗关闭时淡出动画
+            $("#js-searchModal").fadeOut(2000);
+            $("#js-modal-overlay").fadeOut(2000);
         }
     }
 </script>
@@ -148,7 +148,6 @@
                                     var regS = new RegExp(keyword, "gi");
                                     match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                                 });
-
                                 str += "<p class=\"search-result\">" + match_content + "...</p>"
                             }
                             str += "</li>";
@@ -156,7 +155,7 @@
                     });
                     str += "</ul>";
                     $resultContent.innerHTML = str;
-                    //搜索结果样式（li标签）修改
+                    //搜索结果框架样式（li标签）
                     $(".search-result-list li").css({
                         "border-bottom":"1px dotted #dcdcdc",
                         "padding-top": "5px"
@@ -174,6 +173,7 @@
                         "line-height": "20px",
                         "color": "#fffdd8"
                     });
+                    //匹配词样式
                     $(".search-result-list .search-keyword").css({
                         "color":"#e96900",
                         "font-style":"normal"

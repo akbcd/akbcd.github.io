@@ -140,27 +140,27 @@ search:
                 "font-size": "18px"
             });
         })
-        var jsm = document.getElementById('js-searchModal');
-        var jmo = document.getElementById('js-modal-overlay');
         //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            if(screen.width<=800){
+            //pc端body标签添加fixed会出问题，这里只给移动端添加
+            if(/Mobile/i.test(navigator.userAgent)&&screen.width < 800){
+                //移动端页面固定滚动条，pc端滚动条不需要额外固定
                 document.body.style.position = 'fixed';
             }
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(2000);
-            //弹出搜索    
-            jsm.style.display = 'block';
-            jmo.style.display = 'block';
+            $("#js-modal-overlay").fadeIn(2000);
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
+            //移除移动端页面固定滚动条
             document.body.removeAttribute('style');
-            jsm.style.display = 'none';
-            jmo.style.display = 'none';
+            //弹窗关闭时淡出动画
+            $("#js-searchModal").fadeOut(2000);
+            $("#js-modal-overlay").fadeOut(2000);
         }
     }
 </script>
@@ -241,7 +241,6 @@ search:
                                     var regS = new RegExp(keyword, "gi");
                                     match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                                 });
-
                                 str += "<p class=\"search-result\">" + match_content + "...</p>"
                             }
                             str += "</li>";
@@ -249,7 +248,7 @@ search:
                     });
                     str += "</ul>";
                     $resultContent.innerHTML = str;
-                    //搜索结果样式（li标签）修改
+                    //搜索结果框架样式（li标签）
                     $(".search-result-list li").css({
                         "border-bottom":"1px dotted #dcdcdc",
                         "padding-top": "5px"
@@ -267,6 +266,7 @@ search:
                         "line-height": "20px",
                         "color": "#fffdd8"
                     });
+                    //匹配词样式
                     $(".search-result-list .search-keyword").css({
                         "color":"#e96900",
                         "font-style":"normal"
@@ -285,6 +285,7 @@ search:
 * 定位文件`themes\yilia\layout\layout.ejs`，在里面的body标签下添加内容：`<%- partial('_partial/search') %>`（添加位置可以根据需求更改）
 
 **注意：不要添加在body标签内的最后，即主题导入js之后，这样会导致主题的部分js失效**
+**建议在以下位置添加**
 
 ```
 <body>
@@ -334,7 +335,7 @@ local_search:
 简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
 这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
-yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(实现了搜索弹窗淡入效果)
+yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(添加了搜索弹窗淡入淡出效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
 ## yilia主题添加博客文章置顶功能和置顶标签
 目前已经有了博客文章置顶的插件，觉得这个功能很好用，在这里分享一下
