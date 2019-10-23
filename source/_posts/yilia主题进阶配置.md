@@ -127,10 +127,8 @@ search:
                 "right": "0",
                 "background": "linear-gradient(200deg,#a0cfe4,#e8c37e)",
                 "max-height": "70%",
-                "width": "80%",
                 "margin": "auto",
-                "overflow-x": "hidden",
-                "overflow-y": "auto",
+                "overflow": "hidden auto",
                 "border-radius": "2px"
             });
             //修改搜索框样式
@@ -159,8 +157,8 @@ search:
             //移除移动端页面固定滚动条
             document.body.removeAttribute('style');
             //弹窗关闭时淡出动画
-            $("#js-searchModal").fadeOut(2000);
-            $("#js-modal-overlay").fadeOut(2000);
+            $("#js-searchModal").fadeOut(1000);
+            $("#js-modal-overlay").fadeOut(1000);
         }
     }
 </script>
@@ -334,7 +332,7 @@ local_search:
 ```
 简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
-这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现，添加css样式的的地方里面有提示，可以根据自己的需求更改
+这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现（可以自行将js实现的样式添加到`main.0cf68a.css`），添加css样式的的地方里面有提示，可以根据自己的需求更改
 yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(添加了搜索弹窗淡入淡出效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
 ## yilia主题添加博客文章置顶功能和置顶标签
