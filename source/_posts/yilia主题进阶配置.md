@@ -128,7 +128,8 @@ search:
                 "background": "linear-gradient(200deg,#a0cfe4,#e8c37e)",
                 "max-height": "70%",
                 "margin": "auto",
-                "overflow": "hidden auto",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
                 "border-radius": "2px"
             });
             //修改搜索框样式
