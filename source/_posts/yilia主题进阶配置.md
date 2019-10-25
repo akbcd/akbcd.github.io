@@ -3,7 +3,6 @@ title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
 toc: true
-top: true
 ---
 这篇文章添加几个适用于yilia主题的功能
 本篇文章可与[yilia主题常见问题及解决办法](https://akbcd.github.io/2019/06/27/yilia主题常见问题及解决办法/)结合着看
@@ -67,9 +66,9 @@ hexo-theme-matery主题开发者：
 
 ### 效果图
 pc页面
-![](pc-search.png)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8asepxgnbj30kj09yqbv.jpg)
 手机页面
-![](phone-search.png)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8asf74sq6j30ci0k67dj.jpg)
 
 ### 实现方法
 本功能的实现需要导入jquery，我用的版本是`jquery-3.4.1.js`
@@ -358,7 +357,7 @@ top: true
 ---
 ```
 * 本地预览`hexo s`，你会看到yilia主题自带置顶标签，不需要进行额外的添加
-![](top.png)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8ash8bd5kj308902pa9u.jpg)
 * 到此，功能实现完成
 
 还有一种方法，修改`Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js`文件，个人感觉没有这个简单，这里不进行介绍。
@@ -428,7 +427,7 @@ top: true
 到此，问题解决
 ## yilia主题移动端目录问题
 如果目录文字过长，你会发现如下问题
-![](before-toc.png)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8asg89qimj30ci0k9dl9.jpg)
 目录左侧溢出，如果想解决，参看以下解决办法
 ### 解决办法
 * 修改移动端css
@@ -453,4 +452,4 @@ top: true
 * 第三个样式修改目录文字是否换行（pc端页面，标题文字设置的不换行，所以出现了目录左侧溢出）
 
 修改完效果如下：
-![](after-toc.png)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8asgr7yb4j30ci0jzgr7.jpg)
