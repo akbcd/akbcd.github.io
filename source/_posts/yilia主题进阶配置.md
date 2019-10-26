@@ -2,6 +2,7 @@
 title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
+top: true
 toc: true
 ---
 这篇文章添加几个适用于yilia主题的功能
@@ -453,3 +454,42 @@ top: true
 
 修改完效果如下：
 ![](https://tva1.sinaimg.cn/large/007X8olVly1g8asgr7yb4j30ci0jzgr7.jpg)
+## yilia主题控制台两个警告提示
+### 不匹配的结束标记。
+
+通过控制台，可以发现问题提示在p标签
+```
+<p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+```
+#### 解决办法
+p标签不能嵌套pre标签（通过控制台查看元素可以发现p标签和pre标签是并列出现的，浏览器将外层的p标签变成了两个p标签，与pre标签并列），将`</p>`移至pre标签之前，取消嵌套
+### 注释结尾的字符不符合要求。应为 `“-->”` 字符。
+我发现问题出现在预加载注释上
+`<!-- element will get class pswp__preloader--active when preloader is running -->`
+`--`符号出现了问题
+#### 解决办法
+这个就是一个简单的注释，在部分浏览器会出现提示，将`--`符号误以为注释结尾，本身没有问题
+如果想改的话，将`--`改为`——`，控制台提示消失
