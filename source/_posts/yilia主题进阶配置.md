@@ -307,7 +307,7 @@ search:
 }
 ```
 * 依然是这里面，查找
-`.tools-col .tools-section .search-wrap ::-webkit-input-placeholder`，后面添加`,.search-header ::-webkit-input-placeholder`（修改输入搜索文字的颜色与所有文章中的相同）
+`.tools-col .tools-section .search-wrap ::-webkit-input-placeholder`，后面添加`,.search-header ::-webkit-input-placeholder`（修改搜索框提示文字的颜色与所有文章中的相同）
 ```
 .tools-col .tools-section .search-wrap ::-webkit-input-placeholder,.search-header ::-webkit-input-placeholder {
     color: #ededed

@@ -3518,12 +3518,13 @@ function(t, n) {
 	"use strict";
 	function r() {
 		var t = document.querySelector("#page-nav");
-		if (t && !document.querySelector("#page-nav .extend.prev") && (t.innerHTML = '<a class="extend prev disabled" rel="prev"></a>' + t.innerHTML), t && !document.querySelector("#page-nav .extend.next") && (t.innerHTML = t.innerHTML + '<a class="extend next disabled" rel="next"></a>'), yiliaConfig && yiliaConfig.open_in_new) {
-			document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t) {
-				var n = t.getAttribute("target");
-				n && "" !== n || t.setAttribute("target", "_blank")
-			})
-		}
+		//删除首页上一页和尾页下一页
+		// if (t && !document.querySelector("#page-nav .extend.prev") && (t.innerHTML = '<a class="extend prev disabled" rel="prev">&laquo; Prev</a>' + t.innerHTML), t && !document.querySelector("#page-nav .extend.next") && (t.innerHTML = t.innerHTML + '<a class="extend next disabled" rel="next">Next &raquo;</a>'), yiliaConfig && yiliaConfig.open_in_new) {
+		// 	document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t) {
+		// 		var n = t.getAttribute("target");
+		// 		n && "" !== n || t.setAttribute("target", "_blank")
+		// 	})
+		// }
 		if (yiliaConfig && yiliaConfig.toc_hide_index) {
 			document.querySelectorAll(".toc-number").forEach(function(t) {
 				t.style.display = "none"
@@ -3546,6 +3547,7 @@ function(t, n, r) {
 	}
 	function i(t, n) {
 		var r = /\/|index.html/g;
+		//修复URL加密导致移动端样式失效
 		return decodeURI(t).replace(r, "") === decodeURI(n).replace(r, "")
 	}
 	function o() {
@@ -3584,6 +3586,7 @@ function(t, n, r) {
 	}
 	function a() {
 		var t = document.querySelector(".js-overlay"),
+		//移动端动画兼容解决
 		n = document.querySelector(".js-header-menu"),
 		sTop = document.body.scrollTop || document.documentElement.scrollTop;
 		f(t, sTop, -63, 2, 0),
