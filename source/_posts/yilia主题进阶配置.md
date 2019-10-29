@@ -143,11 +143,12 @@ search:
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            //pc端body标签添加fixed会出问题，这里只给移动端添加
-            if(/Mobile/i.test(navigator.userAgent)&&screen.width < 800){
-                //移动端页面固定滚动条，pc端滚动条不需要额外固定
-                document.body.style.position = 'fixed';
-            }
+            //固定body标签
+            $("body").css({
+                "position":"fixed",
+                "right":"0",
+                "left":"0"
+            })
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(2000);
             $("#js-modal-overlay").fadeIn(2000);
