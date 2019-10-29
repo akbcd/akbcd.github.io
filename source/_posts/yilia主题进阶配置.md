@@ -2,7 +2,6 @@
 title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
-top: true
 toc: true
 ---
 这篇文章添加几个适用于yilia主题的功能
