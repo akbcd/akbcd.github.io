@@ -12,16 +12,29 @@
 <div id="js-modal-overlay"></div>
 <script type="text/javascript">
     window.onload=function(){
+        var top1=0;
+        function stopBodyScroll(isFixed){
+            var bodyEl=document.body;
+            if(isFixed){
+                //获取页面滚动的距离
+                top1=window.scrollY;
+                //将body标签在当前位置固定
+                bodyEl.style.position='fixed';
+                bodyEl.style.top=-top1+'px';
+                bodyEl.style.width='100%'
+            }else{
+                bodyEl.style.position='';
+                bodyEl.style.top='';
+                //页面回到获取的位置
+                window.scrollTo(0,top1)
+            }
+        }
         //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            //固定body标签
-            $("body").css({
-                "position":"fixed",
-                "right":"0",
-                "left":"0"
-            })
+            //固定body
+            stopBodyScroll(true);
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(1000);
             $("#js-modal-overlay").fadeIn(1000);
@@ -29,7 +42,8 @@
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
-            //移除移动端页面固定滚动条
+            //移除body固定
+            stopBodyScroll(false);
             document.body.removeAttribute('style');
             //弹窗关闭时淡出动画
             $("#js-searchModal").fadeOut(500);

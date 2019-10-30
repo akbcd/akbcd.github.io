@@ -104,6 +104,23 @@ search:
 <div id="js-modal-overlay" style="display: none;"></div>
 <script type="text/javascript">
     window.onload=function(){
+        var top1=0;
+        function stopBodyScroll(isFixed){
+            var bodyEl=document.body;
+            if(isFixed){
+                //获取页面滚动的距离
+                top1=window.scrollY;
+                //将body标签在当前位置固定
+                bodyEl.style.position='fixed';
+                bodyEl.style.top=-top1+'px';
+                bodyEl.style.width='100%'
+            }else{
+                //页面回到获取的位置
+                bodyEl.style.position='';
+                bodyEl.style.top='';
+                window.scrollTo(0,top1)
+            }
+        }
         $(function(){
             //背景层样式
             $("#js-modal-overlay").css({
@@ -142,24 +159,21 @@ search:
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            //固定body标签
-            $("body").css({
-                "position":"fixed",
-                "right":"0",
-                "left":"0"
-            })
+            //固定body
+            stopBodyScroll(true);
             //弹窗出现时淡入动画
-            $("#js-searchModal").fadeIn(2000);
-            $("#js-modal-overlay").fadeIn(2000);
+            $("#js-searchModal").fadeIn(1000);
+            $("#js-modal-overlay").fadeIn(1000);
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
-            //移除移动端页面固定滚动条
+            //移除body固定
+            stopBodyScroll(false);
             document.body.removeAttribute('style');
             //弹窗关闭时淡出动画
-            $("#js-searchModal").fadeOut(1000);
-            $("#js-modal-overlay").fadeOut(1000);
+            $("#js-searchModal").fadeOut(500);
+            $("#js-modal-overlay").fadeOut(500);
         }
     }
 </script>
@@ -331,7 +345,7 @@ search:
 local_search:
   enable: true
 ```
-简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索
+简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），并将body固定在当前位置（禁止背景层下的内容滚动），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索，移除body固定
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
 这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现（可以自行将js实现的样式添加到`main.0cf68a.css`），添加css样式的的地方里面有提示，可以根据自己的需求更改
 yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(添加了搜索弹窗淡入淡出效果)
