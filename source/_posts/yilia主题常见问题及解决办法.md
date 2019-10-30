@@ -178,8 +178,7 @@ Google Chrome浏览器
 ```
 function a() {
         var t = document.querySelector(".js-overlay")
-            , n = document.querySelector(".js-header-menu")
-            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+            , n = document.querySelector(".js-header-menu"); 
         f(t, document.body.scrollTop, -63, 2, 0),
         f(n, document.body.scrollTop, 1, 3, 0)
     }
@@ -250,8 +249,7 @@ function u(t) {
     }
     function a() {
         var t = document.querySelector(".js-overlay")
-            , n = document.querySelector(".js-header-menu")
-            , sTop=document.body.scrollTop+document.documentElement.scrollTop;
+            , n = document.querySelector(".js-header-menu");
         f(t, document.body.scrollTop, -63, 2, 0),
         f(n, document.body.scrollTop, 1, 3, 0)
     }
@@ -266,7 +264,7 @@ IE6/7/8：
 IE9及以上：
 可以使用window.pageYOffset或者document.documentElement.scrollTop 
 Safari: 
-safari： window.pageYOffset 与document.body.scrollTop都可以； 
+safari： window.pageYOffset 与document.body.scrollTop都可以；
 Firefox: 
 火狐等等相对标准些的浏览器就省心多了，直接用window.pageYOffset 或者 document.documentElement.scrollTop ；
 Chrome：
@@ -278,6 +276,7 @@ var sTop=document.body.scrollTop+document.documentElement.scrollTop;
 这两个值总会有一个恒为0，所以不用担心会对真正的scrollTop造成影响。一点小技巧，但很实用。
 ***
 - 这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了。当然，可能会有浏览器`document.body.scrollTop`和`document.documentElement.scrollTop`都识别的情况，因此，提供一个`||`语句判断，即`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`。
+- 这里介绍一个属性`window.scrollY`，用这个也可以
 - 代码修改如下：
 ```
 function a() {

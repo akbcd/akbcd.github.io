@@ -663,10 +663,10 @@ body {
 	overflow-y:hidden;
 	background:#eaeaea
 }
+/* 移除overflow-y:auto，解决浏览器出现双滚动条 */
 #container,body,html {
 	height:100%;
-	overflow-x:hidden;
-	overflow-y:auto
+	overflow-x:hidden
 }
 #mobile-nav {
 	display:none
@@ -1332,7 +1332,9 @@ pre .css~* .id,pre .id {
 #page-nav .current:hover {
 	background:#88acdb
 }
+/* 添加上下页标签转为行内块 */
 #page-nav .extend {
+	display:inline-block;
 	color:#4d4d4d;
 	margin:0 27px;
 	opacity:1

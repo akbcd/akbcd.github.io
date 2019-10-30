@@ -3586,11 +3586,10 @@ function(t, n, r) {
 	}
 	function a() {
 		var t = document.querySelector(".js-overlay"),
-		//移动端动画兼容解决
-		n = document.querySelector(".js-header-menu"),
-		sTop = document.body.scrollTop || document.documentElement.scrollTop;
-		f(t, sTop, -63, 2, 0),
-		f(n, sTop, 1, 3, 0)
+		//解决document.body.scrollTop值为0
+		n = document.querySelector(".js-header-menu")
+		f(t, window.scrollY, -63, 2, 0),
+		f(n, window.scrollY, 1, 3, 0)
 	}
 	function s() {
 		document.querySelector("#container").addEventListener("scroll",
