@@ -2546,7 +2546,7 @@ to {
 .tools-col .tools-section .search-wrap,.tools-col .tools-wrap .search-wrap {
 	width:280px
 }
-/* 修改移动端显示标签按钮样式 */
+/* 修改移动端所有文章显示标签按钮样式 */
 .tools-col .tools-section .search-tag.tagcloud,.tools-col .tools-wrap .search-tag.tagcloud {
 	margin-right:-28px
 }
@@ -2860,7 +2860,8 @@ to {
 	display:block;
 	color:#a0a0a0
 }
-.header-menu li a.active {
+/* 头部a标签添加点击样式 */
+.header-menu li a.active,.header-menu li a:active {
 	color:#eaeaea;
 	background:#a0a0a0
 }
