@@ -3517,8 +3517,8 @@ function(t, n, r) {
 function(t, n) {
 	"use strict";
 	function r() {
-		var t = document.querySelector("#page-nav");
 		//删除首页上一页和尾页下一页
+		// var t = document.querySelector("#page-nav");
 		// if (t && !document.querySelector("#page-nav .extend.prev") && (t.innerHTML = '<a class="extend prev disabled" rel="prev">&laquo; Prev</a>' + t.innerHTML), t && !document.querySelector("#page-nav .extend.next") && (t.innerHTML = t.innerHTML + '<a class="extend next disabled" rel="next">Next &raquo;</a>'), yiliaConfig && yiliaConfig.open_in_new) {
 		// 	document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t) {
 		// 		var n = t.getAttribute("target");
@@ -3592,6 +3592,12 @@ function(t, n, r) {
 		f(n, window.scrollY, 1, 3, 0)
 	}
 	function s() {
+		//修复网页可见区域高度小于屏幕分辨率的高度导致所有文章背景色和背景层高度未铺满屏幕
+		if(document.body.clientHeight < window.screen.height){
+			var n=document.querySelector("#container");
+			var height=window.screen.height;
+			n.setAttribute("style","height:"+height+"px")
+		}
 		document.querySelector("#container").addEventListener("scroll",
 		function(t) {
 			a()

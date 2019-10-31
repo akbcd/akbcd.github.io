@@ -256,6 +256,7 @@ function u(t) {
 ```
 ### 解决方法
 - `document.body.scrollTop`的值始终为0，那就查询一下这段代码是什么意思
+
 >获取当前页面滚动条纵坐标的位置：document.body.scrollTop与document.documentElement.scrollTop
 获取当前页面滚动条横坐标的位置：document.body.scrollLeft与document.documentElement.scrollLeft
 1.各浏览器下 scrollTop的差异:
@@ -274,7 +275,7 @@ Chrome：
 其实不必。因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。所以，如果要得到网页的真正的scrollTop值，如果不考虑safari，可以这样：
 var sTop=document.body.scrollTop+document.documentElement.scrollTop;
 这两个值总会有一个恒为0，所以不用担心会对真正的scrollTop造成影响。一点小技巧，但很实用。
-***
+
 - 这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了。当然，可能会有浏览器`document.body.scrollTop`和`document.documentElement.scrollTop`都识别的情况，因此，提供一个`||`语句判断，即`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`。
 - 这里介绍一个属性`window.scrollY`，用这个也可以
 - 代码修改如下：
@@ -403,7 +404,7 @@ function a() {
 ```
 - 将`display: none`去掉添加`right: 0`,right控制按钮距离右面的距离，pc端样式right为40px,根据需要更改。以下图片为pc端`right: 40px`与移动端`rigth: 0`效果
 
-<div><img width=50% src ="22.png"/><img width=50% src ="23.png"/></div>
+<div><img width=49% src ="22.png"/> <img width=49% src ="23.png"/></div>
 
 - 添加`.jump-container:hover .icon-back {background: #ccc}`和`.jump-container:active .icon-back {background: rgba(36,193,246,.9)}`的原因是修改点击返回顶部按钮样式。pc端样式代码：
 ```
