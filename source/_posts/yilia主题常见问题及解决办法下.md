@@ -80,8 +80,8 @@ toc: true
 
 ```
 .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article{
-    max-height: 400px;
-    font-size: x-small
+    max-height: 350px;
+    font-size: smaller
 }
 
 .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc {
@@ -97,7 +97,7 @@ toc: true
 * 第三个样式修改目录文字是否换行（pc端页面，标题文字设置的不换行，所以出现了目录左侧溢出）
 
 修改完效果如下：
-![](https://tva1.sinaimg.cn/large/007X8olVly1g8asgr7yb4j30ci0jzgr7.jpg)
+![](https://tva1.sinaimg.cn/large/007X8olVly1g8l6bgvggyj30dx0n042t.jpg)
 ## 4.yilia主题控制台两个警告提示
 ### 不匹配的结束标记。
 
