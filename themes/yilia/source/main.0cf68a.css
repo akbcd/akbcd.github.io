@@ -13,7 +13,7 @@
     margin:auto;
     overflow-x:hidden;
     overflow-y:auto;
-    border-radius:2px
+    border-radius:20px
 }
 #js-modal-overlay {
     display:none;

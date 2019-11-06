@@ -145,7 +145,7 @@ search:
                 "margin": "auto",
                 "overflow-x": "hidden",
                 "overflow-y": "auto",
-                "border-radius": "2px"
+                "border-radius": "20px"
             });
             //修改搜索框样式
             $("#js-searchInput").css({"width":"100%"});
