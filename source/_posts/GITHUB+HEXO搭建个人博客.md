@@ -54,4 +54,3 @@ git中继续
 最后在地址栏输入：https://akbcd.github.io
 到此，GITHUB+HEXO搭建个人博客就完成了
 注：如果本地blog文件夹内容上传不了，需要从`ssh-keygen -t rsa -C “2226227487@qq.com“`重新开始。
-***

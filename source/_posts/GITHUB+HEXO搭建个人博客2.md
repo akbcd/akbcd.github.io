@@ -108,4 +108,3 @@ to set your account's default identity.
 - `hexo g -d`
 ***
 **至此，讲解到此结束，感谢大家的阅读。**
-***

@@ -49,6 +49,7 @@ conn 数据库连接
 dao 数据库操作
 vo 与数据库相关的类
 main 测试
+
 **分享一个数据库操作**
 创建一个product表（MySQL数据库）
 ***
@@ -57,10 +58,11 @@ main 测试
 |id|int|11|
 |name|varchar|255|
 |value|int|11|
-***
+
 id为主键，自动递增
 创建四个包 conn dao vo main
 以下为代码
+
 **conn包 TestConnection.java**
 ```
 package conn;
@@ -90,6 +92,7 @@ public class TestConnection {
 	}
 }
 ```
+
 **dao包 ProductDAO.java**
 ```
 package dao;
@@ -276,6 +279,7 @@ public class ProductDAO {
 	}
 }
 ```
+
 **vo包 Product.java**
 ```
 package vo;
@@ -303,6 +307,7 @@ public class Product {
 	}
 }
 ```
+
 **main包 TestProduct.java**
 ```
 package main;
@@ -349,4 +354,3 @@ public class TestProduct {
 	3. c）处理sql语句的对象
 	4. d）处理sql语句
 	5. e）关闭连接 和 处理对象
-***

@@ -117,6 +117,7 @@ d:\test\test.txt
 * 按方向分为 输入输出
 * 按功能分 节点流和处理流
 * 按单位分 字节流和字符流
+
 ### 四大抽象流
 **字节流**
 * InputStream
@@ -219,8 +220,8 @@ public class TestOutputStream {
 		}
 	}
 }
-
 ```
+
 **字符流**
 * Reader
 读数据 FileReader
@@ -304,6 +305,7 @@ public class TestWriter {
 ## Buffered流
 处理流又叫高级流，必须套接在其它节点之上
 特点：对于字符的操作，可以读写一行，而且还可以减少对硬盘的刷新，因为它带有缓冲区
+
 **子类**
 * BufferedInputStream/OutputStream
 * Reader/Writer
@@ -505,6 +507,7 @@ public class ChangeCharIO {
 * 选择流
 * 选择操作（读或者写）
 * 关闭流
+
 ### IO提供的四大抽象流
 InputStream OutputStream
 Reader Writer
@@ -512,6 +515,7 @@ Reader Writer
 * 按功能：节点流（低级流）和处理流（高级流）
 * 按方向：输入，输出（注意：是站在程序角度说的 入和出）
 * 按单位：字节流和字符流（注意：用记事本正常打开可以看就是字符）
+
 ### 高级流
 * Bufferer:能读写一行
 * Data:能读写八种基本数据类型

@@ -35,4 +35,3 @@ HEXO主题官方网站：[https://hexo.io/themes/](https://hexo.io/themes/)
 输入 hexo g回车，一顿翻滚平静之后
 输入 hexo d回车（就是将数据上传到云端）
 字幕滚完，新博客也就可以访问了。
-***

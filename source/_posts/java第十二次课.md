@@ -449,6 +449,7 @@ class  WaitNotifyTest implements Runnable{
 	}	
 }
 ```
+
 **ArrayList 和Vector 的区别？**
 Vector 线程 安全的->这里面所有的方法，都带有同步
 ## 总结

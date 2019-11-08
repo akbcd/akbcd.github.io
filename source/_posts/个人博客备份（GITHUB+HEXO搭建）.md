@@ -70,4 +70,3 @@ hexo g -d //先部署，后生成
 `git pull origin hexo --allow-unrelated-histories` 分支合并
 输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）
 **至此，讲解到此结束，感谢大家的阅读。**
-***
