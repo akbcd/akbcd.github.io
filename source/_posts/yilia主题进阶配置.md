@@ -158,21 +158,21 @@ search:
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            //固定body
-            stopBodyScroll(true);
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(1000);
             $("#js-modal-overlay").fadeIn(1000);
+            //固定body
+            stopBodyScroll(true);
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
-            //移除body固定
-            stopBodyScroll(false);
-            document.body.removeAttribute('style');
             //弹窗关闭时淡出动画
             $("#js-searchModal").fadeOut(500);
             $("#js-modal-overlay").fadeOut(500);
+            //移除body固定
+            stopBodyScroll(false);
+            document.body.removeAttribute('style');
         }
     }
 </script>
@@ -376,3 +376,8 @@ top: true
 
 还有一种方法，修改`Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js`文件，个人感觉没有这个简单，这里不进行介绍。
 感兴趣的话，点击[新增Hexo博客文章置顶功能](https://zhousiwei.gitee.io/2019/02/25/新增Hexo博客文章置顶功能/)
+## 最后
+最近又看到了许多有用的功能
+1.`gitalk`评论
+2.文章加密
+花时间研究研究看看能不能实现

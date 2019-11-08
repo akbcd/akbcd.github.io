@@ -33,21 +33,21 @@
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
         open.onclick = function(){
-            //固定body
-            stopBodyScroll(true);
             //弹窗出现时淡入动画
             $("#js-searchModal").fadeIn(1000);
             $("#js-modal-overlay").fadeIn(1000);
+            //固定body
+            stopBodyScroll(true);
         }
         //关闭搜索
         var close = document.getElementById('js-modal-overlay');
         close.onclick = function(){
-            //移除body固定
-            stopBodyScroll(false);
-            document.body.removeAttribute('style');
             //弹窗关闭时淡出动画
             $("#js-searchModal").fadeOut(500);
             $("#js-modal-overlay").fadeOut(500);
+            //移除body固定
+            stopBodyScroll(false);
+            document.body.removeAttribute('style');
         }
     }
 </script>

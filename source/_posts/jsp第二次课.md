@@ -24,7 +24,7 @@ tags: jsp
 ## 跳转
 * 服务器跳转
 `<jsp:forward page="跳转的页面"></jsp:forward>`
-* 客户端跳转
+* 客户端跳转（非jsp标签）
 `response.sendRedirect("跳转页面");` 不需要截断java代码，直接在java代码中实现
 
 ## 9个内置对象
