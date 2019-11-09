@@ -376,8 +376,54 @@ top: true
 
 还有一种方法，修改`Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js`文件，个人感觉没有这个简单，这里不进行介绍。
 感兴趣的话，点击[新增Hexo博客文章置顶功能](https://zhousiwei.gitee.io/2019/02/25/新增Hexo博客文章置顶功能/)
+## hexo文章加密功能
+阅读文章的密码验证功能，文章的密码是通过'SHA256'加密
+此功能适用于yilia主题
+### 实现效果
+在主页访问文章详细内容时，会在文章详细页出现弹窗，输入相应的密码进入详细页，密码输入错误跳回主页
+### 实现方法
+* 将以下内容添加到`themes\yilia\layout\_partial\article.ejs`文件的顶部
+`<script src="<%=config.root%>./js/crypto-js.min.js"></script>`是本地引入js的路径，根据需要更改
+这里提供的是云端引用（即联网才可用）
+```
+<% if (theme.verifyPassword.enable) { %>
+<!-- 本地引入js -->
+<!-- <script src="<%=config.root%>./js/crypto-js.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script>
+    (function() {
+        let pwd = '<%- page.password %>';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('<%- theme.verifyPassword.promptMessage %>')).toString(CryptoJS.enc.Hex)) {
+                alert('<%- theme.verifyPassword.errorMessage %>');
+                location.href = '<%- url_for("/")  %>';
+            }
+        }
+    })();
+</script>
+<% } %>
+```
+* 在`themes\yilia\_config.yml`中添加如下配置
+```
+# 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可.
+# 比如
+# password: 加密的密文
+# 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
+verifyPassword:
+  enable: false
+  promptMessage: 请输入访问本文章的密码
+  errorMessage: 密码错误，将返回主页！
+```
+### 说明
+如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 `_config.yml` 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：
+[开源中国在线工具](http://tool.oschina.net/encrypt?type=2)
+[chahuo](http://encode.chahuo.com/)
+[站长工具](http://tool.chinaz.com/tools/hash.aspx)
+### 感谢
+这个功能是hexo-theme-matery主题开发者实现的
+[https://blinkfox.github.io/](https://blinkfox.github.io/)
+在此表示感谢！
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论
-2.文章加密
 花时间研究研究看看能不能实现
