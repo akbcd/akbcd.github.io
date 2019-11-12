@@ -408,8 +408,7 @@ audio:not([controls]) {
 
 progress {
 	vertical-align: baseline
-}
-[hidden],template {
+}[hidden],template {
 	display: none
 }
 
@@ -499,8 +498,7 @@ button,select {
 button,html input[type=button],input[type=reset],input[type=submit] {
 	-webkit-appearance: button;
 	cursor: pointer
-}
-[disabled] {
+}[disabled] {
 	cursor: default
 }
 
@@ -628,11 +626,8 @@ i {
 }
 
 @font-face {
-	font-family:iconfont;
-	src:url(./fonts/iconfont.b322fa.eot);
-	src:url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"),url(./fonts/iconfont.8c627f.woff) format("woff"),url(./fonts/iconfont.16acc2.ttf) format("truetype"),url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
-}
-[class*=" icon-"],[class^=icon-] {
+	font-family:iconfont;src:url(./fonts/iconfont.b322fa.eot);src:url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"),url(./fonts/iconfont.8c627f.woff) format("woff"),url(./fonts/iconfont.16acc2.ttf) format("truetype"),url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
+}[class*=" icon-"],[class^=icon-] {
 	font-family: iconfont!important;
 	speak: none;
 	font-size: 16px;
@@ -1851,7 +1846,7 @@ pre .css~* .id,pre .id {
 	overflow-y: auto
 }
 
-.tools-col .tools-section::-webkit-scrollbar,.tools-col .tools-wrap::-webkit-scrollbar {
+.tools-col .tools-section ::-webkit-scrollbar,.tools-col .tools-wrap ::-webkit-scrollbar {
 	display: none
 }
 
@@ -3014,7 +3009,7 @@ pre .css~* .id,pre .id {
 		overflow-x: hidden;
 		overflow-y: auto
 	}
-/* 隐藏移动端滚动条 */
+	/* 隐藏移动端滚动条 */
 	::-webkit-scrollbar {
 		width: 0
 	}
@@ -3038,11 +3033,11 @@ pre .css~* .id,pre .id {
 	#header .header-nav,.mid-col {
 		position: relative
 	}
-/* 修改移动端aside标签样式 */
+	/* 修改移动端aside标签样式 */
 	.wrap-side-operation {
 		right: 10px
 	}
-/* 移动端返回顶部按钮点击样式 */
+	/* 移动端返回顶部按钮点击样式 */
 	.jump-container:hover .icon-back {
 		background: #ccc
 	}
@@ -3050,7 +3045,7 @@ pre .css~* .id,pre .id {
 	.jump-container:active .icon-back {
 		background: rgba(36,193,246,.9)
 	}
-/* 移动端目录样式优化 */
+	/* 移动端目录样式优化 */
 	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
 		max-height: 350px;
 		font-size: smaller
@@ -3063,7 +3058,7 @@ pre .css~* .id,pre .id {
 	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
 		white-space: normal
 	}
-/* 修改结束 */
+	/* 修改结束 */
 	.cloud-tie-wrapper {
 		padding: 0;
 		min-height: 20px
@@ -3085,7 +3080,7 @@ pre .css~* .id,pre .id {
 	.tools-col .tools-section .search-wrap,.tools-col .tools-wrap .search-wrap {
 		width: 280px
 	}
-/* 修改移动端所有文章显示标签按钮样式 */
+	/* 修改移动端所有文章显示标签按钮样式 */
 	.tools-col .tools-section .search-tag.tagcloud,.tools-col .tools-wrap .search-tag.tagcloud {
 		margin-right: -28px
 	}
@@ -3465,7 +3460,7 @@ pre .css~* .id,pre .id {
 		display: block;
 		color: #a0a0a0
 	}
-/* 头部a标签添加点击样式 */
+	/* 头部a标签添加点击样式 */
 	.header-menu li a.active,.header-menu li a:active {
 		color: #eaeaea;
 		background: #a0a0a0
@@ -3989,7 +3984,8 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
 	background: none
 }
-/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */.pswp {
+/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
+.pswp {
 	display: none;
 	position: absolute;
 	width: 100%;
