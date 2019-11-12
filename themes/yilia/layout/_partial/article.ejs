@@ -73,7 +73,7 @@
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
           <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
+          <a class="article-tag-list-link color3"><%if(config.language === 'zh-CN'){%>置顶<%}else{%>Top<%}%></a>
         </div>
       <% } %>
       <%- partial('post/tag') %>

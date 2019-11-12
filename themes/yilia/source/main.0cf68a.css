@@ -632,7 +632,7 @@ i {
 	speak: none;
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
@@ -828,10 +828,11 @@ body {
 	overflow-y: hidden;
 	background: #eaeaea
 }
-/* 移除overflow-y:auto，解决浏览器出现双滚动条 */
+
 #container,body,html {
 	height: 100%;
-	overflow-x: hidden
+	overflow-x: hidden;
+	overflow-y: auto
 }
 
 #mobile-nav {
