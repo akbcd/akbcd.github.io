@@ -382,6 +382,7 @@ top: true
 感兴趣的话，点击[新增Hexo博客文章置顶功能](https://zhousiwei.gitee.io/2019/02/25/新增Hexo博客文章置顶功能/)
 ## hexo文章加密功能
 阅读文章的密码验证功能，文章的密码是通过`SHA256`加密
+此功能通过JavaScript实现，如果浏览器中有是否启用JavaScript选项，选否后，加密功能失效（[Pure浏览器](https://purelitebrowser.com)）
 此功能适用于yilia主题
 ### 实现效果
 在主页访问文章详细内容时，会在文章详细页出现弹窗，输入相应的密码进入详细页，密码输入错误跳回主页
