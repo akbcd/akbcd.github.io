@@ -828,11 +828,10 @@ body {
 	overflow-y: hidden;
 	background: #eaeaea
 }
-
+/* 移除overflow-y: auto修复浏览器出现双滚动条 */
 #container,body,html {
 	height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto
+	overflow-x: hidden
 }
 
 #mobile-nav {
