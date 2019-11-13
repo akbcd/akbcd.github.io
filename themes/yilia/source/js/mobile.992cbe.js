@@ -3518,13 +3518,13 @@ function(t, n) {
     "use strict";
     function r() {
         //删除首页上一页和尾页下一页
-        // var t = document.querySelector("#page-nav");
-        // if (t && !document.querySelector("#page-nav .extend.prev") && (t.innerHTML = '<a class="extend prev disabled" rel="prev">&laquo; Prev</a>' + t.innerHTML), t && !document.querySelector("#page-nav .extend.next") && (t.innerHTML = t.innerHTML + '<a class="extend next disabled" rel="next">Next &raquo;</a>'), yiliaConfig && yiliaConfig.open_in_new) {
-        // 	document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t) {
-        // 		var n = t.getAttribute("target");
-        // 		n && "" !== n || t.setAttribute("target", "_blank")
-        // 	})
-        // }
+        /*var t = document.querySelector("#page-nav");
+        if (t && !document.querySelector("#page-nav .extend.prev") && (t.innerHTML = '<a class="extend prev disabled" rel="prev">&laquo; Prev</a>' + t.innerHTML), t && !document.querySelector("#page-nav .extend.next") && (t.innerHTML = t.innerHTML + '<a class="extend next disabled" rel="next">Next &raquo;</a>'), yiliaConfig && yiliaConfig.open_in_new) {
+        	document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t) {
+        		var n = t.getAttribute("target");
+        		n && "" !== n || t.setAttribute("target", "_blank")
+        	})
+        }*/
         if (yiliaConfig && yiliaConfig.toc_hide_index) {
             document.querySelectorAll(".toc-number").forEach(function(t) {
                 t.style.display = "none"
@@ -3586,18 +3586,19 @@ function(t, n, r) {
     }
     function a() {
         var t = document.querySelector(".js-overlay"),
-        //解决document.body.scrollTop值为0
+        //更改document.body.scrollTop为window.scrollY
 		n = document.querySelector(".js-header-menu");
 		f(t, window.scrollY, -63, 2, 0),
         f(n, window.scrollY, 1, 3, 0)
     }
     function s() {
-        //修复网页可见区域高度小于屏幕分辨率的高度导致所有文章背景色和背景层高度未铺满屏幕
+        //添加比较网页可见区域高度与屏幕分辨率的高度
         if (document.body.clientHeight < window.screen.height) {
             var n = document.querySelector("#container");
             var height = window.screen.height;
             n.setAttribute("style", "height:" + height + "px")
         }
+        //结束
         document.querySelector("#container").addEventListener("scroll",
         function(t) {
             a()
