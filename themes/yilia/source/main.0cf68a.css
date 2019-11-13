@@ -864,10 +864,11 @@ body {
 	left: 300px;
 	width: auto
 }
-
+/* 添加overflow: hidden修复移动端mobile-mask样式异常 */
 .mid-col.show {
 	background: none;
-	opacity: .9
+	opacity: .9;
+	overflow: hidden
 }
 
 .mid-col.show .article {
