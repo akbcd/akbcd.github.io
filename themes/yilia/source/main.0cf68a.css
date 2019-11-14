@@ -2,18 +2,18 @@
 #js-searchModal {
 	display: none;
 	top: 10%;
-	min-height: 500px;
+    min-height: 500px;
+    max-height: 70%;
 	width: 80%;
 	z-index: 1001;
 	position: fixed;
 	left: 0;
 	right: 0;
 	background: linear-gradient(200deg,#a0cfe4,#e8c37e);
-	max-height: 70%;
 	margin: auto;
 	overflow-x: hidden;
 	overflow-y: auto;
-	border-radius: 20px
+	border-radius: 10px
 }
 
 #js-modal-overlay {
@@ -872,10 +872,11 @@ body {
     left: 300px;
     width: auto
 }
-
+/* 添加overflow: hidden */
 .mid-col.show {
     background: none;
-    opacity: .9
+    opacity: .9;
+    overflow: hidden
 }
 
 .mid-col.show .article {
@@ -3018,6 +3019,10 @@ pre .css~* .id,pre .id {
         overflow-x: hidden;
         overflow-y: auto
     }
+    /* 隐藏滚动条 */
+    #container::-webkit-scrollbar {
+        width: 0
+    }
 
     #mobile-nav {
         display: block
@@ -3051,14 +3056,6 @@ pre .css~* .id,pre .id {
         background: rgba(36,193,246,.9)
 	}
     /* 移动端目录样式优化 */
-    .toc-container.tooltip-left .tooltip:hover .tooltip-content,.toc-container.tooltip-left .tooltip-east .tooltip-content {
-        bottom: 20px
-    }
-
-    .toc-container.tooltip-left .tooltip-east .tooltip-content:after {
-        bottom: 10px
-    }
-
 	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
 		max-height: 350px;
 		font-size: smaller

@@ -3,7 +3,6 @@ title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
 toc: true
-top: true
 ---
 这篇文章添加几个适用于yilia主题的功能
 <!--more-->
@@ -56,7 +55,7 @@ word_count: true
 * `hexo s`本地预览查看效果
 
 ## 安装全局搜索功能
-yilia博客拥有一个搜索功能，这个功能只能匹配到标题和标签，不是很强大，接下来介绍一个能匹配到文章内容的搜索功能
+yilia博客拥有一个搜索功能，这个功能只能匹配到标题和标签，不是很强大，接下来介绍一个能匹配到文章内容关键字的搜索功能
 这个功能的实现，感谢：
 全局搜索功能的开发者： 
 [jQuery-based Local Search Engine for Hexo](https://www.hahack.com/codes/local-search-engine-for-hexo/)
@@ -71,7 +70,7 @@ pc页面
 ![](https://tva1.sinaimg.cn/large/007X8olVly1g8asf74sq6j30ci0k67dj.jpg)
 
 ### 实现方法
-本功能的实现需要导入jquery，我用的版本是`jquery-3.4.1.js`
+本功能的实现需要导入jquery，我用的版本是`jquery-3.4.1.js`（可以在线引用）
 本功能的实现还需要安装插件`hexo-generator-searchdb`
 * 博客的根目录下，`git bash here`，输入命令：`npm install hexo-generator-searchdb --save`
 * 根目录配置文件（不是主题配置文件）`_config.yml`中添加以下内容
@@ -84,14 +83,14 @@ search:
 测试插件是否安装成功
 * 输入本地预览命令`hexo s`，在浏览器输入预览网址
 在网址后添加`search.xml`，比如我的预览网址是`localhost:4000/`，那就在浏览器导航栏输入`localhost:4000/search.xml`
-查看是否有页面显示，出现页面，插件安装成功
+查看是否有页面显示，出现页面，插件安装成功（这一步决定全局搜索功能是否会实现）
 * 在主题路径`themes\yilia\layout\_partial`下创建`search.ejs`文件
-* 上jquery官网下载jquery，将`jquery-3.4.1.js`放在`themes\yilia\source`路径下
+* 上jquery官网下载jquery，将`jquery-3.4.1.js`放在`themes\yilia\source`路径下（这里在线引用）
 
 在`search.ejs`中添加以下内容（粘贴到`search.ejs`中即可）
 ```
 <% if (theme.local_search && theme.local_search.enable){ %>
-<div id="js-searchModal" style="display: none;">
+<div id="js-searchModal">
     <div style="padding: 24px;">
         <div class="search-header">
             <span><i class="icon-search icon"></i>&nbsp;&nbsp;搜索</span>
@@ -101,7 +100,7 @@ search:
     </div>
 </div>
 <!--搜索背景层-->
-<div id="js-modal-overlay" style="display: none;"></div>
+<div id="js-modal-overlay"></div>
 <script type="text/javascript">
     window.onload=function(){
         var top1=0;
@@ -115,46 +114,12 @@ search:
                 bodyEl.style.top=-top1+'px';
                 bodyEl.style.width='100%'
             }else{
-                //页面回到获取的位置
                 bodyEl.style.position='';
                 bodyEl.style.top='';
+                //页面回到获取的位置
                 window.scrollTo(0,top1)
             }
         }
-        $(function(){
-            //背景层样式
-            $("#js-modal-overlay").css({
-                "position": "fixed",
-                "z-index": "1000",
-                "top": "0",
-                "bottom": "0",
-                "width": "100%",
-                "background": "#000",
-                "opacity": ".3",
-            });
-            //搜索弹窗样式
-            $("#js-searchModal").css({
-                "top": "10%",
-                "min-height": "500px",
-                "width": "80%",
-                "z-index": "1001",
-                "position": "fixed",
-                "left": "0",
-                "right": "0",
-                "background": "linear-gradient(200deg,#a0cfe4,#e8c37e)",
-                "max-height": "70%",
-                "margin": "auto",
-                "overflow-x": "hidden",
-                "overflow-y": "auto",
-                "border-radius": "20px"
-            });
-            //修改搜索框样式
-            $("#js-searchInput").css({"width":"100%"});
-            $(".search-header,.search-header i").css({
-                "color": "#fff",
-                "font-size": "18px"
-            });
-        })
         //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
         open.setAttribute("title","搜索")
@@ -178,122 +143,187 @@ search:
     }
 </script>
 <!-- 引入jquery -->
-<script src="<%=config.root%>jquery-3.4.1.js"></script>
-<!-- 实现本地搜索函数 -->
-<script type="text/javascript">
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var content_index = [];
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title != '' && data_content != '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i == 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start == 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                    //搜索结果框架样式（li标签）
-                    $(".search-result-list li").css({
-                        "border-bottom":"1px dotted #dcdcdc",
-                        "padding-top": "5px"
-                    });
-                    //搜索结果标题（a标签）样式
-                    $(".search-result-list a").css({
-                        "color": "#fff",
-                        "font-size":"18px",
-                        "font-weight": "300",
-                        "line-height": "35px"
-                    });
-                    //搜索结果内容样式
-                    $(".search-result-list .search-result").css({
-                        "font-size": "16px",
-                        "line-height": "20px",
-                        "color": "#fffdd8"
-                    });
-                    //匹配词样式
-                    $(".search-result-list .search-keyword").css({
-                        "color":"#e96900",
-                        "font-style":"normal"
-                    })
-                });
-            }
-        });
-    }
-    //调用搜索函数
-    $(function () {
-        searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- 调用本地搜索函数 -->
+<script src="<%=config.root%>./js/search.js"></script>
 <% } %>
+```
+* 在主题`themes\yilia\source`路径下创建一个`js`文件夹，里面创建`search.js`文件，将以下内容（[jQuery-based Local Search Engine for Hexo](https://www.hahack.com/codes/local-search-engine-for-hexo/)）粘贴到此文件中（路径和文件名根据自己需要在上面的内容中修改）
+
+```
+var searchFunc = function (path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+            // get the contents from search data
+            var datas = $("entry", xmlResponse).map(function () {
+                return {
+                    title: $("title", this).text(),
+                    content: $("content", this).text(),
+                    url: $("url", this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function () {
+                var str = '<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length <= 0) {
+                    return;
+                }
+                // perform local searching
+                datas.forEach(function (data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if (data_title != '' && data_content != '') {
+                        keywords.forEach(function (keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if (index_title < 0 && index_content < 0) {
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g, "");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if (start < 0) {
+                                start = 0;
+                            }
+                            if (start == 0) {
+                                end = 100;
+                            }
+                            if (end > content.length) {
+                                end = content.length;
+                            }
+                            var match_content = content.substr(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function (keyword) {
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                            });
+                            str += "<p class=\"search-result\">" + match_content + "...</p>"
+                        }
+                        str += "</li>";
+                    }
+                });
+                str += "</ul>";
+                $resultContent.innerHTML = str;
+            });
+        }
+    });
+}
+//调用搜索函数
+$(function () {
+    searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+});
+```
+* 定位文件`themes\yilia\layout\_partial\tools.ejs`，在里面找到搜索图标的i标签，在标签里添加一个id：`js-icon-search`（添加搜索弹窗事件）
+这里实现的是点击搜索图标出现搜索框
+
+```
+<div class="search-wrap">
+  <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+  <!--修改位置-->
+  <i class="icon-search icon" q-show="search|isEmptyStr" id="js-icon-search"></i>
+  <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+</div>
+```
+* 修改搜索弹窗的样式，主题`themes\yilia\source\main.0cf68a.css`文件中添加
+
+```
+/* 全局搜索样式 */
+#js-searchModal {
+	display: none;
+	top: 10%;
+    min-height: 500px;
+    max-height: 70%;
+	width: 80%;
+	z-index: 1001;
+	position: fixed;
+	left: 0;
+	right: 0;
+	background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+	margin: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-radius: 10px
+}
+
+#js-modal-overlay {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background: rgb(0, 0, 0);
+	opacity: .3
+}
+
+.search-header,.search-header i {
+	color: #fff;
+	font-size: 18px
+}
+
+.search-header ::-webkit-input-placeholder {
+	color: #ededed
+}
+
+.search-header .search-ipt {
+	width: 100%;
+	color: #fff;
+	background: none;
+	border: none;
+	border-bottom: 2px solid #fff;
+	font-family: Roboto,serif
+}
+
+.search-result-list li {
+	border-bottom: 1px dotted #dcdcdc;
+	padding-top: 5px
+}
+
+.search-result-list a {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 35px
+}
+
+.search-result-list .search-result {
+	font-size: 16px;
+	line-height: 20px;
+	color: #fffdd8
+}
+
+.search-result-list .search-keyword {
+	color: #e96900;
+	font-style: normal
+}
+/* 全局搜索样式结束 */
 ```
 * 定位文件`themes\yilia\layout\layout.ejs`，在里面的body标签下添加内容：`<%- partial('_partial/search') %>`（添加位置可以根据需求更改）
 
@@ -308,36 +338,8 @@ search:
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 ```
-* 修改搜索弹窗的样式，定位文件`themes\yilia\source\main.0cf68a.css`，在里面查找
-`.tools-col .tools-section .search-wrap .search-ipt`，在后面添加`,.search-header .search-ipt`（导入所有文章中搜索框样式）
-```
-.tools-col .tools-section .search-wrap .search-ipt,.search-header .search-ipt {
-    width: 310px;
-    color: #fff;
-    background: none;
-    border: none;
-    border-bottom: 2px solid #fff;
-    font-family: Roboto,serif
-}
-```
-* 依然是这里面，查找
-`.tools-col .tools-section .search-wrap ::-webkit-input-placeholder`，后面添加`,.search-header ::-webkit-input-placeholder`（修改搜索框提示文字的颜色与所有文章中的相同）
-```
-.tools-col .tools-section .search-wrap ::-webkit-input-placeholder,.search-header ::-webkit-input-placeholder {
-    color: #ededed
-}
-```
-* 定位文件`themes\yilia\layout\_partial\tools.ejs`，在里面找到搜索图标的i标签，在标签里添加一个id：`js-icon-search`（添加搜索弹窗事件）
-这里实现的是点击搜索图标出现搜索框
-```
-<div class="search-wrap">
-  <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-  <!--修改位置-->
-  <i class="icon-search icon" q-show="search|isEmptyStr" id="js-icon-search"></i>
-  <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-</div>
-```
 * 最后一步，在`themes\yilia\_config.yml`中添加判断配置
+
 ```
 #是否开启全局搜索
 #不开启值为false，开启，值为true
@@ -345,14 +347,15 @@ search:
 local_search:
   enable: true
 ```
-简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层用的是开启分享显示微信二维码时的背景层样式，并不能直接添加class，那个class绑定着js），并将body固定在当前位置（禁止背景层下的内容滚动），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索，移除body固定
+简单说明一下原理：通过获取搜索图标的id，添加点击事件，通过点击事件弹出全局搜索框，添加一个背景层（这里的背景层类似于开启分享显示微信二维码时的背景层样式），并将body固定在当前位置（禁止背景层下的内容滚动），在背景层添加一个关闭搜索弹窗的点击事件，关闭全局搜索，移除body固定
 主题配置文件全局搜索的开关通过`search.ejs`文件中的第一行判断语句进行判断
-这里对`main.0cf68a.css`文件的修改只有两处，其余样式的实现都是靠js来实现（可以自行将js实现的样式添加到`main.0cf68a.css`），添加css样式的的地方里面有提示，可以根据自己的需求更改
+这里对`main.0cf68a.css`文件的修改可以根据自己的需求更改
 yilia主题有一个气泡上浮的动画效果，在搜索弹窗中没有实现(添加了搜索弹窗淡入淡出效果)
 最后，再次感谢以上的杰出贡献者，使我在yilia主题中实现了全局搜索功能
 ## yilia主题添加博客文章置顶功能和置顶标签
 
 **注：yilia主题内置文章置顶功能，只需在Front-matter中添加`top: true`即可，支持置顶多个文章，置顶的文章会再次以时间进行排序**
+**请先在Front-matter中添加`top: true`，然后查看文章是否置顶，如果没有实现请继续看实现方法**
 
 目前已经有了博客文章置顶的插件，觉得这个功能很好用，在这里分享一下
 参考链接
@@ -420,6 +423,7 @@ verifyPassword:
   errorMessage: 密码错误，将返回主页！
 ```
 ### 说明
+在`Front-matter`中添加`password: SHA256`，`SHA256`是密码加密后的密文，访问文章时输入加密前的密码即可
 如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 `_config.yml` 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：
 [开源中国在线工具](http://tool.oschina.net/encrypt?type=2)
 [chahuo](http://encode.chahuo.com/)

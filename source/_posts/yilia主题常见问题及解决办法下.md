@@ -209,3 +209,27 @@ alert("屏幕可用工作区高："+window.screen.availHeight)
 	opacity:1
 }
 ```
+## 7.手机端开启目录，页面出现了滚动条
+yilia主题，移动端适配有很多问题，之前的页面滚动动画、返回顶部按钮和目录，开发者应该是没有对移动端进行适配测试（可能是先在pc上实现，再往移动端适配）
+开发者已经不维护这个主题，本人在移动端启用发现了很多问题
+移动端文章开启目录，点击所有文章按钮，页面右侧会出现滚动条，关闭所有文章后，页面弹动效果中也会出现滚动条
+## 解决办法
+* 在`themes\yilia\source\main.0cf68a.css`中查找`.mid-col.show`，添加`overflow: hidden`
+
+```
+/* 添加overflow: hidden */
+.mid-col.show {
+    background: none;
+    opacity: .9;
+    overflow: hidden
+}
+```
+* 在移动端css下，即`@media screen and (max-width: 800px)`下，隐藏`#container`标签滚动条
+
+```
+/* 隐藏滚动条 */
+#container::-webkit-scrollbar {
+    width: 0
+}
+```
+问题解决
