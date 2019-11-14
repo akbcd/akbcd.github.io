@@ -2750,9 +2750,10 @@ pre .css~* .id,pre .id {
 .toc-container.tooltip-left .tooltip-east .tooltip-content a {
     color: #fff
 }
-
+/* 添加z-index: -1; */
 .toc-container.tooltip-left .tooltip-east .tooltip-content:after {
     top: auto;
+    z-index: -1;
     bottom: 23px
 }
 
@@ -3049,7 +3050,15 @@ pre .css~* .id,pre .id {
     .jump-container:active .icon-back {
         background: rgba(36,193,246,.9)
 	}
-	/* 移动端目录样式优化 */
+    /* 移动端目录样式优化 */
+    .toc-container.tooltip-left .tooltip:hover .tooltip-content,.toc-container.tooltip-left .tooltip-east .tooltip-content {
+        bottom: 20px
+    }
+
+    .toc-container.tooltip-left .tooltip-east .tooltip-content:after {
+        bottom: 10px
+    }
+
 	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
 		max-height: 350px;
 		font-size: smaller
