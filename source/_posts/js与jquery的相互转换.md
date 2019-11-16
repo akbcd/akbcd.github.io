@@ -7,13 +7,13 @@ tags: html
 <!--more-->
 ## js对象转jq
 这是一个js对象
-var js = document.getElementsById("js");
+var js = document.getElementById("js");
 转为jq对象
 $(js)
 ## jq对象转js
 语法：`jq对象[索引]` 或者 `jq对象.get(索引)`
 这是一个jq对象
-var jq = $("jq");
+var jq = $("#jq");
 转为js对象
 方法一：
 `jq[0]`
