@@ -25,7 +25,7 @@ function stopBodyScroll(isFixed){
         window.scrollTo(0,top1)
     }
 };
-window.onload=function(){
+$(document).ready(function(){
     clearInput.onclick=function(){
         $('#js-searchInput').val('');
         clearInput.style.display='none';
@@ -49,7 +49,7 @@ window.onload=function(){
         stopBodyScroll(false);
         document.body.removeAttribute('style');
     }
-};
+});
 //全局搜索
 var searchFunc = function (path, search_id, content_id) {
     'use strict';
