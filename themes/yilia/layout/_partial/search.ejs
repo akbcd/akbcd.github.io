@@ -3,7 +3,8 @@
     <div style="padding: 24px;">
         <div class="search-header">
             <span><i class="icon-search icon"></i><%if(config.language === 'zh-CN'){%>&nbsp;&nbsp;搜索<%}else{%>&nbsp;&nbsp;search<%}%></span>
-            <input class="search-ipt" q-model="search" type="text" placeholder=<%if(config.language === 'zh-CN'){%>"请输入搜索的关键字"<%}else{%>"please enter the keywords for your search"<%}%> id="js-searchInput">
+            <input class="search-ipt" type="text" placeholder=<%if(config.language === 'zh-CN'){%>"请输入搜索的关键字"<%}else{%>"please enter the keywords for your search"<%}%> id="js-searchInput">
+            <i class="icon-close icon" id="js-searchTextCancel"></i>
         </div>
         <div id="js-searchResult"></div>
     </div>
@@ -12,48 +13,12 @@
 <div id="js-modal-overlay"></div>
 <script type="text/javascript">
     window.onload=function(){
-        var top1=0;
-        function stopBodyScroll(isFixed){
-            var bodyEl=document.body;
-            if(isFixed){
-                //获取页面滚动的距离
-                top1=window.scrollY;
-                //将body标签在当前位置固定
-                bodyEl.style.position='fixed';
-                bodyEl.style.top=-top1+'px';
-                bodyEl.style.width='100%'
-            }else{
-                bodyEl.style.position='';
-                bodyEl.style.top='';
-                //页面回到获取的位置
-                window.scrollTo(0,top1)
-            }
-        }
-        //给搜索图标添加点击事件
         var open = document.getElementById('js-icon-search');
         <%if(config.language === 'zh-CN'){%>open.setAttribute("title","搜索")<%}else{%>open.setAttribute("title","search")<%}%>
-        open.onclick = function(){
-            //弹窗出现时淡入动画
-            $("#js-searchModal").fadeIn(1000);
-            $("#js-modal-overlay").fadeIn(1000);
-            //固定body
-            stopBodyScroll(true);
-        }
-        //关闭搜索
-        var close = document.getElementById('js-modal-overlay');
-        close.onclick = function(){
-            //弹窗关闭时淡出动画
-            $("#js-searchModal").fadeOut(500);
-            $("#js-modal-overlay").fadeOut(500);
-            //移除body固定
-            stopBodyScroll(false);
-            document.body.removeAttribute('style');
-        }
     }
 </script>
 <!-- 引入jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <!-- <script src="<%=config.root%>./js/jquery-3.4.1.js"></script> -->
-<!-- 调用本地搜索函数 -->
 <script src="<%=config.root%>./js/search.js"></script>
 <% } %>

@@ -26,6 +26,14 @@
 	opacity: .3
 }
 
+#js-searchTextCancel {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 25px;
+    top: 60px
+}
+
 .search-header,.search-header i {
 	color: #fff;
 	font-size: 18px
