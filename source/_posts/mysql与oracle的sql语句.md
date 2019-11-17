@@ -279,7 +279,7 @@ SELECT cid,sid FROM sc WHERE score <60 ORDER BY cid
 select student.sid,student.sname from sc,student where sc.cid=1 and sc.score>60 and sc.sid=student.sid
 
 22.查询选修“叶平”老师所授课程的学生中，成绩最高的学生姓名及其成绩
-select student.sname,sc.score from sc,student,teacher,course c where teacher.tname='李子'
+select student.sname,sc.score from sc,student,teacher,course c where teacher.tname='叶平'
 and teacher.tid=c.tid and c.cid=sc.cid and sc.sid=student.sid and sc.score=(select max(score)from sc where sc.cid=c.cid)
 
 23.查询各个课程及相应的选修人数
@@ -296,10 +296,10 @@ select * from （select rownum p,t.score from（SELECT s.score score FROM sc s O
 
 26.查询没学过“叶平”老师讲授的任一门课程的学生姓名
 select distinct sid from sc where sid not in(select sc.sid from sc,course,teacher where sc.cid=course.cid and course.tid=teacher.tid and 
-teacher.tname='杨巍巍')
+teacher.tname='叶平')
 
-27.检索“”课程分数小于，按分数降序排列的同学学号
+27.检索“ ”课程分数小于90，按分数降序排列的同学学号
 select sc.sid from sc,course where sc.cid=course.cid and course.cname='java' and sc.score<90
 
-28.删除“”同学的“”课程的成绩 
+28.删除“ ”同学的“ ”课程的成绩 
 delete from sc where sid=1 and cid=1
