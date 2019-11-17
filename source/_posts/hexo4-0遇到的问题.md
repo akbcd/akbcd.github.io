@@ -1,5 +1,5 @@
 ---
-title: hexo4.0简单介绍
+title: hexo4.0遇到的问题
 date: 2019-10-20 09:36:40
 tags: [hexo,博客]
 toc: true
@@ -39,7 +39,7 @@ hexo4.0版本显示`<a href="javascript:void(0);" target="_blank" rel="noopener"
 自动添加了`target="_blank" rel="noopener"`属性，ie浏览器还好，点击这样的a标签，页面没有跳转
 但是谷歌浏览器，点击这样的a标签，直接跳转到了一个新页面`about:blank#blocked`，页面空白
 很显然hexo4.0版本对`href="javascript:void(0);`和`href="javascript:;`很不友好，遇到这样的href自动添加属性，具有点击事件的a标签，被添加上了页面跳转（这个问题只涉及到ejs文件，不涉及js）
-yilia主题已经入坑，如果你的主题ejs文件中a标签也是用这种方法禁止跳转，那你就要注意了，不要轻易更新hexo4.0版本
+如果你的主题ejs文件中a标签也是用这种方法禁止跳转，那你就要注意了，不要轻易更新hexo4.0版本
 这里简单提供一个解决方法
 ### 解决方法
 遇到这种问题的a标签，一般都具有点击事件。尝试删除`href="javascript:void(0);`和`href="javascript:;`，问题可以解决，但是鼠标悬停在a标签上并没有变成手型
