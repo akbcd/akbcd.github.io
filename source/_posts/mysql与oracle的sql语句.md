@@ -1,7 +1,7 @@
 ---
 title: mysql与oracle的sql语句
 date: 2019-11-17 19:59:57
-tags: sql
+tags: [sql,文献]
 toc: true
 ---
 本篇文章对sql语句进行介绍
