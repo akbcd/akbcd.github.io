@@ -5,6 +5,7 @@ tags: [sql,文献]
 toc: true
 ---
 本篇文章对sql语句进行介绍
+这里对MySql基本数据类型和Oracle基本数据类型的介绍可能不是很全面
 <!--more-->
 ## 常用基础语句
 1、插入数据
@@ -18,7 +19,7 @@ toc: true
 `select * from 表名`
 （`*`表示每一列都查询出来，可以换成列名以逗号隔开，表示想要查询的列） 
 5、模糊查询
-`select * from 表名 where 列名 like ‟%值%‟`
+`select * from 表名 where 列名 like "%值%"`
 （其中百分号为通配符表示前后有N个字符，可换成底杠 _ 表示通配一个字符）
 6、排序
 `select * from 表名 order by 列1,列2 desc`（其中条件可为一列也可为多列但查询出来的列中必须包含条件中列名，desc可省略，省略默认为升序，desc为降序排列）
@@ -83,7 +84,7 @@ ALTER TABLE sj_resource_charges add index INDEX_NAME (name);
 ALTER TABLE sj_resource_charges add unique emp_name2(cardnumber);
 10: 删除索引
 alter table tablename drop index emp_name;
-## MySql基本数据类型（不全）
+## MySql基本数据类型
 |数据类型|描述|字节|推荐使用|
 |:-:|:-:|:-:|:-:|
 |SMALLINT|整数，-32000到32000|2|存储相对比较小的整数，比如年龄|
@@ -100,7 +101,7 @@ alter table tablename drop index emp_name;
 |TIME|以hh:mm:ss格式的时间|3|存储时间或时间间隔|
 |DATETIME|以yyyy-mm-dd hh:mm:ss格式存储时间|8|存储包含日期和时间的数据|
 
-## Oracle基本数据类型（不全）
+## Oracle基本数据类型
 |数据类型|参数|描述|
 |:-:|:-:|:-:|
 |Char(n)|n=1 to 2000字节|定长字符串，n字节长，如果不指定长度，缺省 为1个字节长（一个汉字为2字节）|
