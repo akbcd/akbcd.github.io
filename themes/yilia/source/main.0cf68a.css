@@ -2510,13 +2510,11 @@ pre .css~* .id,pre .id {
     background: #4d4d4d;
     text-shadow: none
 }
-/* 添加display: none; */
+/* 删除z-index: 1001; */
 .page-modal {
-    display: none;
     position: fixed;
     top: 24%;
     left: 50%;
-    z-index: 1001;
     padding: 20px;
     text-align: center;
     color: #727272;
@@ -2539,10 +2537,11 @@ pre .css~* .id,pre .id {
     transform: translate(-50%,-100%);
     transition: .3s
 }
-
+/* 添加z-index: 1001; */
 .page-modal.in {
     visibility: visible;
     opacity: 1;
+    z-index: 1001;
     -webkit-transform: translate(-50%);
     transform: translate(-50%)
 }
