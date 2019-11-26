@@ -3592,10 +3592,10 @@ function(t, n, r) {
         f(n, window.scrollY, 1, 3, 0)
     }
     function s() {
-        //添加比较网页可见区域高度与屏幕分辨率的高度
-        if (document.body.clientHeight < window.screen.height) {
+        //添加比较body总高度与浏览器页面可用高度
+        if (document.body.clientHeight < window.innerHeight) {
             var n = document.querySelector("#container");
-            var height = window.screen.height;
+            var height = window.innerHeight;
             n.setAttribute("style", "height:" + height + "px")
         }
         //结束

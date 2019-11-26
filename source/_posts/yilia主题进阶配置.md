@@ -433,6 +433,100 @@ verifyPassword:
 这个功能是hexo-theme-matery主题开发者实现的
 [https://blinkfox.github.io/](https://blinkfox.github.io/)
 在此表示感谢！
+## yilia主题移动端添加页面进度条
+移动端隐藏了滚动条，加一个网页进度条可以更清楚了解到当前页面在网页的位置
+### 说明
+此网页进度条只在移动端页面出现，pc端进度条宽度始终为0
+网页进度条在页面最下方，样式可根据自己的需要更改
+### 实现方法
+* 创建一个js文件，添加以下内容：
+
+```
+!function(t, e) {
+    "object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.ScrollProgress = e()
+} (this,
+function() {
+    "use strict";
+    function t() {}
+    var e = function(e) {
+        this._handleUpdate = "function" == typeof e ? e: t,
+        this._viewportHeight = this._getViewportHeight(),
+        this._viewportWidth = this._getViewportWidth(),
+        this._progress = this._getProgress(),
+        this._handleUpdate(this._progress.x, this._progress.y),
+        this._onScroll = this._onScroll.bind(this),
+        this._onResize = this._onResize.bind(this),
+        window.addEventListener("scroll", this._onScroll),
+        window.addEventListener("resize", this._onResize)
+    };
+    return e.prototype._getViewportHeight = function() {
+        return document.body.scrollHeight - window.innerHeight
+    },
+    e.prototype._getViewportWidth = function() {
+        return document.body.scrollWidth - window.innerWidth
+    },
+    e.prototype._getProgress = function() {
+        var t = void 0 === window.scrollX ? window.pageXOffset: window.scrollX,
+        e = void 0 === window.scrollY ? window.pageYOffset: window.scrollY;
+        return {
+            x: 0 === this._viewportWidth ? 0 : t / this._viewportWidth,
+            y: 0 === this._viewportHeight ? 0 : e / this._viewportHeight
+        }
+    },
+    e.prototype._onScroll = function() {
+        this._progress = this._getProgress(),
+        this._handleUpdate(this._progress.x, this._progress.y)
+    },
+    e.prototype._onResize = function() {
+        this._viewportHeight = this._getViewportHeight(),
+        this._viewportWidth = this._getViewportWidth(),
+        this._progress = this._getProgress(),
+        this._handleUpdate(this._progress.x, this._progress.y)
+    },
+    e.prototype.trigger = function() {
+        this._handleUpdate(this._progress.x, this._progress.y)
+    },
+    e.prototype.destroy = function() {
+        window.removeEventListener("scroll", this._onScroll),
+        window.removeEventListener("resize", this._onResize),
+        this._handleUpdate = null
+    },
+    e
+});
+// progress bar init
+const progressElement = window.document.querySelector('.progress-bar');
+if (progressElement) {
+    new ScrollProgress((x, y) => {
+        progressElement.style.width = y * 100 + '%';
+    });
+}
+```
+上面的函数实现实时显示进度条宽度，下面调用上面的方法
+* 在主题中导入此js（参看上面的方法）
+* 在`themes\yilia\layout\layout.ejs`添加滚动条`<div class="progress-bar"></div>`的位置，我是在`<%- partial('_partial/footer') %>`下面添加
+
+```
+<!-- 开始添加 -->
+<%- partial('_partial/footer') %>
+<div class="progress-bar"></div>
+<!-- 添加结束 -->
+```
+* `themes\yilia\source\main.0cf68a.css`添加样式
+
+```
+/* 进度条 */
+.progress-bar {
+    height: 4px;
+    position: fixed;
+    bottom: 0;
+    z-index: 300;
+    background: #eaeaea;
+    opacity: 0.8;
+}
+```
+yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条，上面的js在pc端页面返回值始终是0，即进度条的宽度始终为0
+### 感谢
+[https://blinkfox.github.io/](https://blinkfox.github.io/)
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论

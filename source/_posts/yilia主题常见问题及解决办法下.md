@@ -141,8 +141,7 @@ p标签不能嵌套pre标签（通过控制台查看元素可以发现p标签和
 归档页面，随笔页面，这些页面差不多，如果最后一页内容过短，点击所有文章，背景色和背景层的高度出现问题
 先来看看问题的图片
 
-<div><img width=49% src ="https://tva1.sinaimg.cn/large/007X8olVly1g8hosohy91j30cg0m83zu.jpg
-"/> <img width=49% src ="https://tva1.sinaimg.cn/large/007X8olVly1g8hoso7yjxj30cf0m60ym.jpg"/></div>
+<div><img width=49% src ="https://tva1.sinaimg.cn/large/007X8olVly1g8hosohy91j30cg0m83zu.jpg"/> <img width=49% src ="https://tva1.sinaimg.cn/large/007X8olVly1g8hoso7yjxj30cf0m60ym.jpg"/></div>
 
 最后一页内容过少，导致点击所有文章按钮，所有文章和背景层的背景色没有将页面充满，使页面的下半部分出现了白色透明背景
 ### 解决办法
@@ -161,13 +160,13 @@ p标签不能嵌套pre标签（通过控制台查看元素可以发现p标签和
 ```
 function s() {
     //开始添加
-    //修复网页可见区域高度小于屏幕分辨率的高度导致所有文章背景色和背景层高度未铺满屏幕
-    if(document.body.clientHeight < window.screen.height){
-        var n=document.querySelector("#container");
-        var height=window.screen.height;
-        n.setAttribute("style","height:"+height+"px")
+    //添加比较body总高度与浏览器页面可用高度
+    if (document.body.clientHeight < window.innerHeight) {
+        var n = document.querySelector("#container");
+        var height = window.innerHeight;
+        n.setAttribute("style", "height:" + height + "px")
     }
-    //添加结束
+    //结束
     document.querySelector("#container").addEventListener("scroll",
     function(t) {
         a()
@@ -184,14 +183,24 @@ function s() {
 ```
 `height:auto`便失去了意义
 附上几个获取高度的属性
->alert("网页可见区域高："+document.body.clientHeight)
-alert("网页可见区域高："+document.body.offsetHeight)
-alert("网页正文全文高："+document.body.scrollHeight)
-alert("屏幕分辨率的高："+window.screen.height)
-alert("屏幕可用工作区高："+window.screen.availHeight)
+>网页可见区域高：document.body.clientHeight（body总高度）
+网页可见区域高：document.body.offsetHeight（body总高度）
+网页正文全文高：document.body.scrollHeight（body总高度）
+浏览器页面可用高度：document.documentElement.clientHeight/window.innerHeight
+屏幕分辨率的高：window.screen.height（屏幕分辨率高度）
+屏幕可用工作区高：window.screen.availHeight/screen.availHeight（屏幕分辨率高度）
 
-在js中测试的结果显示 前三个值相同，后两个值相同
-这里用的是网页可见区域高度和屏幕分辨率的高度
+```
+alert("body总高度："+document.body.clientHeight)//body总高度
+alert("body总高度："+document.body.offsetHeight)//body总高度
+alert("body总高度："+document.body.scrollHeight)//body总高度
+alert("浏览器页面可用高度："+document.documentElement.clientHeight)//浏览器页面可用高度
+alert("浏览器页面可用高度："+window.innerHeight)//浏览器页面可用高度
+alert("屏幕分辨率的高："+window.screen.height)//屏幕分辨率高度
+alert("屏幕分辨率的高："+window.screen.availHeight)//屏幕分辨率高度
+alert("屏幕分辨率的高："+screen.availHeight)//屏幕分辨率高度
+```
+这里用的是document.body.clientHeight和window.innerHeight
 ## 6.手机端主页分页过多，点击某一页，出现下一页标签换行
 页数过多，点击中间的一页可能会出现下一页标签换行一半，即 `下一页`在上一行，` »`在下一行
 换行的问题解决不了，分页过多，一行显示不下，自然会把多余的内容挤到下一行来，即使你把上下页标签的margin属性设为0，可能暂时没有问题，但是随着文章越来越多，迟早会被挤下来

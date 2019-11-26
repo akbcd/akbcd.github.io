@@ -1,3 +1,12 @@
+/* 进度条 */
+.progress-bar {
+    height: 4px;
+    position: fixed;
+    bottom: 0;
+    z-index: 300;
+    background: #eaeaea;
+    opacity: 0.8;
+}
 /* 全局搜索样式 */
 #js-searchModal {
 	display: none;
