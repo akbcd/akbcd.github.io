@@ -439,75 +439,27 @@ verifyPassword:
 此网页进度条只在移动端页面出现，pc端进度条宽度始终为0
 网页进度条在页面最下方，样式可根据自己的需要更改
 ### 实现方法
-* 创建一个js文件，添加以下内容：
+需要用到scrollprogress.js，这里云端引用
+* `themes\yilia\layout\_partial\script.ejs`文件中添加
 
 ```
-!function(t, e) {
-    "object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.ScrollProgress = e()
-} (this,
-function() {
-    "use strict";
-    function t() {}
-    var e = function(e) {
-        this._handleUpdate = "function" == typeof e ? e: t,
-        this._viewportHeight = this._getViewportHeight(),
-        this._viewportWidth = this._getViewportWidth(),
-        this._progress = this._getProgress(),
-        this._handleUpdate(this._progress.x, this._progress.y),
-        this._onScroll = this._onScroll.bind(this),
-        this._onResize = this._onResize.bind(this),
-        window.addEventListener("scroll", this._onScroll),
-        window.addEventListener("resize", this._onResize)
-    };
-    return e.prototype._getViewportHeight = function() {
-        return document.body.scrollHeight - window.innerHeight
-    },
-    e.prototype._getViewportWidth = function() {
-        return document.body.scrollWidth - window.innerWidth
-    },
-    e.prototype._getProgress = function() {
-        var t = void 0 === window.scrollX ? window.pageXOffset: window.scrollX,
-        e = void 0 === window.scrollY ? window.pageYOffset: window.scrollY;
-        return {
-            x: 0 === this._viewportWidth ? 0 : t / this._viewportWidth,
-            y: 0 === this._viewportHeight ? 0 : e / this._viewportHeight
-        }
-    },
-    e.prototype._onScroll = function() {
-        this._progress = this._getProgress(),
-        this._handleUpdate(this._progress.x, this._progress.y)
-    },
-    e.prototype._onResize = function() {
-        this._viewportHeight = this._getViewportHeight(),
-        this._viewportWidth = this._getViewportWidth(),
-        this._progress = this._getProgress(),
-        this._handleUpdate(this._progress.x, this._progress.y)
-    },
-    e.prototype.trigger = function() {
-        this._handleUpdate(this._progress.x, this._progress.y)
-    },
-    e.prototype.destroy = function() {
-        window.removeEventListener("scroll", this._onScroll),
-        window.removeEventListener("resize", this._onResize),
-        this._handleUpdate = null
-    },
-    e
-});
-// progress bar init
-const progressElement = window.document.querySelector('.progress-bar');
-if (progressElement) {
-    new ScrollProgress((x, y) => {
-        progressElement.style.width = y * 100 + '%';
-    });
-}
+<!-- 页面进度条 -->
+<script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js"></script>
+<script>
+    // progress bar init
+    const progressElement = window.document.querySelector('.progress-bar');
+    if (progressElement) {
+        new ScrollProgress((x, y) => {
+            progressElement.style.width = y * 100 + '%';
+        });
+    }
+</script>
 ```
-上面的函数实现实时显示进度条宽度，下面调用上面的方法
-* 在主题中导入此js（参看上面的方法）
 * 在`themes\yilia\layout\layout.ejs`添加滚动条`<div class="progress-bar"></div>`的位置，我是在`<%- partial('_partial/footer') %>`下面添加
 
 ```
-<!-- 开始添加 -->
 <%- partial('_partial/footer') %>
+<!-- 开始添加 -->
 <div class="progress-bar"></div>
 <!-- 添加结束 -->
 ```

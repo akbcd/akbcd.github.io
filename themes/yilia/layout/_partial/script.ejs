@@ -1,5 +1,4 @@
 <script src="<%=config.root%>./js/mobile.992cbe.js"></script>
-<script src="<%=config.root%>./js/progress.js"></script>
 <script src="<%=config.root%>./main.0cf68a.js"></script>
 <script>
     !function(){
@@ -8,4 +7,16 @@
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
         }("<%=config.root%>./slider.e37972.js")
     }()
+</script>
+<!-- 页面进度条 -->
+<!-- <script src="<%=config.root%>./js/scrollProgress.min.js"></script> -->
+<script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js"></script>
+<script>
+    // progress bar init
+    const progressElement = window.document.querySelector('.progress-bar');
+    if (progressElement) {
+        new ScrollProgress((x, y) => {
+            progressElement.style.width = y * 100 + '%';
+        });
+    }
 </script>
