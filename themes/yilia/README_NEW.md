@@ -1,3 +1,17 @@
+本主题基于yilia打造优化，保留yilia几乎所有的功能，添加部分功能
+**添加的功能：**
+1. 文章字数统计
+2. 全局搜索功能
+3. 博客文章加密
+4. 移动端添加页面进度条
+5. 中英文语言切换
+
+## 配置
+
+主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
+完整配置例子：
+
+```
 # Header
 
 menu:
@@ -5,27 +19,27 @@ menu:
   随笔: /tags/随笔/
   归档: /archives/
 
-# SubNav
+# SubNav（不需要的注释即可）
 subnav:
-  github: http://github.com/
-  weibo: https://weibo.com/
-  #rss: "#"
-  zhihu: https://www.zhihu.com/explore
-  #qq: "#"
-  #weixin: "#"
-  #jianshu: "#"
-  #douban: "#"
-  #segmentfault: "#"
-  #bilibili: "#"
-  #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  github: "#"
+  weibo: "#"
+  rss: "#"
+  zhihu: "#"
+  qq: "#"
+  weixin: "#"
+  jianshu: "#"
+  douban: "#"
+  segmentfault: "#"
+  bilibili: "#"
+  acfun: "#"
+  mail: "mailto:litten225@qq.com"
+  facebook: "#"
+  google: "#"
+  twitter: "#"
+  linkedin: "#"
 
 # rss订阅实现需要插件hexo-generator-feed
-rss: /search.xml
+rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
@@ -67,7 +81,7 @@ top: true
 # 字数统计
 # 本功能实现需要插件hexo-wordcount
 # 不需要使用，直接设置值为false，或注释掉
-word_count: true
+word_count: false
 
 # 全局搜索
 # 本功能实现需要插件hexo-generator-searchdb所生成的search.xml文件
@@ -78,7 +92,7 @@ word_count: true
 # 不开启值为false，开启，值为true
 # 使用方法：点击所有文章中的搜索图标
 local_search:
-  enable: true
+  enable: false
 
 # 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可.
 # 比如
@@ -147,9 +161,12 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  小贱贱图床: http://pic.xiaojianjian.net/
-  歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
-  软件安装管家: https://mp.weixin.qq.com/s/zeq1sTmaPsKt7Bsok0Ldrg
+  友情链接1: http://localhost:4000/
+  友情链接2: http://localhost:4000/
+  友情链接3: http://localhost:4000/
+  友情链接4: http://localhost:4000/
+  友情链接5: http://localhost:4000/
+  友情链接6: http://localhost:4000/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
@@ -167,3 +184,4 @@ js:
   search: /js/search.js
   crypto: https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js #3.1.9-1
   #crypto: /js/crypto-js.min.js
+```

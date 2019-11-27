@@ -1,16 +1,15 @@
-<script src="<%=config.root%>./js/mobile.992cbe.js"></script>
-<script src="<%=config.root%>./main.0cf68a.js"></script>
+<script src="<%- theme.js.mobile %>"></script>
+<script src="<%- theme.js.main %>"></script>
 <script>
     !function(){
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("<%=config.root%>./slider.e37972.js")
+        }("<%- theme.js.slider %>")
     }()
 </script>
 <!-- 页面进度条 -->
-<!-- <script src="<%=config.root%>./js/scrollProgress.min.js"></script> -->
-<script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js"></script>
+<script src="<%- theme.js.scrollProgress %>"></script>
 <script>
     // progress bar init
     const progressElement = window.document.querySelector('.progress-bar');
