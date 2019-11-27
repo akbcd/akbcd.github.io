@@ -260,15 +260,15 @@ $(function () {
 	top: 10%;
     min-height: 500px;
     max-height: 70%;
-	width: 80%;
+    width: 80%;
+    word-wrap: break-word;
 	z-index: 1001;
 	position: fixed;
 	left: 0;
 	right: 0;
-	background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+    background: linear-gradient(200deg,#a0cfe4,#e8c37e);
 	margin: auto;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: auto;
 	border-radius: 10px
 }
 
