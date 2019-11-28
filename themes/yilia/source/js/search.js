@@ -28,14 +28,15 @@ function stopBodyScroll(isFixed){
 $(document).ready(function(){
     clearInput.onclick=function(){
         $('#js-searchInput').val('');
+        $('#js-searchResult').html('');
         clearInput.style.display='none';
     };
     //给搜索图标添加点击事件
     var open = document.getElementById('js-icon-search');
     open.onclick = function(){
         //弹窗出现时淡入动画
-        $("#js-searchModal").fadeIn(1000);
-        $("#js-modal-overlay").fadeIn(1000);
+        $('#js-searchModal').fadeIn(1000);
+        $('#js-modal-overlay').fadeIn(1000);
         //固定body
         stopBodyScroll(true);
     }
@@ -43,8 +44,8 @@ $(document).ready(function(){
     var close = document.getElementById('js-modal-overlay');
     close.onclick = function(){
         //弹窗关闭时淡出动画
-        $("#js-searchModal").fadeOut(500);
-        $("#js-modal-overlay").fadeOut(500);
+        $('#js-searchModal').fadeOut(500);
+        $('#js-modal-overlay').fadeOut(500);
         //移除body固定
         stopBodyScroll(false);
         document.body.removeAttribute('style');
