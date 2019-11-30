@@ -1,6 +1,11 @@
 //添加清空输入内容按钮
 var searchInput = document.getElementById('js-searchInput');
 var clearInput = document.getElementById('js-searchTextCancel');
+searchInput.onfocus=function () {
+    if($(this).val() != ''){
+        clearInput.style.display='block';
+    }
+};
 searchInput.addEventListener('input', function () {
     if($(this).val() == ''){
         clearInput.style.display='none';
