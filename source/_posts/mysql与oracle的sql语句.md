@@ -242,7 +242,7 @@ SELECT student.sid,student.Sname FROM Student,SC WHERE Student.sid=SC.sid AND ci
 update sc set score=(select avg(score) from sc,course,teacher where course.cid=sc.cid and course.tid=teacher.tid and teacher.tname='杨巍巍')
 
 13.查询和“”号的同学学习的课程完全相同的其他同学学号和姓名；
-SELECT sid FROM SC WHERE cid in (SELECT cid FROM SC WHERE sid=6) GROUP BY sid having count(*)=(SELECT count(*) FROM SC WHERE sid=6); 
+SELECT sid FROM SC WHERE cid in (SELECT cid FROM SC WHERE sid=6) GROUP BY sid having count(`*`)=(SELECT count(`*`) FROM SC WHERE sid=6); 
 此题知识点，用数量来判断 
 
 14.删除学习“叶平”老师课的SC表记录； 

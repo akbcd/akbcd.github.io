@@ -99,7 +99,7 @@ tags: 游戏
 <br>
 </body>
 
-下面是源代码，与上面的不太相同。源代码移动的是img标签，上面的用div标签代替，博客主题中img标签有点击事件，游戏实现不了
+下面是源代码，与上面的不太相同。源代码移动的是img标签，上面的用div标签代替，本主题中img标签有点击事件，游戏实现不了
 运用了三个图片，需要的话自行点击下载（图片另存为）
 <a href="left.jpg" target="_blank">left.jpg</a>
 <a href="null.jpg" target="_blank">null.jpg</a>
