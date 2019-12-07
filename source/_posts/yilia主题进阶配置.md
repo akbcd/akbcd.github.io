@@ -72,7 +72,7 @@ hexo-theme-matery主题开发者：
 [https://blinkfox.github.io/](https://blinkfox.github.io/)
 没有他们的贡献，我自己实现不了这个功能，本功能实现效果与hexo-theme-matery主题类似
 
-### 效果图
+### 效果图（具体效果可参看本主题）
 pc页面
 ![](https://tva1.sinaimg.cn/large/007X8olVly1g8asepxgnbj30kj09yqbv.jpg)
 手机页面
@@ -491,4 +491,6 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论
+2.代码块复制功能
 花时间研究研究看看能不能实现
+评论功能早就想实现了，但是始终没有实现。一直在纠结，觉得没用

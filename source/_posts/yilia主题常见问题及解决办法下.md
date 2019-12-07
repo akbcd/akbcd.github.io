@@ -222,7 +222,7 @@ alert("屏幕分辨率的高："+screen.availHeight)//屏幕分辨率高度
 yilia主题，移动端适配有很多问题，之前的页面滚动动画、返回顶部按钮和目录，开发者应该是没有对移动端进行适配测试（可能是先在pc上实现，再往移动端适配）
 开发者已经不维护这个主题，本人在移动端启用发现了很多问题
 移动端文章开启目录，点击所有文章按钮，页面右侧会出现滚动条，关闭所有文章后，页面弹动效果中也会出现滚动条
-## 解决办法
+### 解决办法
 * 在`themes\yilia\source\main.0cf68a.css`中查找`.mid-col.show`，添加`overflow: hidden`
 
 ```
@@ -242,3 +242,38 @@ yilia主题，移动端适配有很多问题，之前的页面滚动动画、返
 }
 ```
 问题解决
+## 8.代码块行号显示错乱
+这个问题是`white-space: pre-wrap;`自动换行造成的
+### 解决办法
+在`themes\yilia\source\main.0cf68a.css`中查找`white-space: pre-wrap;`，将其删除
+```
+/* 删除white-space: pre-wrap; */
+pre {
+    overflow: auto;
+    white-space: pre;
+    word-wrap: break-word
+}
+```
+使用不自动换行的`white-space:pre;`样式，代码块溢出部分会自动在底部出现滚动条，行号错乱问题就没有了。
+如果代码下面的滚动条看不见，在css中添加
+```
+/* figure滚动条优化 */
+.article-entry figure::-webkit-scrollbar-thumb,.article-entry figure::-webkit-scrollbar-thumb:hover{
+    background-color: #bbbbbb;
+}
+```
+修改滚动条颜色（滚动条默认颜色与代码块背景色冲突）
+## 9.文章内的超链接超出页问题
+当页面进行缩放时，这个区域可能会超出页面。
+### 解决办法
+css中对a标签添加`word-wrap: break-word`属性
+指定如果足够长得话，应该换行：
+```
+/* 添加word-wrap: break-word */
+a {
+    background: transparent;
+    text-decoration: none;
+    color: #08c;
+    word-wrap: break-word
+}
+```

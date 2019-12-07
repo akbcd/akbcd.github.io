@@ -66,6 +66,7 @@ commons-fileupload-1.2.2.jar
 commons-io-2.3.jar
 这两个包在官网应该可以下载（版本可能不一样）
 * jsp页面form表单提交方式为post，`enctype="multipart/form-data"`
+
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

@@ -61,6 +61,7 @@ yilia主题网页语言配置有一个问题，谷歌浏览器每次刷新页面
 **问题分析**
 - 1.首先，这个是点击a标签后，在a标签上添加了一个class属性：active,然后通过css改变点击后a标签的样式。（添加样式的方法只能是js语句）
 - 2.定位文件 在主题文件中用编译器查找`.js-header-menu li a`，在文件目录`themes\yilia\layout\_partial`找到`script.ejs`文件，你会查询到以下代码(我的代码经过规范化整理，并非在一行显示)
+
 ```
 function i(t, n) {
         var r = /\/|index.html/g;
@@ -82,6 +83,7 @@ function i(t, n) {
 - 运用url解码函数`decodeURI()`,将加密的中文翻译回中文
 - 修改**i函数**传参`i(n, o.getAttribute("href"))`,把n改为`decodeURI(n)`
 - 注：`o.getAttribute("href")`获取到的url可能也会出现加密，取决于博客所用的hexo版本，如果加密，添加相应的解码函数即可
+
 ```
 function i(t, n) {
         var r = /\/|index.html/g;
@@ -97,6 +99,7 @@ function i(t, n) {
 ```
 - 运用alert语句`alert(n.replace(r, ""))`，界面显示`tags随笔`，到此问题解决
 - 在`themes\yilia\source\main.0cf68a.css`中，`.header-menu li a:active`，把`a:active`改回`a,active`,或者添加语句`,.header-menu li a:active`
+
 ```
 .header-menu li a:active,.header-menu li a.active {
     color: #eaeaea;
@@ -112,6 +115,7 @@ css和js代码，在编译器中打开，我也真是无语，代码全部写在
 有压缩就会有相应的解压缩，上百度上搜索相应的解压工具（或格式化工具），一般都是网页，将要解压的代码粘到里面，点击格式化或解压缩即可
 - 定位文件`themes\yilia\layout\_partial\script.ejs`,这个是ejs文件，ejs是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。里面第一个script标签中有很多js代码，而且写在一行。比较了一下，这里面的js语句与`themes\yilia\source\mobile.992cbe.js`中的语句几乎是一模一样（特地比较了一下，就是把个别参数换了个名字，有的代码简写，本质上根本没变化）。~~这里我就不太理解了,`script.ejs`写了那么多js代码，为什么不把`mobile.992cbe.js`导入代替script标签中的js代码？这个就同为什么不把css样式直接写在style标签中，而是要link导入一个道理。~~将代码写在网页中，提高了加载速度，写在网页中的js比`themes\yilia\source\mobile.992cbe.js`中的小，而且严谨
 - 修改文件`script.ejs`,将`mobile.992cbe.js`导入代替script标签中的js代码，并将第一个script标签和其中的js代码删除（script是双标签）
+
 ```
 <script src="<%=config.root%>./mobile.992cbe.js"></script>
 <script src="<%=config.root%>./main.0cf68a.js"></script>
@@ -174,6 +178,7 @@ Google Chrome浏览器
 ![](16.png)
 ***
 - 这个函数中
+
 ```
 function a() {
         var t = document.querySelector(".js-overlay")
@@ -183,6 +188,7 @@ function a() {
     }
 ```
 - `document.body.scrollTop`的值始终为0，导致了上面对应的函数
+
 ```
 function f(t, n, r, e, i) {
         var o = u(t)
@@ -210,6 +216,7 @@ function f(t, n, r, e, i) {
 ```
 - `if (f - r <= i)`的判定始终为false，从而执行else语句，导致没有了那个动画效果
 - 相关代码（可自行分析）
+
 ```
 function u(t) {
         for (var n = t.offsetLeft, r = t.offsetParent; null !== r; )
@@ -278,6 +285,7 @@ var sTop=document.body.scrollTop+document.documentElement.scrollTop;
 - 这个介绍中，明确说了`document.body.scrollTop`在不同浏览器上的不同情况，的确有兼容问题。而且文章中说**谷歌浏览器只认识document.body.scrollTop**，但是我就是在谷歌浏览器上测试效果的，很显然谷歌是不认`document.body.scrollTop`的，因为值始终为0。文章中有提到**因为document.body.scrollTop与document.documentElement.scrollTop两者有个特点，就是同时只会有一个值生效。比如document.body.scrollTop能取到值的时候，document.documentElement.scrollTop就会始终为0；反之亦然。**所以运用文章中的方法`var sTop=document.body.scrollTop+document.documentElement.scrollTop;`测试，方法的确有效，alert后，那个值不为0了。当然，可能会有浏览器`document.body.scrollTop`和`document.documentElement.scrollTop`都识别的情况，因此，提供一个`||`语句判断，即`var sTop=document.body.scrollTop||document.documentElement.scrollTop;`。
 - 这里介绍一个属性`window.scrollY`，用这个也可以
 - 代码修改如下：
+
 ```
 function a() {
         var t = document.querySelector(".js-overlay")
@@ -320,12 +328,14 @@ function a() {
 说到这个返回顶部按钮，其实开发者最初开发这款主题时就没有返回顶部按钮，返回顶部按钮是开发者后期加上去的。但是返回顶部按钮只出现在pc端，移动端并没有出现。自己折腾了一下，改了几行代码，解决了移动端没有返回顶部按钮的问题。
 **问题分析**
 - pc端页面按钮出现，移动端按钮不出现。pc浏览器控制台发现，返回顶部按钮是在aside标签中实现的。在pc端页面，aside标签样式display为block，但是在移动端页面，aside标签display值为none。none值为隐藏（这里说明一下，开发者刻意在移动端样式中加了这段代码，这段代码的加入，即使之后的那个o函数被调用，返回顶部的按钮也不会出现）。
+
 ```
     .wrap-side-operation {
         display: none
     }
 ```
 - 在aside标签中的div标签看到了`js-jump-container`，依然是调用了script。用编译器打开主题文件，在里面查找`js-jump-container`。在`themes\yilia\source\main.0cf68a.js`中找到相应函数
+
 ```
     189: function(e, t) {
         "use strict";
@@ -392,6 +402,7 @@ function a() {
 - 定位文件`themes\yilia\source\main.0cf68a.css`,在里面查找`.wrap-side-operation`，找到`@media screen and (max-width: 800px)`下的`.wrap-side-operation`，因为要在移动端页面添加返回顶部按钮，所以要在移动端的样式下修改，`@media screen and (max-width: 800px)`即为移动端不同于pc端的样式，在移动端页面时，`@media screen and (max-width: 800px)`样式的权重是高于非`@media screen and (max-width: 800px)`下样式的权重的。
 ![](21.png)
 - 修改内容如下：
+
 ```
     .wrap-side-operation {
         right: 0
@@ -410,6 +421,7 @@ function a() {
 <div><img width=49% src ="22.png"/> <img width=49% src ="23.png"/></div>
 
 - 添加`.jump-container:hover .icon-back {background: #ccc}`和`.jump-container:active .icon-back {background: rgba(36,193,246,.9)}`的原因是修改点击返回顶部按钮样式。pc端样式代码：
+
 ```
 .jump-container:hover .icon-back {
     background: rgba(36,193,246,.9)
@@ -417,6 +429,7 @@ function a() {
 ```
 - 如果不单独添加那两段代码，移动端返回顶部按钮被点击时，按钮会变为蓝色，且不会还原(刷新页面后会还原)，pc端那个变蓝色是鼠标悬停样式，到移动端会出问题，也有可能会不变色。利用权重的关系，在移动端样式添加这两段代码，只在移动端生效。`:active`为鼠标单击时样式，`:hover`为鼠标悬停时样式。个人感觉`:active`更适用于移动端。
 - `themes\yilia\source\main.0cf68a.js`文件中修改`(t || window).onscroll`。将`(t || window).onscroll`拆开，写成两个
+
 ```
                 t.onscroll = r(function() {
                     "function" == typeof a && a.apply(this, arguments),
@@ -428,6 +441,7 @@ function a() {
                 }, 100),
 ```
 - 修改后的函数为
+
 ```
     189: function(e, t) {
         "use strict";

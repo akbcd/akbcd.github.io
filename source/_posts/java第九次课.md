@@ -24,6 +24,7 @@ public class TestMath{
 0.4975789553898078*/
 ```
 * 编写一个常用方法，求两个数之间的随机整数
+
 ```
 import java.util.Scanner;
 
@@ -69,6 +70,7 @@ public static int getRandomTwoNumber(int start,int end){//start小于end
 }
 ```
 * Math.floor方法
+
 返回最接近正无穷大的数，该值小于等于参数，并等于某个整数
 ```
 double d=11.9;
@@ -81,8 +83,10 @@ System.out.println(Math.floor(d1));
 ```
 * Math.max方法：比较两个数中最大的一个
 * Math.min 比较两个数中最小的
+
 ## 日期类
 * Date与String相互转换
+
 ```
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -127,6 +131,7 @@ public class TestDate{
 * throw 声明异常
 * throws 抛出异常
 * finally 无论异常是否会发生，都执行的代码，一般情况下用于资源释放
+
 ```
 public class TestException {
 	public static void main(String[] args) {

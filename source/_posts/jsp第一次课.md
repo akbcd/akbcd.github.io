@@ -126,6 +126,7 @@ jsp文件内容（与html页面相似）
 
 ## 练习
 * 运用jsp打印出九九乘法表
+
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -150,6 +151,7 @@ jsp文件内容（与html页面相似）
 </html>
 ```
 * 输出100内能被3整除的数，每行显示3个
+
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

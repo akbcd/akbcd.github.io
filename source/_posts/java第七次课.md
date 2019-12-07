@@ -174,6 +174,7 @@ Role 有两个子类：
 ***
 **代码**
 * Magicer.java
+
 ```
 package jichengshu;
 //法师
@@ -195,6 +196,7 @@ class Magicer extends Role {
 }
 ```
 * Role.java
+
 ```
 package jichengshu;
 //所有职业的父类
@@ -214,6 +216,7 @@ public class Role {
 }
 ```
 * Soldier.java
+
 ```
 package jichengshu;
 //战士
@@ -235,6 +238,7 @@ class Soldier extends Role {
 }
 ```
 * Team.java
+
 ```
 package jichengshu;
 
@@ -257,6 +261,7 @@ class Team {
 }
 ```
 * Test.java
+
 ```
 package jichengshu;
 
@@ -316,6 +321,7 @@ public class Test {
 ***
 **代码**
 * Role.java
+
 ```
 package role;
 
@@ -497,6 +503,7 @@ class Soldier extends NamedRole{
 }
 ```
 * TestRole.java
+
 ```
 package role;
 
@@ -571,6 +578,7 @@ public class TestRole {
 ***
 **代码**
 * SimpleCustomer.java
+
 ```
 package simplecustomer;
 
@@ -621,6 +629,7 @@ public class SimpleCustomer {
 }
 ```
 * Test.java
+
 ```
 package simplecustomer;
 
@@ -656,6 +665,7 @@ public static void main(String[] args) {
 ***
 **代码**
 * Customer.java
+
 ```
 package simplecustomer;
 
@@ -831,6 +841,7 @@ Program 类图如下：
 ***
 **代码**
 * Performer.java
+
 ```
 package performer;
 
@@ -839,6 +850,7 @@ public interface Performer {
 }
 ```
 * Dancer.java
+
 ```
 package performer;
 
@@ -854,6 +866,7 @@ public class Dancer implements Performer {
 
 ```
 * Player.java
+
 ```
 package performer;
 
@@ -869,6 +882,7 @@ public class Player implements Performer {
 
 ```
 * Program.java
+
 ```
 package performer;
 
@@ -889,6 +903,7 @@ public class Program {
 
 ```
 * Singer.java
+
 ```
 package performer;
 
@@ -903,6 +918,7 @@ public class Singer implements Performer {
 
 ```
 * TestAll.java
+
 ```
 package performer;
 

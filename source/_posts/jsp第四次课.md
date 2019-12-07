@@ -100,7 +100,7 @@ doPost：若果没有重写service，那么请求的方式是post的
 3.destroy():销毁的时候调用一次
 4.关闭服务器
 5.`web.xml`配置servlet时添加`<load-on-startup>1</load-on-startup>`：可以使servlet在服务启动时加载
-## request:
+## request
 ### 携带参数
 `request.setAttribute("uname", uname);`
 ### 获取参数的类型`--`Object 需要强制类型转换
@@ -118,7 +118,7 @@ post方式提交的乱码问题
 get方式提交的乱码，或者直接在地址栏提交的乱码
 `String uname = request.getParameter("uname");`
 `uname = new String(uname.getBytes("iso-8859-1"),"utf-8");`
-## response:
+## response
 客户端跳转（请求重定向、get）
 `response.sendRedirect("fail.jsp");`
 ## servlet里面连接数据库

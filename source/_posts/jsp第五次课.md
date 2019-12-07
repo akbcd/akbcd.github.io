@@ -79,7 +79,7 @@ public void sessionDestroyed(HttpSessionEvent arg0)  {
 %>
 当前访问量:<%=application.getAttribute("sum") %>
 ```
-## 表单空间默认值
+## 表单控件默认值
 通过`request.getParameter(name);`获取值
 checkbox通过`request.getParameterValues("checkbox");`获取值（用字符串数组接值）
 
@@ -107,7 +107,7 @@ if (hobbys != null && hobbys.length > 0) {
     hobby = hobby.substring(0, hobby.length() - 1);
 }
 ```
-## 表单空间回显
+## 表单控件回显
 
 |属性|回显方法|
 |:-:|:-:|

@@ -47,6 +47,7 @@ public class TestCode {
 ```
 ## 内部类（了解性内容）
 + **成员内部类**：相当于成员变量
+
 特点：不允许在内部类里面定义静态的成员和方法
 创建对象方式 
 内部类类型 对象名=外部类对象.new 内部类类型();
@@ -84,6 +85,7 @@ public class TestMemeberClass{
 ```
 控制台输出：b
 + **局部内部类**
+
 特点：如果该类访问它所在方法的变量，此变量必须被final修饰
 访问变量范围只在局部内部类有效
 ```
@@ -111,6 +113,7 @@ public class TestLocaltionClass{
 }
 ```
 + **静态内部类**
+
 特点：可以在这个类里面声明静态的成员
 ```
 public class TestStaticClass{
@@ -126,6 +129,7 @@ public class TestStaticClass{
 }
 ```
 + **匿名内部类**(重点)
+
 当你想创建一个对象的时候，一般父类是抽象类或接口的时候，才可以用这个
 ```
 public class TestNoNameClass{
@@ -183,6 +187,7 @@ class JavaT implements Teacher{
 }
 ```
 ## java常用类
+
 + **Object类**->java根基类（任何类的父类）
 特点：任何一个自定义的类，如果没有显示继承某个类，那么默认继承Object类。所以大多数情况不写
 讲解四个方法
@@ -265,6 +270,7 @@ class SmallStu extends Student{
 1.提供我们方法，看参数列表，需要什么参数，就给什么参数
 2.提供我们的方法，看返回值类型，，返回什么，就用什么类型接收
 + **String类**
+
 a） String和StringBuffer区别？
 String是不变的，StringBuffer可变的
 b） ==与equals区别？
@@ -323,6 +329,7 @@ long haoMiao=System.currentTimeMillis();
 System.out.println(haoMiao);
 ```
 + **包装类**
+
 八种基本数据类型，对应的都有一个包装类
 a） 学包装类的目的？
 基本数据类型不具备和String相互转换的功能
