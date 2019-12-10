@@ -1,0 +1,24 @@
+#js-btn-copy {
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc,#eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    padding: 2px 6px;
+    position: absolute;
+    right: 10%;
+    opacity: 0;
+}
+figure:hover #js-btn-copy{
+  opacity: 1;
+}
+@media screen and (max-width: 800px) {
+    #js-btn-copy {
+        right: 5%;
+    }
+}

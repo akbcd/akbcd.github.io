@@ -156,14 +156,18 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 css:
   main: /main.0cf68a.css
+  clipboard: /css/clipboard.css
 js:
   mobile: /js/mobile.992cbe.js
   main: /main.0cf68a.js
   slider: /slider.e37972.js
+  search: /js/search.js
+  script: /js/script.js
+  jquery: https://code.jquery.com/jquery-3.4.1.js #3.4.1
+  #jquery: /js/jquery-3.4.1.js
   scrollProgress: https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js #3.0.2
   #scrollProgress: /js/scrollProgress.min.js
-  jquery: https://code.jquery.com/jquery-3.4.1.js #3.4.1
-  #jquery: /js/search.js
-  search: /js/search.js
   crypto: https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js #3.1.9-1
   #crypto: /js/crypto-js.min.js
+  clipboard: https://clipboardjs.com/dist/clipboard.min.js
+  #clipboard: /js/scrollProgress.min.js

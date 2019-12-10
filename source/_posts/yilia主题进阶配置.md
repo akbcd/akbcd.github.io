@@ -3,6 +3,7 @@ title: yilia主题进阶配置
 date: 2019-10-14 11:13:55
 tags: 博客
 toc: true
+top: true
 ---
 这篇文章添加几个适用于yilia主题的功能
 <!--more-->
@@ -403,6 +404,7 @@ top: true
 * 将以下内容添加到`themes\yilia\layout\_partial\article.ejs`文件的顶部
 `<script src="<%=config.root%>./js/crypto-js.min.js"></script>`是本地引入js的路径，根据需要更改
 这里提供的是云端引用（即联网才可用）
+
 ```
 <% if (theme.verifyPassword.enable) { %>
 <!-- 本地引入js -->
@@ -422,6 +424,7 @@ top: true
 <% } %>
 ```
 * 在`themes\yilia\_config.yml`中添加如下配置
+
 ```
 # 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可.
 # 比如
@@ -488,9 +491,181 @@ verifyPassword:
 yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条，上面的js在pc端页面返回值始终是0，即进度条的宽度始终为0
 ### 感谢
 [https://blinkfox.github.io/](https://blinkfox.github.io/)
+## hexo代码块复制功能
+此功能应该适用于所有的hexo主题
+### 说明
+代码块复制功能是在代码块部分显示复制按钮，点击复制按钮，实现代码块复制功能
+本功能实现需要引入jquery
+运用[clipboard.js](http://www.clipboardjs.cn/)实现复制代码块功能
+### 实现方法
+主题中添加js代码
+本js中clipboard.js使用网络引用，可以将其下载到本地引用
+如果主题中没有引入jquery，请将jquery引入
+```
+<!-- 复制代码块 -->
+<script src="https://clipboardjs.com/dist/clipboard.min.js"></script>
+<script>
+    // 代码块复制
+    function copy(button){
+        new ClipboardJS('#js-btn-copy', {
+            target: function(trigger) {
+                if(trigger.nextElementSibling != null){
+                    // 利用定时器修改复制按钮
+                    $(button).html("复制成功");
+                    setTimeout(function(){ $(button).html("复制") }, 1000);
+                    return trigger.nextElementSibling;
+                }
+            }
+        });
+    }
+    /*页面载入完成后，创建复制按钮*/
+    !function (e, t, a) {
+        var initCopyCode = function(){
+            var copyHtml = '<button id="js-btn-copy" onclick="copy(this)" >复制</button>';
+            $(".code pre").before(copyHtml);
+        }
+        initCopyCode();
+    }(window, document);
+</script>
+```
+主题中添加css样式（本样式根据yilia主题美化）
+```
+#js-btn-copy {
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc,#eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    padding: 2px 6px;
+    position: absolute;
+    right: 10%;
+    opacity: 0;
+}
+figure:hover #js-btn-copy{
+  opacity: 1;
+}
+@media screen and (max-width: 800px) {
+    #js-btn-copy {
+        right: 5%;
+    }
+}
+```
+样式根据自己的主题需要进行更改，重点更改自己主题中复制按钮的样式
+### 实现效果
+点击复制按钮，复制按钮变成复制成功，代码块被选中表明代码块已经被复制
+### 感谢
+本功能实现参照
+[hexo+yilia添加复制代码块的功能](https://blog.csdn.net/weixin_41287260/article/details/103051122)
+[蒋振飞的博客 - 网站搭建 (第23天) 代码块复制功能](https://jzfblog.com/detail/153)
+重点应用
+[clipboard.js](http://www.clipboardjs.cn/)
+对以上杰出贡献者表示感谢
+## 代码区块高亮
+yilia主题自带高亮
+分享一下这篇文章[hexo+yilia修改代码块等样式](https://blog.csdn.net/weixin_41287260/article/details/103051056)
+### 两种实现方法
+#### 第一种：使用主题自带代码区块高亮实现
+**方法一**
+前提：
+hexo配置文件`_config.yml`（不是主题那个）中`highlight.enable`值为true
+```
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+```
+在代码块标签后面声明代码区块语言（这里以css为例）
+````
+```css
+figure:hover #js-btn-copy{
+  opacity: 1;
+}
+```
+````
+效果：
+```css
+figure:hover #js-btn-copy{
+  opacity: 1;
+}
+```
+**方法二**
+通过修改hexo配置文件实现
+将`highlight.auto_detect`值设为true
+即开启代码区块语言自动检测功能
+```
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+```
+注：修改hexo配置文件后需要重启hexo服务才能生效
+如果依然没有生效，请尝试使用`hexo clean`
+高亮样式通过主题css样式文件进行实现（可以根据需要自行修改`main.0cf68a.css`文件）
+#### 第二种：通过[highlight.js](https://highlightjs.org/)实现代码区块高亮
+[highlight.js](https://highlightjs.org/)是实现代码区块高亮的js
+此js会自动检测页面中`<pre><code>..</code></pre>`的代码区块（这是重点）
+**实现方法：**
+在主题中引入`highlight.js`，这里引用网络（可以下载到本地）
+具体实现可以观看官方文档[https://highlightjs.org/usage/](https://highlightjs.org/usage/)
+```
+<script src="https://highlightjs.org/static/highlight.site.pack.js"></script>
+<script>
+    //代码区块高亮
+    hljs.initHighlightingOnLoad();
+</script>
+```
+主题中引入css（官网下载`highlight.js`压缩包），里面有很多css样式，引入自己喜欢的一种即可
+**补充说明：**
+如果代码区块没有高亮，请观看一下你的代码区块的标签是不是`<pre><code>..</code></pre>`格式
+```
+<pre>
+    <code>
+        <span>这是代码区块</span>
+    </code>
+</pre>
+```
+先说一下我遇到的问题
+我的这个页面中，代码区块的标签格式
+```
+<figure>
+    <table>
+        <tbody>
+            <tr>
+                <tb>
+                    <pre>
+                        <span>这是代码区块</span>
+                    </pre>
+                </tb>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+```
+可以明显看到代码区块的标签并不是`<pre><code>..</code></pre>`格式
+进行jquery手动修复
+在`hljs.initHighlightingOnLoad();`添加
+```
+$("figure table").wrap("<code></code>");
+$("figure code").wrap("<pre></pre>");
+```
+将table标签用code标签包裹起来，再用pre标签将code标签包裹起来，实现上面的代码结构
+```
+<script>
+    //代码块高亮
+    $("figure table").wrap("<code></code>");
+    $("figure code").wrap("<pre></pre>");
+    hljs.initHighlightingOnLoad();
+</script>
+```
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论
-2.代码块复制功能
 花时间研究研究看看能不能实现
 评论功能早就想实现了，但是始终没有实现。一直在纠结，觉得没用
