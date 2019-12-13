@@ -162,3 +162,148 @@ p168
 ```
 
 CentOS观察（p172）
+通过uname检查Linux内核与操作系统的架构版本。
+```
+查看内核版本
+uname -r
+
+查看操作系统的架构版本
+uname -m
+```
+
+重点回顾（p173~p178）
+```
+Linux的每个文件中，可分别给予用户、用户组与其他人三种身份的rwx权限；
+利用ls -l显示的文件属性中，第一个字段是文件的权限，共十个位，第一个位是文件类型，接下来三个为一组共三组，为用户、用户组、其他人的权限，权限有r、w、x三种；
+如果文件名之前多一个“.”，则代表这个文件为隐藏文件；
+若需要root的权限时，可使用su -这个命令来切换身份，操作完毕则使用exit离开su的命令环境；
+更改文件的用户组支持可用chgrp，修改文件的拥有者可用chown，修改文件的权限可用chmod；
+chmod修改权限的方法有两种，分别是符号法与数字法，数字法中r、w、x数字分别为4、2、1；
+对文件来讲，权限的性能为：
+r：可读取此一文件的实际内容，如读取文本文件的实际内容等；
+w：可以编辑、新增或是修改该文件的内容（但不包含删除该文件）；
+x：该文件具有可以被系统执行的权限；
+对目录来说，权限的功能为：
+r：读取目录中的内容；
+w：修改目录中的内容；
+x：访问目录；
+Linux文件名的限制为：单一文件或目录最大容许文件名为255个英文字符或128个中文字符；
+FHS所定义的三层主目录为：/、/var、/usr三层；
+绝对路径为从根目录/开始写起，否则就是相对路径。
+```
+
+目录与路径
+常见的处理目录的命令：（p177）
+cd：切换目录
+pwd：显示当前目录
+mkdir：建立一个新目录
+rmdir：删除一个空目录
+
+mkdir（建立新目录）（p178）
+```
+mkdir [-mp] 目录名称
+选项与参数：
+-m：设置文件权限。直接设置，不使用默认权限（umask）。
+-p：帮助你直接将所需要的目录（包含上层目录）递归创建。
+
+范例：建立权限为rwx--x--x的目录。
+mkdir -m 711 test2
+```
+
+PATH的变量说明（p181）
+不同身份用户的PATH不同，默认能够执行的命令也不同（如root与dmtsai）；
+PATH是可以修改的；
+使用绝对路径或相对路径直接指定某个命令的文件名来执行，会比查找PATH来的正确；
+命令应该要放置到正确的目录下，执行才会比较方便；
+本目录（.）最好不要放到PATH当中。
+
+文件与目录的查看（p182）
+```
+范例一：将家目录下的所有文件列出来（含属性与隐藏文件）
+ls -al ~
+
+范例三：完整的显示文件的修改时间（modification time）
+ls -al --full-time ~
+```
+
+p183
+```
+范例一：用root身份，将家目录下的.bashrc复制到/tmp下，并更名为bashrc。
+cp ~/.bashrc /tmp/bashrc
+cp -i ~/.bashrc /tmp/bashrc
+cp：overwrite '/tmp/bashrc'? n <==n不覆盖，y为覆盖
+重复做两次操作，由于/tmp下面已经存在bashrc了，加上-i选项后，则在覆盖前会询问使用者是否确定，可以按下n或y来二次确认。
+
+范例二：切换目录到/tmp，并将/var/log/wtmp复制到/tmp且观察属性。
+cd /tmp
+cp /var/log/wtmp . <==想要复制到目前的目录，最后的.不要忘。
+在不加任何选项的情况下，文件的某些属性/权限会改变。注意，文件建立的时间也不一样。
+如果你想要将文件的所有特性都一起复制过来，可以加上-a
+cp -a /var/log/wtmp .
+查看命令
+ls -l /var/log/wtmp wtmp
+你会看到/var/log/wtmp的数据特性与wtmp的数据特性完全一模一样。
+```
+
+rm（删除文件或目录）（p185）
+```
+rm [-fir] 文件或目录
+-f：就是force的意思，忽略不存在的文件，不会出现警告信息。
+-i：交互模式，在删除前会询问是否操作。
+-r：递归删除，最常用于目录的删除，这是非常危险的选项。
+
+无提示强制递归删除文件
+rm -rf
+删除空目录命令
+rmdir /tmp/etc
+```
+
+数据截取（p190）
+head（取出前面几行）
+```
+head /etc/man_db.conf
+默认的情况中，显示前面十行，若要显示前20行，就得要这样：
+head -n 20 /etc/man_db.conf
+不显示后面的100行，前面的都显示
+head -n -100 /etc/man_db.conf
+```
+
+tail（取出后面几行）
+```
+tail /etc/man_db.conf
+默认情况中，显示最后的十行，若要显示最后的20行，就得要这样：
+tail -n 20 /etc/man_db.conf
+如果不想知道有几行，却只想列出100行以后的数据
+tail -n +100 /etc/man_db.conf
+持续检测/var/log/messages的内容
+tail -f /var/log/messages
+<==要等到输入[ctrl]-c之后才会结束执行tail这个命令。
+```
+
+例题：（p191）
+```
+假如我想显示/etc/man_db.conf的第11到第20行？
+head -n 20 /etc/man_db.conf | tail -n 10
+
+列出正确的行号
+答：通过cat -n来显示行号，再用上面的命令截取即可
+cat -n /etc/man_db.conf | head -n 20 | tail -n 10
+```
+
+修改文件事件或创建新文件：touch（p193）
+```
+范例一：新建一个空文件并观察时间。
+cd /tmp
+touch testtouch
+ls -l testtouch
+
+范例二：将~/.bashrc复制成为bashrc，假设复制完全的属性，检查日期。
+cp -a ~/.bashrc bashrc
+date; ll bashrc; ll --time=atime bashrc; ll --time=ctime bashrc
+共显示四行信息
+第一行：目前的时间；第二行：mtime时间；第三行：atime时间；第四行：ctime时间；
+
+范例三：修改范例二的bashrc文件，将日期调整为两天前。
+touch -d "2 days ago" bashrc
+date; ll bashrc; ll --time=atime bashrc; ll --time=ctime bashrc
+```

@@ -1,5 +1,4 @@
-!
-function(t) {
+!function(t) {
     function e(r) {
         if (n[r]) return n[r].exports;
         var i = n[r] = {
