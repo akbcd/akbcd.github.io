@@ -105,7 +105,7 @@ tags: 游戏
 <a href="null.jpg" target="_blank">null.jpg</a>
 <a href="right.jpg" target="_blank">right.jpg</a>
 
-```
+```html
 <html>
 	<head>
 		<title>青蛙跳</title>

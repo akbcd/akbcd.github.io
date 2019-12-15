@@ -90,7 +90,7 @@ ROLLBACK
 ![course](course.jpg)
 ![sc](sc.jpg)
 
-```
+```sql
 1.分别查询学生表和学生修课表中的全部数据。
 select * from student 
 select * from SC

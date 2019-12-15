@@ -37,7 +37,7 @@ tags: 博客
 4. 如果引用图片大小过大，比如说现在手机拍摄的照片，一张5MB左右大小，一篇文章引用图片数量最好不要多余五张，超过这些数目，图片是无法显示出来的，而且能显示出来的图片载入的过程也很慢。图片很大，而且不是什么特殊图片，建议使用图床。
 ## hexo引用本地音乐
 废话不说，直接看代码
-```
+```html
 <audio src="音乐.mp3" controls></audio>
 ```
 在markdown语法中直接写就行，支持audio标签 controls必须加，不然浏览器显示不出播放器
@@ -45,12 +45,12 @@ tags: 博客
 **优缺点分析**同上
 ## hexo引用本地视频
 代码
-```
+```html
 <video width="100%" height="100%" src="视频.mp4" controls="controls"></video>
 ```
 在这里详细讲解一下video标签
 完整的video标签中应该有
-```
+```html
 <video width="100%" height="100%" src="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_2.mp4" controls="controls" poster="http://videooss.tan8.com/tan8video/f5/8d/f5ef7a9be4ebfe7ce919cdeca03a878d/f5ef7a9be4ebfe7ce919cdeca03a878d_5.jpg" webkit-playsinline="true"></video>
 ```
 `width="100%" height="100%"`必须要有，不然个别浏览器无法显示视频
@@ -62,7 +62,7 @@ tags: 博客
 其它方法可自行去网络查找。
 如果你有网上视频URL，直接把URL地址粘到src里即可（当然，这就不属于本地引用了）
 例子（引用的云端url）：
-```
+```html
 <video width="100%" height="100%" src="https://vdse.bdstatic.com/c8e809ee661311914373875a22a604fb.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2Fede47047d81e465d4e653b24bfbbb58a78b52db9a311c1e3dab6809efc647277" controls="controls" webkit-playsinline="true"></video>
 ```
 效果：

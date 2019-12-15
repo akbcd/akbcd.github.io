@@ -25,7 +25,7 @@ toc: true
 * 将这段代码所在的函数删除
 
 我删除的内容（就是将`192:`到`193`之间的内容全部删除）
-```
+```js
 192: function(e, t, n) {
         "use strict";
         function o(e) {
@@ -78,7 +78,7 @@ toc: true
 * 修改移动端css
 * 定位文件`themes\yilia\source\main.0cf68a.css`，查找`@media screen and (max-width: 800px)`，在下面添加以下内容
 
-```
+```css
 .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article{
     max-height: 350px;
     font-size: smaller
@@ -102,7 +102,7 @@ toc: true
 ### 不匹配的结束标记。
 
 通过控制台，可以发现问题提示在p标签
-```
+```html
 <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
             缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
@@ -157,7 +157,7 @@ p标签不能嵌套pre标签（通过控制台查看元素可以发现p标签和
 * 2.`function s()`是移动端页面才执行的函数，通过下面的判断可以看出（因为问题只出现在移动端，所以只在控制移动端js的代码中添加）
 * 3.在`function s()`函数中添加判断(在`document.querySelector("#container").addEventListener("scroll"`之前添加即可)
 
-```
+```js
 function s() {
     //开始添加
     //添加比较body总高度与浏览器页面可用高度
@@ -174,7 +174,7 @@ function s() {
 ```
 这里解释一下为什么判断网页可见区域高度是否小于屏幕分辨率的高度
 如果不添加这个判断，会对所有的页面都添加这个height属性，移动端css中
-```
+```css
 #container, body, html {
     height: auto;
     overflow-x: hidden;
@@ -190,7 +190,7 @@ function s() {
 屏幕分辨率的高：window.screen.height（屏幕分辨率高度）
 屏幕可用工作区高：window.screen.availHeight/screen.availHeight（屏幕分辨率高度）
 
-```
+```js
 alert("body总高度："+document.body.clientHeight)//body总高度
 alert("body总高度："+document.body.offsetHeight)//body总高度
 alert("body总高度："+document.body.scrollHeight)//body总高度
@@ -209,7 +209,7 @@ alert("屏幕分辨率的高："+screen.availHeight)//屏幕分辨率高度
 将上下页a标签转为行内块
 当a标签的大小不足以使它在一行显示，a标签内容会全部换行，而不会出现换行一半的现象
 即在css中对`#page-nav .extend`添加`display:inline-block;`
-```
+```css
 /* 添加上下页标签转为行内块 */
 #page-nav .extend {
 	display:inline-block;
@@ -225,7 +225,7 @@ yilia主题，移动端适配有很多问题，之前的页面滚动动画、返
 ### 解决办法
 * 在`themes\yilia\source\main.0cf68a.css`中查找`.mid-col.show`，添加`overflow: hidden`
 
-```
+```css
 /* 添加overflow: hidden */
 .mid-col.show {
     background: none;
@@ -235,7 +235,7 @@ yilia主题，移动端适配有很多问题，之前的页面滚动动画、返
 ```
 * 在移动端css下，即`@media screen and (max-width: 800px)`下，隐藏`#container`标签滚动条
 
-```
+```css
 /* 隐藏滚动条 */
 #container::-webkit-scrollbar {
     width: 0
@@ -246,7 +246,7 @@ yilia主题，移动端适配有很多问题，之前的页面滚动动画、返
 这个问题是`white-space: pre-wrap;`自动换行造成的
 ### 解决办法
 在`themes\yilia\source\main.0cf68a.css`中查找`white-space: pre-wrap;`，将其删除
-```
+```css
 /* 删除white-space: pre-wrap; */
 pre {
     overflow: auto;
@@ -256,7 +256,7 @@ pre {
 ```
 使用不自动换行的`white-space:pre;`样式，代码块溢出部分会自动在底部出现滚动条，行号错乱问题就没有了。
 如果代码下面的滚动条看不见，在css中添加
-```
+```css
 /* figure滚动条优化 */
 .article-entry figure::-webkit-scrollbar-thumb,.article-entry figure::-webkit-scrollbar-thumb:hover{
     background-color: #bbbbbb;
@@ -268,7 +268,7 @@ pre {
 ### 解决办法
 css中对a标签添加`word-wrap: break-word`属性
 指定如果足够长得话，应该换行：
-```
+```css
 /* 添加word-wrap: break-word */
 a {
     background: transparent;

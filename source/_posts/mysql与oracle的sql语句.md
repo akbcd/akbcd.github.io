@@ -8,7 +8,7 @@ toc: true
 这里对MySql基本数据类型和Oracle基本数据类型的介绍可能不是很全面
 <!--more-->
 ## 常用基础语句
-```
+```sql
 1、插入数据
 insert into 表名(列1,列2· · ·) values(值1,值2· · ·)
 （其中列名可省略，默认为每一列都有值）
@@ -52,7 +52,7 @@ select min(列名) as minvalue from 表名（求一列当中的最小值）
 5.空值，判断是空非空
 6.多重条件AND并且，OR或需要条件全部成立的用AND，需要条件成立一部分的用OR
 ## 多表查询
-```
+```sql
 1．简单链接
 Select * from 表1 s,表2 y where s.列 = y.列（其中*为要查询的列，y,s为两个表的别名，where后面为两个表的逻辑关系）
 2．外连接
@@ -68,7 +68,7 @@ Select * from 表1 a，（select 一般为函数 from 表2 where 表2.列 = a.�
 Where优先级较高，比聚合函数先执行，所以后面不能以聚合函数作为判断条件
 Having优先级较低，比聚合函数后执行，可以以聚合函数作为筛选条件，但必须和分组group by同时使用
 ## DDL修改表语句
-```
+```sql
 1：删除列
 ALTER TABLE 【表名字】 DROP 【列名称】
 2：增加列
@@ -132,7 +132,7 @@ alter table tablename drop index emp_name;
 |赵七|男|28|上海|
 |张四|女|23|北京|
 
-```
+```sql
 （1）. 写出sql语句，查询所有年龄大于20岁的员工（2分）
 select * from employee where E_age > 20
 （2）. 写出sql语句，查询所有年龄小于25岁的女性员工（3分）
@@ -159,7 +159,7 @@ delete from employee where e_age > 24 and e_sex='女'
 ```
 ## 数据库强化练习
 一、简单查询
-```
+```sql
 1、列出全部学生的信息。
 SELECT * FROM 学生
 
@@ -202,7 +202,7 @@ SC(Sid,Cid,score) 成绩表
 Teacher(Tid,Tname) 教师表
 ```
 练习内容：
-```
+```sql
 1.查询“某1”课程比“某2”课程成绩高的所有学生的学号；
 SELECT a.sid FROM (SELECT sid,score FROM SC WHERE cid=1) a,(SELECT sid,score FROM SC WHERE cid=3) b WHERE a.score>b.score AND a.sid=b.sid;
 此题知识点，嵌套查询和给查出来的表起别名

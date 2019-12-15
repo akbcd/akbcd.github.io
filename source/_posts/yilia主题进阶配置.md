@@ -160,7 +160,7 @@ search:
 ```
 * 在主题`themes\yilia\source`路径下创建一个`js`文件夹，里面创建`search.js`文件，将以下内容（[jQuery-based Local Search Engine for Hexo](https://www.hahack.com/codes/local-search-engine-for-hexo/)）粘贴到此文件中（路径和文件名根据自己需要在上面的内容中修改）
 
-```
+```js
 var searchFunc = function (path, search_id, content_id) {
     'use strict';
     $.ajax({
@@ -253,7 +253,7 @@ $(function () {
 * 定位文件`themes\yilia\layout\_partial\tools.ejs`，在里面找到搜索图标的i标签，在标签里添加一个id：`js-icon-search`（添加搜索弹窗事件）
 这里实现的是点击搜索图标出现搜索框
 
-```
+```html
 <div class="search-wrap">
   <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
   <!--修改位置-->
@@ -263,7 +263,7 @@ $(function () {
 ```
 * 修改搜索弹窗的样式，主题`themes\yilia\source\main.0cf68a.css`文件中添加
 
-```
+```css
 /* 全局搜索样式 */
 #js-searchModal {
 	display: none;
@@ -454,7 +454,7 @@ verifyPassword:
 需要用到scrollprogress.js，这里云端引用
 * `themes\yilia\layout\_partial\script.ejs`文件中添加
 
-```
+```html
 <!-- 页面进度条 -->
 <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js"></script>
 <script>
@@ -477,7 +477,7 @@ verifyPassword:
 ```
 * `themes\yilia\source\main.0cf68a.css`添加样式
 
-```
+```css
 /* 进度条 */
 .progress-bar {
     height: 4px;
@@ -501,7 +501,7 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 主题中添加js代码
 本js中clipboard.js使用网络引用，可以将其下载到本地引用
 如果主题中没有引入jquery，请将jquery引入
-```
+```html
 <!-- 复制代码块 -->
 <script src="https://clipboardjs.com/dist/clipboard.min.js"></script>
 <script>
@@ -529,7 +529,7 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 </script>
 ```
 主题中添加css样式（本样式根据yilia主题美化）
-```
+```css
 #js-btn-copy {
     background-color: #eee;
     background-image: linear-gradient(#fcfcfc,#eee);
@@ -614,7 +614,7 @@ highlight:
 **实现方法：**
 在主题中引入`highlight.js`，这里引用网络（可以下载到本地）
 具体实现可以观看官方文档[https://highlightjs.org/usage/](https://highlightjs.org/usage/)
-```
+```html
 <script src="https://highlightjs.org/static/highlight.site.pack.js"></script>
 <script>
     //代码区块高亮
@@ -651,12 +651,12 @@ highlight:
 可以明显看到代码区块的标签并不是`<pre><code>..</code></pre>`格式
 进行jquery手动修复
 在`hljs.initHighlightingOnLoad();`添加
-```
+```js
 $("figure table").wrap("<code></code>");
 $("figure code").wrap("<pre></pre>");
 ```
 将table标签用code标签包裹起来，再用pre标签将code标签包裹起来，实现上面的代码结构
-```
+```html
 <script>
     //代码块高亮
     $("figure table").wrap("<code></code>");

@@ -20,7 +20,7 @@ var jq = $("#jq");
 方法二：
 `jq.get(0)`
 ## 例子
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

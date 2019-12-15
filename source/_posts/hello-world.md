@@ -39,8 +39,5 @@ $ hexo deploy
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
 
-## 你好 世界
-第一次创建博客的时间已经忘记
-没有进行备份，出现了意外
-这是第二次
-实现了备份
+## 说明
+此文章是hexo初始化自动生成的，介绍了一些新建文章、发布文章、启动服务的方法。

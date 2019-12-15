@@ -6,7 +6,7 @@ tags: sql
 分享一个MySQL（Oracle）数据库sql练习
 <!--more-->
 ### 表结构
-```
+```sql
 CREATE TABLE STUDENT
 (SNO VARCHAR(3) NOT NULL,
 SNAME VARCHAR(4) NOT NULL,
@@ -59,7 +59,7 @@ INSERT INTO TEACHER(TNO,TNAME,TSEX,TBIRTHDAY,PROF,DEPART)
 VALUES (831,'刘冰','女','1977-08-14','助教','电子工程系');
 ```
 ### 题目
-```
+```sql
 1、 查询Student表中的所有记录的Sname、Ssex和Class列。
 select sname,ssex,class from student
 2、 查询教师所有的单位即不重复的Depart列。
@@ -127,7 +127,7 @@ commit;
 45、查询所有选修“计算机导论”课程的“男”同学的成绩表
 ```
 ### 参考答案一
-```
+```sql
 1. SELECT SNAME,SSEX,CLASS FROM STUDENT;
 
 2. SELECT DISTINCT DEPART FROM TEACHER;
@@ -280,7 +280,7 @@ ssex='男') and cno=(select cno from course
 where cname='计算机导论');
 ```
 ### 参考答案二
-```
+```sql
 #1、查询Student表中的所有记录的Sname、Ssex和Class列。
 SELECT sname,ssex,class FROM student
 #2、查询教师所有的单位即不重复的Depart列。
