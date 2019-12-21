@@ -20,7 +20,7 @@
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
-        <% if(theme.word_count && !post.no_word_count){%>
+        <% if(!index && theme.word_count && !post.no_word_count){ %>
           <div style="color: #999">字数：<%= wordcount(post.content) %>字</div>
         <% } %>
       </header>
