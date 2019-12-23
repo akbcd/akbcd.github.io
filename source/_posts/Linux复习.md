@@ -307,3 +307,100 @@ date; ll bashrc; ll --time=atime bashrc; ll --time=ctime bashrc
 touch -d "2 days ago" bashrc
 date; ll bashrc; ll --time=atime bashrc; ll --time=ctime bashrc
 ```
+文件与目录的默认权限与隐藏权限
+```
+例题（p196）
+假设你的umask为003，请问该umask情况下，建立的文件与目录权限是什么？
+答：umask为003，所以拿掉的权限为--------wx，因此：
+文件：（-rw-rw-rw-）-（--------wx）=-rw-rw-r--
+目录：（drwxrwxrwx）-（--------wx）=drwxrwxr--
+
+文件隐藏属性（p197）
+chattr（配置文件隐藏属性）
+范例：请尝试到/tmp下面建立文件夹，并加入i的参数，尝试删除看看。
+cd /tmp
+touch attrtest
+chattr +i attrtest
+删除该文件夹
+rm attrtest
+删除失败，root也没有办法将这个文件删除
+
+范例：将该文件的i属性取消。
+chattr -i attrtest
+
+lsattr（显示文件隐藏属性）
+chattr +aiS attrtest
+lsattr attrtest
+显示结果
+--S-ia---------- attrtest
+```
+命令与文件的查找
+find（p203） 实践操作/填空
+```
+范例一：将过去系统上面24小时内有修改过内容（mtime）的文件列出。
+find / -mtime 0
+0是重点，代表目前的时间，从现在到24小时前。
+
+-mtime n：n为数字，意义为在n天之前的【一天之内】被修改过内容的文件；
+-mtime +n：列出在n天之前（不含n天本身）被修改过内容的文件；
+-mtime -n：列出在n天之后（含n天本身）被修改过内容的文件；
+-newer file：file为一个存在的文件，列出比file还要新的文件
+
+范例二：寻找/etc下面的文件，如果文件日期比/etc/passwd新就列出。
+find /etc -newer /etc/passwd
+
+范例三：查找/home下面属于dmtsai的文件。
+find /home -user dmtsai
+
+范例四：查找系统中不属于任何人的文件。
+find / -nouser
+
+范例五：找出文件名为passwd这个文件
+find / -name passwd
+找出文件名包含了passwd这个关键字的文件
+find / -name "*passwd*"
+
+范例六：找出/run目录下，文件类型为socket的文件名有哪些？
+find /run -type s
+
+范例七：查找文件当中含有SGID、SUID或SBIT的属性。
+find / -perm /7000
+```
+重点回顾（p206～p207）
+
+绝对路径：一定由根目录/写起；相对路径：不由/写起，而是由相对当前目录写起；
+特殊目录有：.、..、-、～、～account需要注意；
+rmdir仅能删除空目录，要删除非空目录需要使用【rm -r】命令；
+ls可以查看文件属性，尤其-d、-a、-l等选项特别重要；
+cat -n与nl均可显示行号，但默认情况下，空白行会不会编号并不相同；
+touch的目的在修改文件的时间参数，但亦可用来建立空文件；
+一个文件记录的时间参数有三种，分别是读取时间（access time，atime）、状态时间（status time，ctime）、修改时间（modification time，mtime），ls默认显示的是mtime；
+观察文件的类型可以使用file命令来观察；
+查找命令的完整文件名可用which或type，这两个命令都是通过PATH变量来查找文件名；
+查找文件的完整文件名可以使用whereis找特定目录或locate到数据库去查找，而不实际查找文件系统。
+
+文件系统的简单操作
+磁盘与目录的容量
+```
+范例一：将系统内所有的文件系全列出来。
+df
+范例二：将容量结果以易读的格式显示出来。
+df -h
+不同于范例一，这里会以G/M等容量格式显示出来，比较容易看。
+
+范例三：将系统内的所有特殊文件格式及名称都列出来。
+df -aT
+范例四：将/etc下面的可用的磁盘容量以易读的容量格式显示。
+df -h /etc
+范例五：将目前各个硬盘分区可用的inode数量列出。
+df -ih
+```
+du（p227）
+```
+范例一：列出目前目录下的所有文件容量。
+du
+范例二：同范例一，但是将文件的容量也列出来。
+du -a
+范例三：检查根目录下面每个目录所占用的容量。
+du -sm /*
+```
