@@ -3,6 +3,7 @@ title: Linux复习
 date: 2019-12-09 09:17:37
 tags: linux
 ---
+鸟哥的Linux私房菜 基础学习篇（第四版）
 Linux的内核版本（p47~p48）
 ```
 3.10.0-123.e17.x86-64
@@ -404,3 +405,59 @@ du -a
 范例三：检查根目录下面每个目录所占用的容量。
 du -sm /*
 ```
+硬链接与符号链接：ln（p230）
+```
+范例一：将/etc/passwd复制到/tmp下面，并且观察inode与区块。
+cd /tmp
+cp -a /etc/passwd
+du -sb ; df -i
+
+范例二：将/tmp/passwd制作硬链接成为passwd-hd文件，并查看文件与容量。
+ln passwd passwd-hd
+du -sb ; df -i
+即使多了一个文件在/tmp下面，整个inode与区块的容量并没有变。
+
+范例三：将/tmp/passwd建立一个符号链接。
+ln -s passwd passwd-so
+passwd-so指向的inode number不同了，这是一个新文件，这个文件的内容是指向passwd这个文件。
+passwd-so这个文件的大小是6Bytes，因为【passwd】这个单词共有六个字符之故。
+整个容量与inode使用数都改变
+删除原始文件passwd，其它两个文件不能开启。
+```
+磁盘格式化（创建文件系统）（p238）
+以XFS文件系统为例
+将/dev/vda4格式化为xfs文件系统
+mkfs.xfs /dev/vda4
+查看文件系统
+blkid /dev/vda4
+
+文件系统挂载与卸载（p244）
+挂载xfs/ext4/vfat等文件系统
+```
+范例：找出/dev/vda4的UUID后，用该UUID来挂载文件系统到/data/xfs内。
+blkid /dev/vda4
+记录UUID
+创建目录
+mkdir -p /data/xfs
+挂载
+mount UUID="" /data/xfs
+查看挂载结果
+df /data/xfs
+```
+挂载CD或DVD光盘
+```
+范例：将你用来安装Linux的CentOS安装光盘拿出来挂载到/data/cdrom。
+查看光盘信息
+blkid
+创建挂载目录
+mkdir /data/cdrom
+挂载
+mount /dev/sr0 /data/cdrom
+显示挂载信息
+df /data/cdrom
+```
+umount（将设备文件卸载）（p246）
+查看已挂载的文件系统
+mount
+以/dev/vda4卸载为例
+umount /dev/vda4
