@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: #eaeaea;
+    background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     opacity: 0.8;
 }
 /* 全局搜索样式 */

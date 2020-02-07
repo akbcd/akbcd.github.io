@@ -2,8 +2,8 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
   归档: /archives/
+  随笔: /tags/随笔/
 
 # SubNav
 subnav:
@@ -150,6 +150,7 @@ friends:
   小贱贱图床: http://pic.xiaojianjian.net/
   歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
   软件安装管家: https://mp.weixin.qq.com/s/zeq1sTmaPsKt7Bsok0Ldrg
+  CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
@@ -159,12 +160,17 @@ css:
   clipboard: /css/clipboard.css
 js:
   mobile: /js/mobile.992cbe.js
+  #mobile: /backup/mobile.992cbe.js
   main: /main.0cf68a.js
+  #main: /backup/main.0cf68a.js
   slider: /slider.e37972.js
+  #slider: /backup/slider.e37972.js
   search: /js/search.js
+  #search: /backup/search.js
   script: /js/script.js
+  #script: /backup/script.js
   jquery: https://code.jquery.com/jquery-3.4.1.js #3.4.1
-  #jquery: /js/jquery-3.4.1.js
+  #jquery: /js/jquery-3.4.1.min.js
   scrollProgress: https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js #3.0.2
   #scrollProgress: /js/scrollProgress.min.js
   crypto: https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js #3.1.9-1
