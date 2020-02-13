@@ -1083,7 +1083,7 @@
             if (e) {
                 var i = null,
                 a = window.onscroll,
-                // 解决移动端返回顶部按钮不显示
+                /*解决移动端返回顶部按钮不显示*/
                 u = e.onclick;
                 t.onscroll = r(function() {
                     "function" == typeof a && a.apply(this, arguments),
@@ -1640,8 +1640,7 @@
         /*! PhotoSwipe Default UI - 4.1.2 - 2017-04-05
 	* http://photoswipe.com
 	* Copyright (c) 2017 Dmitry Semenov; */
-        !
-        function(i, a) {
+        !function(i, a) {
             o = a,
             r = "function" == typeof o ? o.call(t, n, t, e) : o,
             !(void 0 !== r && (e.exports = r))
@@ -2078,8 +2077,7 @@
         /*! PhotoSwipe - v4.1.2 - 2017-04-05
 	* http://photoswipe.com
 	* Copyright (c) 2017 Dmitry Semenov; */
-        !
-        function(i, a) {
+        !function(i, a) {
             o = a,
             r = "function" == typeof o ? o.call(t, n, t, e) : o,
             !(void 0 !== r && (e.exports = r))
