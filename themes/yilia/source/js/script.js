@@ -1,4 +1,3 @@
 const progressElement=window.document.querySelector('.progress-bar');if(progressElement){new ScrollProgress((x,y)=>{progressElement.style.width=y*100+'%';});}
-function copy(button){new ClipboardJS('#js-btn-copy',{target:function(trigger){if(trigger.nextElementSibling!=null){$(button).html("复制成功");setTimeout(function(){$(button).html("复制")},1000);return trigger.nextElementSibling;}}});}
-!function(e,t,a){var initCopyCode=function(){var copyHtml='<button id="js-btn-copy" onclick="copy(this)" >复制</button>';$(".code pre").before(copyHtml);}
-initCopyCode();}(window,document);
+!function(e,t,a){var initCopyCode=function(){var copyHtml='<button id="js-btn-copy">复制</button>';$(".code pre").before(copyHtml);}
+initCopyCode();$(".code").on("click","#js-btn-copy",function(button){var copy=button.currentTarget;var clipboard=new ClipboardJS('#js-btn-copy',{target:function(trigger){if(trigger.nextElementSibling!=null){return trigger.nextElementSibling;}}});clipboard.on('success',function(e){e.clearSelection();$(copy).html("复制成功");clipboard.destroy();});clipboard.on('error',function(e){$(copy).html("复制失败");clipboard.destroy();});$(copy).mouseout(function(){$(event.currentTarget).html("复制")});});}(window,document);

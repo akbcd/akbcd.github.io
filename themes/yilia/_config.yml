@@ -6,11 +6,11 @@ menu:
   随笔: /tags/随笔/
 
 # SubNav
-subnav:
-  github: http://github.com/
-  weibo: https://weibo.com/
+#subnav:
+  #github: http://github.com/
+  #weibo: https://weibo.com/
   #rss: "#"
-  zhihu: https://www.zhihu.com/explore
+  #zhihu: https://www.zhihu.com/explore
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"

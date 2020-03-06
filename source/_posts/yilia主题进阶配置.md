@@ -6,6 +6,16 @@ toc: true
 ---
 这篇文章添加几个适用于yilia主题的功能
 <!--more-->
+快速导航：
+[yilia主题添加本地头像](#yilia主题添加本地头像)
+[添加字数统计](#添加字数统计)
+[安装全局搜索功能](#安装全局搜索功能)
+[yilia主题添加博客文章置顶功能和置顶标签](#yilia主题添加博客文章置顶功能和置顶标签)
+[hexo文章加密功能](#hexo文章加密功能)
+[yilia主题移动端添加页面进度条](#yilia主题移动端添加页面进度条)
+[hexo代码块复制功能](#hexo代码块复制功能)
+[代码区块高亮](#代码区块高亮)
+[添加文章更新时间](#添加文章更新时间)
 ## yilia主题添加本地头像
 如果你的头像是引用网络的，那就要注意了，网络上的图片随时都有可能被删除，删除之后，头像就没有了
 头像的图片一般不是很大，完全可以进行本地引用（你要深刻意识到，本地引用图片是会影响到网页加载速度的）
@@ -496,7 +506,7 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 代码块复制功能是在代码块部分显示复制按钮，点击复制按钮，实现代码块复制功能
 本功能实现需要引入jquery
 运用[clipboard.js](http://www.clipboardjs.cn/)实现复制代码块功能
-### 实现方法
+### 实现方法（更新）
 主题中添加js代码
 本js中clipboard.js使用网络引用，可以将其下载到本地引用
 如果主题中没有引入jquery，请将jquery引入
@@ -504,49 +514,54 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 <!-- 复制代码块 -->
 <script src="https://clipboardjs.com/dist/clipboard.min.js"></script>
 <script>
-    // 代码块复制
-    function copy(button){
-        new ClipboardJS('#js-btn-copy', {
-            target: function(trigger) {
-                if(trigger.nextElementSibling != null){
-                    // 利用定时器修改复制按钮
-                    $(button).html("复制成功");
-                    setTimeout(function(){ $(button).html("复制") }, 1000);
-                    return trigger.nextElementSibling;
-                }
-            }
-        });
-    }
     /*页面载入完成后，创建复制按钮*/
     !function (e, t, a) {
         var initCopyCode = function(){
-            var copyHtml = '<button id="js-btn-copy" onclick="copy(this)" >复制</button>';
+            var copyHtml = '<button id="js-btn-copy">复制</button>';
             $(".code pre").before(copyHtml);
         }
         initCopyCode();
+        // 代码块复制
+        $(".code").on("click","#js-btn-copy",function(button){
+            var copy=button.currentTarget;
+            var clipboard = new ClipboardJS('#js-btn-copy', {
+                target: function(trigger) {
+                    if(trigger.nextElementSibling != null){
+                        return trigger.nextElementSibling;
+                    }
+                }
+            });
+            clipboard.on('success', function(e) {
+                e.clearSelection();
+                $(copy).html("复制成功");
+                clipboard.destroy();
+            });
+            clipboard.on('error', function(e) {
+                $(copy).html("复制失败");
+                clipboard.destroy();
+            });
+            $(copy).mouseout(function(){$(event.currentTarget).html("复制")});
+        });
     }(window, document);
 </script>
 ```
 主题中添加css样式（本样式根据yilia主题美化）
 ```css
+/* 代码块复制 */
 #js-btn-copy {
-    background-color: #eee;
-    background-image: linear-gradient(#fcfcfc,#eee);
-    border: 1px solid #d5d5d5;
-    border-radius: 3px;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 20px;
-    -webkit-transition: opacity .3s ease-in-out;
-    -o-transition: opacity .3s ease-in-out;
-    transition: opacity .3s ease-in-out;
-    padding: 2px 6px;
-    position: absolute;
+    display: none;
     right: 10%;
-    opacity: 0;
+    font-size: 1em;
+    line-height: 20px;
+    color: #4d4d4d;
+    background-color: white;
+    padding: 2px 8px;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    position: absolute; 
 }
 figure:hover #js-btn-copy{
-  opacity: 1;
+    display: block;
 }
 @media screen and (max-width: 800px) {
     #js-btn-copy {
@@ -557,6 +572,8 @@ figure:hover #js-btn-copy{
 样式根据自己的主题需要进行更改，重点更改自己主题中复制按钮的样式
 ### 实现效果
 点击复制按钮，复制按钮变成复制成功，代码块被选中表明代码块已经被复制
+### 更新说明
+美化复制按钮样式（模仿CSDN），添加代码块复制失败提示，修改click事件传参形式
 ### 感谢
 本功能实现参照
 [hexo+yilia添加复制代码块的功能](https://blog.csdn.net/weixin_41287260/article/details/103051122)
@@ -663,6 +680,37 @@ $("figure code").wrap("<pre></pre>");
     hljs.initHighlightingOnLoad();
 </script>
 ```
+## 添加文章更新时间
+在发布时间后面添加更新时间
+### 实现方法
+修改主题文件`themes\yilia\layout\_partial\post\date.ejs`
+添加如下内容：
+```
+<% if(!index && post.updated && post.updated > post.date){ %>
+		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">最后更新于：<i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
+<% } %>
+```
+说明一下原理：
+`if`判断页面是否文章详细页面，判断文章`.md`文件中是否有`updated`参数，`updated`参数时间是否大于`date`参数时间
+如果均成立，添加时间标签
+修改后的`date.ejs`
+```
+<a href="<%- url_for(post.path) %>" class="<%= class_name %>">
+  	<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><i class="icon-calendar icon"></i><%= date(post.date, date_format) %></time>
+	<% if(!index && post.updated && post.updated > post.date){ %>
+		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">最后更新于：<i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
+	<% } %>
+</a>
+```
+如果文章`md`文件中有`updated`参数，且`updated`参数有时间，则文章显示参数时间
+写文章的时候可以直接在文章开头设置更新时间
+```
+updated: 2020-02-09 21:05:00
+```
+如果参数为空，显示md文件的修改日期（`updated`参数可有可无）
+### 感谢
+hexo添加文章更新时间（简书）：[https://www.jianshu.com/p/ae3a0666e998](https://www.jianshu.com/p/ae3a0666e998)
+hexo添加文章更新时间（CSDN）：[https://blog.csdn.net/ganzhilin520/article/details/79053399](https://blog.csdn.net/ganzhilin520/article/details/79053399)
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论
