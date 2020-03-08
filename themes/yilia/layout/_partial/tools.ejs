@@ -19,19 +19,27 @@
       <% if(theme.smart_menu[i]){ %>
       <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a style="cursor:pointer" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
       <% } %>
-        <%}%>
+    <% } %>
     </ul>
   </div>
   <div class="tools-wrap">
     <%if(hasInnerArchive){%>
     	<section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder=<%if(config.language === 'zh-CN'){%>"查找文章..."<%}else{%>"find something…"<%}%>>
+          <% if(config.language === 'zh-CN'){ %>
+          <input class="search-ipt" q-model="search" type="text" placeholder="查找文章...">
+          <% }else{ %>
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <% } %>
           <i class="icon-search icon" q-show="search|isEmptyStr" id="js-icon-search"></i>
           <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
         <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording"><%if(config.language === 'zh-CN'){%>标签：<%}else{%>tag:<%}%></p>
+          <% if(config.language === 'zh-CN'){ %>
+          <p class="search-tag-wording">标签：</p>
+          <% }else{ %>
+          <p class="search-tag-wording">tag: </p>
+          <% } %>
           <label class="search-switch">
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>

@@ -32,6 +32,11 @@
 					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
 		        <%}%>
 			</div>
+			<% if (theme.music.enable && site.data && site.data.musics) { %>
+				<div class="music-player">
+				<%- partial('music/aplayer') %>
+				</div>
+			<% } %>
 		</nav>
-	</header>		
+	</header>
 </div>

@@ -1257,7 +1257,12 @@ pre .number {
 pre .css~* .id,pre .id {
     color: #fd971f
 }
-
+/* music player title */
+#header .music-player .title{
+    font-size: 14px;
+    color: #424242;
+    text-align: center
+}
 #header .tagcloud a {
     color: #fff
 }

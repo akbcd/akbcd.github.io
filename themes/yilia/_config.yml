@@ -32,6 +32,40 @@ rss: /
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 root: /
 
+# aplayer音乐播放器
+# 要支持音乐播放，就必须开启音乐的播放配置和音乐的数据文件。
+# 博客 source 目录下的 _data 目录（没有的话就新建一个）中新建 musics.json 文件（存放音乐数据）
+# 若开启吸底模式，不建议显示标题
+music:
+  # aplayer 电脑页面
+  enable: true # 是否开启
+  showTitle: true # 是否显示标题
+  title: 听听音乐
+  fixed: false # 吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+  autoplay: false # 是否自动播放
+  theme: '#4d4d4d' # 主题色
+  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  lrcType: 1 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
+  listFolded: true # 列表是否折叠
+  listMaxHeight: # 列表最大高度
+  # mobile-aplayer 移动端页面
+  mobile_enable: true # 是否开启
+  mobile_showTitle: true # 是否显示标题
+  mobile_title: 
+  mobile_fixed: true
+  mobile_autoplay: false # 同时开启失效
+  mobile_theme: '#4d4d4d'
+  mobile_loop: 'all'
+  mobile_order: 'list'
+  mobile_preload: 'auto'
+  mobile_volume: 0.7
+  mobile_lrcType: 1
+  mobile_listFolded: true
+  mobile_listMaxHeight:
+
 # Content
 
 # 文章太长，截断按钮文字
@@ -153,6 +187,8 @@ friends:
   CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
   千鹤导航 | 聚合最优质资源网站！: https://www.qianhedh.com/
   磁力宝: http://www.clb.biz/
+  全网音乐免费下载神器: http://www.333ttt.com/up/tool/
+  音乐直链搜索工具: https://music.liuzhijin.cn/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
@@ -160,6 +196,8 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 css:
   main: /main.0cf68a.css
   clipboard: /css/clipboard.css
+  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
+  #aplayer: /css/clipboard.css
 js:
   mobile: /js/mobile.992cbe.js
   #mobile: /backup/mobile.992cbe.js
@@ -179,3 +217,5 @@ js:
   #crypto: /js/crypto-js.min.js
   clipboard: https://clipboardjs.com/dist/clipboard.min.js
   #clipboard: /js/scrollProgress.min.js
+  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
+  #aplayer: /js/APlayer.min.js

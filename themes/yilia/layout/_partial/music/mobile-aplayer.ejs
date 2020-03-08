@@ -1,0 +1,26 @@
+<% var audiosJson = JSON.stringify(site.data.musics); %>
+<!-- mobile-aplayer -->
+<% if (theme.music.mobile_showTitle) { %>
+<div class="title">
+<%- theme.music.mobile_title %>
+</div>
+<% } %>
+<div id="mobile-aplayer"></div>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('mobile-aplayer'),
+        fixed: '<%- theme.music.mobile_fixed %>' === 'true',
+        autoplay: '<%- theme.music.mobile_autoplay %>' === 'true',
+        theme: '<%- theme.music.mobile_theme %>',
+        loop: '<%- theme.music.mobile_loop %>',
+        order: '<%- theme.music.mobile_order %>',
+        preload: '<%- theme.music.mobile_preload %>',
+        lrcType: Number('<%- theme.music.mobile_lrcType %>'),
+        volume: Number('<%- theme.music.mobile_volume %>'),
+        listFolded: '<%- theme.music.mobile_listFolded %>' === 'true',
+        listMaxHeight: '<%- theme.music.mobile_listMaxHeight %>',
+        audio: JSON.parse('<%- audiosJson %>')
+    });
+});
+</script>

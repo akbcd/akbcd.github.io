@@ -16,6 +16,7 @@ toc: true
 [hexo代码块复制功能](#hexo代码块复制功能)
 [代码区块高亮](#代码区块高亮)
 [添加文章更新时间](#添加文章更新时间)
+[yilia主题添加aplayer播放器](#yilia主题添加aplayer播放器)
 ## yilia主题添加本地头像
 如果你的头像是引用网络的，那就要注意了，网络上的图片随时都有可能被删除，删除之后，头像就没有了
 头像的图片一般不是很大，完全可以进行本地引用（你要深刻意识到，本地引用图片是会影响到网页加载速度的）
@@ -711,6 +712,258 @@ updated: 2020-02-09 21:05:00
 ### 感谢
 hexo添加文章更新时间（简书）：[https://www.jianshu.com/p/ae3a0666e998](https://www.jianshu.com/p/ae3a0666e998)
 hexo添加文章更新时间（CSDN）：[https://blog.csdn.net/ganzhilin520/article/details/79053399](https://blog.csdn.net/ganzhilin520/article/details/79053399)
+## yilia主题添加aplayer播放器
+yilia主题添加音乐播放器，想了很久，但是一直没有实现
+本主题属于自适应主题，但是pc端和移动端的智能菜单完全是两个页面，因此考虑添加两个播放器，一个用于pc页面，另一个用于移动端，当然，这只是我的方法
+pc页面时，移动端音乐播放器不显示，移动端页面时，pc播放器隐藏（当然这与音乐播放器添加的位置有很大关系）
+至于效果，如果你看到这个页面，应该是可以看到效果，因此，我就不贴图片了
+### 实现方法
+aplayer播放器的实现，需要运用[APlayer](https://github.com/MoePlayer/APlayer)，下载github压缩包（不到300k，可以耐心等等），解压后把dist文件夹中的js与css文件复制到自己要引用的主题文件夹中，在代码中进行引用即可。
+这里提供引用的网址
+### 添加pc页面音乐播放器
+定位主题文件`themes\yilia\layout\_partial\left-col.ejs`
+在`<nav class="header-nav">`标签中的`div`标签后面添加
+```
+<% if (theme.music.enable && site.data && site.data.musics) { %>
+    <div class="music-player">
+    <%- partial('music/aplayer') %>
+    </div>
+<% } %>
+```
+添加后的样子
+```
+<nav class="header-nav">
+    <div class="social">
+        <% for (var i in theme.subnav){ %>
+            <a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
+        <%}%>
+    </div>
+    <!-- 开始 -->
+    <% if (theme.music.enable && site.data && site.data.musics) { %>
+        <div class="music-player">
+        <%- partial('music/aplayer') %>
+        </div>
+    <% } %>
+    <!-- 结束 -->
+</nav>
+```
+在themes\yilia\layout\_partial文件夹中创建一个music文件夹（与上面引入的代码相匹配）
+在music文件夹中创建`aplayer.ejs`（pc页面播放器js）和`mobile-aplayer.ejs`（移动端页面）两个文件
+`aplayer.ejs`添加，仿照[https://blinkfox.github.io/](https://blinkfox.github.io/)
+```js
+<% var audiosJson = JSON.stringify(site.data.musics); %>
+<!-- aplayer -->
+<!-- 引入dist文件夹中复制的css文件，这里提供网址引用 -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<% if (theme.music.showTitle) { %>
+<div class="title">
+<%- theme.music.title %>
+</div>
+<% } %>
+<div id="aplayer"></div>
+<!-- 引入dist文件夹中复制的js文件，这里提供网址引用 -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: '<%- theme.music.fixed %>' === 'true',
+        autoplay: '<%- theme.music.autoplay %>' === 'true',
+        theme: '<%- theme.music.theme %>',
+        loop: '<%- theme.music.loop %>',
+        order: '<%- theme.music.order %>',
+        preload: '<%- theme.music.preload %>',
+        lrcType: Number('<%- theme.music.lrcType %>'),
+        volume: Number('<%- theme.music.volume %>'),
+        listFolded: '<%- theme.music.listFolded %>' === 'true',
+        listMaxHeight: '<%- theme.music.listMaxHeight %>',
+        audio: JSON.parse('<%- audiosJson %>')
+    });
+});
+</script>
+```
+### 添加移动端页面音乐播放器
+定位主题文件`themes\yilia\layout\_partial\mobile-nav.ejs`
+在header标签中最后一个nav标签后面添加
+```
+<% if (theme.music.mobile_enable && site.data && site.data.musics) { %>
+<nav class="music-player">
+<%- partial('music/mobile-aplayer') %>
+</nav>
+<% } %>
+```
+添加后的样子
+```
+<nav class="header-menu js-header-menu">
+        <ul style="width: <%= ulWidth %>">
+        <% var divide = 100 / count + '%' %>
+        <% for (var i in theme.menu){ %>
+            <li style="width: <%= divide %>"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+        <%}%>
+        </ul>
+    </nav>
+    <!-- 开始 -->
+    <% if (theme.music.mobile_enable && site.data && site.data.musics) { %>
+    <nav class="music-player">
+    <%- partial('music/mobile-aplayer') %>
+    </nav>
+    <% } %>
+    <!-- 结束 -->
+</header>
+```
+在music文件夹中创建的`mobile-aplayer.ejs`文件中添加
+```js
+<% var audiosJson = JSON.stringify(site.data.musics); %>
+<!-- mobile-aplayer -->
+<% if (theme.music.mobile_showTitle) { %>
+<div class="title">
+<%- theme.music.mobile_title %>
+</div>
+<% } %>
+<div id="mobile-aplayer"></div>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('mobile-aplayer'),
+        fixed: '<%- theme.music.mobile_fixed %>' === 'true',
+        autoplay: '<%- theme.music.mobile_autoplay %>' === 'true',
+        theme: '<%- theme.music.mobile_theme %>',
+        loop: '<%- theme.music.mobile_loop %>',
+        order: '<%- theme.music.mobile_order %>',
+        preload: '<%- theme.music.mobile_preload %>',
+        lrcType: Number('<%- theme.music.mobile_lrcType %>'),
+        volume: Number('<%- theme.music.mobile_volume %>'),
+        listFolded: '<%- theme.music.mobile_listFolded %>' === 'true',
+        listMaxHeight: '<%- theme.music.mobile_listMaxHeight %>',
+        audio: JSON.parse('<%- audiosJson %>')
+    });
+});
+</script>
+```
+下载好的js和css文件只需要在pc播放器引用一次即可，不需要在移动端播放器重复引用
+### 配置主题文件`_config.yml`
+定位主题文件`themes\yilia\_config.yml`
+在里面添加如下配置（几乎完全参照[hexo-theme-matery](https://blinkfox.github.io/)主题进行配置）：
+```
+# aplayer音乐播放器
+# 要支持音乐播放，就必须开启音乐的播放配置和音乐的数据文件。
+# 博客 source 目录下的 _data 目录（没有的话就新建一个）中新建 musics.json 文件（存放音乐数据）
+# 若开启吸底模式，不建议显示标题
+music:
+  # aplayer 电脑页面
+  enable: true # 是否开启
+  showTitle: true # 是否显示标题
+  title: 听听音乐
+  fixed: false # 吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+  autoplay: false # 是否自动播放
+  theme: '#4d4d4d' # 主题色
+  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  lrcType: 1 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
+  listFolded: true # 列表是否折叠
+  listMaxHeight: # 列表最大高度
+  # mobile-aplayer 移动端页面
+  mobile_enable: true # 是否开启
+  mobile_showTitle: true # 是否显示标题
+  mobile_title: 
+  mobile_fixed: true
+  mobile_autoplay: false # 同时开启失效
+  mobile_theme: '#4d4d4d'
+  mobile_loop: 'all'
+  mobile_order: 'list'
+  mobile_preload: 'auto'
+  mobile_volume: 0.7
+  mobile_lrcType: 1
+  mobile_listFolded: true
+  mobile_listMaxHeight:
+```
+上面的内容根据自己需要更改
+[aplayer中文文档](https://aplayer.js.org/#/zh-Hans/)有详细的参数说明
+### 最后的配置
+博客文件夹（不是主题文件夹）里的 source 中创建 _data 文件夹，在 _data 文件夹中创建 musics.json 文件
+文件内容如下所示（如果上面歌词格式配置为0，则歌词lrc一行可以去掉）：
+```
+[{
+    name: '平凡之路',
+    artist: '朴树',
+    lrc: '/downloads/lrc/平凡之路-朴树.lrc',
+    cover: 'http://xxx.com/music-cover1.png',
+    url: 'http://xxx.com/music1.mp3'
+},  {
+    name: '后会无期',
+    artist: 'G.E.M.邓紫棋',
+    lrc: '/downloads/lrc/后会无期-G.E.M.邓紫棋.lrc',
+    cover: '/medias/music/cover2.png',
+    url: '/medias/music/music2.mp3'
+}]
+```
+播放器中有标题，简单配置一下标题样式
+
+定位文件`themes\yilia\source\main.0cf68a.css`，在里面添加css（根据需求自行修改）
+```css
+/* music player title */
+#header .music-player .title{
+    font-size: 14px;
+    color: #424242;
+    text-align: center
+}
+```
+**到此，yilia主题添加aplayer播放器完成**
+### 分享
+既然谈到了添加音乐播放器，自然是需要音乐的直链，分享一个网易云获取音乐直链的方法（一般不会失效，除非歌曲下架）
+```
+https://music.163.com/song/media/outer/url?id=
+```
+id后面输入歌曲的id
+分享一个[音乐直链搜索工具](https://music.liuzhijin.cn/)，通过此工具可以快速获取到网易云音乐歌曲id，自然网易云音乐歌曲直链就获取到了
+此搜索工具获取到的音乐直链有时间限制，超过一定时间直链失效，目前只知道获取网易云音乐直链这一种方法，分享给大家
+补充：
+发现了一个音乐下载神器：[全网音乐免费下载神器](http://www.333ttt.com/up/tool/)，这个获取的音乐地址仿佛没有时间限制（切记，复制input文本框链接的地址，点击下载后获取的地址是有时间限制的）
+
+获取酷我mp3外链地址
+首先，获取要获得外链歌曲的id，在酷我歌曲页面上就有
+其次，将id拼接到`player.kuwo.cn/webmusic/st/getNewMuiseByRid?rid=MUSIC_`后面，即`http://player.kuwo.cn/webmusic/st/getNewMuiseByRid?rid=MUSIC_76446978`
+出现的是该音频的xml信息
+```
+<Song>
+<music_id>76446978</music_id>
+<mv_rid>null</mv_rid>
+<name>鐧捐姳棣�</name>
+<song_url>http://yinyue.kuwo.cnhttp://yinyue.kuwo.cn/yy/gequ-weixinyu_baihuaxiang/76446978.htm</song_url>
+<artist>榄忔柊闆�</artist>
+<artid></artid>
+<singer>榄忔柊闆�</singer>
+<special>鐧捐姳棣�</special>
+<ridmd591>32257EAB20266AE1B2BE8BDF21480CF5</ridmd591>
+<mp3size>null</mp3size>
+<artist_url>http://yinyue.kuwo.cnhttp://yinyue.kuwo.cn/yy/geshou-weixinyu/%E9%AD%8F%E6%96%B0%E9%9B%A8.htm</artist_url>
+<auther_url>http://www.kuwo.cn/mingxing/%E9%AD%8F%E6%96%B0%E9%9B%A8/</auther_url>
+<playid>play?play=MQ==&num=MQ==</playid>
+<artist_pic>http://img2.kuwo.cn/star/starheads/120/2/2ac2a0c633723c75215d05016e400af_0.jpg</artist_pic>
+<artist_pic240></artist_pic240>
+<path>null</path>
+<mp3path>&format=mp3&rid=MUSIC_76446978&response=res&type=convert_url&</mp3path>
+<aacpath>&format=mp3&rid=MUSIC_76446978&response=res&type=convert_url&</aacpath>
+<mp3dl>antiserver.kuwo.cn/anti.s?useless=</mp3dl>
+<aacdl>antiserver.kuwo.cn/anti.s?useless=</aacdl>
+<lyric>DBYAHlReXEpRUEAeCgxVEgAORRgLG0MXCRgaCwoRAB5UAwEaBAkEBhwaXxcAHVReSAsMAVEkOj0wJjpbX1taT1xSVA==</lyric>
+<lyric_zz>DBYAHlReXEpRUEAeCgxVEgAORRgLG0MXCRgaCwoRAB5UAwEaBAkEBhwaXxcAHVReSAsMAVEkOj0wJjpbX1taT1xSVE8DHBodWF0=</lyric_zz>
+</Song>
+```
+提取`<mp3path>`和`<mp3dl>`中的内容，创建url： http://+`<mp3dl>`内容+`<mp3path>`内容
+以上面信息为例，url如下：
+```
+http://antiserver.kuwo.cn/anti.s?useless=&format=mp3&rid=MUSIC_76446978&response=res&type=convert_url&
+```
+此url为该歌曲的外链（仅适用于酷我音乐）
+#### 感谢
+yilia主题添加aplayer播放器的实现，参照以下网站进行完成，在此表示感谢
+[Hexo全局添加APlayer音乐播放器](https://www.techgrow.cn/posts/cfdad023.html)
+[Hexo增加APlayer音乐播放功能](http://lantianwork.coding.me/2019/01/13/Hexo增加APlayer音乐播放功能/)
+[Hexo博客主题之hexo-theme-matery的介绍](https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-18)
+[aplayer中文文档](https://aplayer.js.org/#/zh-Hans/)
 ## 最后
 最近又看到了许多有用的功能
 1.`gitalk`评论
