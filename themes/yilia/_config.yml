@@ -103,6 +103,9 @@ top: true
 # 不需要使用，直接设置值为false，或注释掉
 word_count: true
 
+# 代码块复制
+clipboard: true
+
 # 全局搜索
 # 本功能实现需要插件hexo-generator-searchdb所生成的search.xml文件
 # 在hexo根目录_config.yml添加如下配置
@@ -178,17 +181,18 @@ slider:
 smart_menu:
   innerArchive: '所有文章'
   friends: '友链'
-  aboutme: '关于我'
+  #aboutme: '关于我'
 
 friends:
   小贱贱图床: http://pic.xiaojianjian.net/
   歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
   软件安装管家: https://mp.weixin.qq.com/s/zeq1sTmaPsKt7Bsok0Ldrg
   CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
-  千鹤导航 | 聚合最优质资源网站！: https://www.qianhedh.com/
+  404导航 | 只导航优质资源！: https://no404.icu/
   磁力宝: http://www.clb.biz/
-  全网音乐免费下载神器: http://www.333ttt.com/up/tool/
+  音乐搜索器 - 多站合一音乐搜索,音乐在线试听: http://music.yujianweb.cn/
   音乐直链搜索工具: https://music.liuzhijin.cn/
+  全网音乐免费下载神器: http://www.333ttt.com/up/tool/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 

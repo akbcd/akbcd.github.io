@@ -9,8 +9,9 @@
     }()
 </script>
 <script src="<%- theme.js.scrollProgress %>"></script>
-<script src="<%- theme.js.clipboard %>"></script>
 <script src="<%- theme.js.script %>"></script>
+<% if (theme.clipboard) { %>
+<script src="<%- theme.js.clipboard %>"></script>
 <script>
     <% if(config.language === 'zh-CN'){ %>
     /*页面载入完成后，创建复制按钮*/
@@ -74,3 +75,4 @@
     }(window, document);
     <% } %>
 </script>
+<% } %>
