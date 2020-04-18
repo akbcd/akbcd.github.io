@@ -1,13 +1,5 @@
 <script src="<%- theme.js.mobile %>"></script>
 <script src="<%- theme.js.main %>"></script>
-<script>
-    !function(){
-        !function(e){
-            var t=document.createElement("script");
-            document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("<%- theme.js.slider %>")
-    }()
-</script>
 <script src="<%- theme.js.scrollProgress %>"></script>
 <script src="<%- theme.js.script %>"></script>
 <% if (theme.music.enable || theme.music.mobile_enable) { %>
@@ -79,3 +71,11 @@
     <% } %>
 </script>
 <% } %>
+<script>
+    !function(){
+        !function(e){
+            var t=document.createElement("script");
+            document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
+        }("<%- theme.js.slider %>")
+    }()
+</script>
