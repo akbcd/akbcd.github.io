@@ -4,7 +4,7 @@
 		<% if(config.language === 'zh-CN'){ %>
 		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">最后更新于：<i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
 		<% }else{ %>
-		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">last updated on: <i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
+		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">&nbsp;last updated on: <i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
 		<% } %>
 	<% } %>
 </a>

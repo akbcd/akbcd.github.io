@@ -414,9 +414,9 @@ top: true
 * 将以下内容添加到`themes\yilia\layout\_partial\article.ejs`文件的顶部
 `<script src="<%=config.root%>./js/crypto-js.min.js"></script>`是本地引入js的路径，根据需要更改
 这里提供的是云端引用（即联网才可用）
-
+`page.password`控制只在有password的文章导入下面的代码，如果不添加此项，会使所有文章都导入下面代码（效果一样，但是代码量不一样）
 ```
-<% if (theme.verifyPassword.enable) { %>
+<% if (theme.verifyPassword.enable && page.password) { %>
 <!-- 本地引入js -->
 <!-- <script src="<%=config.root%>./js/crypto-js.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
@@ -508,6 +508,9 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 本功能实现需要引入jquery
 运用[clipboard.js](http://www.clipboardjs.cn/)实现复制代码块功能
 ### 实现方法（更新）
+前提：
+本功能依据hexo配置文件`_config.yml`（不是主题那个）中`highlight.enable`值为true所生成的代码区块标签实现。
+如果你的`highlight.enable`值为false，那么复制按钮的位置要做相应改变
 主题中添加js代码
 本js中clipboard.js使用网络引用，可以将其下载到本地引用
 如果主题中没有引入jquery，请将jquery引入
@@ -572,7 +575,7 @@ figure:hover #js-btn-copy{
 ```
 样式根据自己的主题需要进行更改，重点更改自己主题中复制按钮的样式
 ### 实现效果
-点击复制按钮，复制按钮变成复制成功，代码块被选中表明代码块已经被复制
+点击复制按钮，复制按钮变成复制成功
 ### 更新说明
 美化复制按钮样式（模仿CSDN），添加代码块复制失败提示，修改click事件传参形式
 ### 感谢
@@ -629,6 +632,17 @@ highlight:
 [highlight.js](https://highlightjs.org/)是实现代码区块高亮的js
 此js会自动检测页面中`<pre><code>..</code></pre>`的代码区块（这是重点）
 **实现方法：**
+改变hexo代码区块标签结构（可选）
+hexo配置文件`_config.yml`（不是主题那个）中`highlight.enable`值为false
+true和false的值会改变代码区块的标签结构
+如果不想修改`highlight.enable`值为false，请看下面的补充说明
+```
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace:
+```
 在主题中引入`highlight.js`，这里引用网络（可以下载到本地）
 具体实现可以观看官方文档[https://highlightjs.org/usage/](https://highlightjs.org/usage/)
 ```html
@@ -641,6 +655,7 @@ highlight:
 主题中引入css（官网下载`highlight.js`压缩包），里面有很多css样式，引入自己喜欢的一种即可
 **补充说明：**
 如果代码区块没有高亮，请观看一下你的代码区块的标签是不是`<pre><code>..</code></pre>`格式
+`highlight.enable`值为false的标签结构
 ```
 <pre>
     <code>
@@ -665,14 +680,14 @@ highlight:
     </table>
 </figure>
 ```
-可以明显看到代码区块的标签并不是`<pre><code>..</code></pre>`格式
+可以明显看到代码区块的标签并不是`<pre><code>..</code></pre>`格式（`highlight.enable`值为true导致）
 进行jquery手动修复
 在`hljs.initHighlightingOnLoad();`添加
 ```js
 $("figure table").wrap("<code></code>");
 $("figure code").wrap("<pre></pre>");
 ```
-将table标签用code标签包裹起来，再用pre标签将code标签包裹起来，实现上面的代码结构
+将table标签用code标签包裹起来，再用pre标签将code标签包裹起来，实现上面的代码结构（很显然，这个方法有些麻烦）
 ```html
 <script>
     //代码块高亮
@@ -848,7 +863,7 @@ $(function () {
 # aplayer音乐播放器
 # 要支持音乐播放，就必须开启音乐的播放配置和音乐的数据文件。
 # 博客 source 目录下的 _data 目录（没有的话就新建一个）中新建 musics.json 文件（存放音乐数据）
-# 若开启吸底模式，不建议显示标题
+# 吸底模式1.9.1之后版本生效。若开启吸底模式，不建议显示标题
 music:
   # aplayer 电脑页面
   enable: true # 是否开启
@@ -910,6 +925,23 @@ music:
     text-align: center
 }
 ```
+补充说明：
+1.APlayer.min.css与APlayer.min.js只在pc播放器中添加，并没有在移动页面添加，如果关闭pc播放器，移动端播放器会因为缺失相应的css和js而无法显示
+这里提供一个解决办法
+在主题的css与script文件中添加如下代码
+```
+/*css中添加*/
+<% if (theme.music.enable || theme.music.mobile_enable) { %>
+<link rel="stylesheet" type="text/css" href="<%- theme.css.aplayer %>">
+<% } %>
+
+/*script中添加*/
+<% if (theme.music.enable || theme.music.mobile_enable) { %>
+<script src="<%- theme.js.aplayer %>"></script>
+<% } %>
+```
+把pc页面引入的js与css删除即可
+2.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1）
 **到此，yilia主题添加aplayer播放器完成**
 ### 分享
 既然谈到了添加音乐播放器，自然是需要音乐的直链，分享一个网易云获取音乐直链的方法（一般不会失效，除非歌曲下架）

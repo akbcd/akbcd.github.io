@@ -1,4 +1,4 @@
-<% if (theme.verifyPassword.enable) { %>
+<% if (theme.verifyPassword.enable && page.password) { %>
 <script src="<%- theme.js.crypto %>"></script>
 <script>
     (function() {
@@ -21,7 +21,11 @@
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
         <% if(!index && theme.word_count && !post.no_word_count){ %>
+        <%if(config.language === 'zh-CN'){%>
           <div style="color: #999">字数：<%= wordcount(post.content) %>字</div>
+        <%}else{%>
+          <div style="color: #999">word count：<%= wordcount(post.content) %>&nbsp;words</div>
+        <%}%>
         <% } %>
       </header>
     <% } %>

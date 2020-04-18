@@ -10,7 +10,7 @@ tags: 游戏
 玩法：左侧青蛙全部跳到右侧，右侧青蛙全部跳到左侧，闯关成功
 如果失败了，可以点击重置按钮
 
-<body>
+<div>
 <script type="text/javascript"> 
     function success(){
         var flag = true;
@@ -97,7 +97,7 @@ tags: 游戏
     </tr>
 </table>
 <br>
-</body>
+</div>
 
 下面是源代码，与上面的不太相同。源代码移动的是img标签，上面的用div标签代替，本主题中img标签有点击事件，游戏实现不了
 运用了三个图片，需要的话自行点击下载（图片另存为）
