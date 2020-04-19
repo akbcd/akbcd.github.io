@@ -1,13 +1,12 @@
-港澳台
-凤凰资讯,http://112.50.243.8/PLTV/88888888/224/3221225901/1.m3u8#http://live.centerch.com/fhzx.m3u8#http://qlive.fengshows.cn/live720p/PIN.m3u8
-凤凰中文,http://112.50.243.8/PLTV/88888888/224/3221225900/1.m3u8#http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8#http://live.centerch.com/fhzw.m3u8#http://qlive.fengshows.cn/live720p/PCC.m3u8
-凤凰香港,http://104.250.154.42:8080/ZZ_fenghuangxianggang/ZZ_fenghuangxianggang.m3u8#http://qlive.fengshows.cn/live720p/PHK.m3u8
+港澳台,#genre#
+凤凰资讯,http://112.50.243.8/PLTV/88888888/224/3221225901/1.m3u8#http://live.centerch.com/fhzx.m3u8#http://qlive.fengshows.cn/PIN.flv
+凤凰中文,http://112.50.243.8/PLTV/88888888/224/3221225900/1.m3u8#http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8#http://live.centerch.com/fhzw.m3u8#http://qlive.fengshows.cn/PCC.flv
+凤凰香港,http://104.250.154.42:8080/ZZ_fenghuangxianggang/ZZ_fenghuangxianggang.m3u8#http://qlive.fengshows.cn/PHK.flv
 TVB翡翠台,http://116.199.5.58:8114/index.m3u8?3Fsv_chan_hls_se_idx=10&FvSeid=1&Fsv_ctype=LIVES&Fsv_otype=1&Provider_id=&Pcontent_id=.m3u8
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8#http://cctvalih5ca.v.myalicdn.com/cstv/xianggangweishi_2/index.m3u8
-澳門衛視,http://stream.mastvnet.com/MSTV/SD/live.m3u8
 凤凰资讯_联通,http://125.210.152.18:9090/live/FHZX_1200.m3u8
 凤凰中文_联通,http://125.210.152.18:9090/live/FHZW_1200.m3u8
-央视频道
+央视频道,#genre#
 CCTV1,http://112.50.243.8/PLTV/88888888/224/3221225922/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225812/1.m3u8#http://101.71.255.229:6610/zjhs/2/10079/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV2,http://112.50.243.8/PLTV/88888888/224/3221225923/1.m3u8#http://101.71.255.229:6610/zjhs/2/10082/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV3,http://101.71.255.229:6610/zjhs/2/10069/index.m3u8?virtualDomain=zjhs.live_hls.zte.com#http://cctvalih5ca.v.myalicdn.com/live/cctv3_2/index.m3u8
@@ -26,8 +25,8 @@ CCTV14,http://112.50.243.8/PLTV/88888888/224/3221225933/1.m3u8#http://112.50.243
 CCTV15,http://112.50.243.8/PLTV/88888888/224/3221225818/1.m3u8#http://101.71.255.229:6610/zjhs/2/10088/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV17,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000204202.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv17_2/index.m3u8
 CCTV4K,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000266303.m3u8
-吉林本地频道
-吉林卫视,http://stream4.jlntv.cn/test2/sd/live.m3u8
+吉林本地频道,#genre#
+吉林卫视,http://stream4.jlntv.cn/test2/sd/live.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225851/1.m3u8#http://101.71.255.229:6610/zjhs/2/10096/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 吉林都市,http://stream1.jlntv.cn/dspd/sd/live.m3u8
 吉林生活,http://stream1.jlntv.cn/shpd/sd/live.m3u8
 吉林影视,http://stream4.jlntv.cn/test4/sd/live.m3u8
@@ -35,8 +34,7 @@ CCTV4K,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000266303.m3u8
 吉林公共新闻,http://stream1.jlntv.cn/ggpd/sd/live.m3u8
 吉林篮球,http://stream1.jlntv.cn/lqpd/sd/live.m3u8
 东北戏曲,http://stream1.jlntv.cn/dbxq/sd/live.m3u8
-延边卫视,http://live.ybtvyun.com/video/s10006-cys-sd/index.m3u8
-卫视频道
+卫视频道,#genre#
 浙江卫视,http://112.50.243.8/PLTV/88888888/224/3221225934/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225825/1.m3u8#http://101.71.255.229:6610/zjhs/2/10059/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 湖南卫视,http://112.50.243.8/PLTV/88888888/224/3221225935/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225827/1.m3u8#http://101.71.255.229:6610/zjhs/2/10024/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 东方卫视,http://112.50.243.8/PLTV/88888888/224/3221225936/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225828/1.m3u8#http://101.71.255.229:6610/zjhs/2/10009/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
@@ -64,7 +62,6 @@ CCTV4K,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000266303.m3u8
 内蒙古卫视,http://112.50.243.8/PLTV/88888888/224/3221225846/1.m3u8#http://101.71.255.229:6610/zjhs/2/10035/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 宁夏卫视,http://112.50.243.8/PLTV/88888888/224/3221225849/1.m3u8#http://101.71.255.229:6610/zjhs/2/10036/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 陕西卫视,http://112.50.243.8/PLTV/88888888/224/3221225850/1.m3u8#http://101.71.255.229:6610/zjhs/2/10042/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
-吉林卫视,http://112.50.243.8/PLTV/88888888/224/3221225851/1.m3u8#http://101.71.255.229:6610/zjhs/2/10096/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 新疆卫视,http://112.50.243.8/PLTV/88888888/224/3221225852/1.m3u8#http://101.71.255.229:6610/zjhs/2/10050/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 云南卫视,http://112.50.243.8/PLTV/88888888/224/3221225853/1.m3u8#http://101.71.255.229:6610/zjhs/2/10054/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 海南卫视,http://112.50.243.8/PLTV/88888888/224/3221225855/1.m3u8#http://101.71.255.229:6610/zjhs/2/10034/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
@@ -73,7 +70,7 @@ CCTV4K,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000266303.m3u8
 兵团卫视,http://101.71.255.229:6610/zjhs/2/10006/index.m3u8?virtualDomain=zjhs.live_hls.zte.com#http://v.btzx.com.cn:1935/live/weishi.stream/playlist.m3u8
 海峡卫视,http://118.123.60.12:8114/LIVES/Fsv_otype=1&FvSeid=&Fsv_chan_hls_se_idx=024&Provider_id=&Pcontent_id=index.m3u8#http://by4.nty.tv189.cn/live/tm-haixiatv-800k.m3u8
 厦门卫视,http://cctvtxyh5ca.liveplay.myqcloud.com/cstv/xiamen_2/index.m3u8#http://by4.nty.tv189.cn/live/tm-xiamentv-800k.m3u8
-其他
+其他,#genre#
 北京纪实,http://112.50.243.8/PLTV/88888888/224/3221225944/1.m3u8
 纪实频道,http://112.50.243.8/PLTV/88888888/224/3221225946/1.m3u8
 极速汽车,http://112.50.243.8/PLTV/88888888/224/3221226140/1.m3u8
@@ -99,7 +96,7 @@ CGTN2,http://112.50.243.8/PLTV/88888888/224/3221225822/1.m3u8#http://101.71.255.
 BesTV电影频道,http://101.71.255.229:6610/zjhs/2/10052/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 BesTV精品电影,http://101.71.255.229:6610/zjhs/2/10037/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 BesTV动画频道,http://101.71.255.229:6610/zjhs/2/10043/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
-NewTV
+NewTV,#genre#
 NewTV爱情喜剧,http://112.50.243.8/PLTV/88888888/224/3221225877/1.m3u8
 NewTV动作电影,http://112.50.243.8/PLTV/88888888/224/3221225879/1.m3u8
 NewTV古装剧场,http://112.50.243.8/PLTV/88888888/224/3221225880/1.m3u8
@@ -118,7 +115,7 @@ NewTV超级综艺,http://112.50.243.8/PLTV/88888888/224/3221225924/1.m3u8
 NewTV超级体育,http://112.50.243.8/PLTV/88888888/224/3221225925/1.m3u8
 NewTV超级电影,http://112.50.243.8/PLTV/88888888/224/3221225926/1.m3u8
 NewTV超级电视剧,http://112.50.243.8/PLTV/88888888/224/3221225928/1.m3u8
-iHOT
+iHOT,#genre#
 iHOT爱奇谈,http://101.71.255.229:6610/zjhs/2/10103/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 iHOT爱悬疑,http://101.71.255.229:6610/zjhs/2/10104/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 iHOT爱喜剧,http://101.71.255.229:6610/zjhs/2/10105/index.m3u8?virtualDomain=zjhs.live_hls.zte.com

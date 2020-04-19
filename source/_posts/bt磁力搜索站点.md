@@ -34,4 +34,4 @@ tags: bt磁力
 
 **雨花阁**
 简单好用的BT搜索引擎
-[https://www.yhg20.xyz/](https://www.yhg20.xyz/)
+[http://www.yuhuage.biz/](http://www.yuhuage.biz/)
