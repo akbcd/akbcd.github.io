@@ -203,8 +203,8 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 css:
   main: /main.0cf68a.css
   clipboard: /css/clipboard.css
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
-  #aplayer: /css/clipboard.css
+  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
+  #aplayer: /css/APlayer.min.css #1.10.1
 js:
   mobile: /js/mobile.992cbe.js
   #mobile: /backup/mobile.992cbe.js
@@ -216,13 +216,13 @@ js:
   #search: /backup/search.js
   script: /js/script.js
   #script: /backup/script.js
-  jquery: https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js #3.4.1
-  #jquery: /js/jquery-3.4.1.min.js
-  scrollProgress: https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.js #3.0.2
-  #scrollProgress: /js/scrollProgress.min.js
-  crypto: https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js #3.1.9-1
-  #crypto: /js/crypto-js.min.js
-  clipboard: https://clipboardjs.com/dist/clipboard.min.js
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
+  #jquery: /js/jquery-3.4.1.min.js #3.4.1
+  scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
+  #scrollProgress: /js/scrollProgress.min.js #3.0.2
+  crypto: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
+  #crypto: /js/crypto-js.min.js #3.1.9-1
+  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
   #clipboard: /js/scrollProgress.min.js
-  aplayer: https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.9.1/APlayer.min.js #1.9.1
-  #aplayer: /js/APlayer.min.js
+  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js #1.9.1
+  #aplayer: /js/APlayer.min.js #1.9.1
