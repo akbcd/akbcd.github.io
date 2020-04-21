@@ -137,17 +137,33 @@ avatar: /img/avatar.png
 #是否开启分享
 share_jia: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
-#1、多说
-duoshuo: false
+#1、valine 参考官网：https://valine.js.org
+valine:
+  enable: true
+  appId: lgKQKDBk92WAKzzHw1palka0-MdYXbMMI
+  appKey: SIKHT3xm9TdmJ8bQKjtRoReC
+  placeholder: '说说你的看法。。。' # 评论框占位提示符
+  avatar: 'mp' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  pageSize: 10 # 评论列表分页
+  visitor: false # 文章访问量统计
+  highlight: true # 代码块高亮
+  recordIP: false # 是否记录评论者IP
 
-#2、网易云跟帖
-wangyiyun: false
+#2、gitalk
+gitalk:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    clientId:
+    clientSecret:
+  admin:
 
-#3、畅言
+#3、畅言（域名需要备案）
 changyan_appid: false
 changyan_conf: false
 
@@ -196,26 +212,31 @@ friends:
   音乐直链搜索工具: https://music.liuzhijin.cn/
   全网音乐免费下载神器: http://www.333ttt.com/up/tool/
   GitHub加速下载工具: http://tool.mkblog.cn/github/
+  LeanCloud评论管理: https://akbcd.avosapps.us/
+  jsDelivr: https://www.jsdelivr.com/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
+# backup为备份文件
 css:
   main: /main.0cf68a.css
+  #main: /backup_main.0cf68a.css
   clipboard: /css/clipboard.css
+  #clipboard: /backup/backup_clipboard.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
   #aplayer: /css/APlayer.min.css #1.10.1
 js:
   mobile: /js/mobile.992cbe.js
-  #mobile: /backup/mobile.992cbe.js
+  #mobile: /backup/backup_mobile.992cbe.js
   main: /main.0cf68a.js
-  #main: /backup/main.0cf68a.js
+  #main: /backup/backup_main.0cf68a.js
   slider: /slider.e37972.js
-  #slider: /backup/slider.e37972.js
+  #slider: /backup/backup_slider.e37972.js
   search: /js/search.js
-  #search: /backup/search.js
+  #search: /backup/backup_search.js
   script: /js/script.js
-  #script: /backup/script.js
+  #script: /backup/backup_script.js
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
   #jquery: /js/jquery-3.4.1.min.js #3.4.1
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
