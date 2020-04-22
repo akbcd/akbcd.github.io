@@ -2471,7 +2471,7 @@ pre .css~* .id,pre .id {
     float: right
 }
 /* 评论 */
-#disqus_thread,#gitment-ctn,#SOHUCS,#gitalk-container,#valine {
+#disqus_thread,#gitment-ctn,#SOHUCS,#gitalk-container {
     padding: 0 30px!important;
     min-height: 20px
 }
