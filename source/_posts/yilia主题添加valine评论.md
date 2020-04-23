@@ -41,7 +41,8 @@ http://localhost:4000
 <% } %>
 ```
 在`themes\yilia\layout\_partial\post`文件夹下创建`valine.ejs`文件
-将以下代码添加到`valine.ejs`文件中，valine需要用到**两个js文件**（官方文档中只显示了一个），引用`jsdelivr`cdn库
+将以下代码添加到`valine.ejs`文件中，valine需要用到**Valine.min.js**文件，引用`jsdelivr`cdn库最新版，也可以将文件下载到本地，本地引用
+实际上需要**两个js文件**，最新版本中，引用**Valine.min.js**文件会自动从网络上调用**av-min.js**文件，不需要手动引用，取决于valine版本
 ```
 <style>
     /* 适配yilia主题 */
@@ -64,7 +65,6 @@ http://localhost:4000
     }
 </style>
 <div id="valine"></div>
-<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
 <script>
     new Valine({
@@ -77,7 +77,8 @@ http://localhost:4000
         lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
         visitor: '<%- theme.valine.visitor %>' === 'true',
 		highlight: '<%- theme.valine.highlight %>' === 'true',
-		recordIp: '<%- theme.valine.recordIP %>' === 'true'
+		recordIp: '<%- theme.valine.recordIP %>' === 'true',
+        enableQQ: '<%- theme.valine.enableQQ %>' === 'true'
     });
 </script>
 ```
@@ -89,19 +90,20 @@ valine:
   appId: 
   appKey: 
   placeholder: 'just go go' # 评论框占位提示符
-  avatar: 'mp' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
   pageSize: 10 # 评论列表分页
   visitor: false # 文章访问量统计
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
+  enableQQ: false # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
 ```
 各个配置项含义参考valine官方文档中[配置项](https://valine.js.org/configuration.html)
 根据自己需要更改，与上面`valine.ejs`文件对应
 ## 使用valine
-主题`themes\yilia\_config.yml`valine中enable设置为true，将上面复制的**APP ID**和**APP Key**添加到对应的appId和appKey中
+主题`themes\yilia\_config.yml`文件valine配置中enable设置为true，将上面复制的**APP ID**和**APP Key**添加到对应的appId和appKey中
 启动本地服务`hexo s`
 在浏览器中预览，valine评论模块出现
-如果想对某篇关闭评论，在文章开头`Front-matter`菜单中添加`comments: false`属性（默认都开启评论）
+如果想对某篇文章关闭评论，在文章开头`Front-matter`菜单中添加`comments: false`属性（默认都开启评论）
 说明：
 本人注册的`LeanCloud`是国际版，在本地预览中，valine评论中`Code -1`报错，这个问题让我花费了很长时间也没解决，控制台中显示是跨域问题，整的我都想重新注册`LeanCloud`国内版再试了
 其实这个问题很好解决，我尝试在评论区发送一个评论，惊奇的发现错误消失了，评论成功，`LeanCloud`中`Class Comment`成功记录了数据
@@ -109,7 +111,7 @@ valine:
 **到此，yilia主题添加valine评论完成**
 以下内容为：
 配合` @DesertsP `开发的` Valine-Admin `进行评论数据管理，这里简称valine进阶
-通过`Valine-Admin`，我们可以建立一个valine评论后台管理，并且实现邮件提醒（官方valine好像不具备邮件提醒服务）
+通过`Valine-Admin`，我们可以建立一个valine评论后台管理，并且实现邮件提醒（官方自带的邮件提醒功能将在v1.4.0发布时下线，请使用自带邮件提醒的用户注意更改为第三方邮件提醒）
 ## valine进阶
 参考[Valine Admin文档](https://deserts.io/valine-admin-document/)
 >Valine Admin 是 Valine 评论系统的后端功能补充和增强，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能。

@@ -19,7 +19,6 @@
     }
 </style>
 <div id="valine"></div>
-<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
 <script>
     new Valine({
@@ -32,6 +31,7 @@
         lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
         visitor: '<%- theme.valine.visitor %>' === 'true',
 		highlight: '<%- theme.valine.highlight %>' === 'true',
-		recordIp: '<%- theme.valine.recordIP %>' === 'true'
+		recordIp: '<%- theme.valine.recordIP %>' === 'true',
+        enableQQ: '<%- theme.valine.enableQQ %>' === 'true'
     });
 </script>
