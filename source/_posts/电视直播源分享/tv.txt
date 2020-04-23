@@ -1,7 +1,6 @@
 港澳台,#genre#
 凤凰资讯,http://112.50.243.8/PLTV/88888888/224/3221225901/1.m3u8#http://live.centerch.com/fhzx.m3u8#http://qlive.fengshows.cn/PIN.flv
 凤凰中文,http://112.50.243.8/PLTV/88888888/224/3221225900/1.m3u8#http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8#http://live.centerch.com/fhzw.m3u8#http://qlive.fengshows.cn/PCC.flv
-凤凰香港,http://104.250.154.42:8080/ZZ_fenghuangxianggang/ZZ_fenghuangxianggang.m3u8#http://qlive.fengshows.cn/PHK.flv
 TVB翡翠台,http://116.199.5.58:8114/index.m3u8?3Fsv_chan_hls_se_idx=10&FvSeid=1&Fsv_ctype=LIVES&Fsv_otype=1&Provider_id=&Pcontent_id=.m3u8
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8#http://cctvalih5ca.v.myalicdn.com/cstv/xianggangweishi_2/index.m3u8
 凤凰资讯_联通,http://125.210.152.18:9090/live/FHZX_1200.m3u8
@@ -20,10 +19,10 @@ CCTV9,http://112.50.243.8/PLTV/88888888/224/3221225929/1.m3u8#http://112.50.243.
 CCTV10,http://112.50.243.8/PLTV/88888888/224/3221225931/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225814/1.m3u8#http://101.71.255.229:6610/zjhs/2/10072/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV11,http://112.50.243.8/PLTV/88888888/224/3221225815/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225815/1.m3u8#http://101.71.255.229:6610/zjhs/2/10085/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV12,http://112.50.243.8/PLTV/88888888/224/3221225932/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225816/1.m3u8#http://101.71.255.229:6610/zjhs/2/10086/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
-CCTV13,http://61.151.179.194/tlivecloud-cdn.ysp.cctv.cn/001/2000204603.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225817/1.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv13_2/index.m3u8
+CCTV13,http://112.50.243.8/PLTV/88888888/224/3221225817/1.m3u8#http://101.71.255.229:6610/zjhs/2/10077/index.m3u8?virtualDomain=zjhs.live_hls.zte.com#http://cctvalih5ca.v.myalicdn.com/live/cctv13_2/index.m3u8
 CCTV14,http://112.50.243.8/PLTV/88888888/224/3221225933/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225819/1.m3u8#http://101.71.255.229:6610/zjhs/2/10087/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV15,http://112.50.243.8/PLTV/88888888/224/3221225818/1.m3u8#http://101.71.255.229:6610/zjhs/2/10088/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
-CCTV17,http://ivi.bupt.edu.cn/hls/cctv17hd.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv17_2/index.m3u8
+CCTV17,http://www.xytv998.com/live/sdi1/index.m3u8#http://stream.cdjsxy.cn/lypd/sd/live.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv17_2/index.m3u8
 吉林本地频道,#genre#
 吉林卫视,http://stream4.jlntv.cn/test2/sd/live.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225851/1.m3u8#http://101.71.255.229:6610/zjhs/2/10096/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 吉林都市,http://stream1.jlntv.cn/dspd/sd/live.m3u8
@@ -33,6 +32,7 @@ CCTV17,http://ivi.bupt.edu.cn/hls/cctv17hd.m3u8#http://cctvalih5ca.v.myalicdn.co
 吉林公共新闻,http://stream1.jlntv.cn/ggpd/sd/live.m3u8
 吉林篮球,http://stream1.jlntv.cn/lqpd/sd/live.m3u8
 东北戏曲,http://stream1.jlntv.cn/dbxq/sd/live.m3u8
+延边卫视,http://118.123.60.12:8114/LIVES/Fsv_otype=1&FvSeid=&Fsv_chan_hls_se_idx=065&Provider_id=&Pcontent_id=index.m3u8
 卫视频道,#genre#
 浙江卫视,http://112.50.243.8/PLTV/88888888/224/3221225934/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225825/1.m3u8#http://101.71.255.229:6610/zjhs/2/10059/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 湖南卫视,http://112.50.243.8/PLTV/88888888/224/3221225935/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225827/1.m3u8#http://101.71.255.229:6610/zjhs/2/10024/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
