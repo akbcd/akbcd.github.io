@@ -11,7 +11,7 @@ tags: 软件安装
 选择自己所用开发语言的版本，这里以java语言为例
 总共有两个java语言版本**Eclipse IDE for Java Developers**和**Eclipse IDE for Enterprise Java Developers (includes Incubating components)**
 如果你需要**java web**开发，选择**Eclipse IDE for Enterprise Java Developers (includes Incubating components)**
-选择**Windows 64-bit**，这里以win10系统安装为例
+选择**Windows 64-bit**，这里以**Windows10 64位**操作系统安装为例
 进入下载页面，点击下载，如果没有跳出下载窗口，尝试切换镜像，将镜像地址改为中国镜像
 ### 安装eclipse
 下载好的eclipse是zip压缩文件，解压后，点击`eclipse.exe`，进入到eclipse启动页面
@@ -31,7 +31,7 @@ tags: 软件安装
 ### 安装java
 打开自己下载好的**java jdk**程序，依次下一步，选择安装位置，jdk安装完会弹出jre安装
 注：这里的jre安装时可以选择安装位置的，但是java更新所安装的jre默认为c盘，而且不会弹出路径选择
-安装完成后，打开eclipse，eclipse成功打开，选择相应的工作空间，进入eclipse
+安装完成后，打开eclipse，eclipse成功打开，选择相应的工作空间，进入eclipse（win10系统下eclipse使用不需要配置环境变量，如果你是cmd，需要配置）
 **到此，eclipse安装完成**
 ## 测试
 ### 更改代码大小
@@ -52,9 +52,9 @@ jsp文件设置
 #### 配置tomcat
 jsp文件的运行需要tomcat服务
 [tomcat官网](http://tomcat.apache.org/)下载需要的版本
-选择`Binary Distributions`下面的Core中内容进行下载，里面有对应的Windows版本。
+选择`Binary Distributions`下面的Core中内容进行下载，里面有对应的Windows版本。（如果不能下载，依然是切换镜像）
 下载后解压即可
-注：tomcat默认使用8080端口
+注：tomcat默认使用8080端口（tomcat在eclipse使用不需要配置环境变量）
 #### 创建`Dynamic Web project`项目
 `File>New>Dynamic Web project`
 输入项目名称
