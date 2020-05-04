@@ -30,8 +30,8 @@ tags: 软件安装
 记得之前不需要登录账户就可以下载，现在需要登录账户了，登录成功自动跳转下载窗口进行下载（文件200多M，包含jre）
 ### 安装java
 打开自己下载好的**java jdk**程序，依次下一步，选择安装位置，jdk安装完会弹出jre安装
-注：这里的jre安装时可以选择安装位置的，但是java更新所安装的jre默认为c盘，而且不会弹出路径选择
-安装完成后，打开eclipse，eclipse成功打开，选择相应的工作空间，进入eclipse（win10系统下eclipse使用不需要配置环境变量，如果你是cmd，需要配置）
+注：这里的jre安装是可以选择安装位置的，但是java更新所安装的jre默认为c盘，而且不会弹出路径选择
+安装完成后，打开eclipse，eclipse成功打开，选择自己的工作空间，进入eclipse（win10系统下eclipse使用不需要配置环境变量，如果你是cmd，需要配置）
 **到此，eclipse安装完成**
 ## 测试
 ### 更改代码大小
@@ -41,7 +41,7 @@ tags: 软件安装
 依次Window>Prefences>General>Workspace
 找到`Text file econding`
 默认为GBK，选择其它，改为utf-8
-jsp文件设置
+jsp文件设置utf-8
 `Window>Prefences>Web>Jsp Files`选择utf-8
 ### java语言测试
 创建java项目
@@ -51,14 +51,14 @@ jsp文件设置
 ### jsp测试
 #### 配置tomcat
 jsp文件的运行需要tomcat服务
-[tomcat官网](http://tomcat.apache.org/)下载需要的版本
+点击：[tomcat官网](http://tomcat.apache.org/)下载需要的版本
 选择`Binary Distributions`下面的Core中内容进行下载，里面有对应的Windows版本。（如果不能下载，依然是切换镜像）
 下载后解压即可
 注：tomcat默认使用8080端口（tomcat在eclipse使用不需要配置环境变量）
 #### 创建`Dynamic Web project`项目
 `File>New>Dynamic Web project`
 输入项目名称
-在`Target runtime`下面选择`New Runtime...`，在Apache中选择自己下载tomcat的版本，点击next，点击Browse...，找到tomcat解压后的路径，添加tomcat
+在`Target runtime`下面选择`New Runtime...`，在Apache中选择自己下载的tomcat版本，点击next，点击Browse...，找到tomcat解压后的路径，添加tomcat
 两次下一步进入到`Web Module`页面，根据自己的需要选择是否创建`web.xml`文件
 创建jsp文件测试
 `Dynamic Web project`项目WebContent文件夹下创建jsp文件，输入测试内容保存
