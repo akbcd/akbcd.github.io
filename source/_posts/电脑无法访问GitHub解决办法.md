@@ -17,7 +17,7 @@ tags: [教程,经验]
 ![无法访问GitHub](https://i.loli.net/2020/05/04/aPd1IgXTAM9CNY4.png)
 cmd输入ping命令`ping github.com`
 ping不通
-![ping](https://i.ibb.co/xSj9fHv/php-PILHt-V.png)
+![ping](https://i.loli.net/2020/05/05/ZJEsOqrxHpvYIce.png)
 `52.74.223.119`为宽带DNS服务器解析的IP地址
 通过网站：[https://www.ip138.com/](https://www.ip138.com/)，输入域名，查询IP，总共查询到如下几个IP地址
 ![ip查询](https://i.loli.net/2020/05/04/ngwxaV1rGS9sTLZ.png)

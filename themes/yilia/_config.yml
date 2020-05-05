@@ -48,7 +48,7 @@ music:
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
-  lrcType: 1 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
+  lrcType: 0 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
   listFolded: true # 列表是否折叠
   listMaxHeight: # 列表最大高度
   # mobile-aplayer 移动端页面
@@ -201,7 +201,6 @@ smart_menu:
   #aboutme: '关于我'
 
 friends:
-  小贱贱图床: http://pic.xiaojianjian.net/
   聚合图床 - 微博图床: http://tool.mkblog.cn/tuchuang/
   歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
   软件安装管家: https://mp.weixin.qq.com/s/zeq1sTmaPsKt7Bsok0Ldrg

@@ -2130,9 +2130,10 @@ pre .css~* .id,pre .id {
     background: #fff;
     transition: all .2s ease-in
 }
-
-.article img {
-    max-width: 100%
+/* 文章img标签优化 */
+.article p img {
+    max-width: 100%;
+    margin: 10px 0
 }
 
 .article-inner h1.article-title,.article-title {
@@ -2212,9 +2213,9 @@ pre .css~* .id,pre .id {
     border: none;
     margin: -30px 0 20px 7.6923%
 }
-
+/* bottom外边距优化 */
 .article-inner p {
-    margin: 0 0 1.75em
+    margin: 0 0 10px
 }
 
 .article-inner {
@@ -3242,9 +3243,9 @@ pre .css~* .id,pre .id {
     .article .article-more-link {
         margin: 0
     }
-
+    /* 美化文章结束样式，与pc页面同步 */
     .article .article-entry {
-        padding: 10px 0 30px
+        padding: 10px 0 20px
     }
 
     .article .article-inner h1.article-title,.article .article-title {
