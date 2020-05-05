@@ -44,7 +44,7 @@ music:
   fixed: false # 吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
   autoplay: false # 是否自动播放
   theme: '#4d4d4d' # 主题色
-  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  loop: 'one' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
