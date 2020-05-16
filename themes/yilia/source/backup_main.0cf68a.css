@@ -3054,7 +3054,7 @@ pre .css~* .id,pre .id {
         overflow-y: auto
     }
     /* 隐藏滚动条 */
-    #container::-webkit-scrollbar {
+    ::-webkit-scrollbar{
         display: none
     }
 
