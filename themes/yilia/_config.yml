@@ -6,7 +6,7 @@ menu:
   随笔: /tags/随笔/
 
 # SubNav
-#subnav:
+subnav:
   #github: http://github.com/
   #weibo: https://weibo.com/
   #rss: "#"
@@ -23,6 +23,8 @@ menu:
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
+  #csdn: "#"
+  #mayun: "#"
 
 # rss订阅实现需要插件hexo-generator-feed
 rss: /

@@ -839,7 +839,24 @@ i {
 .icon-psn:before {
     content: "\E6C7"
 }
+/* 添加矢量图标（iconfont） */
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1589780146619'); /* IE9 */
+    src: url('iconfont.eot?t=1589780146619#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANAAAsAAAAABxAAAALxAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBeIF3ATYCJAMMCwgABCAFhG0HNhs9BsgekiREEA8OoFAKACEUD9+vsT/37dtFRJJqxpsnhqQWMiQqoZLaL/1P99D8L7v6Nzgy7lMmc262e+GePsAfEYiUiABHW/mkRn3/weX4lwc4z7Kc1rQ1JwWYYKBjTuBAChAbxi54gZsJ1BsWidsurmwEV5ndKxBPeq0ErgWbLLNgrVA1TMz53BZwUpuW+ccA3qPfx0+ID1eQlAXYAw9vijSQ+0X+8VKYUqd0BgqYXk4DNo0CM0AmThp1x4TEN0NQr4tEIxtUspCWcqoqEceQVQf94yWiAjuxEUxAf+KL7DEIvrycIoECVElgB3hEROeiIS3gRj1XjgO8nojwWj0B8PGssHjESU449LLEZ/UUx02fdPd+9qxRnDrh4fPyZQsgDbfcfsTKi5aXX5tWnye13H3h/ulb47Pv0urLlLS4618ClzrNPvOxUQFRRIBTSWnvDi1ie1laWtsQi4gX3bDMX7zIL+fTlBH+wAF+xJF+htzW3uBXqyday+Dhwy3e24MOpplrfPOJoP8DX/7vbmVp8NQn7IBXF/5d4vBxvz16Af6/CNeFXNXxfyovCFM/fTe/XnxM7fHJzLVBBPj8K+dixBqGTRpA7S3pg19cku+oDvIb59vyImsSnYmBwsLEngn16vEfNrX7MF3atTgnMNTqyiCpMQSFWiNIJmag1GAFKrXWoN60kukNOlCCyG7AlHkAodU5SJp9gkKrJ0gm3kOp23+otIYA9Y4iYMEGY6F3L6BYYliD+oaRXrZaiKtk7nFyPdb2mySa50fkZkwVvRPFRceWgyXYgukSQ5QBbTxjBBFqNaNisB02mazIRq0GLLNoHWO29JgY0vSmaNlqBndbKEzCYBpIn2GInszKggTNGffK9+thWv1MJLSjqs7cDKMU+taRONFiByAlEsugqke5RjFAKx7DEAhBWZkhxUCDmRyfFWJrbmeAyZhougkem3QxqBEZKoneXmb+gWxWh71aETwncCKUz9Jwv0WUFY0FAAAAAA==') format('woff2'),
+    url('iconfont.woff?t=1589780146619') format('woff'),
+    url('iconfont.ttf?t=1589780146619') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1589780146619#iconfont') format('svg'); /* iOS 4.1- */
+}
 
+.icon-mayun:before {
+content: "\e663";
+}
+
+.icon-csdn:before {
+content: "\e6d7";
+}
+/* 结束 */
 body,button,input,select,textarea {
     color: #1a1a1a;
     font-family: lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
@@ -1644,7 +1661,25 @@ pre .css~* .id,pre .id {
 #header .header-nav .social a.psn:hover {
     border: 1px solid #086ef6
 }
+/* 添加矢量图标（iconfont） */
+#header .header-nav .social a.csdn {
+    background: #d81e06;
+    border: 1px solid #d81e06
+}
 
+#header .header-nav .social a.csdn:hover {
+    border: 1px solid #d81e06
+}
+
+#header .header-nav .social a.mayun {
+    background: #d81e06;
+    border: 1px solid #d81e06
+}
+
+#header .header-nav .social a.mayun:hover {
+    border: 1px solid #d81e06
+}
+/* 结束 */
 #page-nav {
     text-align: center;
     margin-top: 30px
