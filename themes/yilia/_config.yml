@@ -113,8 +113,9 @@ top: true
 
 # 字数统计
 # 本功能实现需要插件hexo-wordcount
+# 设定：0-不显示字数； 1-文章对应的md文件里有wordcount:true属性，才显示字数； 2-所有文章均显示字数
 # 不需要使用，直接设置值为false，或注释掉
-word_count: true
+wordcount: 2
 
 # 代码块复制
 clipboard: true
@@ -151,7 +152,7 @@ valine:
   placeholder: '说说你的看法。。。' # 评论框占位提示符
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
   pageSize: 10 # 评论列表分页
-  visitor: false # 文章访问量统计
+  visitor: true # 文章访问量统计
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭

@@ -55,22 +55,25 @@ avatar: /img/avatar.png
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
         <!-- 开始添加字数统计-->
-        <% if(theme.word_count && !post.no_word_count && !index){%>
-          <div>
-            字数：<%= wordcount(post.content) %>字
-          </div>
+        <% if (!index && ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2)){ %>
+        <div style="color: #999">
+        <span>字数 <%= wordcount(post.content) %></span>
+        <div>
         <% } %>
         <!-- 添加完成 -->
       </header>
 <% } %>
 ```
+这里div添加了颜色属性，适配主题
 **div标签的样式可以自己修改，添加style属性即可，也可以添加class，在css中美化**
 * 添加了判断条件，修改主题配置文件`themes\yilia\_config.yml`，添加
 
 ```
-#是否开启字数统计
-#不需要使用，直接设置值为false，或注释掉
-word_count: true
+# 字数统计
+# 本功能实现需要插件hexo-wordcount
+# 设定：0-不显示字数； 1-文章对应的md文件里有wordcount:true属性，才显示字数； 2-所有文章均显示字数
+# 不需要使用，直接设置值为false，或注释掉
+wordcount: 2
 ```
 * `hexo s`本地预览查看效果
 
@@ -703,7 +706,7 @@ $("figure code").wrap("<pre></pre>");
 添加如下内容：
 ```
 <% if(!index && post.updated && post.updated > post.date){ %>
-		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated">最后更新于：<i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
+		<time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated"><span>更新于 </span><i class="icon-calendar icon"></i><%= date(post.updated, date_format) %></time>
 <% } %>
 ```
 说明一下原理：

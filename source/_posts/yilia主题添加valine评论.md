@@ -108,6 +108,49 @@ valine:
 本人注册的`LeanCloud`是国际版，在本地预览中，valine评论中`Code -1`报错，这个问题让我花费了很长时间也没解决，控制台中显示是跨域问题，整的我都想重新注册`LeanCloud`国内版再试了
 其实这个问题很好解决，我尝试在评论区发送一个评论，惊奇的发现错误消失了，评论成功，`LeanCloud`中`Class Comment`成功记录了数据
 不知上面这个问题其他人有没有遇到过
+## 使用valine评论的文章阅读量统计功能
+参看官方文档：https://valine.js.org/visitor.html
+Valine 从 `v1.2.0` 开始支持文章阅读量统计。
+```
+new Valine({
+    el:'#vcomments',
+    ...
+    visitor: true // 阅读量统计
+})
+```
+>如果开启了阅读量统计，Valine 会自动检测 leancloud 应用中是否存在Counter类，如果不存在会自动创建，无需手动创建~
+
+Valine会自动查找页面中class值为leancloud_visitors的元素，获取其id为查询条件。并将得到的值填充到其class的值为leancloud-visitors-count的子元素里：
+```
+<!-- id 将作为查询条件 -->
+<span id="<Your/Path/Name>" class="leancloud_visitors" data-flag-title="Your Article Title">
+    <em class="post-meta-item-text">阅读量 </em>
+    <i class="leancloud-visitors-count">1000000</i>
+</span>
+```
+下面以yilia主题为例，应用valine评论的文章阅读量统计功能
+### 配置
+将主题配置文件中valine下的visitor值修改为true
+`visitor: true # 文章访问量统计`
+定位主题文件`themes\yilia\layout\_partial\article.ejs`在header标签下导入date语句下面添加（添加位置在文章日期的下面）
+```
+<header class="article-header">
+    <%- partial('post/title', {class_name: 'article-title'}) %>
+    <% if (!post.noDate){ %>
+    <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
+    <% } %>
+    <!-- 开始添加 -->
+    <% if(!index && theme.valine.enable && theme.valine.visitor){ %>
+        <div style="color: #999">
+        <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+        </div>
+    <% } %>
+    <!-- 添加结束 -->
+</header>
+```
+参考官方文档，将span标签的id修改为文章路径：`url_for(post.path)`，`data-flag-title`属性的值修改为`post.title`。
+添加基于valine实现的判断条件，div标签添加color属性使颜色与日期颜色相匹配（适配yilia主题），可以根据自己需要进行修改。
+阅读量统计数据可以在leancloud 应用中修改。
 **到此，yilia主题添加valine评论完成**
 以下内容为：
 配合` @DesertsP `开发的` Valine-Admin `进行评论数据管理，这里简称valine进阶
