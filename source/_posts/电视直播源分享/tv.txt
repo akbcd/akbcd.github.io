@@ -22,7 +22,7 @@ CCTV12,http://112.50.243.8/PLTV/88888888/224/3221225932/1.m3u8#http://112.50.243
 CCTV13,http://112.50.243.8/PLTV/88888888/224/3221225817/1.m3u8#http://101.71.255.229:6610/zjhs/2/10077/index.m3u8?virtualDomain=zjhs.live_hls.zte.com#http://cctvalih5ca.v.myalicdn.com/live/cctv13_2/index.m3u8
 CCTV14,http://112.50.243.8/PLTV/88888888/224/3221225933/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225819/1.m3u8#http://101.71.255.229:6610/zjhs/2/10087/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 CCTV15,http://112.50.243.8/PLTV/88888888/224/3221225818/1.m3u8#http://101.71.255.229:6610/zjhs/2/10088/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
-CCTV17,http://www.xytv998.com/live/sdi1/index.m3u8#http://stream.cdjsxy.cn/lypd/sd/live.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv17_2/index.m3u8
+CCTV17,http://www.xytv998.com/live/sdi1/index.m3u8#http://cctvalih5ca.v.myalicdn.com/live/cctv17_2/index.m3u8
 吉林本地频道,#genre#
 吉林卫视,http://stream4.jlntv.cn/test2/sd/live.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225851/1.m3u8#http://101.71.255.229:6610/zjhs/2/10096/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 吉林都市,http://stream1.jlntv.cn/dspd/sd/live.m3u8
