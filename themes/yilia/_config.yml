@@ -249,3 +249,5 @@ js:
   #clipboard: /js/scrollProgress.min.js
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js #1.9.1
   #aplayer: /js/APlayer.min.js #1.9.1
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
+  valine: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js

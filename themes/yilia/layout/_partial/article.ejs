@@ -20,23 +20,27 @@
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
-        <div style="color: #999">
+        <% if (!index){ %>
         <%if(config.language === 'zh-CN'){%>
-        <% if (!index && ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2)){ %>
-          <span>字数 <%= wordcount(post.content) %></span>
-        <% } %>
-        <% if(!index && theme.valine.enable && theme.valine.visitor){ %>
-          <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
-        <% } %>
+          <div style="color: #999">
+          <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
+            <span>字数 <%= wordcount(post.content) %></span>
+          <% } %>
+          <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
+            <span id="<%= config.url+url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+          <% } %>
+          </div>
         <%}else{%>
-        <% if (!index && ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2)){ %>
-          <span><em>word count </em><%= wordcount(post.content) %></span>
-        <% } %>
-        <% if(!index && theme.valine.enable && theme.valine.visitor){ %>
-          <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"><em>article reading statistics </em><i class="leancloud-visitors-count"></i></span>
-        <% } %>
+          <div style="color: #999">
+          <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
+            <span>word count <%= wordcount(post.content) %></span>
+          <% } %>
+          <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
+            <span id="<%= config.url+url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">article reading statistics <i class="leancloud-visitors-count"></i></span>
+          <% } %>
+          </div>
         <%}%>
-        </div>
+        <% } %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
