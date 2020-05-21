@@ -27,7 +27,7 @@
             <span>字数 <%= wordcount(post.content) %></span>
           <% } %>
           <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%= config.url+url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
           <% } %>
           </div>
         <%}else{%>
@@ -36,7 +36,7 @@
             <span>word count <%= wordcount(post.content) %></span>
           <% } %>
           <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%= config.url+url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">article reading statistics <i class="leancloud-visitors-count"></i></span>
+            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">article reading statistics <i class="leancloud-visitors-count"></i></span>
           <% } %>
           </div>
         <%}%>
