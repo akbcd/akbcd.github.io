@@ -644,15 +644,19 @@ i {
 * {
     box-sizing: border-box
 }
-
+/* 矢量图标（iconfont）共34个 */
 @font-face {
-    font-family: iconfont;
-    src: url(./fonts/iconfont.b322fa.eot);
-    src: url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"),url(./fonts/iconfont.8c627f.woff) format("woff"),url(./fonts/iconfont.16acc2.ttf) format("truetype"),url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
+    font-family: 'iconfont';  /* project id 692003 */
+    src: url('//at.alicdn.com/t/font_692003_1l9peyo2whi.eot');
+    src: url('//at.alicdn.com/t/font_692003_1l9peyo2whi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_692003_1l9peyo2whi.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_692003_1l9peyo2whi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_692003_1l9peyo2whi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_692003_1l9peyo2whi.svg#iconfont') format('svg');
 }
 
 [class*=" icon-"],[class^=icon-] {
-    font-family: iconfont!important;
+    font-family: "iconfont" !important;
     speak: none;
     font-size: 16px;
     font-style: normal;
@@ -664,197 +668,140 @@ i {
     -moz-osx-font-smoothing: grayscale
 }
 
-.icon-twitter:before {
-    content: "\E600"
-}
-
-.icon-facebook:before {
-    content: "\E601"
-}
-
-.icon-clock:before {
-    content: "\E602"
-}
-
-.icon-mail:before {
-    content: "\E609"
-}
-
-.icon-link:before {
-    content: "\E6AB"
-}
-
-.icon-search:before {
-    content: "\E65B"
-}
-
-.icon-smile:before {
-    content: "\E64A"
-}
-
-.icon-roundrightfill:before {
-    content: "\E65A"
-}
-
-.icon-list:before {
-    content: "\E682"
-}
-
-.icon-book:before {
-    content: "\E6FE"
-}
-
-.icon-home:before {
-    content: "\E6BB"
-}
-
 .icon-share:before {
-    content: "\E618"
-}
-
-.icon-back:before {
-    content: "\E625"
-}
-
-.icon-qq:before {
-    content: "\E62D"
-}
-
-.icon-weibo:before {
-    content: "\E619"
-}
-
-.icon-segmentfault:before {
-    content: "\E603"
-}
-
-.icon-sort:before {
-    content: "\E700"
-}
-
-.icon-jianshu:before {
-    content: "\E613"
-}
-
-.icon-circle-left:before {
-    content: "\E71F"
-}
-
-.icon-circle-right:before {
-    content: "\E720"
-}
-
-.icon-loading:before {
-    content: "\E614"
-}
-
-.icon-acfun:before {
-    content: "\E604"
-}
-
-.icon-close:before {
-    content: "\E60C"
-}
-
-.icon-tumblr:before {
-    content: "\E6B0"
-}
-
-.icon-calendar:before {
-    content: "\E667"
-}
-
-.icon-rss:before {
-    content: "\E877"
-}
-
-.icon-price-tags:before {
-    content: "\E6F9"
-}
-
-.icon-quo-left:before {
-    content: "\E7F5"
-}
-
-.icon-quo-right:before {
-    content: "\E7F6"
-}
-
-.icon-back1:before {
-    content: "\E64E"
-}
-
-.icon-github:before {
-    content: "\E735"
-}
-
-.icon-film:before {
-    content: "\E7B7"
-}
-
-.icon-weixin:before {
-    content: "\E61F"
+    content: "\e600";
 }
 
 .icon-qzone:before {
-    content: "\E680"
+    content: "\e66e";
 }
 
-.icon-category:before {
-    content: "\E605"
-}
-
-.icon-douban:before {
-    content: "\E64C"
-}
-
-.icon-roundleftfill:before {
-    content: "\E799"
-}
-
-.icon-tuding:before {
-    content: "\E651"
+.icon-rss:before {
+    content: "\e733";
 }
 
 .icon-zhihu:before {
-    content: "\E61B"
+    content: "\e602";
 }
 
-.icon-linkedin:before {
-    content: "\E6D4"
+.icon-mail:before {
+    content: "\e7b1";
 }
 
-.icon-google:before {
-    content: "\E635"
-}
-
-.icon-plane:before {
-    content: "\E62F"
+.icon-segmentfault:before {
+    content: "\e610";
 }
 
 .icon-bilibili:before {
-    content: "\E622"
+    content: "\e620";
 }
 
-.icon-psn:before {
-    content: "\E6C7"
+.icon-weibo:before {
+    content: "\e624";
 }
-/* 添加矢量图标（iconfont） */
-@font-face {font-family: "iconfont";
-    src: url('iconfont.eot?t=1589780146619'); /* IE9 */
-    src: url('iconfont.eot?t=1589780146619#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANAAAsAAAAABxAAAALxAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBeIF3ATYCJAMMCwgABCAFhG0HNhs9BsgekiREEA8OoFAKACEUD9+vsT/37dtFRJJqxpsnhqQWMiQqoZLaL/1P99D8L7v6Nzgy7lMmc262e+GePsAfEYiUiABHW/mkRn3/weX4lwc4z7Kc1rQ1JwWYYKBjTuBAChAbxi54gZsJ1BsWidsurmwEV5ndKxBPeq0ErgWbLLNgrVA1TMz53BZwUpuW+ccA3qPfx0+ID1eQlAXYAw9vijSQ+0X+8VKYUqd0BgqYXk4DNo0CM0AmThp1x4TEN0NQr4tEIxtUspCWcqoqEceQVQf94yWiAjuxEUxAf+KL7DEIvrycIoECVElgB3hEROeiIS3gRj1XjgO8nojwWj0B8PGssHjESU449LLEZ/UUx02fdPd+9qxRnDrh4fPyZQsgDbfcfsTKi5aXX5tWnye13H3h/ulb47Pv0urLlLS4618ClzrNPvOxUQFRRIBTSWnvDi1ie1laWtsQi4gX3bDMX7zIL+fTlBH+wAF+xJF+htzW3uBXqyday+Dhwy3e24MOpplrfPOJoP8DX/7vbmVp8NQn7IBXF/5d4vBxvz16Af6/CNeFXNXxfyovCFM/fTe/XnxM7fHJzLVBBPj8K+dixBqGTRpA7S3pg19cku+oDvIb59vyImsSnYmBwsLEngn16vEfNrX7MF3atTgnMNTqyiCpMQSFWiNIJmag1GAFKrXWoN60kukNOlCCyG7AlHkAodU5SJp9gkKrJ0gm3kOp23+otIYA9Y4iYMEGY6F3L6BYYliD+oaRXrZaiKtk7nFyPdb2mySa50fkZkwVvRPFRceWgyXYgukSQ5QBbTxjBBFqNaNisB02mazIRq0GLLNoHWO29JgY0vSmaNlqBndbKEzCYBpIn2GInszKggTNGffK9+thWv1MJLSjqs7cDKMU+taRONFiByAlEsugqke5RjFAKx7DEAhBWZkhxUCDmRyfFWJrbmeAyZhougkem3QxqBEZKoneXmb+gWxWh71aETwncCKUz9Jwv0WUFY0FAAAAAA==') format('woff2'),
-    url('iconfont.woff?t=1589780146619') format('woff'),
-    url('iconfont.ttf?t=1589780146619') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url('iconfont.svg?t=1589780146619#iconfont') format('svg'); /* iOS 4.1- */
+
+.icon-weixin:before {
+    content: "\e628";
+}
+
+.icon-circle-right:before {
+    content: "\e657";
+}
+
+.icon-circle-left:before {
+    content: "\e708";
+}
+
+.icon-category:before {
+    content: "\e60f";
+}
+
+.icon-close:before {
+    content: "\e653";
+}
+
+.icon-linkedin:before {
+    content: "\e611";
+}
+
+.icon-douban:before {
+    content: "\e94a";
+}
+
+.icon-google:before {
+    content: "\e68e";
+}
+
+.icon-qq:before {
+    content: "\e621";
+}
+
+.icon-calendar:before {
+    content: "\e619";
+}
+
+.icon-jianshu:before {
+    content: "\e622";
+}
+
+.icon-github:before {
+    content: "\e76b";
+}
+
+.icon-plane:before {
+    content: "\e67e";
+}
+
+.icon-sort:before {
+    content: "\e632";
+}
+
+.icon-search:before {
+    content: "\e604";
+}
+
+.icon-acfun:before {
+    content: "\e608";
+}
+
+.icon-book:before {
+    content: "\e609";
+}
+
+.icon-quo-left:before {
+    content: "\e60a";
+}
+
+.icon-price-tags:before {
+    content: "\e60b";
+}
+
+.icon-quo-right:before {
+    content: "\e60c";
+}
+
+.icon-tuding:before {
+    content: "\e60d";
+}
+
+.icon-facebook:before {
+    content: "\e637";
+}
+
+.icon-twitter:before {
+    content: "\e606";
+}
+
+.icon-back:before {
+    content: "\e6da";
 }
 
 .icon-mayun:before {
-content: "\e663";
+    content: "\e6d8";
 }
 
 .icon-csdn:before {
-content: "\e6d7";
+    content: "\e6d7";
 }
 /* 结束 */
 body,button,input,select,textarea {
