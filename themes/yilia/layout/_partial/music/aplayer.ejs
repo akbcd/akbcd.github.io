@@ -1,5 +1,10 @@
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <!-- aplayer -->
+<style>
+    #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
+        display: none;
+    }
+</style>
 <% if (theme.music.showTitle) { %>
 <div class="title">
 <%- theme.music.title %>

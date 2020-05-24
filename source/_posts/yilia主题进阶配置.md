@@ -768,11 +768,17 @@ aplayer播放器的实现，需要运用[APlayer](https://github.com/MoePlayer/A
 在themes\yilia\layout\_partial文件夹中创建一个music文件夹（与上面引入的代码相匹配）
 在music文件夹中创建`aplayer.ejs`（pc页面播放器js）和`mobile-aplayer.ejs`（移动端页面）两个文件
 `aplayer.ejs`添加，仿照[https://blinkfox.github.io/](https://blinkfox.github.io/)
-```js
+```html
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <!-- aplayer -->
 <!-- 引入dist文件夹中复制的css文件，这里提供网址引用 -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<!-- 隐藏滚动条两端的按钮和外层轨道，适配yilia主题，只适用于pc页面 -->
+<style>
+    #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
+        display: none;
+    }
+</style>
 <% if (theme.music.showTitle) { %>
 <div class="title">
 <%- theme.music.title %>
@@ -830,7 +836,7 @@ $(function () {
 </header>
 ```
 在music文件夹中创建的`mobile-aplayer.ejs`文件中添加
-```js
+```html
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <!-- mobile-aplayer -->
 <% if (theme.music.mobile_showTitle) { %>
@@ -919,7 +925,7 @@ music:
 ```
 播放器中有标题，简单配置一下标题样式
 
-定位文件`themes\yilia\source\main.0cf68a.css`，在里面添加css（根据需求自行修改）
+定位文件`themes\yilia\source\main.0cf68a.css`，在里面添加css（同时适用两个播放器,根据需求自行修改）
 ```css
 /* music player title */
 #header .music-player .title{
@@ -944,7 +950,8 @@ music:
 <% } %>
 ```
 把pc页面引入的js与css删除即可
-2.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1）
+2.隐藏滚动条两端的按钮和外层轨道，此样式只适用于pc页面，解决实际歌曲列表长度大于设置长度出现滚动条时播放器自带样式对滚动条设置与主题滚动条样式设置冲突问题，如果移动端出现样式冲突问题，请手动添加（移动端可能不会出现滚动条）
+3.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1）
 **到此，yilia主题添加aplayer播放器完成**
 ### 分享
 既然谈到了添加音乐播放器，自然是需要音乐的直链，分享一个网易云获取音乐直链的方法（一般不会失效，除非歌曲下架）

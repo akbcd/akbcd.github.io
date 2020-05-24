@@ -6,7 +6,7 @@ menu:
   随笔: /tags/随笔/
 
 # SubNav
-subnav:
+#subnav:
   #github: http://github.com/
   #weibo: https://weibo.com/
   #rss: "#"
@@ -52,10 +52,10 @@ music:
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   lrcType: 0 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
   listFolded: true # 列表是否折叠
-  listMaxHeight: # 列表最大高度
+  listMaxHeight: '96px' # 列表最大高度
   # mobile-aplayer 移动端页面
   mobile_enable: true # 是否开启
-  mobile_showTitle: true # 是否显示标题
+  mobile_showTitle: false # 是否显示标题
   mobile_title: 
   mobile_fixed: false
   mobile_autoplay: false # 同时开启失效
