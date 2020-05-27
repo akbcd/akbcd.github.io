@@ -67,6 +67,8 @@ music:
   mobile_lrcType: 1
   mobile_listFolded: true
   mobile_listMaxHeight:
+aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js #1.9.1
+#aplayer_js: /js/APlayer.min.js #1.9.1
 
 # 全局搜索
 # 本功能实现需要插件hexo-generator-searchdb所生成的search.xml文件
@@ -87,6 +89,7 @@ excerpt_link: more
 show_all_link: '展开全文'
 # 数学公式
 mathjax: false
+mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
 # 是否在新窗口打开链接
 open_in_new: false
 
@@ -107,6 +110,9 @@ toc: 1
 toc_hide_index: true
 # 目录为空时的提示
 toc_empty_wording: '目录，不存在的…'
+# anchor 目录锚点url
+# 当您在文章中滚动时，URL将根据标头ID进行更新。
+anchor: true
 
 # 是否有快速回到顶部的按钮
 top: true
@@ -119,6 +125,8 @@ wordcount: 2
 
 # 代码块复制
 clipboard: true
+clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+#clipboard_js: /js/scrollProgress.min.js
 
 # 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可.
 # 比如
@@ -128,6 +136,8 @@ verifyPassword:
   enable: true
   promptMessage: 请输入访问本文章的密码
   errorMessage: 密码错误，将返回主页！
+crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
+#crypto_js: /js/crypto-js.min.js #3.1.9-1
 
 # Miscellaneous
 #baidu_analytics: ''
@@ -156,6 +166,7 @@ valine:
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
 #2、gitalk
 gitalk:
@@ -243,11 +254,3 @@ js:
   #jquery: /js/jquery-3.4.1.min.js #3.4.1
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
   #scrollProgress: /js/scrollProgress.min.js #3.0.2
-  crypto: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
-  #crypto: /js/crypto-js.min.js #3.1.9-1
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
-  #clipboard: /js/scrollProgress.min.js
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js #1.9.1
-  #aplayer: /js/APlayer.min.js #1.9.1
-  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
-  valine: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
