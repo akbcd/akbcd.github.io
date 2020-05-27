@@ -644,15 +644,15 @@ i {
 * {
     box-sizing: border-box
 }
-/* 矢量图标（iconfont）共34个 */
+/* 矢量图标（iconfont）共37个 */
 @font-face {
     font-family: 'iconfont';  /* project id 692003 */
-    src: url('//at.alicdn.com/t/font_692003_84ypfdzw93m.eot');
-    src: url('//at.alicdn.com/t/font_692003_84ypfdzw93m.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_692003_84ypfdzw93m.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_692003_84ypfdzw93m.woff') format('woff'),
-    url('//at.alicdn.com/t/font_692003_84ypfdzw93m.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_692003_84ypfdzw93m.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.eot');
+    src: url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.woff') format('woff'),
+    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.svg#iconfont') format('svg');
 }
 
 [class*=" icon-"],[class^=icon-] {
@@ -666,6 +666,18 @@ i {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
+}
+
+.icon-yueduliang:before {
+    content: "\e752";
+}
+
+.icon-wordcount:before {
+    content: "\e6c5";
+}
+
+.icon-updated:before {
+    content: "\e6bb";
 }
 
 .icon-share:before {

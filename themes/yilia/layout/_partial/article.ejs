@@ -24,19 +24,19 @@
         <%if(config.language === 'zh-CN'){%>
           <div style="color: #999">
           <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
-            <span>字数 <%= wordcount(post.content) %></span>
+            <span><i class="icon-wordcount icon"></i> 字数 <%= wordcount(post.content) %></span>
           <% } %>
           <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
           <% } %>
           </div>
         <%}else{%>
           <div style="color: #999">
           <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
-            <span>word count <%= wordcount(post.content) %></span>
+            <span><i class="icon-wordcount icon"></i> word count <%= wordcount(post.content) %></span>
           <% } %>
           <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">article reading statistics <i class="leancloud-visitors-count"></i></span>
+            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> article reading statistics <i class="leancloud-visitors-count"></i></span>
           <% } %>
           </div>
         <%}%>

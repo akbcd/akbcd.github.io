@@ -14,6 +14,9 @@
 		anchor: <%=theme.anchor%>
 	}
 </script>
+<% if (theme.jsdelivr.enable){ %>
+<%- partial('post/jsdelivr')%>
+<% } %>
 
 <%- partial('script') %>
 

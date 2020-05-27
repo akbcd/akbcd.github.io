@@ -1,0 +1,5 @@
+<script>
+var name = '<%- theme.jsdelivr.name %>';
+var repository = '<%- theme.jsdelivr.repository %>';
+if("localhost"!=document.domain&&yiliaConfig.isPost){for(var key in document.getElementById("container").getElementsByTagName("img")){if(isNaN(key))break;document.getElementById("container").getElementsByTagName("img")[key].src=document.getElementById("container").getElementsByTagName("img")[key].src.replace(document.domain,"cdn.jsdelivr.net/gh/"+name+"/"+repository)}for(var key in document.getElementById("container").getElementsByTagName("audio")){if(isNaN(key))break;document.getElementById("container").getElementsByTagName("audio")[key].src=document.getElementById("container").getElementsByTagName("audio")[key].src.replace(document.domain,"cdn.jsdelivr.net/gh/"+name+"/"+repository)}for(var key in document.getElementById("container").getElementsByTagName("video")){if(isNaN(key))break;document.getElementById("container").getElementsByTagName("video")[key].src=document.getElementById("container").getElementsByTagName("video")[key].src.replace(document.domain,"cdn.jsdelivr.net/gh/"+name+"/"+repository)}}
+</script>
