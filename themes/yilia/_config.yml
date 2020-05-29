@@ -27,7 +27,7 @@ menu:
   #mayun: "#"
 
 # rss订阅实现需要插件hexo-generator-feed
-rss: /
+rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
@@ -40,7 +40,7 @@ root: /
 # 吸底模式1.9.1之后版本生效。若开启吸底模式，不建议显示标题
 music:
   # aplayer 电脑页面
-  enable: false # 是否开启
+  enable: true # 是否开启
   showTitle: true # 是否显示标题
   title: 听听音乐
   fixed: false # 吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
@@ -54,7 +54,7 @@ music:
   listFolded: true # 列表是否折叠
   listMaxHeight: '96px' # 列表最大高度
   # mobile-aplayer 移动端页面
-  mobile_enable: false # 是否开启
+  mobile_enable: true # 是否开启
   mobile_showTitle: false # 是否显示标题
   mobile_title: 
   mobile_fixed: false
@@ -140,8 +140,8 @@ crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
 #crypto_js: /js/crypto-js.min.js #3.1.9-1
 
 # jsdelivr加速
-# 通过jsdelivr加速github博客文章页静态资源（视频、音乐、图片）
-# 加速博客访问（仅适用于github托管的博客）
+# 通过jsdelivr加速github托管的博客静态资源（视频、音乐、图片）
+# 仅适用于文章页
 jsdelivr:
   enable: true
   name: akbcd #github用户名

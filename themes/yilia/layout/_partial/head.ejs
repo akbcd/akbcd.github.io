@@ -1,6 +1,4 @@
-<head>
-  <meta charset="utf-8">
-  <%
+<%
   var title = page.title;
 
   if (is_archive()){
@@ -16,14 +14,20 @@
   } else if (is_tag()){
     title = 'Tag: ' + page.tag;
   }
-  %>
+  var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)';
+  // keywords.
+  var keyWords = config.keywords ? config.keywords : config.title;
+  keyWords = title ? title  + ', ' + keyWords : keyWords;
+%>
+<head>
+  <meta charset="utf-8">
   <meta name="renderer" content="webkit">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="<%= config.url %>">
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta name="keywords" content="<%= keyWords %>">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <link rel="dns-prefetch" href="<%= config.url %>">
   <% if (theme.rss){ %>
   <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
@@ -32,7 +36,6 @@
   <% } %>
   <%- partial('css') %>
   <style type="text/css">
-  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
     #container.show,#js-searchModal {
       background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
     }
