@@ -27,7 +27,7 @@ menu:
   #mayun: "#"
 
 # rss订阅实现需要插件hexo-generator-feed
-rss: /atom.xml
+rss: false #/atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
