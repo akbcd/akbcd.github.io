@@ -163,6 +163,8 @@ share_jia: true
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
 #1、valine 参考官网：https://valine.js.org
+# ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
+# 若ADMIN_URL没有允许跨域请求，控制台会报错（报错可忽略）
 valine:
   enable: true
   appId: lgKQKDBk92WAKzzHw1palka0-MdYXbMMI
@@ -174,6 +176,7 @@ valine:
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+  ADMIN_URL: https://akbcd.avosapps.us/ # Web主机二级域名，若没有请设为false
 valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
 #2、gitalk
