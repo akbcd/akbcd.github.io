@@ -83,6 +83,7 @@ http://localhost:4000
 </script>
 ```
 valine评论会通过js生成自己的样式，与yilia主题有些冲突，进行了简单适配（根据自己需要进行更改）
+**注意：**`lang`变量，根据自己需要修改
 最后，在主题`themes\yilia\_config.yml`文件中添加valine配置
 ```
 valine:
@@ -199,13 +200,78 @@ Valine会自动查找页面中class值为leancloud_visitors的元素，获取其
 选择`resend-mails`云函数，Cron表达式为`0 0 8 * * ?`，表示每天早8点检查过去24小时内漏发的通知邮件并补发：
 ![通知检查](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-18-xia-wu-2-57-53.png)
 [关于国际版时区的问题](https://github.com/DesertsP/Valine-Admin/issues/63#issuecomment-533784574)：国际版使用UTC时间，定时任务减八个小时就是北京时间了。
-我修改的函数为：
-```
-0 */30 0-15 * * ?
-0 0 0 * * ?
-```
-（供参考）
+>由于CRON 表达式采用的是UTC+0时区，又考虑到Leancloud体验版有6个小时的强制休眠时间，建议将自动唤醒的Cron表达式改为
+`0 */25 0-15,23 * * ?` 
+表示从北京时间7点00开始唤醒，到晚上11点50最后一次唤醒
+相应的将补发邮件的定时任务Cron表达式改为
+`0 10 23 * * ? ` 
+对应中国时间早上7：10补发邮件
+
 **到此，valine进阶基本结束**，详细内容还请参看官方文档。
+## 遇到的问题
+>因流控原因，通过定时任务唤醒体验版实例失败，建议升级至标准版云引擎实例避免休眠
+
+参看leancloud官方公告[关于对体验版云引擎定时任务进行适当流控的说明](https://forum.leancloud.cn/t/topic/22595)
+官方根据服务器的负载，对定时任务添加流控，通过定时任务唤醒容器将有可能会失败
+可以尝试更换定时任务时间，错开流控高峰，但是不治本。
+这里提供一个激活云引擎的方法，参看：[宅日记博客](https://crosschannel.cc/daily/valine-admin-autoAwaken.html)
+简单说明一下：
+在valine.ejs文件中添加
+```js
+new Valine({
+    el:'#vcomments',
+    ...
+    visitor: true // 阅读量统计
+})
+// 开始添加
+var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+if(engine!='1') {
+    fetch('https://quan.suning.com/getSysTime.do')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(date) {
+        var hours = new Date(date.sysTime2).getHours();
+        if(hours>7 && hours<23){
+            fetch('<%- theme.valine.ADMIN_URL %>');
+            var exp = new Date(date.sysTime2);
+            exp.setTime(exp.getTime() + 20*60*1000);
+            document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
+        }
+    })
+}
+<% } %>
+// 添加结束
+```
+通过fetch实现类似jquery的ajax请求（不需要引入jQuery），当有人访问带有valine评论的页面时，js请求你云引擎的地址，激活云引擎
+如果你的云引擎地址没有允许跨域请求，控制台会报跨域错误（可以忽略），在控制台提示错误之前，浏览器已经请求了你的云引擎地址
+通过此机制达到激活云引擎的目的，云引擎激活后定时任务不会再遇到流控问题
+你也可以尝试删除云引擎中的定时任务，只通过此方式激活云引擎
+在主题配置文件valine的配置中添加`ADMIN_URL`字段设置云引擎地址，方便管理
+```
+valine:
+  enable: false
+  appId: 
+  appKey: 
+  placeholder: 'just go go' # 评论框占位提示符
+  avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
+  pageSize: 10 # 评论列表分页
+  visitor: false # 文章访问量统计
+  highlight: true # 代码块高亮
+  recordIP: false # 是否记录评论者IP
+  enableQQ: false # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+  ADMIN_URL: false # Web主机二级域名，你的云引擎地址，若没有请设为false
+```
+
+文中提到通过github action来定时唤醒云引擎，参看：[小康博客](https://www.antmoe.com/posts/ff6aef7b/)
+个人感觉有些复杂，没有实践（建议读者尝试）
+>使用valine评论的文章阅读量统计功能，本地预览文章也会增加阅读量
+
+在调试文章时，你可能需要重复刷新页面，但是每刷新一次，阅读量就会增加一次，这很显然不是我们想要的
+在valine.ejs文件中更改`visitor`赋值，增加判断`document.domain`是否为`localhost`即可，实现本地预览页面不显示阅读量
+```
+visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
+```
 ## 最后
 提到yilia主题，说说yilia主题内置的几个评论系统
 yilia主题总共有5个评论可选，分别是：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
