@@ -2810,10 +2810,10 @@ pre .css~* .id,pre .id {
     -webkit-transform: translate(0);
     transform: translate(0)
 }
-
+/* 修改z-index为1，移动端分享适配*/
 .tooltip-left .tooltip {
     position: absolute;
-    z-index: 999;
+    z-index: 1;
     cursor: pointer;
     width: 28px;
     height: 28px;
