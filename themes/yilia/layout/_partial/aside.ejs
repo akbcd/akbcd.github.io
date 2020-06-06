@@ -5,13 +5,10 @@
             <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
         <% } %>
         <% if (!index && ((theme.toc === 1 && post.toc) || theme.toc === 2)){ %>
-        <%- partial('toc') %>
+        <%- partial('post/toc') %>
         <% } %>
     </div>
 </aside>

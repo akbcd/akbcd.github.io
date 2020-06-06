@@ -644,15 +644,15 @@ i {
 * {
     box-sizing: border-box
 }
-/* 矢量图标（iconfont）共37个 */
+/* 矢量图标（iconfont）共36个 */
 @font-face {
     font-family: 'iconfont';  /* project id 692003 */
-    src: url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.eot');
-    src: url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.woff') format('woff'),
-    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_692003_t9fjs6wd4g.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_692003_oseb1n1azab.eot');
+    src: url('//at.alicdn.com/t/font_692003_oseb1n1azab.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_692003_oseb1n1azab.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_692003_oseb1n1azab.woff') format('woff'),
+    url('//at.alicdn.com/t/font_692003_oseb1n1azab.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_692003_oseb1n1azab.svg#iconfont') format('svg');
 }
 
 [class*=" icon-"],[class^=icon-] {
@@ -758,10 +758,6 @@ i {
 
 .icon-github:before {
     content: "\e76b";
-}
-
-.icon-plane:before {
-    content: "\e67e";
 }
 
 .icon-sort:before {
@@ -2672,17 +2668,6 @@ pre .css~* .id,pre .id {
 	font-size: 14px
 }
 
-.wrap-side-operation .icon-plane {
-    color: #fff;
-    text-shadow: 1px 1px 1px #509eb7;
-    opacity: .7;
-    font-size: 52px;
-    line-height: 40px;
-    width: 40px;
-    text-align: center;
-    display: block
-}
-
 .mod-side-operation {
     width: 40px;
     text-align: center
@@ -2700,25 +2685,6 @@ pre .css~* .id,pre .id {
     opacity: .8
 }
 
-.jump-plan-container {
-    position: absolute;
-    top: -11px;
-    left: -4px;
-    width: 50px;
-    height: 61px;
-    overflow: hidden
-}
-
-.jump-plan-container .jump-plane {
-    display: block;
-    position: absolute;
-    width: 42px;
-    height: 66px;
-    -webkit-transform: translateY(68px);
-    transform: translateY(68px);
-    left: -2px
-}
-
 .mod-side-operation__jump-to-top .icon-back {
     transition: .3s;
     color: #fff;
@@ -2730,11 +2696,6 @@ pre .css~* .id,pre .id {
     width: 40px;
     text-align: center;
     display: block
-}
-
-.mod-side-operation__jump-to-top .icon-back:hover {
-    background: #24c1f6;
-    color: #24c1f6
 }
 
 .toc-container.tooltip-left {
