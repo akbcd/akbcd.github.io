@@ -1,10 +1,9 @@
 <% if (theme.local_search && theme.local_search.enable){ %>
-<% if (config.language === 'zh-CN'){ %>
 <div id="js-searchModal">
     <div style="padding: 24px;">
         <div class="search-header">
-            <span><i class="icon-search icon"></i>&nbsp;&nbsp;搜索</span>
-            <input class="search-ipt" type="text" placeholder="请输入搜索的关键字" id="js-searchInput">
+            <span><i class="icon-search icon"></i>&nbsp;&nbsp;<%- _p('search') %></span>
+            <input class="search-ipt" type="text" placeholder="<%- _p('keywords_placeholder') %>" id="js-searchInput">
             <i class="icon-close icon" id="js-searchTextCancel"></i>
         </div>
         <div id="js-searchResult"></div>
@@ -12,32 +11,10 @@
     <script type="text/javascript">
         window.onload=function(){
             var open = $('#js-icon-search').get(0);
-            open.setAttribute("title","搜索")
+            open.setAttribute("title","<%- _p('search') %>")
         }
     </script>
     <script src="<%- theme.js.search %>"></script>
 </div>
-<!-- 搜索背景层 -->
 <div id="js-modal-overlay"></div>
-<% }else{ %>
-<div id="js-searchModal">
-    <div style="padding: 24px;">
-        <div class="search-header">
-            <span><i class="icon-search icon"></i>&nbsp;&nbsp;search</span>
-            <input class="search-ipt" type="text" placeholder="please enter the keywords for your search" id="js-searchInput">
-            <i class="icon-close icon" id="js-searchTextCancel"></i>
-        </div>
-        <div id="js-searchResult"></div>
-    </div>
-    <script type="text/javascript">
-        window.onload=function(){
-            var open = $('#js-icon-search').get(0);
-            open.setAttribute("title","search")
-        }
-    </script>
-    <script src="<%- theme.js.search %>"></script>
-</div>
-<!-- search for the background layer -->
-<div id="js-modal-overlay"></div>
-<% } %>
 <% } %>

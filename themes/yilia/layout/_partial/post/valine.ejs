@@ -28,7 +28,7 @@
 		placeholder: '<%= theme.valine.placeholder %>',
 		avatar: '<%- theme.valine.avatar %>',
 		pageSize: '<%- theme.valine.pageSize %>',
-        lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
+        lang: '<%- config.language %>',
         visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
 		highlight: '<%- theme.valine.highlight %>' === 'true',
 		recordIp: '<%- theme.valine.recordIP %>' === 'true',

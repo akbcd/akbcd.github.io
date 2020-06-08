@@ -4,17 +4,10 @@
   <% }) %>
   <% if (page.total > 1){ %>
     <nav id="page-nav">
-      <%if(config.language === 'zh-CN'){%>
-        <%- paginator({
-          prev_text: '« 上一页',
-          next_text: '下一页 »'
-        }) %>
-      <%}else{%>
-        <%- paginator({
-          prev_text: '« Prev',
-          next_text: 'Next »'
-        }) %>
-      <%}%>
+      <%- paginator({
+        prev_text: '« '+_p('prev'),
+        next_text: _p('next')+' »'
+      }) %>
     </nav>
   <% } %>
 <% } else { %>
@@ -40,17 +33,10 @@
 
     <% if (page.total > 1){ %>
     <nav id="page-nav">
-      <%if(config.language === 'zh-CN'){%>
-        <%- paginator({
-          prev_text: '« 上一页',
-          next_text: '下一页 »'
-        }) %>
-      <%}else{%>
-        <%- paginator({
-          prev_text: '« Prev',
-          next_text: 'Next »'
-        }) %>
-      <%}%>
+      <%- paginator({
+        prev_text: '« '+_p('prev'),
+        next_text: _p('next')+' »'
+      }) %>
     </nav>
   <% } %>
 

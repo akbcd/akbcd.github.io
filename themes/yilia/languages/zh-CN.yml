@@ -1,19 +1,17 @@
-categories: 分类
-search: 搜索
-tags: 标签
-tagcloud: 标签云
-tweets: 推文
 prev: 上一页
 next: 下一页
-comment: 留言
-archive_a: 归档
-archive_b: 归档：%s
-page: 第 %d 页
-recent_posts: 最新文章
-newer: Newer
-older: Older
-share: Share
-powered_by: Powered by
-rss_feed: RSS Feed
-category: Category
-tag: 标签
+top: 置顶
+# slider
+tags: 标签
+search: 搜索
+placeholder: 查找文章...
+keywords_placeholder: 请输入搜索的关键字
+# clipboard
+copy: 复制
+copy_success: 复制成功
+copy_error: 复制失败
+# post
+dateUpdated: 更新于
+wordcount: 字数
+# valine
+leancloud_visitors: 当前页访问次数

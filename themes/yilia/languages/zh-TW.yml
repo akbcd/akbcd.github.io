@@ -1,0 +1,17 @@
+prev: 上壹頁
+next: 下壹頁
+top: 置頂
+# slider
+tags: 標簽
+search: 搜索
+placeholder: 查找文章...
+keywords_placeholder: 請輸入搜索的關鍵字
+# clipboard
+copy: 復制
+copy_success: 復制成功
+copy_error: 復制失敗
+# post
+dateUpdated: 更新於
+wordcount: 字數
+# valine
+leancloud_visitors: 當前頁訪問次數

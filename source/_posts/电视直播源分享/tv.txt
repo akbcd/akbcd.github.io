@@ -32,7 +32,7 @@ CCTV17,http://www.xytv998.com/live/sdi1/index.m3u8#http://cctvalih5ca.v.myalicdn
 吉林公共新闻,http://stream1.jlntv.cn/ggpd/sd/live.m3u8
 吉林篮球,http://stream1.jlntv.cn/lqpd/sd/live.m3u8
 东北戏曲,http://stream1.jlntv.cn/dbxq/sd/live.m3u8
-延边卫视,http://118.123.60.12:8114/LIVES/Fsv_otype=1&FvSeid=&Fsv_chan_hls_se_idx=065&Provider_id=&Pcontent_id=index.m3u8
+延边卫视,http://39.135.16.150:6610/PLTV/88888888/224/3221225721/1/index.m3u8?fmt=ts2hls#http://223.110.245.161/ott.js.chinamobile.com/PLTV/3/224/3221227002/index.m3u8
 卫视频道,#genre#
 浙江卫视,http://112.50.243.8/PLTV/88888888/224/3221225934/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225825/1.m3u8#http://101.71.255.229:6610/zjhs/2/10059/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 湖南卫视,http://112.50.243.8/PLTV/88888888/224/3221225935/1.m3u8#http://112.50.243.8/PLTV/88888888/224/3221225827/1.m3u8#http://101.71.255.229:6610/zjhs/2/10024/index.m3u8?virtualDomain=zjhs.live_hls.zte.com

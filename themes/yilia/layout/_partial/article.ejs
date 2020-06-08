@@ -21,25 +21,14 @@
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
         <% if (!index){ %>
-        <%if(config.language === 'zh-CN'){%>
           <div style="color: #999">
           <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
-            <span><i class="icon-wordcount icon"></i> 字数 <%= wordcount(post.content) %></span>
+            <span><i class="icon-wordcount icon"></i> <%- _p('wordcount') %> <%= wordcount(post.content) %></span>
           <% } %>
           <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> <%- _p('leancloud_visitors') %> <i class="leancloud-visitors-count"></i></span>
           <% } %>
           </div>
-        <%}else{%>
-          <div style="color: #999">
-          <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
-            <span><i class="icon-wordcount icon"></i> word count <%= wordcount(post.content) %></span>
-          <% } %>
-          <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-            <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> article reading statistics <i class="leancloud-visitors-count"></i></span>
-          <% } %>
-          </div>
-        <%}%>
         <% } %>
       </header>
     <% } %>
@@ -90,7 +79,7 @@
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
           <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3"><%if(config.language === 'zh-CN'){%>置顶<%}else{%>Top<%}%></a>
+          <a class="article-tag-list-link color3"><%- _p('top')%></a>
         </div>
       <% } %>
       <%- partial('post/tag') %>
