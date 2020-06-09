@@ -15,7 +15,7 @@ toc: true
 因为主题目录布局不同，没有在yilia主题目录上实现页面当前位置百分比（你已经读了%）
 感觉没有必要，因为yilia主题的目录是鼠标悬停显示的，不同于其它主题那样固定在页面的某个位置，显示页面当前所在目录位置很有必要
 ## 代码实现
-此代码通过jquery实现
+此代码基于jquery实现
 ```js
 /*
 toc目录优化，jq实现锚点跳转
@@ -179,7 +179,7 @@ var findMobileHeadPosition = function (top) {
 anchor: true
 ```
 既然实现动态目录，自然要对动态目录添加一些样式，在主题的css文件中添加相应样式：
-```
+```css
 /* 动态目录 */
 .toc-container.tooltip-left .tooltip-east .tooltip-content .active {
     font-weight: bold;
