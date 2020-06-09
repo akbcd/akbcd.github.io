@@ -7,4 +7,3 @@ if(start==0){end=100;}
 if(end>content.length){end=content.length;}
 var match_content=content.substr(start,end);keywords.forEach(function(keyword){var regS=new RegExp(keyword,"gi");match_content=match_content.replace(regS,"<em class=\"search-keyword\">"+keyword+"</em>");});str+="<p class=\"search-result\">"+match_content+"...</p>"}
 str+="</li>";}});str+="</ul>";$resultContent.innerHTML=str;});}});}
-$(function(){searchFunc("/"+"search.xml",'js-searchInput','js-searchResult');});

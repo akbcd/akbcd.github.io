@@ -141,7 +141,3 @@ var searchFunc = function (path, search_id, content_id) {
         }
     });
 }
-//调用搜索函数
-$(function () {
-    searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-});

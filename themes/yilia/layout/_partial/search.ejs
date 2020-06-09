@@ -15,6 +15,25 @@
         }
     </script>
     <script src="<%- theme.js.search %>"></script>
+    <% if (theme.jsdelivr.enable){ %>
+    <script>
+        if ("localhost" != document.domain){
+            $(function () {
+                searchFunc("//cdn.jsdelivr.net/gh/" + "<%- theme.jsdelivr.name %>" + "/" + "<%- theme.jsdelivr.repository %>" +"/" + "search.xml", 'js-searchInput', 'js-searchResult');
+            });
+        } else {
+            $(function () {
+                searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+            });
+        }
+    </script>
+    <% } else { %>
+    <script>
+        $(function () {
+            searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+        });
+    </script>
+    <% } %>
 </div>
 <div id="js-modal-overlay"></div>
 <% } %>
