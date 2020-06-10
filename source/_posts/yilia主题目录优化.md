@@ -170,6 +170,10 @@ var findMobileHeadPosition = function (top) {
 }
 ```
 以上代码是基于yilia主题优化的，在其他主题使用可能不生效
+在`yilia\layout\_partial\after-footer.ejs`文件中的`yiliaConfig`变量中添加`anchor`获取主题配置文件中`anchor`的值
+```
+anchor: <%=theme.anchor%>
+```
 ## 主题配置
 在主题的script.ejs文件中创建一个script标签，将上面的代码粘贴到script标签中即可
 主题配置文件中（`_config.yml`）添加如下配置，实现浏览器根据当前页面位置实时更新页面url：
@@ -178,6 +182,7 @@ var findMobileHeadPosition = function (top) {
 # 当您在文章中滚动时，URL将根据标头ID进行更新。
 anchor: true
 ```
+切记在`yiliaConfig`变量中添加`anchor`
 既然实现动态目录，自然要对动态目录添加一些样式，在主题的css文件中添加相应样式：
 ```css
 /* 动态目录 */
