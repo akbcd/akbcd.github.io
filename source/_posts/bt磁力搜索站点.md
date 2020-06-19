@@ -22,10 +22,11 @@ tags: bt磁力
 知名站点
 [https://www.tokyotosho.info/](https://www.tokyotosho.info/)
 
-以上内容均来自[https://no404.icu/](https://no404.icu/)
+~~以上内容均来自[https://no404.icu/](https://no404.icu/)~~
 部分站点由于域名经常变化，页面不再提供访问地址，推荐访问以下网站进行磁力搜索站点的访问（部分时间段域名可能无法解析）
-404导航 | 只导航优质资源！：[https://no404.icu/](https://no404.icu/)
+~~404导航 | 只导航优质资源！：[https://no404.icu/](https://no404.icu/)~~
 ~~千鹤导航 | 聚合最优质资源网站！：[https://www.qianhedh.com/](https://www.qianhedh.com/)~~
+NO404 - 让天下不再有消失的网站！：[https://www.no404.me/](https://www.no404.me/)
 
 **磁力宝**
 最佳的磁力搜索引擎
