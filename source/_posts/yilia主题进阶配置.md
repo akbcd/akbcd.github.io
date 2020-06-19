@@ -733,11 +733,12 @@ hexo添加文章更新时间（CSDN）：[https://blog.csdn.net/ganzhilin520/art
 ## yilia主题添加aplayer播放器
 yilia主题添加音乐播放器，想了很久，但是一直没有实现
 本主题属于自适应主题，但是pc端和移动端的智能菜单完全是两个页面，因此考虑添加两个播放器，一个用于pc页面，另一个用于移动端，当然，这只是我的方法
-pc页面时，移动端音乐播放器不显示，移动端页面时，pc播放器隐藏（当然这与音乐播放器添加的位置有很大关系）
+两个播放器都是存在的，只不过不会同时显示
+pc页面时（根据屏幕宽度判断），移动端音乐播放器不显示，移动端页面时，pc播放器隐藏（当然这与音乐播放器添加的位置有很大关系）
 至于效果，如果你看到这个页面，应该是可以看到效果，因此，我就不贴图片了
 ### 实现方法
 aplayer播放器的实现，需要运用[APlayer](https://github.com/MoePlayer/APlayer)，下载github压缩包（不到300k，可以耐心等等），解压后把dist文件夹中的js与css文件复制到自己要引用的主题文件夹中，在代码中进行引用即可。
-这里提供引用的网址
+这里提供引用的网址，不需要下载文件
 ### 添加pc页面音乐播放器
 定位主题文件`themes\yilia\layout\_partial\left-col.ejs`
 在`<nav class="header-nav">`标签中的`div`标签后面添加
@@ -854,7 +855,7 @@ $(function () {
         theme: '<%- theme.music.mobile_theme %>',
         loop: '<%- theme.music.mobile_loop %>',
         order: '<%- theme.music.mobile_order %>',
-        preload: '<%- theme.music.mobile_preload %>',
+        preload: '<%- theme.music.preload %>',
         lrcType: Number('<%- theme.music.mobile_lrcType %>'),
         volume: Number('<%- theme.music.mobile_volume %>'),
         listFolded: '<%- theme.music.mobile_listFolded %>' === 'true',
@@ -883,11 +884,11 @@ music:
   theme: '#4d4d4d' # 主题色
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
-  preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
+  preload: 'auto' # 音频预加载，两个播放器同时生效，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   lrcType: 1 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
   listFolded: true # 列表是否折叠
-  listMaxHeight: # 列表最大高度
+  listMaxHeight: # 列表最大高度，一个列表'32px'
   # mobile-aplayer 移动端页面
   mobile_enable: true # 是否开启
   mobile_showTitle: true # 是否显示标题
@@ -897,7 +898,6 @@ music:
   mobile_theme: '#4d4d4d'
   mobile_loop: 'all'
   mobile_order: 'list'
-  mobile_preload: 'auto'
   mobile_volume: 0.7
   mobile_lrcType: 1
   mobile_listFolded: true
@@ -952,6 +952,7 @@ music:
 把pc页面引入的js与css删除即可
 2.隐藏滚动条两端的按钮和外层轨道，此样式只适用于pc页面，解决实际歌曲列表长度大于设置长度出现滚动条时播放器自带样式对滚动条设置与主题滚动条样式设置冲突问题，如果移动端出现样式冲突问题，请手动添加（移动端可能不会出现滚动条）
 3.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1）
+4.移动端preload音频预加载属性不受关闭pc播放器影响
 **到此，yilia主题添加aplayer播放器完成**
 ### 分享
 既然谈到了添加音乐播放器，自然是需要音乐的直链，分享一个网易云获取音乐直链的方法（一般不会失效，除非歌曲下架）
@@ -1008,6 +1009,4 @@ yilia主题添加aplayer播放器的实现，参照以下网站进行完成，�
 [aplayer中文文档](https://aplayer.js.org/#/zh-Hans/)
 ## 最后
 最近又看到了许多有用的功能
-1.`gitalk`评论
-花时间研究研究看看能不能实现
-评论功能早就想实现了，但是始终没有实现。一直在纠结，觉得没用
+随时更新，可以在所有文章中查询想要的功能

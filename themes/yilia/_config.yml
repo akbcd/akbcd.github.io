@@ -48,11 +48,11 @@ music:
   theme: '#4d4d4d' # 主题色
   loop: 'one' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
-  preload: 'auto' # 音频预加载，可选值: 'none', 'metadata', 'auto'
+  preload: 'none' # 音频预加载，两个播放器同时生效，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   lrcType: 0 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
   listFolded: true # 列表是否折叠
-  listMaxHeight: '96px' # 列表最大高度
+  listMaxHeight: '96px' # 列表最大高度，一个列表'32px'
   # mobile-aplayer 移动端页面
   mobile_enable: true # 是否开启
   mobile_showTitle: false # 是否显示标题
@@ -62,7 +62,6 @@ music:
   mobile_theme: '#4d4d4d'
   mobile_loop: 'all'
   mobile_order: 'list'
-  mobile_preload: 'auto'
   mobile_volume: 0.7
   mobile_lrcType: 1
   mobile_listFolded: true
