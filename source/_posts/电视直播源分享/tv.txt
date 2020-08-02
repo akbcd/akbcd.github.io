@@ -65,14 +65,12 @@ CCTV4K,http://111.161.121.212/livews-4k.5club.CCTV.cn/live/4K.stream/playlist.m3
 康巴卫视,http://112.50.243.8/PLTV/88888888/224/3221225856/1.m3u8
 西藏卫视,http://112.50.243.8/PLTV/88888888/224/3221226847/1.m3u8#http://cctvalih5ca.v.myalicdn.com/wstv/xizang_2/index.m3u8
 兵团卫视,http://101.71.255.229:6610/zjhs/2/10006/index.m3u8?virtualDomain=zjhs.live_hls.zte.com#http://v.btzx.com.cn:1935/live/weishi.stream/playlist.m3u8
-海峡卫视,http://by4.nty.tv189.cn/live/tm-haixiatv-800k.m3u8
 厦门卫视,http://cctvtxyh5ca.liveplay.myqcloud.com/cstv/xiamen_2/index.m3u8#http://by4.nty.tv189.cn/live/tm-xiamentv-800k.m3u8
 其他,#genre#
 北京纪实,http://112.50.243.8/PLTV/88888888/224/3221225944/1.m3u8
 纪实频道,http://112.50.243.8/PLTV/88888888/224/3221225946/1.m3u8
 极速汽车,http://112.50.243.8/PLTV/88888888/224/3221226140/1.m3u8
 动漫秀场,http://112.50.243.8/PLTV/88888888/224/3221226141/1.m3u8
-游戏风云,http://112.50.243.8/PLTV/88888888/224/3221226142/1.m3u8
 法治天地,http://112.50.243.8/PLTV/88888888/224/3221226143/1.m3u8
 中教一套,http://112.50.243.8/PLTV/88888888/224/3221225869/1.m3u8#http://101.71.255.229:6610/zjhs/2/10060/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
 中教二套,http://cctvalih5ca.v.myalicdn.com/cstv/cetv2_2/index.m3u8
