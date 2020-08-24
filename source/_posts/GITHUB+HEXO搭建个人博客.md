@@ -14,6 +14,7 @@ tags: 博客
 [需要准备的软件](#需要准备的软件)
 [git准备工作](#git准备工作)
 [创建GitHub账户](#创建GitHub账户)
+[配置_config.yml文件](#配置_config.yml文件)
 [配置本地blog文件夹](#配置本地blog文件夹)
 [博客新建文章](#博客新建文章)
 [博客更换主题](#博客更换主题)
@@ -91,6 +92,188 @@ Enter same passphrase again:
 id_rsa(您的标识)和id_rsa.pub(您的公钥)
 用编译器打开id_rsa.pub，复制里面的内容
 进入GitHub网站，在GitHub网站中找到Settings（单击用户头像）。设置里找到**SSH and GPG keys**，进入点击**New SSH key**，title任意，key输入自己刚才复制的id_rsa.pub内容，之后保存。保存成功后会向邮箱发送提醒
+# 配置_config.yml文件
+blog文件hexo初始化后，根目录下创建的_config.yml为hexo站点配置文件
+修改hexo站点配置文件，需要重启hexo服务生效
+## Hexo 5.0.0 Released
+本内容基于hexo5.0站点配置文件进行简单的说明，不同版本hexo站点配置文件会有差异
+## 需要修改的内容
+具体可以参看hexo官方文档：https://hexo.io/zh-cn/docs/
+下面简单介绍需要修改的内容
+### Site
+```
+# Site
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: John Doe
+language: en
+timezone: ''
+```
+* title
+  * hexo站点标题，即播客主页title标签内容
+* description、keywords
+  * 对站点的描述和关键字，部署到搜索引擎需要用到
+* author
+  * 站点作者
+* language
+  * 站点语言，很重要，不修改访问站点会提示翻译中文
+* 其余不需要修改
+
+### URL
+```
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://yoursite.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+```
+* url
+  * url修改为自己站点地址，github为`https://yourname.github.io`，yourname为GitHub用户名
+* 这里只需要修改此项即可
+
+### Directory
+```
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+```
+* 不需要修改
+
+### Writing
+```
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+```
+* post_asset_folder
+  * 生成文章对应文件夹，引用本地资源请开启此项
+* external_link.enable
+  * 是否在新窗口打开链接，默认为true
+* highlight.enable
+  * 代码高亮，仿佛需要主题支持，hexo5.0出现了hljs，高亮js，难道hexo已集成？
+* highlight.line_number
+  * 代码区块是否有行号
+* prismjs为新增内容，不清楚啥功能，建议参看文档
+
+### Home page setting
+```
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+```
+* 归档页面的配置
+* per_page
+  * 归档页面每页文章个数，默认为10
+* order_by
+  * 归档页文章排序方式，-date表示新文章在最上方
+
+### Category & Tag
+```
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+```
+* 不需要修改
+
+### Metadata elements
+```
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+```
+* 不需要修改
+
+### Date / Time format
+```
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+```
+* 不需要修改
+
+### Pagination
+```
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+```
+* 分页功能，per_page表示每页文章个数，0表示不分页
+
+### Include / Exclude file(s)
+```
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+```
+* 不需要修改
+
+### Extensions
+```
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: landscape
+```
+* theme
+  * 主题配置，下面详细说明
+
+### Deployment
+```
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: ''
+```
+* 暂时不需要修改，下面有详细说明
+
 # 配置本地blog文件夹
 用编译软件打开blog文件夹，在根目录中找到_config.yml
 用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名

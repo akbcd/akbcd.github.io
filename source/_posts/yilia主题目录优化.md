@@ -9,6 +9,15 @@ toc: true
 1.通过jquery封装的animate()锚点跳转方法替换主题自带的a标签跳转，解决添加aplayer播放器可能出现的锚点跳转失效问题
 2.实现浏览器根据当前页面位置实时更新页面url（需手动设置生效）<!--more-->
 3.目录随着页面位置滚动，实现动态目录
+* 更新：
+  * Hexo 5.0.0 Released 可能导致目录锚点跳转失效的解决办法
+    * 近期，更新hexo5.0，发现本篇文章介绍的目录锚点跳转功能已失效，控制台提示`Uncaught Error`错误，发现依然是url转码导致
+    * 解决办法：对`toToc()`函数中`$(this).attr('href')`修改为`decodeURI($(this).attr('href'))`，即添加`decodeURI()`函数
+    * 对`currentActive.attr('href')`添加`decodeURI()`函数，即`decodeURI(currentActive.attr('href'))`
+  * 动态目录失效
+    * hexo5.0，对目录a标签href内容添加`encodeURI()`函数进行编码，使动态目录失效
+    * 解决办法：将`$('.toc-link[href="' + currentId + '"]')`中`currentId`添加编码函数`encodeURI()`，即`$('.toc-link[href="' + encodeURI(currentId) + '"]')`
+
 效果参看本博客
 ## 参考资料
 参考[hexo-theme-butterfly主题](https://github.com/jerryc127/hexo-theme-butterfly)实现动态目录功能，在此表示感谢

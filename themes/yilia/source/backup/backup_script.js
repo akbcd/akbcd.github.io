@@ -17,7 +17,7 @@ $('.toc-child').hide()
 // 目录锚点跳转
 $('.toc-link').on('click', function (e) {
     e.preventDefault()
-    toToc($(this).attr('href'))
+    toToc(decodeURI($(this).attr('href')))
 })
 function toToc (name) {
   //pc锚点跳转
@@ -89,12 +89,12 @@ var findPcHeadPosition = function (top) {
   }
 
   var currentActive = $('.toc-link.active')
-  if (currentId && currentActive.attr('href') !== currentId) {
+  if (currentId && decodeURI(currentActive.attr('href')) !== currentId) {
     if (isanchor) updateAnchor(currentId)
 
     $('.toc-link').removeClass('active')
 
-    var _this = $('.toc-link[href="' + currentId + '"]')
+    var _this = $('.toc-link[href="' + encodeURI(currentId) + '"]')
     _this.addClass('active')
 
     var parents = _this.parents('.toc-child')
@@ -138,12 +138,12 @@ var findMobileHeadPosition = function (top) {
   }
 
   var currentActive = $('.toc-link.active')
-  if (currentId && currentActive.attr('href') !== currentId) {
+  if (currentId && decodeURI(currentActive.attr('href')) !== currentId) {
     if (isanchor) updateAnchor(currentId)
 
     $('.toc-link').removeClass('active')
 
-    var _this = $('.toc-link[href="' + currentId + '"]')
+    var _this = $('.toc-link[href="' + encodeURI(currentId) + '"]')
     _this.addClass('active')
 
     var parents = _this.parents('.toc-child')

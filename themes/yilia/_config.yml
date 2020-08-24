@@ -1,3 +1,7 @@
+# 前言
+# 本主题需要用到的插件（五个），下面有详细说明：
+# hexo-generator-feed、hexo-generator-searchdb、hexo-wordcount、hexo-generator-json-content、hexo-generator-index-pin-top
+
 # Header
 
 menu:
@@ -122,6 +126,10 @@ top: true
 # 不需要使用，直接设置值为false，或注释掉
 wordcount: 2
 
+# 文章置顶
+# 本功能实现需要卸载hexo自带的文章排序插件hexo-generator-index，安装插件hexo-generator-index-pin-top
+# 文章Front-matter中添上'top: true'属性即可将文章置顶
+
 # 代码块复制
 clipboard: true
 clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
@@ -215,6 +223,7 @@ slider:
   showTags: false
 
 # 智能菜单
+# 所有文章实现需要插件hexo-generator-json-content
 # 如不需要，将该对应项置为false
 # 比如
 #smart_menu:
