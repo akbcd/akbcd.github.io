@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>java第七次课 | akbcd博客</title>
+  <meta name="keywords" content="java第七次课, akbcd">
+  <meta name="description" content="本次课主要是Java基础知识回顾以及部分习题及答案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java第七次课">
+<meta property="og:url" content="https://akbcd.github.io/2019/08/13/java%E7%AC%AC%E4%B8%83%E6%AC%A1%E8%AF%BE/index.html">
+<meta property="og:site_name" content="akbcd博客">
+<meta property="og:description" content="本次课主要是Java基础知识回顾以及部分习题及答案">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5lzmpj30jp08hmy2.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5s9frj309j06bq30.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5wfvlj304e035t8j.jpg">
+<meta property="article:published_time" content="2019-08-13T04:00:31.000Z">
+<meta property="article:modified_time" content="2019-12-07T10:54:07.474Z">
+<meta property="article:author" content="akbcd">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5lzmpj30jp08hmy2.jpg">
+  <link rel="dns-prefetch" href="https://akbcd.github.io">
+  
+  <link rel="preconnect" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  
+  
+  
+  <link rel="icon" href="/img/avatar.png">
+  
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+  <style type="text/css">
+    #container.show,#js-searchModal {
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+    }
+  </style>
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
+<meta name="generator" content="Hexo 5.1.0"></head>
+<body>
+  
+<div id="js-searchModal">
+    <div style="padding: 24px;">
+        <div class="search-header">
+            <span><i class="icon-search icon"></i>&nbsp;&nbsp;搜索</span>
+            <input class="search-ipt" type="text" placeholder="请输入搜索的关键字" id="js-searchInput">
+            <i class="icon-close icon" id="js-searchTextCancel"></i>
+        </div>
+        <div id="js-searchResult"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload=function(){
+            var open = $('#js-icon-search').get(0);
+            open.setAttribute("title","搜索")
+        }
+    </script>
+    <script src="/js/search.js"></script>
+    
+    <script>
+        if ("localhost" != document.domain){
+            $(function () {
+                searchFunc("//cdn.jsdelivr.net/gh/" + "akbcd" + "/" + "akbcd.github.io" +"/" + "search.xml", 'js-searchInput', 'js-searchResult');
+            });
+        } else {
+            $(function () {
+                searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+            });
+        }
+    </script>
+    
+</div>
+<div id="js-modal-overlay"></div>
+
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      
+<div class="overlay" style="background: #4d4d4d"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/img/avatar.png" class="js-avatar">
+		</a>
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/">归档</a></li>
+	        
+				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+    		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" style="cursor:pointer">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" style="cursor:pointer">友链</a>
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+			
+				<div class="music-player">
+				
+<!-- aplayer -->
+<style>
+    #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
+        display: none;
+    }
+</style>
+
+<div class="title">
+听听音乐
+</div>
+
+<div id="aplayer"></div>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#4d4d4d',
+        loop: 'one',
+        order: 'list',
+        preload: 'none',
+        lrcType: Number('0'),
+        volume: Number('0.7'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '96px',
+        audio: JSON.parse('[{"name":"消えない想い","artist":"芳賀敬太","lrc":"[00:00.00]纯音乐，无歌词","cover":"//p2.music.126.net/U9d0tMpFwxCD2hj03KXLiA==/5907675976380960.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/消えない想い - 芳賀敬太.mp3"},{"name":"騎士王の誇り","artist":"川井憲次","lrc":"[00:00.00]纯音乐，无歌词","cover":"//p2.music.126.net/U0Tf2ESHBauv2F9t1PgEZA==/109951163339713541.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/騎士王の誇り - 川井憲次.mp3"},{"name":"春はゆく","artist":"Aimer","lrc":"[00:00.00]春はゆく - Aimer[00:05.00] 剧场版《Fate/stay night 「Heaven’s Feel」III.spring song》主题曲[00:10.00] 作曲 : Yuki Kajiura[00:15.00] 作词 : Yuki Kajiura[00:20.61] 编曲：梶浦由記[00:26.59]それでも手を取って（即使如此你仍愿意牵起我的手）[00:32.66]隣に佇んで（在我的身边半步不离）[00:38.61]初めて抱きしめた形（第一次得到了真正的拥抱）[00:50.57]欲張って（忍不住萌生的贪念）[00:53.54]哀しみを抱えすぎていたから（心中所怀的悲伤已太过深刻）[01:02.56]幸せは何処にも（所以无论身在何方）[01:08.51]もう持ちきれなくて（都无法将幸福维持）[01:14.50]花びらを散らした風が（风吹散了花瓣）[01:20.53]扉を開いて 変わる季節（吹开了心扉 改变了季节）[01:39.37]深々と降り積もる時の中（悄无声息不断堆积的时光中）[01:45.34]歓びも苦しみも等しく（无论欢乐还是悲痛）[01:51.26]二人の手のひらで溶けてゆく（都平等地在你我掌心融化）[01:57.33]微笑みも贖いもあなたの側で（微笑也好 赎罪也罢 都只为留在你的身边）[02:14.60]消え去ってゆくことも（连独自消失离开）[02:20.56]ひとりではできなくて（都无法做到的我）[02:26.56]弱虫で身勝手な私（是如此懦弱而自私）[02:38.53]償えない影を背負って（背负着难以赎清的罪孽的阴影）[02:44.53]約束の場所は花の盛り（我们约好的地点已有繁花盛开）[02:57.28]罪も愛も顧みず 春はゆく（不顾罪孽与爱 春日终将逝去）[03:03.28]輝きはただ空に眩しく（只剩下点点亮光还在空中闪耀）[03:09.40]私を許さないでいてくれる（请不要原谅我）[03:15.34]壊れたい 生まれたい（我渴望毁灭 也渴望重生）[03:19.85]あなたのそばで笑うよ（我会永远在你的身边微笑）[03:25.42]せめてそばにいる 大事な人達に（至少要为身边重要的人们）[03:33.32]いつも私は幸せでいると（送去温柔的梦境）[03:41.24]優しい夢を届けて（告诉他们 我一直很幸福）[03:50.56]あなたのそばにいる（我就在你的身边）[04:02.67]あなたを愛してる（我爱你）[04:08.59]あなたとここにいる（我就和你在这里）[04:14.55]あなたのそばに（我就在你的身边）[04:17.84]その日々は夢のように（那些时光就像是一场梦）","cover":"//img2.kuwo.cn/star/albumcover/300/56/85/378046121.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/春はゆく - Aimer.mp3"},{"name":"光るなら","artist":"Goose House","lrc":"[00:00.00]光るなら - Goose house[00:05.60]词：Goose house[00:10.60]曲：Goose house[00:15.440]雨上がりの虹も (雨过天晴的彩虹)[00:20.710]凛と咲いた花も (凛然绽放的花朵)[00:23.810]色づき溢れ出す (色彩随之满溢缤纷)[00:29.220]茜色の空 仰ぐ君に (望着那个仰望绯红色天空的你)[00:35.260]あの日 恋に落ちた (就在那天 我坠入了爱河)[00:40.800]瞬間のドラマチック (戏剧化的那一瞬间)[00:44.360]フィルムの中の1コマも (如荧幕中的特写镜头)[00:47.100]消えないよ 心に刻むから (早已深深铭刻在我心中 永远不会消失)[00:56.210]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[01:02.070]暗闇も光るなら (若能在黑暗中绽放光芒)[01:05.020]星空になる (便能化作星空)[01:08.119]悲しみを笑顔に (悲伤化作笑颜)[01:10.920]もう隠さないで (已经无需隐藏)[01:14.070]煌めくどんな星も (漫天闪耀着的星光)[01:17.030]君を照らすから (都会为你照亮前行)[01:20.930]眠りも忘れて 迎えた朝日が (一夜未眠迎来的朝阳)[01:28.340]やたらと突き刺さる (却愈加刺痛我心)[01:34.340]低気圧運ぶ 頭痛だって (令人烦闷的头痛)[01:39.500]忘れる 君に会えば (只要见到你 便能瞬间遗忘)[01:45.610]静寂はロマンティック (静寂编制你我的罗曼史)[01:48.350]紅茶に溶けたシュガーのように (如红茶里融化的砂糖)[01:51.620]全身に巡るよ 君の声 (你的声音萦绕全身)[02:00.640]君だよ 君なんだよ (是你 是你)[02:03.490]笑顔をくれた (带给我笑容)[02:06.590]涙も光るなら (泪滴若能绽放光芒)[02:09.550]流星になる (便能化作流星)[02:12.500]傷付いたその手を (这伤痕累累的双手)[02:15.400]もう離さないで (请别再松开)[02:18.550]願いを込めた空に (寄托心愿的天空)[02:21.400]明日が来るから (明天一定会来到)[02:25.820]導いてくれた 光は 君だよ (指引着我前进的光芒 就是你啊)[02:32.119]つられて僕も 走り出した (我也不禁迈步奔向前方)[02:36.640]知らぬ間に クロスし始めた (不知不觉间 我们交织在一起)[02:43.250]ほら 今だ ここで 光るなら (看 就是现在 若此处有光芒)[02:50.050]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[02:56.010]暗闇は終わるから (黑暗终究会过去)[03:01.240]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[03:08.150]暗闇も光るなら (若能在黑暗中绽放光芒)[03:11.050]星空になる (便能化作星空)[03:14.120]悲しみを笑顔に (悲伤化作笑颜)[03:16.920]もう隠さないで (已经无需隐藏)[03:20.130]煌めくどんな星も (漫天闪耀着的星光)[03:22.990]君を照らすから (都会为你照亮前行)[03:26.810]答えはいつでも偶然？必然？ (答案是 偶然？必然？)[03:32.960]いつか選んだ道こそ (你曾经选择的路)[03:36.530]運命になる (才是真正的命运)[03:39.340]握りしめた その希望も不安も (紧握在手心的希望也好 不安也罢)[03:44.940]きっと2人を動かす 光になるから (必定会化作驱使我们前进的光芒)","cover":"//img4.kuwo.cn/star/albumcover/300/1/94/1162016738.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/光るなら - Goose house.mp3"},{"name":"情深几许","artist":"杨小壮","lrc":"[00:00.00]情深几许 - 杨小壮[00:02.64]作词：杨小壮[00:04.85]作曲：赵恒、杨小壮[00:06.28]编曲：张川[00:08.56]母带：果果文化传媒[00:10.91]混音：果果文化传媒[00:12.34]和声：杨小壮[00:14.62]制作人：杨栋梁、林施[00:16.13]Co. Ltd.工作室：创意音工坊[00:18.62]OP：乐巢文化（Solo Music）[00:22.39]昔日的暖阳映小溪[00:25.58]河畔的水中我和你[00:28.83]往事印在了回忆里[00:31.94]有一个他对你痴迷[00:35.20]时间它带走了曾经[00:38.40]青春它轮回着四季[00:41.51]余生它对我提起笔[00:44.70]写下了一句我爱你[00:57.66]人间的故事有千万集[01:00.84]曾经拥有的不要忘记[01:03.95]每一个段落都有爱情[01:07.06]不能得到的更要珍惜[01:10.63]往事它伴随着你别离[01:13.61]属于自己的不要放弃[01:16.80]已经失去的留作回忆[01:19.91]余生的路上还有惊喜[01:26.43]昔日的暖阳映小溪[01:29.55]河畔的水中我和你[01:32.74]往事印在了回忆里[01:35.93]有一个他对你痴迷[01:39.25]时间它带走了曾经[01:42.37]青春它轮回着四季[01:45.56]余生它对我提起笔[01:48.75]写下了告白这一句[02:07.87]人间的故事有千万集[02:11.19]曾经拥有的不要忘记[02:14.39]每一个段落都有爱情[02:17.49]不能得到的更要珍惜[02:20.87]往事它伴随着你别离[02:23.98]属于自己的不要放弃[02:27.18]已经失去的留作回忆[02:30.31]余生的路上还有惊喜[02:36.88]昔日的暖阳映小溪[02:39.99]河畔的水中我和你[02:43.18]往事印在了回忆里[02:46.44]有一个他对你痴迷[02:49.63]时间它带走了曾经[02:52.81]青春它轮回着四季[02:55.99]余生它对我提起笔[02:59.17]写下了告白这一句[03:02.36]昔日的暖阳映小溪[03:05.48]河畔的水中我和你[03:08.74]往事印在了回忆里[03:11.85]有一个他对你痴迷[03:15.12]时间它带走了曾经[03:18.29]青春它轮回着四季[03:21.55]余生它对我提起笔[03:24.66]写下了一句我爱你[03:27.98]昔日的暖阳映小溪[03:31.10]河畔的水中我和你[03:34.35]往事印在了回忆里[03:37.54]有一个他对你痴迷[03:40.73]时间它带走了曾经[03:43.91]青春它轮回着四季[03:47.17]余生它对我提起笔[03:50.35]写下了一句我爱你","cover":"//img2.kuwo.cn/star/albumcover/300/11/49/427373899.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/情深几许 - 杨小壮.mp3"},{"name":"余情未了","artist":"魏新雨","lrc":"[00:00.00]余情未了 - 魏新雨[00:02.41]词：可泽[00:04.95]曲：可泽[00:06.29]编曲：李凯稠[00:07.65]和音：樊桐舟[00:08.08]笛子：王华[00:10.11]古筝：丁雪儿[00:11.31]录音：徐新博[00:12.33]缩混：周晓明[00:13.49]制作人：李凯稠[00:15.14]发行：北京恒青文化传媒[00:17.08]出品：北京恒青文化传媒[00:19.41]静月楼台空烦恼[00:24.11]何处梦醉寄逍遥[00:28.72]瑶琴缥缈纷纷扰[00:33.46]惊扰故人的好觉[00:39.89]叹人生路兜兜转转[00:42.43]与你余情未了[00:44.53]谁的笑飞过了天涯海角挂眉梢[00:49.02]菩提下为浮生高歌一曲多寂寥[00:54.16]月夜灯火阑珊 浊酒一壶[00:57.04]醉倒在墙角[00:58.79]再回眸盼来世相邀[01:01.23]梦回当时年少[01:02.67]怕旧时声音会肆意吵闹太喧嚣[01:08.07]你离开的步调不轻不重刚刚好[01:12.68]缓缓在我心头 筑起一座[01:15.67]半世的监牢[01:37.07]静月楼台空烦恼[01:41.68]何处梦醉寄逍遥[01:46.45]瑶琴缥缈纷纷扰[01:51.15]惊扰故人的好觉[01:57.08]叹人生路兜兜转转[01:59.75]与你余情未了[02:01.48]谁的笑飞过了天涯海角挂眉梢[02:06.37]菩提下为浮生高歌一曲多寂寥[02:11.57]月夜灯火阑珊 浊酒一壶[02:14.42]醉倒在墙角[02:16.03]再回眸盼来世相邀[02:18.23]梦回当时年少[02:20.87]怕旧时声音会肆意吵闹太喧嚣[02:25.88]你离开的步调不轻不重刚刚好[02:30.00]缓缓在我心头 筑起一座[02:33.65]半世的监牢[02:37.57]叹人生路兜兜转转[02:39.52]与你余情未了[02:42.01]谁的笑飞过了天涯海角挂眉梢[02:46.25]菩提下为浮生高歌一曲多寂寥[02:51.07]月夜灯火阑珊 浊酒一壶[02:54.18]醉倒在墙角[02:55.72]再回眸盼来世相邀[02:58.00]梦回当时年少[03:00.65]怕旧时声音会肆意吵闹太喧嚣[03:05.58]你离开的步调不轻不重刚刚好[03:10.73]缓缓在我心头 筑起一座[03:13.47]半世的监牢","cover":"//img2.kuwo.cn/star/albumcover/300/26/35/1877109495.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/余情未了 - 魏新雨.mp3"},{"name":"最美的情缘","artist":"魏新雨","lrc":"[00:00.00]最美的情缘 - 魏新雨[00:02.76]作词：玉镯儿[00:04.02]作曲：崔伟立[00:05.39]编曲：李凯稠[00:32.77]多情的下关风吹呀吹[00:36.37]吹不干千年的洱海[00:40.11]我遇见你的那一天[00:43.70]世上才有风花雪月[00:47.33]十里香上关花开呀开[00:50.82]开不完相思的缠绵[00:54.71]我相信最美的情缘[00:58.09]不在天上在人间[01:01.89]等到那一天[01:05.42]风停了花谢了[01:09.01]等到那一天[01:12.66]雪化了月落了[01:16.44]我就化作[01:19.61]化作一只蝴蝶[01:23.61]轻轻落在[01:27.15]落在你指尖[02:00.14]多情的下关风吹呀吹[02:03.73]吹不干千年的洱海[02:07.37]我遇见你的那一天[02:11.01]世上才有风花雪月[02:14.56]十里香上关花开呀开[02:18.04]开不完相思的缠绵[02:21.93]我相信最美的情缘[02:25.58]不在天上在人间[02:29.16]等到那一天[02:32.70]风停了花谢了[02:36.28]等到那一天[02:39.87]雪化了月落了[02:43.71]我就化作[02:46.81]化作一只蝴蝶[02:50.88]轻轻落在[02:54.61]落在你指尖[02:58.51]等到那一天[03:01.74]风停了花谢了[03:05.43]等到那一天[03:09.02]雪化了月落了[03:12.86]我就化作[03:15.96]化作一只蝴蝶[03:20.03]轻轻落在[03:23.52]落在你指尖[03:27.41]等到那一天[03:30.90]风停了花谢了[03:34.54]等到那一天[03:38.08]雪化了月落了[03:41.87]我就化作[03:44.85]化作一只蝴蝶[03:49.19]轻轻落在[03:52.83]落在你指尖[03:56.76]落在你指尖","cover":"http://p2.music.126.net/W_t1hBT30Yqv1_d8OZnlMw==/18579547488152350.jpg?param=300x300","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/最美的情缘 - 魏新雨.mp3"}]')
+    });
+});
+</script>
+				</div>
+			
+		</nav>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      
+<nav id="mobile-nav">
+  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+	<div class="btnctn js-mobile-btnctn">
+  		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
+	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/img/avatar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author js-header-author"></h1>
+			</hgroup>
+			
+			
+			
+				
+			
+				
+			
+				
+			
+			
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+
+			<nav class="header-menu js-header-menu">
+				<ul style="width: 70%">
+				
+				
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			
+			<nav class="music-player">
+			
+<!-- mobile-aplayer -->
+
+<div id="mobile-aplayer"></div>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('mobile-aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#4d4d4d',
+        loop: 'all',
+        order: 'list',
+        preload: 'none',
+        lrcType: Number('1'),
+        volume: Number('0.7'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"消えない想い","artist":"芳賀敬太","lrc":"[00:00.00]纯音乐，无歌词","cover":"//p2.music.126.net/U9d0tMpFwxCD2hj03KXLiA==/5907675976380960.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/消えない想い - 芳賀敬太.mp3"},{"name":"騎士王の誇り","artist":"川井憲次","lrc":"[00:00.00]纯音乐，无歌词","cover":"//p2.music.126.net/U0Tf2ESHBauv2F9t1PgEZA==/109951163339713541.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/騎士王の誇り - 川井憲次.mp3"},{"name":"春はゆく","artist":"Aimer","lrc":"[00:00.00]春はゆく - Aimer[00:05.00] 剧场版《Fate/stay night 「Heaven’s Feel」III.spring song》主题曲[00:10.00] 作曲 : Yuki Kajiura[00:15.00] 作词 : Yuki Kajiura[00:20.61] 编曲：梶浦由記[00:26.59]それでも手を取って（即使如此你仍愿意牵起我的手）[00:32.66]隣に佇んで（在我的身边半步不离）[00:38.61]初めて抱きしめた形（第一次得到了真正的拥抱）[00:50.57]欲張って（忍不住萌生的贪念）[00:53.54]哀しみを抱えすぎていたから（心中所怀的悲伤已太过深刻）[01:02.56]幸せは何処にも（所以无论身在何方）[01:08.51]もう持ちきれなくて（都无法将幸福维持）[01:14.50]花びらを散らした風が（风吹散了花瓣）[01:20.53]扉を開いて 変わる季節（吹开了心扉 改变了季节）[01:39.37]深々と降り積もる時の中（悄无声息不断堆积的时光中）[01:45.34]歓びも苦しみも等しく（无论欢乐还是悲痛）[01:51.26]二人の手のひらで溶けてゆく（都平等地在你我掌心融化）[01:57.33]微笑みも贖いもあなたの側で（微笑也好 赎罪也罢 都只为留在你的身边）[02:14.60]消え去ってゆくことも（连独自消失离开）[02:20.56]ひとりではできなくて（都无法做到的我）[02:26.56]弱虫で身勝手な私（是如此懦弱而自私）[02:38.53]償えない影を背負って（背负着难以赎清的罪孽的阴影）[02:44.53]約束の場所は花の盛り（我们约好的地点已有繁花盛开）[02:57.28]罪も愛も顧みず 春はゆく（不顾罪孽与爱 春日终将逝去）[03:03.28]輝きはただ空に眩しく（只剩下点点亮光还在空中闪耀）[03:09.40]私を許さないでいてくれる（请不要原谅我）[03:15.34]壊れたい 生まれたい（我渴望毁灭 也渴望重生）[03:19.85]あなたのそばで笑うよ（我会永远在你的身边微笑）[03:25.42]せめてそばにいる 大事な人達に（至少要为身边重要的人们）[03:33.32]いつも私は幸せでいると（送去温柔的梦境）[03:41.24]優しい夢を届けて（告诉他们 我一直很幸福）[03:50.56]あなたのそばにいる（我就在你的身边）[04:02.67]あなたを愛してる（我爱你）[04:08.59]あなたとここにいる（我就和你在这里）[04:14.55]あなたのそばに（我就在你的身边）[04:17.84]その日々は夢のように（那些时光就像是一场梦）","cover":"//img2.kuwo.cn/star/albumcover/300/56/85/378046121.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/春はゆく - Aimer.mp3"},{"name":"光るなら","artist":"Goose House","lrc":"[00:00.00]光るなら - Goose house[00:05.60]词：Goose house[00:10.60]曲：Goose house[00:15.440]雨上がりの虹も (雨过天晴的彩虹)[00:20.710]凛と咲いた花も (凛然绽放的花朵)[00:23.810]色づき溢れ出す (色彩随之满溢缤纷)[00:29.220]茜色の空 仰ぐ君に (望着那个仰望绯红色天空的你)[00:35.260]あの日 恋に落ちた (就在那天 我坠入了爱河)[00:40.800]瞬間のドラマチック (戏剧化的那一瞬间)[00:44.360]フィルムの中の1コマも (如荧幕中的特写镜头)[00:47.100]消えないよ 心に刻むから (早已深深铭刻在我心中 永远不会消失)[00:56.210]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[01:02.070]暗闇も光るなら (若能在黑暗中绽放光芒)[01:05.020]星空になる (便能化作星空)[01:08.119]悲しみを笑顔に (悲伤化作笑颜)[01:10.920]もう隠さないで (已经无需隐藏)[01:14.070]煌めくどんな星も (漫天闪耀着的星光)[01:17.030]君を照らすから (都会为你照亮前行)[01:20.930]眠りも忘れて 迎えた朝日が (一夜未眠迎来的朝阳)[01:28.340]やたらと突き刺さる (却愈加刺痛我心)[01:34.340]低気圧運ぶ 頭痛だって (令人烦闷的头痛)[01:39.500]忘れる 君に会えば (只要见到你 便能瞬间遗忘)[01:45.610]静寂はロマンティック (静寂编制你我的罗曼史)[01:48.350]紅茶に溶けたシュガーのように (如红茶里融化的砂糖)[01:51.620]全身に巡るよ 君の声 (你的声音萦绕全身)[02:00.640]君だよ 君なんだよ (是你 是你)[02:03.490]笑顔をくれた (带给我笑容)[02:06.590]涙も光るなら (泪滴若能绽放光芒)[02:09.550]流星になる (便能化作流星)[02:12.500]傷付いたその手を (这伤痕累累的双手)[02:15.400]もう離さないで (请别再松开)[02:18.550]願いを込めた空に (寄托心愿的天空)[02:21.400]明日が来るから (明天一定会来到)[02:25.820]導いてくれた 光は 君だよ (指引着我前进的光芒 就是你啊)[02:32.119]つられて僕も 走り出した (我也不禁迈步奔向前方)[02:36.640]知らぬ間に クロスし始めた (不知不觉间 我们交织在一起)[02:43.250]ほら 今だ ここで 光るなら (看 就是现在 若此处有光芒)[02:50.050]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[02:56.010]暗闇は終わるから (黑暗终究会过去)[03:01.240]君だよ 君なんだよ 教えてくれた (是你 是你 告诉我)[03:08.150]暗闇も光るなら (若能在黑暗中绽放光芒)[03:11.050]星空になる (便能化作星空)[03:14.120]悲しみを笑顔に (悲伤化作笑颜)[03:16.920]もう隠さないで (已经无需隐藏)[03:20.130]煌めくどんな星も (漫天闪耀着的星光)[03:22.990]君を照らすから (都会为你照亮前行)[03:26.810]答えはいつでも偶然？必然？ (答案是 偶然？必然？)[03:32.960]いつか選んだ道こそ (你曾经选择的路)[03:36.530]運命になる (才是真正的命运)[03:39.340]握りしめた その希望も不安も (紧握在手心的希望也好 不安也罢)[03:44.940]きっと2人を動かす 光になるから (必定会化作驱使我们前进的光芒)","cover":"//img4.kuwo.cn/star/albumcover/300/1/94/1162016738.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/光るなら - Goose house.mp3"},{"name":"情深几许","artist":"杨小壮","lrc":"[00:00.00]情深几许 - 杨小壮[00:02.64]作词：杨小壮[00:04.85]作曲：赵恒、杨小壮[00:06.28]编曲：张川[00:08.56]母带：果果文化传媒[00:10.91]混音：果果文化传媒[00:12.34]和声：杨小壮[00:14.62]制作人：杨栋梁、林施[00:16.13]Co. Ltd.工作室：创意音工坊[00:18.62]OP：乐巢文化（Solo Music）[00:22.39]昔日的暖阳映小溪[00:25.58]河畔的水中我和你[00:28.83]往事印在了回忆里[00:31.94]有一个他对你痴迷[00:35.20]时间它带走了曾经[00:38.40]青春它轮回着四季[00:41.51]余生它对我提起笔[00:44.70]写下了一句我爱你[00:57.66]人间的故事有千万集[01:00.84]曾经拥有的不要忘记[01:03.95]每一个段落都有爱情[01:07.06]不能得到的更要珍惜[01:10.63]往事它伴随着你别离[01:13.61]属于自己的不要放弃[01:16.80]已经失去的留作回忆[01:19.91]余生的路上还有惊喜[01:26.43]昔日的暖阳映小溪[01:29.55]河畔的水中我和你[01:32.74]往事印在了回忆里[01:35.93]有一个他对你痴迷[01:39.25]时间它带走了曾经[01:42.37]青春它轮回着四季[01:45.56]余生它对我提起笔[01:48.75]写下了告白这一句[02:07.87]人间的故事有千万集[02:11.19]曾经拥有的不要忘记[02:14.39]每一个段落都有爱情[02:17.49]不能得到的更要珍惜[02:20.87]往事它伴随着你别离[02:23.98]属于自己的不要放弃[02:27.18]已经失去的留作回忆[02:30.31]余生的路上还有惊喜[02:36.88]昔日的暖阳映小溪[02:39.99]河畔的水中我和你[02:43.18]往事印在了回忆里[02:46.44]有一个他对你痴迷[02:49.63]时间它带走了曾经[02:52.81]青春它轮回着四季[02:55.99]余生它对我提起笔[02:59.17]写下了告白这一句[03:02.36]昔日的暖阳映小溪[03:05.48]河畔的水中我和你[03:08.74]往事印在了回忆里[03:11.85]有一个他对你痴迷[03:15.12]时间它带走了曾经[03:18.29]青春它轮回着四季[03:21.55]余生它对我提起笔[03:24.66]写下了一句我爱你[03:27.98]昔日的暖阳映小溪[03:31.10]河畔的水中我和你[03:34.35]往事印在了回忆里[03:37.54]有一个他对你痴迷[03:40.73]时间它带走了曾经[03:43.91]青春它轮回着四季[03:47.17]余生它对我提起笔[03:50.35]写下了一句我爱你","cover":"//img2.kuwo.cn/star/albumcover/300/11/49/427373899.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/情深几许 - 杨小壮.mp3"},{"name":"余情未了","artist":"魏新雨","lrc":"[00:00.00]余情未了 - 魏新雨[00:02.41]词：可泽[00:04.95]曲：可泽[00:06.29]编曲：李凯稠[00:07.65]和音：樊桐舟[00:08.08]笛子：王华[00:10.11]古筝：丁雪儿[00:11.31]录音：徐新博[00:12.33]缩混：周晓明[00:13.49]制作人：李凯稠[00:15.14]发行：北京恒青文化传媒[00:17.08]出品：北京恒青文化传媒[00:19.41]静月楼台空烦恼[00:24.11]何处梦醉寄逍遥[00:28.72]瑶琴缥缈纷纷扰[00:33.46]惊扰故人的好觉[00:39.89]叹人生路兜兜转转[00:42.43]与你余情未了[00:44.53]谁的笑飞过了天涯海角挂眉梢[00:49.02]菩提下为浮生高歌一曲多寂寥[00:54.16]月夜灯火阑珊 浊酒一壶[00:57.04]醉倒在墙角[00:58.79]再回眸盼来世相邀[01:01.23]梦回当时年少[01:02.67]怕旧时声音会肆意吵闹太喧嚣[01:08.07]你离开的步调不轻不重刚刚好[01:12.68]缓缓在我心头 筑起一座[01:15.67]半世的监牢[01:37.07]静月楼台空烦恼[01:41.68]何处梦醉寄逍遥[01:46.45]瑶琴缥缈纷纷扰[01:51.15]惊扰故人的好觉[01:57.08]叹人生路兜兜转转[01:59.75]与你余情未了[02:01.48]谁的笑飞过了天涯海角挂眉梢[02:06.37]菩提下为浮生高歌一曲多寂寥[02:11.57]月夜灯火阑珊 浊酒一壶[02:14.42]醉倒在墙角[02:16.03]再回眸盼来世相邀[02:18.23]梦回当时年少[02:20.87]怕旧时声音会肆意吵闹太喧嚣[02:25.88]你离开的步调不轻不重刚刚好[02:30.00]缓缓在我心头 筑起一座[02:33.65]半世的监牢[02:37.57]叹人生路兜兜转转[02:39.52]与你余情未了[02:42.01]谁的笑飞过了天涯海角挂眉梢[02:46.25]菩提下为浮生高歌一曲多寂寥[02:51.07]月夜灯火阑珊 浊酒一壶[02:54.18]醉倒在墙角[02:55.72]再回眸盼来世相邀[02:58.00]梦回当时年少[03:00.65]怕旧时声音会肆意吵闹太喧嚣[03:05.58]你离开的步调不轻不重刚刚好[03:10.73]缓缓在我心头 筑起一座[03:13.47]半世的监牢","cover":"//img2.kuwo.cn/star/albumcover/300/26/35/1877109495.jpg","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/余情未了 - 魏新雨.mp3"},{"name":"最美的情缘","artist":"魏新雨","lrc":"[00:00.00]最美的情缘 - 魏新雨[00:02.76]作词：玉镯儿[00:04.02]作曲：崔伟立[00:05.39]编曲：李凯稠[00:32.77]多情的下关风吹呀吹[00:36.37]吹不干千年的洱海[00:40.11]我遇见你的那一天[00:43.70]世上才有风花雪月[00:47.33]十里香上关花开呀开[00:50.82]开不完相思的缠绵[00:54.71]我相信最美的情缘[00:58.09]不在天上在人间[01:01.89]等到那一天[01:05.42]风停了花谢了[01:09.01]等到那一天[01:12.66]雪化了月落了[01:16.44]我就化作[01:19.61]化作一只蝴蝶[01:23.61]轻轻落在[01:27.15]落在你指尖[02:00.14]多情的下关风吹呀吹[02:03.73]吹不干千年的洱海[02:07.37]我遇见你的那一天[02:11.01]世上才有风花雪月[02:14.56]十里香上关花开呀开[02:18.04]开不完相思的缠绵[02:21.93]我相信最美的情缘[02:25.58]不在天上在人间[02:29.16]等到那一天[02:32.70]风停了花谢了[02:36.28]等到那一天[02:39.87]雪化了月落了[02:43.71]我就化作[02:46.81]化作一只蝴蝶[02:50.88]轻轻落在[02:54.61]落在你指尖[02:58.51]等到那一天[03:01.74]风停了花谢了[03:05.43]等到那一天[03:09.02]雪化了月落了[03:12.86]我就化作[03:15.96]化作一只蝴蝶[03:20.03]轻轻落在[03:23.52]落在你指尖[03:27.41]等到那一天[03:30.90]风停了花谢了[03:34.54]等到那一天[03:38.08]雪化了月落了[03:41.87]我就化作[03:44.85]化作一只蝴蝶[03:49.19]轻轻落在[03:52.83]落在你指尖[03:56.76]落在你指尖","cover":"http://p2.music.126.net/W_t1hBT30Yqv1_d8OZnlMw==/18579547488152350.jpg?param=300x300","url":"//cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/music/最美的情缘 - 魏新雨.mp3"}]')
+    });
+});
+</script>
+			</nav>
+			
+		</header>				
+	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-java第七次课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java第七次课
+    </h1>
+  
+
+        
+        <a href="/2019/08/13/java%E7%AC%AC%E4%B8%83%E6%AC%A1%E8%AF%BE/" class="archive-article-date">
+  	<time datetime="2019-08-13T04:00:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+	
+	<time datetime="2019-12-07T10:54:07.474Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2019-12-07</time>
+	
+</a>
+        
+        
+          <div style="color: #999">
+          
+            <span><i class="icon-wordcount icon"></i> 字数 6.8k</span>
+          
+          
+            <span id="/2019/08/13/java%E7%AC%AC%E4%B8%83%E6%AC%A1%E8%AF%BE/" class="leancloud_visitors" data-flag-title="java第七次课"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
+          
+          </div>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本次课主要是Java基础知识回顾以及部分习题及答案</p>
+<a id="more"></a>
+<h2 id="Java基础知识回顾"><a href="#Java基础知识回顾" class="headerlink" title="Java基础知识回顾"></a>Java基础知识回顾</h2><ol>
+<li><strong>类里面有什么？</strong><ol>
+<li>属性和方法</li>
+</ol>
+</li>
+<li><strong>如何创建对象？</strong><ol>
+<li><strong>无参构造方法</strong><ol>
+<li>类名 对象名=new 类名()</li>
+</ol>
+</li>
+<li><strong>有参构造方法</strong><ol>
+<li>类名 对象名=new 类名(参数列表)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>如何访问类里面的成员？</strong><ol>
+<li>对象名.成员</li>
+<li>私有成员利用 get/set 方法</li>
+<li>有参构造方法 创建对象时直接访问并修改</li>
+</ol>
+</li>
+<li><strong>构造方法的规则？</strong><ol>
+<li>没有返回值类型</li>
+<li>方法名与类名相同</li>
+<li>系统在创建对象时自动调用，没有显式声明，系统默认提供一个无参的构造</li>
+<li>不能被static、final、synchronized、abstract和native修饰</li>
+<li>构造方法不能被子类继承，所以用final和abstract修饰没有意义</li>
+</ol>
+</li>
+<li><strong>构造方法的作用？</strong><ol>
+<li>初始化对象</li>
+<li>给成员变量赋初始值，创建对象</li>
+</ol>
+</li>
+<li><strong>方法重载的定义，方法重写的定义? 构造方法是否能重载？是否能重写？</strong><ol>
+<li>重载发生在一个类中，方法名字必须相同，参数列表必须不同（顺序，个数，类型不同），返回值类型是否相同不影响</li>
+<li>重写：子类不能满足父类的实现。方法声明部分一样，方法内容不同</li>
+<li>构造方法能重载不能重写</li>
+</ol>
+</li>
+<li><strong>this的意义？super的意义？</strong><ol>
+<li>this代表当前对象，可以区分成员变量与局部变量重名问题</li>
+<li>super代表父类对象，可以调用父类成员</li>
+</ol>
+</li>
+<li><strong>一个类能创建几个对象？</strong><ol>
+<li>正常的一个类可以创建多个对象</li>
+<li>抽象类无法实例化，不能创建对象</li>
+</ol>
+</li>
+<li><strong>类和对象的关系？</strong><ol>
+<li>类是对象的模板</li>
+<li>对象是类的实例</li>
+</ol>
+</li>
+<li><strong>面向对象的特征？</strong><ol>
+<li>封装 继承 多态 抽象</li>
+</ol>
+</li>
+<li><strong>封装的含义，写法</strong><ol>
+<li>把属性私有化，目的是保护属性不被外界访问，通过set和get方法操作属性</li>
+</ol>
+</li>
+<li><strong>变量的分类？</strong><ol>
+<li>以数据类型分类<ul>
+<li>基本数据类型 引用数据类型</li>
+</ul>
+</li>
+<li>以声明位置分类 <ul>
+<li>局部变量和成员变量</li>
+</ul>
+</li>
+<li>实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null</li>
+<li>局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用</li>
+</ol>
+</li>
+<li><strong>静态成员和非静态成员的区别？</strong><ol>
+<li>静态成员 <ul>
+<li>随着类的加载而加载</li>
+<li>优先于对象存在</li>
+<li>被所有对象所共享</li>
+<li>可以直接被类名调用</li>
+</ul>
+</li>
+<li>区别    <ul>
+<li>两个变量的生命周期不同<ol>
+<li>成员变量随着对象的创建而存在，随着对象的回收而释放</li>
+<li>静态变量随着类的加载而存在，随着类的消失而消失</li>
+</ol>
+</li>
+<li>调用方式不同<ol>
+<li>成员变量只能被对象调用</li>
+<li>静态变量可以被对象调用，还可以被类名调用</li>
+</ol>
+</li>
+<li>别名不同 <ol>
+<li>成员变量也称为实例变量 </li>
+<li>静态变量称为类变量</li>
+</ol>
+</li>
+<li>数据存储位置不同 <ol>
+<li>成员变量数据存储在堆内存的对象中，所以也叫对象特有数据</li>
+<li>静态变量数据：存储在方法区(的静态区)，所以也叫对象的共享数据</li>
+</ol>
+</li>
+<li>静态成员可以直接访问，非静态成员需要分配内存后才能进行访问</li>
+<li>静态成员不能访问非静态成员</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>继承的关键字？继承的意义？</strong><ol>
+<li>关键字<ul>
+<li>extends</li>
+</ul>
+</li>
+<li>减少代码量</li>
+<li>意义 <ul>
+<li>新类具有继承类的数据属性和行为，并可以扩展新的能力</li>
+<li>子类可以继承父类除了private的其他成员</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>继承中的构造规则？</strong><ol>
+<li>子类的构造过程中必须调用父类的构造方法</li>
+<li>子类可以在自己的构造方法中使用super(argumentList)来调用父类的构造方法;</li>
+<li>使用this（argumentList）调用本类的其他构造方法</li>
+<li>如果使用super(argumentList)来调用父类的构造方法，必须写在子类构造方法的第一行。</li>
+<li>如果子类的构造方法中没有明确地调用父类的构造方法，则默认调用无参的构造方法。相当于在子类构造方法中默认执行super()</li>
+<li>如果子类构造方法中，即没有显示地调用父类的构造方法，而基类中也没有无参的构造方法，则编译不通过。</li>
+</ol>
+</li>
+<li><strong>抽象类和接口的区别？</strong><ol>
+<li>接口里面有常量和抽象方法，有abstract关键字</li>
+<li>Java抽象类可以提供某些方法的部分实现，而Java接口不可以（就是interface中只能定义方法，而不能有方法的实现，而在abstract class中则可以既有方法的具体实现，又有没有具体实现的抽象方法）</li>
+<li>相同点：<ul>
+<li>都不能被实例化</li>
+<li>接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。</li>
+</ul>
+</li>
+<li>不同点：<ul>
+<li>接口只有定义，不能有方法的实现，java 1.8中可以定义default方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。</li>
+<li>实现接口的关键字为implements，继承抽象类的关键字为extends。一个类可以实现多个接口，但一个类只能继承一个抽象类。所以，使用接口可以间接地实现多重继承。</li>
+<li>接口强调特定功能的实现，而抽象类强调所属关系。</li>
+<li>接口成员变量默认为public static final，必须赋初值，不能被修改；其所有的成员方法都是public、abstract的。抽象类中成员变量默认default，可在子类中被重新定义，也可被重新赋值；抽象方法被abstract修饰，不能被private、static、synchronized和native等修饰，必须以分号结尾，不带花括号。</li>
+<li>接口被用于常用的功能，便于日后维护和添加删除，而抽象类更倾向于充当公共类的角色，不适用于日后重新对立面的代码修改。功能需要累积时用抽象类，不需要累积时用接口。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>final的作用！</strong> <ol>
+<li>final可以修饰类，这样的类不能被继承。</li>
+<li>final可以修饰方法，这样的方法不能被重写。 </li>
+<li>final可以修饰变量，这样的变量的值不能被修改，是常量。</li>
+</ol>
+</li>
+<li><strong>定义接口的关键字，实现接口的关键字，接口是否可以继承接口？</strong><ol>
+<li>定义接口 interface </li>
+<li>实现接口 implements</li>
+<li>接口可以继承接口 </li>
+</ol>
+</li>
+<li><strong>代码块的种类，执行顺序？</strong><ol>
+<li>普通代码块：普通方法体中的代码,方法被调用时执行</li>
+<li>静态代码块：用static修饰的代码 例如  static{},类加载的时候支持，只执行一次</li>
+<li>构造代码块：直接用大括号括起来的代码块，没有方法名，没有返回类型，例如{}，对象被new的时候调用，构造对象时，先执行构造代码块里的代码，再执行构造函数里的代码，每次new对象的时候，构造代码块里的代码都会被执行</li>
+<li>同步代码块：用synchronize注释的代码，例如synchronized{}</li>
+<li>初始化子类的执行顺序：父类静态代码块——子类静态代码块——父类构造函数和变量初始化（按编码顺序执行）,构造代码块在构造函数前面执行——子类构造函数和变量初始化（按编码顺序执行）,构造代码块在构造函数前面执行</li>
+</ol>
+</li>
+<li><strong>内部类有几种？</strong><ol>
+<li><strong>常规内部类</strong>：常规内部类没有用static修饰且定义在在外部类类体中。<ul>
+<li>常规内部类中的方法可以直接使用外部类的实例变量和实例方法。在常规内部类中可以直接用内部类创建对象。</li>
+</ul>
+</li>
+<li><strong>静态内部类</strong>：与类的其他成员相似，可以用static修饰内部类，这样的类称为静态内部类。静态内部类与静态内部方法相似，只能访问外部类的static成员，不能直接访问外部类的实例变量，与实例方法，只有通过对象引用才能访问。<ul>
+<li>由于static内部类不具有任何对外部类实例的引用，因此static内部类中不能使用this关键字来访问外部类中的实例成员，但是可以访问外部类中的static成员。这与一般类的static方法相通。</li>
+</ul>
+</li>
+<li><strong>局部内部类</strong>：在方法体或语句块（包括方法、构造方法、局部块或静态初始化块）内部定义的类成为局部内部类。局部内部类不能加任何访问修饰符，因为它只对局部块有效。<ul>
+<li>局部内部类只在方法体中有效，就想定义的局部变量一样，在定义的方法体外不能创建局部内部类的对象<ul>
+<li>在方法内部定义类时，应注意以下问题：<ul>
+<li>方法定义局部内部类同方法定义局部变量一样，不能使用private、protected、public等访问修饰说明符修饰，也不能使用static修饰，但可以使用final和abstract修饰</li>
+<li>方法中的内部类可以访问外部类成员。对于方法的参数和局部变量，必须有final修饰才可以访问。</li>
+<li>static方法中定义的内部类可以访问外部类定义的static成员</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>匿名内部类</strong>：定义类的最终目的是创建一个类的实例，但是如果某个类的实例只是用一次，则可以将类的定义与类的创建，放到与一起完成，或者说在定义类的同时就创建一个类。以这种方法定义的没有名字的类成为匿名内部类。</li>
+</ol>
+</li>
+<li><strong>如何给对象的属性赋值？有几种？</strong><ol>
+<li>对象名.属性</li>
+<li>set方法</li>
+<li>构造方法</li>
+</ol>
+</li>
+<li><strong>如何判断一个引用类型是不是 另外一个引用类型？</strong> <ol>
+<li>instanceof</li>
+</ol>
+</li>
+<li><strong>你所学过的修饰符，以及用法？</strong><ol>
+<li>权限修饰符<ul>
+<li>public：整个项目下</li>
+<li>private：私有的，只能在本类中使用</li>
+<li>缺省的：同包中使用</li>
+<li>protected：不同包中，有继承关系的</li>
+</ul>
+</li>
+<li>final  修饰符  <ul>
+<li>final的意思是不可变，他可以修饰类、字段、方法。</li>
+<li>修饰类后类不能被扩展（extends），也就是不能被继承。</li>
+<li>修饰字段后字段的值不能被改变，因此如果有final修饰字段，应该对字段进行手动初始化。</li>
+<li>修饰方法后该方法不能被改变，也就是重写。 </li>
+</ul>
+</li>
+<li>abstract修饰符 <ul>
+<li>abstract是抽象的意思，用来修饰类和方法，修饰类后，该类为抽象类</li>
+<li>不能被实例化，必需进行扩展。修饰方法后，该方法为抽象方法必须被子类重写（override）。 </li>
+</ul>
+</li>
+<li>static修饰符 <ul>
+<li>static用来修饰内部类，方法，字段。</li>
+<li>修饰内部类说明该内部类属于外部类而不属于外部类的某个实例。</li>
+<li>修饰字段说明该字段属于类而不属于类实例。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>java中包的意义？</strong><ol>
+<li>包是便于管理项目，区分项目里面的类重名问题</li>
+</ol>
+</li>
+<li><strong>目前所学的书写规范？</strong><ol>
+<li>class名字必须首字母大写，驼峰标识</li>
+<li>变量名和方法名必须首字母小写，驼峰标识</li>
+<li>包名所有字母都是小写，用点管理</li>
+<li>每一行语句，前面要有tab缩进</li>
+<li>每一个功能、属性都要加注释</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="部分习题及答案"><a href="#部分习题及答案" class="headerlink" title="部分习题及答案"></a>部分习题及答案</h2><h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><p>（封装、继承、多态）创建三个类，组成一个继承树，表示游戏中的角色。<br>描述如下：<br>父类：Role。是所有职业的父类。 属性： name，表示角色的名字。<br>方法：public int attack() ，该方法返回值为角色的攻击对敌人的伤害。<br>Role 有两个子类：<br>1）法师Magicer 属性：魔法等级（范围为1 ~ 10） 方法： public int attack() ，该方法返回法师的攻击对敌人造成的伤害值。 法师攻击伤害值为：魔法等级*魔法基本伤害值（固定为5）<br>2）战士Soldier 属性：攻击伤害值 方法： public int attack() ，该方法返回战士的攻击对敌人造成的伤害值。 战士的攻击伤害值为：其攻击伤害属性值 注意：上述的三个类所有属性都应当作为私有，并提供相应的get/set 方法。<br>再设计一个Team 类，表示一个组队。具有如下方法<br>1）addMember，表示组队增加一个成员。注意：组队成员最多为6 人<br>提示：应当利用一个数组属性，保存所有成员<br>2）attackSum，表示组队所有成员进行攻击时，对敌人造成的总伤害值 省略 get/set 方法后的类图如下：<br><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5lzmpj30jp08hmy2.jpg"><br>根据类图和描述，创建相应的类。并编写相应的测试代码。</p>
+<hr>
+<p><strong>代码</strong></p>
+<ul>
+<li>Magicer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package jichengshu;</span><br><span class="line">&#x2F;&#x2F;法师</span><br><span class="line">class Magicer extends Role &#123;</span><br><span class="line">	&#x2F;&#x2F;魔法等级，范围1~10</span><br><span class="line">	private int level;</span><br><span class="line"></span><br><span class="line">	public int getLevel() &#123;</span><br><span class="line">		return level;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setLevel(int level) &#123;</span><br><span class="line">		this.level &#x3D; level;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;返回法师的攻击对敌人造成的伤害值。 </span><br><span class="line">	public int attack() &#123;</span><br><span class="line">		return level * 5;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Role.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package jichengshu;</span><br><span class="line">&#x2F;&#x2F;所有职业的父类</span><br><span class="line">public class Role &#123;</span><br><span class="line">	&#x2F;&#x2F;角色的名字</span><br><span class="line">	private String name;</span><br><span class="line">	 public String getName() &#123;</span><br><span class="line">	  return name;</span><br><span class="line">	 &#125;</span><br><span class="line">	 public void setName(String name) &#123;</span><br><span class="line">	  this.name &#x3D; name;</span><br><span class="line">	 &#125;</span><br><span class="line">	 &#x2F;&#x2F;public int attack()</span><br><span class="line">	 public int attack()&#123;</span><br><span class="line">	  return 0;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Soldier.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package jichengshu;</span><br><span class="line">&#x2F;&#x2F;战士</span><br><span class="line">class Soldier extends Role &#123;</span><br><span class="line">	&#x2F;&#x2F;攻击伤害值</span><br><span class="line">	private int hurt;</span><br><span class="line"></span><br><span class="line">	public int getHurt() &#123;</span><br><span class="line">		return hurt;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setHurt(int hurt) &#123;</span><br><span class="line">		this.hurt &#x3D; hurt;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;返回战士的攻击对敌人造成的伤害值</span><br><span class="line">	public int attack() &#123;</span><br><span class="line">		return hurt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Team.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package jichengshu;</span><br><span class="line"></span><br><span class="line">class Team &#123;</span><br><span class="line">	static int i &#x3D; 0;</span><br><span class="line">	&#x2F;&#x2F;组队成员最多为6人</span><br><span class="line">	static Role member[] &#x3D; new Role[6];</span><br><span class="line">	&#x2F;&#x2F;添加成员</span><br><span class="line">	void addMember(Role role) &#123;</span><br><span class="line">		member[i++] &#x3D; role;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;对敌人造成的总伤害</span><br><span class="line">	int attackSum() &#123;</span><br><span class="line">		int sum &#x3D; 0;</span><br><span class="line">		for (int j &#x3D; 0; j &lt; i; j++) &#123;</span><br><span class="line">			sum +&#x3D; member[j].attack();</span><br><span class="line">		&#125;</span><br><span class="line">		return sum;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Test.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package jichengshu;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		&#x2F;&#x2F;创建Role对象</span><br><span class="line">		Role role &#x3D; new Role();</span><br><span class="line">		&#x2F;&#x2F;创建Soldier对象</span><br><span class="line">		Soldier soldier &#x3D; new Soldier();</span><br><span class="line">		&#x2F;&#x2F;新建战士</span><br><span class="line">		role &#x3D; soldier;</span><br><span class="line">		soldier.setName(&quot;少华&quot;);</span><br><span class="line">		soldier.setHurt(5);</span><br><span class="line">		System.out.println(&quot;战士&quot; + soldier.getName() + &quot;的攻击伤害值为：&quot; + soldier.attack());</span><br><span class="line">		&#x2F;&#x2F;创建法师对象</span><br><span class="line">		Magicer magicer &#x3D; new Magicer();</span><br><span class="line">		&#x2F;&#x2F;新建法师</span><br><span class="line">		role &#x3D; magicer;</span><br><span class="line">		role.setName(&quot;君艳法师&quot;);</span><br><span class="line">		magicer.setLevel(7);</span><br><span class="line">		System.out.println(&quot;战士&quot; + magicer.getName() + &quot;的攻击伤害值为：&quot; + magicer.attack());</span><br><span class="line">		&#x2F;&#x2F;团队对象</span><br><span class="line">		Team team &#x3D; new Team();</span><br><span class="line">		team.addMember(magicer);</span><br><span class="line">		team.addMember(soldier);</span><br><span class="line">		System.out.println(&quot;所有成员的伤害总值为：&quot; + team.attackSum());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p>在之前的游戏角色 Role 程序上进行修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1） 创建 Role 接口，包含两个方法：    </span><br><span class="line">    a) int attack(); 表示攻击，返回值表示对敌人的伤害    </span><br><span class="line">    b) void practise(); 表示练习。练习之后对敌人的伤害会增加。</span><br><span class="line">2） 创建 NamedRole 类，该类为一个抽象类，实现了 Role 接口，并有两个属性：name 和 age， 表示角色的名字和年龄。</span><br><span class="line">3） 增加 MagicStick 接口。该接口表示法师使用的法杖。接口中包含一个方法，方法为： int fire()</span><br><span class="line">4） 为 MagicStick 类增加两个实现类，分别为 GreenStick 和 BlackStick。其中，对于这两个类的 fire 方法：</span><br><span class="line">    a) GreenStick 平时返回 1，夏天（6~8 月）使用时返回 2 </span><br><span class="line">    b) BlackStic 奇数月返回 1，偶数月返回 2</span><br><span class="line">5） 修改 Magicer 类  </span><br><span class="line">    a) 为法师类增加 MagicStick 类的属性 stick，表示法师使用的法杖。   </span><br><span class="line">    b) 让其继承自 NamedRole 类，并实现 attack 和 practise 功能。其中 </span><br><span class="line">        i. attack 返回值为法师的魔法等级(level) *每一级的固定伤害(5) </span><br><span class="line">        ii. practise()方法：    </span><br><span class="line">            1. 当法师的 stick 属性为 null 时，调用 practise 则 level++    </span><br><span class="line">            2. 当法师的 stick 不为 null 时，调用 practise 方法时，法师的等级 level 满足： level &#x3D; level + 1 + stick.fire()；即：法师的    等级增加为 1+stick 属性的 fire 方法的返回值</span><br><span class="line">6） 增加 Weapon 接口，表示战士使用的武器。Weapon 接口中定义了两个方法：void setSoldier(Soldier s); 该方法表示设置武器的使用者int fire(); 该方法的返回值表示战士使用该武器时，对敌人的伤害值</span><br><span class="line">7） 为 Weapon 增加两个实现了，一个为 Bolo，表示大刀，一个为 Pike，表示长矛。对这两个实现类的描述如下：Bolo : 当 soldier 的年龄大于等于 18 岁时，fire 方法返回 100当 soldier 年龄小于 18 岁时，fire 方法返回 50Pike：Pike 类有一个属性：name，表示长矛的名字。当长矛的名字和战士的名字一致时，fire 方法返回 1000；当长矛的名字和战士的名字不一致时，fire 方法返回 25</span><br><span class="line">8） 修改 Soldier 类    </span><br><span class="line">    a) 为 Soldier 类增加一个 Weapon 属性，表示战士的武器    </span><br><span class="line">    b) 让其继承自 NamedRole 类，并实现 attack 和 practise 功能。其中        </span><br><span class="line">        i. Soldier 的 attack 返回值为战士的 hurt 值与武器的 fire 方法返回值的和，即 总攻击输出 &#x3D; 战士的徒手伤害值 + 武器的伤害值        </span><br><span class="line">        ii. practise()方法：每调用一次则战士的 hurt 值+10</span><br><span class="line">9） 编写相应的测试代码。   要求：两个人一组合作完成。一个人负责把一个整数 n 拆分成两个整数的和，另一个人负责写一个函数，判断某一个整数 a 是否是质数</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>代码</strong></p>
+<ul>
+<li>Role.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">package role;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">interface Role&#123;</span><br><span class="line">	int attack();</span><br><span class="line">	void practise();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface MagicStick&#123;</span><br><span class="line">	int fire();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class GreenStick implements MagicStick&#123;</span><br><span class="line">	public int fire()&#123;</span><br><span class="line">		Date d &#x3D; new Date();</span><br><span class="line">		if (d.getMonth() &gt;&#x3D;6 &amp;&amp; d.getMonth() &lt;&#x3D; 8)&#123;</span><br><span class="line">			return 2;</span><br><span class="line">		&#125;else return 1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class BlackStick implements MagicStick&#123;</span><br><span class="line">	public int fire()&#123;</span><br><span class="line">		Date d &#x3D; new Date();</span><br><span class="line">		if (d.getMonth() % 2 &#x3D;&#x3D; 0)&#123;</span><br><span class="line">			return 2;</span><br><span class="line">		&#125;else return 1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Weapon&#123;</span><br><span class="line">	int fire();</span><br><span class="line">	void setSoldier(Soldier s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Bolo implements Weapon&#123;</span><br><span class="line">	private Soldier s;</span><br><span class="line">	public void setSoldier(Soldier s)&#123;</span><br><span class="line">		this.s &#x3D; s;</span><br><span class="line">	&#125;</span><br><span class="line">	public int fire()&#123;</span><br><span class="line">		if (s.getAge()&gt;&#x3D;18) return 100;</span><br><span class="line">		else return 50;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Pike implements Weapon&#123;</span><br><span class="line">	private Soldier s;</span><br><span class="line">	private String name;</span><br><span class="line">	public Pike()&#123;&#125;</span><br><span class="line">	public Pike(String name)&#123;this.name &#x3D; name;&#125;</span><br><span class="line">	</span><br><span class="line">	public int fire() &#123;</span><br><span class="line">		if (s.getName().equals(name))&#123;</span><br><span class="line">			return 1000;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			return 25;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSoldier(Soldier s) &#123;</span><br><span class="line">		this.s &#x3D; s;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abstract class NamedRole implements Role&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	</span><br><span class="line">	public NamedRole()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public NamedRole(String name, int age) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Magicer extends NamedRole&#123;</span><br><span class="line">	private int level &#x3D; 1;</span><br><span class="line">	private MagicStick stick;</span><br><span class="line">	public Magicer()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Magicer(String name, int age,  int level) &#123;</span><br><span class="line">		super(name, age);</span><br><span class="line">		if (level &gt; 10 || level &lt; 1)&#123;</span><br><span class="line">			System.out.println(&quot;level error!&quot;);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		this.level &#x3D; level;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int getLevel() &#123;</span><br><span class="line">		return level;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setLevel(int level) &#123;</span><br><span class="line">		if (level&lt;1 || level &gt; 10)&#123;</span><br><span class="line">			System.out.println(&quot;level error!&quot;);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		this.level &#x3D; level;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public MagicStick getStick() &#123;</span><br><span class="line">		return stick;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setStick(MagicStick stick) &#123;</span><br><span class="line">		this.stick &#x3D; stick;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int attack()&#123;</span><br><span class="line">		return level * 5;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void practise() &#123;</span><br><span class="line">		level ++;</span><br><span class="line">		if (stick !&#x3D; null)&#123;</span><br><span class="line">			level +&#x3D; stick.fire();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Soldier extends NamedRole&#123;</span><br><span class="line">	private int hurt;</span><br><span class="line">	private Weapon weapon;</span><br><span class="line">	</span><br><span class="line">	public Soldier()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Soldier(String name,int age,  int hurt) &#123;</span><br><span class="line">		super(name, age);</span><br><span class="line">		this.hurt &#x3D; hurt;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Weapon getWeapon() &#123;</span><br><span class="line">		return weapon;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setWeapon(Weapon weapon) &#123;</span><br><span class="line">		this.weapon &#x3D; weapon;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getHurt() &#123;</span><br><span class="line">		return hurt;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setHurt(int hurt) &#123;</span><br><span class="line">		this.hurt &#x3D; hurt;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int attack()&#123;</span><br><span class="line">		int result &#x3D; hurt;</span><br><span class="line">		if (weapon !&#x3D; null)&#123;</span><br><span class="line">			result +&#x3D; weapon.fire();</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void practise() &#123;</span><br><span class="line">		hurt +&#x3D; 10;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>TestRole.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package role;</span><br><span class="line"></span><br><span class="line">public class TestRole &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MagicStick ms1 &#x3D; new GreenStick();</span><br><span class="line">		MagicStick ms2 &#x3D; new BlackStick();</span><br><span class="line">		Magicer m1 &#x3D; new Magicer(&quot;John&quot;, 20, 5);</span><br><span class="line">		Magicer m2 &#x3D; new Magicer(&quot;Tom&quot;, 30, 8);</span><br><span class="line">		m1.setStick(ms1);</span><br><span class="line">		m2.setStick(ms2);</span><br><span class="line">		</span><br><span class="line">		System.out.println(m1.attack());</span><br><span class="line">		System.out.println(m2.attack());</span><br><span class="line">		</span><br><span class="line">		m1.practise();</span><br><span class="line">		m2.practise();</span><br><span class="line">		</span><br><span class="line">		System.out.println(m1.attack());</span><br><span class="line">		System.out.println(m2.attack());</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		Weapon w1 &#x3D; new Bolo();</span><br><span class="line">		Weapon w2 &#x3D; new Pike(&quot;Jerry&quot;);</span><br><span class="line">		Soldier s1 &#x3D; new Soldier(&quot;Tom&quot;, 19, 100);</span><br><span class="line">		Soldier s2 &#x3D; new Soldier(&quot;Jerry&quot;, 25, 150);</span><br><span class="line"></span><br><span class="line">		s1.setWeapon(w1);</span><br><span class="line">		w1.setSoldier(s1);</span><br><span class="line">		</span><br><span class="line">		s2.setWeapon(w2);</span><br><span class="line">		w2.setSoldier(s2);</span><br><span class="line">		</span><br><span class="line">		System.out.println(s1.attack());</span><br><span class="line">		System.out.println(s2.attack());</span><br><span class="line">		</span><br><span class="line">		s1.practise();</span><br><span class="line">		s2.practise();</span><br><span class="line">		</span><br><span class="line">		System.out.println(s1.attack());</span><br><span class="line">		System.out.println(s2.attack());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h3><p>编写一个简单的客户类SimpleCustomer<br>要求：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1.	该类拥有四个属性：</span><br><span class="line">	1）	int id  代表客户代码</span><br><span class="line">	2）	String name 代表客户姓名</span><br><span class="line">	3）	String address 代表客户住址</span><br><span class="line">	4）	String phoneNumber 代表客户电话号码</span><br><span class="line">2.	构造方法：</span><br><span class="line">	1） SimpleCustomer()</span><br><span class="line">	2)	SimpleCustomer(int id, String name, String address, String phoneNumber)</span><br><span class="line">	3)	SimpleCustomer(SimpleCustomer sc)</span><br><span class="line">3.	普通方法：</span><br><span class="line">	1）	一系列get&#x2F;set方法</span><br><span class="line">		getId(), setId(int id), </span><br><span class="line">        getName(), setName(String name), </span><br><span class="line">        getAddress(), setAddress(String address), </span><br><span class="line">        getPhoneNumber(), setPhoneNumber(String phoneNumber)</span><br><span class="line">	2）	public String toString() &#x2F;&#x2F;返回客户的基本信息，格式为：</span><br><span class="line">		The customer’s information is:</span><br><span class="line">		id: 100</span><br><span class="line">		name: Arthur</span><br><span class="line">		address: China, Beijing, Xicheng District, Xidan Time Square Building, 100036</span><br><span class="line">		phoneNumber: +861012345678</span><br><span class="line">4.	编写一个测试类，对SimpleCustomer类进行测试</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>代码</strong></p>
+<ul>
+<li>SimpleCustomer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package simplecustomer;</span><br><span class="line"></span><br><span class="line">public class SimpleCustomer &#123;</span><br><span class="line">	&#x2F;&#x2F;四个属性</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String address;</span><br><span class="line">	private String phoneNumber;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id &#x3D; id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAddress() &#123;</span><br><span class="line">		return address;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAddress(String address) &#123;</span><br><span class="line">		this.address &#x3D; address;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getPhoneNumber() &#123;</span><br><span class="line">		return phoneNumber;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setPhoneNumber(String phoneNumber) &#123;</span><br><span class="line">		this.phoneNumber &#x3D; phoneNumber;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;三个构造方法</span><br><span class="line">	public SimpleCustomer() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public SimpleCustomer(int id, String name, String address, String phoneNumber) &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public SimpleCustomer(SimpleCustomer sc) &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;toString方法</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;The customer’s information is:&quot;+&quot;\n&quot;+&quot;id:&quot;+id+&quot;\n&quot;+&quot;name:&quot;+name+&quot;\n&quot;+&quot;address:&quot;+address+&quot;\n&quot;+&quot;phoneNumber:&quot;+phoneNumber;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Test.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package simplecustomer;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	SimpleCustomer a&#x3D;new SimpleCustomer();</span><br><span class="line">	a.setId(10);</span><br><span class="line">	a.setName(&quot;Arthur&quot;);</span><br><span class="line">	a.setAddress(&quot;China, Beijing, Xicheng District, Xidan Time Square Building, 100036&quot;);</span><br><span class="line">	a.setPhoneNumber(&quot;+861012345678&quot;);</span><br><span class="line">	System.out.println(a.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h3><p>改写SimpleCustomer类，编写一个增强的Customer类<br>要求：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1.	在SimpleCustomer类的基础上，将address部分剥离出来，编写一个单独的Address类</span><br><span class="line">	Address类属性：</span><br><span class="line">	1）	String country  &#x2F;&#x2F;国家</span><br><span class="line">	2）	String city  &#x2F;&#x2F;城市</span><br><span class="line">	3）	String district 	&#x2F;&#x2F;区</span><br><span class="line">	4）	String detailedAddress &#x2F;&#x2F;详细住址</span><br><span class="line">	5）	int postCode &#x2F;&#x2F;邮编</span><br><span class="line">	Address类方法：</span><br><span class="line">	1）	构造方法 </span><br><span class="line">    Address(String country, String city, String district, String detailedAddress, int postCode)</span><br><span class="line">	2）	get&#x2F;set方法</span><br><span class="line">	3）	toString方法 &#x2F;&#x2F;返回地址类的基本信息，将各属性用逗号连接在一起</span><br><span class="line">2.	将Address对象作为一个属性，按照SimpleCustomer类的思路编写Customer类</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>代码</strong></p>
+<ul>
+<li>Customer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">package simplecustomer;</span><br><span class="line"></span><br><span class="line">public class Customer &#123;</span><br><span class="line">	&#x2F;&#x2F; 四个属性</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private String phoneNumber;</span><br><span class="line"></span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id &#x3D; id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getPhoneNumber() &#123;</span><br><span class="line">		return phoneNumber;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setPhoneNumber(String phoneNumber) &#123;</span><br><span class="line">		this.phoneNumber &#x3D; phoneNumber;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;创建内部类</span><br><span class="line">	class Address &#123;</span><br><span class="line">		&#x2F;&#x2F; 5个属性</span><br><span class="line">		private String country;&#x2F;&#x2F;国家</span><br><span class="line">		private String city;&#x2F;&#x2F;城市</span><br><span class="line">		private String district;&#x2F;&#x2F;区</span><br><span class="line">		private String detailedAddress;&#x2F;&#x2F;详细地址</span><br><span class="line">		private int postCode;&#x2F;&#x2F;邮编</span><br><span class="line"></span><br><span class="line">		public String getCountry() &#123;</span><br><span class="line">			return country;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void setCountry(String country) &#123;</span><br><span class="line">			this.country &#x3D; country;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public String getCity() &#123;</span><br><span class="line">			return city;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void setCity(String city) &#123;</span><br><span class="line">			this.city &#x3D; city;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public String getDistrict() &#123;</span><br><span class="line">			return district;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void setDistrict(String district) &#123;</span><br><span class="line">			this.district &#x3D; district;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public String getDetailedAddress() &#123;</span><br><span class="line">			return detailedAddress;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void setDetailedAddress(String detailedAddress) &#123;</span><br><span class="line">			this.detailedAddress &#x3D; detailedAddress;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public int getPostCode() &#123;</span><br><span class="line">			return postCode;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void setPostCode(int postCode) &#123;</span><br><span class="line">			this.postCode &#x3D; postCode;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; 构造方法</span><br><span class="line">		public Address(String country, String city, String district, String detailedAddress, int postCode) &#123;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; toString方法</span><br><span class="line">		public String toString() &#123;</span><br><span class="line">			return country + &quot;,&quot; + city + &quot;,&quot; + district + &quot;,&quot; + detailedAddress + &quot;,&quot; + postCode;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题5"><a href="#问题5" class="headerlink" title="问题5"></a>问题5</h3><p>（封装）已知一个类Student 代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Student &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line">    String address;</span><br><span class="line">    String zipCode;</span><br><span class="line">    String mobile;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>a)把Student的属性都作为私有，并提供get/set方法以及适当的构造方法。<br>b)为Student类添加一个getPostAddress方法，要求返回Student对象的地址和邮编</p>
+<hr>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class Student &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private String address;</span><br><span class="line">	private String zipCode;</span><br><span class="line">	private String mobile;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getAddress() &#123;</span><br><span class="line">		return address;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAddress(String address) &#123;</span><br><span class="line">		this.address &#x3D; address;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getZipCode() &#123;</span><br><span class="line">		return zipCode;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setZipCode(String zipCode) &#123;</span><br><span class="line">		this.zipCode &#x3D; zipCode;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getMobile() &#123;</span><br><span class="line">		return mobile;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setMobile(String mobile) &#123;</span><br><span class="line">		this.mobile &#x3D; mobile;</span><br><span class="line">	&#125;</span><br><span class="line">	public String[] getPostAddress() &#123;</span><br><span class="line">		String[] array &#x3D; new String[2];</span><br><span class="line">		array[0] &#x3D; this.address;</span><br><span class="line">		array[1] &#x3D; this.zipCode;</span><br><span class="line">		return array;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题6"><a href="#问题6" class="headerlink" title="问题6"></a>问题6</h3><p>定义一个 Performer 接口，表示一个演员，接口中定义 perform 方法，表示表演。为这个接口提供若干实现类：Singer，表示歌手；Dancer，表示舞蹈演员；Player，表示演奏者。类图如下：<br><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5s9frj309j06bq30.jpg"><br>定义一个 Program 类，表示一个节目。每一个节目需要多个演员配合，因此每一个 Program 类中都包含一个属性：Performer 数组，表示表演这个节目的所需要的演员。<br>给出 Program 的部分代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Program &#123;</span><br><span class="line">    private Performer[] ps;</span><br><span class="line">    public Program()&#123;</span><br><span class="line">        ps &#x3D; new Performer[3];</span><br><span class="line">        ps[0] &#x3D; new Singer();</span><br><span class="line">        ps[1] &#x3D; new Dancer();</span><br><span class="line">        ps[2] &#x3D; new Player();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在现有代码基础上，为 Program 增加一个 show 方法，在这个方法中，调用所有表演这个节目的所有 Performer 的 perform 方法。<br>Program 类图如下：<br><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g5yvv5wfvlj304e035t8j.jpg"></p>
+<hr>
+<p><strong>代码</strong></p>
+<ul>
+<li>Performer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public interface Performer &#123;</span><br><span class="line">	public void perform(); &#x2F;&#x2F; 表演</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Dancer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public class Dancer implements Performer &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void perform() &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		System.out.println(&quot;舞蹈演员跳舞&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Player.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public class Player implements Performer &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void perform() &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		System.out.println(&quot;演奏者演奏乐器&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Program.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public class Program &#123;</span><br><span class="line">	Performer []arr; &#x2F;&#x2F; 表演者数组</span><br><span class="line">	public void show(Performer []arr)&#123; &#x2F;&#x2F; 引入节目演员，并通过for循环调用里面成员的表演方法</span><br><span class="line">		System.out.println(&quot;演出开始：&quot;);</span><br><span class="line">		System.out.println(&quot;______________&quot;);</span><br><span class="line">		for(int i&#x3D;0;i&lt;arr.length;i++)&#123;</span><br><span class="line">			arr[i].perform();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public void end()&#123;</span><br><span class="line">		System.out.println(&quot;______________&quot;);</span><br><span class="line">		System.out.println(&quot;演出结束，谢谢观看&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Singer.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public class Singer implements Performer &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void perform() &#123;</span><br><span class="line">		System.out.println(&quot;歌手唱歌&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>TestAll.java</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package performer;</span><br><span class="line"></span><br><span class="line">public class TestAll &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Singer p1 &#x3D; new Singer(); &#x2F;&#x2F; 一个歌手</span><br><span class="line">		Dancer p2 &#x3D; new Dancer(); &#x2F;&#x2F;一个舞蹈演员</span><br><span class="line">		Player p3 &#x3D; new Player(); &#x2F;&#x2F;一个演奏者</span><br><span class="line">		</span><br><span class="line">		Program program &#x3D; new Program(); &#x2F;&#x2F;一个节目</span><br><span class="line">		program.arr &#x3D; new Performer[]&#123;p1,p2,p3&#125;;&#x2F;&#x2F;一个演员数组</span><br><span class="line">		program.show(program.arr);&#x2F;&#x2F;表演节目</span><br><span class="line">		program.end(); &#x2F;&#x2F; 演出结束</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="问题7"><a href="#问题7" class="headerlink" title="问题7"></a>问题7</h3><p>设计一个类 MyClass，为 MyClass 增加一个 count 属性，用来统计总共创建了多少个对象。</p>
+<hr>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MyClass &#123;</span><br><span class="line">	&#x2F;&#x2F;Java中如何统计某个类当前所生成的对象的个数？</span><br><span class="line">	public static int num; &#x2F;&#x2F; 静态变量</span><br><span class="line">	public MyClass()&#123;</span><br><span class="line">		num++;  &#x2F;&#x2F; 利用构造函数内来进行计数</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		MyClass m &#x3D; new MyClass(); &#x2F;&#x2F; 每次创建对象都会调用构造函数</span><br><span class="line">		System.out.println(num);  &#x2F;&#x2F; 输出</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a style="cursor:pointer" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a style="cursor:pointer" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" style="cursor:pointer" data-type="weibo" title="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" style="cursor:pointer" data-type="weixin" title="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" style="cursor:pointer" data-type="qq" title="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" style="cursor:pointer" data-type="douban" title="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" style="cursor:pointer" data-type="qzone" title="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" style="cursor:pointer" data-type="facebook" title="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" style="cursor:pointer" data-type="twitter" title="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" style="cursor:pointer" data-type="google" title="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" style="cursor:pointer"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?data=https://akbcd.github.io/2019/08/13/java%E7%AC%AC%E4%B8%83%E6%AC%A1%E8%AF%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/14/java%E7%AC%AC%E5%85%AB%E6%AC%A1%E8%AF%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java第八次课
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/09/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%ABHS8145V%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">电信光猫HS8145V配置说明</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <style>
+    /* 适配yilia主题 */
+    #valine {
+        padding: 0 30px;
+    }
+    #valine .vwrap{
+        border: 1px solid #c8c8c8;
+    }
+    #valine .vwrap .vheader input,#valine .vcard{
+        border-bottom: 1px dashed #c8c8c8;
+    }
+    #valine .vwrap button,#valine .vmore{
+        background: #c8c8c8;
+    }
+    @media screen and (max-width: 800px) {
+        #valine{
+            padding: 0 10px;
+        }
+    }
+</style>
+<div id="valine"></div>
+<script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine',
+        appId: 'lgKQKDBk92WAKzzHw1palka0-MdYXbMMI',
+        appKey: 'SIKHT3xm9TdmJ8bQKjtRoReC',
+		placeholder: '说说你的看法。。。',
+		avatar: 'mp',
+		pageSize: '10',
+        lang: 'zh-CN',
+        visitor: ("localhost" != document.domain)?true:false,
+		highlight: 'true' === 'true',
+		recordIp: 'false' === 'true',
+        enableQQ: 'true' === 'true'
+    });
+    
+    // ADMIN_URL
+    var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    if(engine!='1') {
+        fetch('https://quan.suning.com/getSysTime.do')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(date) {
+            var hours = new Date(date.sysTime2).getHours();
+            if(hours>7 && hours<23){
+                fetch('https://akbcd.avosapps.us/');
+                var exp = new Date(date.sysTime2);
+                exp.setTime(exp.getTime() + 20*60*1000);
+                document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
+            }
+        })
+    }
+    
+</script>
+  
+  
+  
+
+  
+
+  
+
+  
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2020 akbcd
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+      <div class="progress-bar"></div>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		toc_hide_index: true,
+		root: "/",
+		innerArchive: true,
+		showTags: false,
+		anchor: true
+	}
+</script>
+
+<script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
+        if (isNaN(key)) break;
+        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
+        if (isNaN(key)) break;
+        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
+        if (isNaN(key)) break;
+        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
+
+
+<script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
+<script src="/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    /* 
+    页面载入完成后，创建复制按钮
+    create copy button 
+    */
+    !function (e, t, a) {
+        var initCopyCode = function(){
+            var copyHtml = "<button id='js-btn-copy'>复制</button>";
+            $(".code pre").before(copyHtml);
+        }
+        initCopyCode();
+        // 代码块复制
+        // code block copying
+        $(".code").on("click","#js-btn-copy",function(button){
+            var copy=button.currentTarget;
+            var clipboard = new ClipboardJS('#js-btn-copy', {
+                target: function(trigger) {
+                    if(trigger.nextElementSibling != null){
+                        return trigger.nextElementSibling;
+                    }
+                }
+            });
+            clipboard.on('success', function(e) {
+                e.clearSelection();
+                $(copy).html("复制成功");
+                clipboard.destroy();
+            });
+            clipboard.on('error', function(e) {
+                $(copy).html("复制失败");
+                clipboard.destroy();
+            });
+            $(copy).mouseout(function(){$(event.currentTarget).html("复制")});
+        });
+    }(window, document);
+</script>
+
+<script>
+    !function(){
+        !function(e){
+            var t=document.createElement("script");
+            document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
+        }("/slider.e37972.js")
+    }()
+</script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    
+    
+      
+      
+      
+    
+      
+      
+      
+    
+    
+
+    <ul style="width: 70%">
+    
+    
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a style="cursor:pointer" q-class="active:innerArchive">所有文章</a></li>
+      
+    
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a style="cursor:pointer" q-class="active:friends">友链</a></li>
+      
+    
+    </ul>
+  </div>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="查找文章...">
+          <i class="icon-search icon" q-show="search|isEmptyStr" id="js-icon-search"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">标签：</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color1">vm虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">软件安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color2">java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">游戏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">mybatis框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">文献</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">光猫备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color4">直播源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">springMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color1">linux</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+          </p>
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://tool.mkblog.cn/tuchuang/" target="_blank" title="聚合图床 - 微博图床" class="search-title"><i class="icon-quo-left icon"></i>聚合图床 - 微博图床</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.gequdaquan.net/gqss/" target="_blank" title="歌曲大全-音乐聚合搜索引擎" class="search-title"><i class="icon-quo-left icon"></i>歌曲大全-音乐聚合搜索引擎</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://mp.weixin.qq.com/s/zeq1sTmaPsKt7Bsok0Ldrg" target="_blank" title="软件安装管家" class="search-title"><i class="icon-quo-left icon"></i>软件安装管家</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://tool.css-js.com/" target="_blank" title="CSS, JavaScript 压缩, 美化, 加密, 解密" class="search-title"><i class="icon-quo-left icon"></i>CSS, JavaScript 压缩, 美化, 加密, 解密</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.no404.me/" target="_blank" title="NO404 - 让天下不再有消失的网站！" class="search-title"><i class="icon-quo-left icon"></i>NO404 - 让天下不再有消失的网站！</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.clb.biz/" target="_blank" title="磁力宝" class="search-title"><i class="icon-quo-left icon"></i>磁力宝</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.yuhuage.biz/" target="_blank" title="雨花阁" class="search-title"><i class="icon-quo-left icon"></i>雨花阁</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://music.yujianweb.cn/" target="_blank" title="音乐搜索器 - 多站合一音乐搜索,音乐在线试听" class="search-title"><i class="icon-quo-left icon"></i>音乐搜索器 - 多站合一音乐搜索,音乐在线试听</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.333ttt.com/up/tool/" target="_blank" title="全网音乐免费下载神器" class="search-title"><i class="icon-quo-left icon"></i>全网音乐免费下载神器</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://tool.mkblog.cn/github/" target="_blank" title="GitHub加速下载工具" class="search-title"><i class="icon-quo-left icon"></i>GitHub加速下载工具</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://akbcd.avosapps.us/" target="_blank" title="LeanCloud评论管理" class="search-title"><i class="icon-quo-left icon"></i>LeanCloud评论管理</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr" class="search-title"><i class="icon-quo-left icon"></i>jsDelivr</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
+
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader——active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
