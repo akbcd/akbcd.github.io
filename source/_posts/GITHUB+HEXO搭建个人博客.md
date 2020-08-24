@@ -366,6 +366,8 @@ hexo s 是 hexo server 的缩写，命令效果一致；
 ## hexo d
 自动生成网站静态文件，并部署到设定的仓库。
 hexo d 是 hexo deploy 的缩写，命令效果一致。
+输入此命令，如果出现`ERROR Deployer not found: git`提示，请安装hexo-deployer-git插件
+输入命令`npm install hexo-deployer-git --save`安装
 ## hexo clean
 清除缓存文件 db.json 和已生成的静态文件 public 。
 网站显示异常时可以执行这条命令试试。比如：
