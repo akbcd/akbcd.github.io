@@ -486,6 +486,7 @@ git输入
 1.`git add .` ——将文件的修改，文件的新建，添加到暂存区。详解：**git空格add空格.**，切记不要打错，否则命令就错了
 2.`git commit -m"..."` ——提交修改，`...`为对修改的描述。详解：**git空格commit空格-m"..."**
 3.`git push origin hexo` ——将源文件提交到hexo分支
+期间若出现提示Are you sure you want to continue connecting，请输入yes
 4.`hexo g -d`
 补充：
 执行到`git commit -m"..."`可能会有此提示
