@@ -53,8 +53,8 @@ tags: 博客
 3.`hexo -v` ——检测hexo是否安装成功，出现版本号表明成功安装
 
 找到自己创建的blog文件夹，右键打开选择**git bash here**输入以下命令:
-1.`hexo init` ——初始化hexo
-2.`npm install` ——安装npm
+1.`hexo init` ——初始化hexo，hexo会在blog文件夹中创建需要的文件
+2.`npm install` ——安装npm，npm会根据hexo初始化创建的package.json配置文件中的依赖配置下载安装。
 3.`hexo server` ——简写为`hexo s`，启动hexo本地服务，在浏览器端输入localhost:4000看一下效果
 4.ctrl+c 结束本地服务，git窗口中有提示
 说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问
@@ -87,8 +87,8 @@ Enter same passphrase again:
 ```
 重复密码时也是直接回车，之后提示你**shh key**已经生成成功。
 ## 添加key到github网站
-文件资源管理器定位文件C:/Users/yournam/.ssh，yourname为当前计算机用户名
-看到两个文件
+文件资源管理器定位文件C:/Users/yourname/.ssh，yourname为当前计算机用户名
+看到两个文件，扩展名可能需要在文件资源管理器中手动将其显示
 id_rsa(您的标识)和id_rsa.pub(您的公钥)
 用编译器打开id_rsa.pub，复制里面的内容
 进入GitHub网站，在GitHub网站中找到Settings（单击用户头像）。设置里找到**SSH and GPG keys**，进入点击**New SSH key**，title任意，key输入自己刚才复制的id_rsa.pub内容，之后保存。保存成功后会向邮箱发送提醒
@@ -286,10 +286,10 @@ deploy:
 blog文件夹，右键打开选择**git bash here**输入以下命令：
 1.`git config --global user.email "you@example.com"` ——git确认信息，you@example.com为注册GitHub所用邮箱
 2.`git config --global user.name "Your Name"` ——git确认信息，Your Name为注册GitHub用户名
-3.`npm install hexo-deployer-git --save` ——安装hexo-deployer-git
+3.`npm install hexo-deployer-git --save` ——安装hexo-deployer-git插件
 4.`hexo g` ——生成静态文件
-5.`hexo d` ——部署网站
-正常情况会弹出一个`OpenSSH`对话框进行警告，输入`yes`点击`ok`
+5.`hexo d` ——部署网站，需要安装hexo-deployer-git插件使用
+正常情况会弹出一个`OpenSSH`对话框进行警告，输入`yes`点击`ok`，也有可能直接在窗口提示`Are you sure you want to continue connecting`，取决于安装的git版本
 最后在浏览器输入：`https://yourname.github.io`，yourname为GitHub用户名
 可以访问表明GITHUB+HEXO搭建个人博客完成
 注：如果本地blog文件夹内容上传不了，需要从**本地创建ssh key**重新开始。
@@ -389,7 +389,7 @@ hexo g 是 hexo generate 的缩写，命令效果一致。
 1.登录到自己的GitHub网站，网站：[https://github.com/](https://github.com/)
 2.找到自己创建的仓库，点击进入到代码页面,选择**Branch:master**(图片红色标注部分)
 ![](http://wx4.sinaimg.cn/mw690/0060lm7Tly1fz73mc5zesj30y90e9tau.jpg)
-在**Find or creat a branch...**搜索框中输入**hexo**，选择下面的**Creat branch: hexo**，创建hexo分支。到此分支创建完成
+在**Find or creat a branch...** 搜索框中输入**hexo**，选择下面的**Creat branch: hexo**，创建hexo分支。到此分支创建完成
 3.点击**2 branches**，进入分支管理页面,将**hexo**设为默认分支，具体怎么设，自己研究(其实很简单，就不说了)。到此，将hexo设为默认分支完成。
 ![](http://wx2.sinaimg.cn/mw690/0060lm7Tly1fz73yd54o0j30yc0atabh.jpg)
 ## 配置本地备份文件夹
@@ -403,7 +403,7 @@ hexo g 是 hexo generate 的缩写，命令效果一致。
 
 ## 本地数据备份至GitHub
 文件夹**yourname.github.io**右键**Git Bash Here**，在git里面输入（看yourname.github.io后面是否有蓝色hexo字样，如果没有就错了）：
-1.`git add .` ——将文件的修改，文件的新建，添加到暂存区。详解：**git空格add空格.**，切记不要打错，否则命令就错了
+1.`git add .` ——将文件的修改，文件的新建，添加到暂存区。详解：**git空格add空格.** ，切记不要打错，否则命令就错了
 2.`git commit -m"..."` ——提交修改，`...`为对修改的描述。详解：**git空格commit空格-m"..."**
 3.`git push origin hexo` ——将源文件提交到hexo分支
 4.`hexo g -d`
@@ -483,7 +483,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 git输入
 `npm install` ——在`git clone`项目的时候，项目文件中并没有`node_modules`文件夹，项目的依赖文件可能很大。直接执行，`npm`会根据`package.json`配置文件中的依赖配置下载安装。
 ### 发布文章
-1.`git add .` ——将文件的修改，文件的新建，添加到暂存区。详解：**git空格add空格.**，切记不要打错，否则命令就错了
+1.`git add .` ——将文件的修改，文件的新建，添加到暂存区。详解：**git空格add空格.** ，切记不要打错，否则命令就错了
 2.`git commit -m"..."` ——提交修改，`...`为对修改的描述。详解：**git空格commit空格-m"..."**
 3.`git push origin hexo` ——将源文件提交到hexo分支
 期间若出现提示Are you sure you want to continue connecting，请输入yes
@@ -509,5 +509,25 @@ to set your account's default identity.
 输入命令
 `git pull origin hexo --allow-unrelated-histories` ——分支合并
 输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）
+# Visual Studio Code运行git bash命令
+## 前言
+正如大家所知道的，**Visual Studio Code**功能很强大，这里简单介绍一下直接通过**Visual Studio Code**管理本地博客，而不再借助于git窗口
+## hexo5.0
+hexo5.0版本，已经在package.json文件中添加hexo部分功能的脚本命令，在**Visual Studio Code**中打开package.json文件，在script上点击Debug即可运行
+### 配置git bash
+win10系统中**Visual Studio Code**终端默认使用的是power shell，这里介绍将终端默认启动的power shell换成git bash
+#### 修改settings.json文件
+如果你的**Visual Studio Code**不是中文版本，你可以通过在扩展中搜索`Chinese`关键字安装中文语言扩展
+1.依次打开设置——>功能——>终端，找到 terminal.integrated.shell.windows ，打开 在 settings.json 中编辑
+2.将内容修改如下：
+```
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+}
+```
+`C:\\Program Files\\Git\\bin\\bash.exe`修改为自己git bash命令所在路径，保存
+3.打开终端——>新终端，你会看到终端已经换成git bash终端，直接就可以在这里执行git bash命令啦
+#### 终端切换
+直接在git bash终端里输入cmd切换为cmd终端，输入powershell切换为power shell终端，输入shell切换回git bash终端
 # 最后
 本篇文章到此就结束了，有什么问题可以在评论区回复。关于markdown的书写语法，可以自行到网络上查找资料学习
