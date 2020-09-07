@@ -49,9 +49,11 @@ tags: 博客
 ## 在git中输入命令
 右键任意位置选择**git bash here**输入以下命令，注意：只有这里可以是任意位置右键，其余均需要在blog文件夹右键：
 1.`npm install -g cnpm --registry=https://registry.npm.taobao.org`（可选） ——使用淘宝镜像，简言之，就是提高下载速度
-2.`npm install -g hexo` ——全局安装hexo
+2.`npm install -g hexo-cli` ——安装hexo-cli
+注：只需要安装hexo-cli即可，在执行`hexo init blog`和`npm install`的时候，`hexo-cli`是会自动安装hexo到博客的node_modules目录下的。当然，你也可以直接输入命令
+`npm install -g hexo` ——全局安装hexo
 3.`hexo -v` ——检测hexo是否安装成功，出现版本号表明成功安装
-
+***
 找到自己创建的blog文件夹，右键打开选择**git bash here**输入以下命令:
 1.`hexo init` ——初始化hexo，hexo会在blog文件夹中创建需要的文件
 2.`npm install` ——安装npm，npm会根据hexo初始化创建的package.json配置文件中的依赖配置下载安装。
@@ -362,7 +364,7 @@ hexo s 是 hexo server 的缩写，命令效果一致；
 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；
 对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。
 ## hexo new `"新的文章"`
-新建一篇标题为 `新的文章` 的文章。
+新建一篇标题为 新的文章 的文章。此文章路径为 /source/_posts
 ## hexo d
 自动生成网站静态文件，并部署到设定的仓库。
 hexo d 是 hexo deploy 的缩写，命令效果一致。
@@ -379,6 +381,26 @@ hexo d 是 hexo deploy 的缩写，命令效果一致。
 hexo g 是 hexo generate 的缩写，命令效果一致。
 ## hexo g -d
 先执行`hexo g`再执行`hexo d`
+## hexo草稿的简单使用
+草稿文章不被显示在页面上，链接也访问不到
+>**不要处理我的文章**
+如果你不想你的文章被处理，你可以将 Front-Matter 中的 `layout:` 设为 `false` 。
+注：此功能需要主题加以支持，虽然文章不被显示在页面上，但是链接可以访问。
+### 创建草稿 
+`hexo new draft "新的草稿"`
+新建一篇标题为 新的草稿 的草稿。此草稿路径为 /source/_drafts
+当然，有的文章你不想发布，但又不舍得删除，可以将此文章移至草稿目录下。
+### 预览草稿
+```
+//如果你希望强行预览草稿，更改配置文件：
+render_drafts: true
+
+//或者，如下方式启动server：
+$ hexo server --drafts
+```
+### 发布草稿
+`hexo publish "新的草稿"`
+该命令会把 /source/_drafts 下的 新的草稿 文章移到 /source/_posts 下，当然，你也可以手动移动
 # 个人博客备份
 这是一个很有必要的操作。其实你在部署网站后，GitHub仓库中已经有了数据，而且可以下载下来，但是下载下来的文件是经过hexo编译后的html文件，并不是我们书写的md文件
 网上有很多关于备份的方法，这里分享一个用仓库分支实现备份的方法

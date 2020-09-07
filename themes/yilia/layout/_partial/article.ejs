@@ -1,3 +1,4 @@
+<% if (post.layout!='false') { %>
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
   <div class="article-inner">
     <% if (post.link || post.title){ %>
@@ -84,6 +85,7 @@
     </div>
   </div>
 </article>
+<% } %>
 <% if (!index){ %>
   <%- partial('post/nav') %>
 <% } %>
