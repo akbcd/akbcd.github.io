@@ -5,7 +5,15 @@
     <url>/2020/04/08/%E6%AC%A2%E8%BF%8E/</url>
     <content><![CDATA[<p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <a id="more"></a>
-<p>以下内容为博客的操作日志<br>2020年8月23日、2020年8月24日</p>
+<p>以下内容为博客的操作日志<br>2020年9月7日</p>
+<ul>
+<li>yilia主题优化、修改：<ul>
+<li>新增主题对文章 Front-Matter 中的 <code>layout:</code> 设为 <code>false</code> 的支持。 </li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2020年8月23日、2020年8月24日</p>
 <ul>
 <li>hexo5.0较之前版本增加了部分属性，可以对比站点配置文件<ul>
 <li>external_link添加enable属性，升级hexo5.0启动hexo服务会有提示</li>
@@ -645,7 +653,7 @@
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#120;&#x78;&#x78;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#x78;&#x78;&#x78;&#120;&#x78;&#x78;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#x78;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x78;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -660,7 +668,7 @@
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#120;&#x78;&#120;&#x78;&#120;&#120;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#120;&#x78;&#120;&#x78;&#120;&#120;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#x78;&#x78;&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#120;&#x78;&#x78;&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -4463,11 +4471,12 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>在C盘下新建一个文件夹名为<strong>blog</strong>（盘符任意，可以不是c盘、文件夹名任意，最好是英文名），用于存放本地博客文件</p>
 <p>网上有很多用GITHUB+HEXO搭建个人博客，具体可点击<a href="https://liulu1990.github.io/2018/09/02/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo+github如何搭建博客</a></p>
 <h1 id="git准备工作"><a href="#git准备工作" class="headerlink" title="git准备工作"></a>git准备工作</h1><p>当你安装完成<strong>git</strong>软件后，现在开始使用它了</p>
-<h2 id="在git中输入命令"><a href="#在git中输入命令" class="headerlink" title="在git中输入命令"></a>在git中输入命令</h2><p>右键任意位置选择<strong>git bash here</strong>输入以下命令，注意：只有这里可以是任意位置右键，其余均需要在blog文件夹右键：<br>1.<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>（可选） ——使用淘宝镜像，简言之，就是提高下载速度<br>2.<code>npm install -g hexo</code> ——全局安装hexo<br>3.<code>hexo -v</code> ——检测hexo是否安装成功，出现版本号表明成功安装</p>
+<h2 id="在git中输入命令"><a href="#在git中输入命令" class="headerlink" title="在git中输入命令"></a>在git中输入命令</h2><p>右键任意位置选择<strong>git bash here</strong>输入以下命令，注意：只有这里可以是任意位置右键，其余均需要在blog文件夹右键：<br>1.<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>（可选） ——使用淘宝镜像，简言之，就是提高下载速度<br>2.<code>npm install -g hexo-cli</code> ——安装hexo-cli<br>注：只需要安装hexo-cli即可，在执行<code>hexo init blog</code>和<code>npm install</code>的时候，<code>hexo-cli</code>是会自动安装hexo到博客的node_modules目录下的。当然，你也可以直接输入命令<br><code>npm install -g hexo</code> ——全局安装hexo<br>3.<code>hexo -v</code> ——检测hexo是否安装成功，出现版本号表明成功安装</p>
+<hr>
 <p>找到自己创建的blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令:<br>1.<code>hexo init</code> ——初始化hexo，hexo会在blog文件夹中创建需要的文件<br>2.<code>npm install</code> ——安装npm，npm会根据hexo初始化创建的package.json配置文件中的依赖配置下载安装。<br>3.<code>hexo server</code> ——简写为<code>hexo s</code>，启动hexo本地服务，在浏览器端输入localhost:4000看一下效果<br>4.ctrl+c 结束本地服务，git窗口中有提示<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h1 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h1><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，参看 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h2 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h2><p>登录github：<a href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private</p>
-<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#x6f;&#117;&#114;&#x5f;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#x79;&#111;&#117;&#x72;&#x65;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#114;&#x5f;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#x79;&#111;&#117;&#x72;&#x65;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
+<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#111;&#x75;&#114;&#95;&#101;&#109;&#x61;&#x69;&#108;&#64;&#121;&#x6f;&#117;&#x72;&#x65;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#121;&#111;&#x75;&#114;&#95;&#101;&#109;&#x61;&#x69;&#108;&#64;&#121;&#x6f;&#117;&#x72;&#x65;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public&#x2F;private rsa key pair.</span><br><span class="line">Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;Admin&#x2F;.ssh&#x2F;id_rsa):</span><br></pre></td></tr></table></figure>
 <p>直接点回车，说明会在默认文件id_rsa上生成ssh key。 </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br></pre></td></tr></table></figure>
@@ -4575,7 +4584,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 </ul>
 <h1 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h1><p>用编译软件打开blog文件夹，在根目录中找到_config.yml<br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname&#x2F;yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#111;&#x75;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#121;&#111;&#x75;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#x75;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#111;&#x75;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h1 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h1><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——部署网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h1 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h1><p>好的博客当然需要一个好的主题来衬托</p>
@@ -4590,11 +4599,18 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <h2 id="主题上传到云端"><a href="#主题上传到云端" class="headerlink" title="主题上传到云端"></a>主题上传到云端</h2><p>1.没问题的话，按照yilia的官方指导教程，我们顺便修改一下站点配置文件（即根目录下的_config.yml）里面的语言（也就是整个博客的语言）<br>将language后面的内容修改为zh-Hans。注：语言的修改，需要主题的支持<br>注意，冒号之后必有空格哦！<br><img src="http://wx2.sinaimg.cn/mw690/0060lm7Tly1fvkqpht79vj305l05b0sn.jpg"><br>2.将新主题发布到自己的网站上，操作如下：<br>blog文件夹，右键<strong>git bash here</strong>输入<br>1).<code>hexo g</code> ——生成静态文件<br>2).<code>hexo d</code> ——部署网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h1 id="hexo最常用的几个命令"><a href="#hexo最常用的几个命令" class="headerlink" title="hexo最常用的几个命令"></a>hexo最常用的几个命令</h1><p>hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h2 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h2><p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/">http://localhost:4000/</a><br>hexo s 是 hexo server 的缩写，命令效果一致；<br>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；<br>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</p>
-<h2 id="hexo-new-quot-新的文章-quot"><a href="#hexo-new-quot-新的文章-quot" class="headerlink" title="hexo new &quot;新的文章&quot;"></a>hexo new <code>&quot;新的文章&quot;</code></h2><p>新建一篇标题为 <code>新的文章</code> 的文章。</p>
+<h2 id="hexo-new-quot-新的文章-quot"><a href="#hexo-new-quot-新的文章-quot" class="headerlink" title="hexo new &quot;新的文章&quot;"></a>hexo new <code>&quot;新的文章&quot;</code></h2><p>新建一篇标题为 新的文章 的文章。此文章路径为 /source/_posts</p>
 <h2 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h2><p>自动生成网站静态文件，并部署到设定的仓库。<br>hexo d 是 hexo deploy 的缩写，命令效果一致。<br>输入此命令，如果出现<code>ERROR Deployer not found: git</code>提示，请安装hexo-deployer-git插件<br>输入命令<code>npm install hexo-deployer-git --save</code>安装</p>
 <h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><p>清除缓存文件 db.json 和已生成的静态文件 public 。<br>网站显示异常时可以执行这条命令试试。比如：<br>修改了主题样式，但是启动服务后样式没有改变；修改了图片内容，但是图片没有变。</p>
 <h2 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h2><p>生成网站静态文件到默认设置的 public 文件夹。<br>便于查看网站生成的静态文件或者手动部署网站；<br>如果使用自动部署，不需要先执行该命令；<br>hexo g 是 hexo generate 的缩写，命令效果一致。</p>
 <h2 id="hexo-g-d"><a href="#hexo-g-d" class="headerlink" title="hexo g -d"></a>hexo g -d</h2><p>先执行<code>hexo g</code>再执行<code>hexo d</code></p>
+<h2 id="hexo草稿的简单使用"><a href="#hexo草稿的简单使用" class="headerlink" title="hexo草稿的简单使用"></a>hexo草稿的简单使用</h2><p>草稿文章不被显示在页面上，链接也访问不到</p>
+<blockquote>
+<p><strong>不要处理我的文章</strong><br>如果你不想你的文章被处理，你可以将 Front-Matter 中的 <code>layout:</code> 设为 <code>false</code> 。<br>注：此功能需要主题加以支持，虽然文章不被显示在页面上，但是链接可以访问。</p>
+</blockquote>
+<h3 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h3><p><code>hexo new draft &quot;新的草稿&quot;</code><br>新建一篇标题为 新的草稿 的草稿。此草稿路径为 /source/_drafts<br>当然，有的文章你不想发布，但又不舍得删除，可以将此文章移至草稿目录下。</p>
+<h3 id="预览草稿"><a href="#预览草稿" class="headerlink" title="预览草稿"></a>预览草稿</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;如果你希望强行预览草稿，更改配置文件：</span><br><span class="line">render_drafts: true</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;或者，如下方式启动server：</span><br><span class="line">$ hexo server --drafts</span><br></pre></td></tr></table></figure>
+<h3 id="发布草稿"><a href="#发布草稿" class="headerlink" title="发布草稿"></a>发布草稿</h3><p><code>hexo publish &quot;新的草稿&quot;</code><br>该命令会把 /source/_drafts 下的 新的草稿 文章移到 /source/_posts 下，当然，你也可以手动移动</p>
 <h1 id="个人博客备份"><a href="#个人博客备份" class="headerlink" title="个人博客备份"></a>个人博客备份</h1><p>这是一个很有必要的操作。其实你在部署网站后，GitHub仓库中已经有了数据，而且可以下载下来，但是下载下来的文件是经过hexo编译后的html文件，并不是我们书写的md文件<br>网上有很多关于备份的方法，这里分享一个用仓库分支实现备份的方法</p>
 <h2 id="hexo博客备份到GitHub"><a href="#hexo博客备份到GitHub" class="headerlink" title="hexo博客备份到GitHub"></a>hexo博客备份到GitHub</h2><p><strong>前提：</strong>在GitHub上已经发布过文章<br><strong>思路：</strong>使用Hexo在github搭建的博客，博客作为一个单独的GitHub仓库存在，但是这个仓库只有生成的静态网页文件，并没有md源文件，如果要换电脑或者重装系统后，就比较麻烦了，利用仓库分支，新建一个hexo分支(分支可以自定义名称)，master分支保存静态网页，hexo分支保存源文件，这样就实现了备份源代码到GitHub仓库。</p>
 <h2 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h2><p>1.登录到自己的GitHub网站，网站：<a href="https://github.com/">https://github.com/</a><br>2.找到自己创建的仓库，点击进入到代码页面,选择<strong>Branch:master</strong>(图片红色标注部分)<br><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fz73mc5zesj30y90e9tau.jpg"><br>在<strong>Find or creat a branch…</strong> 搜索框中输入<strong>hexo</strong>，选择下面的<strong>Creat branch: hexo</strong>，创建hexo分支。到此分支创建完成<br>3.点击<strong>2 branches</strong>，进入分支管理页面,将<strong>hexo</strong>设为默认分支，具体怎么设，自己研究(其实很简单，就不说了)。到此，将hexo设为默认分支完成。<br><img src="http://wx2.sinaimg.cn/mw690/0060lm7Tly1fz73yd54o0j30yc0atabh.jpg"></p>
@@ -4635,7 +4651,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <h3 id="配置并发布文章"><a href="#配置并发布文章" class="headerlink" title="配置并发布文章"></a>配置并发布文章</h3><p>git输入<br><code>npm install</code> ——在<code>git clone</code>项目的时候，项目文件中并没有<code>node_modules</code>文件夹，项目的依赖文件可能很大。直接执行，<code>npm</code>会根据<code>package.json</code>配置文件中的依赖配置下载安装。</p>
 <h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><p>1.<code>git add .</code> ——将文件的修改，文件的新建，添加到暂存区。详解：<strong>git空格add空格.</strong> ，切记不要打错，否则命令就错了<br>2.<code>git commit -m&quot;...&quot;</code> ——提交修改，<code>...</code>为对修改的描述。详解：<strong>git空格commit空格-m”…”</strong><br>3.<code>git push origin hexo</code> ——将源文件提交到hexo分支<br>期间若出现提示Are you sure you want to continue connecting，请输入yes<br>4.<code>hexo g -d</code><br>补充：<br>执行到<code>git commit -m&quot;...&quot;</code>可能会有此提示</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*** Please tell me who you are.</span><br><span class="line"></span><br><span class="line">Run</span><br><span class="line"></span><br><span class="line">  git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">  git config --global user.name &quot;Your Name&quot;</span><br><span class="line"></span><br><span class="line">to set your account&#39;s default identity.</span><br></pre></td></tr></table></figure>
-<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#x6f;&#117;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#117;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
+<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#x6f;&#117;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#121;&#x6f;&#117;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
 <h2 id="旧电脑"><a href="#旧电脑" class="headerlink" title="旧电脑"></a>旧电脑</h2><h3 id="云端博客分支同步到本地"><a href="#云端博客分支同步到本地" class="headerlink" title="云端博客分支同步到本地"></a>云端博客分支同步到本地</h3><p>文件夹<strong>yourname.github.io</strong>右键<strong>git bash here</strong><br>输入命令<br><code>git pull origin hexo --allow-unrelated-histories</code> ——分支合并<br>输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）</p>
 <h1 id="Visual-Studio-Code运行git-bash命令"><a href="#Visual-Studio-Code运行git-bash命令" class="headerlink" title="Visual Studio Code运行git bash命令"></a>Visual Studio Code运行git bash命令</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正如大家所知道的，<strong>Visual Studio Code</strong>功能很强大，这里简单介绍一下直接通过<strong>Visual Studio Code</strong>管理本地博客，而不再借助于git窗口</p>
 <h2 id="hexo5-0"><a href="#hexo5-0" class="headerlink" title="hexo5.0"></a>hexo5.0</h2><p>hexo5.0版本，已经在package.json文件中添加hexo部分功能的脚本命令，在<strong>Visual Studio Code</strong>中打开package.json文件，在script上点击Debug即可运行</p>
@@ -4754,6 +4770,79 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <h1 id="波多野結衣番号作品封面"><a href="#波多野結衣番号作品封面" class="headerlink" title="波多野結衣番号作品封面"></a>波多野結衣番号作品封面</h1><h2 id="人物简介（网络收集）-4"><a href="#人物简介（网络收集）-4" class="headerlink" title="人物简介（网络收集）"></a>人物简介（网络收集）</h2><p>波多野结衣（日文名：波多野結衣，英文名：Yui Hatano），别名：はたの ゆい ，女，1988年5月24日出生于日本京都府，著名日本女演员、AV女优。<br>2008年，波多野结衣开始从事AV出演。<br><strong>以下内容为：波多野結衣番号作品封面（2部作品）</strong></p>
 <h2 id="番号-6"><a href="#番号-6" class="headerlink" title="番号"></a>番号</h2><h3 id="2015年-4"><a href="#2015年-4" class="headerlink" title="2015年"></a>2015年</h3><h4 id="091215-970"><a href="#091215-970" class="headerlink" title="091215-970"></a>091215-970</h4><p><img src="./%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3/091215-970.webp" alt="091215-970"><br>影片时间：01:02:01</p>
 <h4 id="HEYZO-0999"><a href="#HEYZO-0999" class="headerlink" title="HEYZO-0999"></a>HEYZO-0999</h4><p><img src="./%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3/HEYZO-0999.webp" alt="HEYZO-0999"><br>影片时间：00:56:32</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>番号作品封面-2</title>
+    <url>/2018/09/21/%E7%95%AA%E5%8F%B7%E4%BD%9C%E5%93%81%E5%B0%81%E9%9D%A2-2/</url>
+    <content><![CDATA[<p>此内容被密码保护，请输入密码访问<br>密码保护功能基于javascript实现</p>
+<a id="more"></a>
+<p>小野寺梨纱步兵作品</p>
+<h1 id="小野寺梨紗步兵作品"><a href="#小野寺梨紗步兵作品" class="headerlink" title="小野寺梨紗步兵作品"></a>小野寺梨紗步兵作品</h1><h2 id="人物简介"><a href="#人物简介" class="headerlink" title="人物简介"></a>人物简介</h2><h3 id="heyzo"><a href="#heyzo" class="headerlink" title="heyzo"></a>heyzo</h3><p>小野寺梨紗<br><strong>名前</strong>： 小野寺梨紗 (おのでらりさ)<br><strong>生年月日</strong>： 1997-01-25<br><strong>身長</strong>： 163<br><strong>スリーサイズ</strong>： B:82　W:58　H:85<br><strong>カップサイズ</strong>： C<br><strong>血液型</strong>： B<br><strong>出身地</strong>： 東京都</p>
+<h3 id="维基百科"><a href="#维基百科" class="headerlink" title="维基百科"></a>维基百科</h3><p>小野寺梨纱(1997年1月25日-)，日本MNR株式会社专属av女优，于2015年6月出道，最初属S1。<br>2015年11月，小野寺梨纱加入日本的色情制作公司S1。2016年5月21日，她在浅草的摇滚座（日语：ロック座）剧场中首次脱衣亮相。<br>小野寺梨纱擅长日本舞。<br><strong>以下内容为：小野寺梨紗部分步兵作品</strong></p>
+<h2 id="1pondo"><a href="#1pondo" class="headerlink" title="1pondo"></a>1pondo</h2><p>1pondo: <a href="https://www.1pondo.tv/">https://www.1pondo.tv/</a></p>
+<h3 id="080820-001"><a href="#080820-001" class="headerlink" title="080820_001"></a>080820_001</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/1pondo/080820_001.webp" alt="080820_001"></p>
+<h4 id="チンポを欲しがる女-～拘束潮吹き連続中出し～"><a href="#チンポを欲しがる女-～拘束潮吹き連続中出し～" class="headerlink" title="チンポを欲しがる女 ～拘束潮吹き連続中出し～"></a>チンポを欲しがる女 ～拘束潮吹き連続中出し～</h4><p>清楚な顔立ちの性欲モンスター小野寺梨紗ちゃんが、一本道に初登場！乳輪や乳首は小さくて、形の綺麗なおっぱいとお尻。縛りプレイや足を上げながら奥に挿入し、奥に当たるセックスがお気に入りという梨紗ちゃんを拘束連続イカせ潮吹き玩具責め！そして、嬉しそうに大人数の男たちのチンポを嗅ぎ味わいイカせまくる連続中出し大乱交！チンポを欲しがりすぎる性豪女優・小野寺梨紗の乱れっぷりと画面いっぱいに飛沫が飛び散る見事な大量潮吹きは必見！お見逃しなく～！</p>
+<hr>
+<p><strong>配信日</strong>:2020/08/08<br><strong>出演</strong>:小野寺梨紗<br><strong>再生時間</strong>:01:00:39<br><strong>タグ</strong>:AV女優 淫語 美脚 縛り 痴女 口内発射 ごっくん美尻 SM スレンダー 美乳 ハード系 手コキ ぶっかけ 乱交 潮吹き 中出し 生ハメ・生姦 バイブ クンニ フェラ</p>
+<h2 id="caribbeancom"><a href="#caribbeancom" class="headerlink" title="caribbeancom"></a>caribbeancom</h2><p>caribbeancom: <a href="https://www.caribbeancom.com/">https://www.caribbeancom.com/</a></p>
+<h3 id="100519-001"><a href="#100519-001" class="headerlink" title="100519-001"></a>100519-001</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/100519-001.webp" alt="100519-001"></p>
+<h4 id="奥まで突いて！グチャグチャにして！"><a href="#奥まで突いて！グチャグチャにして！" class="headerlink" title="奥まで突いて！グチャグチャにして！"></a>奥まで突いて！グチャグチャにして！</h4><p>3度の飯よりエッチが大好き、エロカワ美女の小野寺梨紗ちゃんがまたまた魅せてくれますよー！ディープキスから流れるように喉奥までおちんちんを咥え、バキューム・ディープスロート！隠語を発しながら、腰を振り高速ピストンからの大量潮吹き！奥まで突いて！グチャグチャにして！といいながら何度も絶頂を迎え、男2人を相手にいつも通りの変態っぷりを魅せてくれます。大絶叫しながらの連続中出しは最高です。</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2019/10/05<br><strong>再生時間</strong> 01:05:12<br><strong>タグ</strong><br>オリジナル動画 痴女 美乳 中出し 潮吹き 乱交 クンニ スレンダー 口内発射 美脚 美尻 3P</p>
+<h3 id="070319-953"><a href="#070319-953" class="headerlink" title="070319-953"></a>070319-953</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/070319-953.webp" alt="070319-953"></p>
+<h4 id="THE-未公開-～喉オナホ6～"><a href="#THE-未公開-～喉オナホ6～" class="headerlink" title="THE 未公開 ～喉オナホ6～"></a>THE 未公開 ～喉オナホ6～</h4><p>可愛いのにど変態！我らが小野寺梨紗ちゃんの未公開動画を発掘！その名も、喉オナホ。うえっとものすごい嗚咽を繰り返しながらもイラマチオがんばっちゃいます。それだけじゃないのが梨紗ちゃん。口内に射精された精子を舌の上で堪能し、ごっくんっと変態加減が炸裂！見応え十分なこの作品をお見逃しなく！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2019/07/03<br><strong>再生時間</strong> 00:19:31<br><strong>シリーズ</strong> THE 未公開<br><strong>タグ</strong><br>オリジナル動画 痴女 美乳 ごっくん スレンダー 口内発射 美脚 美尻 イラマチオ</p>
+<h3 id="042019-900"><a href="#042019-900" class="headerlink" title="042019-900"></a>042019-900</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/042019-900.webp" alt="042019-900"></p>
+<h4 id="恍惚-～連続中出しされたザーメンとハメ潮を舐めまわす女～"><a href="#恍惚-～連続中出しされたザーメンとハメ潮を舐めまわす女～" class="headerlink" title="恍惚 ～連続中出しされたザーメンとハメ潮を舐めまわす女～"></a>恍惚 ～連続中出しされたザーメンとハメ潮を舐めまわす女～</h4><p>可愛いのにど変態。汗とよだれでべっちょべちょになりながら獣のようなセックスを繰り広げる小野寺梨紗が連続中出しに挑戦！もうのっけからエンジン全開で欲情しまくってます。おちんちんを欲しがり、念願の挿入になると乱れ狂い、中出しされた後は精子と潮吹きの汁のついたベッドを舐め回す変態っぷり。それなのに可愛くて可憐な小野寺梨紗ちゃんに釘付け！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2019/04/20<br><strong>再生時間</strong> 00:51:52<br><strong>シリーズ</strong> 恍惚<br><strong>タグ</strong><br>オリジナル動画 痴女 美乳 中出し 潮吹き ごっくん クンニ スレンダー 口内発射 淫語 微乳 イラマチオ</p>
+<h3 id="101218-771"><a href="#101218-771" class="headerlink" title="101218-771"></a>101218-771</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/101218-771.webp" alt="101218-771"></p>
+<h4 id="女熱大陸-File-067"><a href="#女熱大陸-File-067" class="headerlink" title="女熱大陸 File.067"></a>女熱大陸 File.067</h4><p>3度の飯よりエッチが大好き、エロカワ美女の小野寺梨紗ちゃんが大人気エロドキュメンタリー「女熱大陸」に登場です。子供の頃からオナニーが大好きで止まらなかったという梨紗ちゃん。撮影前からエロスイッチが入ってる彼女は、二人の男の激しい攻めに身を任せて悶えまくり、濡れまくったアソコに二本の肉棒を休むことなく挿入されて絶頂を感じで声をあげて喘ぎつづけます。終わった後の恍惚の表情もとても色っぽく、全身全霊のセックスを堪能したことが伺えます。本当にエロいです。</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2018/10/12<br><strong>再生時間</strong> 00:58:57<br><strong>シリーズ</strong> 女熱大陸<br><strong>タグ</strong><br>オリジナル動画 美乳 中出し バイブ アナル 美脚 美尻 3P</p>
+<h3 id="092518-760"><a href="#092518-760" class="headerlink" title="092518-760"></a>092518-760</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/092518-760.webp" alt="092518-760"></p>
+<h4 id="淫乱女上司-～清楚美人なのに超絶変態～"><a href="#淫乱女上司-～清楚美人なのに超絶変態～" class="headerlink" title="淫乱女上司 ～清楚美人なのに超絶変態～"></a>淫乱女上司 ～清楚美人なのに超絶変態～</h4><p>小野寺梨紗ちゃんが痴女プレイを炸裂！オフィスで、男性部下にこれでもかというほどの痴女っぷりを発揮し「子宮の奥までついて！」と叫びながら自ら腰を振りまくる淫乱女上司！可愛いのにこんなに変態・・・！こんな人が上司だったら、お仕置きして欲しさに毎日わざとミスを連発してしまいますね。見応え十分、満足度100％、オススメの一本です！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2018/09/25<br><strong>再生時間</strong> 00:52:22<br><strong>タグ</strong><br>オリジナル動画 痴女 美乳 中出し ボンテージ 手コキ クンニ スレンダー 淫語 美脚 美尻 OL</p>
+<h3 id="082418-737"><a href="#082418-737" class="headerlink" title="082418-737"></a>082418-737</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/082418-737.webp" alt="082418-737"></p>
+<h4 id="禁欲10デイズ！ヤリたい衝動MAXセックス2"><a href="#禁欲10デイズ！ヤリたい衝動MAXセックス2" class="headerlink" title="禁欲10デイズ！ヤリたい衝動MAXセックス2"></a>禁欲10デイズ！ヤリたい衝動MAXセックス2</h4><p>エロカワ性欲モンスター小野寺梨紗ちゃんの性欲の限界を検証する、大興奮の試みを企画してみました。 撮影前はオナニーを控えて本番の性欲を最高に高めてセックスを楽しむという梨紗ちゃん。オナニーで性欲を高めると、やっと本物の男の身体を与えてもらった梨紗ちゃんですが、挿入前に男を取り上げられてしまい。10日間の禁欲を言い渡されてしまいます。かつてない欲求不満になった梨紗ちゃんを出迎える二人の男の上で、イって、イって、イキまくり。溢れ出し、止まる所を知らない女の性欲を納めたこちらの作品、お見逃しなく！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2018/08/24<br><strong>再生時間</strong> 01:24:39<br><strong>タグ</strong><br>オリジナル動画 痴女 美乳 中出し ボンテージ オナニー バイブ ごっくん 手コキ クンニ 美脚 美尻 3P</p>
+<h3 id="091917-502"><a href="#091917-502" class="headerlink" title="091917-502"></a>091917-502</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/091917-502.webp" alt="091917-502"></p>
+<h4 id="何度イっても終わらない！-～ケツ穴にも挿れてください～"><a href="#何度イっても終わらない！-～ケツ穴にも挿れてください～" class="headerlink" title="何度イっても終わらない！ ～ケツ穴にも挿れてください～"></a>何度イっても終わらない！ ～ケツ穴にも挿れてください～</h4><p>「ほしい、欲しいわぁ～～」と叫びながら男性の顔面をケツ穴に押し付ける梨紗。プルプル痙攣しながらも獣のように男性に股がりグラインド騎乗位をするとその高速回転に我慢できずに中出し。梨紗がぐったりしていると、後ろから新たな男性が登場して梨紗のオマンコとケツ穴を頬張りまくり！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2017/09/19<br><strong>再生時間</strong> 01:03:06<br><strong>シリーズ</strong> 何度イっても終わらない！<br><strong>タグ</strong><br>オリジナル動画 美乳 中出し 潮吹き バイブ アナル クンニ 美脚 美尻</p>
+<h3 id="050517-424"><a href="#050517-424" class="headerlink" title="050517-424"></a>050517-424</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/050517-424.webp" alt="050517-424"></p>
+<h4 id="女教師ザーメン物語"><a href="#女教師ザーメン物語" class="headerlink" title="女教師ザーメン物語"></a>女教師ザーメン物語</h4><p>どすけべ女教師の小野寺梨紗先生。ザーメンがとっても大好きな梨紗先生はザーメン欲しさに上目遣いでワイシャツのボタンをゆっくり外して生徒たちを誘惑。「毎日オナニーばっかりしてザーメンを無駄使いしちゃだめだよ」と言い放ちウブな教え子のザーメンをトロロ芋の様においしくいただいちゃいます！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2017/05/05<br><strong>再生時間</strong> 00:59:13<br><strong>タグ</strong><br>オリジナル動画 美乳 中出し 女教師 クンニ ぶっかけ</p>
+<h3 id="031617-394"><a href="#031617-394" class="headerlink" title="031617-394"></a>031617-394</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/031617-394.webp" alt="031617-394"></p>
+<h4 id="アナル図鑑-小野寺梨紗"><a href="#アナル図鑑-小野寺梨紗" class="headerlink" title="アナル図鑑 小野寺梨紗"></a>アナル図鑑 小野寺梨紗</h4><p>とびっきりキュートな小野寺梨紗ちゃんがなんとアナル図鑑に登場です。アナルを触って感じはじめる梨紗ちゃん。お尻でもいけちゃう、こんなにエロい娘だったのかとびっくりです。最後は潮を吹きながらお尻で感じて昇天です。これは見応えたっぷり！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2017/03/16<br><strong>再生時間</strong> 00:22:00<br><strong>シリーズ</strong> アナル図鑑<br><strong>タグ</strong><br>オリジナル動画 美乳 潮吹き オナニー アナル 美脚 美尻</p>
+<h3 id="030317-385"><a href="#030317-385" class="headerlink" title="030317-385"></a>030317-385</h3><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/caribbeancom/030317-385.webp" alt="030317-385"></p>
+<h4 id="パシオン・アモローサ-～愛する情熱-5～"><a href="#パシオン・アモローサ-～愛する情熱-5～" class="headerlink" title="パシオン・アモローサ ～愛する情熱 5～"></a>パシオン・アモローサ ～愛する情熱 5～</h4><p>清楚系の表情とは裏腹に朝から晩までオナニーしまくる天然美女の小野寺梨紗ちゃんが初登場！エッチが大好きな理沙ちゃんは彼氏が会社に行っている間は一日中オナニー。彼氏が疲れた表情で帰宅してもお構い無しでセックスのオネダリ。オナニーをいくらしても即充電される性欲がチンポを見た瞬間、愛液が溢れ出し涎をダラダラ垂れ流しディープスロート！彼氏のチンポがビショ濡れオマンコに挿入されると同時に即イキ絶頂の連発です！</p>
+<hr>
+<p><strong>出演</strong> 小野寺梨紗<br><strong>配信日</strong> 2017/03/03<br><strong>再生時間</strong> 01:01:59<br><strong>シリーズ</strong> パシオン・アモローサ ～愛する情熱～<br><strong>タグ</strong><br>オリジナル動画 美乳 中出し 潮吹き オナニー バイブ 69 クンニ 初裏 美脚 美尻</p>
+<h2 id="heyzo-1"><a href="#heyzo-1" class="headerlink" title="heyzo"></a>heyzo</h2><p>heyzo: <a href="https://www.heyzo.com/">https://www.heyzo.com/</a></p>
+<h3 id="heyzo-2172"><a href="#heyzo-2172" class="headerlink" title="heyzo-2172"></a>heyzo-2172</h3><h4 id="性感マッサージで快感！～小野寺梨紗の場合～-小野寺梨紗"><a href="#性感マッサージで快感！～小野寺梨紗の場合～-小野寺梨紗" class="headerlink" title="性感マッサージで快感！～小野寺梨紗の場合～ - 小野寺梨紗"></a>性感マッサージで快感！～小野寺梨紗の場合～ - 小野寺梨紗</h4><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/heyzo/heyzo-2172.webp" alt="heyzo-2172"><br><strong>公開日</strong>    2020-01-09<br><strong>出演</strong>    小野寺梨紗<br><strong>女優タイプ</strong>    AV女優<br><strong>タグキーワード</strong><br>フェラ抜き 口内射精 手コキ 指マン ローション マッサージ アナル舐め 透けパンツ<br><strong>時間</strong>    00:24:03</p>
+<h3 id="heyzo-1934"><a href="#heyzo-1934" class="headerlink" title="heyzo-1934"></a>heyzo-1934</h3><h4 id="こってり濃厚激SEX-小野寺梨紗"><a href="#こってり濃厚激SEX-小野寺梨紗" class="headerlink" title="こってり濃厚激SEX! - 小野寺梨紗"></a>こってり濃厚激SEX! - 小野寺梨紗</h4><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/heyzo/heyzo-1934.webp" alt="heyzo-1934"><br><strong>公開日</strong>    2019-02-23<br><strong>出演</strong>    小野寺梨紗<br><strong>女優タイプ</strong>    AV女優 色白<br><strong>タグキーワード</strong><br>３P クンニ 潮吹き フェラ抜き 69 騎乗位 中出し 淫語 バック 手コキ 指マン 顔面騎乗 清楚系</p>
+<hr>
+<p>黒髪から茶髪にして大人っぽい雰囲気に変わったエロかわ美少女・小野寺梨紗ちゃん。清楚な雰囲気とは裏腹にエッチに大胆な梨紗ちゃんは、激しいディープキスからチンポを喉奥までガポガポ咥えて濃厚フェラ抜き。男の顔の上に跨り自分でおっぱいを鷲掴みしながら激しく感じたかと思えば、突き出されたもう一本のチンポを必死でバキュームフェラ。欲求を押さえられず自ら背面騎乗位でチンポを突っ込み隠語を発しながら腰を激しく振る。結合部が丸見え状態で高速ピストンされてハメ潮吹き絶頂！「もっと…奥深く…」不埒な腰使いで肉棒に喰らい付く絶頂への飽くなき渇望！何度も訪れる深いオーガズムが美少女の本能的衝動を刺激し、男2人がかりでも手に負えない淫乱っぷりを発揮してくれます。激しいピストンに大発狂しながらの連続中だしは必見です。</p>
+<hr>
+<p><strong>時間</strong>    01:05:12</p>
+<h3 id="heyzo-1742"><a href="#heyzo-1742" class="headerlink" title="heyzo-1742"></a>heyzo-1742</h3><h4 id="続々生中～乱れまくりの美少女～-小野寺梨紗"><a href="#続々生中～乱れまくりの美少女～-小野寺梨紗" class="headerlink" title="続々生中～乱れまくりの美少女～ - 小野寺梨紗"></a>続々生中～乱れまくりの美少女～ - 小野寺梨紗</h4><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/heyzo/heyzo-1742.webp" alt="heyzo-1742"><br><strong>公開日</strong>    2018-05-26<br><strong>出演</strong>    小野寺梨紗<br><strong>シリーズ</strong>    続々生中<br><strong>女優タイプ</strong>    AV女優 色白<br><strong>タグキーワード</strong><br>指マン バック クンニ 中出し 手コキ 淫語 騎乗位 淫乱</p>
+<hr>
+<p>HEYZO屈指の人気シリーズ「続々生中」に、人間絶叫マシーンこと小野寺梨紗ちゃんが参戦です！可愛い顔して淫乱という、AV女優になるために生まれてきたような梨紗ちゃん、序盤からフルスロットルでエンジン全開！絡み前からすでに欲情している梨紗ちゃん、男優が登場するや否やカラダに貪りつきます。とにかくセックスが大好きな梨紗ちゃんはチ●ポを挿れてもらうためならなんでもしちゃいます。汗まみれ汁まみれになって悶え叫ぶ姿はもは淫獣のそれ！念願のおチ●ポをズボズボされて乱れ狂いまくりの梨紗ちゃんでしたー！</p>
+<hr>
+<p><strong>時間</strong>    00:51:52</p>
+<h3 id="heyzo-1632"><a href="#heyzo-1632" class="headerlink" title="heyzo-1632"></a>heyzo-1632</h3><h4 id="美痴女～見た目清楚なエロビッチ～-小野寺梨紗"><a href="#美痴女～見た目清楚なエロビッチ～-小野寺梨紗" class="headerlink" title="美痴女～見た目清楚なエロビッチ～ - 小野寺梨紗"></a>美痴女～見た目清楚なエロビッチ～ - 小野寺梨紗</h4><p><img src="./%E5%B0%8F%E9%87%8E%E5%AF%BA%E6%A2%A8%E7%B4%97/heyzo/heyzo-1632.webp" alt="heyzo-1632"><br><strong>公開日</strong>    2017-12-24<br><strong>出演</strong>    小野寺梨紗<br><strong>シリーズ</strong>    美痴女<br><strong>女優タイプ</strong>    美乳 AV女優 美脚<br><strong>タグキーワード</strong><br>騎乗位 バック 中出し 淫語 アナル クンニ 手コキ 痴女 OL ガーターベルト オフィス 赤下着</p>
+<hr>
+<p>大人気名女優、小野寺梨紗が、ついにＨＥＹＺＯの人気シリーズ「美痴女」に満を持して登場。今回の美痴女、はっきりいって名作です。小野寺梨紗ちゃんの美貌もさることながら、美痴女のコンセプトにピタっとはまった最強の痴女っぷり。オフィスで、男性部下にこれでもかというほどの痴女っぷりを発揮する小野寺梨紗ちゃんの痴態がこれでもかというほど収録されています。「子宮の奥までついてえぇ！」と叫びながら自ら腰を振りまくる淫乱女上司、正直こんな人が上司だったら、お仕置きしてほしさに毎日わざとミスを連発してしまいそうです。ドＭな人にもそうでない人にも特にオススメの一本です！</p>
+<hr>
+<p><strong>時間</strong>    00:52:22</p>
 ]]></content>
   </entry>
   <entry>
