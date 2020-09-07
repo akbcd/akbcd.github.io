@@ -70,7 +70,11 @@
       tags: true
 </pre>
           <li class="search-li" q-repeat="items" q-show="isShow">
+            <%if(theme.open_in_new){%>
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon" target="_blank"></i><span q-text="title"></span></a>
+            <%}else{%>
             <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <%}%>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>

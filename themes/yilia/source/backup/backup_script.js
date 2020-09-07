@@ -1,12 +1,18 @@
 /*
+open_in_new
+新窗口打开链接
+*/
+if (yiliaConfig.open_in_new) $('.article-header a,.article-entry a,.article-more-link a,.archive-article-header h1 a,.archive-article-header .article-meta a').attr('target','_blank')
+
+/*
 progress bar init
 mobile底部进度条
 */
 const progressElement = window.document.querySelector('.progress-bar');
 if (progressElement) {
-    new ScrollProgress((x, y) => {
-        progressElement.style.width = y * 100 + '%';
-    });
+  new ScrollProgress((x, y) => {
+      progressElement.style.width = y * 100 + '%';
+  });
 }
 
 /*
