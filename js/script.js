@@ -1,4 +1,6 @@
-"use strict";var progressElement=window.document.querySelector(".progress-bar");if(progressElement){new ScrollProgress(function(x,y){progressElement.style.width=y*100+"%"
+/* YUI compressor */
+"use strict";if(yiliaConfig.open_in_new){$(".article-header a,.article-entry a,.article-more-link a,.archive-article-header h1 a,.archive-article-header .article-meta a").attr("target","_blank")
+}var progressElement=window.document.querySelector(".progress-bar");if(progressElement){new ScrollProgress(function(x,y){progressElement.style.width=y*100+"%"
 })}$(".toc-child").hide();$(".toc-link").on("click",function(e){e.preventDefault();
 toToc(decodeURI($(this).attr("href")))});function toToc(name){var scrollPositionTop=$(name).position().top+50;
 $("#container").animate({scrollTop:scrollPositionTop},1000);var scrollOffset=$(name).offset();

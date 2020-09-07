@@ -42,6 +42,22 @@
   
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
+  <script>
+    var yiliaConfig = {
+      mathjax: false,
+      isHome: false,
+      isPost: false,
+      isArchive: false,
+      isTag: true,
+      isCategory: false,
+      open_in_new: true,
+      toc_hide_index: true,
+      root: "/",
+      innerArchive: true,
+      showTags: false,
+      anchor: true
+    }
+  </script>
 <meta name="generator" content="Hexo 5.1.1"></head>
 <body>
   
@@ -473,23 +489,7 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    <script>
-	var yiliaConfig = {
-		mathjax: false,
-		isHome: false,
-		isPost: false,
-		isArchive: false,
-		isTag: true,
-		isCategory: false,
-		open_in_new: false,
-		toc_hide_index: true,
-		root: "/",
-		innerArchive: true,
-		showTags: false,
-		anchor: true
-	}
-</script>
-
+    
 <script>
 /* jsdelivr */
 var name = 'akbcd';
@@ -614,11 +614,11 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">博客</a>
+                <a style="cursor:pointer" class="js-tag color1">vm虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color1">vm虚拟机</a>
+                <a style="cursor:pointer" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,6 +642,10 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">html</a>
               </li>
              
@@ -650,15 +654,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">游戏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,6 +663,10 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
              
               <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color3">文献</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">游戏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,7 +718,9 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
       tags: true
 </pre>
           <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon" target="_blank"></i><span q-text="title"></span></a>
+            
             <p class="search-time">
               <i class="icon-calendar icon"></i>
               <span q-text="date|dateformat"></span>
