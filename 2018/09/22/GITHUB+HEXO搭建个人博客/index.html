@@ -40,8 +40,8 @@
   
   <link rel="icon" href="/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -89,7 +89,7 @@
             open.setAttribute("title","搜索")
         }
     </script>
-    <script src="/js/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -322,7 +322,7 @@ $(function () {
 <p>找到自己创建的blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令:<br>1.<code>hexo init</code> ——初始化hexo，hexo会在blog文件夹中创建需要的文件<br>2.<code>npm install</code> ——安装npm，npm会根据hexo初始化创建的package.json配置文件中的依赖配置下载安装。<br>3.<code>hexo server</code> ——简写为<code>hexo s</code>，启动hexo本地服务，在浏览器端输入localhost:4000看一下效果<br>4.ctrl+c 结束本地服务，git窗口中有提示<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h1 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h1><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a target="_blank" rel="noopener" href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，参看 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h2 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h2><p>登录github：<a target="_blank" rel="noopener" href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private</p>
-<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#111;&#117;&#x72;&#95;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#x79;&#111;&#x75;&#114;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;">&#121;&#111;&#117;&#x72;&#95;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#x79;&#111;&#x75;&#114;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
+<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public&#x2F;private rsa key pair.</span><br><span class="line">Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;Admin&#x2F;.ssh&#x2F;id_rsa):</span><br></pre></td></tr></table></figure>
 <p>直接点回车，说明会在默认文件id_rsa上生成ssh key。 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br></pre></td></tr></table></figure>
@@ -430,7 +430,7 @@ $(function () {
 </ul>
 <h1 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h1><p>用编译软件打开blog文件夹，在根目录中找到_config.yml<br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname&#x2F;yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#117;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x79;&#111;&#117;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#111;&#117;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#109;">&#121;&#111;&#117;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h1 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h1><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——部署网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h1 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h1><p>好的博客当然需要一个好的主题来衬托</p>
@@ -497,7 +497,7 @@ $(function () {
 <h3 id="配置并发布文章"><a href="#配置并发布文章" class="headerlink" title="配置并发布文章"></a>配置并发布文章</h3><p>git输入<br><code>npm install</code> ——在<code>git clone</code>项目的时候，项目文件中并没有<code>node_modules</code>文件夹，项目的依赖文件可能很大。直接执行，<code>npm</code>会根据<code>package.json</code>配置文件中的依赖配置下载安装。</p>
 <h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><p>1.<code>git add .</code> ——将文件的修改，文件的新建，添加到暂存区。详解：<strong>git空格add空格.</strong> ，切记不要打错，否则命令就错了<br>2.<code>git commit -m&quot;...&quot;</code> ——提交修改，<code>...</code>为对修改的描述。详解：<strong>git空格commit空格-m”…”</strong><br>3.<code>git push origin hexo</code> ——将源文件提交到hexo分支<br>期间若出现提示Are you sure you want to continue connecting，请输入yes<br>4.<code>hexo g -d</code><br>补充：<br>执行到<code>git commit -m&quot;...&quot;</code>可能会有此提示</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*** Please tell me who you are.</span><br><span class="line"></span><br><span class="line">Run</span><br><span class="line"></span><br><span class="line">  git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">  git config --global user.name &quot;Your Name&quot;</span><br><span class="line"></span><br><span class="line">to set your account&#39;s default identity.</span><br></pre></td></tr></table></figure>
-<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
+<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#x6f;&#117;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;">&#121;&#x6f;&#117;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
 <h2 id="旧电脑"><a href="#旧电脑" class="headerlink" title="旧电脑"></a>旧电脑</h2><h3 id="云端博客分支同步到本地"><a href="#云端博客分支同步到本地" class="headerlink" title="云端博客分支同步到本地"></a>云端博客分支同步到本地</h3><p>文件夹<strong>yourname.github.io</strong>右键<strong>git bash here</strong><br>输入命令<br><code>git pull origin hexo --allow-unrelated-histories</code> ——分支合并<br>输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）</p>
 <h1 id="Visual-Studio-Code运行git-bash命令"><a href="#Visual-Studio-Code运行git-bash命令" class="headerlink" title="Visual Studio Code运行git bash命令"></a>Visual Studio Code运行git bash命令</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正如大家所知道的，<strong>Visual Studio Code</strong>功能很强大，这里简单介绍一下直接通过<strong>Visual Studio Code</strong>管理本地博客，而不再借助于git窗口</p>
 <h2 id="hexo5-0"><a href="#hexo5-0" class="headerlink" title="hexo5.0"></a>hexo5.0</h2><p>hexo5.0版本，已经在package.json文件中添加hexo部分功能的脚本命令，在<strong>Visual Studio Code</strong>中打开package.json文件，在script上点击Debug即可运行</p>
@@ -744,10 +744,10 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
 </script>
 
 
-<script src="/js/mobile.992cbe.js"></script>
-<script src="/main.0cf68a.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
 
@@ -794,7 +794,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("/slider.e37972.js")
+        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
     }()
 </script>
 
@@ -855,10 +855,6 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">软件安装</a>
               </li>
              
@@ -871,15 +867,19 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">html</a>
+                <a style="cursor:pointer" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">js</a>
+                <a style="cursor:pointer" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
