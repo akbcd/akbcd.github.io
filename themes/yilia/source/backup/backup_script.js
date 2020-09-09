@@ -2,7 +2,12 @@
 open_in_new
 新窗口打开链接
 */
-if (yiliaConfig.open_in_new) $('.article-header a,.article-entry a,.article-more-link a,.archive-article-header h1 a,.archive-article-header .article-meta a').attr('target','_blank')
+if (yiliaConfig.open_in_new) {
+  $('.article-title,.article-more-a,.archive-article-date,.archive-article-title').attr('target','_blank')
+  if(yiliaConfig.isPost) {
+    $('.article-title,.archive-article-date').removeAttr('target')
+  }
+}
 
 /*
 progress bar init
