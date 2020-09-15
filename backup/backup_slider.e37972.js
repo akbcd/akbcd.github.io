@@ -1120,7 +1120,7 @@
                     presto: t.indexOf("Presto") > -1,
                     webKit: t.indexOf("AppleWebKit") > -1,
                     gecko: t.indexOf("Gecko") > -1 && t.indexOf("KHTML") == -1,
-                    mobile: !!t.match(/AppleWebKit.*Mobile.*/) || !!t.match(/Mobile/),
+                    mobile: t.indexOf("Mobile") > -1,
                     ios: !!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
                     android: t.indexOf("Android") > -1 || t.indexOf("Linux") > -1,
                     iPhone: t.indexOf("iPhone") > -1 || t.indexOf("Mac") > -1,
