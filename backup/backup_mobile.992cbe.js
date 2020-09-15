@@ -2153,7 +2153,7 @@ function(t, n) {
                 presto: t.indexOf("Presto") > -1,
                 webKit: t.indexOf("AppleWebKit") > -1,
                 gecko: t.indexOf("Gecko") > -1 && -1 == t.indexOf("KHTML"),
-                mobile: !!t.match(/AppleWebKit.*Mobile.*/),
+                mobile: !!t.match(/AppleWebKit.*Mobile.*/) || !!t.match(/Mobile/),
                 ios: !!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
                 android: t.indexOf("Android") > -1 || t.indexOf("Linux") > -1,
                 iPhone: t.indexOf("iPhone") > -1 || t.indexOf("Mac") > -1,
