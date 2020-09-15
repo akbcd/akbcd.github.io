@@ -157,10 +157,10 @@ jsdelivr:
 # Miscellaneous
 #baidu_analytics: ''
 #google_analytics: ''
-favicon: /img/avatar.png
+favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 
 #你的头像url
-avatar: /img/avatar.png
+avatar: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 
 #是否开启分享
 share_jia: true
