@@ -2203,6 +2203,11 @@ pre .css~* .id,pre .id {
     border: none;
     margin: -30px 0 20px 7.6923%
 }
+/* 添加版权提示 */
+.article-copyright {
+    font-size: 15px;
+    color: #ddd
+}
 /* bottom外边距优化 */
 .article-inner p {
     margin: 0 0 10px

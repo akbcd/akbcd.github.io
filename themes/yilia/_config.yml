@@ -94,7 +94,7 @@ show_all_link: '展开全文'
 mathjax: false
 mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
 # 是否在新窗口打开链接
-open_in_new: true
+open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
@@ -122,9 +122,14 @@ top: true
 
 # 字数统计
 # 本功能实现需要插件hexo-wordcount
-# 设定：0-不显示字数； 1-文章对应的md文件里有wordcount:true属性，才显示字数； 2-所有文章均显示字数
+# 设定：0-不显示字数； 1-文章对应的md文件里有wordcount: true属性，才显示字数； 2-所有文章均显示字数
 # 不需要使用，直接设置值为false，或注释掉
 wordcount: 2
+
+# copyright
+# 设定：0-不显示版权提示； 1-文章对应的md文件里有copyright: true属性，才显示版权提示； 2-所有文章均显示版权提示
+# 不需要使用，直接设置值为false，或注释掉
+copyright: 2
 
 # 文章置顶
 # 本功能实现需要卸载hexo自带的文章排序插件hexo-generator-index，安装插件hexo-generator-index-pin-top

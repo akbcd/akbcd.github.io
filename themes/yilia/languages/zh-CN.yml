@@ -13,5 +13,6 @@ copy_error: 复制失败
 # post
 dateUpdated: 更新于
 wordcount: 字数
+copyright: 著作权归作者所有,转载或内容合作请联系作者
 # valine
 leancloud_visitors: 当前页访问次数
