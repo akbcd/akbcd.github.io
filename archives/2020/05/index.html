@@ -50,7 +50,7 @@
       isArchive: true,
       isTag: false,
       isCategory: false,
-      open_in_new: true,
+      open_in_new: false,
       toc_hide_index: true,
       root: "/",
       innerArchive: true,
@@ -564,15 +564,15 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,7 +645,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
 </pre>
           <li class="search-li" q-repeat="items" q-show="isShow">
             
-            <a q-attr="href:path|urlformat" class="search-title" target="_blank"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             
             <p class="search-time">
               <i class="icon-calendar icon"></i>
