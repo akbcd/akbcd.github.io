@@ -64,7 +64,7 @@
       <% } %>
     </div>
     <div class="article-info article-info-index">
-      <% if ((theme.copyright === 1 && post.copyright) || theme.copyright === 2){ %>
+      <% if ((theme.copyright === 2 || (theme.copyright === 1 && post.copyright)) && !index){ %>
         <div class="article-copyright">
           ©
           <!---->
