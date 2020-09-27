@@ -110,6 +110,14 @@ name为github用户名，repository为仓库名，一般为：xxx.github.io
 </script>
 <% } %>
 ```
+### 遇到的问题
+Q：近期更改了jsdelivr加速的文件内容，但是jsdelivr加速的文件内容并没有做出相应的更改，请问应该怎么做？
+W：其实这是jsdeliver缓存导致的，您可以等待一天之后再次观察是否更改，或者您可以强制刷新缓存，即
+>你的 CDN 链接 想手动刷新时 把链接中的
+`https://cdn.jsdelivr.net/`
+替换成
+`https://purge.jsdelivr.net/`
+即可实时刷新
 ## 最后
 通过jsdelivr加速博客静态资源，博客访问速度提升不少
 记得之前引用本地图片需要很长时间才能加载出来，现在很快就加载完成，search.xml文件的加载速度提升不少
