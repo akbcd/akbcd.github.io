@@ -7,6 +7,8 @@ toc: true
 本篇文章介绍yilia主题添加valine评论的方法
 闲话最后说，先来看方法（本篇文章所有图片均来自官方文档）
 <!--more-->
+**注意：近期由于国际版 LeanCloud 域名更新，valine评论系统部署后可能无法使用！参看：**
+https://github.com/xCss/Valine/issues/340
 ## 快速开始
 根据[valine](https://valine.js.org/quickstart.html)官方文档，先要在`LeanCloud`获取**APP ID**和**APP Key**
 登录或注册[LeanCloud](https://www.leancloud.cn/)，建议注册国际版用户，**不需要绑定域名**，但是都需要绑定手机号
@@ -276,7 +278,7 @@ visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
 提到yilia主题，说说yilia主题内置的几个评论系统
 yilia主题总共有5个评论可选，分别是：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
 简单介绍一下
-多说和网易云跟帖服务已经关闭（可以自行在主题中删除相应代码），使用畅言博客域名需要备案，很显然，这不适用github托管的博客。
+多说和网易云跟帖服务已经关闭（可以自行在主题中删除相应代码），使用畅言博客域名需要备案。
 Disqus仿佛是美国的，国内使用需要翻墙。Gitment就不过多介绍了，一般的主题都有
 简单谈谈为什么用valine
 1.免费

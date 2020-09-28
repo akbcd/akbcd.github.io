@@ -189,6 +189,7 @@ valine:
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
   ADMIN_URL: https://akbcd.avosapps.us/ # Web主机二级域名，若没有请设为false
+  serverURLs: https://lgKQKDBk.api.lncldglobal.com
 valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
 #2、gitalk

@@ -32,7 +32,8 @@
         visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
 		highlight: '<%- theme.valine.highlight %>' === 'true',
 		recordIp: '<%- theme.valine.recordIP %>' === 'true',
-        enableQQ: '<%- theme.valine.enableQQ %>' === 'true'
+        enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
+        serverURLs: '<%= theme.valine.serverURLs %>'
     });
     <% if(theme.valine.ADMIN_URL){ %>
     // ADMIN_URL
