@@ -3080,8 +3080,8 @@ pre .css~* .id,pre .id {
     .tools-col .tools-section,.tools-col .tools-wrap {
         width: 300px
     }
-
-    .tools-col .tools-section .search-wrap,.tools-col .tools-wrap .search-wrap {
+    /* 修复移动端搜索框长度溢出 */
+    .tools-col .tools-section .search-wrap,.tools-col .tools-section .search-wrap .search-ipt {
         width: 280px
     }
 	/* 修改移动端所有文章显示标签按钮样式 */
