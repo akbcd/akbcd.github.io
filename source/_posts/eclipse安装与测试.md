@@ -8,9 +8,10 @@ tags: [软件安装,教程,经验]
 ## eclipse安装
 ### 下载eclipse
 进入eclipse官网：https://www.eclipse.org/downloads/packages/
-选择自己所用开发语言的版本，这里以java语言为例
+注：不同eclipse版本的扩展版本可能不同
+选择自己所用开发语言的版本，这里以java语言为例，eclipse版本为 2020-03
 总共有两个java语言版本**Eclipse IDE for Java Developers**和**Eclipse IDE for Enterprise Java Developers (includes Incubating components)**
-如果你需要**java web**开发，选择**Eclipse IDE for Enterprise Java Developers (includes Incubating components)**
+如果你需要**java web**开发，选择**Eclipse IDE for Enterprise Java Developers (includes Incubating components)** ，若没有此项，尝试切换eclipse版本。
 选择**Windows 64-bit**，这里以**Windows10 64位**操作系统安装为例
 进入下载页面，点击下载，如果没有跳出下载窗口，尝试切换镜像，将镜像地址改为中国镜像
 ### 安装eclipse
