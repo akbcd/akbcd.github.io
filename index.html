@@ -331,6 +331,74 @@ $(function () {
 
   
     
+<article id="post-2019-2020学年总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/">2019-2020学年总结</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-11-06T01:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
+	
+</a>
+        
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此内容被密码保护，请输入密码访问</p>
+        
+          <a class="article-more-a" href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    
 <article id="post-大型数据库应用复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -955,83 +1023,6 @@ $(function () {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    
-<article id="post-javascript读取txt文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/18/javascript%E8%AF%BB%E5%8F%96txt%E6%96%87%E4%BB%B6/">javascript读取txt文件</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/18/javascript%E8%AF%BB%E5%8F%96txt%E6%96%87%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-04-18T06:59:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
-	
-</a>
-        
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>电视直播源分享文章中用到了js读取txt文件并显示，这里记录一下实现方法<br>以下代码实现javascript读取txt文件打印到浏览器中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">name</span>) </span>&#123;    </span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),        </span><br><span class="line">    okStatus = <span class="built_in">document</span>.location.protocol === <span class="string">&quot;file:&quot;</span> ? <span class="number">0</span> : <span class="number">200</span>;    </span><br><span class="line">    xhr.open(<span class="string">&#x27;GET&#x27;</span>, name, <span class="literal">false</span>);    </span><br><span class="line">    xhr.overrideMimeType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);<span class="comment">//默认为utf-8    </span></span><br><span class="line">    xhr.send(<span class="literal">null</span>);    </span><br><span class="line">    <span class="keyword">return</span> xhr.status === okStatus ? xhr.responseText : <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> text = load(<span class="string">&quot;文件名.txt&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//输出到浏览器控制器中 </span></span><br><span class="line"><span class="comment">//document.write(text);  //打印在网页中 </span></span><br><span class="line"><span class="comment">//document.write(&quot;&lt;pre&gt;&quot;+text+&quot;&lt;pre/&gt;&quot;)//解决txt的换行无法打印到网页上的问题</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a style="cursor:pointer" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/18/javascript%E8%AF%BB%E5%8F%96txt%E6%96%87%E4%BB%B6/">展开全文 >></a>
         </p>
       
 
