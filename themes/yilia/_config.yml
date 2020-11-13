@@ -97,6 +97,7 @@ mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
 open_in_new: false
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
+# 需要浏览器允许cookie
 scrollPos: true
 
 # 打赏
