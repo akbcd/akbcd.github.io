@@ -28,6 +28,7 @@ $(".toc-child").hide()}var currentActive=$(".toc-link.active");if(currentId&&dec
 _this.addClass("active");var parents=_this.parents(".toc-child");var topLink=parents.length>0?parents.last():_this;
 expandToc(topLink.closest(".toc-item").find(".toc-child"));topLink.closest(".toc-item").siblings(".toc-item").find(".toc-child").hide()
 }};if(yiliaConfig.isPost&&yiliaConfig.scrollPos){window.onbeforeunload=function(){var scrollPos=$("#container").scrollTop()||document.documentElement.scrollTop||document.body.scrollTop;
+document.cookie="scrollTop="+scrollPos};window.onpagehide=function(){var scrollPos=$("#container").scrollTop()||document.documentElement.scrollTop||document.body.scrollTop;
 document.cookie="scrollTop="+scrollPos};$(document).ready(function(){if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/);
 $("#container").scrollTop(parseInt(arr[1]));document.documentElement.scrollTop=parseInt(arr[1]);
 document.body.scrollTop=parseInt(arr[1])}})};

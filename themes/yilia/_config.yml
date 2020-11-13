@@ -95,7 +95,8 @@ mathjax: false
 mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
 # 是否在新窗口打开链接
 open_in_new: false
-# 是否记录文章页面浏览位置
+# 是否通过cookie记录文章页面浏览位置
+# 访问文章时，可快速定位到上次浏览位置
 scrollPos: true
 
 # 打赏
@@ -259,7 +260,9 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 # backup为备份文件
+
 # jsdelivr
+
 css:
   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css
   clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css
@@ -274,6 +277,7 @@ js:
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
 # backup
+
 # css:
 #   main: /backup_main.0cf68a.css
 #   clipboard: /backup/backup_clipboard.css
@@ -286,6 +290,8 @@ js:
 #   script: /backup/backup_script.js
 #   jquery: /js/jquery-3.4.1.min.js #3.4.1
 #   scrollProgress: /js/scrollProgress.min.js #3.0.2
+
+# default
 
 # css:
 #   main: /main.0cf68a.css
