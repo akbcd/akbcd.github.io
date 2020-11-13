@@ -49,18 +49,19 @@
   <script src="<%- theme.js.jquery %>"></script>
   <script>
     var yiliaConfig = {
-      mathjax: <%=theme.mathjax%>,
+      mathjax: <%=theme.mathjax ? true : false%>,
       isHome: <%=is_home()%>,
       isPost: <%=is_post()%>,
       isArchive: <%=is_archive()%>,
       isTag: <%=is_tag()%>,
       isCategory: <%=is_category()%>,
-      open_in_new: <%=theme.open_in_new%>,
-      toc_hide_index: <%=theme.toc_hide_index%>,
+      open_in_new: <%=theme.open_in_new ? true : false%>,
+      toc_hide_index: <%=theme.toc_hide_index ? true : false%>,
       root: "<%=config.root%>",
       innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
       showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>,
-      anchor: <%=theme.anchor%>
+      anchor: <%=theme.anchor ? true : false%>,
+      scrollPos: <%=theme.scrollPos ? true : false%>
     }
   </script>
 </head>
