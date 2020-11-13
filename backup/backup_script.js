@@ -171,3 +171,21 @@ var findMobileHeadPosition = function (top) {
     .find('.toc-child').hide()
   }
 }
+
+/*
+记录文章页面当前位置
+*/
+if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
+  window.onbeforeunload = function(){
+    var scrollPos=$('#container').scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+    document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
+  }
+  $(document).ready(function(){
+    if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
+        var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+        $('#container').scrollTop(parseInt(arr[1]));
+        document.documentElement.scrollTop=parseInt(arr[1]);
+        document.body.scrollTop=parseInt(arr[1]);
+    }
+  })
+}
