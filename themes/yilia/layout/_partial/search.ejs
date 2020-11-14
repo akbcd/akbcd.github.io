@@ -9,10 +9,9 @@
         <div id="js-searchResult"></div>
     </div>
     <script type="text/javascript">
-        window.onload=function(){
-            var open = $('#js-icon-search').get(0);
-            open.setAttribute("title","<%- _p('search') %>")
-        }
+        $(function(){
+            $('#js-icon-search').attr("title","<%- _p('search') %>")
+        })
     </script>
     <script src="<%- theme.js.search %>"></script>
     <% if (theme.jsdelivr.enable){ %>

@@ -47,7 +47,7 @@ if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
     var scrollPos=$('#container').scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
     document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
   }
-  $(document).ready(function(){
+  $(document).ready(function(){//建议使用：$(window).on('load',function(){...})
     if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
         var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
         $('#container').scrollTop(parseInt(arr[1]));
@@ -59,3 +59,8 @@ if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
 ```
 其中，yiliaConfig.isPost判断当前页面是否为文章页，yiliaConfig.scrollPos为自添加属性，判断是否开启此功能。
 因为window.onpagehide在mobile端浏览器存在不被触发的情况，所以添加window.onpagehide事件，解决大部分情况，事件区别可自行到相关网站查询。
+
+补充：$(document).ready(function(){...})函数可以简写为$(function{...})，此方法在dom结构加载完毕后执行，如果页面中有一些加载较慢的资源，如图片，建议不使用此方法，会使页面跳转出现问题
+这里推荐一个js原生方法：window.onload，此方法是在页面全部加载完毕后执行，但是只能执行一次，如果多次使用，后面会覆盖前面，不推荐使用
+既然不推荐使用，就换一个方法，用jq实现window.onload方法：$(window).on('load',function(){...})，此方法与window.onload方法功能一致，但是没有只能实现一次的限制，可多次使用，不会覆盖
+网站上查询的资料里此方法多半写成：$(window).load(function(){...})，这仿佛是jq较早版本支持的方法，新版本已不能使用。

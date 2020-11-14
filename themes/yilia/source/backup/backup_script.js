@@ -186,7 +186,7 @@ if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
     var scrollPos=$('#container').scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
     document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
   }
-  $(document).ready(function(){
+  $(window).on('load',function(){ 
     if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
         var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
         $('#container').scrollTop(parseInt(arr[1]));
