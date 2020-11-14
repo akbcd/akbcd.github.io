@@ -30,7 +30,7 @@ function stopBodyScroll(isFixed){
         window.scrollTo(0,top1)
     }
 };
-$(document).ready(function(){
+$(function(){
     clearInput.onclick=function(){
         $('#js-searchInput').val('');
         $('#js-searchResult').html('');

@@ -82,10 +82,9 @@
         <div id="js-searchResult"></div>
     </div>
     <script type="text/javascript">
-        window.onload=function(){
-            var open = $('#js-icon-search').get(0);
-            open.setAttribute("title","搜索")
-        }
+        $(function(){
+            $('#js-icon-search').attr("title","搜索")
+        })
     </script>
     <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
     
