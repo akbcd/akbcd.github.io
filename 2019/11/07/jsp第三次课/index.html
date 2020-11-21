@@ -342,17 +342,14 @@ $(function () {
 <p>获取表单数据的jsp</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- 导java类 --%&gt;</span><br><span class="line">&lt;%@page import&#x3D;&quot;dao.AdminDAO&quot;%&gt;</span><br><span class="line">&lt;%@page import&#x3D;&quot;vo.Admin&quot;%&gt;</span><br><span class="line">&lt;%@ page language&#x3D;&quot;java&quot; contentType&#x3D;&quot;text&#x2F;html; charset&#x3D;UTF-8&quot;</span><br><span class="line">    pageEncoding&#x3D;&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD HTML 4.01 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;html4&#x2F;loose.dtd&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!-- 接收表单的值   --&gt;</span><br><span class="line">&lt;%</span><br><span class="line">  request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">  String userName&#x3D;request.getParameter(&quot;loginname&quot;);</span><br><span class="line">String userPwd&#x3D;request.getParameter(&quot;nloginpwd&quot;);</span><br><span class="line">Admin ad&#x3D;new Admin();</span><br><span class="line">ad.setAdminname(userName);</span><br><span class="line">ad.setAdminpassword(userPwd);</span><br><span class="line">AdminDAO ao&#x3D;new AdminDAO();</span><br><span class="line">&#x2F;*连接数据库*&#x2F;</span><br><span class="line">&#x2F;* 判断  完跳转 *&#x2F;</span><br><span class="line">if(ao.getAdmin(ad)&gt;0)&#123;</span><br><span class="line">%&gt;</span><br><span class="line">	&lt;jsp:forward page&#x3D;&quot;..&#x2F;Success.jsp&quot;&gt;&lt;&#x2F;jsp:forward&gt;</span><br><span class="line">&lt;%</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	&#x2F;* 客户端跳转 *&#x2F;</span><br><span class="line">	response.sendRedirect(&quot;..&#x2F;Failed.jsp&quot;);	</span><br><span class="line">&#125;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;!-- 服务器跳转  --&gt;</span><br><span class="line">&lt;%-- &lt;jsp:forward page&#x3D;&quot;..&#x2F;ShopShow.jsp&quot;&gt;&lt;&#x2F;jsp:forward&gt; --%&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
       
-
+      
+        <div class="article-copyright">
+          ©著作权归作者所有,转载或内容合作请联系作者
+        </div>
+      
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-copyright">
-          ©
-          <!---->
-          著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
       
       
 	<div class="article-tag tagcloud">

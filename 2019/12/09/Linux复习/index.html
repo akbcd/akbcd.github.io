@@ -429,17 +429,14 @@ $(function () {
 <p>第二十二章重点回顾</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">为了避免使用者自行编译的困扰，开发商自行在特定的硬件与操作系统平台上面预先编译好软件， 并将软件以特殊格式封包成文件，提供终端用户直接安装到固定的操作系统上，并提供简单的查询&#x2F;安装&#x2F;移除等流程。 此称为软件管理员。常见的软件管理员有 RPM 与 DPKG 两大主流。</span><br><span class="line">RPM 的全名是 RedHat Package Manager，原本是由 Red Hat 公司所发展的，流传甚广；</span><br><span class="line">RPM 类型的软件中，所含有的软件是经过编译后的 binary program ，所以可以直接安装在使用者端的系统上， 不过，也由于如此，所以 RPM 对于安装者的环境要求相当严格；</span><br><span class="line">RPM 除了将软件安装至使用者的系统上之外，还会将该软件的版本、名称、文件与目录配置、系统需求等等均记录于数据库 （&#x2F;var&#x2F;lib&#x2F;rpm） 当中，方便未来的查询与升级、移除；</span><br><span class="line">RPM 可针对不同的硬件等级来加以编译，制作出来的文件可于扩展名 （i386, i586, i686, x86_64, noarch） 来分辨；</span><br><span class="line">RPM 最大的问题为软件之间的相依性问题；</span><br><span class="line">SRPM 为 Source RPM ，内含的文件为 Source code 而非为 binary file ，所以安装 SRPM 时还需要经过 compile ，不过，SRPM 最大的优点就是可以让使用者自行修改设置参数 （makefile&#x2F;configure 的参数） ，以符合使用者自己的 Linux 环境；</span><br><span class="line">RPM 软件的属性相依问题，已经可以借由 yum 或者是 APT 等方式加以克服。 CentOS 使用的就是 yum 机制。</span><br><span class="line">yum 服务器提供多个不同的软件库放置个别的软件，以提供用户端分别管理软件类别。</span><br></pre></td></tr></table></figure>
       
-
+      
+        <div class="article-copyright">
+          ©著作权归作者所有,转载或内容合作请联系作者
+        </div>
+      
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-copyright">
-          ©
-          <!---->
-          著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
       
       
 	<div class="article-tag tagcloud">

@@ -348,17 +348,14 @@ $(function () {
 <p>八种基本数据类型，对应的都有一个包装类<br>a） 学包装类的目的？<br>基本数据类型不具备和String相互转换的功能<br>b） 在java web开发的时候，从前台获取的数据都是String类型<br>八种数据类型对应的包装类<br>int==&gt;Integer<br>char==&gt;Character<br>boolean==&gt;Boolean<br>只有int和char不是首字母大写，其余与boolean类似，均是首字母大写<br>c） 要求会的3对转换<br>int&lt;==&gt;String 重点<br>int&lt;==&gt;Integer<br>String&lt;==&gt;Integer<br>代码实现</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class IntegerTest&#123;</span><br><span class="line">    &#x2F;&#x2F;是针对int的一些常用方法的封装，所以叫包装类</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        &#x2F;&#x2F;int&lt;&#x3D;&#x3D;&gt;String</span><br><span class="line">        int i&#x3D;100;</span><br><span class="line">        String si&#x3D;String.valueOf(i);</span><br><span class="line">               si&#x3D;i+&quot;&quot;;</span><br><span class="line">        </span><br><span class="line">        String s&#x3D;&quot;22&quot;;</span><br><span class="line">        int is&#x3D;Integer.parseInt(s);&#x2F;&#x2F;非常重要</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;int&lt;&#x3D;&#x3D;&gt;Integer</span><br><span class="line">        int i1&#x3D;121;</span><br><span class="line">        Integer it1&#x3D;new Integer(i1);</span><br><span class="line"></span><br><span class="line">        int i2&#x3D;it1.intValue();</span><br><span class="line">        Integer i3&#x3D;33;&#x2F;&#x2F;jdk1.5特性</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;String&lt;&#x3D;&#x3D;&gt;Integer</span><br><span class="line">        String s2&#x3D;&quot;444&quot;;</span><br><span class="line">        Integer it5&#x3D;new Integer(s2);</span><br><span class="line"></span><br><span class="line">        String s3&#x3D;it5.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
-
+      
+        <div class="article-copyright">
+          ©著作权归作者所有,转载或内容合作请联系作者
+        </div>
+      
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-copyright">
-          ©
-          <!---->
-          著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
       
       
 	<div class="article-tag tagcloud">
