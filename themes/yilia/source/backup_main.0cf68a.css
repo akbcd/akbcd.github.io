@@ -2205,7 +2205,9 @@ pre .css~* .id,pre .id {
 }
 /* 添加版权提示 */
 .article-copyright {
+    margin-top: 20px;
     font-size: 15px;
+    line-height: 40px;
     color: #ddd
 }
 
