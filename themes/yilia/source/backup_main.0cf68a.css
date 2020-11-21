@@ -2208,6 +2208,14 @@ pre .css~* .id,pre .id {
     font-size: 15px;
     color: #ddd
 }
+
+.article-copyright::before{
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: #ddd;
+}
 /* bottom外边距优化 */
 .article-inner p {
     margin: 0 0 10px

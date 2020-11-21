@@ -29,7 +29,11 @@
       <% } else { %>
         <%- post.content %>
       <% } %>
-
+      <% if ((theme.copyright === 2 || (theme.copyright === 1 && post.copyright)) && !index){ %>
+        <div class="article-copyright">
+          ©<%- _p('copyright')%>
+        </div>
+      <% } %>
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
           <a style="cursor:pointer" class="page-reward-btn tooltip-top">
@@ -64,13 +68,6 @@
       <% } %>
     </div>
     <div class="article-info article-info-index">
-      <% if ((theme.copyright === 2 || (theme.copyright === 1 && post.copyright)) && !index){ %>
-        <div class="article-copyright">
-          ©
-          <!---->
-          <%- _p('copyright')%>
-        </div>
-      <% } %>
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
           <i class="icon-tuding"></i>
