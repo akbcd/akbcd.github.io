@@ -27,8 +27,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -76,7 +76,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -144,16 +144,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -280,13 +276,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>家里用的是吉林联通宽带，之前访问GitHub正常，但是从一月份回家开始，电脑便不能访问GitHub了，上网查了一些教程，没有去实践<br>为什们拖了这么久？原因其实很简单，因为手机数据流量可以访问，每次写完博客推送文章都是用电脑连的手机热点去完成，日子着实太苦了，好好的宽带用不了，需要去连手机热点，因为能连上，所以拖了这么久<br>今天闲着没事，忽然想到了GitHub不能连接的问题，照着教程试了一下，成功了<br>先说一下为什么家里的宽带不能访问GitHub原因：宽带对DNS服务器解析GitHub域名的IP进行屏蔽，导致GitHub无法访问（测试发现，解析出来的IP地址，只是家里的宽带无法访问，其它网络可以访问）</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/05/04/%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEGitHub%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#more">more >></a>
+          <p>家里用的是吉林联通宽带，之前访问GitHub正常，但是从一月份回家开始，电脑便不能访问GitHub了，上网查了一些教程，没有去实践<br>为什们拖了这么久？原因其实很简单，因为手机数据流量可以访问，每次写完博客推送文章都是用电脑连的手机热点去完成，日子着实太苦了，好好的宽带用不了，需要去连手机热点，因为能连上，所以拖了这么久<br>今天闲着没事，忽然想到了GitHub不能连接的问题，照着教程试了一下，成功了<br>先说一下为什么家里的宽带不能访问GitHub原因：宽带对DNS服务器解析GitHub域名的IP进行屏蔽，导致GitHub无法访问（测试发现，解析出来的IP地址，只是家里的宽带无法访问，其它网络可以访问）</p>
+          
+            <a class="article-more-a" href="/2020/05/04/%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEGitHub%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -362,13 +384,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章记录eclipse安装方法以及常用的一些配置</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/04/24/eclipse%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/#more">more >></a>
+          <p>本篇文章记录eclipse安装方法以及常用的一些配置</p>
+          
+            <a class="article-more-a" href="/2020/04/24/eclipse%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -448,13 +496,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章介绍yilia主题添加valine评论的方法<br>闲话最后说，先来看方法（本篇文章所有图片均来自官方文档）</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/#more">more >></a>
+          <p>本篇文章介绍yilia主题添加valine评论的方法<br>闲话最后说，先来看方法（本篇文章所有图片均来自官方文档）</p>
+          
+            <a class="article-more-a" href="/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -526,11 +600,37 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>电视直播源分享文章中用到了js读取txt文件并显示，这里记录一下实现方法<br>以下代码实现javascript读取txt文件打印到浏览器中</p>
+      <div id="article-content">
+        
+          <p>电视直播源分享文章中用到了js读取txt文件并显示，这里记录一下实现方法<br>以下代码实现javascript读取txt文件打印到浏览器中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">name</span>) </span>&#123;    </span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),        </span><br><span class="line">    okStatus = <span class="built_in">document</span>.location.protocol === <span class="string">&quot;file:&quot;</span> ? <span class="number">0</span> : <span class="number">200</span>;    </span><br><span class="line">    xhr.open(<span class="string">&#x27;GET&#x27;</span>, name, <span class="literal">false</span>);    </span><br><span class="line">    xhr.overrideMimeType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);<span class="comment">//默认为utf-8    </span></span><br><span class="line">    xhr.send(<span class="literal">null</span>);    </span><br><span class="line">    <span class="keyword">return</span> xhr.status === okStatus ? xhr.responseText : <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> text = load(<span class="string">&quot;文件名.txt&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//输出到浏览器控制器中 </span></span><br><span class="line"><span class="comment">//document.write(text);  //打印在网页中 </span></span><br><span class="line"><span class="comment">//document.write(&quot;&lt;pre&gt;&quot;+text+&quot;&lt;pre/&gt;&quot;)//解决txt的换行无法打印到网页上的问题</span></span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -602,13 +702,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在网上收集了一些直播源，在这分享一下（不定期更新维护）<br>直播源包含央视，各省卫视，部分港澳台（凤凰台）<br>本页面分享的直播源主要为m3u8格式，本直播源经吉林联通宽带测试有效，其它网络请自行测试，失效的直播源会注释或者删除，频道名后面的第一个源会定期维护</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/04/17/%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD%E6%BA%90%E5%88%86%E4%BA%AB/#more">more >></a>
+          <p>最近在网上收集了一些直播源，在这分享一下（不定期更新维护）<br>直播源包含央视，各省卫视，部分港澳台（凤凰台）<br>本页面分享的直播源主要为m3u8格式，本直播源经吉林联通宽带测试有效，其它网络请自行测试，失效的直播源会注释或者删除，频道名后面的第一个源会定期维护</p>
+          
+            <a class="article-more-a" href="/2020/04/17/%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD%E6%BA%90%E5%88%86%E4%BA%AB/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -680,13 +806,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>疫情防控思政大课观后感</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/03/14/%E7%96%AB%E6%83%85%E9%98%B2%E6%8E%A7%E6%80%9D%E6%94%BF%E5%A4%A7%E8%AF%BE%E8%A7%82%E5%90%8E%E6%84%9F/#more">more >></a>
+          <p>疫情防控思政大课观后感</p>
+          
+            <a class="article-more-a" href="/2020/03/14/%E7%96%AB%E6%83%85%E9%98%B2%E6%8E%A7%E6%80%9D%E6%94%BF%E5%A4%A7%E8%AF%BE%E8%A7%82%E5%90%8E%E6%84%9F/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -758,13 +910,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>推荐几个bt磁力搜索站点</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/02/07/bt%E7%A3%81%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9/#more">more >></a>
+          <p>推荐几个bt磁力搜索站点</p>
+          
+            <a class="article-more-a" href="/2020/02/07/bt%E7%A3%81%E5%8A%9B%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -836,13 +1014,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=184a4108c6fc1e17e9b284632bf99d66/0bd162d9f2d3572c4a3c6ac28313632763d0c3d6.jpg" alt="择天记"><br>《择天记》是根据猫腻同名小说改编的古装玄幻剧，由钟澍佳执导，杨晓培担任总制片人，鹿晗、古力娜扎、吴倩、曾舜晞、许龄月、张峻宁、高瀚宇、林思意等联袂主演，陈数、曾志伟、张兆辉、姚笛特别出演。</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/12/23/%E3%80%8A%E6%8B%A9%E5%A4%A9%E8%AE%B0%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/#more">more >></a>
+          <p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=184a4108c6fc1e17e9b284632bf99d66/0bd162d9f2d3572c4a3c6ac28313632763d0c3d6.jpg" alt="择天记"><br>《择天记》是根据猫腻同名小说改编的古装玄幻剧，由钟澍佳执导，杨晓培担任总制片人，鹿晗、古力娜扎、吴倩、曾舜晞、许龄月、张峻宁、高瀚宇、林思意等联袂主演，陈数、曾志伟、张兆辉、姚笛特别出演。</p>
+          
+            <a class="article-more-a" href="/2019/12/23/%E3%80%8A%E6%8B%A9%E5%A4%A9%E8%AE%B0%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -914,16 +1118,42 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="jdbc连接数据库存在的问题"><a href="#jdbc连接数据库存在的问题" class="headerlink" title="jdbc连接数据库存在的问题"></a>jdbc连接数据库存在的问题</h2><p>数据库链接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库链接池可解决此问题。</p>
+      <div id="article-content">
+        
+          <h2 id="jdbc连接数据库存在的问题"><a href="#jdbc连接数据库存在的问题" class="headerlink" title="jdbc连接数据库存在的问题"></a>jdbc连接数据库存在的问题</h2><p>数据库链接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库链接池可解决此问题。</p>
 <p>Sql语句在代码中硬编码，造成代码不易维护，实际应用sql变化的可能较大，sql变动需要改变java代码。</p>
 <p>使用preparedStatement向占有位符号传参数存在硬编码，因为sql语句的where条件不一定，可能多也可能少，修改sql还要修改代码，系统不易维护。</p>
 <p>对结果集解析存在硬编码（查询列名），sql变化导致解析代码变化，系统不易维护，如果能将数据库记录封装成pojo对象解析比较方便。</p>
+          
+            <a class="article-more-a" href="/2019/12/22/mybatis/#more">more >></a>
+          
         
-          <a class="article-more-a" href="/2019/12/22/mybatis/#more">more >></a>
-        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -999,13 +1229,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>向日葵从来都是面对太阳，在阳光下绽放自己的美丽。当太阳下山，向日葵会垂下头，安静地等待第一缕晨光的来临。这就是向日葵式生活，适用于每一个正在为生活苦恼或迷茫的人。</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/12/20/%E5%90%91%E6%97%A5%E8%91%B5%E5%BC%8F%E7%94%9F%E6%B4%BB/#more">more >></a>
+          <p>向日葵从来都是面对太阳，在阳光下绽放自己的美丽。当太阳下山，向日葵会垂下头，安静地等待第一缕晨光的来临。这就是向日葵式生活，适用于每一个正在为生活苦恼或迷茫的人。</p>
+          
+            <a class="article-more-a" href="/2019/12/20/%E5%90%91%E6%97%A5%E8%91%B5%E5%BC%8F%E7%94%9F%E6%B4%BB/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -1082,34 +1338,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -1154,7 +1388,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

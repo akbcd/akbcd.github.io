@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -322,20 +318,75 @@ $(function () {
 </noscript>
 
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>此内容被密码保护，请输入密码访问</p>
+      <div id="article-content">
+        
+          <p>此内容被密码保护，请输入密码访问</p>
 <a id="more"></a>
 <h2 id="大一学年总结"><a href="#大一学年总结" class="headerlink" title="大一学年总结"></a>大一学年总结</h2><h2 id="学院：理学院-班级：信息17402"><a href="#学院：理学院-班级：信息17402" class="headerlink" title="学院：理学院 班级：信息17402"></a>学院：理学院 班级：信息17402</h2><p><strong>姓名：</strong>&emsp;&emsp;<strong>性别：</strong>&emsp;&emsp;<strong>年龄：</strong>&emsp;&emsp;<strong>职务：</strong></p>
 <h3 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h3><p>&emsp;&emsp;时光像水中的倒影，一晃一学年已经过去了。昨日那埋怨时间过得太慢的情绪似乎还游移在脑际，而今大二的学习生活已要过半，蓦然回首，感慨颇多。刚迈入大学的时候对一切似乎都充满新鲜感，所对大学的了解仅仅局限于高中老师对大学的一些闲谈。大一上半学期的我在期末考试中挂了一科，我给自己的解释是体验了一把大学生活，没有用心学习。正所谓吃一堑，长一智，大一下半学期的我在学习上花的时间多了，所以没有重蹈覆辙。大一的生活也真是丰富多彩，学院所举办的多项活动都是面向我们大一新生的，在这些活动中让我们收获了许多。由于自己的一些个人原因，许多面向我们大一新生的比赛我几乎都没有参加，即使参加了也没有获得到奖项，这个还真是有些惋惜，因此在大二的学习生活中，一定要抓住各种机遇，多参加些比赛，争取获奖。大一的时光匆匆过去了，大一中的不足在大二中要及时改正，大一中没有完成的任务在大二中及时完成，过好充实的每一天。</p>
 <hr>
 <p><strong>2018年12月3日</strong></p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/01/09/2017-2018%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/">https://akbcd.github.io/2019/01/09/2017-2018学年总结/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -457,34 +508,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -529,7 +558,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

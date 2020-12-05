@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>MVC模式、el表达式、jstl表达式</p>
+      <div id="article-content">
+        
+          <p>本次课主要内容：<br>MVC模式、el表达式、jstl表达式</p>
 <a id="more"></a>
 <h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。<br>java项目MVC模式的开发思路<br>jsp页面：form表单的传值和回显，提交数据到servlet<br>servlet包：处理form表单的传值，调用service，进行页面跳转<br>service包：调用dao包，对dao包获得的数据进行回传<br>dao包：定义sql语句，调用数据库操作的工具包，返回查询的数据<br>bean包（或vo包）：表中名称私有属性，get/set方法</p>
 <h2 id="el表达式"><a href="#el表达式" class="headerlink" title="el表达式"></a>el表达式</h2><p>EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。</p>
@@ -305,12 +302,66 @@ $(function () {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;hobby&quot; value&#x3D;&quot;篮球&quot; </span><br><span class="line">&lt;c:forEach items&#x3D;&quot;$&#123;hobby &#125;&quot; var&#x3D;&quot;s&quot;&gt;</span><br><span class="line">    &lt;c:if test&#x3D;&quot;$&#123;&#39;篮球&#39; &#x3D;&#x3D; s &#125;&quot;&gt;</span><br><span class="line">        checked&#x3D;&quot;checked&quot;</span><br><span class="line">    &lt;&#x2F;c:if&gt;</span><br><span class="line">&lt;&#x2F;c:forEach&gt;</span><br><span class="line">&#x2F;&gt;篮球</span><br><span class="line">&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;hobby&quot; value&#x3D;&quot;足球&quot; </span><br><span class="line">&lt;c:forEach items&#x3D;&quot;$&#123;hobby &#125;&quot; var&#x3D;&quot;s&quot;&gt;</span><br><span class="line">    &lt;c:if test&#x3D;&quot;$&#123;&#39;足球&#39; &#x3D;&#x3D; s &#125;&quot;&gt;</span><br><span class="line">        checked&#x3D;&quot;checked&quot;</span><br><span class="line">    &lt;&#x2F;c:if&gt;</span><br><span class="line">&lt;&#x2F;c:forEach&gt;</span><br><span class="line">&#x2F;&gt;足球</span><br><span class="line">&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;hobby&quot; value&#x3D;&quot;排球&quot; </span><br><span class="line">&lt;c:forEach items&#x3D;&quot;$&#123;hobby &#125;&quot; var&#x3D;&quot;s&quot;&gt;</span><br><span class="line">    &lt;c:if test&#x3D;&quot;$&#123;&#39;排球&#39; &#x3D;&#x3D; s &#125;&quot;&gt;</span><br><span class="line">        checked&#x3D;&quot;checked&quot;</span><br><span class="line">    &lt;&#x2F;c:if&gt;</span><br><span class="line">&lt;&#x2F;c:forEach&gt;</span><br><span class="line">&#x2F;&gt;排球</span><br></pre></td></tr></table></figure>
 <p>这el和jstl表达式简化了jsp用java代码的取值方式</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/11/09/jsp%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/11/09/jsp第六次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -511,34 +562,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -583,7 +612,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>1.类里面有什么？<br>属性 和 功能<br>属性：变量    功能：方法<br>2.变量声明格式？（变量三要素）<br>数据类型 变量名 初始值<br>3.方法的格式？<br>public 返回值类型 方法名(参数列表){<br>    return 语句;<br>}</p>
+      <div id="article-content">
+        
+          <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>1.类里面有什么？<br>属性 和 功能<br>属性：变量    功能：方法<br>2.变量声明格式？（变量三要素）<br>数据类型 变量名 初始值<br>3.方法的格式？<br>public 返回值类型 方法名(参数列表){<br>    return 语句;<br>}</p>
 <a id="more"></a>
 <h2 id="本次课主要内容"><a href="#本次课主要内容" class="headerlink" title="本次课主要内容"></a>本次课主要内容</h2><h3 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h3><p>局部变量：在方法内，语句块内的变量是局部变量<br>全局变量（成员变量）：在方法外，类体内是成员变量<br>区别：局部变量使用前，必须赋初始值<br>成员变量，如果没有赋初始值，系统默认提供初始值，和数组的元素一样<br>整形是0 浮点是0.0 String是null<br>局部变量作用域只在临近大括号内有效</p>
 <h3 id="创建对象方法？"><a href="#创建对象方法？" class="headerlink" title="创建对象方法？"></a>创建对象方法？</h3><p>类名 对象名=new 类名();</p>
@@ -310,12 +307,66 @@ $(function () {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java的重写,是指在子类中对父类的某方法进行重新定义,其子类的该方法名以及参数位置和个数均与父类相同,从而在调用子类的该方法时,不会执行父类的方法。如果在父类中以final定义的方法,在子类中无法重写。</span><br><span class="line">Java的重载，就是在类中可以创建多个方法，它们具有相同的名字，但具有不同的参数和不同的定义。调用方法时通过传递给它们的不同参数个数和参数类型来决定具体使用哪个方法, 这就是多态性。</span><br><span class="line">重写就是再写一遍，重载就是再多一个。重写：父类里有，子类再照猫画虎写一个。重载：自己类里面有，觉得不够再写一个。 </span><br></pre></td></tr></table></figure>
 <p>3）java只支持单继承<br>4）子类想调用父类的构造函数 super </p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/06/04/java%E7%AC%AC%E5%9B%9B%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/06/04/java第四次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -516,34 +567,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -588,7 +617,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

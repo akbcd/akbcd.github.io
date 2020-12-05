@@ -40,8 +40,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -89,7 +89,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -157,16 +157,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -302,8 +298,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>家里用的是吉林联通宽带，之前访问GitHub正常，但是从一月份回家开始，电脑便不能访问GitHub了，上网查了一些教程，没有去实践<br>为什们拖了这么久？原因其实很简单，因为手机数据流量可以访问，每次写完博客推送文章都是用电脑连的手机热点去完成，日子着实太苦了，好好的宽带用不了，需要去连手机热点，因为能连上，所以拖了这么久<br>今天闲着没事，忽然想到了GitHub不能连接的问题，照着教程试了一下，成功了<br>先说一下为什么家里的宽带不能访问GitHub原因：宽带对DNS服务器解析GitHub域名的IP进行屏蔽，导致GitHub无法访问（测试发现，解析出来的IP地址，只是家里的宽带无法访问，其它网络可以访问）</p>
+      <div id="article-content">
+        
+          <p>家里用的是吉林联通宽带，之前访问GitHub正常，但是从一月份回家开始，电脑便不能访问GitHub了，上网查了一些教程，没有去实践<br>为什们拖了这么久？原因其实很简单，因为手机数据流量可以访问，每次写完博客推送文章都是用电脑连的手机热点去完成，日子着实太苦了，好好的宽带用不了，需要去连手机热点，因为能连上，所以拖了这么久<br>今天闲着没事，忽然想到了GitHub不能连接的问题，照着教程试了一下，成功了<br>先说一下为什么家里的宽带不能访问GitHub原因：宽带对DNS服务器解析GitHub域名的IP进行屏蔽，导致GitHub无法访问（测试发现，解析出来的IP地址，只是家里的宽带无法访问，其它网络可以访问）</p>
 <a id="more"></a>
 <p>这里推荐两个网站，通过域名查IP<br><a target="_blank" rel="noopener" href="https://www.ip138.com/">iP地址查询–手机号码查询归属地 | 邮政编码查询 | iP地址归属地查询 | 身份证号码验证在线查询网</a><br><a target="_blank" rel="noopener" href="http://ping.chinaz.com/">多个地点Ping服务器,网站测速 - 站长工具</a></p>
 <h2 id="无法访问GitHub的情况"><a href="#无法访问GitHub的情况" class="headerlink" title="无法访问GitHub的情况"></a>无法访问GitHub的情况</h2><p>先来看一下不能访问Github的情况<br>浏览器访问GitHub，提示无法访问此页面<br><img src="https://i.loli.net/2020/05/04/aPd1IgXTAM9CNY4.png" alt="无法访问GitHub"><br>cmd输入ping命令<code>ping github.com</code><br>ping不通<br><img src="https://i.loli.net/2020/05/05/ZJEsOqrxHpvYIce.png" alt="ping"><br><code>52.74.223.119</code>为宽带DNS服务器解析的IP地址<br>通过网站：<a target="_blank" rel="noopener" href="https://www.ip138.com/">https://www.ip138.com/</a>，输入域名，查询IP，总共查询到如下几个IP地址<br><img src="https://i.loli.net/2020/05/04/ngwxaV1rGS9sTLZ.png" alt="ip查询"><br>ping一个美国和新加坡的IP，美国的可以ping通，新加坡的不通<br><img src="https://i.loli.net/2020/05/04/EijKwWzVtJH9q25.png"><br>尝试在浏览器中直接访问能ping通的IP，提示此站点不安全，点击继续访问，依然跳到访问GitHub的无法访问此页面<br><img src="https://i.loli.net/2020/05/04/WUnVNQPL42CgIvO.png"></p>
@@ -315,12 +312,66 @@ $(function () {
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>hosts文件中的IP优先级大于DNS服务器中的IP，访问网站时，系统会先在hosts文件中查找域名所对应的IP，如果没有，才会去请求DNS服务器<br>起初不能访问GitHub，自己以为是大陆将GitHub屏蔽了，但是手机数据流量可以访问，证明了自己的想法是错的<br>通过了几次测试，发现DNS解析出GitHub的IP地址无非就是两个（IP可能不唯一）<br><code>13.250.177.223 [新加坡 Amazon数据中心]</code><br><code>140.82.112.4 [美国 华盛顿州西雅图GitHub]</code><br>家里的宽带屏蔽掉地址是<code>新加坡 Amazon数据中心</code>的IP<br>这里简单提及一下手机连接这种宽带访问GitHub方法：<br>因为手机修改hosts文件费劲，这里推荐修改DNS，测试了很多能访问的DNS服务器，发现台湾的DNS服务器适合家里的这种宽带，解析出的IP地址为美国，其它DNS服务器解析出的IP地址多数为新加坡<br>DNS服务器的地址为：<code>168.95.192.1</code>或<code>168.95.1.1</code><br>修改手机wifi设置，将IP设置为静态，添加上面的DNS即可<br>因为添加了台湾的DNS服务器，GitHub可以访问，但是访问国内的网站速度变慢，这就涉及到了取舍。</p>
 <p>用同样的方法，可以寻找一下谷歌搜索域名的IP，尝试ping测试，你会发现都不通过，这种应该是大陆封锁IP导致，即使遇到测试通过的IP，通过修改hosts文件，浏览器还是无法访问，这种情况，多半是需要VPN了</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2020/05/04/%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEGitHub%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">https://akbcd.github.io/2020/05/04/电脑无法访问GitHub解决办法/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -525,34 +576,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -597,7 +626,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

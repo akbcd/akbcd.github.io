@@ -39,8 +39,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -88,7 +88,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -156,16 +156,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -301,8 +297,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>2019年吉林省大学生数学建模省赛赛题A<br>获奖情况：成功参赛奖</p>
+      <div id="article-content">
+        
+          <p>2019年吉林省大学生数学建模省赛赛题A<br>获奖情况：成功参赛奖</p>
 <a id="more"></a>
 <p>[实习名称] 数学建模实习<br>[实习时间] 共2 周<br>2019年4月15日-2019年4月19日，2019年6月2、16、22、23、29日<br>[所用机时] 20学时<br>[实习地点] 理学院机房<br>[实习项目和内容]<br>&emsp;&emsp;2019年吉林省大学生数学建模省赛赛题任选一题<br>&emsp;&emsp;2019年吉林省大学生数学建模竞赛赛题A<br>&emsp;&emsp;<strong>CBA联赛争冠问题</strong><br>&emsp;&emsp;中国男子篮球职业联赛（China Basketball Association），简称（CBA联赛），是由中国篮球协会所主办的跨年度主客场制篮球联赛， 创办于1995年，中国最高等级的篮球联赛。由最初的12支代表队发展到今天的20余支代表。假设在今年CBA联赛有十四支球队进行常规赛和季后赛两个阶段进行，其中每场比赛必须有胜负，且每支球队编号固定。每支球队在每场球赛中的临场发挥水平的综合评分数据如表数据.xls文件所示，每支球队约100个历史评分数据。<br>&emsp;&emsp;请根据历史数据，分析探讨下列问题：<br>&emsp;&emsp;（1）请估算出每支球队夺冠的概率，并预测前四名的球队。<br>&emsp;&emsp;（2）根据附件综合评分的具体情况，定性分析中国CBA联赛十四支球队的水平。<br>&emsp;&emsp;（3）结合国内CBA联赛的实际情况，根据你们的研究结果，从夺冠概率的角度，针对(1)预测的前四名，提出你们关于如何最大概率夺冠的合理化建议。<br><a href="%E8%AF%95%E9%A2%98A%E6%95%B0%E6%8D%AE.xlsx">试题A数据.xlsx</a><br>**<center>对球队临场发挥水平的分析</center>**<br><strong><center>摘要</center></strong></p>
 <p>&emsp;&emsp;本文我们通过逐差法计数得到频数视为概率，随后用全概率公式计算出各队夺冠概率排序，解决了问题一，用聚类分析，以及多个统计量来定性分析解决问题二，随后从赛制，球员等角度分析回答了问题三。<br>&emsp;&emsp;针对问题一，为了联系临场发挥的综合评分（以下简称综合评分）与夺冠概率，我们通过计算通过逐差法，Mi-Nj，得到某队X综合评分大于另一队的频数n，Pr=n/M<em>N(当M</em>N足够大时)，我们可以将Pr视为事件X队与另一球队相遇时胜出的概率并通过求平均值得Pz，将Pz进行排序，得到前八如下图：</p>
@@ -356,12 +353,66 @@ $(function () {
 
 <p>[感想与收获]<br>&emsp;&emsp;在这次的数学建模中，我负责的主要是第三小题。本次的数学建模实习，收获了许多，其中不免遇到了许多困难，但是我们都一起克服过去。这次的数学建模比赛，我们选好了题目后，在第一题中就没有了思路。通过网上查询资料、询问老师，渐渐的找到了思路。总体来说，第一题的计算量很大，花费了很长时间才将第一题的前四名计算出来。通过这次的数学建模实习，知道了数学建模在学习中的重要性，知道了数学建模是把一个具体的实际问题转化为一个数学问题，然后用数学方法去解决它，之后我们再把它放回到实际当中去，用我们的模型解释现实生活中的种种现象和规律。<br>&emsp;&emsp;数学建模是一个经历观察、思考、归类、抽象与总结的过程，也是一个信息捕捉、筛选、整理的过程，更是一个思想与方法的产生与选择的过程。它给学生再现了一种“微型科研”的过程。数学建模教学有利于激发学生学习数学的兴趣，丰富学生数学探索的情感体验;有利于学生自觉检验、巩固所学的数学知识，促进知识的深化、发展;有利于学生体会和感悟数学思想方法。同时指导老师自身具备数学模型的构建意识与能力，能够指导和要求学生通过主动思维，自主构建有效的数学模型，从而使数学课堂彰显科学的魅力。<br>&emsp;&emsp;通过建模，与别人的交流，发现参加数学建模的同学大都自信，乐观，个人能力比较强，而且交流能力强，这都是数学建模所培养的，虽然建模只有短短的几天几夜，但是锻炼的能力确是其他的活动无法培养出来的，不同人的感受不一样，有文章说培养了创新能力，运用知识能力和计算机能力等，但是我觉得这些是远远不够得，只有亲身经历，才会体会到数学建模的无穷魅力。<br>&emsp;&emsp;通过这次的数学建模实习，知道了数学建模的几点要求：一个是问题一定源于学生的日常生活和现实当中，了解和经历解决实际问题的过程，并且根据学生已有的经验发现要提出的问题。同时，希望同学们在这一过程中感受数学的实用价值和获得良好的情感体验。当然也希望同学们在这样的过程当中，学会通过实际上数学探究本身应该说在平时教学当中，老师有些在课堂上也是这样教学的，它更重要的意义就是引导老师增加一种教学方式，首先就是这个问题就是有点儿全新性，解决的方案不是很明了，这样学生要有一个尝试，一个探索的过程并能通过查询资料等手段来获取信息，之后采取各种合作的方式解决问题，养成与人交流的能力。<br>&emsp;&emsp;数学建模培养的不仅仅是学生解决问题的能力，更是对问题的思考能力。这次的数学建模，让我了解了很多数学方法，包括但不限于全概率公式、定性分析、逐差法、聚类分析等。有的数学知识是在所学课程中没有讲到的，这就需要我们在网上查询资料自学，有时可能会感到很累，但是坚持到最后就是胜利。数学建模是一种创新过程，在思考方法和思维方式上与其他课程有着较大区别，它需要我们在学习时能冷静地单独思考，并且要有一定的问题分析能力。<br>&emsp;&emsp;我相信随着科技的不断创新发展，数学建模在其中的地位会越来越高，作为一个大学生，学好数学建模是非常重要的。<br>[参考文献]<br>[1] 张然.赛前准备与临场发挥[J] .中国排球, 1999, (1).<br>[2] 徐春林.赛场上的变化[J] .中国排球, 1994, (12).<br>[3] 马红宇.我国射击运动员面临的出国参赛环境及其应对措施[J] .<br>中国体育科技, 2002, (1).<br>[4] 黄汉平.优秀男子排球队比赛得失分规律的研究[J] .中国体育科<br>技, 1994, (3).<br>[5]阮奎.论影响排球运动员临场发挥的场因及其克服[J].体育科技文献通报,2008(06):35-37<br>[6]王溪源,宋鹏威,司亚晨,裴宗斌.论羽毛球运动员临场发挥的心理因素[J].青少年体育,2017(06):123-124.<br>[7]张振东，蒋健涛，王敏娜.基于逐步回归分析的2011-2012年CBA常规赛前八强得分能力研究［J］ .河南师范大学学 报（自然科学版），2013，41（2）：169-172.<br>[8]黄松峰，林媛. 第30届奥运会中国男篮低得分的归因分析［J］ . 福建师范大学学报（自然科学版），2016，32（4）： 118-124.<br>[9]张飙.2014-2015赛季CBA总决赛冠亚军队RSR综合评价分析［J］ .武汉体育学院学报，2015，49（11）：82-87.<br>[10]张森.对联赛和联赛替补球员的研究［D］ .郑州：河南大学，2009.<br>[11]CBA官网<br>[12]聚类分析：<br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1627240444851676548&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1627240444851676548&amp;wfr=spider&amp;for=pc</a><br>[13]CBA球队数据：<br> <a target="_blank" rel="noopener" href="http://cbadata.sports.sohu.com/ranking/teams/2018/0/1">http://cbadata.sports.sohu.com/ranking/teams/2018/0/1</a><br>[14]彭延春.高水平职业篮球运动员力量训练理论及CBA力量训练模式的研究[D].北京体育大学,2007.<br>[15]马春林.CBA联赛引援变迁与中国竞技篮球运动发展的瓶颈[J].北京体育大学学报,2012,35(01):26-31.</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/07/12/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/">https://akbcd.github.io/2019/07/12/数学建模实习报告/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -562,34 +613,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -634,7 +663,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

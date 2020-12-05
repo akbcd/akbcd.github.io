@@ -33,8 +33,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -82,7 +82,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -150,16 +150,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -295,8 +291,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章简单介绍一下sql以及分享一个sql练习，答案仅供参考</p>
+      <div id="article-content">
+        
+          <p>本篇文章简单介绍一下sql以及分享一个sql练习，答案仅供参考</p>
 <a id="more"></a>
 <h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p>结构化查询语言</p>
 <h2 id="数据库–关系型数据库-OLTP"><a href="#数据库–关系型数据库-OLTP" class="headerlink" title="数据库–关系型数据库    OLTP"></a>数据库–关系型数据库    OLTP</h2><p>mysql oracle sqlserver</p>
@@ -391,12 +388,66 @@ $(function () {
 </ul>
 <h2 id="练习（MySQL数据库）"><a href="#练习（MySQL数据库）" class="headerlink" title="练习（MySQL数据库）"></a>练习（MySQL数据库）</h2><p>数据库中有三张表，分别为student,course,SC（即学生表，课程表，选课表）<br>//三张表截图如下：<br><img src="student.jpg" alt="student"><br><img src="course.jpg" alt="course"><br><img src="sc.jpg" alt="sc"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">1.分别查询学生表和学生修课表中的全部数据。</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student </span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> SC</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>查询成绩在<span class="number">70</span>到<span class="number">80</span>分之间的学生的学号、课程号和成绩。</span><br><span class="line"><span class="keyword">select</span> sno,cno,grade <span class="keyword">from</span> sc <span class="keyword">where</span> grade <span class="keyword">between</span> <span class="number">70</span> <span class="keyword">and</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>．查询C01号课程成绩最高的分数</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(grade) <span class="keyword">from</span> sc <span class="keyword">where</span> Cno=<span class="string">&#x27;C01&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>查询学生都选修了哪些课程,要求列出课程号。</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> s.Cno,c.Cname <span class="keyword">from</span> sc s <span class="keyword">join</span> course c <span class="keyword">on</span> s.Cno=c.Cno</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>查询修了C02号课程的所有学生的平均成绩、最高成绩和最低成绩。</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">AVG</span>(Grade),<span class="keyword">MAX</span>(Grade),<span class="keyword">MIN</span>(Grade) <span class="keyword">from</span> sc <span class="keyword">where</span> Cno=<span class="string">&#x27;C02&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>统计每个系的学生人数。</span><br><span class="line"><span class="keyword">select</span> Sdept,<span class="keyword">count</span>(*) <span class="keyword">AS</span> <span class="string">&#x27;学生数&#x27;</span> <span class="keyword">from</span> student <span class="keyword">group</span> <span class="keyword">by</span> Sdept</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>统计每门课程的修课人数和考试最高分。</span><br><span class="line"><span class="keyword">select</span> Cname,<span class="keyword">COUNT</span>(*),<span class="keyword">MAX</span>(grade) <span class="keyword">from</span> sc,course <span class="keyword">where</span> sc.Cno=course.Cno <span class="keyword">GROUP</span> <span class="keyword">BY</span> Cname</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>统计每个学生的选课门数,并按选课门数的递增顺序显示结果。</span><br><span class="line"><span class="keyword">select</span> sname,<span class="keyword">COUNT</span>(*) <span class="keyword">as</span> <span class="string">&#x27;选课门数&#x27;</span> <span class="keyword">from</span> sc,student <span class="keyword">where</span> </span><br><span class="line">student.Sno=sc.Sno <span class="keyword">GROUP</span> <span class="keyword">BY</span> Sname <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">count</span>(sc.Sno) <span class="keyword">ASC</span>  </span><br><span class="line"></span><br><span class="line"><span class="number">9.</span>统计选修课的学生总数和考试的平均成绩。</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">DISTINCT</span> sno) <span class="keyword">as</span> 学生总数,<span class="keyword">AVG</span>(grade) <span class="keyword">as</span> 平均成绩 <span class="keyword">from</span> sc</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>查询选课门数超过<span class="number">2</span>门的学生的平均成绩和选课门数。</span><br><span class="line"><span class="keyword">select</span> student.Sname,<span class="keyword">avg</span>(sc.grade),<span class="keyword">count</span>(sc.cno) <span class="keyword">from</span> student,sc <span class="keyword">where</span> </span><br><span class="line">student.sno = sc.sno <span class="keyword">group</span> <span class="keyword">by</span> student.Sname <span class="keyword">having</span> <span class="keyword">count</span>(sc.cno) &gt;<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">11.</span>列出总成绩超过<span class="number">200</span>分的学生,要求列出学号、总成绩。</span><br><span class="line"><span class="keyword">select</span> sno <span class="keyword">as</span> 学号,<span class="keyword">sum</span>(grade) <span class="keyword">as</span> 总成绩 <span class="keyword">from</span> sc <span class="keyword">group</span> <span class="keyword">by</span> sno <span class="keyword">having</span> <span class="keyword">sum</span>(grade)&gt;<span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="number">12.</span>用子查询实现如下查询:</span><br><span class="line">(<span class="number">1</span>) 查询选修了C01号课程的学生的姓名和所在系。</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">DISTINCT</span> student.Sname,student.Sdept <span class="keyword">from</span> student,sc <span class="keyword">where</span> </span><br><span class="line">student.Sno <span class="keyword">in</span>  (<span class="keyword">select</span> sc.Sno <span class="keyword">from</span> sc <span class="keyword">where</span> sc.cno=<span class="string">&#x27;C01&#x27;</span>)</span><br><span class="line">(<span class="number">2</span>) 查询数学系成绩<span class="number">80</span>分以上的学生的学号、姓名。</span><br><span class="line"><span class="keyword">select</span> sno,sname <span class="keyword">from</span> student <span class="keyword">where</span> sno <span class="keyword">in</span>(<span class="keyword">select</span> sno <span class="keyword">from</span> sc <span class="keyword">where</span> </span><br><span class="line">sc.grade&gt;<span class="number">80</span>) <span class="keyword">and</span> sno <span class="keyword">in</span>(<span class="keyword">select</span> sno <span class="keyword">from</span> student <span class="keyword">where</span> sdept=<span class="string">&#x27;数学系&#x27;</span>)</span><br><span class="line">(<span class="number">3</span>) 查询计算机系学生所选的课程名.</span><br><span class="line"><span class="keyword">select</span> course.Cname <span class="keyword">from</span> course <span class="keyword">where</span> cno <span class="keyword">in</span>(<span class="keyword">select</span> cno <span class="keyword">from</span> sc <span class="keyword">where</span> </span><br><span class="line">sc.sno <span class="keyword">in</span>(<span class="keyword">select</span> sno <span class="keyword">from</span> student <span class="keyword">where</span> sdept=<span class="string">&#x27;计算机系&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="number">13.</span>删除修课成绩小于<span class="number">50</span>分的学生的修课记录</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">from</span> sc <span class="keyword">where</span> Grade &lt; <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="number">14.</span>将所有选修了<span class="string">&quot;c01&quot;</span>课程的学生的成绩加<span class="number">10</span>分。</span><br><span class="line"><span class="keyword">UPDATE</span> SC <span class="keyword">SET</span> GRADE=GRADE+<span class="number">10</span> <span class="keyword">WHERE</span> CNO=<span class="string">&#x27;C01&#x27;</span>;</span><br><span class="line"></span><br><span class="line">15.查询选修了c02号课程的学生的姓名和所在系。</span><br><span class="line"><span class="keyword">select</span> sname,sdept <span class="keyword">from</span> student,sc <span class="keyword">where</span> student.Sno=sc.Sno <span class="keyword">and</span> cno=<span class="string">&#x27;C02&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">16.</span>查询成绩<span class="number">80</span>分以上的学生的姓名、课程号和成绩,并按成绩的降序排列结果。</span><br><span class="line"><span class="keyword">select</span> sname,cno,grade <span class="keyword">from</span> student,sc <span class="keyword">where</span> </span><br><span class="line">student.sno=sc.Sno <span class="keyword">and</span> sc.Grade&gt;<span class="number">80</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> grade <span class="keyword">DESC</span></span><br><span class="line"></span><br><span class="line"><span class="number">17.</span>查询计算机系男生修了<span class="string">&quot;数据库基础&quot;</span>的学生的姓名、性别、成绩。</span><br><span class="line"><span class="keyword">select</span> sname,ssex,grade <span class="keyword">from</span> student,sc <span class="keyword">where</span> </span><br><span class="line">student.sno=sc.Sno <span class="keyword">and</span> student.Sdept=<span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">and</span> sc.Cno=<span class="string">&#x27;C04&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">18.</span>查询哪些学生的年龄相同,要求列出年龄相同的学生的姓名和年龄。</span><br><span class="line">这题使用到了表的自连接，所以需要给表取两个别名，如A和B</span><br><span class="line"><span class="keyword">select</span> t1.sname <span class="keyword">as</span> 年龄相同的学生,t1.Sage <span class="keyword">as</span> 年龄 <span class="keyword">from</span> student t1 </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> student t2 <span class="keyword">on</span> t1.Sage <span class="keyword">in</span>(<span class="keyword">select</span> Sage <span class="keyword">from</span> student <span class="keyword">where</span> </span><br><span class="line">t1.sage=t2.Sage <span class="keyword">and</span> t1.sname!=t2.Sname) <span class="keyword">GROUP</span> <span class="keyword">BY</span> t1.sname,t2.sage <span class="keyword">ORDER</span> <span class="keyword">BY</span> t1.Sage</span><br><span class="line"></span><br><span class="line"><span class="number">19.</span>查询哪些课程没有人选,要求列出课程号和课程名。</span><br><span class="line"><span class="keyword">select</span> cno <span class="keyword">as</span> 课程号,cname <span class="keyword">as</span> 课程名 <span class="keyword">from</span> course <span class="keyword">where</span> cno <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> cno <span class="keyword">from</span> sc)</span><br><span class="line"></span><br><span class="line"><span class="number">20.</span>分别查询信息系和计算机系的学生的姓名、性别、修课名称、修课成绩,</span><br><span class="line">并要求将这两个查询结果合并成一个结果集,并以系名、姓名、性别、修课名称、修课成绩的顺序显示各列。此题用到了并<span class="keyword">union</span>查询</span><br><span class="line"><span class="keyword">select</span> student.sname,student.Ssex,course.Cname,sc.Grade <span class="keyword">from</span> student,course,sc <span class="keyword">where</span> </span><br><span class="line">student.Sdept=<span class="string">&#x27;信息系&#x27;</span> <span class="keyword">and</span> student.sno=sc.sno <span class="keyword">and</span> course.Cno=sc.Cno</span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> student.sname,student.Ssex,course.Cname,sc.Grade <span class="keyword">from</span> student,course,sc <span class="keyword">where</span> </span><br><span class="line">student.Sdept=<span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">and</span> student.sno=sc.sno <span class="keyword">and</span> course.Cno=sc.Cno</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/12/04/sql%E7%BB%83%E4%B9%A01/">https://akbcd.github.io/2019/12/04/sql练习1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -597,34 +648,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -669,7 +698,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

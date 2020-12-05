@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="上节课回顾"><a href="#上节课回顾" class="headerlink" title="上节课回顾"></a>上节课回顾</h2><p>1.变量的三要素<br>数据类型  变量名  初始化值<br>2.数据类型都有什么？<br>基本数据类型 和 引用数据类型</p>
+      <div id="article-content">
+        
+          <h2 id="上节课回顾"><a href="#上节课回顾" class="headerlink" title="上节课回顾"></a>上节课回顾</h2><p>1.变量的三要素<br>数据类型  变量名  初始化值<br>2.数据类型都有什么？<br>基本数据类型 和 引用数据类型</p>
 <a id="more"></a>
 <p>基本数据类型有：<br>整型：byte short int long<br>默认是int 占四个字节 一个字节占八位（bit）<br>byte -128~127<br>long 后面必须加 l<br>浮点：double float<br>默认是double<br>float 后面必须加 f<br>字符：char<br>单引号引起来的单个字符<br>ASII码<br>“&quot; 转义字符<br>布尔：boolean<br>true 和 false<br>3.数据类型转换规则<br>char,byte,short,在运算时，先把自身转换成 int 再运算<br>小的向大的转换   自动转换<br>大的向小的转换   强制转换<br>混合运算，结果是最大的数据类型<br>boolean 不参加转换<br>4.运算符<br>&amp; 与 &amp;&amp; 的区别<br>&amp;&amp; 如果第一个表达式是错的，对整个式子有影响，第二个式子就不执行了，提高效率<br>5.程序设计结构<br>顺序和分支<br>分支包括：<br>单分支：if(boolean类型)<br>多分支：if(){} else if(){} … else{}</p>
 <h2 id="本次课主要内容"><a href="#本次课主要内容" class="headerlink" title="本次课主要内容"></a>本次课主要内容</h2><h3 id="多分支"><a href="#多分支" class="headerlink" title="多分支"></a>多分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch(常量表达式)&#123;</span><br><span class="line">    case 常量1 :语句;</span><br><span class="line">    case 常量2 :语句;</span><br><span class="line">    case 常量3 :语句;</span><br><span class="line">    ...</span><br><span class="line">    case 常量n:语句;</span><br><span class="line">    default :语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -310,12 +307,66 @@ $(function () {
 <hr>
 <p><strong>以下是Java第二次作业及答案</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">1、一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在     第10次落地时，共经过多少米？第10次反弹多高？ </span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;定义初始高度s,每次弹起时高度n,走过的路程sum</span><br><span class="line">		float s&#x3D;100.0f,n&#x3D;0,sum&#x3D;0;</span><br><span class="line">		int i; </span><br><span class="line">		for(i&#x3D;1;i&lt;&#x3D;10;i++) &#123; </span><br><span class="line">		n&#x3D;s&#x2F;2;&#x2F;&#x2F;s为初始高度，n为每次谈起的高度 </span><br><span class="line">		sum&#x3D;sum+s+n; &#x2F;&#x2F;sum初始值为0 </span><br><span class="line">		s&#x3D;n;&#x2F;&#x2F;变化下一次的弹起的初始高度 </span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;输出结果</span><br><span class="line">		System.out.println(&quot;第10次落地时，共经过多少米:&quot;+sum);</span><br><span class="line">		System.out.println(&quot;第10次反弹多高：&quot;+n);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2、现在用程序完成如下要求</span><br><span class="line">利用键盘输入 你个人的 三门学科成绩，然后，分别求出 三科成绩的平均分，最低分，最高分，三科的总分（友情提示：利用方法）</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;请依次输入三门学科成绩：&quot;);</span><br><span class="line">		Scanner sc &#x3D; new Scanner(System.in);</span><br><span class="line">		&#x2F;&#x2F;将这三门学科成绩依次赋值给a,b,c</span><br><span class="line">		int a &#x3D; sc.nextInt();</span><br><span class="line">        int b &#x3D; sc.nextInt();</span><br><span class="line">        int c &#x3D; sc.nextInt();</span><br><span class="line">        &#x2F;&#x2F;调用getSum方法</span><br><span class="line">        getSum(a,b,c);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void getSum(int a,int b,int c) &#123;</span><br><span class="line">		&#x2F;&#x2F;对a,b,c从大到小排序</span><br><span class="line">		if(a&lt;b) &#123;</span><br><span class="line">			int t&#x3D;a;</span><br><span class="line">			a&#x3D;b;</span><br><span class="line">			b&#x3D;t;</span><br><span class="line">		&#125;</span><br><span class="line">		if(a&lt;c) &#123;</span><br><span class="line">			int t&#x3D;a;</span><br><span class="line">			a&#x3D;c;</span><br><span class="line">			c&#x3D;t;</span><br><span class="line">		&#125;</span><br><span class="line">		if(b&lt;c) &#123;</span><br><span class="line">			int t&#x3D;b;</span><br><span class="line">			b&#x3D;c;</span><br><span class="line">			c&#x3D;t;</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;平均分</span><br><span class="line">		float s1&#x3D;(a+b+c)&#x2F;3f;</span><br><span class="line">		&#x2F;&#x2F;总分</span><br><span class="line">		int s2&#x3D;a+b+c;</span><br><span class="line">		System.out.println(&quot;平均分：&quot;+s1+&quot;最高分：&quot;+a+&quot;最低分&quot;+c+&quot;总分&quot;+s2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3、将下面给定的数组转置输出</span><br><span class="line">   例如   原数组： 1,2,3,4,5,6</span><br><span class="line">		  转置之后的数组： 6,,5,4,3,2,1</span><br><span class="line">答：我认为这道题是对应位置互换</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int n, i, t;</span><br><span class="line">		Scanner sc &#x3D; new Scanner(System.in);</span><br><span class="line">		&#x2F;&#x2F; 获取数组长度</span><br><span class="line">		n &#x3D; sc.nextInt();</span><br><span class="line">		int[] a &#x3D; new int[n];</span><br><span class="line">		for (i &#x3D; 0; i &lt; n; i++) &#123;</span><br><span class="line">			&#x2F;&#x2F;对数组进行赋值</span><br><span class="line">			a[i] &#x3D; sc.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;数组转置,第一个与最后一个换，第二个与倒数第二个换，以此类推</span><br><span class="line">		for (i &#x3D; 0; i &lt; n &#x2F; 2; i++) &#123;</span><br><span class="line">			t &#x3D; a[i];</span><br><span class="line">			a[i] &#x3D; a[n-1-i];</span><br><span class="line">			a[n-1-i] &#x3D; t;</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;转制后的数组输出</span><br><span class="line">		for (i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">			System.out.print(a[i]+&quot; &quot; );</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">4、现在有如下2个数组</span><br><span class="line"> 数组A： “1,7,5,7,9,2,21,13,45”</span><br><span class="line"> 数组B：  “2,5,8,14,21”</span><br><span class="line">将俩个数组合并为数组C，按顺序排列输出</span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;定义两个数组a,b</span><br><span class="line">		int [] a&#x3D; &#123;1,7,5,7,9,2,21,13,45&#125;;</span><br><span class="line">		int [] b&#x3D; &#123;2,5,8,14,21&#125;;</span><br><span class="line">		&#x2F;&#x2F;创建数组c</span><br><span class="line">		int [] c&#x3D;new int[a.length+b.length];</span><br><span class="line">		&#x2F;&#x2F;对数组c进行赋值</span><br><span class="line">		for(int i&#x3D;0;i&lt;a.length;i++) &#123;</span><br><span class="line">			c[i]&#x3D;a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i&#x3D;0;i&lt;b.length;i++) &#123;</span><br><span class="line">			c[a.length+i]&#x3D;b[i];</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;c数组进行输出</span><br><span class="line">		for (int i &#x3D; 0; i &lt; c.length; i++)</span><br><span class="line">			System.out.print(c[i]+&quot; &quot; );</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/05/27/java%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/05/27/java第二次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -516,34 +567,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -588,7 +617,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

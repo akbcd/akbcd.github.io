@@ -27,8 +27,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -76,7 +76,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -144,16 +144,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -280,13 +276,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>前段时间安装Linux操作系统，需要往U盘里面导入一个4Gb多的文件，有的U盘空间够用，但是导不进去，其实是U盘文件系统的问题，这里就科普一下文件系统</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/09/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/#more">more >></a>
+          <p>前段时间安装Linux操作系统，需要往U盘里面导入一个4Gb多的文件，有的U盘空间够用，但是导不进去，其实是U盘文件系统的问题，这里就科普一下文件系统</p>
+          
+            <a class="article-more-a" href="/2019/09/06/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -358,15 +380,41 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <center>社会实践心得体会</center>
+      <div id="article-content">
+        
+          <center>社会实践心得体会</center>
 
 <p>&emsp;&emsp;成长，是一种经历；经历，是一种人生的体验。人生的意义不在于我们拥有了什么，而在于从中我们体悟到了什么。生命的短暂与存在的永恒之间锻造了自我，拥有真正的价值和真实的幸福。暑假社会实践活动给了我们一个锻炼自我的平台，让我们有所体会、有所启迪、有所感悟，让我们更好的成长！</p>
+          
+            <a class="article-more-a" href="/2019/09/01/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A%EF%BC%882019%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E6%9C%9F%EF%BC%89/#more">more >></a>
+          
         
-          <a class="article-more-a" href="/2019/09/01/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A%EF%BC%882019%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E6%9C%9F%EF%BC%89/#more">more >></a>
-        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -438,13 +486,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>此内容被密码保护，请输入密码访问</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/31/%E6%96%B0%E5%AD%A6%E6%9C%9F%E6%96%B0%E8%B5%B7%E7%82%B9/#more">more >></a>
+          <p>此内容被密码保护，请输入密码访问</p>
+          
+            <a class="article-more-a" href="/2019/08/31/%E6%96%B0%E5%AD%A6%E6%9C%9F%E6%96%B0%E8%B5%B7%E7%82%B9/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -505,13 +579,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>坐了好几次集安到长春的客车了，记录些事情（隧道名称可能不准确）</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/27/%E8%A1%8C%E8%BD%A6%E6%97%A5%E5%BF%97%EF%BC%88%E9%9B%86%E5%AE%89%E5%88%B0%E9%95%BF%E6%98%A5%EF%BC%89/#more">more >></a>
+          <p>坐了好几次集安到长春的客车了，记录些事情（隧道名称可能不准确）</p>
+          
+            <a class="article-more-a" href="/2019/08/27/%E8%A1%8C%E8%BD%A6%E6%97%A5%E5%BF%97%EF%BC%88%E9%9B%86%E5%AE%89%E5%88%B0%E9%95%BF%E6%98%A5%EF%BC%89/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -583,13 +683,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>单例模式 事务 网络编程</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/24/java%E7%AC%AC%E5%8D%81%E5%9B%9B%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：<br>单例模式 事务 网络编程</p>
+          
+            <a class="article-more-a" href="/2019/08/24/java%E7%AC%AC%E5%8D%81%E5%9B%9B%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -661,13 +787,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>JDBC数据库操作</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/23/java%E7%AC%AC%E5%8D%81%E4%B8%89%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：<br>JDBC数据库操作</p>
+          
+            <a class="article-more-a" href="/2019/08/23/java%E7%AC%AC%E5%8D%81%E4%B8%89%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -739,13 +891,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>jdk1.5新增特性和线程</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/22/java%E7%AC%AC%E5%8D%81%E4%BA%8C%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：<br>jdk1.5新增特性和线程</p>
+          
+            <a class="article-more-a" href="/2019/08/22/java%E7%AC%AC%E5%8D%81%E4%BA%8C%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -817,13 +995,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本节课主要内容：IO流、Buffered流、Data流、Object流、Print流、转换流</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/20/java%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本节课主要内容：IO流、Buffered流、Data流、Object流、Print流、转换流</p>
+          
+            <a class="article-more-a" href="/2019/08/20/java%E7%AC%AC%E5%8D%81%E4%B8%80%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -895,13 +1099,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：集合Collection、Map，Collections的一些方法以及与集合相关的几个问题</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/20/java%E7%AC%AC%E5%8D%81%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：集合Collection、Map，Collections的一些方法以及与集合相关的几个问题</p>
+          
+            <a class="article-more-a" href="/2019/08/20/java%E7%AC%AC%E5%8D%81%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -973,13 +1203,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：上节课知识补充、Math类、Date类、异常处理</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/08/16/java%E7%AC%AC%E4%B9%9D%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：上节课知识补充、Math类、Date类、异常处理</p>
+          
+            <a class="article-more-a" href="/2019/08/16/java%E7%AC%AC%E4%B9%9D%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -1052,34 +1308,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -1124,7 +1358,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

@@ -30,8 +30,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -79,7 +79,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -147,16 +147,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -292,8 +288,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章对springMVC进行简单介绍</p>
+      <div id="article-content">
+        
+          <p>本篇文章对springMVC进行简单介绍</p>
 <a id="more"></a>
 <h2 id="spring介绍"><a href="#spring介绍" class="headerlink" title="spring介绍"></a>spring介绍</h2><p>spring是一个开源的控制反转(Inversion of Control ,IoC)和面向切面(AOP)的容器框架.它的主要目的是简化企业开发.</p>
 <p>所谓控制反转就是应用本身不负责依赖对象的创建及维护，依赖对象的创建及维护是由外部容器负责的。这样控制权就由应用转移到了外部容器，控制权的转移就是所谓反转。</p>
@@ -351,12 +348,66 @@ $(function () {
 <h2 id="字符集过滤器"><a href="#字符集过滤器" class="headerlink" title="字符集过滤器"></a>字符集过滤器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Spring的字符集过滤通常用于处理项目中的post乱码问题，该过滤器位于org.springframework.web.filter包中，指向类CharacterEncodingFilter。</span><br><span class="line">&lt;filter&gt;</span><br><span class="line">		&lt;filter-name&gt;CharacterEncodingFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">		&lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">		&lt;init-param&gt;</span><br><span class="line">			&lt;param-name&gt;encoding&lt;&#x2F;param-name&gt;</span><br><span class="line">			&lt;param-value&gt;UTF-8&lt;&#x2F;param-value&gt;</span><br><span class="line">		&lt;&#x2F;init-param&gt;</span><br><span class="line">	&lt;&#x2F;filter&gt;</span><br><span class="line">	&lt;filter-mapping&gt;</span><br><span class="line">		&lt;filter-name&gt;CharacterEncodingFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">		&lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">复制所需jar包到工程lib目录下commons-io-2.3.jar</span><br><span class="line">在spring配置文件中加入如下代码</span><br><span class="line">&lt;bean id&#x3D;&quot;multipartResolver&quot;</span><br><span class="line">        class&#x3D;&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</span><br><span class="line">        &lt;!-- 设置编码 --&gt;</span><br><span class="line">        &lt;property name&#x3D;&quot;defaultEncoding&quot; value&#x3D;&quot;UTF-8&quot; &#x2F;&gt;</span><br><span class="line">        &lt;!-- 设置上传文件总大小 --&gt;</span><br><span class="line">        &lt;property name&#x3D;&quot;maxUploadSize&quot; value&#x3D;&quot;10240000&quot; &#x2F;&gt;</span><br><span class="line">        &lt;!-- 设置单个上传文件大小 --&gt;</span><br><span class="line">        &lt;property name&#x3D;&quot;maxUploadSizePerFile&quot; value&#x3D;&quot;102400&quot; &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建上传页面</span><br><span class="line">Method必须是post</span><br><span class="line">必须配置enctype的值为multipart&#x2F;form-data</span><br><span class="line">&lt;form action&#x3D;&quot;test&#x2F;upload.action&quot; method&#x3D;&quot;post&quot;</span><br><span class="line">        enctype&#x3D;&quot;multipart&#x2F;form-data&quot;&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;uploadFile&quot; value&#x3D;&quot;选择文件&quot; &#x2F;&gt; </span><br><span class="line">        &lt;input type&#x3D;&quot;submit&quot;value&#x3D;&quot;提交&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line"></span><br><span class="line">创建上传用的controller</span><br><span class="line">@RequestMapping(&quot;&#x2F;upload.action&quot;)</span><br><span class="line">	public String upload(Model model,HttpSession session, MultipartFile uploadFile)</span><br><span class="line">            throws Exception &#123;</span><br><span class="line">		</span><br><span class="line">        String originalFilename &#x3D; uploadFile.getOriginalFilename();</span><br><span class="line">        System.out.println(originalFilename);</span><br><span class="line">        </span><br><span class="line">        String name &#x3D; originalFilename.substring(originalFilename.lastIndexOf(&quot;.&quot;));</span><br><span class="line">        UUID uuid &#x3D; UUID.randomUUID();</span><br><span class="line">        String url &#x3D; session.getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;&quot;)+uuid+name;</span><br><span class="line">        System.out.println(uuid+name);</span><br><span class="line">        if (uploadFile.getSize() &gt; 0) &#123;</span><br><span class="line">                File realPath &#x3D; new File(&quot;d:&#x2F;&quot;,uuid+name);</span><br><span class="line">                System.out.println(realPath.getPath());</span><br><span class="line">                uploadFile.transferTo(realPath);</span><br><span class="line">            &#125;</span><br><span class="line">        model.addAttribute(&quot;url&quot;,uuid+name);</span><br><span class="line">        return &quot;&#x2F;index.jsp&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2020/05/22/springMVC/">https://akbcd.github.io/2020/05/22/springMVC/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -574,34 +625,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -646,7 +675,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

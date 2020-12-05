@@ -39,8 +39,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -88,7 +88,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -156,16 +156,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -301,8 +297,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章介绍一下新版本Edge浏览器相比旧版本Edge浏览器发生了哪些变化<br>新版Edge浏览器下载网址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH">https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH</a></p>
+      <div id="article-content">
+        
+          <p>本篇文章介绍一下新版本Edge浏览器相比旧版本Edge浏览器发生了哪些变化<br>新版Edge浏览器下载网址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH">https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH</a></p>
 <a id="more"></a>
 <h1 id="变化"><a href="#变化" class="headerlink" title="变化"></a>变化</h1><h2 id="右上角工具菜单"><a href="#右上角工具菜单" class="headerlink" title="右上角工具菜单"></a>右上角工具菜单</h2><p><img src="%E6%97%A7_%E5%8F%B3%E4%B8%8A.png" alt="旧_右上"><br>旧版本Edge<br><img src="%E6%96%B0_%E5%8F%B3%E4%B8%8A.png" alt="新_右上"><br>新版本Edge</p>
 <p>新版较旧版去掉了添加备注功能，添加了集锦功能，去掉了共享此页面图标（移动到设置及其他界面），添加了发送反馈与用户头像（类似chrome）</p>
@@ -335,12 +332,66 @@ $(function () {
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="变化-1"><a href="#变化-1" class="headerlink" title="变化"></a>变化</h2><p>新版本基于谷歌开源Chromium内核开发，里面很多内容都与chrome相似，其实与旧版Edge没什么可比性，但是，微软对新版Edge进行了重制，以使习惯使用旧版Edge浏览器的用户适应新版<br>新版里面的设置功能，与chrome类似，与旧版本没有什么可比性，这里不进行比较<br>以上内容是从直观界面中发现的微小变化（新版对于旧版的还原度很高），可能不是很全。<br>当然，浏览器图标也是发生变化的，并且部分功能所对应的快捷键发生了变化</p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>2018年12月，微软正式确认，新的Edge浏览器将从EdgeHTML内核迁移为Chromium内核，截至2020年1月15日，新版Edge正式发布，记得当时还没有中文页面，在五月份左右，已经推出了中文下载页面，页面中下载安装，会覆盖之前版本，可以卸载，卸载后会恢复旧版<br>换了内核的Edge，总体来说感觉不错：谷歌有的功能它都有，并且可以随时更新（添加新功能）</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2020/05/07/%E5%BE%AE%E8%BD%AF%E6%96%B0%E6%97%A7Micrpsoft-Edge%E6%B5%8F%E8%A7%88%E5%99%A8/">https://akbcd.github.io/2020/05/07/微软新旧Micrpsoft-Edge浏览器/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -554,34 +605,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -626,7 +655,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

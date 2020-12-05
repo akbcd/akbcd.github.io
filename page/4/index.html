@@ -27,8 +27,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -76,7 +76,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -144,16 +144,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -280,13 +276,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>tomcat目录介绍、创建servlet<br>doGet、doPost、service区别<br>servlet生命周期、request、response、servlet里面连接数据库、过滤器</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/11/07/jsp%E7%AC%AC%E5%9B%9B%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容：<br>tomcat目录介绍、创建servlet<br>doGet、doPost、service区别<br>servlet生命周期、request、response、servlet里面连接数据库、过滤器</p>
+          
+            <a class="article-more-a" href="/2019/11/07/jsp%E7%AC%AC%E5%9B%9B%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -358,13 +380,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>好久没写笔记了。从今天开始继续。<br>本次课主要内容：<br>回顾<br>连接数据库的登录</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/11/07/jsp%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>好久没写笔记了。从今天开始继续。<br>本次课主要内容：<br>回顾<br>连接数据库的登录</p>
+          
+            <a class="article-more-a" href="/2019/11/07/jsp%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -436,13 +484,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>凤凰系统是基于Linux内核开发的一个安卓桌面系统，适合大屏幕使用。如果你想拥有一个安卓模拟器，可以大屏运行，凤凰系统适合你<br>现在的凤凰系统，因为生存，在系统内加入了广告，个人体验不是很好，本篇文章分享一个无广告版本的iso文件<br>说明：<br>VM虚拟机 VMware® Workstation 15 Pro<br>版本 15.5.0 build-14665864<br>凤凰系统 PhoenixOSInstaller_v3.0.7.508_x86_x64<br><strong>VM虚拟机安装凤凰系统操作步骤</strong></p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/10/29/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E5%87%A4%E5%87%B0%E7%B3%BB%E7%BB%9F/#more">more >></a>
+          <p>凤凰系统是基于Linux内核开发的一个安卓桌面系统，适合大屏幕使用。如果你想拥有一个安卓模拟器，可以大屏运行，凤凰系统适合你<br>现在的凤凰系统，因为生存，在系统内加入了广告，个人体验不是很好，本篇文章分享一个无广告版本的iso文件<br>说明：<br>VM虚拟机 VMware® Workstation 15 Pro<br>版本 15.5.0 build-14665864<br>凤凰系统 PhoenixOSInstaller_v3.0.7.508_x86_x64<br><strong>VM虚拟机安装凤凰系统操作步骤</strong></p>
+          
+            <a class="article-more-a" href="/2019/10/29/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E5%87%A4%E5%87%B0%E7%B3%BB%E7%BB%9F/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -514,12 +588,38 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>Windows10运行虚拟机出现错误提示<br>VMware workstations 与 Device/credential guard不兼容。在禁用Device/ Credential Guard后，可以运行VMware Workstation</p>
+      <div id="article-content">
+        
+          <p>Windows10运行虚拟机出现错误提示<br>VMware workstations 与 Device/credential guard不兼容。在禁用Device/ Credential Guard后，可以运行VMware Workstation</p>
 <p>解决办法<br>1.关闭程序和功能中的Windows沙盒<br>2.关闭程序和功能中的Hyper-v<br>3.Windows Powershell以管理员身份运行输入命令<code>bcdedit /set hypervisorlaunchtype off</code><br>如果依然不好使，可以重启测试</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -591,15 +691,41 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Hexo 4.0.0 Released</strong>已于2019年10月14日更新。<br>想要升级体验，请在package.json中更改以下行，</p>
+      <div id="article-content">
+        
+          <p><strong>Hexo 4.0.0 Released</strong>已于2019年10月14日更新。<br>想要升级体验，请在package.json中更改以下行，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-&quot;hexo&quot;: &quot;^3.9.0&quot;，</span><br><span class="line">+&quot;hexo&quot;: &quot;^4.0.0&quot;，</span><br></pre></td></tr></table></figure>
 <p>之后输入git命令<code>npm install</code>安装，<br>查看hexo版本<code>hexo -v</code>显示<code>hexo: 4.0.0</code>即安装成功</p>
+          
+            <a class="article-more-a" href="/2019/10/20/hexo4-0%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
+          
         
-          <a class="article-more-a" href="/2019/10/20/hexo4-0%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
-        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -675,13 +801,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>这篇文章添加几个适用于yilia主题的功能</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/10/14/yilia%E4%B8%BB%E9%A2%98%E8%BF%9B%E9%98%B6%E9%85%8D%E7%BD%AE/#more">more >></a>
+          <p>这篇文章添加几个适用于yilia主题的功能</p>
+          
+            <a class="article-more-a" href="/2019/10/14/yilia%E4%B8%BB%E9%A2%98%E8%BF%9B%E9%98%B6%E9%85%8D%E7%BD%AE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -753,13 +905,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容<br>包含的相关知识点，两种页面跳转，9个内置对象的部分介绍（四个存值对象，response和out对象），登录模块的简单完成</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/10/10/jsp%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>本次课主要内容<br>包含的相关知识点，两种页面跳转，9个内置对象的部分介绍（四个存值对象，response和out对象），登录模块的简单完成</p>
+          
+            <a class="article-more-a" href="/2019/10/10/jsp%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -831,13 +1009,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>jsp是java web开发相关知识。简言之，就是用Java和html相关知识做jsp页面，页面类似html，但是扩展名为<code>.jsp</code>，并非<code>.html</code><br>本次课主要内容：创建jsp项目，jsp注释，jsp指令，jsp脚本元素</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/10/09/jsp%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          <p>jsp是java web开发相关知识。简言之，就是用Java和html相关知识做jsp页面，页面类似html，但是扩展名为<code>.jsp</code>，并非<code>.html</code><br>本次课主要内容：创建jsp项目，jsp注释，jsp指令，jsp脚本元素</p>
+          
+            <a class="article-more-a" href="/2019/10/09/jsp%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -909,14 +1113,40 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575783853526&di=77450324164baaa5dd64413abca93b38&imgtype=jpg&src=http://img1.imgtn.bdimg.com/it/u=3730716641,2983754592&fm=214&gp=0.jpg" alt="命运之夜"></p>
+      <div id="article-content">
+        
+          <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575783853526&di=77450324164baaa5dd64413abca93b38&imgtype=jpg&src=http://img1.imgtn.bdimg.com/it/u=3730716641,2983754592&fm=214&gp=0.jpg" alt="命运之夜"></p>
 <h2 id="分集剧情"><a href="#分集剧情" class="headerlink" title="分集剧情"></a>分集剧情</h2><h3 id="第十三话-冬之城"><a href="#第十三话-冬之城" class="headerlink" title="第十三话 冬之城"></a>第十三话 冬之城</h3><p>士郎不在<br>只要努力防御，挡住她的攻击…<br>“Saber！Saber！”<br>“士郎！”<br>遥远的不列颠尼亚群岛<br>亚瑟王站在军队的前方，手中持着石中剑，看着远方</p>
+          
+            <a class="article-more-a" href="/2019/09/30/%E5%91%BD%E8%BF%90%E4%B9%8B%E5%A4%9C%E4%B8%8B/#more">more >></a>
+          
         
-          <a class="article-more-a" href="/2019/09/30/%E5%91%BD%E8%BF%90%E4%B9%8B%E5%A4%9C%E4%B8%8B/#more">more >></a>
-        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -988,13 +1218,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575783853526&di=77450324164baaa5dd64413abca93b38&imgtype=jpg&src=http://img1.imgtn.bdimg.com/it/u=3730716641,2983754592&fm=214&gp=0.jpg" alt="命运之夜"><br>命运之夜动画片，根据日本文字冒险游戏<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/fate%2Fstay%20night/35179">fate stay night</a>改编，讲述的是第五次圣杯战争，主人公：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%AB%E5%AE%AB%E5%A3%AB%E9%83%8E/3191065">卫宫士郎</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%89%91%E4%B9%8B%E9%AA%91%E5%A3%AB/9673172">Saber</a>（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%98%BF%E5%B0%94%E6%89%98%E5%88%A9%E4%BA%9A%C2%B7%E6%BD%98%E5%BE%B7%E6%8B%89%E8%B4%A1/10500553">阿尔托利亚·潘德拉贡</a>）。<br>fate stay night总共有三条线路，五种不同的剧情，这里简单介绍一下</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2019/09/29/%E5%91%BD%E8%BF%90%E4%B9%8B%E5%A4%9C%E4%B8%8A/#more">more >></a>
+          <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575783853526&di=77450324164baaa5dd64413abca93b38&imgtype=jpg&src=http://img1.imgtn.bdimg.com/it/u=3730716641,2983754592&fm=214&gp=0.jpg" alt="命运之夜"><br>命运之夜动画片，根据日本文字冒险游戏<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/fate%2Fstay%20night/35179">fate stay night</a>改编，讲述的是第五次圣杯战争，主人公：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%AB%E5%AE%AB%E5%A3%AB%E9%83%8E/3191065">卫宫士郎</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%89%91%E4%B9%8B%E9%AA%91%E5%A3%AB/9673172">Saber</a>（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%98%BF%E5%B0%94%E6%89%98%E5%88%A9%E4%BA%9A%C2%B7%E6%BD%98%E5%BE%B7%E6%8B%89%E8%B4%A1/10500553">阿尔托利亚·潘德拉贡</a>）。<br>fate stay night总共有三条线路，五种不同的剧情，这里简单介绍一下</p>
+          
+            <a class="article-more-a" href="/2019/09/29/%E5%91%BD%E8%BF%90%E4%B9%8B%E5%A4%9C%E4%B8%8A/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -1067,34 +1323,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -1139,7 +1373,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

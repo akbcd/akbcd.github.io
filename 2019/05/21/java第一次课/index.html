@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>java基础内容，总共十四次课，这是第一次课</p>
+      <div id="article-content">
+        
+          <p>java基础内容，总共十四次课，这是第一次课</p>
 <h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><h3 id="什么是Java语言？"><a href="#什么是Java语言？" class="headerlink" title="什么是Java语言？"></a>什么是Java语言？</h3><p>是计算机语言，比如：c、c++、python、c#等等</p>
 <a id="more"></a>
 <h3 id="为什么学Java？"><a href="#为什么学Java？" class="headerlink" title="为什么学Java？"></a>为什么学Java？</h3><p>应用广，就业快，好！目前十五年内，Java还是前三名</p>
@@ -320,12 +317,66 @@ $(function () {
 <hr>
 <p><strong>以下是Java第一次课作业及答案</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br></pre></td><td class="code"><pre><span class="line">1、再cmd 里 打印出，你个人的基本信息（例如：班级啦，姓名啦，专业啦等等）</span><br><span class="line">图片略</span><br><span class="line">源代码如下：</span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		System.out.println(&quot;班级&quot;);</span><br><span class="line">		System.out.println(&quot;姓名&quot;);</span><br><span class="line">        System.out.println(&quot;专业&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">1. （标识符命名）下面几个变量中，那些是对的？那些是错的？错的请说明理由</span><br><span class="line">A. ILoveJava</span><br><span class="line">B. $20</span><br><span class="line">C. learn@java</span><br><span class="line">D. antony.lee</span><br><span class="line">E. Hello_World</span><br><span class="line">F. 2tigers</span><br><span class="line">答：A没有问题 B没有问题 C@不能用作标识符 D.不能用作标识符 E没有问题 F不能以数字开头</span><br><span class="line"></span><br><span class="line">1.（操作符）有如下代码：</span><br><span class="line">int a &#x3D; 5;</span><br><span class="line">int b &#x3D; (a++) + (--a) +(++a);</span><br><span class="line">问执行完之后，b 的结果是多少？</span><br><span class="line">答：16</span><br><span class="line"></span><br><span class="line">2. （基本类型的运算）一家商场在举行打折促销，所有商品都进行8 折优惠。一</span><br><span class="line">位程序员把这个逻辑写成：</span><br><span class="line">short price &#x3D; ...; &#x2F;&#x2F; 先计算出原价</span><br><span class="line">short realPrice &#x3D; price * 8 &#x2F; 10; &#x2F;&#x2F;再计算出打折之后的价格</span><br><span class="line">问：这段代码是否正确？如果正确，假设price  为100 ，那计算之后的</span><br><span class="line">realPrice值为多少？如果不正确，应该怎么改正？</span><br><span class="line">把完整代码写出来</span><br><span class="line">答：不正确</span><br><span class="line">short realPrice &#x3D; price * 8 &#x2F; 10改为float realPrice &#x3D; price * 8 &#x2F; 10f</span><br><span class="line">完整代码</span><br><span class="line">public Price&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line">short price&#x3D;100;</span><br><span class="line">float realPrice &#x3D; price * 8 &#x2F; 10f;</span><br><span class="line">System.out.println(&quot;打折后的的价格为：&quot;+realPrice);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3.关于运算符的作业</span><br><span class="line">	随机给出一个五位数的彩票号码（正整数），程序输出该彩票号码中的数字及相关信息</span><br><span class="line">		1）在主类的main方法中声明一个用于存放彩票号码的int型变量ticketNumber，以及</span><br><span class="line">    用于存放彩票号码中个位、十位、百位、千位和万位上数字的byte型变量a1、a2、a3、</span><br><span class="line">    a4和a5。</span><br><span class="line">                2）?依次求出ticketNumber中个位、十位、百位、千位和万位上的数字，并将这些数字依</span><br><span class="line">    次赋值给变量a1、a2、a3、a4和a5。</span><br><span class="line">                3）输出表达式a1+a2+a34-a4+a5的值。</span><br><span class="line">                4）输出表达式a1*a2*a3*a4*a5的值。</span><br><span class="line">答：Java程序代码</span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		int ticketNumber&#x3D;45555;</span><br><span class="line">		byte a1,a2,a3,a4,a5;</span><br><span class="line">		a1&#x3D;(byte) (ticketNumber%10);</span><br><span class="line">		a2&#x3D;(byte)(ticketNumber&#x2F;10%10);</span><br><span class="line">		a3&#x3D;(byte)(ticketNumber&#x2F;100%10);</span><br><span class="line">		a4&#x3D;(byte)(ticketNumber&#x2F;1000%10);</span><br><span class="line">		a5&#x3D;(byte)(ticketNumber&#x2F;10000);</span><br><span class="line">		System.out.println(a1+a2+a3+a4+a5);</span><br><span class="line">		System.out.println(a1*a2*a3*a4*a5);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">1.（ if 语句） *中国的个税计算方法：</span><br><span class="line">应税所得为税前收入扣除2000 元（起征点），然后超出部分，按照以下税率</span><br><span class="line">收税：</span><br><span class="line">500 5%</span><br><span class="line">500-2000 10%</span><br><span class="line">2000-5000 15%</span><br><span class="line">5000-20000 20%</span><br><span class="line">20000-40000 25%</span><br><span class="line">40000-60000 30%</span><br><span class="line">60000-80000 35%</span><br><span class="line">80000-100000 40%</span><br><span class="line">100000 - ? 45%</span><br><span class="line">例：若月收入15000，则应税所得为15000-2000&#x3D;13000；总的个人所得税为</span><br><span class="line">（ 13000-5000） *20% + （ 5000-2000） *15% + （ 2000-500） *10% + 500*5%&#x3D; 2225</span><br><span class="line">要求：读入一个整数，表示税前收入，输出应当缴纳的个人所得税和税后实</span><br><span class="line">际收入。</span><br><span class="line">答：Java代码</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class Test1 &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;请输入月收入：&quot;);</span><br><span class="line">		Scanner sc&#x3D;new Scanner(System.in);</span><br><span class="line">		int s&#x3D;sc.nextInt();</span><br><span class="line">		int s1;</span><br><span class="line">		float s2,s3;</span><br><span class="line">		if(s&gt;2000) &#123;</span><br><span class="line">			s1&#x3D;s-2000;</span><br><span class="line">			if(s1&lt;&#x3D;500) &#123;</span><br><span class="line">				s2&#x3D;s1*0.05f;</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;500&amp;s1&lt;2000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;2000&amp;&amp;s1&lt;5000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;5000&amp;&amp;s1&lt;20000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;20000&amp;&amp;s1&lt;40000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-20000)*0.25+(20000-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;40000&amp;&amp;s1&lt;60000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-40000)*0.3+(40000-20000)*0.25+(20000-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;60000&amp;&amp;s1&gt;80000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-60000)*0.35+(60000-40000)*0.3+(40000-20000)*0.25+(20000-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else if(s1&gt;&#x3D;80000&amp;&amp;s1&lt;100000) &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-80000)*0.4+(80000-60000)*0.35+(60000-40000)*0.3+(40000-20000)*0.25+(20000-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				s2&#x3D;(float)((s1-100000)*0.45+(100000-80000)*0.4+(80000-60000)*0.35+(60000-40000)*0.3+(40000-20000)*0.25+(20000-5000)*0.2+(5000-2000)*0.15+(2000-500)*0.1+500*0.05);</span><br><span class="line">				s3&#x3D;(float)(s-s2);</span><br><span class="line">				System.out.println(&quot;应当缴纳的个人的所得税为：&quot;+s2);</span><br><span class="line">				System.out.println(&quot;税后实际收入为：&quot;+s3);</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			System.out.println(&quot;应当缴纳的个人的所得税为：0&quot;);</span><br><span class="line">			System.out.println(&quot;税后实际收入为：&quot;+s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/05/21/java%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/05/21/java第一次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -526,34 +577,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -598,7 +627,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

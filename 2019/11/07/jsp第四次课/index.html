@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本次课主要内容：<br>tomcat目录介绍、创建servlet<br>doGet、doPost、service区别<br>servlet生命周期、request、response、servlet里面连接数据库、过滤器</p>
+      <div id="article-content">
+        
+          <p>本次课主要内容：<br>tomcat目录介绍、创建servlet<br>doGet、doPost、service区别<br>servlet生命周期、request、response、servlet里面连接数据库、过滤器</p>
 <a id="more"></a>
 <h2 id="tomcat目录介绍"><a href="#tomcat目录介绍" class="headerlink" title="tomcat目录介绍"></a>tomcat目录介绍</h2><p>bin:可执行文件（启动服务、关闭服务等）<br>conf：配置文件（web.xml等）<br>lib：依赖库<br>logs:日志文件<br>temp：临时文件<br>webapps：发布项目<br>work：jsp转成java及class文件</p>
 <h2 id="创建servlet"><a href="#创建servlet" class="headerlink" title="创建servlet"></a>创建servlet</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><p>src下创建包<br>包下创建servlet（包-&gt;右键-&gt;servlet-&gt;起名-&gt;Finish）<br>Dynamic Web Project 3.0及以上版本创建servlet时自动添加注释<br>项目中不会自动生成web.xml文件<br>项目创建的servlet源码</p>
@@ -317,12 +314,66 @@ $(function () {
 <h2 id="在servlet里面获取session"><a href="#在servlet里面获取session" class="headerlink" title="在servlet里面获取session"></a>在servlet里面获取session</h2><p>HttpServletRequest<br><code>request.getSession()</code></p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这里附上一个JdbcUtil，数据库的增删改查操作类<br>JdbcUtil.java</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.ResultSet;</span><br><span class="line">import java.sql.ResultSetMetaData;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.TreeMap;</span><br><span class="line"></span><br><span class="line">public class JdbcUtil &#123;</span><br><span class="line"></span><br><span class="line">	String url &#x3D; &quot;jdbc:mysql:&#x2F;&#x2F;localhost:3308&#x2F;employee&quot;;</span><br><span class="line">	String user &#x3D; &quot;root&quot;;</span><br><span class="line">	String password &#x3D; &quot;&quot;;</span><br><span class="line">	Connection conn &#x3D; null;</span><br><span class="line">	Statement stmt &#x3D; null;</span><br><span class="line">	ResultSet rs &#x3D; null;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;加载驱动</span><br><span class="line">	static &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">		&#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; 获取连接对象</span><br><span class="line">	public Connection getConn()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line"></span><br><span class="line">			conn &#x3D; DriverManager.getConnection(url, user, password);</span><br><span class="line">			return conn;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return null;</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 获取语句对象</span><br><span class="line">	public Statement getStmt() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line"></span><br><span class="line">			conn &#x3D; DriverManager.getConnection(url, user, password);</span><br><span class="line">			stmt &#x3D; conn.createStatement();</span><br><span class="line">			return stmt;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return null;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			&#x2F;&#x2F;release();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 更新并返回被影响行数</span><br><span class="line">	public int update(String sql) &#123;</span><br><span class="line">		int num;</span><br><span class="line">		try &#123;</span><br><span class="line">			num &#x3D; getStmt().executeUpdate(sql);</span><br><span class="line">			return num;</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line"></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return -1;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			release();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 查询返回ResultSet</span><br><span class="line">	public ResultSet query(String sql) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			rs &#x3D; getStmt().executeQuery(sql);</span><br><span class="line">			return rs;</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line"></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return null;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;通过RSMD将结果集保存在list中，最终释放资源</span><br><span class="line">	public LinkedList&lt;Map&lt;String, Object&gt;&gt; queryByList(String sql) &#123;</span><br><span class="line">		LinkedList&lt;Map&lt;String, Object&gt;&gt; list &#x3D; new LinkedList&lt;Map&lt;String, Object&gt;&gt;();</span><br><span class="line">		try &#123;</span><br><span class="line">			rs &#x3D; getStmt().executeQuery(sql);</span><br><span class="line">			ResultSetMetaData rsmd &#x3D; rs.getMetaData();</span><br><span class="line">			&#x2F;&#x2F;获取列数</span><br><span class="line">			int columnCount &#x3D; rsmd.getColumnCount();</span><br><span class="line">			while (rs.next()) &#123;</span><br><span class="line">				Map&lt;String, Object&gt; map &#x3D; new TreeMap&lt;String, Object&gt;();</span><br><span class="line">				for (int i &#x3D; 0; i &lt; columnCount; i++) &#123;</span><br><span class="line">					String key &#x3D; rsmd.getColumnName(i+1);</span><br><span class="line">					String value &#x3D; rs.getString(key);</span><br><span class="line">					map.put(key, value);</span><br><span class="line">				&#125;</span><br><span class="line">				list.add(map);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			return list;</span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return null;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			&#x2F;&#x2F;释放资源</span><br><span class="line">			release();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;**批量更新*&#x2F;</span><br><span class="line">	public void  updateBatch(String[] sqls)&#123;</span><br><span class="line">		stmt &#x3D; getStmt();</span><br><span class="line">		</span><br><span class="line">		&#x2F;**设置不自动提交*&#x2F;</span><br><span class="line">		try &#123;</span><br><span class="line">			conn.setAutoCommit(false);</span><br><span class="line">			for(String sql : sqls)&#123;</span><br><span class="line">				stmt.addBatch(sql);</span><br><span class="line">			&#125;</span><br><span class="line">			stmt.executeBatch();</span><br><span class="line">			</span><br><span class="line">			&#x2F;**事务提交*&#x2F;</span><br><span class="line">			conn.commit(); </span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void release() &#123;</span><br><span class="line">		if (rs !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				rs.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (stmt !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				stmt.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (conn !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/11/07/jsp%E7%AC%AC%E5%9B%9B%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/11/07/jsp第四次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -523,34 +574,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -595,7 +624,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

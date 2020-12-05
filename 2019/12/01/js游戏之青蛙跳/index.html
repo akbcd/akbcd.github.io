@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>分享一个网页游戏，纯js实现<br>青蛙跳</p>
+      <div id="article-content">
+        
+          <p>分享一个网页游戏，纯js实现<br>青蛙跳</p>
 <a id="more"></a>
 <p>这是青蛙跳游戏。如果你是手机访问此页面，可以尝试横屏游戏<br>玩法：左侧青蛙全部跳到右侧，右侧青蛙全部跳到左侧，闯关成功<br>如果失败了，可以点击重置按钮</p>
 <div>
@@ -386,12 +383,66 @@ $(function () {
 
 <p>下面是源代码，与上面的不太相同。源代码移动的是img标签，上面的用div标签代替，本主题中img标签有点击事件，游戏实现不了<br>运用了三个图片，需要的话自行点击下载（图片另存为）<br><a href="left.jpg" target="_blank">left.jpg</a><br><a href="null.jpg" target="_blank">null.jpg</a><br><a href="right.jpg" target="_blank">right.jpg</a></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>青蛙跳<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span> </span><br><span class="line"><span class="javascript">			<span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span> ; i &lt; <span class="number">4</span> ; i++)&#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">if</span>(<span class="built_in">document</span>.getElementById(i).childNodes[<span class="number">0</span>].name == <span class="string">&quot;left&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">						flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">						<span class="keyword">break</span>;</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(<span class="built_in">document</span>.getElementById(<span class="string">&quot;4&quot;</span>).childNodes[<span class="number">0</span>].name != <span class="string">&quot;null&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">					flag = <span class="literal">false</span>;	</span></span><br><span class="line">				&#125;	</span><br><span class="line">				if(flag)&#123;</span><br><span class="line"><span class="javascript">					alert(<span class="string">&quot;闯关成功&quot;</span>);</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;			</span><br><span class="line"><span class="javascript">			<span class="function"><span class="keyword">function</span> <span class="title">jumpRight</span>(<span class="params">img</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> td = img.parentNode;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(td.id == <span class="string">&quot;7&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> nextTd = <span class="built_in">document</span>.getElementById(td.id*<span class="number">1</span> + <span class="number">1</span>);</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(nextTd.childNodes[<span class="number">0</span>].name == <span class="string">&quot;null&quot;</span>)&#123;</span></span><br><span class="line">					nextTd.appendChild(img);</span><br><span class="line">					td.appendChild(nextTd.childNodes[0]);</span><br><span class="line">					success();</span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(td.id == <span class="string">&quot;6&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> next2Td = <span class="built_in">document</span>.getElementById(td.id*<span class="number">1</span> + <span class="number">2</span>);</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(next2Td.childNodes[<span class="number">0</span>].name == <span class="string">&quot;null&quot;</span>)&#123;</span></span><br><span class="line">					next2Td.appendChild(img);</span><br><span class="line">					td.appendChild(next2Td.childNodes[0]);</span><br><span class="line">					success();</span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;			</span><br><span class="line">			&#125;</span><br><span class="line"><span class="javascript">			<span class="function"><span class="keyword">function</span> <span class="title">jumpLeft</span>(<span class="params">img</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> td = img.parentNode;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(td.id == <span class="string">&quot;1&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> nextTd = <span class="built_in">document</span>.getElementById(td.id*<span class="number">1</span> - <span class="number">1</span>);</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(nextTd.childNodes[<span class="number">0</span>].name == <span class="string">&quot;null&quot;</span>)&#123;</span></span><br><span class="line">					nextTd.appendChild(img);</span><br><span class="line">					td.appendChild(nextTd.childNodes[0]);</span><br><span class="line">					success();</span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(td.id == <span class="string">&quot;2&quot;</span>)&#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line"><span class="javascript">				<span class="keyword">var</span> next2Td = <span class="built_in">document</span>.getElementById(td.id*<span class="number">1</span> - <span class="number">2</span>);</span></span><br><span class="line"><span class="javascript">				<span class="keyword">if</span>(next2Td.childNodes[<span class="number">0</span>].name == <span class="string">&quot;null&quot;</span>)&#123;</span></span><br><span class="line">					next2Td.appendChild(img);</span><br><span class="line">					td.appendChild(next2Td.childNodes[0]);</span><br><span class="line">					success();</span><br><span class="line"><span class="javascript">					<span class="keyword">return</span>;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span>		</span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">table</span>  <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;0&quot;</span> <span class="attr">bordercolor</span>=<span class="string">&quot;blue&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span> <span class="attr">id</span>=<span class="string">&quot;tr&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;1&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpRight(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;left&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;2&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpRight(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;left&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;3&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;left.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpRight(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;left&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;4&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;null.jpg&quot;</span> <span class="attr">name</span>=<span class="string">&quot;null&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;5&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpLeft(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;right&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;6&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpLeft(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;right&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">&quot;7&quot;</span> <span class="attr">width</span>=<span class="string">&quot;125&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;right.jpg&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;jumpLeft(this);&quot;</span> <span class="attr">name</span>=<span class="string">&quot;right&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/12/01/js%E6%B8%B8%E6%88%8F%E4%B9%8B%E9%9D%92%E8%9B%99%E8%B7%B3/">https://akbcd.github.io/2019/12/01/js游戏之青蛙跳/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -592,34 +643,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -664,7 +693,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

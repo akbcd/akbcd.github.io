@@ -41,8 +41,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -90,7 +90,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -158,16 +158,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -303,8 +299,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章介绍yilia主题添加valine评论的方法<br>闲话最后说，先来看方法（本篇文章所有图片均来自官方文档）</p>
+      <div id="article-content">
+        
+          <p>本篇文章介绍yilia主题添加valine评论的方法<br>闲话最后说，先来看方法（本篇文章所有图片均来自官方文档）</p>
 <a id="more"></a>
 <p><strong>注意：近期由于国际版 LeanCloud 域名更新，valine评论系统部署后可能无法使用！参看：</strong><br><a target="_blank" rel="noopener" href="https://github.com/xCss/Valine/issues/340">https://github.com/xCss/Valine/issues/340</a></p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>根据<a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">valine</a>官方文档，先要在<code>LeanCloud</code>获取<strong>APP ID</strong>和<strong>APP Key</strong><br>登录或注册<a target="_blank" rel="noopener" href="https://www.leancloud.cn/">LeanCloud</a>，建议注册国际版用户，<strong>不需要绑定域名</strong>，但是都需要绑定手机号<br>进入控制台后点击左下角创建应用，选择开发版<br><img src="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg"><br>应用创建好以后，进入刚刚创建的应用，选择左下角的设置&gt;应用Key，然后就能看到你的<strong>APP ID</strong>和<strong>APP Key</strong>了（复制下来）：<br><img src="https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg"><br>评论数据管理<br>由于Valine是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud</code>应用管理。<br>具体步骤：登录&gt;选择你创建的应用&gt;存储&gt;选择<code>Class Comment</code>，然后就可以尽情的发挥你的权利啦</p>
@@ -362,7 +359,7 @@ $(function () {
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#x78;&#120;&#120;&#x78;&#120;&#x78;&#64;&#x71;&#113;&#46;&#x63;&#111;&#109;">&#x78;&#120;&#120;&#x78;&#120;&#x78;&#64;&#x71;&#113;&#46;&#x63;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#120;&#120;&#120;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#120;&#120;&#120;&#120;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -377,7 +374,7 @@ $(function () {
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#x78;&#x78;&#120;&#120;&#120;&#x78;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;">&#x78;&#x78;&#120;&#120;&#120;&#x78;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#x78;&#120;&#x78;&#120;&#120;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#x78;&#120;&#x78;&#120;&#120;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -407,12 +404,66 @@ $(function () {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visitor: (&quot;localhost&quot; !&#x3D; document.domain)?&lt;%- theme.valine.visitor %&gt;:false,</span><br></pre></td></tr></table></figure>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>提到yilia主题，说说yilia主题内置的几个评论系统<br>yilia主题总共有5个评论可选，分别是：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment<br>简单介绍一下<br>多说和网易云跟帖服务已经关闭（可以自行在主题中删除相应代码），使用畅言博客域名需要备案。<br>Disqus仿佛是美国的，国内使用需要翻墙。Gitment就不过多介绍了，一般的主题都有<br>简单谈谈为什么用valine<br>1.免费<br>2.支持匿名评论，国内访问速度快，国际版账户不需要绑定域名<br>3.评论可以删除</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">https://akbcd.github.io/2020/04/22/yilia主题添加valine评论/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -626,34 +677,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -698,7 +727,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

@@ -29,8 +29,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -78,7 +78,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -146,16 +146,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -291,8 +287,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>1.如何创建类？类里面有什么？<br>属性（变量） 和 功能（方法）<br>2.变量的分类？<br>局部变量：在方法内，语句块内容<br>全局（成员）变量：在方法外，类体内<br>区别：作用域不同，局部变量临近大括号有效<br>局部变量要使用的话必须赋初值，成员变量有默认的初始值<br>boolean默认是false String默认是null</p>
+      <div id="article-content">
+        
+          <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>1.如何创建类？类里面有什么？<br>属性（变量） 和 功能（方法）<br>2.变量的分类？<br>局部变量：在方法内，语句块内容<br>全局（成员）变量：在方法外，类体内<br>区别：作用域不同，局部变量临近大括号有效<br>局部变量要使用的话必须赋初值，成员变量有默认的初始值<br>boolean默认是false String默认是null</p>
 <a id="more"></a>
 <p>3.如何创建对象？对象的成员调用？<br>类名 对象名=new 类名();<br>对象名.成员<br>4.面向对象的四大特征？<br>封装，继承，多态，抽象<br>5.构造方法的规则？格式？作用？<br>public 类名(参数列表){}<br>规则：如果一个类没有显示声明构造，那么系统默认提供一个无参的构造方法，不用程序员手动调用<br>格式：方法名必须与类名相同，没有返回值类型<br>作用：创建对象和初始化对象<br>6.封装的意义？写法？<br>把属性私有化，目的是保护属性不被外界访问，通过set和get方法操作属性<br>如果给属性赋值，目前知道的办法有三种<br>（1）对象名.属性<br>（2）set方法<br>（3）构造方法<br>7.java包的书写和意义？<br>公司域名倒过来，所有字母都是小写，每一层用点管理<br>方便管理，区分命名重复<br>8.java的权限修饰符？<br>1）private：私有的，只能在本类使用<br>2）缺省的：同包中使用<br>3）protected：不同包中，有继承关系的<br>4）public：整个项目下<br>9.继承的关键字？意义？规则？<br>关键字：extends<br>意义：代码量减少，可扩展性强<br>规则：<br>java只支持单继承<br>子类继承父类除private的其他成员<br>子类不能满足父类的方法，我们可以重写<br><strong>10.重载和重写的区别？</strong><br>重载：发生在一个类里面，方法名必须相同，参数列表必须不同（类型，顺序）<br>重写：方法声明部分一样，唯独权限可以不一样，子类可以比父类大，实现部分不同<br>11.this和super的作用？<br>this代表当前对象，可以区分成员变量和局部变量重名问题<br>super代表父类对象，可以调用父类成员</p>
 <h2 id="本次课主要内容"><a href="#本次课主要内容" class="headerlink" title="本次课主要内容"></a>本次课主要内容</h2><p>1.继承中的构造方法规则<br>构造方法能否重载？能否重写？<br>能重载，不能重写<br>1）子类在构造自己的过程中，先构造父类<br>2）如果一个父类没有显示声明无参的构造，只有有参的构造，那么父类必须要有有参的构造，而且用super调用父类构造<br>3）this调用本类其他构造，super调用父类构造 必须都写在第一行<br>例子：<br><strong>以下程序写出输出结果</strong></p>
@@ -301,12 +298,66 @@ $(function () {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Super()</span><br><span class="line">Sub()</span><br><span class="line">Super()</span><br><span class="line">Sub()</span><br><span class="line">Sub(int)</span><br><span class="line">Super(String)</span><br><span class="line">Sub(String)</span><br></pre></td></tr></table></figure>
 <p>2.抽象 关键字 abstract<br>1）在父类里，某些方法，不需要方法的实现，都是子类重写的，这样的方法，我们就不需要方法体，这就是抽象方法<br>2）有了抽象方法，这个类必须是抽象类<br>3）如果一个类是抽象类，那么里面的方法不一定都是抽象方法<br>4）抽象类能否实例化（创建对象）？<br>不能实例化，认为它是不完整的<br>5）抽象类被子类继承时，抽象方法必须被重写<br>6）抽象类是否能有构造方法？<br>可以，子类构造自己的时候，先构造父类</p>
 
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2019/06/15/java%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/">https://akbcd.github.io/2019/06/15/java第五次课/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -507,34 +558,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -579,7 +608,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

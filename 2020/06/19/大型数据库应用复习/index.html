@@ -30,8 +30,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -79,7 +79,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -147,16 +147,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -292,8 +288,9 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="大型数据库应用基础知识点"><a href="#大型数据库应用基础知识点" class="headerlink" title="大型数据库应用基础知识点"></a>大型数据库应用基础知识点</h2><p>1.数据库系统分为客户-服务器模式 (C/S) 和三层客户-服务器 (B/S) 模式。<br>2.基于Web的数据库应用采用三层客户-服务器模式( B/S)，第一层为浏览器，第二层为Web服务器，第三层为数据库服务器 。<br>3.模型(Model)是现实世界特征的模拟和抽象，数据模型(Data Model)是一种模型，它能实现对现实世界数据特征的抽象。<a id="more"></a><br>4.现实世界中的客观事物及其联系，按计算机系统的观点对数据进行建模，在机器世界中用逻辑模型(Logic Model)来描述，主要的逻辑模型有层次模型、网状模型和关系模型。<br>5.数据模型(Data Model)是现实世界数据特征的抽象，一般由数据结构、数据操作、数据完整性约束三部分组成。<br>6.数据模型是现实世界的模拟，它是按计算机的观点对数据建立模型，包含数据结构、数据操作和数据完整性三要素，数据模型有层次模型、网状模型、关系模型。<br>7.关系模型建立在严格的数学概念基础上，数据结构简单清晰，用户易懂易用，关系数据库是目前应用最为广泛、最为重要的一种数学模型。<br>8.选择(Selection)指选出满足给定条件的记录，它是从行的角度进行的单目运算，运算对象是一个表，运算结果形成一个新表。<br>9.投影(Projection)是选择表中满足条件的列，它是从列的角度进行的单目运算。<br>10.数据库系统的标准结构是三级模式结构，它包括外模式、模式和内模式 。<br>11.外模式(External Schema)又称子模式或用户模式，位于三级模式的最外层，对应于用户级，它是某个或某几个用户所看到的数据视图，是与某一应用有关的数据的逻辑表示。<br>12.模式(Schema)又称概念模式，也称逻辑模式，位于三级模式的中间层，对应于概念级，它是由数据库设计者综合所有用户的数据，按照统一观点构造的全局逻辑结构，是所有用户的公共数据视图(全局视图)。一个数据库只有一个模式，它是由模式描述语言(模式DDL)来描述和定义的。<br>13.内模式(Internal Schema)又称存储模式，位于三级模式的底层，对应于物理级，它是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。一个数据库只有一个内模式,它是由内模式描述语言(内模式DDL)来描述和定义的。<br>14.为了能够在内部实现这三个抽象层次的联系和转换，数据库管理系统在这三级模式之间提供了两级映象：外模式/模式映象，模式/内模式映象。<br>15.概念设计阶段的目标是形成整体数据库的概念结构，它独立于数据库逻辑结构和具体的DBMS，描述概念结构的工具是E-R模型。<br>16.实体之间的联系，可分为一对一的联系、一对多的联系、多对多的联系。<br>17.Oracle数据库的体系结构包括逻辑结构、物理结构和总体结构，其中，逻辑结构为Oracle引入的结构，物理结构为操作系统所拥有的结构。<br>18.表空间(TableSpace)是Oracle数据库中数据的逻辑组织单位，通过表空间来组织数据库中的数据，数据库逻辑上由一个或多个表空间组成，表空间物理上是由一个或多个数据文件组成<br>19.表空间划分为若干段，段由若干个盘区组成，盘区由连续分配的相邻数据块组成 。<br>20.每一个Oracle数据库都有一个或多个数据文件，每一个数据文件只能属于一个表空间，数据文件一旦加入到表空间，就不能从这个表空间中移走，也不能和其它表空间发生联系。<br>日志文件(Log File)用于记录对数据库进行的修改操作和事务操作，文件后缀名为”.LOG”。<br>21.控制文件(Control File)用于记录和维护整个数据库的全局物理结构，它是一个二进制文件，文件后缀名为”.CTL”。<br>22.表空间是存储数据文件的容器，表空间由数据文件组成，数据库的所有系统数据和用户数据都必须放在数据文件中。每一个数据库创建时，系统会默认地为它创建一个SYSTEM表空间<br>23.</p>
+      <div id="article-content">
+        
+          <h2 id="大型数据库应用基础知识点"><a href="#大型数据库应用基础知识点" class="headerlink" title="大型数据库应用基础知识点"></a>大型数据库应用基础知识点</h2><p>1.数据库系统分为客户-服务器模式 (C/S) 和三层客户-服务器 (B/S) 模式。<br>2.基于Web的数据库应用采用三层客户-服务器模式( B/S)，第一层为浏览器，第二层为Web服务器，第三层为数据库服务器 。<br>3.模型(Model)是现实世界特征的模拟和抽象，数据模型(Data Model)是一种模型，它能实现对现实世界数据特征的抽象。<a id="more"></a><br>4.现实世界中的客观事物及其联系，按计算机系统的观点对数据进行建模，在机器世界中用逻辑模型(Logic Model)来描述，主要的逻辑模型有层次模型、网状模型和关系模型。<br>5.数据模型(Data Model)是现实世界数据特征的抽象，一般由数据结构、数据操作、数据完整性约束三部分组成。<br>6.数据模型是现实世界的模拟，它是按计算机的观点对数据建立模型，包含数据结构、数据操作和数据完整性三要素，数据模型有层次模型、网状模型、关系模型。<br>7.关系模型建立在严格的数学概念基础上，数据结构简单清晰，用户易懂易用，关系数据库是目前应用最为广泛、最为重要的一种数学模型。<br>8.选择(Selection)指选出满足给定条件的记录，它是从行的角度进行的单目运算，运算对象是一个表，运算结果形成一个新表。<br>9.投影(Projection)是选择表中满足条件的列，它是从列的角度进行的单目运算。<br>10.数据库系统的标准结构是三级模式结构，它包括外模式、模式和内模式 。<br>11.外模式(External Schema)又称子模式或用户模式，位于三级模式的最外层，对应于用户级，它是某个或某几个用户所看到的数据视图，是与某一应用有关的数据的逻辑表示。<br>12.模式(Schema)又称概念模式，也称逻辑模式，位于三级模式的中间层，对应于概念级，它是由数据库设计者综合所有用户的数据，按照统一观点构造的全局逻辑结构，是所有用户的公共数据视图(全局视图)。一个数据库只有一个模式，它是由模式描述语言(模式DDL)来描述和定义的。<br>13.内模式(Internal Schema)又称存储模式，位于三级模式的底层，对应于物理级，它是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。一个数据库只有一个内模式,它是由内模式描述语言(内模式DDL)来描述和定义的。<br>14.为了能够在内部实现这三个抽象层次的联系和转换，数据库管理系统在这三级模式之间提供了两级映象：外模式/模式映象，模式/内模式映象。<br>15.概念设计阶段的目标是形成整体数据库的概念结构，它独立于数据库逻辑结构和具体的DBMS，描述概念结构的工具是E-R模型。<br>16.实体之间的联系，可分为一对一的联系、一对多的联系、多对多的联系。<br>17.Oracle数据库的体系结构包括逻辑结构、物理结构和总体结构，其中，逻辑结构为Oracle引入的结构，物理结构为操作系统所拥有的结构。<br>18.表空间(TableSpace)是Oracle数据库中数据的逻辑组织单位，通过表空间来组织数据库中的数据，数据库逻辑上由一个或多个表空间组成，表空间物理上是由一个或多个数据文件组成<br>19.表空间划分为若干段，段由若干个盘区组成，盘区由连续分配的相邻数据块组成 。<br>20.每一个Oracle数据库都有一个或多个数据文件，每一个数据文件只能属于一个表空间，数据文件一旦加入到表空间，就不能从这个表空间中移走，也不能和其它表空间发生联系。<br>日志文件(Log File)用于记录对数据库进行的修改操作和事务操作，文件后缀名为”.LOG”。<br>21.控制文件(Control File)用于记录和维护整个数据库的全局物理结构，它是一个二进制文件，文件后缀名为”.CTL”。<br>22.表空间是存储数据文件的容器，表空间由数据文件组成，数据库的所有系统数据和用户数据都必须放在数据文件中。每一个数据库创建时，系统会默认地为它创建一个SYSTEM表空间<br>23.</p>
 <table>
 <thead>
 <tr>
@@ -571,12 +568,66 @@ $(function () {
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">（1）</span><br><span class="line">CREAT OR <span class="keyword">REPLACE</span> PROCEDORE spCnameMax(p_cno <span class="keyword">IN</span> course. cno%<span class="keyword">TYPE</span>, p_cname <span class="keyword">OUT</span> course.cname%<span class="keyword">TYPE</span>, p_max <span class="keyword">OUT</span> <span class="built_in">number</span> )</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">SELECT</span> cname TNTO p_cname</span><br><span class="line">     <span class="keyword">FROM</span> course </span><br><span class="line">     <span class="keyword">WHERE</span> cno=p_cno;</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="keyword">MAX</span>(grade) TNTO p_max</span><br><span class="line">     <span class="keyword">FROM</span> course a, score b</span><br><span class="line">     <span class="keyword">WHERE</span> a.cno=b.cno <span class="keyword">AND</span> a.cno=p_cno</span><br><span class="line"> <span class="keyword">END</span>;</span><br><span class="line">(2)</span><br><span class="line"><span class="keyword">DECLARE</span> </span><br><span class="line">v_cnamecourse.cname%<span class="keyword">TYPE</span>;</span><br><span class="line">v_max number</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">spCnameMax(‘<span class="number">1012</span>’, v_cname, v_max);</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(‘课程号1012的课程名是:’||v_cname ||’最高分是:’||v_max)</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
 <p>3、创建一个存储过程spNameSchoolTitle,求指定教室编号的姓名、学院和职称。<br>解：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(1)</span><br><span class="line">CREAT OR <span class="keyword">REPLACE</span> PROCEDORE spNameSchoolTitle(p_tno <span class="keyword">IN</span> teacher.tno%<span class="keyword">TYPE</span>,p_tname <span class="keyword">OUT</span> teacher.tname%<span class="keyword">TYPE</span>,p_school <span class="keyword">OUT</span> teacher.school%<span class="keyword">TYPE</span>,p_title <span class="keyword">OUT</span> teacher.title%<span class="keyword">TYPE</span>)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">SELECT</span> tname <span class="keyword">INTO</span> p_tname</span><br><span class="line">     <span class="keyword">FROM</span> teacher</span><br><span class="line">     <span class="keyword">WHERE</span> tno=p_tno;</span><br><span class="line">  <span class="keyword">SELECT</span> school <span class="keyword">INTO</span> p_school</span><br><span class="line"><span class="keyword">FROM</span> teacher</span><br><span class="line">     <span class="keyword">WHERE</span> tno=p_tno;</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">(2)</span><br><span class="line"><span class="keyword">DECLARE</span> </span><br><span class="line">v_tnameteacher.tname%<span class="keyword">TYPE</span>;</span><br><span class="line">v_schoolteacher.school%TYPE;</span><br><span class="line">v_titleteacher.title%TYPE;</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">spNameSchoolTitle(‘<span class="number">100001</span>’,v_tname,v_school,v_title);</span><br><span class="line">DBMS_OUTPUT.PUT_LINE(‘教师编号100001的教师姓名是：’||v_tname ||’学院是：’|| v_school||’职称是:’||v_title);</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
-        <div class="article-copyright">
-          ©著作权归作者所有,转载或内容合作请联系作者
-        </div>
-      
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章作者:
+                </span>
+                <span class="reprint-info">
+                    <a href="/" rel="external nofollow noreferrer">akbcd</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        文章链接:
+                </span>
+                <span class="reprint-info">
+                    <a href="https://akbcd.github.io/2020/06/19/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E5%A4%8D%E4%B9%A0/">https://akbcd.github.io/2020/06/19/大型数据库应用复习/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                        版权声明:
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://akbcd.github.io" target="_blank">akbcd</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -794,34 +845,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -866,7 +895,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 

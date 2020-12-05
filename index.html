@@ -27,8 +27,8 @@
   
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css">
+  <link rel="stylesheet" type="text/css" href="/main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/css/clipboard.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
@@ -76,7 +76,7 @@
             $('#js-icon-search').attr("title","搜索")
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
@@ -144,16 +144,12 @@
     }
 </style>
 
-<div class="title">
-听听音乐
-</div>
-
 <div id="aplayer"></div>
 <script>
 $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
+        fixed: 'true' === 'true',
         autoplay: 'false' === 'true',
         theme: '#4d4d4d',
         loop: 'one',
@@ -258,59 +254,6 @@ $(function () {
             
   
     
-<article id="post-欢迎" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/%E6%AC%A2%E8%BF%8E/">欢迎</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/08/%E6%AC%A2%E8%BF%8E/" class="archive-article-date">
-  	<time datetime="2020-04-08T01:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-	
-</a>
-        
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
-        
-          <a class="article-more-a" href="/2020/04/08/%E6%AC%A2%E8%BF%8E/#more">more >></a>
-        
-      
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/08/%E6%AC%A2%E8%BF%8E/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -352,13 +295,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>想必用过2345好压软件的都被软件自身的广告弹窗困扰过吧。2345好压，一款承诺永久免费的软件。因为免费的原因，所以添加了一些广告，这里简单提供一下关闭2345好压广告弹窗的方法。
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/11/22/%E5%85%B3%E9%97%AD2345%E5%A5%BD%E5%8E%8B%E5%B9%BF%E5%91%8A%E5%BC%B9%E7%AA%97%E6%96%B9%E6%B3%95/#more">more >></a>
+          <p>想必用过2345好压软件的都被软件自身的广告弹窗困扰过吧。2345好压，一款承诺永久免费的软件。因为免费的原因，所以添加了一些广告，这里简单提供一下关闭2345好压广告弹窗的方法。
+          
+            <a class="article-more-a" href="/2020/11/22/%E5%85%B3%E9%97%AD2345%E5%A5%BD%E5%8E%8B%E5%B9%BF%E5%91%8A%E5%BC%B9%E7%AA%97%E6%96%B9%E6%B3%95/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -434,13 +403,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>室友跟我说笔记本电脑麦克风不能用了，我去看了看，在麦克风疑难解答里，默认设备里面显示无插座信息，让我一致以为电脑的麦克风坏了。插上耳机，再次测试，耳机的麦克风也不能使用，这可难倒我了，我都推荐室友去电脑店修理一下，最后才发现是系统设置问题，差点让室友多走了弯路。在这里记录和分享一下，自己以后遇到相同问题少走弯路。
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/11/18/%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E9%BA%A6%E5%85%8B%E9%A3%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#more">more >></a>
+          <p>室友跟我说笔记本电脑麦克风不能用了，我去看了看，在麦克风疑难解答里，默认设备里面显示无插座信息，让我一致以为电脑的麦克风坏了。插上耳机，再次测试，耳机的麦克风也不能使用，这可难倒我了，我都推荐室友去电脑店修理一下，最后才发现是系统设置问题，差点让室友多走了弯路。在这里记录和分享一下，自己以后遇到相同问题少走弯路。
+          
+            <a class="article-more-a" href="/2020/11/18/%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E9%BA%A6%E5%85%8B%E9%A3%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -516,13 +511,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近浏览原神米游社，发现页面重新进入后页面浏览位置没有改变，上网查询了一些资料，在自己博客主题上实现了这个功能，在此分享一下</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/11/13/js%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E5%90%8E%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%B8%8D%E6%94%B9%E5%8F%98%E4%BD%8D%E7%BD%AE/#more">more >></a>
+          <p>最近浏览原神米游社，发现页面重新进入后页面浏览位置没有改变，上网查询了一些资料，在自己博客主题上实现了这个功能，在此分享一下</p>
+          
+            <a class="article-more-a" href="/2020/11/13/js%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E5%90%8E%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%B8%8D%E6%94%B9%E5%8F%98%E4%BD%8D%E7%BD%AE/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -598,13 +619,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>此内容被密码保护，请输入密码访问</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/#more">more >></a>
+          <p>此内容被密码保护，请输入密码访问</p>
+          
+            <a class="article-more-a" href="/2020/11/06/2019-2020%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -665,13 +712,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="大型数据库应用基础知识点"><a href="#大型数据库应用基础知识点" class="headerlink" title="大型数据库应用基础知识点"></a>大型数据库应用基础知识点</h2><p>1.数据库系统分为客户-服务器模式 (C/S) 和三层客户-服务器 (B/S) 模式。<br>2.基于Web的数据库应用采用三层客户-服务器模式( B/S)，第一层为浏览器，第二层为Web服务器，第三层为数据库服务器 。<br>3.模型(Model)是现实世界特征的模拟和抽象，数据模型(Data Model)是一种模型，它能实现对现实世界数据特征的抽象。
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/06/19/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E5%A4%8D%E4%B9%A0/#more">more >></a>
+          <h2 id="大型数据库应用基础知识点"><a href="#大型数据库应用基础知识点" class="headerlink" title="大型数据库应用基础知识点"></a>大型数据库应用基础知识点</h2><p>1.数据库系统分为客户-服务器模式 (C/S) 和三层客户-服务器 (B/S) 模式。<br>2.基于Web的数据库应用采用三层客户-服务器模式( B/S)，第一层为浏览器，第二层为Web服务器，第三层为数据库服务器 。<br>3.模型(Model)是现实世界特征的模拟和抽象，数据模型(Data Model)是一种模型，它能实现对现实世界数据特征的抽象。
+          
+            <a class="article-more-a" href="/2020/06/19/%E5%A4%A7%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8%E5%A4%8D%E4%B9%A0/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -747,13 +820,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果你的博客文件在GitHub托管，请看一下这篇文章<br>通过jsdelivr加速博客静态资源，会使你的博客访问速度加快<br>先来看一看什么是jsdelivr
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/06/10/jsdelivr%E5%8A%A0%E9%80%9F%E5%8D%9A%E5%AE%A2%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/#more">more >></a>
+          <p>如果你的博客文件在GitHub托管，请看一下这篇文章<br>通过jsdelivr加速博客静态资源，会使你的博客访问速度加快<br>先来看一看什么是jsdelivr
+          
+            <a class="article-more-a" href="/2020/06/10/jsdelivr%E5%8A%A0%E9%80%9F%E5%8D%9A%E5%AE%A2%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -825,13 +924,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>记得之前在<a href="https://akbcd.github.io/2019/06/28/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E4%B8%8B/">yilia主题常见问题及解决办法下</a>文章中解决了移动端不显示目录的问题<br>这篇文章分享一下自己优化yilia主题目录的代码，主要体现在以下几个方面：<br>1.通过jquery封装的animate()锚点跳转方法替换主题自带的a标签跳转，解决添加aplayer播放器可能出现的锚点跳转失效问题<br>2.实现浏览器根据当前页面位置实时更新页面url（需手动设置生效）
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/06/08/yilia%E4%B8%BB%E9%A2%98%E7%9B%AE%E5%BD%95%E4%BC%98%E5%8C%96/#more">more >></a>
+          <p>记得之前在<a href="https://akbcd.github.io/2019/06/28/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E4%B8%8B/">yilia主题常见问题及解决办法下</a>文章中解决了移动端不显示目录的问题<br>这篇文章分享一下自己优化yilia主题目录的代码，主要体现在以下几个方面：<br>1.通过jquery封装的animate()锚点跳转方法替换主题自带的a标签跳转，解决添加aplayer播放器可能出现的锚点跳转失效问题<br>2.实现浏览器根据当前页面位置实时更新页面url（需手动设置生效）
+          
+            <a class="article-more-a" href="/2020/06/08/yilia%E4%B8%BB%E9%A2%98%E7%9B%AE%E5%BD%95%E4%BC%98%E5%8C%96/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -903,13 +1028,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章对springMVC进行简单介绍</p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/05/22/springMVC/#more">more >></a>
+          <p>本篇文章对springMVC进行简单介绍</p>
+          
+            <a class="article-more-a" href="/2020/05/22/springMVC/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -985,13 +1136,39 @@ $(function () {
     
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇文章介绍一下新版本Edge浏览器相比旧版本Edge浏览器发生了哪些变化<br>新版Edge浏览器下载网址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH">https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH</a></p>
+      <div id="article-content">
         
-          <a class="article-more-a" href="/2020/05/07/%E5%BE%AE%E8%BD%AF%E6%96%B0%E6%97%A7Micrpsoft-Edge%E6%B5%8F%E8%A7%88%E5%99%A8/#more">more >></a>
+          <p>本篇文章介绍一下新版本Edge浏览器相比旧版本Edge浏览器发生了哪些变化<br>新版Edge浏览器下载网址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH">https://www.microsoft.com/zh-cn/edge?form=MY01BH&amp;OCID=MY01BH</a></p>
+          
+            <a class="article-more-a" href="/2020/05/07/%E5%BE%AE%E8%BD%AF%E6%96%B0%E6%97%A7Micrpsoft-Edge%E6%B5%8F%E8%A7%88%E5%99%A8/#more">more >></a>
+          
         
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
       
-      
+
+
       
     </div>
     <div class="article-info article-info-index">
@@ -1064,34 +1241,12 @@ $(function () {
 </footer>
       <div class="progress-bar"></div>
     </div>
-    
-<script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("audio")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("audio")[key].src = document.getElementById("js-content").getElementsByTagName("audio")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in document.getElementById("js-content").getElementsByTagName("video")) {
-        if (isNaN(key)) break;
-        document.getElementById("js-content").getElementsByTagName("video")[key].src = document.getElementById("js-content").getElementsByTagName("video")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js"></script>
+    <script src="/js/mobile.992cbe.js"></script>
+<script src="/main.0cf68a.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.9.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -1136,7 +1291,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
         !function(e){
             var t=document.createElement("script");
             document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js")
+        }("/slider.e37972.js")
     }()
 </script>
 
