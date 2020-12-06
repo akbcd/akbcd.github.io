@@ -1,8 +1,8 @@
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <!-- mobile-aplayer -->
-<% if (theme.music.mobile_showTitle) { %>
+<% if (theme.music.mobile_showTitle.enable && !theme.music.mobile_fixed) { %>
 <div class="title">
-<%- theme.music.mobile_title %>
+<%- theme.music.mobile_showTitle.mobile_title %>
 </div>
 <% } %>
 <div id="mobile-aplayer"></div>

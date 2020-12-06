@@ -21,19 +21,18 @@
     <% } %>
     <%- partial('post/password') %>
     <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+      <div id="article-content">
+        <% if (post.excerpt && index){ %>
+          <%- post.excerpt %>
+          <% if (theme.excerpt_link) { %>
+            <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+          <% } %>
+        <% } else { %>
+          <%- post.content %>
         <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
-      <% if ((theme.copyright === 2 || (theme.copyright === 1 && post.copyright)) && !index){ %>
-        <div class="article-copyright">
-          ©<%- _p('copyright')%>
-        </div>
-      <% } %>
+      </div>
+      <%- partial('post/jsdelivr')%>
+      <%- partial('post/reprint-statement') %>
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
           <a style="cursor:pointer" class="page-reward-btn tooltip-top">

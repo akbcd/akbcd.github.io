@@ -14,7 +14,7 @@
     min-height: 500px;
     max-height: 70%;
     width: 80%;
-    word-wrap: break-word;
+    word-break: break-word;
 	z-index: 1001;
 	position: fixed;
 	left: 0;
@@ -429,12 +429,12 @@ progress {
 [hidden],template {
     display: none
 }
-/* 添加word-wrap: break-word */
+/* 添加word-break: break-word */
 a {
     background: transparent;
     text-decoration: none;
     color: #08c;
-    word-wrap: break-word
+    word-break: break-word
 }
 
 a:active {
@@ -490,7 +490,7 @@ svg:not(:root) {
 pre {
     overflow: auto;
     white-space: pre;
-    word-wrap: break-word
+    word-break: break-word
 }
 
 code,kbd,pre,samp {
@@ -2297,7 +2297,7 @@ pre .css~* .id,pre .id {
     background: #ddd;
     border: 1px solid #ccc;
     font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
-    word-wrap: break-word;
+    word-break: break-word;
     font-size: 14px
 }
 
@@ -2452,7 +2452,20 @@ pre .css~* .id,pre .id {
 .article-entry figure table tbody tr:hover {
     background: none
 }
+/* 版权声明 */
+.article-entry .reprint {
+    margin: 15px 0 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: box-shadow 0.3s ease-in-out;
+}
 
+.article-entry .reprint:hover {
+    box-shadow: 0 0 10px 0 rgba(232, 237, 250, .6), 0 4px 8px 0 rgba(232, 237, 250, .5)
+}
+/* 结束 */
 #article-nav {
     margin: 0 0 20px;
     padding: 0 32px 10px;

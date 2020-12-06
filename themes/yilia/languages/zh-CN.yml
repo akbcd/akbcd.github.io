@@ -16,3 +16,32 @@ wordcount: 字数
 copyright: 著作权归作者所有,转载或内容合作请联系作者
 # valine
 leancloud_visitors: 当前页访问次数
+# copyright
+from: 来源
+# reprint-statement
+reprint: 版权声明
+author: 文章作者
+link: 文章链接
+use: 本博客所有文章除特別声明外，均采用
+licensed: 许可协议。转载请注明来源
+cc_by_url: https://creativecommons.org/licenses/by/4.0/deed.zh
+cc_by_name: CC BY 4.0
+cc_by_nd_url: https://creativecommons.org/licenses/by-nd/4.0/deed.zh
+cc_by_nd_name: CC BY-ND 4.0
+cc_by_sa_url: https://creativecommons.org/licenses/by-sa/4.0/deed.zh
+cc_by_sa_name: CC BY-SA 4.0
+cc_by_nc_url: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
+cc_by_nc_name: CC BY-NC 4.0
+cc_by_nc_nd_url: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh
+cc_by_nc_nd_name: CC BY-NC-ND 4.0
+cc_by_nc_sa_url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+cc_by_nc_sa_name: CC BY-NC-SA 4.0
+cc_0_url: https://creativecommons.org/publicdomain/zero/1.0/deed.zh
+toTheExtentPossibleUnderLaw: 在法律允许的范围内，
+hasWaivedAllCopyrightAndRelatedOrNeighboringRightsTo: 已放弃此作品的所有版权、相关或相邻的权利
+workPublishedFrom: 。此作品发布在：
+cc_0_country: 中国大陆。
+cc_0_content: CN
+noreprint: 本文不允许转载。
+paycontact: 请联系作者
+payreprint: 付费转载。

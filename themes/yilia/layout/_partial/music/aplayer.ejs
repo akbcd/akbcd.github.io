@@ -5,9 +5,9 @@
         display: none;
     }
 </style>
-<% if (theme.music.showTitle) { %>
+<% if (theme.music.showTitle.enable && !theme.music.fixed) { %>
 <div class="title">
-<%- theme.music.title %>
+<%- theme.music.showTitle.title %>
 </div>
 <% } %>
 <div id="aplayer"></div>

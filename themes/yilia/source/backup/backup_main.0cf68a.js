@@ -1154,8 +1154,8 @@
             if (e && 0 !== e.length) {
                 var t = window.location.href,
                 n = document.querySelector("title").innerHTML,
-                o = document.querySelectorAll(".article-entry img"),
-                r = o.length ? document.querySelector(".article-entry img").getAttribute("src") : "";
+                o = document.querySelectorAll("#article-content img"),
+                r = o.length ? document.querySelector("#article-content img").getAttribute("src") : "";
                 "" === r || /^(http:|https:)?\/\//.test(r) || (r = window.location.origin + r),
                 e.forEach(function(e) {
                     e.onclick = function(o) {
@@ -1186,7 +1186,7 @@
         }
         function r() {
             var e = document.querySelectorAll(".pswp")[0],
-            t = document.querySelectorAll(".article-entry img:not(.reward-img)");
+            t = document.querySelectorAll("#article-content img");
             t.forEach(function(n, o) {
                 n.onclick = function() {
                     if (!document.querySelector(".left-col.show")) {

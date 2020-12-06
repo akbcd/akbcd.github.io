@@ -247,6 +247,9 @@ if(engine!='1') {
 ```
 通过fetch实现类似jquery的ajax请求（不需要引入jQuery），当有人访问带有valine评论的页面时，js请求你云引擎的地址，激活云引擎
 如果你的云引擎地址没有允许跨域请求，控制台会报跨域错误（可以忽略），在控制台提示错误之前，浏览器已经请求了你的云引擎地址
+
+如果你讨厌控制台报错，但是自己又不会改，建议直接部署 [宅日记博客](https://crosschannel.cc/daily/valine-admin-autoAwaken.html) 修改的 [valine-admin](https://github.com/track23/Valine-Admin) ，fork的是DesertsP写的valine-admin。
+
 通过此机制达到激活云引擎的目的，云引擎激活后定时任务不会再遇到流控问题
 你也可以尝试删除云引擎中的定时任务，只通过此方式激活云引擎
 在主题配置文件valine的配置中添加`ADMIN_URL`字段设置云引擎地址，方便管理
