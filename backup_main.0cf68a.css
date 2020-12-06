@@ -2456,8 +2456,7 @@ pre .css~* .id,pre .id {
 .article-entry .reprint {
     margin: 15px 0 0.4rem;
     padding: 0.5rem 0.8rem;
-    background: #eaeaea;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #eee;
     border-radius: 4px;
     font-size: 14px;
     transition: box-shadow 0.3s ease-in-out;
