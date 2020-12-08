@@ -3,10 +3,8 @@ open_in_new
 新窗口打开链接
 */
 if (yiliaConfig.open_in_new) {
-  $('.article-title,.article-more-a,.archive-article-date,.archive-article-title').attr('target','_blank');
-  if(yiliaConfig.isPost) {
-    $('.article-title,.archive-article-date').removeAttr('target');
-  }
+  for (var open = document.querySelectorAll(".article-title,.article-more-a,.archive-article-date,.archive-article-title"), i = 0; i < open.length; ++i) open[i].setAttribute("target", "_blank");
+  if (yiliaConfig.isPost) for (var close = document.querySelectorAll(".article-title,.archive-article-date"), i = 0; i < close.length; ++i) close[i].removeAttribute("target");
 }
 
 /*
@@ -178,12 +176,12 @@ var findMobileHeadPosition = function (top) {
 if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
   //在即将离开当前页面（刷新或关闭）时触发
   window.onbeforeunload = function(){
-    var scrollPos=$('#container').scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollPos=document.getElementById('container').scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
     document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
   };
   //在离在开网页时（点击链接，刷新页面，关闭浏览器等）触发
   window.onpagehide = function(){
-    var scrollPos=$('#container').scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollPos=document.getElementById('container').scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
     document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
   };
   $(window).on('load',function(){ 
