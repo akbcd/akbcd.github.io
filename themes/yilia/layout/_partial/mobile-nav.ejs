@@ -37,11 +37,7 @@
 		        <%}%>
 				</ul>
 			</nav>
-			<% if (theme.music.mobile_enable && site.data && site.data.musics) { %>
-			<nav class="music-player">
 			<%- partial('music/mobile-aplayer') %>
-			</nav>
-			<% } %>
 		</header>				
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>

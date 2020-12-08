@@ -83,6 +83,7 @@ aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9
 #   field: post
 # 不开启值为false，开启，值为true
 # 使用方法：点击所有文章中的搜索图标
+# 依赖jquery
 local_search:
   enable: true
 
@@ -100,6 +101,7 @@ open_in_new: false
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
 # 需要浏览器允许cookie
+# 依赖jquery
 scrollPos: true
 
 # 打赏
@@ -121,6 +123,7 @@ toc_hide_index: true
 toc_empty_wording: '目录，不存在的…'
 # anchor 目录锚点url
 # 当您在文章中滚动时，URL将根据标头ID进行更新。
+# 目录优化依赖jquery
 anchor: true
 
 # 是否有快速回到顶部的按钮
@@ -164,6 +167,7 @@ copyright:
 # 文章Front-matter中添上'top: true'属性即可将文章置顶
 
 # 代码块复制
+# 依赖jquery
 clipboard: true
 clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
 #clipboard_js: /js/scrollProgress.min.js

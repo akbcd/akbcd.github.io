@@ -17,6 +17,7 @@ toc: true
   * 动态目录失效
     * hexo5.0，对目录a标签href内容添加`encodeURI()`函数进行编码，使动态目录失效
     * 解决办法：将`$('.toc-link[href="' + currentId + '"]')`中`currentId`添加编码函数`encodeURI()`，即`$('.toc-link[href="' + encodeURI(currentId) + '"]')`
+      * 注意：此方法可能不适用所有hexo版本，取决于hexo是否对目录a标签href内容添加`encodeURI()`函数进行编码
 
 效果参看本博客
 ## 参考资料
@@ -68,10 +69,10 @@ var autoScrollToc = function () {
     var activePosition = $('.active').position().top
     var articleScrolltop = $('.tooltip-content .toc-article').scrollTop()
     if (activePosition > $('.tooltip-content .toc-article').height()-50) {
-      $('.tooltip-content .toc-article').scrollTop(articleScrolltop + 100)
+      $('.tooltip-content .toc-article').scrollTop(articleScrolltop + 150)
     }
     if (activePosition < 50) {
-      $('.tooltip-content .toc-article').scrollTop(articleScrolltop - 100)
+      $('.tooltip-content .toc-article').scrollTop(articleScrolltop - 150)
     }
   }
 }

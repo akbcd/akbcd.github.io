@@ -2,9 +2,6 @@
 <script src="<%- theme.js.main %>"></script>
 <script src="<%- theme.js.scrollProgress %>"></script>
 <script src="<%- theme.js.script %>"></script>
-<% if (theme.music.enable || theme.music.mobile_enable) { %>
-<script src="<%- theme.aplayer_js %>"></script>
-<% } %>
 <% if (theme.clipboard) { %>
 <script src="<%- theme.clipboard_js %>"></script>
 <script>
@@ -15,7 +12,9 @@
     !function (e, t, a) {
         var initCopyCode = function(){
             var copyHtml = "<button id='js-btn-copy'><%- _p('copy') %></button>";
-            $(".code pre").before(copyHtml);
+            [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
+                button.insertAdjacentHTML('beforebegin', copyHtml);
+            });
         }
         initCopyCode();
         // 代码块复制
