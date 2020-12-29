@@ -67,7 +67,7 @@ music:
   mobile_autoplay: false # 是否自动播放，与aplayer同时开启时失效
   mobile_theme: '#4d4d4d' # 主题色
   mobile_loop: 'all' # 音频循环播放
-  mobile_order: 'list' # 音频循环顺序
+  mobile_order: 'random' # 音频循环顺序
   mobile_volume: 0.7 # 默认音量
   mobile_lrcType: 1 # 歌词格式
   mobile_listFolded: true # 列表是否折叠
@@ -101,7 +101,6 @@ open_in_new: false
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
 # 需要浏览器允许cookie
-# 依赖jquery
 scrollPos: true
 
 # 打赏

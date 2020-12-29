@@ -20,7 +20,7 @@ tags: 随笔
 
 关于yilia主题
 
-虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。看到 hexo-theme-butterfly主题 作者正在去jquery，并且回想起yilia主题，发现自己是否已经抛弃yilia代码初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？
+虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。直到看到 hexo-theme-butterfly主题 作者正在去jquery，让我的想法发生了改变。回想起yilia主题，发现自己是否已经抛弃yilia主题开发者明确说明不兼容IE浏览器的初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？
 可能有的人不会这么认为，可以说，我在写这篇文章前，还不这么认为。
 种种迹象可能已经明确表明，随着时间的流逝，原生js方法对浏览器的兼容性已经不再是问题，新的原生js方法可以完美替代jquery所提供的方法。就像github改版不再使用jquery所说的那样，原生js已经可以实现jquery所实现的功能，不再依赖jquery。
 
@@ -32,3 +32,12 @@ jquery使用方便，相信不久的将来，原生js也会很方便。
 
 参考文献
 [GitHub：为什么我们最终选择放弃了 jQuery](https://blog.csdn.net/csdnnews/article/details/82783675)
+
+最后
+
+进行了一段时间，目前主题依然依赖jquery的功能有：
+1.本地全局搜索
+2.目录优化
+3.代码块复制
+
+加油！
