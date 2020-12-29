@@ -16,7 +16,7 @@
 <meta property="og:description" content="不知不觉已经到了2020年，距离jquery第一个版本（2006年）面世已经14年。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-08T02:25:44.000Z">
-<meta property="article:modified_time" content="2020-12-08T03:40:55.095Z">
+<meta property="article:modified_time" content="2020-12-29T13:25:51.452Z">
 <meta property="article:author" content="akbcd">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
             autoplay: 'false' === 'true',
             theme: '#4d4d4d',
             loop: 'all',
-            order: 'list',
+            order: 'random',
             preload: 'none',
             lrcType: Number('1'),
             volume: Number('0.7'),
@@ -268,14 +268,14 @@
         <a href="/2020/12/08/%E5%85%B3%E4%BA%8Ejquery%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" class="archive-article-date">
   	<time datetime="2020-12-08T02:25:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
 	
-	<time datetime="2020-12-08T03:40:55.095Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2020-12-08</time>
+	<time datetime="2020-12-29T13:25:51.452Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2020-12-29</time>
 	
 </a>
         
         
           <div style="color: #999">
           
-            <span><i class="icon-wordcount icon"></i> 字数 717</span>
+            <span><i class="icon-wordcount icon"></i> 字数 783</span>
           
           
             <span id="/2020/12/08/%E5%85%B3%E4%BA%8Ejquery%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" class="leancloud_visitors" data-flag-title="关于jquery的一点思考"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
@@ -304,10 +304,13 @@
 <p>去jquery化是不是从这时开始，我不知道，但是这对于GitHub来说，绝对是一件可以载入公司史册的大事。</p>
 <p>前段时间，浏览了 hexo-theme-butterfly主题 ，发现最近作者正在为自己开发的主题去jquery，加上之前也听过去jquery的相关信息，引发了自己的一些思考。</p>
 <p>关于yilia主题</p>
-<p>虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。看到 hexo-theme-butterfly主题 作者正在去jquery，并且回想起yilia主题，发现自己是否已经抛弃yilia代码初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？<br>可能有的人不会这么认为，可以说，我在写这篇文章前，还不这么认为。<br>种种迹象可能已经明确表明，随着时间的流逝，原生js方法对浏览器的兼容性已经不再是问题，新的原生js方法可以完美替代jquery所提供的方法。就像github改版不再使用jquery所说的那样，原生js已经可以实现jquery所实现的功能，不再依赖jquery。</p>
+<p>虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。直到看到 hexo-theme-butterfly主题 作者正在去jquery，让我的想法发生了改变。回想起yilia主题，发现自己是否已经抛弃yilia主题开发者明确说明不兼容IE浏览器的初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？<br>可能有的人不会这么认为，可以说，我在写这篇文章前，还不这么认为。<br>种种迹象可能已经明确表明，随着时间的流逝，原生js方法对浏览器的兼容性已经不再是问题，新的原生js方法可以完美替代jquery所提供的方法。就像github改版不再使用jquery所说的那样，原生js已经可以实现jquery所实现的功能，不再依赖jquery。</p>
 <p>思考</p>
 <p>去jquery，是不是应该开始进行？<br>对于yilia主题，里面后加的功能，可以用原生js实现的功能，不会再用jquery实现。随着自己知识的积累，早晚要把jquery移出去。<br>jquery使用方便，相信不久的将来，原生js也会很方便。</p>
 <p>参考文献<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/csdnnews/article/details/82783675">GitHub：为什么我们最终选择放弃了 jQuery</a></p>
+<p>最后</p>
+<p>进行了一段时间，目前主题依然依赖jquery的功能有：<br>1.本地全局搜索<br>2.目录优化<br>3.代码块复制</p>
+<p>加油！</p>
 
         
       </div>
@@ -662,35 +665,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">软件安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">经验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">html</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color4">直播源</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,11 +681,11 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color4">jsp</a>
+                <a style="cursor:pointer" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">游戏</a>
+                <a style="cursor:pointer" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,11 +697,39 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">游戏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">光猫备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">软件安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color4">直播源</a>
               </li>
              
               <li class="article-tag-list-item">

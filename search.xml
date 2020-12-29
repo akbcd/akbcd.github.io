@@ -5,7 +5,15 @@
     <url>/2020/04/08/%E6%AC%A2%E8%BF%8E/</url>
     <content><![CDATA[<p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <a id="more"></a>
-<p>以下内容为博客的操作日志<br>2020年12月6日</p>
+<p>以下内容为博客的操作日志<br>2020年12月29日<br>本想把目录优化部分的代码用原生js实现一下，但是发现有些难度。</p>
+<ul>
+<li>yilia主题优化、修改：<ul>
+<li>解决hexo5.0之前版本中文动态目录可能失效的问题</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2020年12月6日</p>
 <ul>
 <li>yilia主题优化、新增：<ul>
 <li>优化<ul>
@@ -169,10 +177,13 @@
 <p>去jquery化是不是从这时开始，我不知道，但是这对于GitHub来说，绝对是一件可以载入公司史册的大事。</p>
 <p>前段时间，浏览了 hexo-theme-butterfly主题 ，发现最近作者正在为自己开发的主题去jquery，加上之前也听过去jquery的相关信息，引发了自己的一些思考。</p>
 <p>关于yilia主题</p>
-<p>虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。看到 hexo-theme-butterfly主题 作者正在去jquery，并且回想起yilia主题，发现自己是否已经抛弃yilia代码初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？<br>可能有的人不会这么认为，可以说，我在写这篇文章前，还不这么认为。<br>种种迹象可能已经明确表明，随着时间的流逝，原生js方法对浏览器的兼容性已经不再是问题，新的原生js方法可以完美替代jquery所提供的方法。就像github改版不再使用jquery所说的那样，原生js已经可以实现jquery所实现的功能，不再依赖jquery。</p>
+<p>虽然yilia主题的开发者已经不再更新yilia主题，但是自始至终作者也没有使用jquery。自己给yilia主题第一次加上jquery时，是添加全局搜索功能。自从引入了jquery，感觉自己已经依赖上了jquery，很多可以用原生js实现的代码，直接使用jquery实现。直到看到 hexo-theme-butterfly主题 作者正在去jquery，让我的想法发生了改变。回想起yilia主题，发现自己是否已经抛弃yilia主题开发者明确说明不兼容IE浏览器的初衷，难道不再使用jquery，转而投身到原生js已经是大势所趋？<br>可能有的人不会这么认为，可以说，我在写这篇文章前，还不这么认为。<br>种种迹象可能已经明确表明，随着时间的流逝，原生js方法对浏览器的兼容性已经不再是问题，新的原生js方法可以完美替代jquery所提供的方法。就像github改版不再使用jquery所说的那样，原生js已经可以实现jquery所实现的功能，不再依赖jquery。</p>
 <p>思考</p>
 <p>去jquery，是不是应该开始进行？<br>对于yilia主题，里面后加的功能，可以用原生js实现的功能，不会再用jquery实现。随着自己知识的积累，早晚要把jquery移出去。<br>jquery使用方便，相信不久的将来，原生js也会很方便。</p>
 <p>参考文献<br><a href="https://blog.csdn.net/csdnnews/article/details/82783675">GitHub：为什么我们最终选择放弃了 jQuery</a></p>
+<p>最后</p>
+<p>进行了一段时间，目前主题依然依赖jquery的功能有：<br>1.本地全局搜索<br>2.目录优化<br>3.代码块复制</p>
+<p>加油！</p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -214,8 +225,8 @@
 <p>补充：<br>如果电脑桌面弹出莫名奇妙的弹窗广告，不要慌，请打开任务管理器，找到相关程序，打开文件所在位置，确认没用的情况下，任务管理器中结束对应程序，观看弹窗是否消失，弹窗消失后并将文件资源管理器中所对应的程序文件删除即可（谨慎操作）。</p>
 ]]></content>
       <tags>
-        <tag>经验</tag>
         <tag>随笔</tag>
+        <tag>经验</tag>
       </tags>
   </entry>
   <entry>
@@ -226,8 +237,8 @@
 <p>设备问题，这个也有很多种情况。比如系统会检测不到麦克风的存在，可能直接没有麦克风这个选项。<br>如何确认电脑是否识别出麦克风： <strong>设置》系统》关于》相关设置》设备管理器</strong> ，打开，在里面找到 <strong>音频输入和输出</strong> ，看里面是否有 <strong>麦克风阵列</strong> ，有的话表明系统已识别出麦克风设备。<br>如果系统识别出麦克风设备，设置问题也正常，但是麦克风依然不能使用，这应该是麦克风坏了，这种情况可能需要更换麦克风设备。</p>
 ]]></content>
       <tags>
-        <tag>经验</tag>
         <tag>随笔</tag>
+        <tag>经验</tag>
       </tags>
   </entry>
   <entry>
@@ -243,8 +254,8 @@
 <p>补充：$(document).ready(function(){…})函数可以简写为$(function{…})，此方法在dom结构加载完毕后执行，如果页面中有一些加载较慢的资源（如图片），不建议使用此方法，会使页面在还没有显示完整时跳转，导致出现问题。<br>这里说一个js原生方法：window.onload，此方法是在页面全部加载完毕后执行，但是只能执行一次，如果多次使用，后面会覆盖前面，不推荐使用。<br>既然不推荐使用，就换一个方法，用jq实现window.onload方法：$(window).on(‘load’,function(){…})，此方法与window.onload方法功能一致，但是没有只能实现一次的限制，可多次使用，不会覆盖。<br>网站上查询的资料里此方法多半写成：$(window).load(function(){…})，这仿佛是jq较早版本支持的方法，新版本已不能使用。</p>
 ]]></content>
       <tags>
-        <tag>js</tag>
         <tag>html</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -841,7 +852,7 @@
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#120;&#120;&#120;&#x78;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#120;&#120;&#120;&#x78;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#99;&#x6f;&#109;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -856,7 +867,7 @@
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#x78;&#120;&#x78;&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#120;&#x78;&#x78;&#120;&#120;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#64;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#64;&#x71;&#x71;&#46;&#x63;&#111;&#x6d;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -4675,7 +4686,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>找到自己创建的blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令:<br>1.<code>hexo init</code> ——初始化hexo，hexo会在blog文件夹中创建需要的文件<br>2.<code>npm install</code> ——安装npm，npm会根据hexo初始化创建的package.json配置文件中的依赖配置下载安装。<br>3.<code>hexo server</code> ——简写为<code>hexo s</code>，启动hexo本地服务，在浏览器端输入localhost:4000看一下效果<br>4.ctrl+c 结束本地服务，git窗口中有提示<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h1 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h1><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，参看 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h2 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h2><p>登录github：<a href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private</p>
-<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#117;&#114;&#95;&#101;&#109;&#x61;&#x69;&#108;&#64;&#121;&#111;&#x75;&#114;&#101;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#111;&#117;&#114;&#95;&#101;&#109;&#x61;&#x69;&#108;&#64;&#121;&#111;&#x75;&#114;&#101;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
+<h2 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h2><p>git中输入<br><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code> ——在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#111;&#x75;&#x72;&#95;&#101;&#109;&#x61;&#105;&#108;&#64;&#121;&#111;&#x75;&#x72;&#x65;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#121;&#111;&#x75;&#x72;&#95;&#101;&#109;&#x61;&#105;&#108;&#64;&#121;&#111;&#x75;&#x72;&#x65;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a></strong>为GitHub创建时用的邮箱<br>回车</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public&#x2F;private rsa key pair.</span><br><span class="line">Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;Admin&#x2F;.ssh&#x2F;id_rsa):</span><br></pre></td></tr></table></figure>
 <p>直接点回车，说明会在默认文件id_rsa上生成ssh key。 </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br></pre></td></tr></table></figure>
@@ -4783,7 +4794,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 </ul>
 <h1 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h1><p>用编译软件打开blog文件夹，在根目录中找到_config.yml<br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname&#x2F;yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#111;&#x75;&#x40;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#121;&#111;&#x75;&#x40;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#117;&#64;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#x79;&#111;&#117;&#64;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容上传不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h1 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h1><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——部署网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h1 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h1><p>好的博客当然需要一个好的主题来衬托</p>
@@ -4850,7 +4861,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <h3 id="配置并发布文章"><a href="#配置并发布文章" class="headerlink" title="配置并发布文章"></a>配置并发布文章</h3><p>git输入<br><code>npm install</code> ——在<code>git clone</code>项目的时候，项目文件中并没有<code>node_modules</code>文件夹，项目的依赖文件可能很大。直接执行，<code>npm</code>会根据<code>package.json</code>配置文件中的依赖配置下载安装。</p>
 <h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><p>1.<code>git add .</code> ——将文件的修改，文件的新建，添加到暂存区。详解：<strong>git空格add空格.</strong> ，切记不要打错，否则命令就错了<br>2.<code>git commit -m&quot;...&quot;</code> ——提交修改，<code>...</code>为对修改的描述。详解：<strong>git空格commit空格-m”…”</strong><br>3.<code>git push origin hexo</code> ——将源文件提交到hexo分支<br>期间若出现提示Are you sure you want to continue connecting，请输入yes<br>4.<code>hexo g -d</code><br>补充：<br>执行到<code>git commit -m&quot;...&quot;</code>可能会有此提示</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*** Please tell me who you are.</span><br><span class="line"></span><br><span class="line">Run</span><br><span class="line"></span><br><span class="line">  git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">  git config --global user.name &quot;Your Name&quot;</span><br><span class="line"></span><br><span class="line">to set your account&#39;s default identity.</span><br></pre></td></tr></table></figure>
-<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;">&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
+<p>输入相应的信息（填写自己的信息）<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;">&#121;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为GitHub用户名</p>
 <h2 id="旧电脑"><a href="#旧电脑" class="headerlink" title="旧电脑"></a>旧电脑</h2><h3 id="云端博客分支同步到本地"><a href="#云端博客分支同步到本地" class="headerlink" title="云端博客分支同步到本地"></a>云端博客分支同步到本地</h3><p>文件夹<strong>yourname.github.io</strong>右键<strong>git bash here</strong><br>输入命令<br><code>git pull origin hexo --allow-unrelated-histories</code> ——分支合并<br>输入此命令后，git会将云端hexo分支与本地hexo分支比较，并进行同步（云端同步到本地）</p>
 <h1 id="Visual-Studio-Code运行git-bash命令"><a href="#Visual-Studio-Code运行git-bash命令" class="headerlink" title="Visual Studio Code运行git bash命令"></a>Visual Studio Code运行git bash命令</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正如大家所知道的，<strong>Visual Studio Code</strong>功能很强大，这里简单介绍一下直接通过<strong>Visual Studio Code</strong>管理本地博客，而不再借助于git窗口</p>
 <h2 id="hexo5-0"><a href="#hexo5-0" class="headerlink" title="hexo5.0"></a>hexo5.0</h2><p>hexo5.0版本，已经在package.json文件中添加hexo部分功能的脚本命令，在<strong>Visual Studio Code</strong>中打开package.json文件，在script上点击Debug即可运行</p>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="欢迎访问akbcd博客您可以点击所有文章中的搜索图标进行关键字搜索">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-08T01:41:54.000Z">
-<meta property="article:modified_time" content="2020-12-06T04:46:07.526Z">
+<meta property="article:modified_time" content="2020-12-29T13:14:48.888Z">
 <meta property="article:author" content="akbcd">
 <meta property="article:tag" content="akbcd">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
             autoplay: 'false' === 'true',
             theme: '#4d4d4d',
             loop: 'all',
-            order: 'list',
+            order: 'random',
             preload: 'none',
             lrcType: Number('1'),
             volume: Number('0.7'),
@@ -268,14 +268,14 @@
         <a href="/2020/04/08/%E6%AC%A2%E8%BF%8E/" class="archive-article-date">
   	<time datetime="2020-04-08T01:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
 	
-	<time datetime="2020-12-06T04:46:07.526Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2020-12-06</time>
+	<time datetime="2020-12-29T13:14:48.888Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2020-12-29</time>
 	
 </a>
         
         
           <div style="color: #999">
           
-            <span><i class="icon-wordcount icon"></i> 字数 2k</span>
+            <span><i class="icon-wordcount icon"></i> 字数 2.1k</span>
           
           
             <span id="/2020/04/08/%E6%AC%A2%E8%BF%8E/" class="leancloud_visitors" data-flag-title="欢迎"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
@@ -290,7 +290,15 @@
         
           <p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <a id="more"></a>
-<p>以下内容为博客的操作日志<br>2020年12月6日</p>
+<p>以下内容为博客的操作日志<br>2020年12月29日<br>本想把目录优化部分的代码用原生js实现一下，但是发现有些难度。</p>
+<ul>
+<li>yilia主题优化、修改：<ul>
+<li>解决hexo5.0之前版本中文动态目录可能失效的问题</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2020年12月6日</p>
 <ul>
 <li>yilia主题优化、新增：<ul>
 <li>优化<ul>
@@ -790,35 +798,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">软件安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">经验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">html</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color4">直播源</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +814,11 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color4">jsp</a>
+                <a style="cursor:pointer" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color3">游戏</a>
+                <a style="cursor:pointer" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,11 +830,39 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">游戏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a style="cursor:pointer" class="js-tag color5">光猫备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">bt磁力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color5">软件安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a style="cursor:pointer" class="js-tag color4">直播源</a>
               </li>
              
               <li class="article-tag-list-item">
