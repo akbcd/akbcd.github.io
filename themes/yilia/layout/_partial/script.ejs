@@ -5,40 +5,37 @@
 <% if (theme.clipboard) { %>
 <script src="<%- theme.clipboard_js %>"></script>
 <script>
-    /* 
-    页面载入完成后，创建复制按钮
-    create copy button 
-    */
-    !function (e, t, a) {
-        var initCopyCode = function(){
-            var copyHtml = "<button id='js-btn-copy'><%- _p('copy') %></button>";
+    !function (e, t) {
+        var copyFn=function(copy,copy_success,copy_error){
+            var copyHtml = "<button id='js-btn-copy'>"+copy+"</button>";
             [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
                 button.insertAdjacentHTML('beforebegin', copyHtml);
             });
-        }
-        initCopyCode();
-        // 代码块复制
-        // code block copying
-        $(".code").on("click","#js-btn-copy",function(button){
-            var copy=button.currentTarget;
-            var clipboard = new ClipboardJS('#js-btn-copy', {
-                target: function(trigger) {
-                    if(trigger.nextElementSibling != null){
-                        return trigger.nextElementSibling;
-                    }
+            var copyButton=document.querySelectorAll(".code #js-btn-copy");
+            for(var i in copyButton){
+                copyButton[i].onclick=function(button){
+                    var $copy=button.currentTarget;
+                    var clipboard = new ClipboardJS('#js-btn-copy', {
+                        target: function(trigger) {
+                            if(trigger.nextElementSibling != null){
+                                return trigger.nextElementSibling;
+                            }
+                        }
+                    })
+                    clipboard.on('success', function(e) {
+                        e.clearSelection();
+                        $copy.innerHTML=copy_success;
+                        clipboard.destroy();
+                    });
+                    clipboard.on('error', function(e) {
+                        $copy.innerHTML=copy_error;
+                        clipboard.destroy();
+                    });
+                    $copy.onmouseout=function(){$copy.innerHTML=copy};
                 }
-            });
-            clipboard.on('success', function(e) {
-                e.clearSelection();
-                $(copy).html("<%- _p('copy_success') %>");
-                clipboard.destroy();
-            });
-            clipboard.on('error', function(e) {
-                $(copy).html("<%- _p('copy_error') %>");
-                clipboard.destroy();
-            });
-            $(copy).mouseout(function(){$(event.currentTarget).html("<%- _p('copy') %>")});
-        });
+            }
+        }
+        copyFn("<%- _p('copy') %>","<%- _p('copy_success') %>","<%- _p('copy_error') %>");
     }(window, document);
 </script>
 <% } %>

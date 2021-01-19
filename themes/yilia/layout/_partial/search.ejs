@@ -9,28 +9,22 @@
         <div id="js-searchResult"></div>
     </div>
     <script type="text/javascript">
-        $(function(){
-            $('#js-icon-search').attr("title","<%- _p('search') %>")
+        window.addEventListener("DOMContentLoaded",function(){
+            document.getElementById("js-icon-search").setAttribute("title","<%- _p('search') %>");
         })
     </script>
     <script src="<%- theme.js.search %>"></script>
     <% if (theme.jsdelivr.enable){ %>
     <script>
         if ("localhost" != document.domain){
-            $(function () {
                 searchFunc("//cdn.jsdelivr.net/gh/" + "<%- theme.jsdelivr.name %>" + "/" + "<%- theme.jsdelivr.repository %>" +"/" + "search.xml", 'js-searchInput', 'js-searchResult');
-            });
         } else {
-            $(function () {
                 searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-            });
         }
     </script>
     <% } else { %>
     <script>
-        $(function () {
-            searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-        });
+        searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
     </script>
     <% } %>
 </div>
