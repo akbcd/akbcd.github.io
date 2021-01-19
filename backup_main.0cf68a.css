@@ -21,7 +21,9 @@
 	right: 0;
 	margin: auto;
 	overflow: auto;
-	border-radius: 10px
+    border-radius: 10px;
+    transition: 1s;
+    opacity: 0
 }
 
 #js-modal-overlay {
@@ -32,7 +34,8 @@
 	bottom: 0;
 	width: 100%;
 	background: rgb(0, 0, 0);
-	opacity: .3
+    transition: 1s;
+    opacity: 0
 }
 
 #js-searchTextCancel {
@@ -48,7 +51,7 @@
 	font-size: 18px
 }
 
-.search-header ::-webkit-input-placeholder {
+.search-header input::-webkit-input-placeholder {
 	color: #ededed
 }
 
@@ -657,7 +660,6 @@ i {
 
 [class*=" icon-"],[class^=icon-] {
     font-family: "iconfont" !important;
-    speak: none;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -1247,7 +1249,6 @@ pre .css~* .id,pre .id {
     color: #fff;
     height: 18px;
     line-height: 18px;
-    float: left;
     padding: 0 5px 0 10px;
     position: relative;
     border-radius: 0 5px 5px 0;
@@ -1759,7 +1760,6 @@ pre .css~* .id,pre .id {
     content: "\201C";
     font-family: serif;
     font-size: 30px;
-    float: left;
     margin: 4px 4px 0 -12px;
     color: #c8c8c8
 }
@@ -1843,7 +1843,6 @@ pre .css~* .id,pre .id {
     padding: 0;
     opacity: 0;
     -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch
 }
 
 .tools-col.show {
@@ -1898,7 +1897,7 @@ pre .css~* .id,pre .id {
     transform: scale(1.2)
 }
 
-.tools-col .tools-section .search-wrap ::-webkit-input-placeholder {
+.tools-col .tools-section .search-wrap input::-webkit-input-placeholder {
     color: #ededed
 }
 
@@ -1995,7 +1994,6 @@ pre .css~* .id,pre .id {
     margin-top: 10px;
     color: rgba(77,77,77,.75);
     -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
     overflow-y: auto
 }
 
@@ -2328,7 +2326,6 @@ pre .css~* .id,pre .id {
     background: #aaa;
     display: inline-block;
     margin-right: 10px;
-    float: left;
     margin-top: 10px
 }
 
@@ -2345,6 +2342,10 @@ pre .css~* .id,pre .id {
 .article-entry ol,.article-entry ul {
     font-size: 14px;
     margin: 10px 0
+}
+
+.article-entry ol li,.article-entry ul li{
+    margin: 0 0 10px
 }
 
 .article-entry li ol,.article-entry li ul {
@@ -2986,7 +2987,6 @@ pre .css~* .id,pre .id {
     padding: 40px;
     -webkit-transform: translate3d(0,100%,0);
     transform: translate3d(0,100%,0);
-    webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
     transition: transform .3s,-webkit-transform .3s

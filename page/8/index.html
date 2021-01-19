@@ -72,21 +72,17 @@
         <div id="js-searchResult"></div>
     </div>
     <script type="text/javascript">
-        $(function(){
-            $('#js-icon-search').attr("title","搜索")
+        window.addEventListener("DOMContentLoaded",function(){
+            document.getElementById("js-icon-search").setAttribute("title","搜索");
         })
     </script>
     <script src="https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js"></script>
     
     <script>
         if ("localhost" != document.domain){
-            $(function () {
                 searchFunc("//cdn.jsdelivr.net/gh/" + "akbcd" + "/" + "akbcd.github.io" +"/" + "search.xml", 'js-searchInput', 'js-searchResult');
-            });
         } else {
-            $(function () {
                 searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-            });
         }
     </script>
     
@@ -251,6 +247,110 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    
+<article id="post-Hexo引用本地图片、音乐、视频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/Hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E3%80%81%E8%A7%86%E9%A2%91/">Hexo引用本地图片、音乐、视频</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/11/Hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E3%80%81%E8%A7%86%E9%A2%91/" class="archive-article-date">
+  	<time datetime="2019-03-11T11:55:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+	
+</a>
+        
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      <div id="article-content">
+        
+          <h2 id="hexo引用本地图片"><a href="#hexo引用本地图片" class="headerlink" title="hexo引用本地图片"></a>hexo引用本地图片</h2><p>想必大家都知道怎么用markdown语法显示图片吧，我经常用的是先把图片先上传到图床，然后用图床给的地址在文章中显示图片<br>缺点：图床不是太稳定，有时上传的图片会消失<br>优点：图片在文章中加载速度很快<br>优缺点均是相对于我要说的方法</p>
+          
+            <a class="article-more-a" href="/2019/03/11/Hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E3%80%81%E8%A7%86%E9%A2%91/#more">more >></a>
+          
+        
+      </div>
+      <script>
+/* jsdelivr */
+var name = 'akbcd';
+var repository = 'akbcd.github.io';
+if ("localhost" != document.domain && yiliaConfig.isPost) {
+    var img=document.querySelectorAll("#article-content img"),
+    audio=document.querySelectorAll("#article-content audio"),
+    video=document.querySelectorAll("#article-content video");
+    for (var key in img) {
+        if (isNaN(key)) break;
+        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in audio) {
+        if (isNaN(key)) break;
+        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+    for (var key in video) {
+        if (isNaN(key)) break;
+        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+    }
+}
+</script>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a style="cursor:pointer" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/11/Hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E3%80%81%E9%9F%B3%E4%B9%90%E3%80%81%E8%A7%86%E9%A2%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     
 <article id="post-谈谈中美贸易战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1168,110 +1268,6 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
 
 
   
-    
-<article id="post-GITHUB+HEXO搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/22/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">GITHUB+HEXO搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/22/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2018-09-21T23:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-22</time>
-	
-</a>
-        
-        
-      </header>
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      <div id="article-content">
-        
-          <p>本篇文章介绍<strong>GITHUB+HEXO搭建个人博客</strong>的方法，讲述如何创建GitHub账户，通过hexo在GitHub上搭建个人博客以及如何通过GitHub分支实现本地博客备份至GitHub等。文章讲述可能较为详细，可以通过目录快速定位到自己需要的部分，本篇文章适合新手阅读。<br>注：这篇文章是自己对<strong>GITHUB+HEXO搭建个人博客</strong>的总结，当你看到这篇文章时，也就意味着之前关于<strong>GITHUB+HEXO搭建个人博客</strong>的多篇文章已被删除。<br>文章里建议参看的文章，如果没有链接，请手动在所有文章中查找</p>
-          
-            <a class="article-more-a" href="/2018/09/22/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
-          
-        
-      </div>
-      <script>
-/* jsdelivr */
-var name = 'akbcd';
-var repository = 'akbcd.github.io';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
-    var img=document.querySelectorAll("#article-content img"),
-    audio=document.querySelectorAll("#article-content audio"),
-    video=document.querySelectorAll("#article-content video");
-    for (var key in img) {
-        if (isNaN(key)) break;
-        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in audio) {
-        if (isNaN(key)) break;
-        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-    for (var key in video) {
-        if (isNaN(key)) break;
-        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
-    }
-}
-</script>
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a style="cursor:pointer" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/22/GITHUB+HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">« 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">下一页 »</a>
@@ -1286,7 +1282,7 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 akbcd
+    		&copy; 2021 akbcd
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1303,40 +1299,37 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-    /* 
-    页面载入完成后，创建复制按钮
-    create copy button 
-    */
-    !function (e, t, a) {
-        var initCopyCode = function(){
-            var copyHtml = "<button id='js-btn-copy'>复制</button>";
+    !function (e, t) {
+        var copyFn=function(copy,copy_success,copy_error){
+            var copyHtml = "<button id='js-btn-copy'>"+copy+"</button>";
             [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
                 button.insertAdjacentHTML('beforebegin', copyHtml);
             });
-        }
-        initCopyCode();
-        // 代码块复制
-        // code block copying
-        $(".code").on("click","#js-btn-copy",function(button){
-            var copy=button.currentTarget;
-            var clipboard = new ClipboardJS('#js-btn-copy', {
-                target: function(trigger) {
-                    if(trigger.nextElementSibling != null){
-                        return trigger.nextElementSibling;
-                    }
+            var copyButton=document.querySelectorAll(".code #js-btn-copy");
+            for(var i in copyButton){
+                copyButton[i].onclick=function(button){
+                    var $copy=button.currentTarget;
+                    var clipboard = new ClipboardJS('#js-btn-copy', {
+                        target: function(trigger) {
+                            if(trigger.nextElementSibling != null){
+                                return trigger.nextElementSibling;
+                            }
+                        }
+                    })
+                    clipboard.on('success', function(e) {
+                        e.clearSelection();
+                        $copy.innerHTML=copy_success;
+                        clipboard.destroy();
+                    });
+                    clipboard.on('error', function(e) {
+                        $copy.innerHTML=copy_error;
+                        clipboard.destroy();
+                    });
+                    $copy.onmouseout=function(){$copy.innerHTML=copy};
                 }
-            });
-            clipboard.on('success', function(e) {
-                e.clearSelection();
-                $(copy).html("复制成功");
-                clipboard.destroy();
-            });
-            clipboard.on('error', function(e) {
-                $(copy).html("复制失败");
-                clipboard.destroy();
-            });
-            $(copy).mouseout(function(){$(event.currentTarget).html("复制")});
-        });
+            }
+        }
+        copyFn("复制","复制成功","复制失败");
     }(window, document);
 </script>
 
@@ -1406,11 +1399,11 @@ if ("localhost" != document.domain && yiliaConfig.isPost) {
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">hexo</a>
+                <a style="cursor:pointer" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a style="cursor:pointer" class="js-tag color5">html</a>
+                <a style="cursor:pointer" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
