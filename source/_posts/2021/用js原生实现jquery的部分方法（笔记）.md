@@ -14,6 +14,15 @@ for(var i in copyButton){
     copyButton[i].onclick=function(button){}
 }
 ```
+如果想把onclick绑定的函数单独定义一个方法为button()，则
+```
+function button(){};
+var copyButton=document.querySelectorAll(".code #js-btn-copy");
+for(var i in copyButton){
+    copyButton[i].onclick=button;
+}
+```
+`copyButton[i].onclick=button;`这里等于的是button而不是button()，如果直接在html标签里面添加onclick事件，是`onclick="button()"`。
 2. `$(ele).html(value)`
 js实现：`ele.innerHTML=value`
 3. `$(ele).mouseout(function(){})`
@@ -45,8 +54,8 @@ function getElementTop(element){
   }
 ```
 jquery中有一个position()方法，这个还没有整清楚如何实现，所以主题中目录优化部分还是没有去除jquery
-6. ~`$('body,html').animate({scrollTop: scrollOffset.top-50},1000);`~
-~题目是jq封装的一个锚点跳转方法，也就是页面平滑滚动，这里分享一个js封装的方法，功能大致相同~
+6. `$('body,html').animate({scrollTop: scrollOffset.top-50},1000);`
+题目是jq封装的一个锚点跳转方法，也就是页面平滑滚动，这里分享一个js封装的方法，功能大致相同
 ```
 // 页面平滑滚动
 function slideTo(targetPageY,element){
@@ -65,10 +74,10 @@ function slideTo(targetPageY,element){
     },10)
 }
 ```
-~传入两个参数targetPageY,element，其中~
-~targetPageY：滚动位置~
-~element：滚动条所在容器~
-~支持向上向下滚动，速度调节speed，如果被重复调用时，上次没执行完毕，会出现很严重的问题~
+传入两个参数targetPageY,element，其中：
+targetPageY：滚动位置
+element：滚动条所在容器
+支持向上向下滚动，速度调节speed，如果被重复调用时，上次没执行完毕，会出现很严重的问题
 7. `$(ele).scrollTop();`
 js：`var eleTop =ele.scrollTop;`
 8. `$(window).scroll(function() {})`
