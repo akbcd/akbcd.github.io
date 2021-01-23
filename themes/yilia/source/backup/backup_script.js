@@ -54,6 +54,7 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
     },1000);
   };
   //获取元素
+  var $article_content=document.getElementById('article-content');
   var $toc_article=document.getElementsByClassName("toc-article")[0];
   var $toc_child=document.getElementsByClassName("toc-child");
   var $toc_link=document.getElementsByClassName("toc-link");
@@ -73,7 +74,7 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
       window.history.replaceState(undefined, undefined, anchor);
     }
   };
-  // 显示子目录
+  // jquery实现显示子目录
   var expandToc = function ($item) {
     if ($item.is(':visible')) {
       return;
@@ -82,7 +83,7 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
   };
   // 目录滚动
   var autoScrollToc = function () {
-    if ($('.toc-link').hasClass('active')) {
+    if ($toc_article.querySelectorAll('.active').length) {
       var activePosition = $('.active').position().top;
       var articleScrolltop =$toc_article.scrollTop;
       if (activePosition > $toc_article.clientHeight-50) {
@@ -96,42 +97,32 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
   // pc动态目录
   $container.addEventListener('scroll', (e) => {
     var currentTop = $container.scrollTop;
-    findHeadPosition(currentTop,true);
+    findHeadPosition(currentTop);
     autoScrollToc();
   });
   // mobile动态目录
   window.addEventListener('scroll', (e) => {
     var currentTop = document.body.scrollTop||document.documentElement.scrollTop;
-    findHeadPosition(currentTop+50,false);
+    findHeadPosition(currentTop+50);
     autoScrollToc();
   });
   // find head position & add active class
   // DOM Hierarchy:
   // ol.toc > (li.toc-item, ...)
   // li.toc-item > (a.toc-link, ol.toc-child > (li.toc-item, ...))
-  var findHeadPosition = function (top,isPc) {
+  var findHeadPosition = function (top) {
   // assume that we are not in the post page if no TOC link be found,
   // thus no need to update the status
     if ($toc_link.length === 0) {
       return false;
     };
-    var list = $('#article-content').find('h1,h2,h3,h4,h5,h6');
+    var list = $article_content.querySelectorAll('h1,h2,h3,h4,h5,h6');
     var currentId = '';
-    if(isPc){
-      list.each(function () {
-        var head = $(this);
-        if (top > head.position().top) {
-          currentId = '#' + $(this).attr('id');
-        }
-      });
-    }else{
-      list.each(function () {
-        var head = $(this);
-        if (top > head.offset().top-25) {
-          currentId = '#' + $(this).attr('id');
-        }
-      });
-    }
+    list.forEach(function (ele) {
+      if (top > getElementTop(ele)-10) {
+        currentId = '#' + ele.getAttribute('id');
+      }
+    });
     //获取hexo版本号
     var hexoVersion=(null!=document.querySelector('meta[name="generator"]'))?document.querySelector('meta[name="generator"]').getAttribute("content").substring(5,6):null;
     var currentActive = $toc_article.querySelectorAll('.active');
@@ -143,14 +134,16 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
       if (isanchor) updateAnchor(currentId);
 
       $toc_article.querySelectorAll('.active').forEach(i => { i.classList.remove('active')});
-      var _this=(null!=hexoVersion&&hexoVersion>=5)?$('.toc-link[href="'+encodeURI(currentId)+'"]'):$('.toc-link[href="'+currentId+'"]');
-      _this.addClass('active');
-
-      var parents = _this.parents('.toc-child');
+      var _this=(null!=hexoVersion&&hexoVersion>=5)?
+      document.querySelectorAll('.toc-link[href="'+encodeURI(currentId)+'"]')[0]:
+      document.querySelectorAll('.toc-link[href="'+currentId+'"]')[0];
+      _this.classList.add('active');
+      // jquery实现动态子目录
+      var parents = $(_this).parents('.toc-child');
       // Returned list is in reverse order of the DOM elements
       // Thus `parents.last()` is the outermost .toc-child container
       // i.e. list of subsections
-      var topLink = (parents.length > 0) ? parents.last() : _this;
+      var topLink = (parents.length > 0) ? parents.last() : $(_this);
       expandToc(topLink.closest('.toc-item').find('.toc-child'));
       topLink
       // Find all top-level .toc-item containers, i.e. sections
