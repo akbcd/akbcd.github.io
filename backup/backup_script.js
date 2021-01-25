@@ -91,6 +91,7 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
       }
       if (activePosition < 50) {
         $toc_article.scrollTop=articleScrolltop-150;
+        if(activePosition<0)$toc_article.scrollTop=0;
       }
     }
   };
