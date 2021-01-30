@@ -48,9 +48,8 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
       scrollTop: scrollPositionTop
     },1000);
     //mobile锚点跳转
-    var scrollOffset = $(name).offset();
     $('body,html').animate({
-      scrollTop: scrollOffset.top-50
+      scrollTop: scrollPositionTop-50
     },1000);
   };
   //获取元素
@@ -83,8 +82,8 @@ if(yiliaConfig.isPost&&typeof(jQuery)!='undefined'){
   };
   // 目录滚动
   var autoScrollToc = function () {
-    if ($toc_article.querySelectorAll('.active').length) {
-      var activePosition = $('.active').position().top;
+    if (document.querySelector('.toc-link.active')) {
+      var activePosition = $('.toc-link.active').position().top;
       var articleScrolltop =$toc_article.scrollTop;
       if (activePosition > $toc_article.clientHeight-50) {
         $toc_article.scrollTop=articleScrolltop+150;
