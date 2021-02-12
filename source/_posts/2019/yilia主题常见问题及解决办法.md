@@ -440,6 +440,14 @@ function a() {
                     o()
                 }, 100),
 ```
+简写为
+```js
+                t.onscroll = r(function() {
+                    "function" == typeof a && a.apply(this, arguments),
+                    o()
+                }, 100),
+                window.onscroll = t.onscroll,
+```
 - 修改后的函数为
 
 ```js
@@ -471,10 +479,7 @@ function a() {
                     "function" == typeof a && a.apply(this, arguments),
                     o()
                 }, 100),
-                window.onscroll = r(function() {
-                    "function" == typeof a && a.apply(this, arguments),
-                    o()
-                }, 100),
+                window.onscroll = t.onscroll,
                 e.onclick = function() {
                     "function" == typeof u && u.apply(this, arguments);
                     t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;

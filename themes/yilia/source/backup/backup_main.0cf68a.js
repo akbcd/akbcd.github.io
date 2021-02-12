@@ -24,19 +24,17 @@
                 e
             }
         }
-        n(386);
+        /*将386更换为189*/
+        n(189);
         var r = n(194),
         i = o(r),
         a = n(193),
         u = o(a),
-        l = n(189),
-        c = o(l),
+        /*删除189调用*/
         s = n(129); (0, s.addLoadEvent)(function() {
             u.
         default.init(),
             i.
-        default.init(),
-            c.
         default.init()
         })
     },
@@ -469,7 +467,7 @@
     },
     86 : function(e, t, n) {
         n(110),
-        n(108),
+        /*删除108调用*/
         n(111),
         n(112),
         e.exports = n(25).Symbol
@@ -740,7 +738,7 @@
         o("values"),
         o("entries")
     },
-    108 : function(e, t) {},
+    /*删除108*/
     109 : function(e, t, n) {
         "use strict";
         var o = n(104)(!0);
@@ -1083,18 +1081,14 @@
             if (e) {
                 var i = null,
                 a = window.onscroll,
-                /*解决移动端返回顶部按钮不显示*/
                 u = e.onclick;
                 t.onscroll = r(function() {
                     "function" == typeof a && a.apply(this, arguments),
                     o()
                 },
                 100),
-                window.onscroll = r(function() {
-                    "function" == typeof a && a.apply(this, arguments),
-                    o()
-                },
-                100),
+                /*解决移动端返回顶部按钮不显示*/
+                window.onscroll=t.onscroll,
                 e.onclick = function() {
                     "function" == typeof u && u.apply(this, arguments);
                     t.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
@@ -1108,9 +1102,8 @@
                 }
             }
         };
-        e.exports = {
-            init: n
-        }
+        /*修改调用方式*/
+        e.exports = n()
     },
     193 : function(e, t, n) {
         "use strict";
@@ -1217,8 +1210,7 @@
         a = o(i),
         u = n(389),
         l = o(u);
-        n(384),
-        n(385),
+        /*删除384，385调用*/
         window.PhotoSwipe = a.
     default,
         window.PhotoSwipeUI_Default = l.
@@ -1543,9 +1535,7 @@
             }
         } (window)
     },
-    384 : function(e, t) {},
-    385 : function(e, t) {},
-    386 : function(e, t) {},
+    /*删除384，385，386*/
     388 : function(e, t, n) {
         var o, r; !
         function(i) {
