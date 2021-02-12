@@ -13,21 +13,15 @@ $searchInput.addEventListener('input', function () {
         $clearInput.style.display='block';
     }
 });
-var scrollTop=0;
-function stopBodyScroll(isFixed){
-    var $body=document.body;
-    if(isFixed){
-        //获取页面滚动的距离
-        scrollTop=window.scrollY;
-        //将body标签在当前位置固定
-        $body.style.position='fixed';
-        $body.style.top=-scrollTop+'px';
-        $body.style.width='100%'
-    }else{
-        $body.removeAttribute("style");
-        //页面回到获取的位置
-        window.scrollTo(0,scrollTop)
-    }
+function stopBodyScroll(){
+    let $body=document.body;
+    //获取页面滚动的距离
+    let value=window.scrollY;
+    //将body标签在当前位置固定
+    $body.style.position='fixed';
+    $body.style.top=-value+'px';
+    $body.style.width='100%';
+    return value;
 };
 window.addEventListener("DOMContentLoaded",function(){
     $clearInput.onclick=function(){
@@ -39,6 +33,7 @@ window.addEventListener("DOMContentLoaded",function(){
     let open = document.getElementById('js-icon-search');
     let close = document.getElementById('js-modal-overlay');
     let $searchModal=document.getElementById('js-searchModal');
+    let scrollTopValue=0;
     open.onclick = function(){
         //弹窗出现时淡入动画
         $searchModal.style.display="block";
@@ -47,8 +42,8 @@ window.addEventListener("DOMContentLoaded",function(){
             $searchModal.style.opacity = 1;
             close.style.opacity = 0.3;
         }, .1);
-        //固定body
-        stopBodyScroll(true);
+        //返回滚动条位置并固定body
+        scrollTopValue=stopBodyScroll();
     };
     //关闭搜索
     close.onclick = function(){
@@ -60,7 +55,9 @@ window.addEventListener("DOMContentLoaded",function(){
             close.removeAttribute("style");
         }, 600);
         //移除body固定
-        stopBodyScroll(false);
+        document.body.removeAttribute("style");
+        //页面回到获取的位置
+        window.scrollTo(0,scrollTopValue);
     }
 });
 //全局搜索
