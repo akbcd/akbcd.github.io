@@ -1,22 +1,22 @@
 <script>
-/* jsdelivr */
-var name = '<%- theme.jsdelivr.name %>';
-var repository = '<%- theme.jsdelivr.repository %>';
-if ("localhost" != document.domain && yiliaConfig.isPost) {
+  /* jsdelivr */
+  var name = '<%- theme.jsdelivr.name %>';
+  var repository = '<%- theme.jsdelivr.repository %>';
+  if ("localhost" != document.domain && yiliaConfig.isPost) {
     var img=document.querySelectorAll("#article-content img"),
     audio=document.querySelectorAll("#article-content audio"),
     video=document.querySelectorAll("#article-content video");
     for (var key in img) {
-        if (isNaN(key)) break;
-        img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+      if (isNaN(key)) break;
+      img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
     }
     for (var key in audio) {
-        if (isNaN(key)) break;
-        audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+      if (isNaN(key)) break;
+      audio[key].src = audio[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
     }
     for (var key in video) {
-        if (isNaN(key)) break;
-        video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+      if (isNaN(key)) break;
+      video[key].src = video[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
     }
-}
+  }
 </script>

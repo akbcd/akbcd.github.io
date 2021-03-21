@@ -1,57 +1,57 @@
 <style>
-    /* 适配yilia主题 */
-    #valine {
-        padding: 0 30px;
+  /* 适配yilia主题 */
+  #valine {
+    padding: 0 30px;
+  }
+  #valine .vwrap{
+    border: 1px solid #c8c8c8;
+  }
+  #valine .vwrap .vheader input,#valine .vcard{
+    border-bottom: 1px dashed #c8c8c8;
+  }
+  #valine .vwrap button,#valine .vmore{
+    background: #c8c8c8;
+  }
+  @media screen and (max-width: 800px) {
+    #valine{
+      padding: 0 10px;
     }
-    #valine .vwrap{
-        border: 1px solid #c8c8c8;
-    }
-    #valine .vwrap .vheader input,#valine .vcard{
-        border-bottom: 1px dashed #c8c8c8;
-    }
-    #valine .vwrap button,#valine .vmore{
-        background: #c8c8c8;
-    }
-    @media screen and (max-width: 800px) {
-        #valine{
-            padding: 0 10px;
-        }
-    }
+  }
 </style>
 <div id="valine"></div>
 <script src="<%- theme.valine_js %>"></script>
 <script>
-    new Valine({
-        el: '#valine',
-        appId: '<%- theme.valine.appId %>',
-        appKey: '<%- theme.valine.appKey %>',
-		placeholder: '<%= theme.valine.placeholder %>',
-		avatar: '<%- theme.valine.avatar %>',
-		pageSize: '<%- theme.valine.pageSize %>',
-        lang: '<%- config.language %>',
-        visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
-		highlight: '<%- theme.valine.highlight %>' === 'true',
-		recordIp: '<%- theme.valine.recordIP %>' === 'true',
-        enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
-        serverURLs: '<%= theme.valine.serverURLs %>'
-    });
-    <% if(theme.valine.ADMIN_URL){ %>
-    // ADMIN_URL
-    var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-    if(engine!='1') {
-        fetch('https://quan.suning.com/getSysTime.do')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(date) {
-            var hours = new Date(date.sysTime2).getHours();
-            if(hours>7 && hours<23){
-                fetch('<%- theme.valine.ADMIN_URL %>');
-                var exp = new Date(date.sysTime2);
-                exp.setTime(exp.getTime() + 20*60*1000);
-                document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
-            }
-        })
-    }
-    <% } %>
+  new Valine({
+    el: '#valine',
+    appId: '<%- theme.valine.appId %>',
+    appKey: '<%- theme.valine.appKey %>',
+    placeholder: '<%= theme.valine.placeholder %>',
+    avatar: '<%- theme.valine.avatar %>',
+    pageSize: '<%- theme.valine.pageSize %>',
+    lang: '<%- config.language %>',
+    visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
+    highlight: '<%- theme.valine.highlight %>' === 'true',
+    recordIp: '<%- theme.valine.recordIP %>' === 'true',
+    enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
+    serverURLs: '<%= theme.valine.serverURLs %>'
+  });
+  <% if(theme.valine.ADMIN_URL){ %>
+  // ADMIN_URL
+  var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+  if(engine!='1') {
+    fetch('https://quan.suning.com/getSysTime.do')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(date) {
+      var hours = new Date(date.sysTime2).getHours();
+      if(hours>7 && hours<23){
+        fetch('<%- theme.valine.ADMIN_URL %>');
+        var exp = new Date(date.sysTime2);
+        exp.setTime(exp.getTime() + 20*60*1000);
+        document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
+      }
+    })
+  }
+  <% } %>
 </script>

@@ -5,32 +5,32 @@
 <% if (theme.music.enable && site.data && site.data.musics) { %>
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <div class="music-player">
-    <style>
-        #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
-            display: none;
-        }
-    </style>
-    <% if (theme.music.showTitle.enable && !theme.music.fixed) { %>
-    <div class="title">
-    <%- theme.music.showTitle.title %>
-    </div>
-    <% } %>
-    <div id="aplayer"></div>
-    <script>
-        const ap = new APlayer({
-            container: document.getElementById('aplayer'),
-            fixed: '<%- theme.music.fixed %>' === 'true',
-            autoplay: '<%- theme.music.autoplay %>' === 'true',
-            theme: '<%- theme.music.theme %>',
-            loop: '<%- theme.music.loop %>',
-            order: '<%- theme.music.order %>',
-            preload: '<%- theme.music.preload %>',
-            lrcType: Number('<%- theme.music.lrcType %>'),
-            volume: Number('<%- theme.music.volume %>'),
-            listFolded: '<%- theme.music.listFolded %>' === 'true',
-            listMaxHeight: '<%- theme.music.listMaxHeight %>',
-            audio: JSON.parse('<%- audiosJson %>')
-        });
-    </script>
+  <style>
+    #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
+      display: none;
+    }
+  </style>
+  <% if (theme.music.showTitle.enable && !theme.music.fixed) { %>
+  <div class="title">
+  <%- theme.music.showTitle.title %>
+  </div>
+  <% } %>
+  <div id="aplayer"></div>
+  <script>
+    const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: '<%- theme.music.fixed %>' === 'true',
+      autoplay: '<%- theme.music.autoplay %>' === 'true',
+      theme: '<%- theme.music.theme %>',
+      loop: '<%- theme.music.loop %>',
+      order: '<%- theme.music.order %>',
+      preload: '<%- theme.music.preload %>',
+      lrcType: Number('<%- theme.music.lrcType %>'),
+      volume: Number('<%- theme.music.volume %>'),
+      listFolded: '<%- theme.music.listFolded %>' === 'true',
+      listMaxHeight: '<%- theme.music.listMaxHeight %>',
+      audio: JSON.parse('<%- audiosJson %>')
+    });
+  </script>
 </div>
 <% } %>

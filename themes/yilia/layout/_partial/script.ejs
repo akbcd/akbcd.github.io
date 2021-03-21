@@ -5,45 +5,45 @@
 <% if (theme.clipboard) { %>
 <script src="<%- theme.clipboard_js %>"></script>
 <script>
-    !function (e, t) {
-        var copyFn=function(copy,copy_success,copy_error){
-            var copyHtml = "<button id='js-btn-copy'>"+copy+"</button>";
-            [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
-                button.insertAdjacentHTML('beforebegin', copyHtml);
-            });
-            var copyButton=document.querySelectorAll(".code #js-btn-copy");
-            for(var i in copyButton){
-                copyButton[i].onclick=function(button){
-                    var $copy=button.currentTarget;
-                    var clipboard = new ClipboardJS('#js-btn-copy', {
-                        target: function(trigger) {
-                            if(trigger.nextElementSibling != null){
-                                return trigger.nextElementSibling;
-                            }
-                        }
-                    })
-                    clipboard.on('success', function(e) {
-                        e.clearSelection();
-                        $copy.innerHTML=copy_success;
-                        clipboard.destroy();
-                    });
-                    clipboard.on('error', function(e) {
-                        $copy.innerHTML=copy_error;
-                        clipboard.destroy();
-                    });
-                    $copy.onmouseout=function(){$copy.innerHTML=copy};
-                }
+  !function (e, t) {
+    var copyFn=function(copy,copy_success,copy_error){
+      var copyHtml = "<button id='js-btn-copy'>"+copy+"</button>";
+      [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
+        button.insertAdjacentHTML('beforebegin', copyHtml);
+      });
+      var copyButton=document.querySelectorAll(".code #js-btn-copy");
+      for(var i in copyButton){
+        copyButton[i].onclick=function(button){
+          var $copy=button.currentTarget;
+          var clipboard = new ClipboardJS('#js-btn-copy', {
+            target: function(trigger) {
+              if(trigger.nextElementSibling != null){
+                return trigger.nextElementSibling;
+              }
             }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            $copy.innerHTML=copy_success;
+            clipboard.destroy();
+          });
+          clipboard.on('error', function(e) {
+            $copy.innerHTML=copy_error;
+            clipboard.destroy();
+          });
+          $copy.onmouseout=function(){$copy.innerHTML=copy};
         }
-        copyFn("<%- _p('copy') %>","<%- _p('copy_success') %>","<%- _p('copy_error') %>");
-    }(window, document);
+      }
+    }
+    copyFn("<%- _p('copy') %>","<%- _p('copy_success') %>","<%- _p('copy_error') %>");
+  }(window, document);
 </script>
 <% } %>
 <script>
-    !function(){
-        !function(e){
-            var t=document.createElement("script");
-            document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
-        }("<%- theme.js.slider %>")
-    }()
+  !function(){
+    !function(e){
+      var t=document.createElement("script");
+      document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)
+    }("<%- theme.js.slider %>")
+  }()
 </script>
