@@ -11,8 +11,6 @@
 #js-searchModal {
 	display: none;
 	top: 10%;
-    min-height: 500px;
-    max-height: 70%;
     width: 80%;
     word-break: break-word;
 	z-index: 1001;
@@ -20,10 +18,15 @@
 	left: 0;
 	right: 0;
 	margin: auto;
-	overflow: auto;
     border-radius: 10px;
     transition: 1s;
     opacity: 0
+}
+
+#js-searchResult {
+    min-height: 50vh;
+    max-height: 60vh;
+    overflow: auto
 }
 
 #js-modal-overlay {
