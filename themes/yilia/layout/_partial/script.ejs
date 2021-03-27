@@ -1,7 +1,4 @@
-<script src="<%- theme.js.mobile %>"></script>
-<script src="<%- theme.js.main %>"></script>
-<script src="<%- theme.js.scrollProgress %>"></script>
-<script src="<%- theme.js.script %>"></script>
+<%- js([theme.js.mobile,theme.js.main,theme.js.scrollProgress,theme.js.script]) %>
 <% if (theme.clipboard) { %>
 <script src="<%- theme.clipboard_js %>"></script>
 <script>
