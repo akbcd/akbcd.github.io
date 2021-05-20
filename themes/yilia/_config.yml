@@ -1,7 +1,3 @@
-# 前言
-# 本主题需要用到的插件（五个），下面有详细说明：
-# hexo-generator-feed、hexo-generator-searchdb、hexo-wordcount、hexo-generator-json-content、hexo-generator-index-pin-top
-
 # Header
 
 menu:
@@ -41,37 +37,39 @@ root: /
 # aplayer音乐播放器
 # 要支持音乐播放，就必须开启音乐的播放配置和音乐的数据文件。
 # 博客 source 目录下的 _data 目录（没有的话就新建一个）中新建 musics.json 文件（存放音乐数据）
-# 吸底模式在1.9.1之后版本生效。
-music:
-  # aplayer 电脑页面
+# aplayer与mobile_aplayer分被应用于pc与mobile页面
+music: true
+aplayer: # 电脑页面
   enable: true # 是否开启
   showTitle: # 是否显示标题，非吸底模式有效
     enable: true
     title: 听听音乐
-  fixed: true # 吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+  fixed: true # 吸底模式（fixed:true）aplayer版本1.9.1新增功能，迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
   autoplay: false # 是否自动播放
   theme: '#4d4d4d' # 主题色
   loop: 'one' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'random' # 音频循环顺序, 可选值: 'list', 'random'
-  preload: 'none' # 音频预加载，两个播放器同时生效，可选值: 'none', 'metadata', 'auto'
+  preload: 'none' # 音频预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   lrcType: 0 # 歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式），0（不显示歌词）
   listFolded: true # 列表是否折叠
   listMaxHeight: '96px' # 列表最大高度，一个列表'32px'
-  # mobile-aplayer 移动端页面
-  mobile_enable: true # 是否开启
-  mobile_showTitle: # 是否显示标题，非吸底模式有效
+# 移动端页面，配置参考aplayer
+mobile_aplayer:
+  enable: true
+  showTitle:
     enable: false
-    mobile_title: 
-  mobile_fixed: false # 吸底模式
-  mobile_autoplay: false # 是否自动播放，与aplayer同时开启时失效
-  mobile_theme: '#4d4d4d' # 主题色
-  mobile_loop: 'all' # 音频循环播放
-  mobile_order: 'random' # 音频循环顺序
-  mobile_volume: 0.7 # 默认音量
-  mobile_lrcType: 1 # 歌词格式
-  mobile_listFolded: true # 列表是否折叠
-  mobile_listMaxHeight: # 列表最大高度
+    title: 
+  fixed: false
+  autoplay: false
+  theme: '#4d4d4d'
+  loop: 'all'
+  order: 'random'
+  preload: 'none'
+  volume: 0.7
+  lrcType: 1
+  listFolded: true
+  listMaxHeight:
 aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
 #aplayer_js: /js/APlayer.min.js #1.9.1
 
@@ -132,10 +130,9 @@ top: true
 # 不需要使用，直接设置值为false，或注释掉
 wordcount: 2
 
+# 文章转载
 # default 配置文章的默认转载规则
-
 # 您可以使用在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则
-
 # 可用的转载规则有：
 # 这些转载规则的意义请参考：https://creativecommons.org/choose/?lang=zh
 # cc_by（知识共享署名 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
@@ -144,9 +141,7 @@ wordcount: 2
 # cc_by_nc（知识共享署名-非商业性使用 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
 # cc_by_nc_nd（知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License）
 # cc_by_nc_sa（知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License）
-
 # cc0（CC0 1.0 通用 (CC0 1.0) 公共领域贡献 CC0 1.0 Universal (CC0 1.0) Public Domain Dedication） https://creativecommons.org/publicdomain/zero/1.0/deed.zh
-
 # noreprint（不允许转载 not allowed to reprint）
 # pay（付费转载 pay for reprinting）
 reprint:
@@ -164,14 +159,16 @@ copyright:
 # 文章Front-matter中添上'top: true'属性即可将文章置顶
 
 # 代码块复制
+# 代码块区域右上方创建复制按钮，点击即可复制当前代码块区域代码
 clipboard: true
 clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
 #clipboard_js: /js/scrollProgress.min.js
 
-# 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可.
+# 阅读文章的密码验证功能
+# 如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可
 # 比如
 # password: 加密的密文
-# 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
+# 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解
 verifyPassword:
   enable: true
   promptMessage: 请输入访问本文章的密码
@@ -187,9 +184,11 @@ jsdelivr:
   name: akbcd #github用户名
   repository: akbcd.github.io #仓库名
 
-# Miscellaneous
+# Miscellaneous 网站分析
 #baidu_analytics: ''
 #google_analytics: ''
+
+# 网页图标
 favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 
 #你的头像url
@@ -287,39 +286,39 @@ friends:
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
-# backup为备份文件
+# 压缩文件加载速度快，未压缩便于阅读
 
 # jsdelivr
 
 css:
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.css
-  clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.css
+  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.min.css
+  clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.min.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 js:
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.js
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.js
-  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/slider.e37972.js
-  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.js
-  script: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.js
+  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.min.js
+  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.0cf68a.min.js
+  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.e37972.min.js
+  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.min.js
+  script: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.min.js
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
-# backup
+# 未压缩
 
 # css:
-#   main: /backup_main.0cf68a.css
-#   clipboard: /backup/backup_clipboard.css
+#   main: /main.0cf68a.css
+#   clipboard: /css/clipboard.css
 #   aplayer: /css/APlayer.min.css #1.10.1
 # js:
-#   mobile: /backup/backup_mobile.992cbe.js
-#   main: /backup/backup_main.0cf68a.js
-#   slider: /backup/backup_slider.e37972.js
-#   search: /backup/backup_search.js
-#   script: /backup/backup_script.js
+#   mobile: /js/mobile.992cbe.js
+#   main: /js/main.0cf68a.js
+#   slider: /js/slider.e37972.js
+#   search: /js/search.js
+#   script: /js/script.js
 #   jquery: /js/jquery-3.5.1.js #3.5.1
 #   scrollProgress: /js/scrollProgress.min.js #3.0.2
 
-# default
+# 压缩
 
 # css:
 #   main: /main.0cf68a.css
@@ -327,8 +326,8 @@ js:
 #   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 # js:
 #   mobile: /js/mobile.992cbe.js
-#   main: /main.0cf68a.js
-#   slider: /slider.e37972.js
+#   main: /js/main.0cf68a.js
+#   slider: /js/slider.e37972.js
 #   search: /js/search.js
 #   script: /js/script.js
 #   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0

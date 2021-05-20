@@ -1,8 +1,8 @@
-<% if (theme.music.enable || theme.music.mobile_enable) { %>
+<% if (theme.music && theme.aplayer.enable || theme.music && theme.mobile_aplayer.enable) { %>
 <%# aplayer #%>
 <script src="<%- theme.aplayer_js %>"></script>
 <% } %>
-<% if (theme.music.enable && site.data && site.data.musics) { %>
+<% if (theme.music && site.data && site.data.musics) { %>
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <div class="music-player">
   <style>
@@ -10,25 +10,25 @@
       display: none;
     }
   </style>
-  <% if (theme.music.showTitle.enable && !theme.music.fixed) { %>
+  <% if (theme.aplayer.showTitle.enable && !theme.aplayer.fixed) { %>
   <div class="title">
-  <%- theme.music.showTitle.title %>
+  <%- theme.aplayer.showTitle.title %>
   </div>
   <% } %>
   <div id="aplayer"></div>
   <script>
     const ap = new APlayer({
       container: document.getElementById('aplayer'),
-      fixed: '<%- theme.music.fixed %>' === 'true',
-      autoplay: '<%- theme.music.autoplay %>' === 'true',
-      theme: '<%- theme.music.theme %>',
-      loop: '<%- theme.music.loop %>',
-      order: '<%- theme.music.order %>',
-      preload: '<%- theme.music.preload %>',
-      lrcType: Number('<%- theme.music.lrcType %>'),
-      volume: Number('<%- theme.music.volume %>'),
-      listFolded: '<%- theme.music.listFolded %>' === 'true',
-      listMaxHeight: '<%- theme.music.listMaxHeight %>',
+      fixed: '<%- theme.aplayer.fixed %>' === 'true',
+      autoplay: '<%- theme.aplayer.autoplay %>' === 'true',
+      theme: '<%- theme.aplayer.theme %>',
+      loop: '<%- theme.aplayer.loop %>',
+      order: '<%- theme.aplayer.order %>',
+      preload: '<%- theme.aplayer.preload %>',
+      lrcType: Number('<%- theme.aplayer.lrcType %>'),
+      volume: Number('<%- theme.aplayer.volume %>'),
+      listFolded: '<%- theme.aplayer.listFolded %>' === 'true',
+      listMaxHeight: '<%- theme.aplayer.listMaxHeight %>',
       audio: JSON.parse('<%- audiosJson %>')
     });
   </script>
