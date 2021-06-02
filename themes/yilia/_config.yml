@@ -1,3 +1,4 @@
+# yilia主题配置文件
 # Header
 
 menu:
@@ -70,6 +71,7 @@ mobile_aplayer:
   lrcType: 1
   listFolded: true
   listMaxHeight:
+# aplayer音乐播放器用到的js文件
 aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
 #aplayer_js: /js/APlayer.min.js #1.9.1
 
@@ -92,6 +94,7 @@ excerpt_link: more
 show_all_link: '展开全文'
 # 数学公式
 mathjax: false
+# 数学公式用到的js文件
 mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
 # 是否在新窗口打开链接
 open_in_new: false
@@ -162,6 +165,7 @@ copyright:
 # 代码块复制
 # 代码块区域右上方创建复制按钮，点击即可复制当前代码块区域代码
 clipboard: true
+# 代码块复制用到的js文件
 clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
 #clipboard_js: /js/scrollProgress.min.js
 
@@ -174,6 +178,7 @@ verifyPassword:
   enable: true
   promptMessage: 请输入访问本文章的密码
   errorMessage: 密码错误，将返回主页！
+# 密码验证功能用到的js文件
 crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
 #crypto_js: /js/crypto-js.min.js #3.1.9-1
 
@@ -192,17 +197,17 @@ jsdelivr:
 # 网页图标
 favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 
-#你的头像url
+# 你的头像url
 avatar: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 
-#是否开启分享
+# 是否开启分享
 share_jia: true
 
-#评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment
-#不需要使用某项，直接设置值为false，或注释掉
-#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
+# 评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment
+# 不需要使用某项，直接设置值为false，或注释掉
+# 具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
-#1、valine 参考官网：https://valine.js.org
+# 1、valine 参考官网：https://valine.js.org
 # ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
 # 若ADMIN_URL没有允许跨域请求，控制台会报错（报错可忽略）
 valine:
@@ -220,7 +225,7 @@ valine:
   serverURLs: https://lgKQKDBk.api.lncldglobal.com
 valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
-#2、gitalk
+# 2、gitalk
 gitalk:
   enable: false
   owner:
@@ -230,14 +235,14 @@ gitalk:
     clientSecret:
   admin:
 
-#3、畅言（域名需要备案）
+# 3、畅言（域名需要备案）
 changyan_appid: false
 changyan_conf: false
 
-#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+# 4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
 
-#5、Gitment
+# 5、Gitment
 gitment_owner: false      #你的 GitHub ID
 gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
@@ -289,7 +294,7 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 # 压缩文件加载速度快，未压缩便于阅读
 
-# jsdelivr
+# jsdelivr（加速使用）
 
 css:
   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.min.css
@@ -304,7 +309,7 @@ js:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
-# 未压缩
+# 未压缩（调试使用）
 
 # css:
 #   main: /main.0cf68a.css
@@ -319,7 +324,7 @@ js:
 #   jquery: /js/jquery-3.5.1.js #3.5.1
 #   scrollProgress: /js/scrollProgress.min.js #3.0.2
 
-# 压缩
+# 压缩（发布使用）
 
 # css:
 #   main: /main.0cf68a.css
