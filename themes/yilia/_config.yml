@@ -73,7 +73,6 @@ mobile_aplayer:
   listMaxHeight:
 # aplayer音乐播放器用到的js文件
 aplayer_js: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
-#aplayer_js: /js/APlayer.min.js #1.9.1
 
 # 全局搜索
 # 本功能实现需要插件hexo-generator-searchdb所生成的search.xml文件
@@ -167,7 +166,6 @@ copyright:
 clipboard: true
 # 代码块复制用到的js文件
 clipboard_js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
-#clipboard_js: /js/scrollProgress.min.js
 
 # 阅读文章的密码验证功能
 # 如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和密码加密后的密文即可
@@ -180,7 +178,6 @@ verifyPassword:
   errorMessage: 密码错误，将返回主页！
 # 密码验证功能用到的js文件
 crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
-#crypto_js: /js/crypto-js.min.js #3.1.9-1
 
 # jsdelivr加速
 # 通过jsdelivr加速github托管的博客静态资源（视频、音乐、图片）
@@ -307,7 +304,22 @@ js:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
-# 未压缩（调试使用）
+# 压缩（发布使用）
+
+# css:
+#   main: /main.0cf68a.min.css
+#   clipboard: /css/clipboard.min.css
+#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
+# js:
+#   mobile: /js/mobile.992cbe.min.js
+#   main: /js/main.0cf68a.min.js
+#   slider: /js/slider.e37972.min.js
+#   search: /js/search.min.js
+#   script: /js/script.min.js
+#   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
+#   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
+
+# 未压缩（本地调试使用）
 
 # css:
 #   main: /main.0cf68a.css
@@ -321,18 +333,6 @@ js:
 #   script: /js/script.js
 #   jquery: /js/jquery-3.5.1.js #3.5.1
 #   scrollProgress: /js/scrollProgress.min.js #3.0.2
-
-# 压缩（发布使用）
-
-# css:
-#   main: /main.0cf68a.css
-#   clipboard: /css/clipboard.css
-#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
-# js:
-#   mobile: /js/mobile.992cbe.js
-#   main: /js/main.0cf68a.js
-#   slider: /js/slider.e37972.js
-#   search: /js/search.js
-#   script: /js/script.js
-#   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
-#   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
+#aplayer_js: /js/APlayer.min.js #1.9.1
+#clipboard_js: /js/scrollProgress.min.js
+#crypto_js: /js/crypto-js.min.js #3.1.9-1
