@@ -1,3 +1,6 @@
+// 获取变量
+const $container=document.getElementById("container");
+const progressElement = window.document.querySelector('.progress-bar');
 /*
 open_in_new
 新窗口打开链接
@@ -6,18 +9,15 @@ if (yiliaConfig.open_in_new) {
     document.querySelectorAll(".article-title,.article-more-a,.archive-article-date,.archive-article-title").forEach(i=>{i.setAttribute("target", "_blank")});
     if (yiliaConfig.isPost) document.querySelectorAll(".article-title,.archive-article-date").forEach(i=>{i.removeAttribute("target")});
 }
-
 /*
 progress bar init
 mobile底部进度条
 */
-const progressElement = window.document.querySelector('.progress-bar');
 if (progressElement) {
     new ScrollProgress((x, y) => {
         progressElement.style.width = y * 100 + '%';
     });
 }
-const $container=document.getElementById("container");
 /*
 toc目录优化，jq实现目录滚动和锚点平滑跳转
 目录滚动和锚点平滑跳转依赖jquery
@@ -52,7 +52,7 @@ if(yiliaConfig.isPost){
         if(isjQuery){
             // jquery实现平滑跳转
             $('#container').animate({
-                scrollTop: scrollPositionTop
+                scrollTop: window.screen.width<800?scrollPositionTop-50:scrollPositionTop
             },1000);
             // mobile锚点平滑跳转
             $('body,html').animate({
@@ -110,7 +110,7 @@ if(yiliaConfig.isPost){
         // pc动态目录
         $container.addEventListener('scroll', (e) => {
             const currentTop = $container.scrollTop;
-            findHeadPosition(currentTop);
+            findHeadPosition(window.screen.width<800?currentTop+50:currentTop);
             autoScrollToc();
         });
         // mobile动态目录
@@ -168,7 +168,6 @@ if(yiliaConfig.isPost){
         };
     };
 };
-
 /*
 记录文章页面当前位置
 */

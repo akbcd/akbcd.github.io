@@ -296,11 +296,11 @@ css:
   clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.min.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 js:
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile.992cbe.min.js
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.0cf68a.min.js
-  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.e37972.min.js
-  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search.min.js
-  script: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/script.min.js
+  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/mobile.992cbe.min.js
+  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/main.0cf68a.min.js
+  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/slider.e37972.min.js
+  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/search.min.js
+  script: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/script.min.js
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
@@ -311,11 +311,11 @@ js:
 #   clipboard: /css/clipboard.min.css
 #   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 # js:
-#   mobile: /js/mobile.992cbe.min.js
-#   main: /js/main.0cf68a.min.js
-#   slider: /js/slider.e37972.min.js
-#   search: /js/search.min.js
-#   script: /js/script.min.js
+#   mobile: /js/min/mobile.992cbe.min.js
+#   main: /js/min/main.0cf68a.min.js
+#   slider: /js/min/slider.e37972.min.js
+#   search: /js/min/search.min.js
+#   script: /js/min/script.min.js
 #   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
 #   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
 
@@ -332,7 +332,7 @@ js:
 #   search: /js/search.js
 #   script: /js/script.js
 #   jquery: /js/jquery-3.5.1.js #3.5.1
-#   scrollProgress: /js/scrollProgress.min.js #3.0.2
-#aplayer_js: /js/APlayer.min.js #1.9.1
-#clipboard_js: /js/scrollProgress.min.js
-#crypto_js: /js/crypto-js.min.js #3.1.9-1
+#   scrollProgress: /js/min/scrollProgress.min.js #3.0.2
+#aplayer_js: /js/min/APlayer.min.js #1.9.1
+#clipboard_js: /js/min/scrollProgress.min.js
+#crypto_js: /js/min/crypto-js.min.js #3.1.9-1

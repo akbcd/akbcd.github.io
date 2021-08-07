@@ -15,7 +15,8 @@
     n.c = r,
     n.p = "./",
     n(0)
-} ([function(t, n, r) {
+} ([
+function(t, n, r) {
     r(195),
     t.exports = r(191)
 },
@@ -1377,8 +1378,7 @@ function(t, n, r) {
     "use strict";
     function e(t) {
         return t && t.__esModule ? t: {
-        default:
-            t
+            default:t
         }
     }
     n.__esModule = !0;
@@ -1386,28 +1386,13 @@ function(t, n, r) {
     o = e(i),
     u = r(83),
     c = e(u),
-    f = "function" == typeof c.
-default && "symbol" == typeof o.
-default ?
-    function(t) {
-        return typeof t
-    }: function(t) {
-        return t && "function" == typeof c.
-    default && t.constructor === c.
-    default && t !== c.
-    default.prototype ? "symbol": typeof t
-    };
-    n.
-default = "function" == typeof c.
-default && "symbol" === f(o.
-default) ?
-    function(t) {
-        return void 0 === t ? "undefined": f(t)
-    }: function(t) {
-        return t && "function" == typeof c.
-    default && t.constructor === c.
-    default && t !== c.
-    default.prototype ? "symbol": void 0 === t ? "undefined": f(t)
+    f = "function" == typeof c.default && "symbol" == typeof o.default ?
+    function(t) {return typeof t}: function(t) {return t && "function" == typeof c.default && t.constructor === c.default && 
+        t !== c.default.prototype ? "symbol": typeof t};
+        n.default = "function" == typeof c.default && "symbol" === f(o.default) ?
+        function(t) {return void 0 === t ? "undefined": f(t)}: 
+        function(t) {return t && "function" == typeof c.default && t.constructor === c.default && 
+        t !== c.default.prototype ? "symbol": void 0 === t ? "undefined": f(t)
     }
 },
 function(t, n, r) {
@@ -2142,29 +2127,7 @@ function(t, n, r) {
         TYPED: c,
         VIEW: f
     }
-},
-function(t, n) {
-    "use strict";
-    var r = {
-        versions: function() {
-            var t = window.navigator.userAgent;
-            return {
-                trident: t.indexOf("Trident") > -1,
-                presto: t.indexOf("Presto") > -1,
-                webKit: t.indexOf("AppleWebKit") > -1,
-                gecko: t.indexOf("Gecko") > -1 && -1 == t.indexOf("KHTML"),
-                mobile: t.indexOf("Mobile") > -1,
-                ios: !!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
-                android: t.indexOf("Android") > -1 || t.indexOf("Linux") > -1,
-                iPhone: t.indexOf("iPhone") > -1 || t.indexOf("Mac") > -1,
-                iPad: t.indexOf("iPad") > -1,
-                webApp: -1 == t.indexOf("Safari"),
-                weixin: -1 == t.indexOf("MicroMessenger")
-            }
-        } ()
-    };
-    t.exports = r
-},
+},/*r(128)已删除*/,
 function(t, n, r) {
     "use strict";
     var e = r(85),
@@ -3585,10 +3548,10 @@ function(t, n, r) {
     }
     function a() {
         var t = document.querySelector(".js-overlay"),
-        //更改document.body.scrollTop为window.scrollY
+        //更改document.body.scrollTop为window.scrollY||document.documentElement.scrollTop
 		n = document.querySelector(".js-header-menu");
-		f(t, window.scrollY, -63, 2, 0),
-        f(n, window.scrollY, 1, 3, 0)
+		f(t, window.scrollY||document.querySelector("#container").scrollTop, -63, 2, 0),
+        f(n, window.scrollY||document.querySelector("#container").scrollTop, 1, 3, 0)
     }
     function s() {
         //添加比较body总高度与浏览器页面可用高度
@@ -3598,28 +3561,13 @@ function(t, n, r) {
             n.setAttribute("style", "height:" + height + "px")
         }
         //结束
-        document.querySelector("#container").addEventListener("scroll",
-        function(t) {
-            a()
-        }),
-        window.addEventListener("scroll",
-        function(t) {
-            a()
-        }),
-        a()
-    }
-    var l = r(156),
-    h = e(l),
-    v = r(157),
-    p = (e(v), r(382)),
-    d = e(p),
-    y = r(128),
-    g = e(y),
-    b = r(190),
-    m = e(b),
-    x = r(129); (function() {
-        g.
-    default.versions.mobile && window.screen.width < 800 && (o(), s())
+        document.querySelector("#container").addEventListener("scroll",function(t) {a()}),
+        window.addEventListener("scroll",function(t) {a()})
+    };
+    var l = r(156),h = e(l),v = r(157),p = (e(v), r(382)),d = e(p),b = r(190),m = e(b),x = r(129);
+    (function() {
+        //删除判断移动端
+        o(), s()
     })(),
     (0, x.addLoadEvent)(function() {
         m.
