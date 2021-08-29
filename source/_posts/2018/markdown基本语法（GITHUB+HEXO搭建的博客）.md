@@ -7,6 +7,7 @@ toc: true
 
 网上有很多markdown语法的文章，详情可以点击简书上的一篇文章[markdown基本语法](https://www.jianshu.com/p/191d1e21f7ed)
 以下列出一些常用的markdown语法
+补充说明：md文件中可以直接使用html标签
 <!--more-->
 # 一、标题
 在想要设置为标题的文字前面加#来表示
@@ -265,6 +266,16 @@ n个...
 ```
 效果如下：
 <center>这是居中的文字</center>
+
+## 文字颜色
+语法：
+运用font标签
+示例：
+```
+<font color='red'>红色文字</font>
+```
+效果如下：
+<font color=red>红色文字</font>
 
 # 九、表格
 `-:`设置内容和标题栏居右对齐。
