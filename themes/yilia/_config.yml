@@ -271,11 +271,10 @@ smart_menu:
 
 friends:
   聚合图床 - 微博图床: http://tool.mkblog.cn/tuchuang/
-  #歌曲大全-音乐聚合搜索引擎: http://www.gequdaquan.net/gqss/
   菜鸟工具 - 不止于工具: https://c.runoob.com/
   CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
   NO404 - 让天下不再有消失的网站！: https://www.no404.me/
-  #So导航 | 最懂你的网址导航: https://www.soeg.cn/
+  So导航 | 最懂你的网址导航: https://www.soeg.cn/
   磁力宝: http://www.clb.biz/
   磁力爬: https://www.clp6.xyz/
   音乐搜索器 - 多站合一音乐搜索,音乐在线试听: http://music.yujianweb.cn/
@@ -284,7 +283,7 @@ friends:
   jsDelivr: https://www.jsdelivr.com/
   在线动画 动漫下载 - AGE动漫: https://www.age.tv/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+#aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 # 压缩文件加载速度快，未压缩便于阅读
