@@ -295,9 +295,9 @@ css:
   clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.min.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 js:
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/mobile.992cbe.min.js
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/main.0cf68a.min.js
-  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/slider.e37972.min.js
+  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/mobile.min.js
+  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/main.min.js
+  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/slider.min.js
   search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/search.min.js
   script: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/min/script.min.js
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
@@ -310,9 +310,9 @@ js:
 #   clipboard: /css/clipboard.min.css
 #   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
 # js:
-#   mobile: /js/min/mobile.992cbe.min.js
-#   main: /js/min/main.0cf68a.min.js
-#   slider: /js/min/slider.e37972.min.js
+#   mobile: /js/min/mobile.min.js
+#   main: /js/min/main.min.js
+#   slider: /js/min/slider.min.js
 #   search: /js/min/search.min.js
 #   script: /js/min/script.min.js
 #   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
@@ -325,9 +325,9 @@ js:
 #   clipboard: /css/clipboard.css
 #   aplayer: /css/APlayer.min.css #1.10.1
 # js:
-#   mobile: /js/mobile.992cbe.js
-#   main: /js/main.0cf68a.js
-#   slider: /js/slider.e37972.js
+#   mobile: /js/mobile.js
+#   main: /js/main.js
+#   slider: /js/slider.js
 #   search: /js/search.js
 #   script: /js/script.js
 #   jquery: /js/jquery-3.5.1.js #3.5.1

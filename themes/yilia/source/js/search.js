@@ -1,65 +1,68 @@
-//添加清空输入内容按钮
-var $searchInput = document.getElementById('js-searchInput');
-var $clearInput = document.getElementById('js-searchTextCancel');
-$searchInput.onfocus=function () {
-    if(this.value != ''){
-        $clearInput.style.display='block';
-    }
-};
-$searchInput.addEventListener('input', function () {
-    if(this.value == ''){
-        $clearInput.style.display='none';
-    }else{
-        $clearInput.style.display='block';
-    }
-});
-function stopBodyScroll(){
-    let $body=document.body;
-    //获取页面滚动的距离
-    let value=window.scrollY;
-    //将body标签在当前位置固定
-    $body.style.position='fixed';
-    $body.style.top=-value+'px';
-    $body.style.width='100%';
-    return value;
-};
-window.addEventListener("DOMContentLoaded",function(){
-    $clearInput.onclick=function(){
-        $searchInput.value='';
-        document.getElementById("js-searchResult").innerHTML='';
-        $clearInput.style.display='none';
+/** search.js*/
+!function(){
+    //添加清空输入内容按钮
+    var $searchInput = document.getElementById('js-searchInput');
+    var $clearInput = document.getElementById('js-searchTextCancel');
+    $searchInput.onfocus=function () {
+        if(this.value != ''){
+            $clearInput.style.display='block';
+        }
     };
-    //给搜索图标添加点击事件
-    let open = document.getElementById('js-icon-search');
-    let close = document.getElementById('js-modal-overlay');
-    let $searchModal=document.getElementById('js-searchModal');
-    let scrollTopValue=0;
-    open.onclick = function(){
-        //弹窗出现时淡入动画
-        $searchModal.style.display="block";
-        close.style.display="block";
-        setTimeout(function () {
-            $searchModal.style.opacity = 1;
-            close.style.opacity = 0.3;
-        }, .1);
-        //返回滚动条位置并固定body
-        scrollTopValue=stopBodyScroll();
+    $searchInput.addEventListener('input', function () {
+        if(this.value == ''){
+            $clearInput.style.display='none';
+        }else{
+            $clearInput.style.display='block';
+        }
+    });
+    function stopBodyScroll(){
+        let $body=document.body;
+        //获取页面滚动的距离
+        let value=window.scrollY;
+        //将body标签在当前位置固定
+        $body.style.position='fixed';
+        $body.style.top=-value+'px';
+        $body.style.width='100%';
+        return value;
     };
-    //关闭搜索
-    close.onclick = function(){
-        //弹窗关闭时淡出动画
-        $searchModal.style.opacity = 0;
-        close.style.opacity = 0;
-        setTimeout(function () {
-            $searchModal.removeAttribute("style");
-            close.removeAttribute("style");
-        }, 600);
-        //移除body固定
-        document.body.removeAttribute("style");
-        //页面回到获取的位置
-        window.scrollTo(0,scrollTopValue);
-    }
-});
+    window.addEventListener("DOMContentLoaded",function(){
+        $clearInput.onclick=function(){
+            $searchInput.value='';
+            document.getElementById("js-searchResult").innerHTML='';
+            $clearInput.style.display='none';
+        };
+        //给搜索图标添加点击事件
+        let open = document.getElementById('js-icon-search');
+        let close = document.getElementById('js-modal-overlay');
+        let $searchModal=document.getElementById('js-searchModal');
+        let scrollTopValue=0;
+        open.onclick = function(){
+            //弹窗出现时淡入动画
+            $searchModal.style.display="block";
+            close.style.display="block";
+            setTimeout(function () {
+                $searchModal.style.opacity = 1;
+                close.style.opacity = 0.3;
+            }, .1);
+            //返回滚动条位置并固定body
+            scrollTopValue=stopBodyScroll();
+        };
+        //关闭搜索
+        close.onclick = function(){
+            //弹窗关闭时淡出动画
+            $searchModal.style.opacity = 0;
+            close.style.opacity = 0;
+            setTimeout(function () {
+                $searchModal.removeAttribute("style");
+                close.removeAttribute("style");
+            }, 600);
+            //移除body固定
+            document.body.removeAttribute("style");
+            //页面回到获取的位置
+            window.scrollTo(0,scrollTopValue);
+        }
+    });
+}();
 //全局搜索
 var searchFunc = function (path, search_id, content_id) {
     fetch(path)
@@ -144,4 +147,4 @@ var searchFunc = function (path, search_id, content_id) {
             $resultContent.innerHTML = str;
         });
     })
-}
+};
