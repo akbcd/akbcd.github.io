@@ -96,4 +96,14 @@
         }
     }
     mobile();
+    /*
+    progress bar init
+    mobile底部进度条
+    */
+    const progressElement = window.document.querySelector('.progress-bar');
+    if (progressElement) {
+        new ScrollProgress((x, y) => {
+            progressElement.style.width = y * 100 + '%';
+        });
+    }
 }();

@@ -1,6 +1,7 @@
-<%- js([theme.js.mobile,theme.js.main,theme.js.scrollProgress,theme.js.script]) %>
+<%- js([theme.js.photoswipe,theme.js.photoswipe_ui_default]) %>
+<%- js([theme.js.scrollProgress,theme.js.mobile,theme.js.main]) %>
 <% if (theme.clipboard) { %>
-<script src="<%- theme.clipboard_js %>"></script>
+<script src="<%- theme.js.clipboard %>"></script>
 <script>
   !function (e, t) {
     var copyFn=function(copy,copy_success,copy_error){

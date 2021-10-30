@@ -1,6 +1,6 @@
 <% if (theme.music && theme.aplayer.enable || theme.music && theme.mobile_aplayer.enable) { %>
 <%# aplayer #%>
-<script src="<%- theme.aplayer_js %>"></script>
+<script src="<%- theme.js.aplayer %>"></script>
 <% } %>
 <% if (theme.music && site.data && site.data.musics) { %>
 <% var audiosJson = JSON.stringify(site.data.musics); %>
