@@ -43,10 +43,7 @@
             }
         }
     };
-    function aside() {
-        backTop(document.getElementById('js-jump-container'), document.getElementById('container'), 500);
-    }
-    aside();
+    backTop(document.getElementById('js-jump-container'), document.getElementById('container'), 500);
     /** 分享*/
     function generate(url, opts) {
         var url = url.replace(/<%-sUrl%>/g, encodeURIComponent(opts.sUrl))
@@ -202,7 +199,7 @@
         const isanchor = yiliaConfig.anchor;
         const updateAnchor = function (anchor) {
             if (window.history.replaceState && anchor !== window.location.hash) {
-                window.history.replaceState(undefined, undefined, anchor);
+                window.history.replaceState(null, null, anchor);
             }
         };
         function toToc (name) {

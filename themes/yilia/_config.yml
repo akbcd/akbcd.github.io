@@ -280,13 +280,14 @@ friends:
 #aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
-# 压缩文件加载速度快，未压缩便于阅读
+# 发布使用加载速度快，本地调试使用便于阅读
+# 修改请先在本地调试修改，完成后压缩放置发布使用
 
 # jsdelivr（加速使用）
 
 css:
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/main.0cf68a.min.css
-  clipboard: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/clipboard.min.css
+  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
+  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
   photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
@@ -306,8 +307,8 @@ js:
 # 发布使用
 
 # css:
-#   main: /main.0cf68a.min.css
-#   clipboard: /css/clipboard.min.css
+#   main: /css/main.min.css
+#   mobile: /css/mobile/mobile.min.css
 #   photoswipe: /css/photoswipe/photoswipe.css
 #   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
 #   aplayer: /css/APlayer/APlayer.min.css #1.10.1
@@ -327,8 +328,8 @@ js:
 # 本地调试使用
 
 # css:
-#   main: /main.0cf68a.css
-#   clipboard: /css/clipboard.css
+#   main: /css/main.css
+#   mobile: /css/mobile/mobile.css
 #   photoswipe: /css/photoswipe/photoswipe.css
 #   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
 #   aplayer: /css/APlayer/APlayer.min.css #1.10.1
