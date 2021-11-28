@@ -2,6 +2,7 @@
 title: Windows11安卓子系统(Windows Subsystem for Android)安装及使用教程
 date: 2021-10-24 09:06:08
 tags: [软件安装,教程,经验]
+toc: true
 ---
 随着Windows11上Android™应用程序的第一个预览版现已提供给美国Beta频道的Windows内部人员，windows11发布会上所说的安卓子系统来啦。
 因为第一个预览版只在beta渠道测试，并且只有美国地区，所以想在中国大陆地区快速体验只能寻找其他方法。
@@ -80,13 +81,31 @@ adb install
 ![18.jpg](18.jpg)
 安装成功后，打开开始菜单，即可在推荐的项目里看到刚刚安装的应用
 ![19.jpg](19.jpg)
+## VirtWifi 的连接受限
+打开安卓子系统，Window11通知会提示安卓子系统VirtWifi 的连接受限（无法访问互联网），这是因为原生安卓的网络检测机制，详情可以自行搜索：Captive Portal。其实这是一个可忽略的问题，但是部分应用会通过此机制判断是否可以访问互联网，进而导致应用无法联网。这里简单提供一下解决办法，打开ADB调试，在cmd窗口输入以下两条命令，更换检测地址。
+```
+adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204
+```
+```
+adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204
+```
+安卓系统的默认检测地址是谷歌，手动切换为小米。重启安卓子系统后，连接受限的提示不再出现。
+
+更改后，我想要恢复需要怎么做？
+两种方法：
+1.将安卓子系统重置
+2.删除手动更改的检测地址，ADB命令如下
+```
+adb shell settings delete global captive_portal_http_url
+adb shell settings delete global captive_portal_https_url
+```
 ## 最后
 因为安卓子系统默认安装在C盘，如果空间不够的话，可以将安卓子系统移动到其他盘符
 设置》应用》应用和功能》找到Windows Subsystem for Android™，将其移动到其他盘符即可
 
 目前测试发现，安卓子系统无法读取电脑文件，电脑文件也无法直接放入子系统中，可以通过文件传输实现，请自行寻找攻略（可以在酷安app里面寻找）。
 遇到的问题：
-部分应用无法打开，有的打开无法使用（谷歌浏览器），鼠标滚轮易触发点击事件
+部分应用无法打开，有的打开无法使用，无法联网可尝试手动更换联网检测地址，鼠标滚轮易触发点击事件。
 
 Windows Subsystem for Android™与Windows11高度集成，系统自带输入法可以直接在模拟器里使用，总体来说功能还是很强大的。
 好啦，本篇文章到此结束，感谢大家的阅读~~
