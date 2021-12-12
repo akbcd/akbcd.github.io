@@ -210,7 +210,7 @@
             if(isjQuery){
                 // jquery实现平滑跳转
                 $('#container').animate({
-                    scrollTop: window.screen.width<800?scrollPositionTop-50:scrollPositionTop
+                    scrollTop: document.body.clientWidth<=800?scrollPositionTop-50:scrollPositionTop
                 },1000);
                 // mobile锚点平滑跳转
                 $('body,html').animate({
@@ -268,7 +268,7 @@
             // pc动态目录
             $container.addEventListener('scroll', (e) => {
                 const currentTop = $container.scrollTop;
-                findHeadPosition(window.screen.width<800?currentTop+50:currentTop);
+                findHeadPosition(document.body.clientWidth<=800?currentTop+50:currentTop);
                 autoScrollToc();
             });
             // mobile动态目录
