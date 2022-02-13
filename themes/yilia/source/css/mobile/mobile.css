@@ -59,7 +59,8 @@
 		white-space: normal
 	}
 	/* 修改结束 */
-    .tools-col {
+    /* 添加.tools-col.show */
+    .tools-col,.tools-col.show {
         left: -300px;
         width: 300px
     }

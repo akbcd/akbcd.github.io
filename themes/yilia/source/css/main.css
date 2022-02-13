@@ -1069,9 +1069,8 @@ body {
     border: none;
     padding: 0
 }
-
+/* 删除color: highlight-comment */
 .article-entry .highlight figcaption {
-    color: highlight-comment;
     line-height: 1em;
     margin-bottom: 1em
 }
@@ -1138,10 +1137,9 @@ body {
     padding: 0;
     border: none
 }
-
+/* 删除color: highlight-comment */
 .article-entry .gist .gist-file .gist-meta {
     background: #272822;
-    color: highlight-comment;
     font: .85em Helvetica Neue,Helvetica,Arial,sans-serif;
     text-shadow: 0 0;
     padding: 0;
@@ -1400,15 +1398,13 @@ pre .css~* .id,pre .id {
     -ms-flex-pack: center;
     justify-content: center
 }
-
+/* 删除失效的*vertical-align: auto和*display: inline */
 #header .header-nav .social a {
     border-radius: 50%;
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: middle;
-    *vertical-align: auto;
     zoom: 1;
-    *display: inline;
     margin: 0 8px 15px;
     transition: .3s;
     text-align: center;
@@ -1764,8 +1760,9 @@ pre .css~* .id,pre .id {
     opacity: 0;
     -webkit-overflow-scrolling: touch;
 }
-
+/* 添加width: 360px */
 .tools-col.show {
+    width: 360px;
     opacity: 1
 }
 
@@ -1776,11 +1773,10 @@ pre .css~* .id,pre .id {
 .tools-col .tools-nav {
     display: none
 }
-
+/* 删除width: 360px */
 .tools-col .tools-section,.tools-col .tools-wrap {
     height: 100%;
     color: #e5e5e5;
-    width: 360px;
     overflow: hidden;
     overflow-y: auto
 }
@@ -2053,11 +2049,10 @@ pre .css~* .id,pre .id {
     font-size: 26px;
     transition: color .3s
 }
-
+/* 修改adding-left: 7.6923%=>6.8709%*/
 .article-header {
     border-left: 5px solid #4d4d4d;
-    padding: 30px 0 15px 25px;
-    padding-left: 7.6923%
+    padding: 30px 0 15px 6.8709%
 }
 
 .article-meta {
