@@ -3,9 +3,9 @@
   var name = '<%- theme.jsdelivr.name %>';
   var repository = '<%- theme.jsdelivr.repository %>';
   if ("localhost" != document.domain && yiliaConfig.isPost) {
-    var img=document.querySelectorAll("#article-content img"),
-    audio=document.querySelectorAll("#article-content audio"),
-    video=document.querySelectorAll("#article-content video");
+    var img=document.querySelectorAll(".article-content img"),
+    audio=document.querySelectorAll(".article-content audio"),
+    video=document.querySelectorAll(".article-content video");
     for (var key in img) {
       if (isNaN(key)) break;
       img[key].src = img[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);

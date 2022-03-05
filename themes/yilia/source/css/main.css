@@ -1,5 +1,5 @@
 /* 代码块复制 */
-#js-btn-copy {
+.js-btn-copy {
     display: none;
     right: 10%;
     font-size: 1em;
@@ -11,7 +11,7 @@
     border-radius: 4px;
     position: absolute; 
 }
-figure:hover #js-btn-copy{
+figure:hover .js-btn-copy{
     display: block;
 }
 /* 进度条 */
@@ -107,8 +107,8 @@ figure:hover #js-btn-copy{
 .left-col.show {
     box-shadow: 0 0 6px 0 rgba(0,0,0,.75)
 }
-
-.mid-col,.mid-col.show .article,.tools-col,.tools-col .tools-section .search-tag.tagcloud .article-tag-list,.tools-col .tools-section .search-ul .search-tag span:hover,.tools-col .tools-section .search-ul .search-time span:hover,.tools-col .tools-section .search-ul .search-title:hover,.tools-col .tools-section .search-wrap .icon {
+/* 添加.mid-col.show .archives-wrap */
+.mid-col,.mid-col.show .article,.mid-col.show .archives-wrap,.tools-col,.tools-col .tools-section .search-tag.tagcloud .article-tag-list,.tools-col .tools-section .search-ul .search-tag span:hover,.tools-col .tools-section .search-ul .search-time span:hover,.tools-col .tools-section .search-ul .search-title:hover,.tools-col .tools-section .search-wrap .icon {
     transition: all .2s ease-in;
     -ms-transition: all .2s ease-in
 }
@@ -839,8 +839,8 @@ body {
     opacity: .9;
     overflow: hidden
 }
-
-.mid-col.show .article {
+/* 添加.mid-col.show .archives-wrap */
+.mid-col.show .article,.mid-col.show .archives-wrap {
     background: hsla(0,0%,100%,.3)
 }
 
@@ -866,22 +866,22 @@ body {
     margin: 112px auto 0
 }
 
-.left-col #header {
+.left-col .header-inner {
     width: 100%;
     height: 300px;
     position: relative;
     border-bottom: 1px solid color-border
 }
 
-.left-col #header a {
+.left-col .header-inner a {
     color: #696969
 }
 
-.left-col #header a:hover {
+.left-col .header-inner a:hover {
     color: #b0a0aa
 }
 
-.left-col #header .header-subtitle {
+.left-col .header-inner .header-subtitle {
     text-align: center;
     color: #999;
     font-size: 14px;
@@ -893,7 +893,7 @@ body {
     -webkit-box-orient: vertical
 }
 
-.left-col #header .header-menu {
+.left-col .header-inner .header-menu {
     font-weight: 300;
     line-height: 31px;
     text-transform: uppercase;
@@ -907,29 +907,29 @@ body {
     -webkit-box-align: center
 }
 
-.left-col #header .header-menu li {
+.left-col .header-inner .header-menu li {
     cursor: default
 }
 
-.left-col #header .header-menu li a {
+.left-col .header-inner .header-menu li a {
     font-size: 14px;
     min-width: 300px
 }
 
-.left-col #header .header-smart-menu {
+.left-col .header-inner .header-smart-menu {
     font-size: 12px;
     margin-bottom: 20px
 }
 
-.left-col #header .header-smart-menu a:after {
+.left-col .header-inner .header-smart-menu a:after {
     content: "/"
 }
 
-.left-col #header .header-smart-menu a:last-child:after {
+.left-col .header-inner .header-smart-menu a:last-child:after {
     content: ""
 }
 
-.left-col #header .profilepic {
+.left-col .header-inner .profilepic {
     display: block;
     border: 5px solid #fff;
     border-radius: 300px;
@@ -947,19 +947,19 @@ body {
     text-align: center
 }
 
-.left-col #header .profilepic img {
+.left-col .header-inner .profilepic img {
     border-radius: 300px;
     opacity: 1;
     -webkit-transition: all .2s ease-in
 }
 
-.left-col #header .profilepic img.show {
+.left-col .header-inner .profilepic img.show {
     width: 100%;
     height: 100%;
     opacity: 1
 }
 
-.left-col #header .header-author {
+.left-col .header-inner .header-author {
     text-align: center;
     margin: .67em 0;
     font-family: Roboto,serif;
@@ -1188,12 +1188,12 @@ pre .css~* .id,pre .id {
     color: #fd971f
 }
 /* music player title */
-#header .music-player .title{
+.header-inner .music-player .title{
     font-size: 14px;
     color: #424242;
     text-align: center
 }
-#header .tagcloud a {
+.header-inner .tagcloud a {
     color: #fff
 }
 
@@ -1378,7 +1378,7 @@ pre .css~* .id,pre .id {
     background: #dd765d
 }
 
-#header .header-nav {
+.header-inner .header-nav {
     width: 100%;
     position: absolute;
     transition: -webkit-transform .3s ease-in;
@@ -1386,7 +1386,7 @@ pre .css~* .id,pre .id {
     transition: transform .3s ease-in,-webkit-transform .3s ease-in
 }
 
-#header .header-nav .social {
+.header-inner .header-nav .social {
     margin-top: 10px;
     text-align: center;
     display: -webkit-box;
@@ -1399,7 +1399,7 @@ pre .css~* .id,pre .id {
     justify-content: center
 }
 /* 删除失效的*vertical-align: auto和*display: inline */
-#header .header-nav .social a {
+.header-inner .header-nav .social a {
     border-radius: 50%;
     display: -moz-inline-stack;
     display: inline-block;
@@ -1415,140 +1415,140 @@ pre .css~* .id,pre .id {
     line-height: 26px
 }
 /* 矢量图标样式（iconfont） */
-#header .header-nav .social a:hover {
+.header-inner .header-nav .social a:hover {
     opacity: 1
 }
-#header .header-nav .social a.weibo {
+.header-inner .header-nav .social a.weibo {
     background: #aaf;
     border: 1px solid #aaf
 }
-#header .header-nav .social a.weibo:hover {
+.header-inner .header-nav .social a.weibo:hover {
     border: 1px solid #aaf
 }
-#header .header-nav .social a.segmentfault {
+.header-inner .header-nav .social a.segmentfault {
     background: #009a61;
     border: 1px solid #009a61
 }
-#header .header-nav .social a.segmentfault:hover {
+.header-inner .header-nav .social a.segmentfault:hover {
     border: 1px solid #009a61
 }
-#header .header-nav .social a.rss {
+.header-inner .header-nav .social a.rss {
     background: #ef7522;
     border: 1px solid #ef7522
 }
-#header .header-nav .social a.rss:hover {
+.header-inner .header-nav .social a.rss:hover {
     border: 1px solid #cf5d0f
 }
-#header .header-nav .social a.github {
+.header-inner .header-nav .social a.github {
     background: #afb6ca;
     border: 1px solid #afb6ca
 }
-#header .header-nav .social a.github:hover {
+.header-inner .header-nav .social a.github:hover {
     border: 1px solid #909ab6
 }
-#header .header-nav .social a.facebook {
+.header-inner .header-nav .social a.facebook {
     background: #3b5998;
     border: 1px solid #3b5998
 }
-#header .header-nav .social a.facebook:hover {
+.header-inner .header-nav .social a.facebook:hover {
     border: 1px solid #2d4373
 }
-#header .header-nav .social a.google {
+.header-inner .header-nav .social a.google {
     background: #c83d20;
     border: 1px solid #c83d20
 }
-#header .header-nav .social a.google:hover {
+.header-inner .header-nav .social a.google:hover {
     border: 1px solid #9c3019
 }
-#header .header-nav .social a.twitter {
+.header-inner .header-nav .social a.twitter {
     background: #55cff8;
     border: 1px solid #55cff8
 }
-#header .header-nav .social a.twitter:hover {
+.header-inner .header-nav .social a.twitter:hover {
     border: 1px solid #24c1f6
 }
-#header .header-nav .social a.linkedin {
+.header-inner .header-nav .social a.linkedin {
     background: #005a87;
     border: 1px solid #005a87
 }
-#header .header-nav .social a.linkedin:hover {
+.header-inner .header-nav .social a.linkedin:hover {
     border: 1px solid #006b98
 }
-#header .header-nav .social a.acfun {
+.header-inner .header-nav .social a.acfun {
     background: #fd4c5d;
     border: 1px solid #fd4c5d
 }
-#header .header-nav .social a.acfun:hover {
+.header-inner .header-nav .social a.acfun:hover {
     border: 1px solid #fd4c5d
 }
-#header .header-nav .social a.bilibili {
+.header-inner .header-nav .social a.bilibili {
     background: #e15280;
     border: 1px solid #e15280
 }
-#header .header-nav .social a.bilibili:hover {
+.header-inner .header-nav .social a.bilibili:hover {
     border: 1px solid #e15280
 }
-#header .header-nav .social a.zhihu {
+.header-inner .header-nav .social a.zhihu {
     background: #0078d8;
     border: 1px solid #0078d8
 }
-#header .header-nav .social a.zhihu:hover {
+.header-inner .header-nav .social a.zhihu:hover {
     border: 1px solid #0078d8
 }
-#header .header-nav .social a.douban {
+.header-inner .header-nav .social a.douban {
     background: #06c611;
     border: 1px solid #06c611
 }
-#header .header-nav .social a.douban:hover {
+.header-inner .header-nav .social a.douban:hover {
     border: 1px solid #06c611
 }
-#header .header-nav .social a.mail {
+.header-inner .header-nav .social a.mail {
     background: #005a87;
     border: 1px solid #005a87
 }
-#header .header-nav .social a.mail:hover {
+.header-inner .header-nav .social a.mail:hover {
     border: 1px solid #006b98
 }
-#header .header-nav .social a.jianshu {
+.header-inner .header-nav .social a.jianshu {
     background: #ff5722;
     border: 1px solid #ff5722
 }
-#header .header-nav .social a.jianshu:hover {
+.header-inner .header-nav .social a.jianshu:hover {
     border: 1px solid #ff5722
 }
-#header .header-nav .social a.weixin {
+.header-inner .header-nav .social a.weixin {
     background: #4caf50;
     border: 1px solid #4caf50
 }
-#header .header-nav .social a.weixin:hover {
+.header-inner .header-nav .social a.weixin:hover {
     border: 1px solid #4caf50
 }
-#header .header-nav .social a.qq {
+.header-inner .header-nav .social a.qq {
     background: #34baad;
     border: 1px solid #34baad
 }
-#header .header-nav .social a.qq:hover {
+.header-inner .header-nav .social a.qq:hover {
     border: 1px solid #34baad
 }
-#header .header-nav .social a.psn {
+.header-inner .header-nav .social a.psn {
     background: #086ef6;
     border: 1px solid #086ef6
 }
-#header .header-nav .social a.psn:hover {
+.header-inner .header-nav .social a.psn:hover {
     border: 1px solid #086ef6
 }
-#header .header-nav .social a.csdn {
+.header-inner .header-nav .social a.csdn {
     background: #d81e06;
     border: 1px solid #d81e06
 }
-#header .header-nav .social a.csdn:hover {
+.header-inner .header-nav .social a.csdn:hover {
     border: 1px solid #d81e06
 }
-#header .header-nav .social a.mayun {
+.header-inner .header-nav .social a.mayun {
     background: #d81e06;
     border: 1px solid #d81e06
 }
-#header .header-nav .social a.mayun:hover {
+.header-inner .header-nav .social a.mayun:hover {
     border: 1px solid #d81e06
 }
 

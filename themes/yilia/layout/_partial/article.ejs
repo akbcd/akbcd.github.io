@@ -22,7 +22,7 @@
     <%- partial('post/password') %>
     <% if (post.excerpt!='false' || !index) { %>
     <div class="article-entry" itemprop="articleBody">
-      <div id="article-content">
+      <div class="article-content">
         <% if (post.excerpt && index){ %>
           <%- post.excerpt %>
           <% if (theme.excerpt_link) { %>
@@ -93,8 +93,8 @@
 <% } %>
 <% if (!index){ %>
   <%- partial('post/nav') %>
+  <%- partial('_partial/aside') %>
 <% } %>
-<%- partial('_partial/aside') %>
 
 
 <% if (!index && post.comments){ %>

@@ -239,7 +239,7 @@
                 }
             };
             // 获取元素
-            const $article_content=document.getElementById('article-content');
+            const $article_content=document.getElementsByClassName('article-content')[0];
             const $toc_article=document.getElementsByClassName("toc-article")[0];
             const $toc_child=document.getElementsByClassName("toc-child");
             // 隐藏子目录

@@ -207,7 +207,7 @@ let reprintPolicy = page.reprintPolicy || theme.reprint.default || 'cc_by';
 <% } %>
 <% if (theme.copyright.enable && !index) { %>
 <script>
-  document.getElementById('article-content').addEventListener('copy', function (e) {
+  document.getElementsByClassName('article-content')[0].addEventListener('copy', function (e) {
     // IE8 or earlier browser is 'undefined'
     if (typeof window.getSelection === 'undefined') return;
     var selection = window.getSelection();

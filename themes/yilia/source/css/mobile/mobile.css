@@ -1,6 +1,6 @@
 @media screen and (max-width: 800px) {
     /* 代码块复制 */
-    #js-btn-copy {
+    .js-btn-copy {
         right: 5%;
     }
 
@@ -30,7 +30,7 @@
         left: 0
     }
 
-    #header .header-nav,.mid-col {
+    .header-inner .header-nav,.mid-col {
         position: relative
     }
 	/* 修改移动端aside标签样式 */
@@ -379,11 +379,11 @@
         background: #4d4d4d
     }
 
-    #mobile-nav #header {
+    #mobile-nav .header-inner {
         padding: 10px 0 0
     }
 
-    #mobile-nav #header .profilepic {
+    #mobile-nav .header-inner .profilepic {
         display: block;
         position: relative;
         z-index: 100

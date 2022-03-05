@@ -7,16 +7,16 @@ toc: true
 这篇文章添加几个适用于yilia主题的功能
 <!--more-->
 快速导航：
-[yilia主题添加本地头像](#yilia主题添加本地头像)
-[添加字数统计](#添加字数统计)
-[安装全局搜索功能](#安装全局搜索功能)
-[yilia主题添加博客文章置顶功能和置顶标签](#yilia主题添加博客文章置顶功能和置顶标签)
-[hexo文章加密功能](#hexo文章加密功能)
-[yilia主题移动端添加页面进度条](#yilia主题移动端添加页面进度条)
-[hexo代码块复制功能](#hexo代码块复制功能)
-[代码区块高亮](#代码区块高亮)
-[添加文章更新时间](#添加文章更新时间)
-[yilia主题添加aplayer播放器](#yilia主题添加aplayer播放器)
+[yilia主题添加本地头像](?id=#yilia主题添加本地头像)
+[添加字数统计](?id=#添加字数统计)
+[安装全局搜索功能](?id=#安装全局搜索功能)
+[yilia主题添加博客文章置顶功能和置顶标签](?id=#yilia主题添加博客文章置顶功能和置顶标签)
+[hexo文章加密功能](?id=#hexo文章加密功能)
+[yilia主题移动端添加页面进度条](?id=#yilia主题移动端添加页面进度条)
+[hexo代码块复制功能](?id=#hexo代码块复制功能)
+[代码区块高亮](?id=#代码区块高亮)
+[添加文章更新时间](?id=#添加文章更新时间)
+[yilia主题添加aplayer播放器](?id=#yilia主题添加aplayer播放器)
 ## yilia主题添加本地头像
 如果你的头像是引用网络的，那就要注意了，网络上的图片随时都有可能被删除，删除之后，头像就没有了
 头像的图片一般不是很大，完全可以进行本地引用（你要深刻意识到，本地引用图片是会影响到网页加载速度的）
@@ -524,14 +524,14 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
     /*页面载入完成后，创建复制按钮*/
     !function (e, t, a) {
         var initCopyCode = function(){
-            var copyHtml = '<button id="js-btn-copy">复制</button>';
+            var copyHtml = '<button class="js-btn-copy">复制</button>';
             $(".code pre").before(copyHtml);
         }
         initCopyCode();
         // 代码块复制
-        $(".code").on("click","#js-btn-copy",function(button){
+        $(".code").on("click",".js-btn-copy",function(button){
             var copy=button.currentTarget;
-            var clipboard = new ClipboardJS('#js-btn-copy', {
+            var clipboard = new ClipboardJS('.js-btn-copy', {
                 target: function(trigger) {
                     if(trigger.nextElementSibling != null){
                         return trigger.nextElementSibling;
@@ -555,7 +555,7 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
 主题中添加css样式（本样式根据yilia主题美化）
 ```css
 /* 代码块复制 */
-#js-btn-copy {
+.js-btn-copy {
     display: none;
     right: 10%;
     font-size: 1em;
@@ -567,11 +567,11 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
     border-radius: 4px;
     position: absolute; 
 }
-figure:hover #js-btn-copy{
+figure:hover .js-btn-copy{
     display: block;
 }
 @media screen and (max-width: 800px) {
-    #js-btn-copy {
+    .js-btn-copy {
         right: 5%;
     }
 }
@@ -606,14 +606,14 @@ highlight:
 在代码块标签后面声明代码区块语言（这里以css为例）
 ````
 ```css
-figure:hover #js-btn-copy{
+figure:hover .js-btn-copy{
   opacity: 1;
 }
 ```
 ````
 效果：
 ```css
-figure:hover #js-btn-copy{
+figure:hover .js-btn-copy{
   opacity: 1;
 }
 ```
@@ -951,7 +951,7 @@ music:
 ```
 把pc页面引入的js与css删除即可
 2.隐藏滚动条两端的按钮和外层轨道，此样式只适用于pc页面，解决实际歌曲列表长度大于设置长度出现滚动条时播放器自带样式对滚动条设置与主题滚动条样式设置冲突问题，如果移动端出现样式冲突问题，请手动添加（移动端可能不会出现滚动条）
-3.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1）
+3.截至1.10.1版本发现1.9.1之后的版本会使部分浏览器锚点跳转失效（本页面引入的是1.10.1），解决办法就是将传统的`#位置`修改为`?id=#位置`。
 4.移动端preload音频预加载属性不受关闭pc播放器影响
 **到此，yilia主题添加aplayer播放器完成**
 ### 分享

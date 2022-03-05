@@ -1,3 +1,14 @@
+<% if (!(is_post()) && theme.top){ %>
+<aside class="wrap-side-operation">
+  <div class="mod-side-operation">
+    <div class="jump-container" id="js-jump-container" style="display:none;">
+      <a style="cursor:pointer" class="mod-side-operation__jump-to-top">
+        <i class="icon-font icon-back"></i>
+      </a>
+    </div>
+  </div>
+</aside>
+<% } else if (!index){ %>
 <aside class="wrap-side-operation">
   <div class="mod-side-operation">
     <% if (theme.top){ %>
@@ -12,3 +23,4 @@
     <% } %>
   </div>
 </aside>
+<% } %>
