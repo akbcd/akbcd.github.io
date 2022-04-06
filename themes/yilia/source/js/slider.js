@@ -2049,8 +2049,8 @@ var Browser = {
         };
     }()
 };
-const isMobile = (Browser.versions.mobile && document.body.clientWidth <= 800);
-// pc页面，执行anm.js动画
+const isMobile = (Browser.versions.mobile || document.body.clientWidth <= 800);
+// pc页面且宽度大于800，执行anm.js动画
 if (!isMobile) {
 	Anm();
 }

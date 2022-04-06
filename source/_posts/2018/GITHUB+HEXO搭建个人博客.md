@@ -498,9 +498,9 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 1.通过码云克隆GitHub项目实现快速下载
 2.GitHub加速下载工具：https://toolwa.com/github/
 ### 安装hexo
-云端导入本地后，git输入命令
+云端导入本地后，git输入命令（必须）
 `npm install -g hexo-cli` ——参考hexo官方文档
-如果需要安装最新版hexo，输入
+如果需要安装最新版hexo，输入（可选）
 `npm install hexo`
 ### 配置并发布文章
 git输入
@@ -541,16 +541,23 @@ hexo5.0版本，已经在package.json文件中添加hexo部分功能的脚本命
 win10系统中**Visual Studio Code**终端默认使用的是power shell，这里介绍将终端默认启动的power shell换成git bash
 #### 修改settings.json文件
 如果你的**Visual Studio Code**不是中文版本，你可以通过在扩展中搜索`Chinese`关键字安装中文语言扩展
-1.依次打开设置——>功能——>终端，找到 terminal.integrated.shell.windows ，打开 在 settings.json 中编辑
-2.将内容修改如下：
+1.依次打开设置——>功能——>终端，找到 在 settings.json 中编辑 ，打开
+2.添加如下内容：
 ```
 {
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+  "terminal.integrated.profiles.windows": {
+    "JavaScript Debug Terminal": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "JavaScript Debug Terminal"
 }
 ```
 `C:\\Program Files\\Git\\bin\\bash.exe`修改为自己git bash命令所在路径，保存
-3.打开终端——>新终端，你会看到终端已经换成git bash终端，直接就可以在这里执行git bash命令啦
+补充：自定义终端的配置每个版本会不一样，建议升级为最新版后参考[官方文档](https://code.visualstudio.com/docs/)
+搜索关键字：integrated-terminal
+3.打开终端——>新终端，你会看到终端已经换成bash终端，直接就可以在这里执行git bash命令啦
 #### 终端切换
-直接在git bash终端里输入cmd切换为cmd终端，输入powershell切换为power shell终端，输入shell切换回git bash终端
+直接在git bash终端里输入cmd切换为cmd终端，输入powershell切换为power shell终端，输入bash切换回git bash终端
 # 最后
 本篇文章到此就结束了，有什么问题可以在评论区回复。关于markdown的书写语法，可以自行到网络上查找资料学习
