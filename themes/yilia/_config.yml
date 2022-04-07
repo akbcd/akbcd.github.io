@@ -202,7 +202,7 @@ share_jia: true
 # ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
 # 若ADMIN_URL没有允许跨域请求，控制台会报错（报错可忽略）
 valine:
-  enable: true
+  enable: false
   appId: lgKQKDBk92WAKzzHw1palka0-MdYXbMMI
   appKey: SIKHT3xm9TdmJ8bQKjtRoReC
   placeholder: '说说你的看法。。。' # 评论框占位提示符
