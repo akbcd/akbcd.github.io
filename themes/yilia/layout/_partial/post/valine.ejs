@@ -35,6 +35,7 @@
     enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
     serverURLs: '<%= theme.valine.serverURLs %>'
   });
+  document.getElementById('veditor').maxLength='<%- theme.valine.maxLength %>';
   <% if(theme.valine.ADMIN_URL){ %>
   // ADMIN_URL
   var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';

@@ -1778,7 +1778,9 @@ pre .css~* .id,pre .id {
     height: 100%;
     color: #e5e5e5;
     overflow: hidden;
-    overflow-y: auto
+    overflow-y: auto;
+    /* 火狐浏览器 */
+    scrollbar-width: none
 }
 
 .tools-col .tools-section ::-webkit-scrollbar,.tools-col .tools-wrap ::-webkit-scrollbar {

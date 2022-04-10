@@ -202,10 +202,11 @@ share_jia: true
 # ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
 # 若ADMIN_URL没有允许跨域请求，控制台会报错（报错可忽略）
 valine:
-  enable: false
+  enable: true
   appId: lgKQKDBk92WAKzzHw1palka0-MdYXbMMI
   appKey: SIKHT3xm9TdmJ8bQKjtRoReC
-  placeholder: '说说你的看法。。。' # 评论框占位提示符
+  placeholder: '说说你的看法，上限为500字呦。' # 评论框占位提示符
+  maxLength: 500 # 评论框允许输入的最大字符数
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
   pageSize: 10 # 评论列表分页
   visitor: true # 文章访问量统计
@@ -213,7 +214,7 @@ valine:
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
   ADMIN_URL: https://akbcd.avosapps.us/ # Web主机二级域名，若没有请设为false
-  serverURLs: https://lgKQKDBk.api.lncldglobal.com
+  serverURLs: https://lgKQKDBk.api.lncldglobal.com # 自定义服务器URL
 valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
 # 2、gitalk
@@ -276,6 +277,7 @@ friends:
   LeanCloud评论管理: https://akbcd.avosapps.us/
   jsDelivr: https://www.jsdelivr.com/
   在线动画 动漫下载 - AGE动漫: https://www.age.tv/
+  hexo-theme-matery主题: https://github.com/blinkfox/hexo-theme-matery
 
 #aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
