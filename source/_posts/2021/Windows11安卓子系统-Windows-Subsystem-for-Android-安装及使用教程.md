@@ -36,8 +36,14 @@ add-Appxpackage
 并在`add-Appxpackage `之后粘贴我们刚刚复制的文件地址（ctrl+v），回车即可安装
 ![7.jpg](7.jpg)
 ![8.jpg](8.jpg)
+如果部署失败，提示依赖的框架不存在，则在抓包网页中下载对应的插件双击安装即可。
 等待进度条走完，点击开始菜单，在推荐的项目里便可以看见我们安装的安卓子系统应用啦
 ![9.jpg](9.jpg)
+补充：对于powershell窗口删除历史命令记录的问题，可以在窗口中输入
+```
+Remove-Item (Get-PSReadlineOption).HistorySavePath
+```
+重新打开powershell窗口，上下键的命令历史记录便被清除掉啦，给有需要的人~~
 ## Windows Subsystem for Android™应用程序的使用
 上文说到，安卓子系统目前只在美国地区测试，而且微软目前只开放在亚马逊商店下载指定的app，这并不是我们想要的，所以我们这里需要adb工具安装apk文件
 打开刚刚安装成功的绿色图标，进入到设置页面
