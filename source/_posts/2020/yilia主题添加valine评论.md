@@ -11,19 +11,19 @@ toc: true
 https://github.com/xCss/Valine/issues/340
 ## 快速开始
 根据[valine](https://valine.js.org/quickstart.html)官方文档，先要在`LeanCloud`获取**APP ID**和**APP Key**
-登录或注册[LeanCloud](https://www.leancloud.cn/)，建议注册国际版用户，**不需要绑定域名**，但是都需要绑定手机号
+登录或注册[LeanCloud](https://www.leancloud.cn/)，建议注册[国际版](https://leancloud.app/)用户，**不需要绑定域名**，但是都需要绑定手机号
 进入控制台后点击左下角创建应用，选择开发版
-![](https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg)
+![](valine.png)
 应用创建好以后，进入刚刚创建的应用，选择左下角的设置>应用Key，然后就能看到你的**APP ID**和**APP Key**了（复制下来）：
-![](https://i.loli.net/2019/06/21/5d0c997a60baa24436.jpg)
+![](valine2.png)
 评论数据管理
 由于Valine是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录`Leancloud`应用管理。 
 具体步骤：登录>选择你创建的应用>存储>选择`Class Comment`，然后就可以尽情的发挥你的权利啦
->当然，你也可以配合` @DesertsP `开发的` Valine-Admin `进行评论数据管理（下面在[valine进阶](#valine进阶)有介绍）
+>当然，你也可以配合` @DesertsP `开发的` Valine-Admin `进行评论数据管理（下面在[valine进阶](?id=#valine进阶)有介绍）
 
 安全域名
 为了你的数据安全，请设置自己的安全域名：
-![](https://i.loli.net/2019/06/21/5d0c995bddd4f99219.jpg)
+![](valine3.png)
 这里简单说明一下，如果你的博客是在github上托管，输入自己的**博客首页地址**以及**本地hexo服务器地址**即可（下面供参考）
 ```
 https://xxx.github.io
@@ -43,45 +43,47 @@ http://localhost:4000
 <% } %>
 ```
 在`themes\yilia\layout\_partial\post`文件夹下创建`valine.ejs`文件
-将以下代码添加到`valine.ejs`文件中，valine需要用到**Valine.min.js**文件，引用`jsdelivr`cdn库最新版，也可以将文件下载到本地，本地引用
+将以下代码添加到`valine.ejs`文件中，valine需要用到**Valine.min.js**文件，引用cdn库最新版，也可以将文件下载到本地，本地引用
+官方推荐使用的cdn：[unpkg](https://valine.js.org/cdn.html)，这里以jsdelivr为例
 实际上需要**两个js文件**，最新版本中，引用**Valine.min.js**文件会自动从网络上调用**av-min.js**文件，不需要手动引用，取决于valine版本
-```
+```html
 <style>
-    /* 适配yilia主题 */
-    #valine {
-        padding: 0 30px;
+  /* 适配yilia主题 */
+  #valine {
+    padding: 0 30px;
+  }
+  #valine .vwrap{
+    border: 1px solid #c8c8c8;
+  }
+  #valine .vwrap .vheader input,#valine .vcard{
+    border-bottom: 1px dashed #c8c8c8;
+  }
+  #valine .vwrap button,#valine .vmore{
+    background: #c8c8c8;
+  }
+  @media screen and (max-width: 800px) {
+    #valine{
+      padding: 0 10px;
     }
-    #valine .vwrap{
-        border: 1px solid #c8c8c8;
-    }
-    #valine .vwrap .vheader input,#valine .vcard{
-        border-bottom: 1px dashed #c8c8c8;
-    }
-    #valine .vwrap button,#valine .vmore{
-        background: #c8c8c8;
-    }
-    @media screen and (max-width: 800px) {
-        #valine{
-            padding: 0 10px;
-        }
-    }
+  }
 </style>
 <div id="valine"></div>
 <script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
 <script>
-    new Valine({
-        el: '#valine',
-        appId: '<%- theme.valine.appId %>',
-        appKey: '<%- theme.valine.appKey %>',
-		placeholder: '<%= theme.valine.placeholder %>',
-		avatar: '<%- theme.valine.avatar %>',
-		pageSize: '<%- theme.valine.pageSize %>',
-        lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
-        visitor: '<%- theme.valine.visitor %>' === 'true',
-		highlight: '<%- theme.valine.highlight %>' === 'true',
-		recordIp: '<%- theme.valine.recordIP %>' === 'true',
-        enableQQ: '<%- theme.valine.enableQQ %>' === 'true'
-    });
+  new Valine({
+    el: '#valine',
+    appId: '<%- theme.valine.appId %>',
+    appKey: '<%- theme.valine.appKey %>',
+    placeholder: '<%= theme.valine.placeholder %>',
+    avatar: '<%- theme.valine.avatar %>',
+    pageSize: '<%- theme.valine.pageSize %>',
+    lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
+    highlight: '<%- theme.valine.highlight %>' === 'true',
+    recordIp: '<%- theme.valine.recordIP %>' === 'true',
+    enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
+    serverURLs: '<%= theme.valine.serverURLs %>'
+  });
+  document.getElementById('veditor').maxLength='<%- theme.valine.maxLength %>';
 </script>
 ```
 valine评论会通过js生成自己的样式，与yilia主题有些冲突，进行了简单适配（根据自己需要进行更改）
@@ -89,38 +91,40 @@ valine评论会通过js生成自己的样式，与yilia主题有些冲突，进�
 最后，在主题`themes\yilia\_config.yml`文件中添加valine配置
 ```
 valine:
-  enable: false
+  enable: true
   appId: 
   appKey: 
-  placeholder: 'just go go' # 评论框占位提示符
+  placeholder: 'Just Go Go.' # 评论框占位提示符
+  maxLength: 500 # 评论框允许输入的最大字符数
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
   pageSize: 10 # 评论列表分页
-  visitor: false # 文章访问量统计
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: false # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+  serverURLs: https://xxx.api.lncldglobal.com # REST API 服务器地址
 ```
 各个配置项含义参考valine官方文档中[配置项](https://valine.js.org/configuration.html)
 根据自己需要更改，与上面`valine.ejs`文件对应
+其中：
+`maxLength`为评论框允许输入的最大字符数，防止恶意刷评而追加的设定，如不需要请手动删除`valine.ejs`与`_config.yml`关联代码
+`serverURLs`为服务器地址，参看：LeanCloud》国际版》设置》应用凭证》服务器地址》REST API 服务器地址，xxx为appId的前八位
 ## 使用valine
 主题`themes\yilia\_config.yml`文件valine配置中enable设置为true，将上面复制的**APP ID**和**APP Key**添加到对应的appId和appKey中
+LeanCloud》国际版》设置》应用凭证》服务器地址》REST API 服务器地址，添加至serverURLs中
 启动本地服务`hexo s`
 在浏览器中预览，valine评论模块出现
 如果想对某篇文章关闭评论，在文章开头`Front-matter`菜单中添加`comments: false`属性（默认都开启评论）
-说明：
-本人注册的`LeanCloud`是国际版，在本地预览中，valine评论中`Code -1`报错，这个问题让我花费了很长时间也没解决，控制台中显示是跨域问题，整的我都想重新注册`LeanCloud`国内版再试了
-其实这个问题很好解决，我尝试在评论区发送一个评论，惊奇的发现错误消失了，评论成功，`LeanCloud`中`Class Comment`成功记录了数据
-不知上面这个问题其他人有没有遇到过
 ## 使用valine评论的文章阅读量统计功能
 参看官方文档：https://valine.js.org/visitor.html
 Valine 从 `v1.2.0` 开始支持文章阅读量统计。
 ```
 new Valine({
-    el:'#vcomments',
+    el:'#valine',
     ...
-    visitor: true // 阅读量统计
+    visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false // 阅读量统计
 })
 ```
+此段代码与官方不同，旨在解决使用valine评论的文章阅读量统计功能，本地预览文章也会增加阅读量的问题
 >如果开启了阅读量统计，Valine 会自动检测 leancloud 应用中是否存在Counter类，如果不存在会自动创建，无需手动创建~
 
 Valine会自动查找页面中class值为leancloud_visitors的元素，获取其id为查询条件。并将得到的值填充到其class的值为leancloud-visitors-count的子元素里：
@@ -133,8 +137,12 @@ Valine会自动查找页面中class值为leancloud_visitors的元素，获取其
 ```
 下面以yilia主题为例，应用valine评论的文章阅读量统计功能
 ### 配置
-将主题配置文件中valine下的visitor值修改为true
-`visitor: true # 文章访问量统计`
+在主题配置文件中valine下添加如下配置：
+```
+valine:
+  ...
+  visitor: true # 文章访问量统计
+```
 定位主题文件`themes\yilia\layout\_partial\article.ejs`在header标签下导入date语句下面添加（添加位置在文章日期的下面）
 ```
 <header class="article-header">
@@ -166,9 +174,11 @@ Valine会自动查找页面中class值为leancloud_visitors的元素，获取其
 **云引擎"一键"部署**
 （建议使用[LeanCloud国际版](https://leancloud.app/)，减少不必要的麻烦。）
 1.在Leancloud云引擎设置界面，填写代码库并保存：https://github.com/DesertsP/Valine-Admin.git
-![设置仓库](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-15-xia-wu-12-56-04.png)
+建议使用track23修改的允许跨域请求的Valine-Admin进行部署：https://github.com/track23/Valine-Admin.git
+部署失败，可以参照提交记录自行修改后，重新部署
+![设置仓库](Valine-Admin.webp)
 2.在设置页面，设置环境变量以及 Web 二级域名。
-![环境变量](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-15-xia-wu-3-40-48.png)
+![环境变量](Valine-Admin2.webp)
 下面显示必填字段及一些更详细的说明
 
 |变量|示例|说明|
@@ -184,63 +194,73 @@ Valine会自动查找页面中class值为leancloud_visitors的元素，获取其
 
 **以上必填参数请务必正确设置。**
 二级域名用于评论后台管理，如`https://deserts.leanapp.cn`（国内版），`https://deserts.avosapps.us`（国际版），取决于自己注册的用户。
-![二级域名](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-15-xia-wu-1-06-41.png)
+![二级域名](Valine-Admin3.webp)
 3.切换到部署标签页，选择Git源码部署，分支使用master，点击部署即可
-![一键部署](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-15-xia-wu-12-56-50.png)
+![一键部署](Valine-Admin4.webp)
 第一次部署需要花点时间。
-![部署过程](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-15-xia-wu-1-00-45.png)
+![部署过程](Valine-Admin5.webp)
 4.评论管理。
-访问设置的二级域名https://二级域名.leanapp.cn/sign-up，注册管理员登录信息，如：https://deserts.leanapp.cn/sign-up
-![管理员注册](https://cloud.panjunwen.com/2018/10/ping-mu-kuai-zhao-2018-10-22-xia-wu-9-35-51.png)
+访问设置的二级域名https://二级域名.leanapp.cn/sign-up，注册管理员登录信息，如：`https://deserts.leanapp.cn/sign-up`
+国际版设置的二级域名https://二级域名.avosapps.us/sign-up
+![管理员注册](Valine-Admin6.webp)
 注册成功后会自动跳转至登录页
 此后，可以通过https://二级域名.leanapp.cn/ 管理评论。
+国际版：https://二级域名.avosapps.us/
 5.定时任务设置
-目前实现了两种云函数定时任务：(1)自动唤醒，定时访问`Web APP`二级域名防止云引擎休眠；(2)每天定时检查24小时内漏发的邮件通知。
-进入云引擎-定时任务中，创建定时任务，创建两个定时任务。
-选择`self-wake`云函数，Cron表达式为`0 */30 7-23 * * ?`，表示每天早7点到晚23点每隔30分钟访问云引擎，ADMIN_URL环境变量务必设置正确：
-![唤醒云引擎](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-18-xia-wu-2-57-43.png)
-选择`resend-mails`云函数，Cron表达式为`0 0 8 * * ?`，表示每天早8点检查过去24小时内漏发的通知邮件并补发：
-![通知检查](https://cloud.panjunwen.com/2018/09/ping-mu-kuai-zhao-2018-09-18-xia-wu-2-57-53.png)
-[关于国际版时区的问题](https://github.com/DesertsP/Valine-Admin/issues/63#issuecomment-533784574)：国际版使用UTC时间，定时任务减八个小时就是北京时间了。
->由于CRON 表达式采用的是UTC+0时区，又考虑到Leancloud体验版有6个小时的强制休眠时间，建议将自动唤醒的Cron表达式改为
-`0 */25 0-15,23 * * ?` 
-表示从北京时间7点00开始唤醒，到晚上11点50最后一次唤醒
-相应的将补发邮件的定时任务Cron表达式改为
-`0 10 23 * * ? ` 
-对应中国时间早上7：10补发邮件
-
-**到此，valine进阶基本结束**，详细内容还请参看官方文档。
-## 遇到的问题
 >因流控原因，通过定时任务唤醒体验版实例失败，建议升级至标准版云引擎实例避免休眠
 
+因为任务唤醒体验版限制，关于定时任务设置跳过，解决方法参看下文[唤醒云引擎](?id=#唤醒云引擎)
+6.邮件通知模板
+邮件通知模板在云引擎环境变量中设定，可自定义通知邮件标题及内容模板。
+默认的邮件通知模板是无法看到具体是哪篇文章的评论，这里简单进行了一下修改，如需样式定制，还请参看官方文档
+环境变量：**MAIL_TEMPLATE**
+修改后被@通知邮件内容模板如下：
+```
+<div style="border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;"><h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">您在<a style="text-decoration:none;color: #12ADDB;"href="${SITE_URL}"target="_blank">${SITE_NAME}</a>上的评论有了新的回复</h2>${PARENT_NICK}同学，您曾发表评论：<div style="padding:0 12px 0 12px;margin-top:18px"><div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;">${PARENT_COMMENT}</div><p><strong>${NICK}</strong>回复说：</p><div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;">${COMMENT}</div><p>您可以点击<a style="text-decoration:none; color:#12addb"href="${POST_URL}"target="_blank">查看回复的完整內容</a>，欢迎再次光临<a style="text-decoration:none; color:#12addb"href="${SITE_URL}"target="_blank">${SITE_NAME}</a>。<br></p><p>详细链接：${POST_URL}</p></div></div>
+```
+环境变量：**MAIL_TEMPLATE_ADMIN**
+修改后博主通知邮件内容模板如下：
+```
+<div style="border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;"><h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">您在<a style="text-decoration:none;color: #12ADDB;" href="${SITE_URL}" target="_blank">${SITE_NAME}</a>上的文章有了新的评论</h2><p><strong>${NICK}</strong>回复说：</p><div style="background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;"> ${COMMENT}</div><p>您可以点击<a style="text-decoration:none; color:#12addb" href="${POST_URL}" target="_blank">查看回复的完整內容</a><br></p><p>详细链接：${POST_URL}</p></div></div>
+```
+上述两个环境变量在云引擎手动添加即可，效果为在邮件最后一行添加评论详细链接，旨在快速定位是哪篇文章的评论。
+
+其他功能这里也不过多介绍，感兴趣的请参看[Valine Admin文档](https://deserts.io/valine-admin-document/)
+**到此，valine进阶基本结束**，详细内容还请参看官方文档。
+接下来是如何唤醒云引擎
+### 唤醒云引擎
 参看leancloud官方公告[关于对体验版云引擎定时任务进行适当流控的说明](https://forum.leancloud.cn/t/topic/22595)
 官方根据服务器的负载，对定时任务添加流控，通过定时任务唤醒容器将有可能会失败
 可以尝试更换定时任务时间，错开流控高峰，但是不治本。
 这里提供一个激活云引擎的方法，参看：[宅日记博客](https://crosschannel.cc/daily/valine-admin-autoAwaken.html)
+>思路就是北京时间8点到晚上23点只要有人访问博客就会触发js发ajax请求唤醒云引擎。由于云引擎睡眠的时候发请求不一定会成功（但是有请求就会醒）所有没有做请求失败处理。请求发送后设置cookie避免20分钟内刷新等操作重复发请求。
+
 简单说明一下：
 在valine.ejs文件中添加
 ```js
 new Valine({
-    el:'#vcomments',
-    ...
-    visitor: true // 阅读量统计
-})
+  el:'#valine',
+  ...
+});
+document.getElementById('veditor').maxLength='<%- theme.valine.maxLength %>';
 // 开始添加
+<% if(theme.valine.ADMIN_URL){ %>
+// ADMIN_URL
 var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
 if(engine!='1') {
-    fetch('https://quan.suning.com/getSysTime.do')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(date) {
-        var hours = new Date(date.sysTime2).getHours();
-        if(hours>7 && hours<23){
-            fetch('<%- theme.valine.ADMIN_URL %>');
-            var exp = new Date(date.sysTime2);
-            exp.setTime(exp.getTime() + 20*60*1000);
-            document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
-        }
-    })
+fetch('https://quan.suning.com/getSysTime.do')
+.then(function(response) {
+  return response.json();
+})
+.then(function(date) {
+  var hours = new Date(date.sysTime2).getHours();
+  if(hours>7 && hours<23){
+  fetch('<%- theme.valine.ADMIN_URL %>');
+  var exp = new Date(date.sysTime2);
+  exp.setTime(exp.getTime() + 20*60*1000);
+  document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
+  }
+})
 }
 <% } %>
 // 添加结束
@@ -255,28 +275,11 @@ if(engine!='1') {
 在主题配置文件valine的配置中添加`ADMIN_URL`字段设置云引擎地址，方便管理
 ```
 valine:
-  enable: false
-  appId: 
-  appKey: 
-  placeholder: 'just go go' # 评论框占位提示符
-  avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
-  pageSize: 10 # 评论列表分页
-  visitor: false # 文章访问量统计
-  highlight: true # 代码块高亮
-  recordIP: false # 是否记录评论者IP
-  enableQQ: false # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
+  ...
   ADMIN_URL: false # Web主机二级域名，你的云引擎地址，若没有请设为false
 ```
-
 文中提到通过github action来定时唤醒云引擎，参看：[小康博客](https://www.antmoe.com/posts/ff6aef7b/)
-个人感觉有些复杂，没有实践（建议读者尝试）
->使用valine评论的文章阅读量统计功能，本地预览文章也会增加阅读量
-
-在调试文章时，你可能需要重复刷新页面，但是每刷新一次，阅读量就会增加一次，这很显然不是我们想要的
-在valine.ejs文件中更改`visitor`赋值，增加判断`document.domain`是否为`localhost`即可，实现本地预览页面不显示阅读量
-```
-visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
-```
+个人感觉有些复杂，没有实践，而且这个方法足够啦
 ## 最后
 提到yilia主题，说说yilia主题内置的几个评论系统
 yilia主题总共有5个评论可选，分别是：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment

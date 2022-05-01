@@ -204,8 +204,8 @@ share_jia: true
 # 若ADMIN_URL没有允许跨域请求，控制台会报错（报错可忽略）
 valine:
   enable: true
-  appId: lgKQKDBk92WAKzzHw1palka0-MdYXbMMI
-  appKey: SIKHT3xm9TdmJ8bQKjtRoReC
+  appId: FAX8iOQDT0xrYlb5p5BEqFWi-MdYXbMMI
+  appKey: qYcotaoPdIdFlVcOoNr8GAle
   placeholder: '说说你的看法，上限为500字呦。' # 评论框占位提示符
   maxLength: 500 # 评论框允许输入的最大字符数
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
@@ -215,7 +215,7 @@ valine:
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
   ADMIN_URL: https://akbcd.avosapps.us/ # Web主机二级域名，若没有请设为false
-  serverURLs: https://lgKQKDBk.api.lncldglobal.com # 自定义服务器URL
+  serverURLs: https://fax8ioqd.api.lncldglobal.com # REST API 服务器地址
 valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
 
 # 2、gitalk
@@ -275,6 +275,7 @@ friends:
   磁力爬: https://www.clp6.xyz/
   音乐搜索器 - 多站合一音乐搜索,音乐在线试听: http://music.yujianpay.com/
   GitHub加速下载工具: http://tool.mkblog.cn/github/
+  LeanCloud国际版: https://leancloud.app/
   LeanCloud评论管理: https://akbcd.avosapps.us/
   jsDelivr: https://www.jsdelivr.com/
   在线动画 动漫下载 - AGE动漫: https://www.age.tv/
@@ -288,24 +289,24 @@ friends:
 
 # jsdelivr（加速使用）
 
-css:
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
-  photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
-  photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
-js:
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
-  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search/search.min.js
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
-  crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
-  photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
-  photoswipe_ui_default: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
-  scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile/mobile.min.js
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.min.js
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
-  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.min.js
+# css:
+#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
+#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
+#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
+#   photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
+#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
+# js:
+#   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
+#   search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search/search.min.js
+#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
+#   crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
+#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
+#   photoswipe_ui_default: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
+#   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
+#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile/mobile.min.js
+#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.min.js
+#   clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+#   slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.min.js
 
 # 发布使用
 
@@ -330,21 +331,21 @@ js:
 
 # 本地调试使用
 
-# css:
-#   main: /css/main.css
-#   mobile: /css/mobile/mobile.css
-#   photoswipe: /css/photoswipe/photoswipe.css
-#   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-#   aplayer: /css/APlayer/APlayer.min.css #1.10.1
-# js:
-#   jquery: /js/jquery/jquery.min.js #3.5.1
-#   search: /js/search/search.js
-#   aplayer: /js/APlayer/APlayer.min.js #1.9.1
-#   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-#   photoswipe: /js/photoswipe/photoswipe.min.js
-#   photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-#   scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-#   mobile: /js/mobile/mobile.js
-#   main: /js/main.js
-#   clipboard: /js/clipboard/clipboard.min.js
-#   slider: /js/slider.js
+css:
+  main: /css/main.css
+  mobile: /css/mobile/mobile.css
+  photoswipe: /css/photoswipe/photoswipe.css
+  photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
+  aplayer: /css/APlayer/APlayer.min.css #1.10.1
+js:
+  jquery: /js/jquery/jquery.min.js #3.5.1
+  search: /js/search/search.js
+  aplayer: /js/APlayer/APlayer.min.js #1.9.1
+  crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
+  photoswipe: /js/photoswipe/photoswipe.min.js
+  photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
+  scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
+  mobile: /js/mobile/mobile.js
+  main: /js/main.js
+  clipboard: /js/clipboard/clipboard.min.js
+  slider: /js/slider.js
