@@ -859,10 +859,9 @@ body {
     height: 180px;
     position: absolute
 }
-
+/* 修复aplayer文字居中，删除text-align: center; */
 .left-col .intrude-less {
     width: 76%;
-    text-align: center;
     margin: 112px auto 0
 }
 
@@ -915,8 +914,9 @@ body {
     font-size: 14px;
     min-width: 300px
 }
-
+/* 修复aplayer文字居中，添加text-align: center; */
 .left-col .header-inner .header-smart-menu {
+    text-align: center;
     font-size: 12px;
     margin-bottom: 20px
 }
