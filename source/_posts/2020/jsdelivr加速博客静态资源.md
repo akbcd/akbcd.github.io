@@ -2,6 +2,7 @@
 title: jsdelivr加速博客静态资源
 date: 2020-06-10 06:48:20
 tags: 博客
+update: 2022-05-04
 toc: true
 ---
 如果你的博客文件在GitHub托管，请看一下这篇文章
@@ -125,3 +126,17 @@ name为github用户名，repository为仓库名，一般为：xxx.github.io
 如果需要关闭jsdelivr加速，直接修改主题配置文件即可，很方便
 
 这篇文章仅介绍了加速本地部分资源和search.xml文件的方法，其它文件，比如：js、css等文件也可以用相应方法通过jsdelivr加速访问，这里不再进行介绍。
+
+2022年5月4日追记：
+文章页jsdelivr加速可能出现的错误
+如果文章页引入的静态资源（视频、音乐、图片），url是已经手动按照jsdelivr加速替换规则替换后的url，在开启jsdelivr加速时，jsdelivr加速会按照写好的替换规则进行替换，替换规则是按照域名替换，替换后的字符串中有替换前的域名，这就导致了重复替换，导致jsdelivr加速出错。
+解决方法，以img为例，audio和video同理
+```
+for (var key in document.getElementById("js-content").getElementsByTagName("img")) {
+    if (isNaN(key)) break;
+    // 避免重复替换出错，替换前，如果有替换后的字符串，先还原
+    document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace("cdn.jsdelivr.net/gh/" + name + "/" + repository,document.domain);
+    // 还原后，重新替换
+    document.getElementById("js-content").getElementsByTagName("img")[key].src = document.getElementById("js-content").getElementsByTagName("img")[key].src.replace(document.domain, "cdn.jsdelivr.net/gh/" + name + "/" + repository);
+}
+```
