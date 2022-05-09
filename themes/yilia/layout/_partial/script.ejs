@@ -5,7 +5,7 @@
 <script>
   !function (e, t) {
     var copyFn=function(copy,copy_success,copy_error){
-      var copyHtml = "<button class='js-btn-copy'>"+copy+"</button>";
+      var copyHtml = '<button type="button" class="js-btn-copy">'+copy+'</button>';
       [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
         button.insertAdjacentHTML('beforebegin', copyHtml);
       });

@@ -524,7 +524,7 @@ yilia主题pc页面与移动端页面布局不同，pc端不会显示进度条�
     /*页面载入完成后，创建复制按钮*/
     !function (e, t, a) {
         var initCopyCode = function(){
-            var copyHtml = '<button class="js-btn-copy">复制</button>';
+            var copyHtml = '<button type="button" class="js-btn-copy">复制</button>';
             $(".code pre").before(copyHtml);
         }
         initCopyCode();
