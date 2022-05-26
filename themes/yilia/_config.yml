@@ -92,7 +92,7 @@ show_all_link: '展开全文'
 # 数学公式
 mathjax: false
 # 数学公式用到的js文件
-mathjax_js: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js #version 3
+mathjax_js: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
 # 是否在新窗口打开链接
 open_in_new: false
 # 是否通过cookie记录文章页面浏览位置
@@ -177,7 +177,7 @@ verifyPassword:
 # 通过jsdelivr加速github托管的博客静态资源（视频、音乐、图片）
 # 仅适用于文章页的audio、img、video标签和全局搜索的search.xml文件
 jsdelivr:
-  enable: true
+  enable: false
   name: akbcd #github用户名
   repository: akbcd.github.io #仓库名
 
@@ -186,10 +186,12 @@ jsdelivr:
 #google_analytics: ''
 
 # 网页图标
-favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
+# favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
+favicon: /img/avatar.png
 
 # 你的头像url
-avatar: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
+# avatar: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
+avatar: /img/avatar.png
 
 # 是否开启分享
 share_jia: true
@@ -216,7 +218,7 @@ valine:
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
   ADMIN_URL: https://akbcd.avosapps.us/ # Web主机二级域名，若没有请设为false
   serverURLs: https://fax8ioqd.api.lncldglobal.com # REST API 服务器地址
-valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
+valine_js: //unpkg.com/valine@latest/dist/Valine.min.js
 
 # 2、gitalk
 gitalk:
@@ -227,6 +229,8 @@ gitalk:
     clientId:
     clientSecret:
   admin:
+gitalk_css: //unpkg.com/gitalk@latest/dist/gitalk.css
+gitalk_js: //unpkg.com/gitalk@latest/dist/gitalk.min.js
 
 # 3、畅言（域名需要备案）
 changyan_appid: false
@@ -277,7 +281,7 @@ friends:
   GitHub加速下载工具: http://tool.mkblog.cn/github/
   LeanCloud国际版: https://leancloud.app/
   LeanCloud评论管理: https://akbcd.avosapps.us/
-  jsDelivr: https://www.jsdelivr.com/
+  # jsDelivr: https://www.jsdelivr.com/
   在线动画 动漫下载 - AGE动漫: https://www.age.tv/
   hexo-theme-matery主题: https://github.com/blinkfox/hexo-theme-matery
 
@@ -287,47 +291,47 @@ friends:
 # 发布使用加载速度快，本地调试使用便于阅读
 # 修改请先在本地调试修改，完成后压缩放置发布使用
 
-# jsdelivr（加速使用）
+# 加速使用
 
-css:
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
-  photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
-  photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
-js:
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
-  search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search/search.min.js
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
-  crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
-  photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
-  photoswipe_ui_default: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
-  scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
-  mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile/mobile.min.js
-  main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.min.js
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
-  slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.min.js
+# css:
+#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
+#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
+#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
+#   photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
+#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
+# js:
+#   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
+#   search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search/search.min.js
+#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
+#   crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
+#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
+#   photoswipe_ui_default: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
+#   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
+#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile/mobile.min.js
+#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.min.js
+#   clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+#   slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.min.js
 
 # 发布使用
 
-# css:
-#   main: /css/main.min.css
-#   mobile: /css/mobile/mobile.min.css
-#   photoswipe: /css/photoswipe/photoswipe.css
-#   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-#   aplayer: /css/APlayer/APlayer.min.css #1.10.1
-# js:
-#   jquery: /js/jquery/jquery.min.js #3.5.1
-#   search: /js/search/search.min.js
-#   aplayer: /js/APlayer/APlayer.min.js #1.9.1
-#   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-#   photoswipe: /js/photoswipe/photoswipe.min.js
-#   photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-#   scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-#   mobile: /js/mobile/mobile.min.js
-#   main: /js/main.min.js
-#   clipboard: /js/clipboard/clipboard.min.js
-#   slider: /js/slider.min.js
+css:
+  main: /css/main.min.css
+  mobile: /css/mobile/mobile.min.css
+  photoswipe: /css/photoswipe/photoswipe.css
+  photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
+  aplayer: /css/APlayer/APlayer.min.css #1.10.1
+js:
+  jquery: /js/jquery/jquery.min.js #3.5.1
+  search: /js/search/search.min.js
+  aplayer: /js/APlayer/APlayer.min.js #1.9.1
+  crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
+  photoswipe: /js/photoswipe/photoswipe.min.js
+  photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
+  scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
+  mobile: /js/mobile/mobile.min.js
+  main: /js/main.min.js
+  clipboard: /js/clipboard/clipboard.min.js
+  slider: /js/slider.min.js
 
 # 本地调试使用
 

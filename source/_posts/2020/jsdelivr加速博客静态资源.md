@@ -2,9 +2,10 @@
 title: jsdelivr加速博客静态资源
 date: 2020-06-10 06:48:20
 tags: 博客
-update: 2022-05-04
+updated: 2022-05-25
 toc: true
 ---
+<strong style='color:red'>20220525更新：cdn.jsdelivr.net在中国大陆遭到dns污染，已不推荐继续使用。</strong>
 如果你的博客文件在GitHub托管，请看一下这篇文章
 通过jsdelivr加速博客静态资源，会使你的博客访问速度加快
 先来看一看什么是jsdelivr<!--more-->

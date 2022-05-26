@@ -75,7 +75,13 @@
         let $menu = document.querySelector('.js-header-menu');
         let $scrollTop = window.scrollY||document.querySelector("#container").scrollTop;
         scrollStop($overlay, $scrollTop, -63, 2, 0);
-        scrollStop($menu, $scrollTop, 1, 3, 0)
+        // 动画微调，修复pc页面getElementTop($menu)=0
+        if (document.body.clientWidth > 800){
+            // 手动设置pc页面getElementTop($menu)=158
+            scrollStop($menu, $scrollTop-158, -1, 3, 10)
+        } else {
+            scrollStop($menu, $scrollTop, -1, 3, 10)
+        }
     }
     function bindScroll() {
         document.querySelector('#container').addEventListener('scroll', (e) => {

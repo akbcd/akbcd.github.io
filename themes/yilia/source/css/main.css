@@ -11,7 +11,7 @@
     border-radius: 4px;
     position: absolute; 
 }
-figure:hover .js-btn-copy{
+figure:hover .js-btn-copy {
     display: block;
 }
 /* 进度条 */
@@ -411,13 +411,10 @@ html {
 }
 
 body {
-    margin: 0;
-    font-size: 14px;
-    font-family: Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;
-    line-height: 1.5;
-    color: #333;
-    background-color: #fff;
-    min-height: 100%
+    background: #eaeaea;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: hidden;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
@@ -653,17 +650,16 @@ i {
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box
 }
 /* 矢量图标（iconfont）共36个 */
 @font-face {
-    font-family: 'iconfont';  /* project id 692003 */
-    src: url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.eot');
-    src: url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.woff') format('woff'),
-    url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_692003_tai4h6r8r2m.svg#iconfont') format('svg');
+    font-family: 'iconfont';  /* Project id 692003 */
+    src: url('//at.alicdn.com/t/font_692003_atycw77w3la.woff2?t=1653539637574') format('woff2'),
+         url('//at.alicdn.com/t/font_692003_atycw77w3la.woff?t=1653539637574') format('woff'),
+         url('//at.alicdn.com/t/font_692003_atycw77w3la.ttf?t=1653539637574') format('truetype');
 }
 [class*=" icon-"],[class^=icon-] {
     font-family: "iconfont" !important;
@@ -788,19 +784,8 @@ i {
 body,button,input,select,textarea {
     color: #1a1a1a;
     font-family: lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
-    font-size: 16px;
     font-size: 1rem;
     line-height: 1.75
-}
-
-body {
-    overflow-y: hidden;
-    background: #eaeaea
-}
-/* 移除overflow-y: auto修复浏览器出现双滚动条 */
-#container,body,html {
-	height: 100%;
-	overflow-x: hidden
 }
 
 #mobile-nav {
@@ -809,7 +794,9 @@ body {
 
 #container {
     position: relative;
-    min-height: 100%
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto
 }
 
 #container .anm-canvas {
@@ -2047,8 +2034,7 @@ pre .css~* .id,pre .id {
     margin-left: 0;
     font-weight: 300;
     line-height: 35px;
-    margin-bottom: 20px;
-    font-size: 26px;
+    font-size: 28px;
     transition: color .3s
 }
 /* 修改adding-left: 7.6923%=>6.8709%*/
@@ -2142,56 +2128,39 @@ pre .css~* .id,pre .id {
 }
 
 .article-inner h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin-top: 2em;
-    margin-bottom: 1em
+    font-size: 28px
 }
 
 .article-inner h2 {
-    font-size: 23px;
-    font-size: 1.4375rem;
-    line-height: 1.2173913043;
-    margin-top: 2.4347826087em;
-    margin-bottom: 1.2173913043em
+    font-size: 26px
 }
 
 .article-inner h3 {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.1052631579;
-    margin-top: 2.9473684211em;
-    margin-bottom: 1.4736842105em
-}
-
-.article-inner h4,.article-inner h5,.article-inner h6 {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.3125;
-    margin-top: 3.5em;
-    margin-bottom: 1.75em
+    font-size: 24px
 }
 
 .article-inner h4 {
-    letter-spacing: .140625em;
-    text-transform: uppercase
+    font-size: 22px
+}
+
+.article-inner h5 {
+    font-size: 20px
 }
 
 .article-inner h6 {
-    font-style: italic
+    font-size: 18px
 }
 
 .article-inner h1,.article-inner h2,.article-inner h3,.article-inner h4,.article-inner h5,.article-inner h6 {
-    font-weight: 900
+    font-weight: 900;
+    line-height: 1.25
 }
 
 .article-inner h1:first-child,.article-inner h2:first-child,.article-inner h3:first-child,.article-inner h4:first-child,.article-inner h5:first-child,.article-inner h6:first-child {
     margin-top: 0
 }
-
+/* 删除margin-bottom: 10px */
 .article-inner h1:first-child {
-    margin-bottom: 10px;
     display: inline
 }
 
@@ -2232,8 +2201,8 @@ pre .css~* .id,pre .id {
 .article-entry em {
     font-style: italic
 }
-
-.article-entry ul li:before {
+/* 无序标签第一层样式 */
+.article-entry ul>li:before {
     content: "";
     width: 6px;
     height: 6px;
@@ -2244,19 +2213,23 @@ pre .css~* .id,pre .id {
     margin-right: 10px;
     margin-top: 10px
 }
-
+/* 无序标签第二层 */
+.article-entry li>ul>li:before {
+    content: "";
+    background: #dedede
+}
+/* 无序标签三层及之后 */
+.article-entry li>ul>li>ul>li:before,.article-entry li>ol>li>ul>li:before {
+    content: "";
+    background: #f9f9f9
+}
+/* 有序标签样式 */
 .article-entry ol {
-    counter-reset: item
+    list-style-type: decimal;
+    padding-left: 20px
 }
-
-.article-entry ol li:before {
-    counter-increment: item;
-    content: counter(item) ".";
-    margin-right: 10px
-}
-
+/* 删除font-size: 14px; */
 .article-entry ol,.article-entry ul {
-    font-size: 14px;
     margin: 10px 0
 }
 
@@ -2266,11 +2239,6 @@ pre .css~* .id,pre .id {
 
 .article-entry li ol,.article-entry li ul {
     margin-left: 30px
-}
-
-.article-entry li ol li:before,.article-entry li ul li:before {
-    content: "";
-    background: #dedede
 }
 
 .article-entry h1 {
@@ -2633,7 +2601,7 @@ pre .css~* .id,pre .id {
     background: #ccc;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    font-size: 32px;
+    font-size: 22px;
     line-height: 40px;
     width: 40px;
     text-align: center;

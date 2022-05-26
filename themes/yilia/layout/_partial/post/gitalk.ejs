@@ -1,6 +1,6 @@
 <div id="gitalk-container" class="card-content"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="<%- theme.gitalk_css %>">
+<script src="<%- theme.gitalk_js %>"></script>
 <script>
   let gitalk = new Gitalk({
     clientID: '<%- theme.gitalk.oauth.clientId %>',
