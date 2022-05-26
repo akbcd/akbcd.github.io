@@ -32,7 +32,9 @@
           <%- post.content %>
         <% } %>
       </div>
+      <% if (theme.jsdelivr.enable){ %>
       <%- partial('post/jsdelivr')%>
+      <% } %>
       <%- partial('post/reprint-statement') %>
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
       <div class="page-reward">
