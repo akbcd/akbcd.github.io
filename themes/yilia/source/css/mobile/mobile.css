@@ -50,9 +50,9 @@
 		max-height: 350px;
 		font-size: smaller
 	}
-
-	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc {
-		width: 250px
+    /* 一级目录不换行 */
+	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc>li {
+		white-space: nowrap
 	}
 
 	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
