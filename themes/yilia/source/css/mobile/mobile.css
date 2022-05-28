@@ -33,10 +33,10 @@
     .header-inner .header-nav,.mid-col {
         position: relative
     }
-	/* 修改移动端aside标签样式 */
-	.wrap-side-operation {
-		right: 10px
-	}
+    /* 修改移动端aside标签样式 */
+    .wrap-side-operation {
+        right: 10px
+    }
     /* 移动端返回顶部按钮点击样式 */
     .jump-container:hover .icon-back {
         background: #ccc
@@ -44,21 +44,21 @@
 
     .jump-container:active .icon-back {
         background: rgba(36,193,246,.9)
-	}
+    }
     /* 移动端目录样式优化 */
-	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
-		max-height: 350px;
-		font-size: smaller
-	}
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
+        max-height: 60vh;
+        font-size: smaller
+    }
     /* 一级目录不换行 */
-	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc>li {
-		white-space: nowrap
-	}
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc>li {
+        white-space: nowrap
+    }
 
-	.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
-		white-space: normal
-	}
-	/* 修改结束 */
+    .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
+        white-space: normal
+    }
+    /* 修改结束 */
     /* 添加.tools-col.show */
     .tools-col,.tools-col.show {
         left: -300px;
@@ -76,10 +76,10 @@
     .tools-col .tools-section .search-wrap,.tools-col .tools-section .search-wrap .search-ipt {
         width: 280px
     }
-	/* 修改移动端所有文章显示标签按钮样式 */
-	.tools-col .tools-section .search-tag.tagcloud,.tools-col .tools-wrap .search-tag.tagcloud {
-		margin-right: -28px
-	}
+    /* 修改移动端所有文章显示标签按钮样式 */
+    .tools-col .tools-section .search-tag.tagcloud,.tools-col .tools-wrap .search-tag.tagcloud {
+        margin-right: -28px
+    }
 
     .tools-col .tools-section .search-ul .search-li,.tools-col .tools-wrap .search-ul .search-li {
         padding: 5px 20px
@@ -480,8 +480,8 @@
         display: block;
         color: #a0a0a0
     }
-	/* 头部a标签添加点击样式 */
-	.header-menu li a.active,.header-menu li a:active {
+    /* 头部a标签添加点击样式 */
+    .header-menu li a.active,.header-menu li a:active {
         color: #eaeaea;
         background: #a0a0a0
     }

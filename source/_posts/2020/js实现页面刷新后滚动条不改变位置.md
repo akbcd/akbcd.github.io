@@ -2,10 +2,12 @@
 title: js实现页面刷新后滚动条不改变位置
 date: 2020-11-13 15:13:13
 tags: [html,js]
+updated: 2022-05-28
 ---
 最近浏览原神米游社，发现页面重新进入后页面浏览位置没有改变，上网查询了一些资料，在自己博客主题上实现了这个功能，在此分享一下
 <!--more-->
 在网上查询的资料中得知，此功能可以通过js实现，在页面关闭或刷新时，调用window.onbeforeunload函数将当前页面滚动条的滚动高度存储在当前页面的cookie中，页面载入时，读取当前页面cookie中存储的滚动条高度，跳转到对应的位置，以下是源码
+**20220528更新：添加判断记录位置是否为0**
 ```js
 window.onbeforeunload = function(){
     var scrollPos;    
@@ -26,8 +28,11 @@ window.onload = function()
 { 
     if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
         var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
-        document.documentElement.scrollTop=parseInt(arr[1]);
-        document.body.scrollTop=parseInt(arr[1]);
+        // 大于0时跳转至上次记录位置
+        if(parseInt(arr[1]) > 0){
+          document.documentElement.scrollTop=parseInt(arr[1]);
+          document.body.scrollTop=parseInt(arr[1]);
+        }
     }
 }
 ```
@@ -49,10 +54,13 @@ if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
   }
   $(document).ready(function(){//建议使用：$(window).on('load',function(){...})
     if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
-        var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+      var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+      // 大于0时跳转至上次记录位置
+      if(parseInt(arr[1]) > 0){
         $('#container').scrollTop(parseInt(arr[1]));
         document.documentElement.scrollTop=parseInt(arr[1]);
         document.body.scrollTop=parseInt(arr[1]);
+      }
     }
   })
 }

@@ -343,9 +343,12 @@
         window.addEventListener("load",function(){ 
             if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
                 const arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
-                $container.scrollTop=arr[1];
-                document.documentElement.scrollTop=parseInt(arr[1]);
-                document.body.scrollTop=parseInt(arr[1]);
+                // 大于0时跳转至上次记录位置
+                if(parseInt(arr[1]) > 0){
+                    $container.scrollTop=parseInt(arr[1]);
+                    document.documentElement.scrollTop=parseInt(arr[1]);
+                    document.body.scrollTop=parseInt(arr[1]);
+                }
             }
         });
     };
