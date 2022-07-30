@@ -1,7 +1,8 @@
 ---
 title: hexo4.0遇到的问题
 date: 2019-10-20 09:36:40
-tags: [hexo,博客]
+tags: [博客,hexo]
+categories: [笔记]
 toc: true
 ---
 **Hexo 4.0.0 Released**已于2019年10月14日更新。

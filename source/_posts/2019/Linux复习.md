@@ -1,7 +1,8 @@
 ---
 title: Linux复习
 date: 2019-12-09 09:17:37
-tags: linux
+tags: [linux,大学]
+excerpt: false
 ---
 鸟哥的Linux私房菜 基础学习篇（第四版）
 Linux的内核版本（p47~p48）
@@ -12,7 +13,6 @@ Linux的内核版本（p47~p48）
 奇数、偶数版本分类
 主、次版本为奇数：开发中版本（development）
 主、次版本为偶数：稳定版本（stable）
-<!--more-->
 重点回顾（p146）
 ```
 在X Window 的环境下想要强制启动X的组合按键为：[Alt]+[Ctrl]+[Backspace]；

@@ -1,8 +1,9 @@
 ---
 title: mybatis
 date: 2019-12-22 12:11:04
-tags: [mybatis框架,文献]
+tags: [mybatis]
 toc: true
+excerpt: false
 ---
 ## jdbc连接数据库存在的问题
 数据库链接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库链接池可解决此问题。
@@ -12,7 +13,6 @@ Sql语句在代码中硬编码，造成代码不易维护，实际应用sql变�
 使用preparedStatement向占有位符号传参数存在硬编码，因为sql语句的where条件不一定，可能多也可能少，修改sql还要修改代码，系统不易维护。
 
 对结果集解析存在硬编码（查询列名），sql变化导致解析代码变化，系统不易维护，如果能将数据库记录封装成pojo对象解析比较方便。
-<!--more-->
 ## mybatis介绍
 MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis，实质上Mybatis对ibatis进行一些改进。 
 

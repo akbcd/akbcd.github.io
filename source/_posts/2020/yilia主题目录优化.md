@@ -1,7 +1,7 @@
 ---
 title: yilia主题目录优化
 date: 2020-06-08 16:12:46
-tags: 博客
+tags: [博客,hexo]
 toc: true
 ---
 记得之前在[yilia主题常见问题及解决办法下](https://akbcd.github.io/2019/06/28/yilia主题常见问题及解决办法下/)文章中解决了移动端不显示目录的问题

@@ -2,6 +2,7 @@
 title: javascript读取txt文件
 date: 2020-04-18 14:59:12
 tags: js
+excerpt: false
 ---
 以下代码实现javascript读取txt文件打印到浏览器中
 ```js

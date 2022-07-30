@@ -1,7 +1,7 @@
 ---
 title: Windows11安卓子系统(Windows Subsystem for Android)安装及使用教程
 date: 2021-10-24 09:06:08
-tags: [软件安装,教程,经验]
+tags: [教程]
 toc: true
 ---
 随着Windows11上Android™应用程序的第一个预览版现已提供给美国Beta频道的Windows内部人员，windows11发布会上所说的安卓子系统来啦。

@@ -1,7 +1,8 @@
 ---
 title: eclipse安装与测试
 date: 2020-04-24 06:59:35
-tags: [软件安装,教程,经验]
+tags: 教程
+categories: [笔记]
 ---
 本篇文章记录eclipse安装方法以及常用的一些配置
 <!--more-->

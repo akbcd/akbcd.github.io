@@ -1,7 +1,7 @@
 ---
 title: springMVC
 date: 2020-05-22 20:36:36
-tags: [springMVC,文献]
+tags: [springMVC]
 toc: true
 ---
 本篇文章对springMVC进行简单介绍

@@ -1,7 +1,7 @@
 ---
 title: jsdelivr加速博客静态资源
 date: 2020-06-10 06:48:20
-tags: 博客
+tags: [博客,hexo]
 updated: 2022-05-25
 toc: true
 ---

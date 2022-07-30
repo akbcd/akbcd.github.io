@@ -1,7 +1,7 @@
 ---
 title: yilia主题添加valine评论
 date: 2020-04-22 09:24:59
-tags: 博客
+tags: [博客,hexo]
 toc: true
 ---
 本篇文章介绍yilia主题添加valine评论的方法

@@ -1,7 +1,7 @@
 ---
 title: markdown基本语法（GITHUB+HEXO搭建的博客）
 date: 2018-10-28 21:22:43
-tags: 博客
+tags: [博客,hexo]
 toc: true
 updated: 2022-05-26
 ---

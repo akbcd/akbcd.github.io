@@ -1,7 +1,7 @@
 ---
 title: VM虚拟机错误提示
 date: 2019-10-25 21:42:24
-tags: vm虚拟机
+tags: vm
 ---
 Windows10运行虚拟机出现错误提示
 VMware workstations 与 Device/credential guard不兼容。在禁用Device/ Credential Guard后，可以运行VMware Workstation
