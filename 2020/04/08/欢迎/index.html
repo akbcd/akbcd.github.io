@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width">
   <title>欢迎 | akbcd博客</title>
   <meta name="keywords" content="欢迎, akbcd">
-  <meta name="description" content="欢迎访问akbcd博客您可以点击所有文章中的搜索图标进行关键字搜索">
+  <meta name="description" content="欢迎访问akbcd博客您可以点击所有文章中的搜索图标进行关键字搜索 使用国际版leancloud的valine评论，中国大陆已无法使用，现已关闭。考虑使用waline，到时出个教程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欢迎">
 <meta property="og:url" content="https://akbcd.github.io/2020/04/08/%E6%AC%A2%E8%BF%8E/index.html">
 <meta property="og:site_name" content="akbcd博客">
-<meta property="og:description" content="欢迎访问akbcd博客您可以点击所有文章中的搜索图标进行关键字搜索">
+<meta property="og:description" content="欢迎访问akbcd博客您可以点击所有文章中的搜索图标进行关键字搜索 使用国际版leancloud的valine评论，中国大陆已无法使用，现已关闭。考虑使用waline，到时出个教程。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-08T01:41:54.000Z">
 <meta property="article:modified_time" content="2020-04-08T01:41:54.000Z">
@@ -262,10 +262,8 @@
       
       <div style="color: #999">
         
-        <span><i class="icon-wordcount icon"></i> 字数 4.5k</span>
+        <span><i class="icon-wordcount icon"></i> 字数 4.6k</span>
         
-        
-        <span id="/2020/04/08/%E6%AC%A2%E8%BF%8E/" class="leancloud_visitors" data-flag-title="欢迎"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
         
       </div>
       
@@ -277,6 +275,7 @@
       <div class="article-content">
         
           <p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
+<p>使用国际版leancloud的valine评论，中国大陆已无法使用，现已关闭。<br>考虑使用waline，到时出个教程。</p>
 <span id="more"></span>
 <p>以下内容为博客yilia主题的操作日志<br>20220730</p>
 <ul>
@@ -730,65 +729,6 @@
 
 
 
-  
-  <style>
-  /* 适配yilia主题 */
-  #valine {
-    padding: 0 30px;
-  }
-  #valine .vwrap{
-    border: 1px solid #c8c8c8;
-  }
-  #valine .vwrap .vheader input,#valine .vcard{
-    border-bottom: 1px dashed #c8c8c8;
-  }
-  #valine .vwrap button,#valine .vmore{
-    background: #c8c8c8;
-  }
-  @media screen and (max-width: 800px) {
-    #valine{
-      padding: 0 10px;
-    }
-  }
-</style>
-<div id="valine"></div>
-<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: '#valine',
-    appId: 'FAX8iOQDT0xrYlb5p5BEqFWi-MdYXbMMI',
-    appKey: 'qYcotaoPdIdFlVcOoNr8GAle',
-    placeholder: '说说你的看法，上限500字。',
-    avatar: 'mp',
-    pageSize: '10',
-    lang: 'zh-CN',
-    visitor: ("localhost" != document.domain)?true:false,
-    highlight: 'true' === 'true',
-    recordIp: 'false' === 'true',
-    enableQQ: 'true' === 'true',
-    serverURLs: 'https://fax8ioqd.api.lncldglobal.com'
-  });
-  document.getElementById('veditor').maxLength='500';
-  
-  // ADMIN_URL
-  var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-  if(engine!='1') {
-    fetch('https://quan.suning.com/getSysTime.do')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(date) {
-      var hours = new Date(date.sysTime2).getHours();
-      if(hours>7 && hours<23){
-        fetch('https://akbcd.avosapps.us/');
-        var exp = new Date(date.sysTime2);
-        exp.setTime(exp.getTime() + 20*60*1000);
-        document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
-      }
-    })
-  }
-  
-</script>
   
   
   

@@ -272,8 +272,6 @@ u=702257389,1274025419&fm=27&gp=0.jpg">
         <span><i class="icon-wordcount icon"></i> 字数 1.9k</span>
         
         
-        <span id="/2018/10/28/markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88GITHUB+HEXO%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%89/" class="leancloud_visitors" data-flag-title="markdown基本语法（GITHUB+HEXO搭建的博客）"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
-        
       </div>
       
     </header>
@@ -625,65 +623,6 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 
 
 
-  
-  <style>
-  /* 适配yilia主题 */
-  #valine {
-    padding: 0 30px;
-  }
-  #valine .vwrap{
-    border: 1px solid #c8c8c8;
-  }
-  #valine .vwrap .vheader input,#valine .vcard{
-    border-bottom: 1px dashed #c8c8c8;
-  }
-  #valine .vwrap button,#valine .vmore{
-    background: #c8c8c8;
-  }
-  @media screen and (max-width: 800px) {
-    #valine{
-      padding: 0 10px;
-    }
-  }
-</style>
-<div id="valine"></div>
-<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: '#valine',
-    appId: 'FAX8iOQDT0xrYlb5p5BEqFWi-MdYXbMMI',
-    appKey: 'qYcotaoPdIdFlVcOoNr8GAle',
-    placeholder: '说说你的看法，上限500字。',
-    avatar: 'mp',
-    pageSize: '10',
-    lang: 'zh-CN',
-    visitor: ("localhost" != document.domain)?true:false,
-    highlight: 'true' === 'true',
-    recordIp: 'false' === 'true',
-    enableQQ: 'true' === 'true',
-    serverURLs: 'https://fax8ioqd.api.lncldglobal.com'
-  });
-  document.getElementById('veditor').maxLength='500';
-  
-  // ADMIN_URL
-  var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-  if(engine!='1') {
-    fetch('https://quan.suning.com/getSysTime.do')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(date) {
-      var hours = new Date(date.sysTime2).getHours();
-      if(hours>7 && hours<23){
-        fetch('https://akbcd.avosapps.us/');
-        var exp = new Date(date.sysTime2);
-        exp.setTime(exp.getTime() + 20*60*1000);
-        document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
-      }
-    })
-  }
-  
-</script>
   
   
   

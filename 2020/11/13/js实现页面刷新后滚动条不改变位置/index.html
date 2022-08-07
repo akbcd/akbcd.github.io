@@ -267,8 +267,6 @@
         <span><i class="icon-wordcount icon"></i> 字数 856</span>
         
         
-        <span id="/2020/11/13/js%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E5%90%8E%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%B8%8D%E6%94%B9%E5%8F%98%E4%BD%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="js实现页面刷新后滚动条不改变位置"> | <i class="icon-yueduliang icon"></i> 当前页访问次数 <i class="leancloud-visitors-count"></i></span>
-        
       </div>
       
     </header>
@@ -441,65 +439,6 @@
 
 
 
-  
-  <style>
-  /* 适配yilia主题 */
-  #valine {
-    padding: 0 30px;
-  }
-  #valine .vwrap{
-    border: 1px solid #c8c8c8;
-  }
-  #valine .vwrap .vheader input,#valine .vcard{
-    border-bottom: 1px dashed #c8c8c8;
-  }
-  #valine .vwrap button,#valine .vmore{
-    background: #c8c8c8;
-  }
-  @media screen and (max-width: 800px) {
-    #valine{
-      padding: 0 10px;
-    }
-  }
-</style>
-<div id="valine"></div>
-<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: '#valine',
-    appId: 'FAX8iOQDT0xrYlb5p5BEqFWi-MdYXbMMI',
-    appKey: 'qYcotaoPdIdFlVcOoNr8GAle',
-    placeholder: '说说你的看法，上限500字。',
-    avatar: 'mp',
-    pageSize: '10',
-    lang: 'zh-CN',
-    visitor: ("localhost" != document.domain)?true:false,
-    highlight: 'true' === 'true',
-    recordIp: 'false' === 'true',
-    enableQQ: 'true' === 'true',
-    serverURLs: 'https://fax8ioqd.api.lncldglobal.com'
-  });
-  document.getElementById('veditor').maxLength='500';
-  
-  // ADMIN_URL
-  var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-  if(engine!='1') {
-    fetch('https://quan.suning.com/getSysTime.do')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(date) {
-      var hours = new Date(date.sysTime2).getHours();
-      if(hours>7 && hours<23){
-        fetch('https://akbcd.avosapps.us/');
-        var exp = new Date(date.sysTime2);
-        exp.setTime(exp.getTime() + 20*60*1000);
-        document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
-      }
-    })
-  }
-  
-</script>
   
   
   
