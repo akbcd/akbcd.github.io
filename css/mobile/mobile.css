@@ -327,6 +327,10 @@
         font-size: 16px
     }
 
+    #article-comments {
+        margin: 0 10px;
+    }
+
     #page-nav .extend {
         opacity: 1
     }

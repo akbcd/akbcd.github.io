@@ -1,0 +1,10 @@
+/* 适配yilia主题 */
+#valine .vwrap{
+    border: 1px solid #c8c8c8;
+}
+#valine .vwrap .vheader input,#valine .vcard{
+    border-bottom: 1px dashed #c8c8c8;
+}
+#valine .vwrap button,#valine .vmore{
+    background: #c8c8c8;
+}
