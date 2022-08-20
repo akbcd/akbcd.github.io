@@ -107,8 +107,8 @@ top: true
 clipboard: true
 
 # Miscellaneous 网站分析
-#baidu_analytics: ''
-#google_analytics: ''
+baidu_analytics: false
+google_analytics: false
 
 # 网页图标
 favicon: 
@@ -234,7 +234,7 @@ verifyPassword:
 # 是否开启分享
 share_jia: true
 
-# 评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment
+# 评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment；6、waline
 # 不需要使用某项，直接设置值为false，或注释掉
 # 想要关闭某篇文章的评论，请在文章对应的md文件中添加'comments: false'属性即可
 # 具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
@@ -246,7 +246,7 @@ valine:
   enable: false
   appId: 
   appKey: 
-  placeholder: '说说你的看法，上限500字。' # 评论框占位提示符
+  placeholder: '说说你的看法。' # 评论框占位提示符
   maxLength: 500 # 评论框允许输入的最大字符数
   avatar: 'mp' # Gravatar style : ''/mp/identicon/monsterid/wavatar/retro/robohash/hide
   pageSize: 10 # 评论列表分页
@@ -254,8 +254,9 @@ valine:
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
-  ADMIN_URL: https://xxx/ # Web主机二级域名，若没有请设为false
+  ADMIN_URL: false # Web主机二级域名，若没有请设为false
   serverURLs: https://xxx # REST API 服务器地址
+valine_css: /css/valine/valine.css
 valine_js: //unpkg.com/valine@latest/dist/Valine.min.js
 
 # 2、gitalk
@@ -274,7 +275,7 @@ gitalk_js: //unpkg.com/gitalk@latest/dist/gitalk.min.js
 changyan_appid: false
 changyan_conf: false
 
-# 4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+# 4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的（中国大陆无法使用）
 disqus: false
 
 # 5、Gitment
@@ -283,6 +284,21 @@ gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
+
+# 6、waline 参考官网：https://waline.js.org
+# 字符串类型请手动添加引号
+waline:
+  enable: false
+  serverURL: https://xxx.vercel.app/ # 服务端的地址
+  meta: "'nick','mail','link'" # 评论者相关属性。字符串类型，可选值:'nick','mail','link'
+  requiredMeta: "" # # 匿名选项。字符串类型，空为允许匿名。可选值:'nick','mail'
+  login: enable # 登录模式状态，可选值：'enable'，'disable'，'force'
+  wordLimit: 0 # 评论字数限制。填入单个数字时为最大字数限制。设置为0时无限制。
+  pageSize: 10 # 评论列表分页，每页条数。
+  copyright: true # 是否显示页脚版权信息。
+  placeholder: '请留言。(填写邮箱可在被回复时收到邮件提醒)' # 评论框占位提示符（js替换实现）
+waline_css: //unpkg.com/@waline/client@v2/dist/waline.css
+waline_js: //unpkg.com/@waline/client@v2/dist/waline.js
 
 # 前端库
 # Front-end libraries

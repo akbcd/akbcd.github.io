@@ -1,15 +1,9 @@
 <% if (theme.music && theme.aplayer.enable || theme.music && theme.mobile_aplayer.enable) { %>
 <%# aplayer #%>
 <script src="<%- theme.js.aplayer %>"></script>
-<% } %>
-<% if (theme.music && site.data && site.data.musics) { %>
+<% } if (theme.music && site.data && site.data.musics) { %>
 <% var audiosJson = JSON.stringify(site.data.musics); %>
 <div class="music-player">
-  <style>
-    #aplayer ::-webkit-scrollbar-button,#aplayer ::-webkit-scrollbar-track{
-      display: none;
-    }
-  </style>
   <% if (theme.aplayer.showTitle.enable && !theme.aplayer.fixed) { %>
   <div class="title">
   <%- theme.aplayer.showTitle.title %>

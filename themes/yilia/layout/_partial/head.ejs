@@ -30,11 +30,9 @@
   <% if (theme.jsdelivr.enable){ %>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <% } %>
-  <% if (theme.rss){ %>
+  <% } if (theme.rss){ %>
   <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-  <% } %>
-  <% if (theme.favicon){ %>
+  <% } if (theme.favicon){ %>
   <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <%- partial('css') %>

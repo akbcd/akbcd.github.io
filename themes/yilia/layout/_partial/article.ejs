@@ -10,10 +10,10 @@
       <% if (!index){ %>
       <div style="color: #999">
         <% if ((theme.wordcount === 1 && post.wordcount) || theme.wordcount === 2){ %>
-        <span><i class="icon-wordcount icon"></i> <%- _p('wordcount') %> <%= wordcount(post.content) %></span>
+        <span><i class="icon-wordcount icon"></i>&nbsp;<%- _p('wordcount') %>&nbsp;<%= wordcount(post.content) %>&nbsp;</span>
         <% } %>
         <% if(post.comments && theme.valine.enable && theme.valine.visitor){ %>
-        <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"> | <i class="icon-yueduliang icon"></i> <%- _p('leancloud_visitors') %> <i class="leancloud-visitors-count"></i></span>
+        <span id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>"><i class="icon-yueduliang icon"></i>&nbsp;<%- _p('leancloud_visitors') %>&nbsp;<i class="leancloud-visitors-count"></i>&nbsp;</span>
         <% } %>
       </div>
       <% } %>
@@ -100,6 +100,7 @@
 
 
 <% if (!index && post.comments){ %>
+  <div id="article-comments">
   <% if (theme.valine && theme.valine.enable){ %>
   <%- partial('post/valine', {
       key: post.slug,
@@ -149,4 +150,13 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
+
+  <% if (theme.waline && theme.waline.enable){ %>
+  <%- partial('post/waline', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } %>
+  </div>
 <% } %>
