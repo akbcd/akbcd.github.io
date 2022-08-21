@@ -2291,12 +2291,13 @@ pre .css~* .id,pre .id {
 .article-entry pre code {
     font-size: 14px
 }
-
+/* 添加允许在长单词或URL地址内部进行换行 */
 .article-entry table {
     width: 100%;
     border: 1px solid #dedede;
     margin: 15px 0;
-    border-collapse: collapse
+    border-collapse: collapse;
+    word-break: break-word
 }
 
 .article-entry table td,.article-entry table tr {

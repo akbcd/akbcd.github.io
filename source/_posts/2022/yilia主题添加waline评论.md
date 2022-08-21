@@ -98,7 +98,7 @@ waline:
 waline_css: https://unpkg.com/@waline/client@v2/dist/waline.css
 waline_js: https://unpkg.com/@waline/client@v2/dist/waline.js
 ```
-4. 将主题配置文件` yilia\_config.yml `中的` waline.enable `设为` true `，将 Vercel 服务端填入` waline.serverURL `后，启用本地hexo服务，评论服务此时就会在你的网站上成功运行，**看到评论下发的文字` 来发评论吧~ `表明配置成功**。
+4. 将主题配置文件` yilia\_config.yml `中的` waline.enable `设为` true `，将 Vercel 服务端填入` waline.serverURL `后，启用本地hexo服务，评论服务此时就会在你的网站上成功运行，**看到评论下方的文字` 来发评论吧~ `表明配置成功**。
 
 ## 评论管理 (管理端)
 1. 部署完成后，请访问` <serverURL>/ui/register `进行注册。首个注册的人会被设定成管理员。
@@ -114,7 +114,7 @@ git仓库主入口配置：git仓库waline模板中的` index.js `文件
 >如果你使用模板，请额外注意你需要自行保存这些配置，因为它们会在拉取官方最新模板时被覆盖。
 
 在这里列举出来我用的环境变量，包括邮件通知提醒，安全域名等。
-注意：不包括 **Vercel 部署 (服务端)** 第四步用到的环境变量，这是必须配置的环境变脸
+注意：不包括 **Vercel 部署 (服务端)** 第四步用到的环境变量，用到的环境变量是必须配置的，这里不再说明
 
 |变量|示例|说明|
 |:-|:-|:-|
