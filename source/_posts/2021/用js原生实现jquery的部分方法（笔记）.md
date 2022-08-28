@@ -1,6 +1,7 @@
 ---
 title: 用js原生实现jquery的部分方法（笔记）
 date: 2021-01-17 17:25:43
+updated: 2022-08-28
 tags: js
 ---
 在这里记录一下自己用原生js实现jquery的部分方法，算是jquery转js吧
@@ -51,7 +52,7 @@ function getElementTop(element){
       current=current.offsetParent;
     }
     return actualTop;
-  }
+}
 ```
 jquery中有一个position()方法，这个还没有整清楚如何实现，所以主题中目录优化部分还是没有去除jquery
 6. `$('body,html').animate({scrollTop: scrollOffset.top-50},1000);`
@@ -155,4 +156,15 @@ fetch(path)
     ```
     document可以更换为已经获取的元素，需要注意的点与querySelector() 方法相同。
 
-最后，截至目前，本主题只剩1个功能还需要jquery，这个有点难度。
+~最后，截至目前，本主题只剩1个功能还需要jquery，这个有点难度。~
+13. `$(name).position().top`
+```js
+function getPositionTop(element){
+    // 相对于窗口的位置
+    const activeTop = element.getBoundingClientRect().top;
+    // 最近祖先元素相对于窗口的位置
+    const activeParentTop = element.offsetParent.getBoundingClientRect().top;
+    return activeTop-activeParentTop;
+}
+```
+貌似可以使用`offsetTop`来替换`getBoundingClientRect().top`，可以自行尝试是否满足自己的需求

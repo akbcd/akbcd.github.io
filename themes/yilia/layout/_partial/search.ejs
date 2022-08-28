@@ -14,19 +14,9 @@
     })
   </script>
   <script src="<%- theme.js.search %>"></script>
-  <% if (theme.jsdelivr.enable){ %>
-  <script>
-    if ("localhost" != document.domain){
-      searchFunc("//cdn.jsdelivr.net/gh/" + "<%- theme.jsdelivr.name %>" + "/" + "<%- theme.jsdelivr.repository %>" +"/" + "search.xml", 'js-searchInput', 'js-searchResult');
-    } else {
-      searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-    }
-  </script>
-  <% } else { %>
   <script>
     searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
   </script>
-  <% } %>
 </div>
 <div id="js-modal-overlay"></div>
 <% } %>

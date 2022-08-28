@@ -99,11 +99,9 @@ baidu_analytics: false
 google_analytics: false
 
 # 网页图标
-# favicon: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 favicon: /img/avatar.png
 
 # 你的头像url
-# avatar: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/img/avatar.png
 avatar: /img/avatar.png
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
@@ -141,7 +139,6 @@ friends:
   GitHub加速下载工具: http://tool.mkblog.cn/github/
   LeanCloud国际版: https://leancloud.app/
   LeanCloud评论管理: https://akbcd.avosapps.us/
-  # jsDelivr: https://www.jsdelivr.com/
   在线动画 动漫下载 - AGE动漫: https://www.age.tv/
   hexo-theme-matery主题: https://github.com/blinkfox/hexo-theme-matery
 
@@ -154,9 +151,9 @@ friends:
 excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
-# 数学公式
+# 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
+# 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行
 mathjax: false
-# 数学公式用到的js文件
 mathjax_js: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
@@ -174,7 +171,6 @@ alipay:
 weixin: 
 
 # 目录
-# 引入jquery，可实现动态目录与页面锚点平滑滚动
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
 toc: 1
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
@@ -182,7 +178,7 @@ toc_hide_index: true
 # 目录为空时的提示
 toc_empty_wording: '目录，不存在的…'
 # anchor 目录锚点url
-# 当您在文章中滚动时，URL将根据标头ID进行更新，依赖jquery
+# 当您在文章中滚动时，URL将根据标头ID进行更新
 anchor: true
 
 # 字数统计
@@ -228,14 +224,6 @@ verifyPassword:
   enable: true
   promptMessage: 请输入访问本文章的密码
   errorMessage: 密码错误，将返回主页！
-
-# jsdelivr加速（中国大陆无法使用）
-# 通过jsdelivr加速github托管的博客静态资源（视频、音乐、图片）
-# 仅适用于文章页的audio、img、video标签和全局搜索的search.xml文件
-jsdelivr:
-  enable: false
-  name: akbcd #github用户名
-  repository: akbcd.github.io #仓库名
 
 # 是否开启分享
 share_jia: true
@@ -313,27 +301,6 @@ waline_js: //unpkg.com/@waline/client@v2/dist/waline.js
 # 发布使用加载速度快，本地调试使用便于阅读
 # 修改请先在本地调试修改，完成后压缩放置发布使用
 
-# 加速使用
-
-# css:
-#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/main.min.css
-#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/css/mobile/mobile.min.css
-#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css
-#   photoswipe_default_skin: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css
-#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #1.10.1
-# js:
-#   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js #3.5.0
-#   search: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/search/search.min.js
-#   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #1.9.1
-#   crypto_js: https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js #4.0.0
-#   photoswipe: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
-#   photoswipe_ui_default: https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
-#   scrollProgress: https://cdn.jsdelivr.net/npm/scrollprogress@3.0.2/dist/scrollProgress.min.js #3.0.2
-#   mobile: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/mobile/mobile.min.js
-#   main: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/main.min.js
-#   clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
-#   slider: https://cdn.jsdelivr.net/gh/akbcd/akbcd.github.io/js/slider.min.js
-
 # 发布使用
 
 css:
@@ -343,7 +310,6 @@ css:
   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
   aplayer: /css/APlayer/APlayer.min.css #1.10.1
 js:
-  jquery: /js/jquery/jquery.min.js #3.5.1
   search: /js/search/search.min.js
   aplayer: /js/APlayer/APlayer.min.js #1.9.1
   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
@@ -364,7 +330,6 @@ js:
 #   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
 #   aplayer: /css/APlayer/APlayer.min.css #1.10.1
 # js:
-#   jquery: /js/jquery/jquery.min.js #3.5.1
 #   search: /js/search/search.js
 #   aplayer: /js/APlayer/APlayer.min.js #1.9.1
 #   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1

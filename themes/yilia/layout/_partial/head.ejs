@@ -27,10 +27,7 @@
   <meta name="keywords" content="<%= keyWords %>">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <link rel="dns-prefetch" href="<%= config.url %>">
-  <% if (theme.jsdelivr.enable){ %>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <% } if (theme.rss){ %>
+  <% if (theme.rss){ %>
   <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } if (theme.favicon){ %>
   <link rel="icon" href="<%- theme.favicon %>">
@@ -43,7 +40,6 @@
   </style>
   <%- partial('google-analytics') %>
   <%- partial('baidu-analytics') %>
-  <script src="<%- theme.js.jquery %>"></script>
   <script>
     var yiliaConfig = {
       mathjax: <%=theme.mathjax ? true : false%>,

@@ -2,8 +2,11 @@
 title: yilia主题添加waline评论
 date: 2022-08-20 18:10:33
 tags: [博客,hexo]
+updated: 2022-08-26
 toc: true
 ---
+**2022年8月26日起，`*.vercel.app`在中国大陆内已遭受DNS污染**
+怎么说好呢，前脚刚把valine切到waline，后脚waline的部署vercel便遭到污染，绝了（只好再次观望）。
 一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务
 8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。
 自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。

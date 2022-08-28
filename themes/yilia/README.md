@@ -156,9 +156,9 @@ aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
-# 数学公式
+# 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
+# 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行
 mathjax: false
-# 数学公式用到的js文件
 mathjax_js: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
@@ -176,7 +176,6 @@ alipay:
 weixin: 
 
 # 目录
-# 引入jquery，可实现动态目录与页面锚点平滑滚动
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
 toc: 1
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
@@ -184,7 +183,7 @@ toc_hide_index: true
 # 目录为空时的提示
 toc_empty_wording: '目录，不存在的…'
 # anchor 目录锚点url
-# 当您在文章中滚动时，URL将根据标头ID进行更新，依赖jquery
+# 当您在文章中滚动时，URL将根据标头ID进行更新
 anchor: true
 
 # 字数统计
@@ -316,7 +315,6 @@ css:
   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
   aplayer: /css/APlayer/APlayer.min.css #1.10.1
 js:
-  jquery: /js/jquery/jquery.min.js #3.5.1
   search: /js/search/search.min.js
   aplayer: /js/APlayer/APlayer.min.js #1.9.1
   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
@@ -337,7 +335,6 @@ js:
 #   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
 #   aplayer: /css/APlayer/APlayer.min.css #1.10.1
 # js:
-#   jquery: /js/jquery/jquery.min.js #3.5.1
 #   search: /js/search/search.js
 #   aplayer: /js/APlayer/APlayer.min.js #1.9.1
 #   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
