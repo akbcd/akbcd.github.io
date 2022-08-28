@@ -43,7 +43,6 @@
   
 
   
-  <script src="/js/jquery/jquery.min.js"></script>
   <script>
     var yiliaConfig = {
       mathjax: false,
@@ -79,11 +78,9 @@
     })
   </script>
   <script src="/js/search/search.min.js"></script>
-  
   <script>
     searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
   </script>
-  
 </div>
 <div id="js-modal-overlay"></div>
 
@@ -276,7 +273,6 @@
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;jquery-3.3.1.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;d1&quot;</span>&gt;</span>想问沙漠借一个红线<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;d2&quot;</span>&gt;</span>缝件披风为你御寒<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.用js获得html里面所有div对象</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> jsdiv = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;div&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//2 让其内容全部修改为 用丝绸去润泽你的肌肤</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;jsdiv.<span class="property">length</span>;i++)&#123;</span></span><br><span class="line"><span class="language-javascript">        jsdiv[i].<span class="property">innerHTML</span>=<span class="string">&quot;用丝绸去润泽你的肌肤&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// js转为jq进行修改</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// js转为jq语法：$(js对象)</span></span></span><br><span class="line"><span class="language-javascript">        $(jsdiv[i]).<span class="title function_">html</span>(<span class="string">&quot;我就在火炉边为你取暖&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 内容即修改为 我就在火炉边为你取暖</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 通过jq的方法获得div元素</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 内容全修改为 想问姻缘借一根红线</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> jqdiv = $(<span class="string">&quot;div&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    jqdiv.<span class="title function_">html</span>(<span class="string">&quot;想问姻缘借一根红线&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// jq转js</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 语法：jq对象[索引] 或者 jq对象.get[索引]</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 全部修改为深埋生命血脉相连</span></span></span><br><span class="line"><span class="language-javascript">    jqdiv[<span class="number">0</span>].<span class="property">innerHTML</span>=<span class="string">&quot;深埋生命血脉相连&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    jqdiv[<span class="number">1</span>].<span class="property">innerHTML</span>=<span class="string">&quot;深埋生命血脉相连&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
       </div>
-      
       
 
   
@@ -554,10 +550,6 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
@@ -566,7 +558,7 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">sql</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -574,15 +566,19 @@
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color4">sql</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">笔记</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">

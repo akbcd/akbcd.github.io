@@ -44,7 +44,6 @@
   
 
   
-  <script src="/js/jquery/jquery.min.js"></script>
   <script>
     var yiliaConfig = {
       mathjax: false,
@@ -80,11 +79,9 @@
     })
   </script>
   <script src="/js/search/search.min.js"></script>
-  
   <script>
     searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
   </script>
-  
 </div>
 <div id="js-modal-overlay"></div>
 
@@ -318,7 +315,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var key in document.getElementById(&quot;js-content&quot;).getElementsByTagName(&quot;img&quot;)) &#123;</span><br><span class="line">    if (isNaN(key)) break;</span><br><span class="line">    // 避免重复替换出错，替换前，如果有替换后的字符串，先还原</span><br><span class="line">    document.getElementById(&quot;js-content&quot;).getElementsByTagName(&quot;img&quot;)[key].src = document.getElementById(&quot;js-content&quot;).getElementsByTagName(&quot;img&quot;)[key].src.replace(&quot;cdn.jsdelivr.net/gh/&quot; + name + &quot;/&quot; + repository,document.domain);</span><br><span class="line">    // 还原后，重新替换</span><br><span class="line">    document.getElementById(&quot;js-content&quot;).getElementsByTagName(&quot;img&quot;)[key].src = document.getElementById(&quot;js-content&quot;).getElementsByTagName(&quot;img&quot;)[key].src.replace(document.domain, &quot;cdn.jsdelivr.net/gh/&quot; + name + &quot;/&quot; + repository);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
-      
       
 
   
@@ -612,10 +608,6 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
@@ -624,7 +616,7 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">sql</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -632,15 +624,19 @@
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color4">sql</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">笔记</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">

@@ -2647,9 +2647,17 @@ pre .css~* .id,pre .id {
     color: #fff
 }
 /* 动态目录 */
-.toc-container.tooltip-left .tooltip-east .tooltip-content .active {
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-item.active .toc-child {
+    display: block
+}
+
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-item .toc-child {
+    display: none
+}
+
+.toc-container.tooltip-left .tooltip-east .tooltip-content .toc-link.active {
     font-weight: bold;
-    color: red;
+    color: red
 }
 /* 添加z-index: -1; */
 .toc-container.tooltip-left .tooltip-east .tooltip-content:after {

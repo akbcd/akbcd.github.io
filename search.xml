@@ -5,8 +5,19 @@
     <url>/2020/04/08/%E6%AC%A2%E8%BF%8E/</url>
     <content><![CDATA[<p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <span id="more"></span>
-<p>以下内容为博客yilia主题的操作日志<br>20220820~20220821</p>
+<p>以下内容为博客yilia主题的操作日志</p>
+<h2 id="20220828"><a href="#20220828" class="headerlink" title="20220828"></a>20220828</h2><p>这次的更新可以说是很有意义：主题使用的jquery去掉了</p>
 <ul>
+<li>yilia主题<ul>
+<li>目录优化（去jQuery）</li>
+<li>目录相关样式修改（css）</li>
+<li>删除jsdelivr相关代码</li>
+<li>mathjax判断逻辑修改（全局开启的前提下，仍需要在渲染的文章的Front-matter中再加上<code>mathjax: true</code>才行）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="20220820-20220821"><a href="#20220820-20220821" class="headerlink" title="20220820~20220821"></a>20220820~20220821</h2><ul>
 <li>yilia主题<ul>
 <li>添加waline评论</li>
 <li>代码规范性修改：<code>div</code>中引入的<code>style</code>标签统一移入到<code>head</code>标签中</li>
@@ -16,8 +27,7 @@
 </li>
 </ul>
 <hr>
-<p>20220730</p>
-<ul>
+<h2 id="20220730"><a href="#20220730" class="headerlink" title="20220730"></a>20220730</h2><ul>
 <li>yilia主题<ul>
 <li><code>category.ejs</code> 修改，删除url多余的<code>/</code></li>
 <li>主题配置文件 <code>_config.yml</code> 布局修改</li>
@@ -26,8 +36,7 @@
 </ul>
 <p>LeanCloud国际版发邮件说：8月1日起关闭国际共享域名对中国大陆的服务，先观察一下</p>
 <hr>
-<p>20220526~20220601</p>
-<ul>
+<h2 id="20220526-20220601"><a href="#20220526-20220601" class="headerlink" title="20220526~20220601"></a>20220526~20220601</h2><ul>
 <li>20220601<ul>
 <li>更新文章转载html结构</li>
 </ul>
@@ -52,8 +61,7 @@
 <p>因排序问题，改成了浏览器默认的，简单调了一下样式：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 有序标签样式 */</span></span><br><span class="line"><span class="selector-class">.article-entry</span> <span class="selector-tag">ol</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: decimal;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>20220504~20220509</p>
-<ul>
+<h2 id="20220504-20220509"><a href="#20220504-20220509" class="headerlink" title="20220504~20220509"></a>20220504~20220509</h2><ul>
 <li>yilia主题<ul>
 <li>修复文章页jsdelivr加速可能出现的错误</li>
 <li>button标签追加属性：type=”button”</li>
@@ -62,8 +70,7 @@
 </ul>
 <p>如果文章页引用的静态资源（视频、音乐、图片）已经手动通过jsdelivr加速，则开启jsdelivr加速时，会遇到错误。</p>
 <hr>
-<p>20220430</p>
-<ul>
+<h2 id="20220430"><a href="#20220430" class="headerlink" title="20220430"></a>20220430</h2><ul>
 <li>yilia主题<ul>
 <li>source/js/min文件夹删除</li>
 <li>修复pc页面aplayer播放器文字居中显示</li>
@@ -72,8 +79,7 @@
 </ul>
 <p>此次删除min文件夹只是为了简化压缩js，因为大多数js、css压缩工具的默认输出路径均为当前路径。</p>
 <hr>
-<p>2022年4月10日</p>
-<ul>
+<h2 id="2022年4月10日"><a href="#2022年4月10日" class="headerlink" title="2022年4月10日"></a>2022年4月10日</h2><ul>
 <li>yilia主题<ul>
 <li>基于valine上的长评论，添加评论框字数限制500。</li>
 <li>隐藏了火狐浏览器点击所有文章时所出现的滚动条，与webkit内核浏览器保持一致。</li>
@@ -81,8 +87,7 @@
 </li>
 </ul>
 <hr>
-<p>2022年3月5日</p>
-<ul>
+<h2 id="2022年3月5日"><a href="#2022年3月5日" class="headerlink" title="2022年3月5日"></a>2022年3月5日</h2><ul>
 <li>yilia主题<ul>
 <li>解决浏览器控制台：<code>id attribute value must be unique</code> 的问题，涉及id如下：<br><code>article-content</code>、<code>header</code>、<code>js-jump-container</code>、<code>js-btn-copy</code><br>关联js和css已做修改</li>
 <li>解决主题在归档、随笔等页面不显示返回顶部按钮的问题，点击所有文章后右边页面颜色没有正常改变的问题</li>
@@ -95,8 +100,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 如果不是文章页，只导入返回顶部按钮 --&gt;</span></span><br><span class="line">&lt;% if (!(is_post()) &amp;&amp; theme.top)&#123; %&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;wrap-side-operation&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mod-side-operation&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;jump-container&quot;</span> <span class="attr">id</span>=<span class="string">&quot;js-jump-container&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span> <span class="attr">class</span>=<span class="string">&quot;mod-side-operation__jump-to-top&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon-font icon-back&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 文章页，保持原有导入不变 --&gt;</span></span><br><span class="line">&lt;% &#125; else if (!index)&#123; %&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;wrap-side-operation&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mod-side-operation&quot;</span>&gt;</span></span><br><span class="line">    &lt;% if (theme.top)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;jump-container&quot;</span> <span class="attr">id</span>=<span class="string">&quot;js-jump-container&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span> <span class="attr">class</span>=<span class="string">&quot;mod-side-operation__jump-to-top&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;icon-font icon-back&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">    &lt;% if (!index &amp;&amp; ((theme.toc === 1 &amp;&amp; post.toc) || theme.toc === 2))&#123; %&gt;</span><br><span class="line">      &lt;%- partial(&#x27;post/toc&#x27;) %&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>header不唯一的问题，将id=”header”更改为class=”header-inner”，对应了很多css，将<code>#header</code>替换为<code>.header-inner</code>即可。查询影响时，发现了一个主题没有使用的ejs文件：header.ejs，已经删除。<br>对于js-btn-copy，这个是我自己后加的功能，当时考虑不够全面，解决方法就是直接更改为class，同步修改css和js。<br>对于点击所有文章后右边页面颜色没有正常改变的问题，这个是无意中发现的，增加了css的样式设定。</p>
 <hr>
-<p>2022年2月13日</p>
-<ul>
+<h2 id="2022年2月13日"><a href="#2022年2月13日" class="headerlink" title="2022年2月13日"></a>2022年2月13日</h2><ul>
 <li>yilia主题<ul>
 <li>对主题部分样式进行微调</li>
 </ul>
@@ -104,8 +108,7 @@
 </ul>
 <p>补充：<br>本次改动的css集中在main.css和mobile.css文件。<br>main.css中，移除了不支持的属性：<code>color: highlight-comment</code>，共计两个位置。<code>*vertical-align: auto</code>和<code>*display: inline</code>一并被删除，这应该是之前就注释掉的属性。<br>其次就是样式微调，涉及的部分是所有文章弹出之后的样式。<br>css选择器<code>.tools-col.show</code>中添加width属性，pc为360px，mobile为300px。<br><code>.tools-col .tools-section,.tools-col .tools-wrap</code>中删除width: 360px。<br><code>.article-header</code>修改padding-left: 7.6923% =&gt; 6.8709%，显示结果表现为文章标题与文章内容对其显示。<br>至于mobile.css中，只是将<code>.tools-col</code>改为<code>.tools-col,.tools-col.show</code>，实现mobile的300px。<br>这次的更改源自于浏览器控制台的警告，改着改着便发现了之前存在的问题。</p>
 <hr>
-<p>2021年12月12日</p>
-<ul>
+<h2 id="2021年12月12日"><a href="#2021年12月12日" class="headerlink" title="2021年12月12日"></a>2021年12月12日</h2><ul>
 <li>yilia主题js文件修改【main.js】、【slider.js】<ul>
 <li>修改js获取网页宽度代码：<code>window.screen.width&lt;800</code> =&gt; <code>document.body.clientWidth&lt;=800</code></li>
 <li>修改js判断浏览器是否为移动端：<code>mobile: !!u.match(/AppleWebKit.*Mobile.*/)</code> =&gt; <code>mobile: !!u.match(/Mobile/)</code></li>
@@ -113,8 +116,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年11月7日</p>
-<ul>
+<h2 id="2021年11月7日"><a href="#2021年11月7日" class="headerlink" title="2021年11月7日"></a>2021年11月7日</h2><ul>
 <li>yilia主题<ul>
 <li>更改主题样式文件，将mobile端样式放置mobile文件夹中</li>
 <li>删除【clipboard.css】，内容拆分至mobile.css和main.css中</li>
@@ -123,8 +125,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年10月30日</p>
-<ul>
+<h2 id="2021年10月30日"><a href="#2021年10月30日" class="headerlink" title="2021年10月30日"></a>2021年10月30日</h2><ul>
 <li>yilia主题<ul>
 <li>优化【slider.js】，将photoswipe（图片查看器）相关js放置指定路径下，不再与slider.js集成</li>
 <li>删除【script.js】，将其内容拆分至【mobile.js】和【main.js】</li>
@@ -133,8 +134,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年9月18日</p>
-<ul>
+<h2 id="2021年9月18日"><a href="#2021年9月18日" class="headerlink" title="2021年9月18日"></a>2021年9月18日</h2><ul>
 <li>yilia主题<ul>
 <li>参考yilia主题<a href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5">《Yilia源码目录结构及构建须知》</a>，重新整理了一下主题所用到的js文件，主要有如下变化：<br>【main.js】实现：返回顶部、分享、新窗口打开、目录序号、about me 转义<br>【mobile.js】实现：页面滚动动画（自适应）<br>【slider.js】实现：浏览器判断、图片查看器、气泡上浮动画等</li>
 <li>因为yilia主题使用webpack构建工具对源码进行打包压缩，发现里面出现很多无用代码，遂将无需打包代码抽出（main.js和mobile.js），将需要打包代码全部放置slider.js中。<br>结果就是：【main.js】和【mobile.js】文件体积大幅缩小，代码可读性提高；【slider.js】文件体积增大。</li>
@@ -142,16 +142,14 @@
 </li>
 </ul>
 <hr>
-<p>2021年8月29日</p>
-<ul>
+<h2 id="2021年8月29日"><a href="#2021年8月29日" class="headerlink" title="2021年8月29日"></a>2021年8月29日</h2><ul>
 <li>yilia主题<ul>
 <li>新增主题对文章 Front-Matter 菜单中的 <code>excerpt:</code> 设为 <code>false</code> 的支持，实现主题首页文章只显示标题不显示内容。<br>使用方法：在文章 Front-Matter 菜单中添加<code>excerpt: false</code><br>效果：主题首页对应文章只显示文章标题，不会显示文章具体内容，文章具体内容只在文章页显示。</li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>2021年8月7日</p>
-<ul>
+<h2 id="2021年8月7日"><a href="#2021年8月7日" class="headerlink" title="2021年8月7日"></a>2021年8月7日</h2><ul>
 <li>yilia主题<ul>
 <li>优化移动端浏览器UA（电脑）模式下的动画显示，不判断浏览器UA是否为mobile，移动端访问电脑版网页显示更好（页面布局）</li>
 <li>目录优化</li>
@@ -160,8 +158,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年5月20日</p>
-<ul>
+<h2 id="2021年5月20日"><a href="#2021年5月20日" class="headerlink" title="2021年5月20日"></a>2021年5月20日</h2><ul>
 <li>yilia主题引用代码修改<ul>
 <li>主题所用js文件全部放入js文件夹中</li>
 <li>js文件命名规范化：采用.js与.min.js命名，css文件命名同理</li>
@@ -173,8 +170,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年3月27日</p>
-<ul>
+<h2 id="2021年3月27日"><a href="#2021年3月27日" class="headerlink" title="2021年3月27日"></a>2021年3月27日</h2><ul>
 <li>yilia主题优化、修改<ul>
 <li>参考hexo官方文档，精简主题js、css引入方式，保留部分原始引用方式，前端注释修改为ejs注释</li>
 <li>对目录优化部分进行修改：在不引入jQuery的情况下，用js实现a标签锚点跳转，但无法实现动态目录</li>
@@ -182,8 +178,7 @@
 </li>
 </ul>
 <hr>
-<p>2021年3月22日</p>
-<ul>
+<h2 id="2021年3月22日"><a href="#2021年3月22日" class="headerlink" title="2021年3月22日"></a>2021年3月22日</h2><ul>
 <li>yilia主题优化、修改<ul>
 <li>修改全局搜索结果显示样式<br>css进行如下修改：<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*#js-searchResult新增如下属性</span></span><br><span class="line"><span class="comment">原#js-searchModal相关属性已移除*/</span></span><br><span class="line"><span class="selector-id">#js-searchResult</span> &#123;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">50vh</span>;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">60vh</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -191,15 +186,14 @@
 </li>
 </ul>
 <hr>
-<p>2021年2月12日</p>
-<ul>
+<h2 id="2021年2月12日"><a href="#2021年2月12日" class="headerlink" title="2021年2月12日"></a>2021年2月12日</h2><ul>
 <li>yilia主题优化、修改<ul>
 <li>优化主题返回顶部按钮显示逻辑<br>原效果：页面完全加载后，滚动显示返回顶部按钮<br>现效果：不需要加载完毕，滚动显示返回顶部按钮</li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>2020年12月29日<br>本想把目录优化部分的代码用原生js实现一下，但是发现有些难度。</p>
+<h2 id="2020年12月29日"><a href="#2020年12月29日" class="headerlink" title="2020年12月29日"></a>2020年12月29日</h2><p>本想把目录优化部分的代码用原生js实现一下，但是发现有些难度。</p>
 <ul>
 <li>yilia主题优化、修改：<ul>
 <li>解决hexo5.0之前版本中文动态目录可能失效的问题</li>
@@ -207,8 +201,7 @@
 </li>
 </ul>
 <hr>
-<p>2020年12月6日</p>
-<ul>
+<h2 id="2020年12月6日"><a href="#2020年12月6日" class="headerlink" title="2020年12月6日"></a>2020年12月6日</h2><ul>
 <li>yilia主题优化、新增：<ul>
 <li>优化<ul>
 <li>版权声明，参考 <a href="https://blinkfox.github.io/">闪烁之狐</a> 主题文章版权声明   </li>
@@ -231,8 +224,7 @@
 </li>
 </ul>
 <hr>
-<p>2020年11月13日</p>
-<ul>
+<h2 id="2020年11月13日"><a href="#2020年11月13日" class="headerlink" title="2020年11月13日"></a>2020年11月13日</h2><ul>
 <li>yilia主题优化、修改：<ul>
 <li>新增记录文章页面浏览位置功能，刷新页面或重新进入文章页面时，页面自动跳转到上次浏览位置<ul>
 <li>此功能需要浏览器允许cookie</li>
@@ -245,16 +237,14 @@
 </li>
 </ul>
 <hr>
-<p>2020年11月3日</p>
-<ul>
+<h2 id="2020年11月3日"><a href="#2020年11月3日" class="headerlink" title="2020年11月3日"></a>2020年11月3日</h2><ul>
 <li>yilia主题优化、修改：<ul>
 <li>解决浏览器屏蔽网站引用的第三方js导致文章加密功能失效问题</li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>2020年10月11日</p>
-<ul>
+<h2 id="2020年10月11日"><a href="#2020年10月11日" class="headerlink" title="2020年10月11日"></a>2020年10月11日</h2><ul>
 <li>yilia主题优化、修改：<ul>
 <li>修复移动端所有文章搜索框长度溢出问题<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.tools-col .tools-section .search-wrap,.tools-col .tools-wrap .search-wrap &#123;</span><br><span class="line">    width: 280px</span><br><span class="line">&#125;</span><br><span class="line">/* 修改为 */</span><br><span class="line">.tools-col .tools-section .search-wrap,.tools-col .tools-section .search-wrap .search-ipt &#123;</span><br><span class="line">    width: 280px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -262,24 +252,21 @@
 </li>
 </ul>
 <hr>
-<p><del>2020年9月23日</del></p>
-<ul>
+<h2 id="2020年9月23日"><a href="#2020年9月23日" class="headerlink" title="2020年9月23日"></a><del>2020年9月23日</del></h2><ul>
 <li><del>yilia主题新增：</del><ul>
 <li><del>版权提示（参考简书移动端页面）</del></li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>2020年9月15日</p>
-<ul>
+<h2 id="2020年9月15日"><a href="#2020年9月15日" class="headerlink" title="2020年9月15日"></a>2020年9月15日</h2><ul>
 <li>yilia主题优化、修改：<ul>
 <li>mobile端适配优化（火狐浏览器）</li>
 </ul>
 </li>
 </ul>
 <hr>
-<p>2020年9月7日</p>
-<ul>
+<h2 id="2020年9月7日"><a href="#2020年9月7日" class="headerlink" title="2020年9月7日"></a>2020年9月7日</h2><ul>
 <li>yilia主题优化、修改：<ul>
 <li>新增主题对文章 Front-Matter 中的 <code>layout:</code> 设为 <code>false</code> 的支持。 </li>
 <li>是否在新窗口打开链接 <code>open_in_new:</code> 设为 <code>true</code> 已生效，文章在新标签页打开。</li>
@@ -287,8 +274,7 @@
 </li>
 </ul>
 <hr>
-<p>2020年8月23日、2020年8月24日</p>
-<ul>
+<h2 id="2020年8月23日、2020年8月24日"><a href="#2020年8月23日、2020年8月24日" class="headerlink" title="2020年8月23日、2020年8月24日"></a>2020年8月23日、2020年8月24日</h2><ul>
 <li>hexo5.0较之前版本增加了部分属性，可以对比站点配置文件<ul>
 <li>external_link添加enable属性，升级hexo5.0启动hexo服务会有提示</li>
 <li>升级hexo5.0版本建议更新hexo站点配置文件_config.yml</li>
@@ -312,42 +298,42 @@
 </li>
 </ul>
 <hr>
-<p>2020年6月19日<br>新建文章：<strong>大型数据库应用复习</strong>，可以在所有文章中查看<br>修改aplayer播放器preload预加载属性配置，已更新到<strong>yilia主题进阶配置</strong>页面</p>
+<h2 id="2020年6月19日"><a href="#2020年6月19日" class="headerlink" title="2020年6月19日"></a>2020年6月19日</h2><p>新建文章：<strong>大型数据库应用复习</strong>，可以在所有文章中查看<br>修改aplayer播放器preload预加载属性配置，已更新到<strong>yilia主题进阶配置</strong>页面</p>
 <hr>
-<p>2020年6月10日<br>新建文章：<a href="https://akbcd.github.io/2020/06/10/jsdelivr%E5%8A%A0%E9%80%9F%E5%8D%9A%E5%AE%A2%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">jsdelivr加速博客静态资源</a></p>
+<h2 id="2020年6月10日"><a href="#2020年6月10日" class="headerlink" title="2020年6月10日"></a>2020年6月10日</h2><p>新建文章：<a href="https://akbcd.github.io/2020/06/10/jsdelivr%E5%8A%A0%E9%80%9F%E5%8D%9A%E5%AE%A2%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">jsdelivr加速博客静态资源</a></p>
 <hr>
-<p>2020年6月8日<br>这次对主题语言进行优化，减少之前代码，切换语言直接应用到主题<br>切换语言需要重启本地服务生效</p>
+<h2 id="2020年6月8日"><a href="#2020年6月8日" class="headerlink" title="2020年6月8日"></a>2020年6月8日</h2><p>这次对主题语言进行优化，减少之前代码，切换语言直接应用到主题<br>切换语言需要重启本地服务生效</p>
 <p>文章：<a href="https://akbcd.github.io/2020/06/08/yilia%E4%B8%BB%E9%A2%98%E7%9B%AE%E5%BD%95%E4%BC%98%E5%8C%96/">yilia主题目录优化</a></p>
 <hr>
-<p>2020年6月6日<br>1.删除返回顶部中的jump-plan-container和矢量图标，删除无用代码<br>css文件</p>
+<h2 id="2020年6月6日"><a href="#2020年6月6日" class="headerlink" title="2020年6月6日"></a>2020年6月6日</h2><p>1.删除返回顶部中的jump-plan-container和矢量图标，删除无用代码<br>css文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 删除jump-plan-container样式 */</span><br><span class="line">/* .jump-plan-container &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: -11px;</span><br><span class="line">    left: -4px;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 61px;</span><br><span class="line">    overflow: hidden</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.jump-plan-container .jump-plane &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 42px;</span><br><span class="line">    height: 66px;</span><br><span class="line">    -webkit-transform: translateY(68px);</span><br><span class="line">    transform: translateY(68px);</span><br><span class="line">    left: -2px</span><br><span class="line">&#125; */</span><br><span class="line"></span><br><span class="line">/* 删除icon-plane */</span><br><span class="line">/* .icon-plane:before &#123;</span><br><span class="line">    content: &quot;\e67e&quot;;</span><br><span class="line">&#125; */</span><br><span class="line"></span><br><span class="line">/* 删除icon-plane */</span><br><span class="line">/* .wrap-side-operation .icon-plane &#123;</span><br><span class="line">    color: #fff;</span><br><span class="line">    text-shadow: 1px 1px 1px #509eb7;</span><br><span class="line">    opacity: .7;</span><br><span class="line">    font-size: 52px;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    width: 40px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    display: block</span><br><span class="line">&#125; */</span><br><span class="line">/* 删除.icon-back:hover样式 */</span><br><span class="line">/* .mod-side-operation__jump-to-top .icon-back:hover &#123;</span><br><span class="line">    background: #24c1f6;</span><br><span class="line">    color: #24c1f6</span><br><span class="line">&#125; */</span><br></pre></td></tr></table></figure>
 <p>aside.ejs文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;js-jump-plan-container&quot; class=&quot;jump-plan-container&quot; style=&quot;top: -11px;&quot;&gt;</span><br><span class="line">    &lt;i class=&quot;icon-font icon-plane jump-plane&quot;&gt;&lt;/i&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>2.重新添加主题需要矢量图标，共计36个</p>
 <hr>
-<p>2020年6月3日<br>近期对主题做了一些改动，主要就是文章目录优化（js实现目录跳转），目录内容移至<code>themes\yilia\layout\_partial\post\toc.ejs</code>中<br>记录一下如何在页面显示目录（非鼠标悬停显示，只适用于本主题）<br>1.注释<code>.tooltip-left .tooltip-content</code>样式中的<code>opacity: 0;</code><br>2.将<code>.toc-container.tooltip-left .tooltip:hover .tooltip-content</code>中的<code>:hover</code>去掉<br>3.在<code>.tooltip-left .tooltip:hover .tooltip-content</code>中只保留<code>pointer-events: auto</code></p>
+<h2 id="2020年6月3日"><a href="#2020年6月3日" class="headerlink" title="2020年6月3日"></a>2020年6月3日</h2><p>近期对主题做了一些改动，主要就是文章目录优化（js实现目录跳转），目录内容移至<code>themes\yilia\layout\_partial\post\toc.ejs</code>中<br>记录一下如何在页面显示目录（非鼠标悬停显示，只适用于本主题）<br>1.注释<code>.tooltip-left .tooltip-content</code>样式中的<code>opacity: 0;</code><br>2.将<code>.toc-container.tooltip-left .tooltip:hover .tooltip-content</code>中的<code>:hover</code>去掉<br>3.在<code>.tooltip-left .tooltip:hover .tooltip-content</code>中只保留<code>pointer-events: auto</code></p>
 <p>简单优化了valine评论中文章阅读量统计问题，已在相应的页面进行了说明</p>
 <hr>
-<p>2020年5月23日<br>文章<a href="https://akbcd.github.io/2020/05/22/springMVC/">springMVC</a></p>
+<h2 id="2020年5月23日"><a href="#2020年5月23日" class="headerlink" title="2020年5月23日"></a>2020年5月23日</h2><p>文章<a href="https://akbcd.github.io/2020/05/22/springMVC/">springMVC</a></p>
 <p>重置iconfont矢量图标，删除主题自带矢量图标，删除<code>yilia/source/fonts/</code>下的4个文件：<br>iconfont.8c627f.woff<br>iconfont.16acc2.ttf<br>iconfont.45d7ee.svg<br>iconfont.b322fa.eot<br>删除不需要的矢量图标，添加主题需要的矢量图标共计37个。</p>
 <hr>
-<p>2020年5月19日<br>在<a href="https://akbcd.github.io/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">yilia主题添加valine评论</a>文章中添加<strong>使用valine评论的文章阅读量统计功能</strong>，本主题已应用<br>修改<a href="https://akbcd.github.io/2019/10/14/yilia%E4%B8%BB%E9%A2%98%E8%BF%9B%E9%98%B6%E9%85%8D%E7%BD%AE/">yilia主题进阶配置</a>中<strong>添加字数功能</strong>和<strong>文章更新时间</strong>内容，与本主题保持一致</p>
+<h2 id="2020年5月19日"><a href="#2020年5月19日" class="headerlink" title="2020年5月19日"></a>2020年5月19日</h2><p>在<a href="https://akbcd.github.io/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">yilia主题添加valine评论</a>文章中添加<strong>使用valine评论的文章阅读量统计功能</strong>，本主题已应用<br>修改<a href="https://akbcd.github.io/2019/10/14/yilia%E4%B8%BB%E9%A2%98%E8%BF%9B%E9%98%B6%E9%85%8D%E7%BD%AE/">yilia主题进阶配置</a>中<strong>添加字数功能</strong>和<strong>文章更新时间</strong>内容，与本主题保持一致</p>
 <hr>
-<p>2020年5月14日<br>新建文章：<a href="https://akbcd.github.io/2020/05/07/%E5%BE%AE%E8%BD%AF%E6%96%B0%E6%97%A7Micrpsoft-Edge%E6%B5%8F%E8%A7%88%E5%99%A8/">微软新旧Micrpsoft Edge浏览器</a><br>简单讲解了新旧Edge浏览器发生了哪些变化</p>
+<h2 id="2020年5月14日"><a href="#2020年5月14日" class="headerlink" title="2020年5月14日"></a>2020年5月14日</h2><p>新建文章：<a href="https://akbcd.github.io/2020/05/07/%E5%BE%AE%E8%BD%AF%E6%96%B0%E6%97%A7Micrpsoft-Edge%E6%B5%8F%E8%A7%88%E5%99%A8/">微软新旧Micrpsoft Edge浏览器</a><br>简单讲解了新旧Edge浏览器发生了哪些变化</p>
 <hr>
-<p>2020年5月5日<br>优化主题样式，针对p标签和img标签定向优化，缩小和增加容器之间的距离</p>
+<h2 id="2020年5月5日"><a href="#2020年5月5日" class="headerlink" title="2020年5月5日"></a>2020年5月5日</h2><p>优化主题样式，针对p标签和img标签定向优化，缩小和增加容器之间的距离</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 文章p标签下的img标签优化，删除之前.article img样式 */</span><br><span class="line">.article p img &#123;</span><br><span class="line">    max-width: 100%;</span><br><span class="line">    margin: 10px 0</span><br><span class="line">&#125;</span><br><span class="line">/* bottom外边距优化，将1.75em改为10px */</span><br><span class="line">.article-inner p &#123;</span><br><span class="line">    margin: 0 0 10px</span><br><span class="line">&#125;</span><br><span class="line">/* 移动端美化文章结束样式，与pc页面同步，将30px修改为20px */</span><br><span class="line">.article .article-entry &#123;</span><br><span class="line">    padding: 10px 0 20px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>添加文章：<a href="https://akbcd.github.io/2020/05/04/%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEGitHub%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">电脑无法访问GitHub解决办法</a></p>
 <hr>
-<p>2020年4月24日<br>创建<a href="https://akbcd.github.io/2020/04/24/eclipse%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/">eclipse安装与测试</a>文章，记录如何使用eclipse</p>
+<h2 id="2020年4月24日"><a href="#2020年4月24日" class="headerlink" title="2020年4月24日"></a>2020年4月24日</h2><p>创建<a href="https://akbcd.github.io/2020/04/24/eclipse%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B5%8B%E8%AF%95/">eclipse安装与测试</a>文章，记录如何使用eclipse</p>
 <hr>
-<p>2020年4月23日<br>对valine评论进行了一些更新，同步到相应文章。valine评论新增了<code>enableQQ</code>配置，在昵称框输入QQ号发表评论，会自动获取QQ头像和昵称<br>valine评论<code>v1.4.7+ </code>出现<code>Code 98 </code>提示是已知Bug，官方将在下个版本更新。手动解决，删除引用的<code>av-min.js</code></p>
+<h2 id="2020年4月23日"><a href="#2020年4月23日" class="headerlink" title="2020年4月23日"></a>2020年4月23日</h2><p>对valine评论进行了一些更新，同步到相应文章。valine评论新增了<code>enableQQ</code>配置，在昵称框输入QQ号发表评论，会自动获取QQ头像和昵称<br>valine评论<code>v1.4.7+ </code>出现<code>Code 98 </code>提示是已知Bug，官方将在下个版本更新。手动解决，删除引用的<code>av-min.js</code></p>
 <hr>
-<p>2020年4月21日<br>更新mathjax为version 3<br>添加valine评论：<a href="https://akbcd.github.io/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">yilia主题添加valine评论</a></p>
+<h2 id="2020年4月21日"><a href="#2020年4月21日" class="headerlink" title="2020年4月21日"></a>2020年4月21日</h2><p>更新mathjax为version 3<br>添加valine评论：<a href="https://akbcd.github.io/2020/04/22/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA/">yilia主题添加valine评论</a></p>
 <hr>
-<p>2020年4月18日<br>修改aplayer播放器版本为1.9.1，修复部分浏览器锚点跳转失效<br>更换前端库的cdn地址为jsdelivr以增加访问速度<br>创建电视直播源分享文章，m3u8格式的源，理论上适用于所有带有自定义直播源的TV应用<br>根据创建电视直播源分享文章的需求，记录了javascript读取txt文件的方法<br>对yilia主题进阶配置文章的部分内容进行了更新修改（没有添加新功能）</p>
+<h2 id="2020年4月18日"><a href="#2020年4月18日" class="headerlink" title="2020年4月18日"></a>2020年4月18日</h2><p>修改aplayer播放器版本为1.9.1，修复部分浏览器锚点跳转失效<br>更换前端库的cdn地址为jsdelivr以增加访问速度<br>创建电视直播源分享文章，m3u8格式的源，理论上适用于所有带有自定义直播源的TV应用<br>根据创建电视直播源分享文章的需求，记录了javascript读取txt文件的方法<br>对yilia主题进阶配置文章的部分内容进行了更新修改（没有添加新功能）</p>
 <hr>
-<p>2020年4月8日<br>近期GitHub一直在给我发送仓库安全警告邮件</p>
+<h2 id="2020年4月8日"><a href="#2020年4月8日" class="headerlink" title="2020年4月8日"></a>2020年4月8日</h2><p>近期GitHub一直在给我发送仓库安全警告邮件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-vh95-rmgr-6w4m (high severity) affects 1 repository: </span><br><span class="line"></span><br><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-6chw-6frg-f759 (moderate severity) affects 1 repository: </span><br><span class="line"></span><br><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-6c8f-qphg-qjgp (moderate severity) affects 1 repository: </span><br></pre></td></tr></table></figure>
 <p>总共发了三个邮件，都是属于仓库安全问题，GitHub官网有详细的解决办法，因为家中宽带无法访问GitHub，所以拖了很久<br>这次解决这个问题<br>添加了一个BT磁力搜索站点<br>添加关闭代码块复制配置<br>修复音乐播放器音乐失效以及友链部分链接失效</p>
 ]]></content>
@@ -355,7 +341,7 @@
   <entry>
     <title>yilia主题添加waline评论</title>
     <url>/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/</url>
-    <content><![CDATA[<p>一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务<br>8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。<br>自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。<br>在寻找其他评论的途中，再次关注了waline，并且开发者明确说：waline不受LeanCloud国际版共享域名不再向中国大陆提供服务的影响。<br>本篇文章由此而来~</p>
+    <content><![CDATA[<p><strong>2022年8月26日起，<code>*.vercel.app</code>在中国大陆内已遭受DNS污染</strong><br>怎么说好呢，前脚刚把valine切到waline，后脚waline的部署vercel便遭到污染，绝了（只好再次观望）。<br>一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务<br>8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。<br>自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。<br>在寻找其他评论的途中，再次关注了waline，并且开发者明确说：waline不受LeanCloud国际版共享域名不再向中国大陆提供服务的影响。<br>本篇文章由此而来~</p>
 <span id="more"></span>
 <h2 id="关于waline"><a href="#关于waline" class="headerlink" title="关于waline"></a>关于waline</h2><blockquote>
 <p>waline官方网站：<a href="https://waline.js.org/">https://waline.js.org/</a></p>
@@ -955,7 +941,7 @@ lrc: '今生你作伴 - 陈慧琳.lrc'
 <li><code>$(ele).html(value)</code><br>js实现：<code>ele.innerHTML=value</code></li>
 <li><code>$(ele).mouseout(function()&#123;&#125;)</code><br>js：<code>ele.onmouseout=function()&#123;&#125;</code><br>对应的，jq的<code>$(ele).mouseover(function()&#123;&#125;)</code>也是这样实现</li>
 <li><code>$(&#39;.toc-child&#39;).hide();</code><br>这个可以用js封装函数实现<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">tocChild</span>(<span class="params">key,value</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> $toc_child=<span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&quot;toc-child&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;$toc_child.<span class="property">length</span>;i++)&#123;</span><br><span class="line">      $toc_child[i].<span class="property">style</span>.<span class="property">cssText</span>=key+<span class="string">&quot;:&quot;</span>+value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">tocChild</span>(<span class="string">&quot;display&quot;</span>,<span class="string">&quot;none&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><code>$(name).offset()</code><br>获取offset，js有name.offsetTop和name.offsetLeft方法<br>分享一个获取元素绝对位置的方法<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getElementTop</span>(<span class="params">element</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> actualTop=element.<span class="property">offsetTop</span>;</span><br><span class="line">    <span class="keyword">var</span> current=element.<span class="property">offsetParent</span>;</span><br><span class="line">    <span class="keyword">while</span>(current!==<span class="literal">null</span>)&#123;</span><br><span class="line">      actualTop+=current.<span class="property">offsetTop</span>;</span><br><span class="line">      current=current.<span class="property">offsetParent</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> actualTop;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<li><code>$(name).offset()</code><br>获取offset，js有name.offsetTop和name.offsetLeft方法<br>分享一个获取元素绝对位置的方法<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getElementTop</span>(<span class="params">element</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> actualTop=element.<span class="property">offsetTop</span>;</span><br><span class="line">    <span class="keyword">var</span> current=element.<span class="property">offsetParent</span>;</span><br><span class="line">    <span class="keyword">while</span>(current!==<span class="literal">null</span>)&#123;</span><br><span class="line">      actualTop+=current.<span class="property">offsetTop</span>;</span><br><span class="line">      current=current.<span class="property">offsetParent</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> actualTop;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 jquery中有一个position()方法，这个还没有整清楚如何实现，所以主题中目录优化部分还是没有去除jquery</li>
 <li><code>$(&#39;body,html&#39;).animate(&#123;scrollTop: scrollOffset.top-50&#125;,1000);</code><br>题目是jq封装的一个锚点跳转方法，也就是页面平滑滚动，这里分享一个js封装的方法，功能大致相同<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 页面平滑滚动</span></span><br><span class="line"><span class="keyword">var</span> timer=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">slideTo</span>(<span class="params">targetPageY,element</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    timer=<span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">//当前高度</span></span><br><span class="line">        <span class="keyword">var</span> scrollY=element.<span class="property">scrollTop</span>;</span><br><span class="line">        <span class="comment">//剩余距离</span></span><br><span class="line">        <span class="keyword">var</span> distance=targetPageY&gt;scrollY?targetPageY-<span class="attr">scrollY</span>:scrollY-targetPageY;</span><br><span class="line">        <span class="comment">//每时每刻速度</span></span><br><span class="line">        <span class="keyword">var</span> speed=<span class="title class_">Math</span>.<span class="title function_">ceil</span>(distance/<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">parseInt</span>(targetPageY)==<span class="built_in">parseInt</span>(scrollY))&#123;</span><br><span class="line">        <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        element.<span class="property">scrollTop</span>=targetPageY&gt;scrollY?scrollY+<span class="attr">speed</span>:scrollY-speed;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 传入两个参数targetPageY,element，其中：<br>targetPageY：滚动位置<br>element：滚动条所在容器<br>支持向上向下滚动，速度调节speed</li>
@@ -974,7 +960,9 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </ul>
 </li>
 </ol>
-<p>最后，截至目前，本主题只剩1个功能还需要jquery，这个有点难度。</p>
+<p><del>最后，截至目前，本主题只剩1个功能还需要jquery，这个有点难度。</del><br>13. <code>$(name).position().top</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getPositionTop</span>(<span class="params">element</span>)&#123;</span><br><span class="line">    <span class="comment">// 相对于窗口的位置</span></span><br><span class="line">    <span class="keyword">const</span> activeTop = element.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span>;</span><br><span class="line">    <span class="comment">// 最近祖先元素相对于窗口的位置</span></span><br><span class="line">    <span class="keyword">const</span> activeParentTop = element.<span class="property">offsetParent</span>.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span>;</span><br><span class="line">    <span class="keyword">return</span> activeTop-activeParentTop;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>貌似可以使用<code>offsetTop</code>来替换<code>getBoundingClientRect().top</code>，可以自行尝试是否满足自己的需求</p>
 ]]></content>
       <tags>
         <tag>js</tag>
@@ -1005,7 +993,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 <p>参考文献<br><a href="https://blog.csdn.net/csdnnews/article/details/82783675">GitHub：为什么我们最终选择放弃了 jQuery</a></p>
 <p>最后</p>
 <p>进行了一段时间，目前主题依然依赖jquery的功能有：<br>1.本地全局搜索<br>2.目录优化<br>3.代码块复制</p>
-<p>加油！</p>
+<p>加油！<br><strong>20220828更新：主题已经移除jquery</strong></p>
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -1683,7 +1671,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#120;&#x78;&#120;&#x78;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#120;&#x78;&#120;&#x78;&#120;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#x78;&#120;&#120;&#120;&#120;&#64;&#x71;&#113;&#46;&#x63;&#111;&#109;">&#120;&#x78;&#120;&#120;&#120;&#120;&#64;&#x71;&#113;&#46;&#x63;&#111;&#109;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -1698,7 +1686,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#120;&#120;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -5377,7 +5365,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>简写为<code>hexo s</code>，hexo本地服务启动后，在浏览器端输入localhost:4000即可查看效果<br>ctrl+c 可结束hexo本地服务（git窗口中有提示）<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h2 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h2><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，可以参看站点文章 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h3 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h3><p>登录github：<a href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private（私有的）</p>
-<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#117;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#108;&#64;&#x79;&#x6f;&#x75;&#114;&#x65;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#x79;&#111;&#117;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#108;&#64;&#x79;&#x6f;&#x75;&#114;&#x65;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></strong>为GitHub创建时用的邮箱</p>
+<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#x75;&#x72;&#95;&#x65;&#109;&#97;&#105;&#x6c;&#64;&#x79;&#111;&#117;&#114;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#111;&#x75;&#x72;&#95;&#x65;&#109;&#97;&#105;&#x6c;&#64;&#x79;&#111;&#117;&#114;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></strong>为GitHub创建时用的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>回车后出现如下提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
@@ -5446,7 +5434,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>部署部分的设置，下面有详细说明</p>
 <h2 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h2><p>用编译软件打开blog文件夹，在根目录中找到<code>_config.yml</code><br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#x75;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;">&#x79;&#111;&#x75;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h2 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h2><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——将本地生成的静态文件部署到网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h2 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h2><p>好的博客当然需要一个好的主题来衬托</p>

@@ -43,7 +43,6 @@
   
 
   
-  <script src="/js/jquery/jquery.min.js"></script>
   <script>
     var yiliaConfig = {
       mathjax: false,
@@ -79,11 +78,9 @@
     })
   </script>
   <script src="/js/search/search.min.js"></script>
-  
   <script>
     searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
   </script>
-  
 </div>
 <div id="js-modal-overlay"></div>
 
@@ -329,7 +326,6 @@
 <h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">复制所需jar包到工程lib目录下commons-io-2.3.jar</span><br><span class="line">在spring配置文件中加入如下代码</span><br><span class="line">&lt;bean id=&quot;multipartResolver&quot;</span><br><span class="line">        class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</span><br><span class="line">        &lt;!-- 设置编码 --&gt;</span><br><span class="line">        &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置上传文件总大小 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxUploadSize&quot; value=&quot;10240000&quot; /&gt;</span><br><span class="line">        &lt;!-- 设置单个上传文件大小 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxUploadSizePerFile&quot; value=&quot;102400&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建上传页面</span><br><span class="line">Method必须是post</span><br><span class="line">必须配置enctype的值为multipart/form-data</span><br><span class="line">&lt;form action=&quot;test/upload.action&quot; method=&quot;post&quot;</span><br><span class="line">        enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; name=&quot;uploadFile&quot; value=&quot;选择文件&quot; /&gt; </span><br><span class="line">        &lt;input type=&quot;submit&quot;value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">创建上传用的controller</span><br><span class="line">@RequestMapping(&quot;/upload.action&quot;)</span><br><span class="line">	public String upload(Model model,HttpSession session, MultipartFile uploadFile)</span><br><span class="line">            throws Exception &#123;</span><br><span class="line">		</span><br><span class="line">        String originalFilename = uploadFile.getOriginalFilename();</span><br><span class="line">        System.out.println(originalFilename);</span><br><span class="line">        </span><br><span class="line">        String name = originalFilename.substring(originalFilename.lastIndexOf(&quot;.&quot;));</span><br><span class="line">        UUID uuid = UUID.randomUUID();</span><br><span class="line">        String url = session.getServletContext().getRealPath(&quot;/upload/&quot;)+uuid+name;</span><br><span class="line">        System.out.println(uuid+name);</span><br><span class="line">        if (uploadFile.getSize() &gt; 0) &#123;</span><br><span class="line">                File realPath = new File(&quot;d:/&quot;,uuid+name);</span><br><span class="line">                System.out.println(realPath.getPath());</span><br><span class="line">                uploadFile.transferTo(realPath);</span><br><span class="line">            &#125;</span><br><span class="line">        model.addAttribute(&quot;url&quot;,uuid+name);</span><br><span class="line">        return &quot;/index.jsp&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
         
       </div>
-      
       
 
   
@@ -619,10 +615,6 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
@@ -631,7 +623,7 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">sql</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -639,15 +631,19 @@
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color4">sql</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">笔记</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">

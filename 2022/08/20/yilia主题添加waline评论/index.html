@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width">
   <title>yilia主题添加waline评论 | akbcd博客</title>
   <meta name="keywords" content="yilia主题添加waline评论, akbcd">
-  <meta name="description" content="一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。在寻找其他评论的途中，再次关注了waline，">
+  <meta name="description" content="2022年8月26日起，*.vercel.app在中国大陆内已遭受DNS污染怎么说好呢，前脚刚把valine切到waline，后脚waline的部署vercel便遭到污染，绝了（只好再次观望）。一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的val">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yilia主题添加waline评论">
 <meta property="og:url" content="https://akbcd.github.io/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/index.html">
 <meta property="og:site_name" content="akbcd博客">
-<meta property="og:description" content="一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。在寻找其他评论的途中，再次关注了waline，">
+<meta property="og:description" content="2022年8月26日起，*.vercel.app在中国大陆内已遭受DNS污染怎么说好呢，前脚刚把valine切到waline，后脚waline的部署vercel便遭到污染，绝了（只好再次观望）。一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的val">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://akbcd.github.io/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/1.png">
 <meta property="og:image" content="https://akbcd.github.io/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/2.png">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://akbcd.github.io/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/6.png">
 <meta property="og:image" content="https://akbcd.github.io/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/7.png">
 <meta property="article:published_time" content="2022-08-20T10:10:33.000Z">
-<meta property="article:modified_time" content="2022-08-20T10:10:33.000Z">
+<meta property="article:modified_time" content="2022-08-25T16:00:00.000Z">
 <meta property="article:author" content="akbcd">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="hexo">
@@ -52,7 +52,6 @@
   
 
   
-  <script src="/js/jquery/jquery.min.js"></script>
   <script>
     var yiliaConfig = {
       mathjax: false,
@@ -88,11 +87,9 @@
     })
   </script>
   <script src="/js/search/search.min.js"></script>
-  
   <script>
     searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
   </script>
-  
 </div>
 <div id="js-modal-overlay"></div>
 
@@ -261,12 +258,14 @@
       <a href="/2022/08/20/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0waline%E8%AF%84%E8%AE%BA/" class="archive-article-date">
   <time datetime="2022-08-20T10:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-20</time>
   
+  <time datetime="2022-08-25T16:00:00.000Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2022-08-26</time>
+  
 </a>
       
       
       <div style="color: #999">
         
-        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;2.9k&nbsp;</span>
+        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;3k&nbsp;</span>
         
         
       </div>
@@ -278,7 +277,7 @@
     <div class="article-entry" itemprop="articleBody">
       <div class="article-content">
         
-          <p>一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务<br>8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。<br>自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。<br>在寻找其他评论的途中，再次关注了waline，并且开发者明确说：waline不受LeanCloud国际版共享域名不再向中国大陆提供服务的影响。<br>本篇文章由此而来~</p>
+          <p><strong>2022年8月26日起，<code>*.vercel.app</code>在中国大陆内已遭受DNS污染</strong><br>怎么说好呢，前脚刚把valine切到waline，后脚waline的部署vercel便遭到污染，绝了（只好再次观望）。<br>一言难尽。2022年7月19日下午收到了LeanCloud的邮件：8月1日起，LeanCloud国际版共享域名不再向中国大陆提供服务<br>8月1日访问自己的博客，果然不出所料，使用LeanCloud国际版的valine无法使用了。<br>自己很早就听说了waline评论，但是当时valine已在使用中，云引擎休眠的问题也算是解决了（躺平），就没有再关注waline。<br>在寻找其他评论的途中，再次关注了waline，并且开发者明确说：waline不受LeanCloud国际版共享域名不再向中国大陆提供服务的影响。<br>本篇文章由此而来~</p>
 <span id="more"></span>
 <h2 id="关于waline"><a href="#关于waline" class="headerlink" title="关于waline"></a>关于waline</h2><blockquote>
 <p>waline官方网站：<a target="_blank" rel="noopener" href="https://waline.js.org/">https://waline.js.org/</a></p>
@@ -393,7 +392,6 @@
 
         
       </div>
-      
       
 
   
@@ -678,10 +676,6 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
@@ -690,7 +684,7 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">sql</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -698,15 +692,19 @@
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color4">sql</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">笔记</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">
