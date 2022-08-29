@@ -62,7 +62,7 @@
     display: none;
   }
 </style>
-<link rel="stylesheet" type="text/css" href="//unpkg.com/@waline/client@v2/dist/waline.css">
+
   <style type="text/css">
     #container.show,#js-searchModal {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
@@ -84,7 +84,7 @@
       root: "/",
       innerArchive: true,
       showTags: false,
-      anchor: true,
+      anchor: false,
       scrollPos: true
     }
   </script>
@@ -540,23 +540,6 @@
 
   
 
-  
-  <div id="waline"></div>
-<script src="//unpkg.com/@waline/client@v2/dist/waline.js"></script>
-<script>
-  Waline.init({
-    el: '#waline',
-    serverURL: 'https://waline-akbcd.vercel.app/',
-    lang: 'zh-CN',
-    meta: ['nick','mail','link'],
-    requiredMeta: [],
-    login: 'enable',
-    wordLimit: 0,
-    pageSize: 10,
-    copyright: 'true' === 'true'
-  });
-  document.getElementById('wl-edit').setAttribute("placeholder","请留言。(填写邮箱可在被回复时收到邮件提醒)");
-</script>
   
   </div>
 

@@ -208,8 +208,13 @@
             // 更新锚点url
             const isanchor = yiliaConfig.anchor;
             const updateAnchor = function (anchor) {
-                if (window.history.replaceState && anchor !== window.location.hash) {
-                    window.history.replaceState(null, null, anchor);
+                if (anchor !== window.location.hash) {
+                    if (!anchor) anchor = location.pathname;
+                    const title = document.title;
+                    window.history.replaceState({
+                        url: location.href,
+                        title: title
+                    }, title, anchor);
                 }
             };
             // 目录锚点跳转
@@ -259,22 +264,27 @@
                 }
             };
             // find head position & add active class
-            // DOM Hierarchy:
-            // ol.toc > (li.toc-item, ...)
-            // li.toc-item > (a.toc-link, ol.toc-child > (li.toc-item, ...))
+            const list = $article_content.querySelectorAll('h1,h2,h3,h4,h5,h6');
+            let detectItem = '';
             const findHeadPosition = function (top) {
             // assume that we are not in the post page if no TOC link be found,
             // thus no need to update the status
-                if ($toc_link.length === 0) {
+                if ($toc_link.length === 0 || top === 0 ) {
                     return false;
                 };
-                const list = $article_content.querySelectorAll('h1,h2,h3,h4,h5,h6');
                 let currentId = '';
-                list.forEach(function (ele) {
+                let currentIndex = '';
+                list.forEach(function (ele, index) {
                     if (top > getElementTop(ele)-10) {
-                        currentId = '#' + ele.getAttribute('id');
+                        const id = ele.id;
+                        currentId = id ? '#' + encodeURI(id) : '';
+                        currentIndex = index;
                     }
                 });
+                if (detectItem === currentIndex) return;
+                // 更新url
+                if (isanchor) updateAnchor(currentId);
+                detectItem = currentIndex;
                 //获取hexo版本号，兼容hexo低版本
                 const hexoVersion=(null!=document.querySelector('meta[name="generator"]'))?document.querySelector('meta[name="generator"]').getAttribute("content").substring(5,6):null;
                 const currentActive = $toc_article.querySelectorAll('.active');
@@ -283,17 +293,17 @@
                 };
                 // 文章滚动时
                 if (currentId && decodeURI(currentActive[0]!=null?currentActive[0].getAttribute('href'):null) !== currentId) {
-                    // 更新url
-                    if (isanchor) updateAnchor(currentId);
                     // 先移除目录所有active属性
                     $toc_article.querySelectorAll('.active').forEach(i => { i.classList.remove('active')});
                     // 获取文章滚动所到达的目录
-                    const _this=(null!=hexoVersion&&hexoVersion>=5)?
-                    document.querySelectorAll('.toc-link[href="'+encodeURI(currentId)+'"]')[0]:
-                    document.querySelectorAll('.toc-link[href="'+currentId+'"]')[0];
+                    // const _this=(null!=hexoVersion&&hexoVersion>=5)?
+                    // document.querySelectorAll('.toc-link[href="'+encodeURI(currentId)+'"]')[0]:
+                    // document.querySelectorAll('.toc-link[href="'+currentId+'"]')[0];
+                    const currentActive = $toc_link[currentIndex];
+                    //console.log(currentActive)
                     // 对当前目录节点及目录所在父级节点添加active属性
-                    _this.classList.add('active');
-                    let parent = _this.parentNode;
+                    currentActive.classList.add('active');
+                    let parent = currentActive.parentNode;
                     for (; !parent.matches('.toc'); parent = parent.parentNode) {
                         if (parent.matches('li')) parent.classList.add('active')
                     }
