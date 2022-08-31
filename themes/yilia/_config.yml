@@ -282,7 +282,7 @@ gitment_oauth:
 # 6、waline 参考官网：https://waline.js.org
 # 字符串类型请手动添加引号
 waline:
-  enable: true
+  enable: false
   serverURL: https://waline-akbcd.vercel.app/ # 服务端的地址
   meta: "'nick','mail','link'" # 评论者相关属性。字符串类型，可选值:'nick','mail','link'
   requiredMeta: "" # 匿名选项。字符串类型，空为允许匿名。可选值:'nick','mail'

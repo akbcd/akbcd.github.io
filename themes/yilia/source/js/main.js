@@ -5,7 +5,6 @@
     */
     const backTop = function (domE, ctn, distance) {
         if (!domE) return;
-        var timer = null;
         var _onscroll = window.onscroll,
             _onclick = domE.onclick;
         // pc
@@ -16,6 +15,7 @@
         // mobile
         window.onscroll = ctn.onscroll;
         domE.onclick = function () {
+            let timer = null;
             typeof _onclick === 'function' && _onclick.apply(this, arguments);
             timer = setInterval(function () { //设置一个计时器
                 var ct = ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop; //获取距离顶部的距离
@@ -35,7 +35,7 @@
             domE.style.display = (ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > distance ? 'block' : 'none';
         }
         function throttle(func, wait) {
-            var timer = null;
+            let timer = null;
             return function () {
                 var self = this, args = arguments;
                 if (timer) clearTimeout(timer);
@@ -184,17 +184,21 @@
         */
         if(yiliaConfig.isPost){
             if (!document.getElementsByClassName('toc-container')[0]) return;
-            // 目录序号
-            if (yiliaConfig && yiliaConfig.toc_hide_index) {
+            const $article_content=document.getElementsByClassName('article-content')[0];
+            const toc_hide_index = yiliaConfig.toc_hide_index;
+            const isanchor = yiliaConfig.anchor;
+            let $toc_link,$toc_article,autoScrollToc;
+            // 目录相关标签
+            $toc_link=document.getElementsByClassName("toc-link");
+            $toc_article=document.getElementsByClassName("toc-article")[0];
+            if (!$toc_link[0]) return;
+            // 隐藏目录序号
+            if (toc_hide_index) {
                 let $a = document.querySelectorAll(('.toc-number'));
                 $a.forEach(($em) => {
                     $em.style.display = 'none';
                 })
-            }
-            // 目录相关标签
-            const $toc_link=document.getElementsByClassName("toc-link");
-            const $article_content=document.getElementsByClassName('article-content')[0];
-            const $toc_article=document.getElementsByClassName("toc-article")[0];
+            };
             // 获取标签绝对位置
             function getElementTop(element){
                 let actualTop=element.offsetTop;
@@ -206,10 +210,14 @@
                 return actualTop;
             };
             // 更新锚点url
-            const isanchor = yiliaConfig.anchor;
             const updateAnchor = function (anchor) {
-                if (window.history.replaceState && anchor !== window.location.hash) {
-                    window.history.replaceState(null, null, anchor);
+                if (anchor !== window.location.hash) {
+                    if (!anchor) anchor = location.pathname;
+                    const title = document.title;
+                    window.history.replaceState({
+                        url: location.href,
+                        title: title
+                    }, title, anchor);
                 }
             };
             // 目录锚点跳转
@@ -218,98 +226,81 @@
                 const $name=document.getElementById(name.substring(1));
                 // 目标元素绝对位置
                 const scrollPositionTop = getElementTop($name);
-                if(window.scrollTo){
-                    // container平滑跳转
-                    $container.scrollTo({"behavior": "smooth", "top": document.body.clientWidth<=800?scrollPositionTop-50:scrollPositionTop});
-                    // mobile平滑跳转
-                    window.scrollTo({"behavior": "smooth", "top": scrollPositionTop-50});
-                }else{
-                    if (isanchor) updateAnchor(name);
-                    $container.scrollTop=scrollPositionTop;
-                    document.documentElement.scrollTop=scrollPositionTop-50;
-                    document.body.scrollTop=scrollPositionTop-50;
-                }
+                // container平滑跳转
+                $container.scrollTo({"behavior": "smooth", "top": document.body.clientWidth<=800?scrollPositionTop-50:scrollPositionTop});
+                // mobile平滑跳转
+                window.scrollTo({"behavior": "smooth", "top": scrollPositionTop-50});
             };
-            // 添加目录元素锚点跳转
-            for(let i in $toc_link){
-                $toc_link[i].onclick=function(e){
-                    e.preventDefault();
-                    toToc(decodeURI(this.getAttribute('href')));
-                };
-            };
+            // 目录元素点击跳转
+            $toc_article.addEventListener('click', e => {
+                e.preventDefault();
+                const target = e.target.classList;
+                if (target.contains('toc-article')||target.contains('toc-item')) return;
+                const $target = target.contains('toc-link')
+                    ? e.target
+                    : e.target.parentElement;
+                toToc(decodeURI($target.getAttribute('href')));
+            });
             // 目录滚动
-            const autoScrollToc = function () {
-                if (document.querySelector('.toc-link.active')) {
-                    // active相对于窗口的位置
-                    const activeTop = document.querySelector('.toc-link.active').getBoundingClientRect().top;
-                    // active最近祖先元素相对于窗口的位置
-                    const activeParentTop = document.querySelector('.toc-link.active').offsetParent.getBoundingClientRect().top;
-                    // active对于其定位的祖辈元素的位置（position().top）
-                    const activePosition = activeTop - activeParentTop;
-                    // 目录滚动位置
-                    const articleScrolltop =$toc_article.scrollTop;
-                    // 目录滚动
-                    if (activePosition > $toc_article.clientHeight-50) {
-                        $toc_article.scrollTop=articleScrolltop+150;
-                    }
-                    if (activePosition < 50) {
-                        $toc_article.scrollTop=articleScrolltop-150;
-                        if(activePosition<0)$toc_article.scrollTop=0;
-                    }
+            autoScrollToc = item => {
+                // active相对于窗口的位置
+                const activeTop = item.getBoundingClientRect().top;
+                // active最近祖先元素相对于窗口的位置
+                if (!item.offsetParent) return;
+                const activeParentTop = item.offsetParent.getBoundingClientRect().top;
+                // active对于其定位的祖辈元素的位置（position().top）
+                const activePosition = activeTop - activeParentTop;
+                // 目录滚动位置
+                const articleScrolltop =$toc_article.scrollTop;
+                // 目录滚动
+                if (activePosition > $toc_article.clientHeight-50) {
+                    $toc_article.scrollTop=articleScrolltop+150;
+                }
+                if (activePosition < 50) {
+                    $toc_article.scrollTop=articleScrolltop-150;
+                    if(activePosition<0)$toc_article.scrollTop=0;
                 }
             };
             // find head position & add active class
-            // DOM Hierarchy:
-            // ol.toc > (li.toc-item, ...)
-            // li.toc-item > (a.toc-link, ol.toc-child > (li.toc-item, ...))
+            const list = $article_content.querySelectorAll('h1,h2,h3,h4,h5,h6');
+            let detectItem = '';
             const findHeadPosition = function (top) {
-            // assume that we are not in the post page if no TOC link be found,
-            // thus no need to update the status
-                if ($toc_link.length === 0) {
-                    return false;
-                };
-                const list = $article_content.querySelectorAll('h1,h2,h3,h4,h5,h6');
+                if ( top === 0 ) return;
                 let currentId = '';
-                list.forEach(function (ele) {
+                let currentIndex = '';
+                list.forEach(function (ele, index) {
                     if (top > getElementTop(ele)-10) {
-                        currentId = '#' + ele.getAttribute('id');
+                        const id = ele.id;
+                        currentId = id ? '#' + encodeURI(id) : '';
+                        currentIndex = index;
                     }
                 });
-                //获取hexo版本号，兼容hexo低版本
-                const hexoVersion=(null!=document.querySelector('meta[name="generator"]'))?document.querySelector('meta[name="generator"]').getAttribute("content").substring(5,6):null;
-                const currentActive = $toc_article.querySelectorAll('.active');
-                if (currentId === '') {
-                    currentActive.forEach(i => { i.classList.remove('active')});
-                };
-                // 文章滚动时
-                if (currentId && decodeURI(currentActive[0]!=null?currentActive[0].getAttribute('href'):null) !== currentId) {
-                    // 更新url
-                    if (isanchor) updateAnchor(currentId);
-                    // 先移除目录所有active属性
-                    $toc_article.querySelectorAll('.active').forEach(i => { i.classList.remove('active')});
-                    // 获取文章滚动所到达的目录
-                    const _this=(null!=hexoVersion&&hexoVersion>=5)?
-                    document.querySelectorAll('.toc-link[href="'+encodeURI(currentId)+'"]')[0]:
-                    document.querySelectorAll('.toc-link[href="'+currentId+'"]')[0];
-                    // 对当前目录节点及目录所在父级节点添加active属性
-                    _this.classList.add('active');
-                    let parent = _this.parentNode;
-                    for (; !parent.matches('.toc'); parent = parent.parentNode) {
-                        if (parent.matches('li')) parent.classList.add('active')
-                    }
+                if (detectItem === currentIndex) return;
+                // 更新url
+                if (isanchor) updateAnchor(currentId);
+                detectItem = currentIndex;
+                $toc_article.querySelectorAll('.active').forEach(i => { i.classList.remove('active') });
+                if (currentId === '') return;
+                const currentActive = $toc_link[currentIndex];
+                // 对当前目录节点及目录所在父级节点添加active属性
+                currentActive.classList.add('active');
+                setTimeout(() => {
+                    autoScrollToc(currentActive)
+                }, 0);
+                let parent = currentActive.parentNode;
+                for (; !parent.matches('.toc'); parent = parent.parentNode) {
+                    if (parent.matches('li')) parent.classList.add('active')
                 }
             };
             // pc动态目录
             $container.addEventListener('scroll', (e) => {
                 const currentTop = $container.scrollTop;
                 findHeadPosition(document.body.clientWidth<=800?currentTop+50:currentTop);
-                autoScrollToc();
             });
             // mobile动态目录
             window.addEventListener('scroll', (e) => {
                 const currentTop = document.body.scrollTop||document.documentElement.scrollTop;
                 findHeadPosition(currentTop+50);
-                autoScrollToc();
             });
         };
         /**
