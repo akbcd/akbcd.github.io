@@ -1,15 +1,15 @@
 <%- js([theme.js.photoswipe,theme.js.photoswipe_ui_default]) %>
 <%- js([theme.js.scrollProgress,theme.js.mobile,theme.js.main]) %>
-<% if (theme.clipboard) { %>
+<% if (theme.highlight_copy) { %>
 <script src="<%- theme.js.clipboard %>"></script>
 <script>
   !function (e, t) {
     var copyFn=function(copy,copy_success,copy_error){
       var copyHtml = '<button type="button" class="js-btn-copy">'+copy+'</button>';
-      [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
+      [].forEach.call(document.querySelectorAll(".code>pre,pre>code"),function(button) {
         button.insertAdjacentHTML('beforebegin', copyHtml);
       });
-      var copyButton=document.querySelectorAll(".code .js-btn-copy");
+      var copyButton=document.querySelectorAll(".code>.js-btn-copy,pre>.js-btn-copy");
       for(var i in copyButton){
         copyButton[i].onclick=function(button){
           var $copy=button.currentTarget;

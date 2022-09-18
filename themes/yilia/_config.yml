@@ -90,9 +90,10 @@ open_in_new: false
 # 是否有快速回到顶部的按钮
 top: true
 
-# 代码块复制
-# 代码块区域右上方创建复制按钮，点击即可复制当前代码块区域代码
-clipboard: true
+# 代码块
+highlight_copy: true # 代码块区域右上方创建复制按钮，点击即可复制当前代码块区域代码
+highlight_lang: true # 是否显示代码块语言
+highlight_show: true # 是否显示代码块。true：显示，false：不显示，none：不启用
 
 # Miscellaneous 网站分析
 baidu_analytics: false

@@ -18,6 +18,11 @@
   // keywords.
   var keyWords = config.keywords ? config.keywords : config.title;
   keyWords = title ? title  + ', ' + keyWords : keyWords;
+  // highlight
+  var highlight = JSON.stringify({
+    highlight_lang: theme.highlight_lang,
+    highlight_show: theme.highlight_show
+  });
 %>
 <head>
   <meta charset="utf-8">
@@ -54,7 +59,8 @@
       innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
       showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>,
       anchor: <%=theme.anchor ? true : false%>,
-      scrollPos: <%=theme.scrollPos ? true : false%>
+      scrollPos: <%=theme.scrollPos ? true : false%>,
+      highlight: JSON.parse('<%- highlight %>')
     }
   </script>
 </head>
