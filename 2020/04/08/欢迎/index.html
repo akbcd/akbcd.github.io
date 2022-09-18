@@ -57,7 +57,8 @@
       innerArchive: true,
       showTags: false,
       anchor: true,
-      scrollPos: true
+      scrollPos: true,
+      highlight: JSON.parse('{"highlight_lang":true,"highlight_show":true}')
     }
   </script>
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -254,7 +255,7 @@
       
       <div style="color: #999">
         
-        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;4.7k&nbsp;</span>
+        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;5.1k&nbsp;</span>
         
         
       </div>
@@ -269,6 +270,16 @@
           <p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <span id="more"></span>
 <p>以下内容为博客yilia主题的操作日志</p>
+<h2 id="20220918"><a href="#20220918" class="headerlink" title="20220918"></a>20220918</h2><ul>
+<li>yilia主题<ul>
+<li>新增代码块扩展 支持隐藏代码块和显示代码块语言，主题配置文件相关选项追加</li>
+<li>代码块样式修改，适配代码块扩展</li>
+<li>删除残留版权提示样式代码 <a href="?id=#2020%E5%B9%B49%E6%9C%8823%E6%97%A5">2020年9月23日</a></li>
+</ul>
+</li>
+</ul>
+<p>添加代码块扩展的起因是想给主题加一个代码块隐藏的功能，因为代码块隐藏的功能大部分主题都有，追加的意义很大。<br>本次添加的代码块扩展主要是参考hexo主题 <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a>，怎么说呢，已经参考很多遍了，以后遇到我认为有用的功能，都会参考别的主题加上，自己由无到有没有那个精力，暂时也没有那个能力。<br>参照的主题兼容了两种代码高亮的情况，<code>highlight.js</code> 与 <code>prismjs</code> 。本次在此兼容的基础上，追加了两种均不启用的情况，其实与 <code>prismjs</code> 类似，这种情况在hexo官方文档里有说明，准备写一篇文章，记录一下自己追加这项功能所采过的坑。 <code>butterfly</code> 主题还有一个代码块超过指定高度隐藏的功能，没有添加。<br>这次的样式改动算是很明显了，代码块的背景颜色由黑色变为灰色，与参照主题一致。</p>
+<hr>
 <h2 id="20220831"><a href="#20220831" class="headerlink" title="20220831"></a>20220831</h2><ul>
 <li>yilia主题<ul>
 <li>目录优化（anchor多次调用接口）</li>
@@ -724,7 +735,7 @@
     <span class="tooltip-item"></span>
     <span class="tooltip-content">
       <div class="toc-article">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#20220831"><span class="toc-number">1.</span> <span class="toc-text">20220831</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220828"><span class="toc-number">2.</span> <span class="toc-text">20220828</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220820-20220821"><span class="toc-number">3.</span> <span class="toc-text">20220820~20220821</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220730"><span class="toc-number">4.</span> <span class="toc-text">20220730</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220526-20220601"><span class="toc-number">5.</span> <span class="toc-text">20220526~20220601</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220504-20220509"><span class="toc-number">6.</span> <span class="toc-text">20220504~20220509</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220430"><span class="toc-number">7.</span> <span class="toc-text">20220430</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B44%E6%9C%8810%E6%97%A5"><span class="toc-number">8.</span> <span class="toc-text">2022年4月10日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B43%E6%9C%885%E6%97%A5"><span class="toc-number">9.</span> <span class="toc-text">2022年3月5日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B42%E6%9C%8813%E6%97%A5"><span class="toc-number">10.</span> <span class="toc-text">2022年2月13日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B412%E6%9C%8812%E6%97%A5"><span class="toc-number">11.</span> <span class="toc-text">2021年12月12日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B411%E6%9C%887%E6%97%A5"><span class="toc-number">12.</span> <span class="toc-text">2021年11月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B410%E6%9C%8830%E6%97%A5"><span class="toc-number">13.</span> <span class="toc-text">2021年10月30日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8818%E6%97%A5"><span class="toc-number">14.</span> <span class="toc-text">2021年9月18日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%8829%E6%97%A5"><span class="toc-number">15.</span> <span class="toc-text">2021年8月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%887%E6%97%A5"><span class="toc-number">16.</span> <span class="toc-text">2021年8月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B45%E6%9C%8820%E6%97%A5"><span class="toc-number">17.</span> <span class="toc-text">2021年5月20日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B43%E6%9C%8827%E6%97%A5"><span class="toc-number">18.</span> <span class="toc-text">2021年3月27日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B43%E6%9C%8822%E6%97%A5"><span class="toc-number">19.</span> <span class="toc-text">2021年3月22日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B42%E6%9C%8812%E6%97%A5"><span class="toc-number">20.</span> <span class="toc-text">2021年2月12日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B412%E6%9C%8829%E6%97%A5"><span class="toc-number">21.</span> <span class="toc-text">2020年12月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B412%E6%9C%886%E6%97%A5"><span class="toc-number">22.</span> <span class="toc-text">2020年12月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B411%E6%9C%8813%E6%97%A5"><span class="toc-number">23.</span> <span class="toc-text">2020年11月13日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B411%E6%9C%883%E6%97%A5"><span class="toc-number">24.</span> <span class="toc-text">2020年11月3日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B410%E6%9C%8811%E6%97%A5"><span class="toc-number">25.</span> <span class="toc-text">2020年10月11日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%8823%E6%97%A5"><span class="toc-number">26.</span> <span class="toc-text">2020年9月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%8815%E6%97%A5"><span class="toc-number">27.</span> <span class="toc-text">2020年9月15日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%887%E6%97%A5"><span class="toc-number">28.</span> <span class="toc-text">2020年9月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B48%E6%9C%8823%E6%97%A5%E3%80%812020%E5%B9%B48%E6%9C%8824%E6%97%A5"><span class="toc-number">29.</span> <span class="toc-text">2020年8月23日、2020年8月24日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%8819%E6%97%A5"><span class="toc-number">30.</span> <span class="toc-text">2020年6月19日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%8810%E6%97%A5"><span class="toc-number">31.</span> <span class="toc-text">2020年6月10日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%888%E6%97%A5"><span class="toc-number">32.</span> <span class="toc-text">2020年6月8日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%886%E6%97%A5"><span class="toc-number">33.</span> <span class="toc-text">2020年6月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%883%E6%97%A5"><span class="toc-number">34.</span> <span class="toc-text">2020年6月3日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8823%E6%97%A5"><span class="toc-number">35.</span> <span class="toc-text">2020年5月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8819%E6%97%A5"><span class="toc-number">36.</span> <span class="toc-text">2020年5月19日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8814%E6%97%A5"><span class="toc-number">37.</span> <span class="toc-text">2020年5月14日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%885%E6%97%A5"><span class="toc-number">38.</span> <span class="toc-text">2020年5月5日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8824%E6%97%A5"><span class="toc-number">39.</span> <span class="toc-text">2020年4月24日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8823%E6%97%A5"><span class="toc-number">40.</span> <span class="toc-text">2020年4月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8821%E6%97%A5"><span class="toc-number">41.</span> <span class="toc-text">2020年4月21日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8818%E6%97%A5"><span class="toc-number">42.</span> <span class="toc-text">2020年4月18日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%888%E6%97%A5"><span class="toc-number">43.</span> <span class="toc-text">2020年4月8日</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#20220918"><span class="toc-number">1.</span> <span class="toc-text">20220918</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220831"><span class="toc-number">2.</span> <span class="toc-text">20220831</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220828"><span class="toc-number">3.</span> <span class="toc-text">20220828</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220820-20220821"><span class="toc-number">4.</span> <span class="toc-text">20220820~20220821</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220730"><span class="toc-number">5.</span> <span class="toc-text">20220730</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220526-20220601"><span class="toc-number">6.</span> <span class="toc-text">20220526~20220601</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220504-20220509"><span class="toc-number">7.</span> <span class="toc-text">20220504~20220509</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20220430"><span class="toc-number">8.</span> <span class="toc-text">20220430</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B44%E6%9C%8810%E6%97%A5"><span class="toc-number">9.</span> <span class="toc-text">2022年4月10日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B43%E6%9C%885%E6%97%A5"><span class="toc-number">10.</span> <span class="toc-text">2022年3月5日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2022%E5%B9%B42%E6%9C%8813%E6%97%A5"><span class="toc-number">11.</span> <span class="toc-text">2022年2月13日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B412%E6%9C%8812%E6%97%A5"><span class="toc-number">12.</span> <span class="toc-text">2021年12月12日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B411%E6%9C%887%E6%97%A5"><span class="toc-number">13.</span> <span class="toc-text">2021年11月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B410%E6%9C%8830%E6%97%A5"><span class="toc-number">14.</span> <span class="toc-text">2021年10月30日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8818%E6%97%A5"><span class="toc-number">15.</span> <span class="toc-text">2021年9月18日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%8829%E6%97%A5"><span class="toc-number">16.</span> <span class="toc-text">2021年8月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%887%E6%97%A5"><span class="toc-number">17.</span> <span class="toc-text">2021年8月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B45%E6%9C%8820%E6%97%A5"><span class="toc-number">18.</span> <span class="toc-text">2021年5月20日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B43%E6%9C%8827%E6%97%A5"><span class="toc-number">19.</span> <span class="toc-text">2021年3月27日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B43%E6%9C%8822%E6%97%A5"><span class="toc-number">20.</span> <span class="toc-text">2021年3月22日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E5%B9%B42%E6%9C%8812%E6%97%A5"><span class="toc-number">21.</span> <span class="toc-text">2021年2月12日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B412%E6%9C%8829%E6%97%A5"><span class="toc-number">22.</span> <span class="toc-text">2020年12月29日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B412%E6%9C%886%E6%97%A5"><span class="toc-number">23.</span> <span class="toc-text">2020年12月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B411%E6%9C%8813%E6%97%A5"><span class="toc-number">24.</span> <span class="toc-text">2020年11月13日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B411%E6%9C%883%E6%97%A5"><span class="toc-number">25.</span> <span class="toc-text">2020年11月3日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B410%E6%9C%8811%E6%97%A5"><span class="toc-number">26.</span> <span class="toc-text">2020年10月11日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%8823%E6%97%A5"><span class="toc-number">27.</span> <span class="toc-text">2020年9月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%8815%E6%97%A5"><span class="toc-number">28.</span> <span class="toc-text">2020年9月15日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B49%E6%9C%887%E6%97%A5"><span class="toc-number">29.</span> <span class="toc-text">2020年9月7日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B48%E6%9C%8823%E6%97%A5%E3%80%812020%E5%B9%B48%E6%9C%8824%E6%97%A5"><span class="toc-number">30.</span> <span class="toc-text">2020年8月23日、2020年8月24日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%8819%E6%97%A5"><span class="toc-number">31.</span> <span class="toc-text">2020年6月19日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%8810%E6%97%A5"><span class="toc-number">32.</span> <span class="toc-text">2020年6月10日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%888%E6%97%A5"><span class="toc-number">33.</span> <span class="toc-text">2020年6月8日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%886%E6%97%A5"><span class="toc-number">34.</span> <span class="toc-text">2020年6月6日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B46%E6%9C%883%E6%97%A5"><span class="toc-number">35.</span> <span class="toc-text">2020年6月3日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8823%E6%97%A5"><span class="toc-number">36.</span> <span class="toc-text">2020年5月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8819%E6%97%A5"><span class="toc-number">37.</span> <span class="toc-text">2020年5月19日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%8814%E6%97%A5"><span class="toc-number">38.</span> <span class="toc-text">2020年5月14日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B45%E6%9C%885%E6%97%A5"><span class="toc-number">39.</span> <span class="toc-text">2020年5月5日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8824%E6%97%A5"><span class="toc-number">40.</span> <span class="toc-text">2020年4月24日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8823%E6%97%A5"><span class="toc-number">41.</span> <span class="toc-text">2020年4月23日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8821%E6%97%A5"><span class="toc-number">42.</span> <span class="toc-text">2020年4月21日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%8818%E6%97%A5"><span class="toc-number">43.</span> <span class="toc-text">2020年4月18日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E5%B9%B44%E6%9C%888%E6%97%A5"><span class="toc-number">44.</span> <span class="toc-text">2020年4月8日</span></a></li></ol>
       </div>
     </span>
   </div>
@@ -834,11 +845,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">vm</a>
+            <a style="cursor:pointer" class="js-tag color1">linux</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color1">linux</a>
+            <a style="cursor:pointer" class="js-tag color3">vm</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -846,11 +857,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
+            <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">jsp</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -870,11 +881,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -1065,10 +1076,10 @@
   !function (e, t) {
     var copyFn=function(copy,copy_success,copy_error){
       var copyHtml = '<button type="button" class="js-btn-copy">'+copy+'</button>';
-      [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
+      [].forEach.call(document.querySelectorAll(".code>pre,pre>code"),function(button) {
         button.insertAdjacentHTML('beforebegin', copyHtml);
       });
-      var copyButton=document.querySelectorAll(".code .js-btn-copy");
+      var copyButton=document.querySelectorAll(".code>.js-btn-copy,pre>.js-btn-copy");
       for(var i in copyButton){
         copyButton[i].onclick=function(button){
           var $copy=button.currentTarget;

@@ -332,4 +332,137 @@
     };
     // 调用
     scrollFnToDo();
+    /**
+    * addHighlightTool
+    * 代码块隐藏，只适用于hexo默认的代码渲染
+    */
+    function addHighlightTool () {
+        // 导入代码块配置
+        const highlight=yiliaConfig.highlight;
+        const highlight_show=highlight.highlight_show;
+        // 代码块语言
+        const highlight_lang=highlight.highlight_lang;
+        if (highlight_show==='none' && !highlight_lang) return;
+        // 代码块是否隐藏
+        function isHidden(ele){
+            return ele.offsetHeight === 0 && ele.offsetWidth === 0;
+        }
+        // 判断代码块渲染工具
+        function highlight_plugin() {
+            if(document.querySelectorAll('figure.highlight').length){
+                return 'highlight';
+            }else if (document.querySelectorAll('pre[class*="language-"]').length){
+                return 'prismjs';
+            }else if (document.querySelectorAll('.article-content pre').length){
+                return 'default';
+            }else {
+                return null;
+            }
+        }
+        // 代码块隐藏
+        const highlightShrinkFn = (ele) => {
+            const $nextEle = [...ele.parentNode.children].slice(1);
+            ele.firstChild.classList.toggle('closed');
+            if (isHidden($nextEle[$nextEle.length - 1])) {
+              $nextEle.forEach(e => { e.style.display = 'block' });
+            } else {
+              $nextEle.forEach(e => { e.style.display = 'none' });
+            }
+        }
+        // 调用代码块隐藏
+        const highlightToolsFn = function (e) {
+            const $target = e.target.classList;
+            if ($target.contains('expand')) highlightShrinkFn(this);
+        }
+        // 创建元素并将选择器元素作为创建元素的子节点（选择器，标签，属性）
+        const wrap = function (selector, eleType, options) {
+            // 创建指定节点
+            const creatEle = document.createElement(eleType);
+            // 对创建的节点添加指定属性
+            for (const [key, value] of Object.entries(options)) {
+                creatEle.setAttribute(key, value);
+            };
+            // 在选择器节点之前插入创建的节点
+            selector.parentNode.insertBefore(creatEle, selector);
+            // 选择器节点作为创建节点的子节点
+            creatEle.appendChild(selector);
+        }
+        // 创建子节点
+        function createEle (lang, show, cls, ele, item, service) {
+            // 创建空白节点
+            const fragment = document.createDocumentFragment();
+            // 创建div元素
+            const hlTools = document.createElement('div');
+            // 隐藏代码块class
+            const highlightShrinkClass = cls;
+            // 创建元素的属性
+            hlTools.className = `highlight-tools ${highlightShrinkClass}`;
+            hlTools.innerHTML = ele + lang;
+            // 不显示隐藏按钮
+            if (show === 'none') hlTools.innerHTML = lang;
+            // 对创建元素添加点击事件
+            hlTools.addEventListener('click', highlightToolsFn);
+            // 在空白中追加创建的div元素
+            fragment.appendChild(hlTools);
+            // 插入创建节点
+            if (service === 'highlight') {
+                // 目标节点第一个子节点之前
+                item.insertBefore(fragment, item.firstChild);
+            } else {
+                // 目标节点之前
+                item.parentNode.insertBefore(fragment, item);
+            }
+        }
+        // 获取代码块渲染工具
+        var highlight_plugin=highlight_plugin();
+        // 页面没有代码块，跳出
+        if (!highlight_plugin) return;
+        // 渲染工具是否为highlight
+        const isHighlight = highlight_plugin === 'highlight';
+        // 获取代码块，三种情况：highlight，prismjs，default
+        const $figureHighlight = isHighlight ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]').length
+        ? document.querySelectorAll('pre[class*="language-"]') : document.querySelectorAll('.article-content pre');
+        // 代码块隐藏按钮标签
+        let highlightShrinkEle = '';
+        const highlightShrinkClass = highlight_show === true || highlight_show === 'none' ? '' : 'closed';
+        if (highlight_show !== undefined) {
+            highlightShrinkEle = `<i class="fas fa-angle-down icon-back expand ${highlightShrinkClass}"></i>`
+        }
+        if (highlight_lang) {
+            // 显示代码块语言
+            if (isHighlight) {
+                // highlight，无语言（plaintext）显示为Code，添加节点
+                $figureHighlight.forEach(function (item) {
+                    let langName = item.getAttribute('class').split(' ')[1];
+                    if (langName === 'plaintext' || langName === undefined) langName = 'Code';
+                    const highlightLangEle = `<div class="code-lang">${langName}</div>`;
+                    createEle(highlightLangEle, highlight_show, highlightShrinkClass, highlightShrinkEle, item, 'highlight');
+                });
+            } else {
+                // prismjs，default，无语言显示为Code，添加节点
+                $figureHighlight.forEach(function (item) {
+                    let langName = item.getAttribute('data-language') ? item.getAttribute('data-language') : 'Code';
+                    if (highlight_plugin==='default') langName=item.lastChild.getAttribute('class')? item.lastChild.getAttribute('class').split(' ')[1]
+                    ? item.lastChild.getAttribute('class').split(' ')[1] : item.lastChild.getAttribute('class') : 'Code';
+                    const highlightLangEle = `<div class="code-lang">${langName}</div>`;
+                    wrap(item, 'figure', { class: 'highlight-pre' });
+                    createEle(highlightLangEle, highlight_show, highlightShrinkClass, highlightShrinkEle, item);
+                })
+            }
+        } else {
+            // 不显示代码块语言
+            if (isHighlight) {
+                $figureHighlight.forEach(function (item) {
+                    createEle('', highlight_show, highlightShrinkClass, highlightShrinkEle, item, 'highlight');
+                })
+            } else {
+                $figureHighlight.forEach(function (item) {
+                    wrap(item, 'figure', { class: 'highlight-pre'});
+                    createEle('', highlight_show, highlightShrinkClass, highlightShrinkEle, item);
+                })
+            }
+        }
+    };
+    // 调用addHighlightTool
+    addHighlightTool();
 }();

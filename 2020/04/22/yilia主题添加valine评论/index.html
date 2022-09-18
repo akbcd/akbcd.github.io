@@ -68,7 +68,8 @@
       innerArchive: true,
       showTags: false,
       anchor: true,
-      scrollPos: true
+      scrollPos: true,
+      highlight: JSON.parse('{"highlight_lang":true,"highlight_show":true}')
     }
   </script>
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -338,7 +339,7 @@
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#113;&#113;&#46;&#x63;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;">&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -353,7 +354,7 @@
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x78;&#120;&#x78;&#x78;&#x78;&#x78;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -651,11 +652,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">vm</a>
+            <a style="cursor:pointer" class="js-tag color1">linux</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color1">linux</a>
+            <a style="cursor:pointer" class="js-tag color3">vm</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -663,11 +664,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">js</a>
+            <a style="cursor:pointer" class="js-tag color4">jsp</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color4">jsp</a>
+            <a style="cursor:pointer" class="js-tag color3">js</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -687,11 +688,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -882,10 +883,10 @@
   !function (e, t) {
     var copyFn=function(copy,copy_success,copy_error){
       var copyHtml = '<button type="button" class="js-btn-copy">'+copy+'</button>';
-      [].forEach.call(document.querySelectorAll(".code pre"),function(button) {
+      [].forEach.call(document.querySelectorAll(".code>pre,pre>code"),function(button) {
         button.insertAdjacentHTML('beforebegin', copyHtml);
       });
-      var copyButton=document.querySelectorAll(".code .js-btn-copy");
+      var copyButton=document.querySelectorAll(".code>.js-btn-copy,pre>.js-btn-copy");
       for(var i in copyButton){
         copyButton[i].onclick=function(button){
           var $copy=button.currentTarget;
