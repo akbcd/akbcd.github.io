@@ -178,7 +178,7 @@ toc: 1
 toc_hide_index: true
 # 目录为空时的提示
 toc_empty_wording: '目录，不存在的…'
-# anchor 目录锚点url
+# anchor 地址栏URL更新，仅在显示目录时有效
 # 当您在文章中滚动时，URL将根据标头ID进行更新
 anchor: true
 

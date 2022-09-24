@@ -174,31 +174,43 @@
     // 页面载入完成后执行
     window.addEventListener("load", Viwer());
     /**
-    * scrollFnToDo（toc,anchor,scrollPos）
+    * scrollFnToDo（scrollPos,toc,anchor）
     */
     const scrollFnToDo = function () {
         // container标签
         const $container=document.getElementById("container");
         /**
+        * 记录文章页面当前位置（cookies）
+        */
+        if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
+            //在即将离开当前页面（刷新或关闭）时触发
+            window.onbeforeunload = function(){
+                const scrollPos=$container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+                document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
+            };
+            //在离在开网页时（点击链接，刷新页面，关闭浏览器等）触发
+            window.onpagehide = function(){
+                const scrollPos=$container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+                document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
+            };
+            window.addEventListener("load",function(){
+                // 判断是否已经滚动页面
+                let $scrollTop = Math.trunc($container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop);
+                if(!$scrollTop && document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
+                    const arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+                    // 大于0时跳转至上次记录位置
+                    if(parseInt(arr[1]) > 0){
+                        $container.scrollTop=parseInt(arr[1]);
+                        document.documentElement.scrollTop=parseInt(arr[1]);
+                        document.body.scrollTop=parseInt(arr[1]);
+                    }
+                }
+            });
+        };
+        /**
         * toc目录优化
         */
         if(yiliaConfig.isPost){
-            if (!document.getElementsByClassName('toc-container')[0]) return;
-            const $article_content=document.getElementsByClassName('article-content')[0];
-            const toc_hide_index = yiliaConfig.toc_hide_index;
-            const isanchor = yiliaConfig.anchor;
-            let $toc_link,$toc_article,autoScrollToc;
-            // 目录相关标签
-            $toc_link=document.getElementsByClassName("toc-link");
-            $toc_article=document.getElementsByClassName("toc-article")[0];
-            if (!$toc_link[0]) return;
-            // 隐藏目录序号
-            if (toc_hide_index) {
-                let $a = document.querySelectorAll(('.toc-number'));
-                $a.forEach(($em) => {
-                    $em.style.display = 'none';
-                })
-            };
             // 获取标签绝对位置
             function getElementTop(element){
                 let actualTop=element.offsetTop;
@@ -230,6 +242,33 @@
                 $container.scrollTo({"behavior": "smooth", "top": document.body.clientWidth<=800?scrollPositionTop-50:scrollPositionTop});
                 // mobile平滑跳转
                 window.scrollTo({"behavior": "smooth", "top": scrollPositionTop-50});
+            };
+            // 文章主体内容标签
+            const $article_content=document.getElementsByClassName('article-content')[0];
+            // 目录配置
+            const toc_hide_index = yiliaConfig.toc_hide_index;
+            const isanchor = yiliaConfig.anchor;
+            // a标签锚点跳转
+            $article_content.querySelectorAll('a').forEach(i => { 
+                i.addEventListener('click', e => {
+                    if (i.getAttribute('href').charAt(0)=='#') {
+                        e.preventDefault(); // 取消默认跳转
+                        toToc(decodeURI(i.getAttribute('href')));
+                    }
+                })
+            });
+            if (!document.getElementsByClassName('toc-container')[0]) return;
+            let $toc_link,$toc_article,autoScrollToc;
+            // 目录相关标签
+            $toc_link=document.getElementsByClassName("toc-link");
+            $toc_article=document.getElementsByClassName("toc-article")[0];
+            if (!$toc_link[0]) return;
+            // 隐藏目录序号
+            if (toc_hide_index) {
+                let $a = document.querySelectorAll(('.toc-number'));
+                $a.forEach(($em) => {
+                    $em.style.display = 'none';
+                })
             };
             // 目录元素点击跳转
             $toc_article.addEventListener('click', e => {
@@ -301,32 +340,6 @@
             window.addEventListener('scroll', (e) => {
                 const currentTop = document.body.scrollTop||document.documentElement.scrollTop;
                 findHeadPosition(currentTop+50);
-            });
-        };
-        /**
-        * 记录文章页面当前位置（cookies）
-        */
-        if(yiliaConfig.isPost&&yiliaConfig.scrollPos){
-            //在即将离开当前页面（刷新或关闭）时触发
-            window.onbeforeunload = function(){
-                const scrollPos=$container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
-                document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
-            };
-            //在离在开网页时（点击链接，刷新页面，关闭浏览器等）触发
-            window.onpagehide = function(){
-                const scrollPos=$container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
-                document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
-            };
-            window.addEventListener("load",function(){ 
-                if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
-                    const arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
-                    // 大于0时跳转至上次记录位置
-                    if(parseInt(arr[1]) > 0){
-                        $container.scrollTop=parseInt(arr[1]);
-                        document.documentElement.scrollTop=parseInt(arr[1]);
-                        document.body.scrollTop=parseInt(arr[1]);
-                    }
-                }
             });
         };
     };
@@ -420,8 +433,11 @@
         // 渲染工具是否为highlight
         const isHighlight = highlight_plugin === 'highlight';
         // 获取代码块，三种情况：highlight，prismjs，default
-        const $figureHighlight = isHighlight ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]').length
-        ? document.querySelectorAll('pre[class*="language-"]') : document.querySelectorAll('.article-content pre');
+        const $figureHighlight = isHighlight
+        ? document.querySelectorAll('figure.highlight')
+        : document.querySelectorAll('pre[class*="language-"]').length
+        ? document.querySelectorAll('pre[class*="language-"]')
+        : document.querySelectorAll('.article-content pre');
         // 代码块隐藏按钮标签
         let highlightShrinkEle = '';
         const highlightShrinkClass = highlight_show === true || highlight_show === 'none' ? '' : 'closed';
@@ -442,8 +458,10 @@
                 // prismjs，default，无语言显示为Code，添加节点
                 $figureHighlight.forEach(function (item) {
                     let langName = item.getAttribute('data-language') ? item.getAttribute('data-language') : 'Code';
-                    if (highlight_plugin==='default') langName=item.lastChild.getAttribute('class')? item.lastChild.getAttribute('class').split(' ')[1]
-                    ? item.lastChild.getAttribute('class').split(' ')[1] : item.lastChild.getAttribute('class') : 'Code';
+                    if (highlight_plugin==='default') langName=item.lastChild.getAttribute('class')
+                    ? item.lastChild.getAttribute('class').split(' ')[1]
+                    ? item.lastChild.getAttribute('class').split(' ')[1]
+                    : item.lastChild.getAttribute('class') : 'Code';
                     const highlightLangEle = `<div class="code-lang">${langName}</div>`;
                     wrap(item, 'figure', { class: 'highlight-pre' });
                     createEle(highlightLangEle, highlight_show, highlightShrinkClass, highlightShrinkEle, item);

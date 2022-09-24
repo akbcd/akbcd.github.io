@@ -15,15 +15,6 @@
             }
         }
     }
-    function getElementLeft(element) {
-        var actualLeft = element.offsetLeft;
-        var current = element.offsetParent;
-        while (current !== null) {
-            actualLeft += current.offsetLeft;
-            current = current.offsetParent;
-        }
-        return actualLeft;
-    }
     function getElementTop(element) {
         var actualTop = element.offsetTop;
         var current = element.offsetParent;
@@ -41,11 +32,10 @@
             parent.appendChild(newElement);
         }else {
             parent.insertBefore(newElement, targetElement.nextSibling);
-            //如果不是，则插入在目标元素的下一个兄弟节点 的前面。也就是目标元素的后面
+            //如果不是，则插入在目标元素的下一个兄弟节点的前面。也就是目标元素的后面
         }
     }
     function scrollStop($dom, top, limit, zIndex, diff) {
-        let nowLeft = getElementLeft($dom);
         let nowTop = getElementTop($dom) - top;
         if (nowTop - limit <= diff) {
             let $newDom = $dom.$newDom;
@@ -54,8 +44,8 @@
                 insertAfter($newDom, $dom);
                 $dom.$newDom = $newDom;
                 $newDom.style.position = 'fixed';
-                $newDom.style.top = (limit || nowTop) + 'px';
-                $newDom.style.left = nowLeft + 'px';
+                $newDom.style.top = limit + 'px';
+                $newDom.style.left = 0;
                 $newDom.style.zIndex = zIndex || 2;
                 $newDom.style.width = '100%';
                 $newDom.style.color = '#fff';
@@ -84,6 +74,7 @@
         }
     }
     function bindScroll() {
+        handleScroll();
         document.querySelector('#container').addEventListener('scroll', (e) => {
             handleScroll()
         });
