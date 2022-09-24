@@ -1017,13 +1017,10 @@ body,button,input,select,textarea {
 .article-entry figure:hover .js-btn-copy,.article-entry pre:hover .js-btn-copy {
     display: block;
 }
-/* 代码块扩展栏样式（prismjs） */
-.article-entry .highlight-pre {
+/* 代码块扩展栏样式（通用） */
+.article-entry .highlight-pre,.article-entry .highlight {
     margin: 10px 0;
     color: #90a4ae;
-}
-.article-entry .highlight-pre pre {
-    margin: 0;
 }
 .article-entry .highlight-tools {
     min-height: 25px;
@@ -1079,10 +1076,10 @@ body,button,input,select,textarea {
     user-select: none;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
-    font-size: 10px;
+    font-size: 12px;
     display: block;
     position: absolute;
-    padding: 7px 7px;
+    padding: 8px 8px;
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     -o-transition: -o-transform 0.3s;
@@ -1108,19 +1105,17 @@ body,button,input,select,textarea {
     font-size: .9rem;
     color: #90a4ae
 }
-/* 代码区块样式（单独设定） */
-.article-entry .highlight {
+.article-entry pre {
     margin: 10px 0;
-}
-.article-entry .highlight pre{
+    padding: 5px 10px;
     overflow-x: auto;
+}
+.article-entry .highlight pre {
     margin: 0;
     padding: 0;
 }
-.article-entry pre {
-    margin: 10px 0;
-    padding: 10px;
-    overflow-x: auto;
+.article-entry .highlight-pre pre {
+    margin: 0;
 }
 /* 代码块横向滚动条 */
 .article-entry pre::-webkit-scrollbar-button {
@@ -1133,8 +1128,8 @@ body,button,input,select,textarea {
 .article-entry .highlight table {
     margin: 0;
     display: block;
-    padding: 10px;
-    overflow: auto;
+    padding: 5px 10px;
+    overflow-x: auto;
 }
 /* 代码块横向滚动条 */
 .article-entry .highlight table::-webkit-scrollbar-button {
@@ -1151,7 +1146,11 @@ body,button,input,select,textarea {
     -ms-user-select: none;
     user-select: none;
     text-align: right;
-    padding-right: 20px
+    color: #90a4ae;
+    border-right: 1px solid #90a4ae;
+    border-radius: 0;
+    padding-right: 10px;
+    margin-right: 10px;
 }
 .article-entry .highlight .gutter pre .line {
     text-shadow: none
@@ -1182,6 +1181,7 @@ body,button,input,select,textarea {
 }
 .article-entry .line-numbers-rows > span {
     display: block;
+    color: #90a4ae;
     counter-increment: linenumber;
 }
 .article-entry .line-numbers-rows > span:before {
@@ -1190,27 +1190,49 @@ body,button,input,select,textarea {
     padding-right: 0.8rem;
     text-align: right;
 }
-/* 代码区块高亮 */
-pre .comment {
-    color: #75715e
-}
-pre .class .params,pre .function .keyword,pre .keyword {
-    color: #66d9ef
-}
+/* 代码区块高亮通用 */
 pre .at_rule,pre .at_rule .keyword,pre .css~* .tag,pre .preprocessor,pre .preprocessor .keyword,pre .title {
     color: #f92672
 }
 pre .attribute,pre .built_in,pre .class,pre .css~* .class,pre .function .title {
     color: #a6e22e
 }
-pre .string,pre .value {
-    color: #e6db74
+pre .class .params,pre .function .keyword,pre .keyword,pre .type {
+    color: #0000ff
+}
+pre .comment {
+    color: #008000
+}
+pre .css~* .id,pre .id {
+    color: #fd971f
+}
+pre .function {
+    color: #795e26
 }
 pre .number {
     color: #7163d7
 }
-pre .css~* .id,pre .id {
-    color: #fd971f
+pre .property {
+    color: #ff0000;
+}
+pre .punctuation {
+    color: #0431fa
+}
+pre .selector,pre .selector-class, .css pre>.line {
+    color: #800000
+}
+pre .string,pre .value {
+    color: #a31515
+}
+/* html */
+pre .tag,.html pre .name {
+    color: #800000;
+}
+pre .attr-name,.html pre .attr {
+    color: #ff0000;
+}
+pre .attr-value,.html pre .string {
+    color: #0000ff;
 }
 /* 代码块相关样式结束 */
 

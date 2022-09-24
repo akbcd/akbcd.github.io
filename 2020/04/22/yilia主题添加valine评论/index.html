@@ -283,7 +283,7 @@
 <p><strong>注意：近期由于国际版 LeanCloud 域名更新，valine评论系统部署后可能无法使用！参看：</strong><br><a target="_blank" rel="noopener" href="https://github.com/xCss/Valine/issues/340">https://github.com/xCss/Valine/issues/340</a></p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>根据<a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">valine</a>官方文档，先要在<code>LeanCloud</code>获取<strong>APP ID</strong>和<strong>APP Key</strong><br>登录或注册<a target="_blank" rel="noopener" href="https://www.leancloud.cn/">LeanCloud</a>，建议注册<a target="_blank" rel="noopener" href="https://leancloud.app/">国际版</a>用户，<strong>不需要绑定域名</strong>，但是都需要绑定手机号<br>进入控制台后点击左下角创建应用，选择开发版<br><img src="valine.png"><br>应用创建好以后，进入刚刚创建的应用，选择左下角的设置&gt;应用Key，然后就能看到你的<strong>APP ID</strong>和<strong>APP Key</strong>了（复制下来）：<br><img src="valine2.png"><br>评论数据管理<br>由于Valine是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud</code>应用管理。<br>具体步骤：登录&gt;选择你创建的应用&gt;存储&gt;选择<code>Class Comment</code>，然后就可以尽情的发挥你的权利啦</p>
 <blockquote>
-<p>当然，你也可以配合<code>@DesertsP</code>开发的<code>Valine-Admin</code>进行评论数据管理（下面在<a href="?id=#valine%E8%BF%9B%E9%98%B6">valine进阶</a>有介绍）</p>
+<p>当然，你也可以配合<code>@DesertsP</code>开发的<code>Valine-Admin</code>进行评论数据管理（下面在<a href="#valine%E8%BF%9B%E9%98%B6">valine进阶</a>有介绍）</p>
 </blockquote>
 <p>安全域名<br>为了你的数据安全，请设置自己的安全域名：<br><img src="valine3.png"><br>这里简单说明一下，如果你的博客是在github上托管，输入自己的<strong>博客首页地址</strong>以及<strong>本地hexo服务器地址</strong>即可（下面供参考）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://xxx.github.io</span><br><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
@@ -339,7 +339,7 @@
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;">&#x78;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#46;&#99;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#120;&#x78;&#x78;&#120;&#120;&#x78;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#120;&#x78;&#x78;&#120;&#120;&#x78;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -354,7 +354,7 @@
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#120;&#x78;&#x78;&#120;&#120;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">&#120;&#120;&#x78;&#x78;&#120;&#120;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -367,7 +367,7 @@
 <blockquote>
 <p>因流控原因，通过定时任务唤醒体验版实例失败，建议升级至标准版云引擎实例避免休眠</p>
 </blockquote>
-<p>因为任务唤醒体验版限制，关于定时任务设置跳过，解决方法参看下文<a href="?id=#%E5%94%A4%E9%86%92%E4%BA%91%E5%BC%95%E6%93%8E">唤醒云引擎</a><br>6.邮件通知模板<br>邮件通知模板在云引擎环境变量中设定，可自定义通知邮件标题及内容模板。<br>默认的邮件通知模板是无法看到具体是哪篇文章的评论，这里简单进行了一下修改，如需样式定制，还请参看官方文档<br>环境变量：<strong>MAIL_TEMPLATE</strong><br>修改后被@通知邮件内容模板如下：</p>
+<p>因为任务唤醒体验版限制，关于定时任务设置跳过，解决方法参看下文<a href="#%E5%94%A4%E9%86%92%E4%BA%91%E5%BC%95%E6%93%8E">唤醒云引擎</a><br>6.邮件通知模板<br>邮件通知模板在云引擎环境变量中设定，可自定义通知邮件标题及内容模板。<br>默认的邮件通知模板是无法看到具体是哪篇文章的评论，这里简单进行了一下修改，如需样式定制，还请参看官方文档<br>环境变量：<strong>MAIL_TEMPLATE</strong><br>修改后被@通知邮件内容模板如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;您在&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot;href=&quot;$&#123;SITE_URL&#125;&quot;target=&quot;_blank&quot;&gt;$&#123;SITE_NAME&#125;&lt;/a&gt;上的评论有了新的回复&lt;/h2&gt;$&#123;PARENT_NICK&#125;同学，您曾发表评论：&lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;$&#123;PARENT_COMMENT&#125;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;$&#123;NICK&#125;&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;$&#123;COMMENT&#125;&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot;href=&quot;$&#123;POST_URL&#125;&quot;target=&quot;_blank&quot;&gt;查看回复的完整內容&lt;/a&gt;，欢迎再次光临&lt;a style=&quot;text-decoration:none; color:#12addb&quot;href=&quot;$&#123;SITE_URL&#125;&quot;target=&quot;_blank&quot;&gt;$&#123;SITE_NAME&#125;&lt;/a&gt;。&lt;br&gt;&lt;/p&gt;&lt;p&gt;详细链接：$&#123;POST_URL&#125;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>环境变量：<strong>MAIL_TEMPLATE_ADMIN</strong><br>修改后博主通知邮件内容模板如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;您在&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot; href=&quot;$&#123;SITE_URL&#125;&quot; target=&quot;_blank&quot;&gt;$&#123;SITE_NAME&#125;&lt;/a&gt;上的文章有了新的评论&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;$&#123;NICK&#125;&lt;/strong&gt;回复说：&lt;/p&gt;&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt; $&#123;COMMENT&#125;&lt;/div&gt;&lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;$&#123;POST_URL&#125;&quot; target=&quot;_blank&quot;&gt;查看回复的完整內容&lt;/a&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;详细链接：$&#123;POST_URL&#125;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -652,15 +652,19 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color1">linux</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">vm</a>
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color1">linux</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color5">html</a>
+          </li>
+           
+          <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color2">java基础</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -669,10 +673,6 @@
            
           <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color2">java基础</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -688,11 +688,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">

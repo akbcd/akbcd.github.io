@@ -273,7 +273,7 @@
         
           <p>本篇文章已于2022/7/30再次校对。<br>本篇文章介绍<strong>GITHUB+HEXO搭建个人博客</strong>的方法，讲述如何创建GitHub账户，通过hexo在GitHub上搭建个人博客以及如何通过GitHub分支实现本地博客备份至GitHub等。文章讲述可能较为详细，可以通过目录快速定位到自己需要的部分，本篇文章适合新手阅读。<br>注：这篇文章是自己对<strong>GITHUB+HEXO搭建个人博客</strong>的总结，当你看到这篇文章时，也就意味着之前关于<strong>GITHUB+HEXO搭建个人博客</strong>的多篇文章已被删除。<br>文章里建议参看的文章，如果没有链接，可以在站点的所有文章中查找。</p>
 <span id="more"></span>
-<p>快速导航（建议通过目录跳转，目录位置：页面右下角）：<br><a href="?id=#%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B">博客简介</a><br><a href="?id=#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E8%BD%AF%E4%BB%B6">需要准备的软件</a><br><a href="?id=#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a><br><a href="?id=#%E5%BB%BA%E7%AB%99">建站</a><br><a href="?id=#%E5%88%9B%E5%BB%BAGitHub%E8%B4%A6%E6%88%B7">创建GitHub账户</a><br><a href="?id=#%E9%85%8D%E7%BD%AE_config.yml%E6%96%87%E4%BB%B6">配置_config.yml文件</a><br><a href="?id=#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0blog%E6%96%87%E4%BB%B6%E5%A4%B9">配置本地blog文件夹</a><br><a href="?id=#%E5%8D%9A%E5%AE%A2%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0">博客新建文章</a><br><a href="?id=#%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98">博客更换主题</a><br><a href="?id=#hexo%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4">hexo最常用的几个命令</a><br><a href="?id=#%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD">个人博客备份</a><br><a href="?id=#%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0">博客备份导入本地</a></p>
+<p>快速导航（建议通过目录跳转，目录位置：页面右下角）：<br><a href="#%E5%8D%9A%E5%AE%A2%E7%AE%80%E4%BB%8B">博客简介</a><br><a href="#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E8%BD%AF%E4%BB%B6">需要准备的软件</a><br><a href="#%E5%AE%89%E8%A3%85Hexo">安装Hexo</a><br><a href="#%E5%BB%BA%E7%AB%99">建站</a><br><a href="#%E5%88%9B%E5%BB%BAGitHub%E8%B4%A6%E6%88%B7">创建GitHub账户</a><br><a href="#%E9%85%8D%E7%BD%AE_config.yml%E6%96%87%E4%BB%B6">配置_config.yml文件</a><br><a href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0blog%E6%96%87%E4%BB%B6%E5%A4%B9">配置本地blog文件夹</a><br><a href="#%E5%8D%9A%E5%AE%A2%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0">博客新建文章</a><br><a href="#%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98">博客更换主题</a><br><a href="#hexo%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4">hexo最常用的几个命令</a><br><a href="#%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD">个人博客备份</a><br><a href="#%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0">博客备份导入本地</a></p>
 <h2 id="博客简介"><a href="#博客简介" class="headerlink" title="博客简介"></a>博客简介</h2><p>百度百科截取</p>
 <blockquote>
 <p>博客，仅音译，英文名为Blogger，为Web Log的混成词。它的正式名称为网络日记；又音译为部落格或部落阁等，是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。博客上的文章通常以网页形式出现，并根据张贴时间，以倒序排列。通常具备RSS订阅功能。博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，现已受到大家的欢迎，是网络时代的个人“读者文摘”，是以超级链接为入口的网络日记，它代表着新的生活、工作和学习方式。许多博客专注在特定的课题上提供评论或新闻，其他则被作为个人性的日记。一个典型的博客结合了文字、图像、其他博客或网站的链接及其它与主题相关的媒体，能够让读者以互动的方式留下意见，是许多博客的重要要素。大部分的博客内容以文字为主，但仍有一些博客专注在艺术、摄影、视频、音乐、播客等各种主题。博客是社会媒体网络的一部分。比较著名的有新浪等博客。</p>
@@ -311,7 +311,7 @@
 <p>简写为<code>hexo s</code>，hexo本地服务启动后，在浏览器端输入localhost:4000即可查看效果<br>ctrl+c 可结束hexo本地服务（git窗口中有提示）<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h2 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h2><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a target="_blank" rel="noopener" href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，可以参看站点文章 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h3 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h3><p>登录github：<a target="_blank" rel="noopener" href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private（私有的）</p>
-<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#x6f;&#x75;&#114;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#x40;&#x79;&#111;&#x75;&#114;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#121;&#x6f;&#x75;&#114;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#x40;&#x79;&#111;&#x75;&#114;&#x65;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></strong>为GitHub创建时用的邮箱</p>
+<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#x75;&#x72;&#95;&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#121;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x79;&#111;&#x75;&#x72;&#95;&#x65;&#x6d;&#97;&#105;&#108;&#x40;&#121;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></strong>为GitHub创建时用的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>回车后出现如下提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
@@ -380,7 +380,7 @@
 <p>部署部分的设置，下面有详细说明</p>
 <h2 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h2><p>用编译软件打开blog文件夹，在根目录中找到<code>_config.yml</code><br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#111;&#x75;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#121;&#111;&#x75;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#x75;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;">&#x79;&#111;&#x75;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h2 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h2><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——将本地生成的静态文件部署到网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h2 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h2><p>好的博客当然需要一个好的主题来衬托</p>
@@ -428,7 +428,7 @@
 <h3 id="本地数据备份至GitHub"><a href="#本地数据备份至GitHub" class="headerlink" title="本地数据备份至GitHub"></a>本地数据备份至GitHub</h3><p>文件夹<strong>yourname.github.io</strong>右键<strong>Git Bash Here</strong>，在git里面输入（看yourname.github.io后面是否有蓝色hexo字样，如果没有就错了）：<br>1.<code>git add .</code> ——将文件的修改，文件的新建，添加到暂存区。详解：<strong>git空格add空格.</strong> ，切记不要打错，否则命令就错了<br>2.<code>git commit -m&quot;...&quot;</code> ——提交修改，<code>...</code>为对修改的描述。详解：<strong>git空格commit空格-m”…”</strong><br>3.<code>git push origin hexo</code> ——将源文件提交到hexo分支<br>4.<code>hexo g -d</code><br>这样一来，<strong>yourname.github.io</strong>仓库就有master分支和hexo分支，分别保存静态网页和源文件。<br>打开GitHub参看仓库hexo分支是否更新，更新则个人博客备份完成<br>此文件夹作为本地<strong>blog</strong>文件夹使用，对hexo博客进行的更改包括：发布、删除文章，更换主题，均在此文件夹进行。</p>
 <h2 id="博客备份导入本地"><a href="#博客备份导入本地" class="headerlink" title="博客备份导入本地"></a>博客备份导入本地</h2><p>这里对新旧电脑进行说明<br>新电脑：即电脑中不含有关于博客的任何文件以及本地<strong>ssh key</strong><br>旧电脑：GitHub中含有当前电脑的<strong>ssh key</strong>，并且已经有<strong>yourname.github.io</strong>文件夹</p>
 <h3 id="新电脑"><a href="#新电脑" class="headerlink" title="新电脑"></a>新电脑</h3><p>此部分内容与上文高度重复。</p>
-<h4 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h4><p>参看目录：<strong>需要准备的软件</strong>，跳转点击 <a href="?id=#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E8%BD%AF%E4%BB%B6">需要准备的软件</a><br><strong>补充：如果你的电脑只是重装系统，并且没有删除本地yourname.github.io文件夹，那么你可以在重装系统之前，将本地的ssh key备份，当重装系统完成后，将其放置指定文件夹下即可跳过创建和添加ssh key相关步骤。</strong><br><strong>在本地创建ssh key</strong>、<strong>添加key到github网站</strong> 参看上文目录：<strong>创建GitHub账户</strong>，跳转点击 <a href="?id=#%E5%88%9B%E5%BB%BAGitHub%E8%B4%A6%E6%88%B7">创建GitHub账户</a></p>
+<h4 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h4><p>参看目录：<strong>需要准备的软件</strong>，跳转点击 <a href="#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87%E7%9A%84%E8%BD%AF%E4%BB%B6">需要准备的软件</a><br><strong>补充：如果你的电脑只是重装系统，并且没有删除本地yourname.github.io文件夹，那么你可以在重装系统之前，将本地的ssh key备份，当重装系统完成后，将其放置指定文件夹下即可跳过创建和添加ssh key相关步骤。</strong><br><strong>在本地创建ssh key</strong>、<strong>添加key到github网站</strong> 参看上文目录：<strong>创建GitHub账户</strong>，跳转点击 <a href="#%E5%88%9B%E5%BB%BAGitHub%E8%B4%A6%E6%88%B7">创建GitHub账户</a></p>
 <h4 id="云端备份导入本地"><a href="#云端备份导入本地" class="headerlink" title="云端备份导入本地"></a>云端备份导入本地</h4><p>选好要导入的位置<br>右键<strong>git bash here</strong><br>输入以下命令（yourname输入自己GitHub用户名）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
 <p>回车会出现</p>
@@ -738,15 +738,19 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color1">linux</a>
-          </li>
-           
-          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">vm</a>
           </li>
            
           <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color1">linux</a>
+          </li>
+           
+          <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color5">html</a>
+          </li>
+           
+          <li class="article-tag-list-item">
+            <a style="cursor:pointer" class="js-tag color2">java基础</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -755,10 +759,6 @@
            
           <li class="article-tag-list-item">
             <a style="cursor:pointer" class="js-tag color3">js</a>
-          </li>
-           
-          <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color2">java基础</a>
           </li>
            
           <li class="article-tag-list-item">
@@ -774,11 +774,11 @@
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">教程</a>
+            <a style="cursor:pointer" class="js-tag color3">bt</a>
           </li>
            
           <li class="article-tag-list-item">
-            <a style="cursor:pointer" class="js-tag color3">bt</a>
+            <a style="cursor:pointer" class="js-tag color3">教程</a>
           </li>
            
           <li class="article-tag-list-item">
