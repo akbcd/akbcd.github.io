@@ -421,9 +421,13 @@
             if (service === 'highlight') {
                 // 目标节点第一个子节点之前
                 item.insertBefore(fragment, item.firstChild);
+                // 圆角边框修改
+                item.lastChild.style['border-radius']= '0 0 4px 4px';
             } else {
                 // 目标节点之前
                 item.parentNode.insertBefore(fragment, item);
+                // 圆角边框修改
+                item.style['border-radius']= '0 0 4px 4px';
             }
         }
         // 获取代码块渲染工具
@@ -463,7 +467,7 @@
                     ? item.lastChild.getAttribute('class').split(' ')[1]
                     : item.lastChild.getAttribute('class') : 'Code';
                     const highlightLangEle = `<div class="code-lang">${langName}</div>`;
-                    wrap(item, 'figure', { class: 'highlight-pre' });
+                    wrap(item, 'figure', {class: 'highlight'});
                     createEle(highlightLangEle, highlight_show, highlightShrinkClass, highlightShrinkEle, item);
                 })
             }
@@ -475,7 +479,7 @@
                 })
             } else {
                 $figureHighlight.forEach(function (item) {
-                    wrap(item, 'figure', { class: 'highlight-pre'});
+                    wrap(item, 'figure', {class: 'highlight'});
                     createEle('', highlight_show, highlightShrinkClass, highlightShrinkEle, item);
                 })
             }
