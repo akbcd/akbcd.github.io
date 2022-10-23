@@ -1017,14 +1017,11 @@ body,button,input,select,textarea {
 .article-entry figure:hover .js-btn-copy,.article-entry pre:hover .js-btn-copy {
     display: block;
 }
-/* 代码块扩展栏样式（通用） */
-.article-entry .highlight-pre,.article-entry .highlight {
-    margin: 10px 0;
-    color: #90a4ae;
-}
+/* 代码块扩展栏样式 */
 .article-entry .highlight-tools {
     min-height: 25px;
     background-color: #e6ebf1;
+    border: 1px solid #e6ebf1;
     border-radius: 4px 4px 0 0;
     display: -webkit-box;
     display: -moz-box;
@@ -1039,9 +1036,11 @@ body,button,input,select,textarea {
     display: flex;
     align-items: center
 }
+/* 代码区块隐藏 */
 .article-entry .highlight-tools.closed ~ * {
     display: none;
 }
+/* 代码块扩展栏样式（显示语言） */
 .article-entry .highlight-tools .code-lang {
     position: relative;
     left: 5px;
@@ -1068,6 +1067,7 @@ body,button,input,select,textarea {
 .article-entry .highlight-tools .expand + .code-lang {
     left: 25px;
 }
+/* 代码块扩展栏样式（隐藏代码块按钮） */
 .article-entry .highlight-tools .expand.icon-back {
     cursor: pointer;
     -webkit-user-select: none;
@@ -1086,7 +1086,7 @@ body,button,input,select,textarea {
     -ms-transition: -ms-transform 0.3s;
     transition: transform 0.3s;
 }
-.article-entry .highlight-tools .expand.closed.icon-back {    
+.article-entry .highlight-tools .expand.closed.icon-back {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -1098,24 +1098,31 @@ body,button,input,select,textarea {
     -ms-transform: rotate(180deg) !important;
     transform: rotate(180deg) !important;
 }
-/* 代码区块样式（通用） */
+/* 代码区块样式 */
 .article-entry .highlight,.article-entry pre {
-    background: #f6f8fa;
-    border-radius: 4px;
     font-size: .9rem;
     color: #90a4ae
+}
+.article-entry .highlight {
+    margin: 10px 0;
+    color: #90a4ae;
 }
 .article-entry pre {
     margin: 10px 0;
     padding: 5px 10px;
+    background: #f6f8fa;
+    border: 1px solid #f6f8fa;
+    border-radius: 4px;
     overflow-x: auto;
 }
 .article-entry .highlight pre {
     margin: 0;
-    padding: 0;
 }
-.article-entry .highlight-pre pre {
+.article-entry .highlight table pre {
+    background: none;
+    border: none;
     margin: 0;
+    padding: 0;
 }
 /* 代码块横向滚动条 */
 .article-entry pre::-webkit-scrollbar-button {
@@ -1129,6 +1136,9 @@ body,button,input,select,textarea {
     margin: 0;
     display: block;
     padding: 5px 10px;
+    background: #f6f8fa;
+    border: 1px solid #f6f8fa;
+    border-radius: 4px;
     overflow-x: auto;
 }
 /* 代码块横向滚动条 */
