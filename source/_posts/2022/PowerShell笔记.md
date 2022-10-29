@@ -1,6 +1,7 @@
 ---
 title: PowerShell笔记
 date: 2022-10-23 07:35:30
+updated: 2022-10-29
 tags: PowerShell
 toc: true
 ---
@@ -78,6 +79,17 @@ Get-Help Get-Content
 `Get-Content`查看文件内容，`-Encoding`编码参数不指定时，查看文件编码为系统编码
 ## Import-Csv的使用
 `Import-Csv`参看csv形式文件的命令，可以指定编码`-Encoding`以及区切符`Delimiter`
+当`Import-Csv`读取的文件有多行时（大于等于2行，不包含页眉），`Import-Csv`返回的结果集会出现`length`属性，显示文件有多少行。
+多行时，`Import-Csv`会以数组形式存放信息，但是只有一行数据时，不会以数组形式存放信息，也就没有`length`属性。
+遍历文件时，尽量避免使用`Import-Csv`的`length`属性，当文件只有一行时，`length`属性不存在。
+解决方法就是使用`foreach`遍历文件
+```PowerShell
+$File = Import-Csv -Path $Path
+foreach($aLine in $File){
+    #可以直接使用$aLine获取每行$File属性的值
+    echo $aLine.name
+}
+```
 ## 运算符的使用
 `-eq` 等于
 `-ne` 不等于
@@ -98,6 +110,9 @@ Get-Help Get-Content
 ## 调试
 powershell本身是有调试功能的：**Windows PowerShell ISE**
 支持打断点，逐行执行
+打断点：F9
+逐行执行：F10
+执行下一断点：F5
 ## 判定条件的使用
 这里简单说一下if和else if
 ```PowerShell
