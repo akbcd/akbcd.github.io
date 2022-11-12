@@ -361,7 +361,7 @@
             return ele.offsetHeight === 0 && ele.offsetWidth === 0;
         }
         // 判断代码块渲染工具
-        function highlight_plugin() {
+        function highlight_pluginFn() {
             if(document.querySelectorAll('figure.highlight').length){
                 return 'highlight';
             }else if (document.querySelectorAll('pre[class*="language-"]').length){
@@ -374,12 +374,19 @@
         }
         // 代码块隐藏
         const highlightShrinkFn = (ele) => {
+            // highlight-tools标签
+            const $firstEle = ele.parentNode.firstChild;
+            // highlight-tools标签的下一个标签（数组）
             const $nextEle = [...ele.parentNode.children].slice(1);
+            // 隐藏按钮class
             ele.firstChild.classList.toggle('closed');
+            // 代码块隐藏，highlight-tools标签圆角
             if (isHidden($nextEle[$nextEle.length - 1])) {
-              $nextEle.forEach(e => { e.style.display = 'block' });
+                $nextEle.forEach(e => { e.style.display = 'block' });
+                $firstEle.removeAttribute('style');
             } else {
-              $nextEle.forEach(e => { e.style.display = 'none' });
+                $nextEle.forEach(e => { e.style.display = 'none' });
+                $firstEle.style['border-radius']= '4px';
             }
         }
         // 调用代码块隐藏
@@ -387,7 +394,7 @@
             const $target = e.target.classList;
             if ($target.contains('expand')) highlightShrinkFn(this);
         }
-        // 创建元素并将选择器元素作为创建元素的子节点（选择器，标签，属性）
+        // 创建选择器元素的父节点（选择器,标签类型,属性）
         const wrap = function (selector, eleType, options) {
             // 创建指定节点
             const creatEle = document.createElement(eleType);
@@ -400,38 +407,41 @@
             // 选择器节点作为创建节点的子节点
             creatEle.appendChild(selector);
         }
-        // 创建子节点
+        // 创建highlight-tools标签（代码块语言,隐藏按钮,隐藏按钮class,隐藏按钮标签,代码块节点,代码块渲染工具）
         function createEle (lang, show, cls, ele, item, service) {
             // 创建空白节点
             const fragment = document.createDocumentFragment();
-            // 创建div元素
+            // 创建highlight-tools标签
             const hlTools = document.createElement('div');
-            // 隐藏代码块class
-            const highlightShrinkClass = cls;
-            // 创建元素的属性
-            hlTools.className = `highlight-tools ${highlightShrinkClass}`;
+            // highlight-tools标签圆角
+            if (cls === 'closed'){
+                hlTools.style['border-radius']= '4px';
+            }
+            // highlight-tools标签属性
+            hlTools.className = cls ? `highlight-tools ${cls}` : 'highlight-tools';
+            // highlight-tools标签添加隐藏按钮和代码块语言
             hlTools.innerHTML = ele + lang;
-            // 不显示隐藏按钮
+            // 删除添加的隐藏按钮
             if (show === 'none') hlTools.innerHTML = lang;
-            // 对创建元素添加点击事件
+            // highlight-tools标签添加点击事件
             hlTools.addEventListener('click', highlightToolsFn);
-            // 在空白中追加创建的div元素
+            // 在空白中追加创建的highlight-tools标签
             fragment.appendChild(hlTools);
             // 插入创建节点
             if (service === 'highlight') {
                 // 目标节点第一个子节点之前
                 item.insertBefore(fragment, item.firstChild);
-                // 圆角边框修改
+                // 目标节点最后一个子节点圆角边框修改（table标签）
                 item.lastChild.style['border-radius']= '0 0 4px 4px';
             } else {
                 // 目标节点之前
                 item.parentNode.insertBefore(fragment, item);
-                // 圆角边框修改
+                // 目标节点圆角边框修改（pre标签）
                 item.style['border-radius']= '0 0 4px 4px';
             }
         }
         // 获取代码块渲染工具
-        var highlight_plugin=highlight_plugin();
+        const highlight_plugin=highlight_pluginFn();
         // 页面没有代码块，跳出
         if (!highlight_plugin) return;
         // 渲染工具是否为highlight
