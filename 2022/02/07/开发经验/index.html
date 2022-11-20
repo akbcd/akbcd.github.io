@@ -15,7 +15,7 @@
 <meta property="og:description" content="开发项目中，关于数据库建表的的限制。我们用的数据库是微软的Azure Synapse Analytics 中专用 SQL 池。前段时间，建了一个有500多个字段的表，头一次遇到这么多字段的表。建表文写好后，在数据库中执行，报错了。只记住了一个关键字：8060。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-07T12:30:07.000Z">
-<meta property="article:modified_time" content="2022-02-07T12:30:07.000Z">
+<meta property="article:modified_time" content="2022-11-19T16:00:00.000Z">
 <meta property="article:author" content="akbcd">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -250,12 +250,14 @@
       <a href="/2022/02/07/%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C/" class="archive-article-date">
   <time datetime="2022-02-07T12:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-07</time>
   
+  <time datetime="2022-11-19T16:00:00.000Z" itemprop="dateUpdated"> | <i class="icon-updated icon"></i>更新于 2022-11-20</time>
+  
 </a>
       
       
       <div style="color: #999">
         
-        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;859&nbsp;</span>
+        <span><i class="icon-wordcount icon"></i>&nbsp;字数&nbsp;1k&nbsp;</span>
         
         
       </div>
@@ -281,7 +283,8 @@
 <blockquote>
 <p>每行字节数的计算方式同于使用页面压缩的 SQL Server。 与 SQL Server 一样，支持行溢出存储，这样可以将可变长度列脱行推送。 对可变长度行进行拖行推送时，只将 24 字节的根存储在主记录中。 有关详细信息，请参阅超过 8 KB 的行溢出数据。</p>
 </blockquote>
-<h2 id="Azure数据工厂pipeline中复制数据活动加载文件数据到Azure-Synapse-Analytics"><a href="#Azure数据工厂pipeline中复制数据活动加载文件数据到Azure-Synapse-Analytics" class="headerlink" title="Azure数据工厂pipeline中复制数据活动加载文件数据到Azure Synapse Analytics"></a>Azure数据工厂pipeline中复制数据活动加载文件数据到Azure Synapse Analytics</h2><p>这也是一个很奇怪的现象，也是那个500多个项目的表，前面刚解决完建表失败，后面用pipeline加载文件数据到表里又失败了。pipeline使用的是Polybase将文件数据加载到Azure Synapse Analytics 中专用 SQL 池。pipeline报错说是超过所允许的大小，关键字是more than limit。<br>尝试了很多方法，什么数据满位啊，未满位，全空等情况，也没找出具体原因。最后无意中用了一个varchar字段尝试，发现varchar字段没有char字段占位多，这个我只能说是在Polybase将文件数据加载到Azure Synapse Analytics 中专用 SQL 池的情况下。因为我在网上查询的资料一致说明定义相同长度的varchar和char，varchar占位多。<br>解决方法就是建表时将绝大部分的char型字段改为varchar，就很离谱，并且没有查到相关资料。</p>
+<p>微软文档：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits">https://learn.microsoft.com/zh-cn/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits</a></p>
+<h2 id="Azure数据工厂pipeline中复制数据活动加载文件数据到Azure-Synapse-Analytics"><a href="#Azure数据工厂pipeline中复制数据活动加载文件数据到Azure-Synapse-Analytics" class="headerlink" title="Azure数据工厂pipeline中复制数据活动加载文件数据到Azure Synapse Analytics"></a>Azure数据工厂pipeline中复制数据活动加载文件数据到Azure Synapse Analytics</h2><p>这也是一个很奇怪的现象，也是那个500多个项目的表，前面刚解决完建表失败，后面用pipeline加载文件数据到表里又失败了。pipeline使用的是Polybase将文件数据加载到Azure Synapse Analytics 中专用 SQL 池。pipeline报错说是超过所允许的大小，关键字是more than limit。<br>尝试了很多方法，什么数据满位啊，未满位，全空等情况，也没找出具体原因。最后无意中用了一个varchar字段尝试，发现varchar字段没有char字段占位多，这个我只能说是在Polybase将文件数据加载到Azure Synapse Analytics 中专用 SQL 池的情况下。因为我在网上查询的资料一致说明定义相同长度的varchar和char，varchar占位多。<br>解决方法就是建表时将绝大部分的char型字段改为varchar<del>，就很离谱，并且没有查到相关资料。</del><br>Polybase引擎使用外部表的模式插入数据，也就是说，当使用Polybase引擎加载数据时，会建一个与目标表结构相同的外部表，执行insert into 目标表 select from 外部表语句。由于上述每行的字节数定义的大小8060的限制，执行select外部表时，外部表也会有此限制，数据溢出时，每个varchar项目会占用8060中的24字节。select外部表的数据超过8060，数据则会加载失败，insert语句直接失败。</p>
 <h2 id="Azure数据工厂pipeline中复制数据活动加载文件数据到数据库时数据集所选用的区切方式"><a href="#Azure数据工厂pipeline中复制数据活动加载文件数据到数据库时数据集所选用的区切方式" class="headerlink" title="Azure数据工厂pipeline中复制数据活动加载文件数据到数据库时数据集所选用的区切方式"></a>Azure数据工厂pipeline中复制数据活动加载文件数据到数据库时数据集所选用的区切方式</h2><p>这也应该算是经验之谈吧。经验多了，自然就会考虑到这个问题。<br>将文件加载到数据库中，选择的区切字符一定要是唯一的，并且是文件里面没有的字符，如果文件数据里面有区切字符，pipeline的复制数据活动做区切数据时就会出现问题，结果就是文件数据无法加载到数据库中。</p>
 <h2 id="Azure数据工厂pipeline的trigger"><a href="#Azure数据工厂pipeline的trigger" class="headerlink" title="Azure数据工厂pipeline的trigger"></a>Azure数据工厂pipeline的trigger</h2><p>在pipeline中创建trigger，选择存储事件时，一定要确认零字节 Blob 是否触发管道运行的需求。<br>如果勾选零字节 Blob不触发管道运行时，当你把符合条件的文件放置监视的路径上，但是大小是零字节，那么pipeline所绑定的trigger是不会触发pipeline的。</p>
 
