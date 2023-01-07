@@ -38,7 +38,7 @@
         <a style="cursor:pointer" class="page-reward-btn tooltip-top">
           <div class="tooltip tooltip-east">
             <span class="tooltip-item">
-              赏
+              <%- _p('reward') %>
             </span>
             <span class="tooltip-content">
               <span class="tooltip-text">
@@ -48,13 +48,13 @@
                     <% if(theme.alipay) {%>
                     <div class="reward-box-item">
                       <img class="reward-img" src="<%= theme.alipay%>">
-                      <span class="reward-type">支付宝</span>
+                      <span class="reward-type"><%- _p('alipay') %></span>
                     </div>
                     <% } %>
                     <% if(theme.weixin) {%>
                     <div class="reward-box-item">
                       <img class="reward-img" src="<%= theme.weixin%>">
-                      <span class="reward-type">微信</span>
+                      <span class="reward-type"><%- _p('weixin') %></span>
                     </div>
                     <% } %>
                   </div>

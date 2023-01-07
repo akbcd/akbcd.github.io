@@ -2925,12 +2925,11 @@ pre .attr-value,.html pre .string {
 .tooltip-top .tooltip:hover:after {
     pointer-events: auto
 }
-
+/* 打赏样式 */
 .tooltip-top .tooltip-content {
     position: absolute;
     z-index: 9999;
     width: 370px;
-    left: 50%;
     bottom: 100%;
     font-size: 20px;
     line-height: 1.4;

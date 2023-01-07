@@ -14,6 +14,10 @@ copy_error: 复制失败
 dateUpdated: 更新于
 wordcount: 字数
 copyright: 著作权归作者所有,转载或内容合作请联系作者
+# reward
+reward: 赏
+alipay: 支付宝
+weixin: 微信
 # valine
 leancloud_visitors: 当前页访问次数
 # copyright
