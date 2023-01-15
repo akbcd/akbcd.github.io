@@ -117,9 +117,13 @@ jsonContent:
       categories: false
       tags: true
 
+# hexo-generator-searchdb
 search:
   path: search.xml
   field: post
+
+# hexo-neat
+neat_enable: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
