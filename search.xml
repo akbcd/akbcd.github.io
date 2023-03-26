@@ -417,6 +417,21 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Win11 OOBE 阶段跳过联网</title>
+    <url>/2023/03/26/Win11-OOBE-%E9%98%B6%E6%AE%B5%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91/</url>
+    <content><![CDATA[<p>Windows11 重置此电脑后，不想联网，直接建立本地账户，这就是我的需求。这里记录一下如何实现。</p>
+<span id="more"></span>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从Windows11 22H2开始，首次使用Windows11 ，微软会强制联网并登录微软账号，不再提供 我没有Internet连接 选项。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>（推荐）在选择联网界面，按住键盘 <code>shift</code>+<code>F10</code> （个别电脑可能需要使用 <code>Fn</code>+<code>shift</code>+<code>F10</code>）进入命令提示窗口，鼠标点击命令提示窗口光标，输入 <code>OOBE\BYPASSNRO</code>，回车后，电脑会重启，重启后重新进入联网界面，页面已经提供 我没有Internet连接 选项。</li>
+<li>（不推荐）依然是联网界面，按照上面方法进入命令提示窗口，输入 <code>taskmgr</code> 打开任务管理器，进入详细信息，找到进程 <code>OOBENetworkCoectioFlow.exe</code> ，结束进程。如果此方法没有跳过联网界面，可以多试几次。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C#中按字节数截取字符串</title>
     <url>/2022/12/18/C-%E4%B8%AD%E6%8C%89%E5%AD%97%E8%8A%82%E6%95%B0%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<p>开发中可能会有按照字节数截取字符串的需求。<br>当字符串超过指定字节，保留指定字节数长度的字符串，超过部分舍掉。<br>C#中的<code>GetString(Byte[], Int32, Int32)</code>方法是可以直接截取指定字节，将字节转为字符串，但是此方法会有一个问题：</p>
