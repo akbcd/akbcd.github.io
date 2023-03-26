@@ -100,10 +100,10 @@ baidu_analytics: false
 google_analytics: false
 
 # 网页图标
-favicon: /img/avatar.png
+favicon: /img/avatar.webp
 
 # 你的头像url
-avatar: /img/avatar.png
+avatar: /img/avatar.webp
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
