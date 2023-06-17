@@ -417,6 +417,21 @@
 ]]></content>
   </entry>
   <entry>
+    <title>for循环遍历</title>
+    <url>/2023/06/17/for%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/</url>
+    <content><![CDATA[<p>最近开发中，关于for循环踩了一点坑，在此记录一下。<br>分享一下关于for循环对数组的遍历</p>
+<span id="more"></span>
+<p>1.从小到大依次输出</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*需要遍历的数组*/</span></span><br><span class="line">    <span class="built_in">int</span>[] i = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="comment">/*for循环对数组的值从小到大输出*/</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; i.Length; j ++)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(i[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依次输出：12345<br>2.从大到小依次输出</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*需要遍历的数组*/</span></span><br><span class="line">    <span class="built_in">int</span>[] i = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="comment">/*for循环对数组的值从小到大输出*/</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = i.Length - <span class="number">1</span>; j &gt; <span class="number">-1</span>; j --)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(i[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依次输出：54321</p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win11 OOBE 阶段跳过联网</title>
     <url>/2023/03/26/Win11-OOBE-%E9%98%B6%E6%AE%B5%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91/</url>
     <content><![CDATA[<p>Windows11 重置此电脑后，不想联网，直接建立本地账户，这就是我的需求。这里记录一下如何实现。</p>
