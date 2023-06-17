@@ -26,7 +26,7 @@ static void Main(string[] args)
 {
     /*需要遍历的数组*/
     int[] i = {1,2,3,4,5};
-    /*for循环对数组的值从小到大输出*/
+    /*for循环对数组的值从大到小输出*/
     for (int j = i.Length - 1; j > -1; j --)
     {
         Console.WriteLine(i[j]);
