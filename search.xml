@@ -6,6 +6,8 @@
     <content><![CDATA[<p>欢迎访问akbcd博客<br>您可以点击所有文章中的搜索图标进行关键字搜索</p>
 <span id="more"></span>
 <p>以下内容为博客yilia主题的操作日志</p>
+<h2 id="20240120"><a href="#20240120" class="headerlink" title="20240120"></a>20240120</h2><p>本主题已经放置在gitee上，需要的可以去下载~<br><a href="https://gitee.com/akbcd/hexo-theme-yilia">https://gitee.com/akbcd/hexo-theme-yilia</a></p>
+<hr>
 <h2 id="20230107"><a href="#20230107" class="headerlink" title="20230107"></a>20230107</h2><ul>
 <li>yilia主题<ul>
 <li>打赏样式修改，删除<code>left: 50%;</code></li>
@@ -415,6 +417,60 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-vh95-rmgr-6w4m (high severity) affects 1 repository: </span><br><span class="line"></span><br><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-6chw-6frg-f759 (moderate severity) affects 1 repository: </span><br><span class="line"></span><br><span class="line">A new security advisory was published </span><br><span class="line">We found a vulnerable dependency in repositories you have security alert access to.</span><br><span class="line">Security advisory GHSA-6c8f-qphg-qjgp (moderate severity) affects 1 repository: </span><br></pre></td></tr></table></figure>
 <p>总共发了三个邮件，都是属于仓库安全问题，GitHub官网有详细的解决办法，因为家中宽带无法访问GitHub，所以拖了很久<br>这次解决这个问题<br>添加了一个BT磁力搜索站点<br>添加关闭代码块复制配置<br>修复音乐播放器音乐失效以及友链部分链接失效</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2024/01/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>最近开发中使用到了很多git命令，这里记录一下</p>
+<span id="more"></span>
+<ol>
+<li>git clone<br>将git仓库克隆到本地</li>
+<li>git satus<br>查看本地仓库状态，主要是看有哪些内容没有提交，或者是查看内容修改的对不对</li>
+<li>git branch -a<br>查看git仓库中的所有分支</li>
+<li>git checkout<br>将本地的git仓库切到指定分支</li>
+<li>git rebase<br>多分支时会使用。一般是解除分支竞合时使用的，或者将别人的分支作为自己的base</li>
+<li>git rebase –continue<br>解除竞合时，可能需要取入base的多个记录，取入一个记录后，还需要继续rebase取入下一个记录</li>
+<li>git rebase –abort<br>rebase途中取消rebase</li>
+<li>git log<br>查看本地git提交记录，按q退出记录查看</li>
+<li>git reset –soft<br>重置本地记录到git log中的指定版本</li>
+<li>git commit -m<br>git记录提交时的文言描述，-m参数指定在当前命令中编辑文言内容，不加-m参数则会打开git默认编辑器编辑文言内容，git的默认编辑器是vim，建议手动修改</li>
+<li>git push<br>将本地git仓库推送到远程仓库</li>
+<li>git push –force-with-lease<br>本地git仓库记录与远程仓库不一致时使用，将本地仓库记录强制推送到远程git分支</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>20230819日记</title>
+    <url>/2023/08/19/20230819%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<p>这是一个悲痛的故事，给我的人生很好的上了一课。<br>2023年8月13日晚，公司社内旅游回家，内蒙古通辽市公安联手汽开区公安堵在我家门口，没等我回到家中，便被送到了汽开区派出所。理由是核查信息。<br>警方跟我说，我有两张银行卡，涉嫌网络诈骗。我印象里我只办理过三张银行卡，且三张银行卡都在我自己的身上，对涉案的两张银行卡的真实性产生怀疑。我说我不知道我有那两张银行卡，想让警方帮我查询，警方就让我自己想，与我打起了时间战。<br>期间来了几个当地民警，也是让我好好想，想想究竟是怎么回事。因为天已经黑了，而且警察那边也没吃晚饭，看我也不承认，便把我带进候问室，他们便去吃饭了。<br>在候问室我仔细想了想自己是怎么办的这两张银行卡，实在想不起来，只能硬想。最后的结论便是我怎么向他们证明我没办这两张卡。过了很长时间，他们回来了，告诉了我这两张银行卡是农行和工行的。<br>我被当地民警叫出了候问室，我以为他能相信我真的不知情，结果得来的结果是，我没有好好配合，让我好好配合，大家都早点结束，他们也早点离开。最后顶多就是取保候审，交点罚款，就没事了。他跟我谈了很多，当时脑袋真就有点短路了，以为他是在帮我，真就以为好好配合后就没什么事。<br>好好配合的前提是自己确实做过，没做过的话打死也不能承认。——经验教训<br>因为是没有的事，我怎么配合？但是他们还让我配合。<br>所以我只能硬着头皮去询问警方所获得的信息。——其实警方根本就没有什么信息，警方想从我这获取更多的信息，而我当时的想法是想从警方那获取更多信息<br>中途发生了很多事，还查到了我的支付宝里有异常交易记录，当时手机上的银行账户里各种理财加起来有10多万块钱。<br>总之在警方的质问和引导下，我承认了自己卖卡。<br>一张卡卖了多少钱？<br>1000？<br>再想！<br>2000?<br>你说这个数我都不信，再想！<br>10000？<br>你在那玩呢，究竟卖了多少钱！<br>50000。 ——自己根本就没有卖卡，只是在配合警方，直到价钱达到警方的标准后不再进行追问。</p>
+<p>咱也不知道警方具体有啥情报，我说完5万后，他们竟然不问了。其实他们根本就没有我卖卡的任何证据，只是一味的诱导我，让我说出这个数字。看他们相信了后，竟然还在为自己庆幸，总算配合好了。——当时脑袋绝对是被驴踢了<br>因为自己承认了卖卡，之后就开始问一些卖卡的细节。<br>之后就开始给我展示他们的手段，说什么我年龄小，还是大学生，上面是不是有别人让你这样做的，把自己撇干净，自己就没事了，各种一堆。——真是让人嗤之以鼻</p>
+<p>还是在警方的各种诱导下，我把自己的姑姑顶上去了，说都是姑姑帮我搭的线，我说姑姑刚从缅甸回来几个月，警方还说这就对了，整的像是有姑姑什么证据似的。</p>
+<p>最后折腾到了半夜2点多钟，对口供按了手印。警方那边满意了，还跟我说我配合的很好。——配合的越好，自己的事越多。明明没有的事，因为自己的各种“配合”，导致自己的事越多</p>
+<p>这都2点多了，我们就不把你送回去了，委屈你，今晚就在候问室呆一晚上吧。</p>
+<p>当时脑袋迷迷糊糊的，直接点头就进候问室呆着了。——当时还以为明天就能出去了<br>进候问室前我说第二天还需要上班，如果上不了的话，需要请假，还问了需要请几天<br>先请一天，就说是家里老人生病了。</p>
+<p>第二天早上，他们来的很晚。姑姑着急一大早就来探望我，等了很长时间，误打误撞碰到了他们，结果也被扣了进来。我在候问室，姑姑在审讯室。</p>
+<p>因为姑姑什么都不说，警方就把我说的说给姑姑听，姑姑一直否认，说没有让我卖过卡。——你说气不气人，姑姑说的这些我都听到了，当时自己可是吓完了，因为自己是诬陷姑姑，如果姑姑一直否认的话，自己岂不是构成诬陷罪了。法律知识是多么薄弱<br>期间警官还跟我要母亲的电话号码，我也毫不犹豫地告诉他们了<br>在各种心理因素和听姑姑否认，我开始叫人，说我要翻供。他们把我带到了另一个小屋<br>我说我昨晚说的都是没有的事，跟我姑姑没有关系<br>他们听了后，有点生气。期间又进来几个新人。<br>新人拿着支付宝的交易记录对我一顿问，说什么你不认识这个人，这个人为什么给你转钱，反正又是一堆，又说了一堆跟姑姑有关的事<br>最后的结果就是，翻供失败，自己想说的都被怼了回去，还让我更加坚信姑姑有问题。民警因为我的翻供更加生气了，并且对我重新录口供<br>做口供的过程中，又来了两个新人，这两个人继续对我录口供。还跟我说什么是带着政策来的，昨天的那波人没有决定权，决定权是他们，他们是办案人。<br>也是继续让我配合，不知什么时候母亲也来了，在大厅<br>说什么我表现好让自己见母亲一面。<br>警方又追问了我一些细节，发现我说的卖卡的钱数和交易记录对不上。——当时看警察在仔细翻我的手机，还以为能帮我翻供呢，结果是自己想多了。当时的自己已经被贴上犯罪的标签。他们不会认为认为我没有问题。<br>因为自己之前的口供都是编的，问我细节我都答不上，和实际还不相符，便说我没有好好配合。<br>我有尝试说我没有卖卡，想翻供。结果民警直接走到我的面前用眼睛瞪着我，让我说实话，看我没有好好配合，还把我带到卫生间，让我蹲下<br>问我究竟有没有卖卡，还扇了我几个嘴巴子<br>最后我妥协了，承认自己卖卡了，翻供的想法消失了，至此，白的变成黑的了<br>期间因为不配合，还说要把我今晚带到通辽去，还一个劲地说我母亲在外面都哭了，总之，能用上的心理战术都用上了，也不知道是想吓吓我还是真要把我带到通辽。——对我起作用了</p>
+<p>你是不是技术人员？<br>技术人员？我在的公司是做软件的，你是说这个？<br>你是不是有什么事没说？好好想！</p>
+<p>最后想起来一件事，之前姑姑让我帮她的一个朋友做软件，说是可以赚钱。但是软件没做成，当时自己做了个安卓的，实现了登录功能，但是他们要的是苹果的，因为不会做，所以没做成</p>
+<p>因为这个软件的事，他们让我找各种证据，最后终于找到了部分聊天记录<br>当天晚上还针对于软件的事对我追录了口供，仔细说了一下软件的事</p>
+<p>结论也是我表现得好，说不把我带到通辽去，姑姑他们明天带走。——总之又是很晚，而且我也没见到母亲</p>
+<p>第二天<br>第一次审讯我的民警在审讯室里说，我跟领导说了，让他们不把你带走。还拿着手铐，感觉是准备铐我的。<br>姑姑带着手铐被带了出去，路过我的房间，趴着门看了看我，想对我说些什么，还没等张口就被推走了</p>
+<p>民警当着我的面接了个电话，电话里的人说我姑是上面的人，是金主。<br>挂了电话又跟我说了一堆姑姑的坏话，什么姑姑自己身上老干净了，对于我的指控都不承认，想把我往坑里推，还是一堆</p>
+<p>最后我也被他们带出去了，没带手铐。</p>
+<p>中途还把车停在一个胡同里，说什么姑姑就是不承认卖卡的事，就是要把我往坑里推。<br>又是一堆心里战术，我又妥协了，被民警套着头，下车与姑姑对峙，在我撕心裂肺的喊话下，姑姑相信我卖卡了，妥协了<br>期间姑姑还跟警方讨价还价，说一张卡5万太多了，但是警方自始至终没有妥协</p>
+<p>我们又被带回了派出所，我还被民警带回家中，去取笔记本，也算是作案工具吧<br>民警还将姑姑怎么把我往坑里推的事跟家里人说了一遍，说什么这要是自己的母亲，肯定会给自己揽过来，又是一堆</p>
+<p>笔记本里什么也没有。期间我还跟姑姑见了一面<br>我坐在民警旁边，姑姑看着我，但我却不敢看她，姑姑问了一句：你真的卖卡了吗？<br>嗯。——当时自己在自作聪明呢，这都是有监控啥的，白的已经变成黑的了。脑袋短路短到不知道姑姑为什么会再问我一遍<br>也就是这一刻，姑姑相信我卖卡了。姑姑开始帮我揽责。</p>
+<p>天黑左右，我俩正式被取保候审，一人交了一万取保费，出去了</p>
+<p>回家的路上，姑姑再次问了我，真卖卡了吗？<br>没有。</p>
+<p>之后就是找各种律师，自己也去银行查证了银行卡确实不存在。期间警官还打电话给我，问我究竟有没有那两张银行卡，说还会再来找我</p>
+<p>一个月左右，警官再次找了我们，详细问了一下上次说卖卡究竟是怎么回事，为什么那么说。——都心知肚明的事，他们也没再说什么<br>之后就是说我做的那个软件涉案了，要依法对我进行处罚。<br>我说那个软件我真的没做成。<br>他们说因为我做了，就要处罚我。<br>我说，这个我认，我接受处罚。</p>
+<p>我和姑姑重新录了口供</p>
+<p>2个星期左右，案子结了，我和姑姑因为我做软件的事，一人罚款1000元。——说罚款时还不忘往自己脸上贴金，说什么他们最开始想罚好几万，他跟领导说不能罚那么多。最后一人罚了1000，也不多，说对我们也没什么影响。不罚前的话也没法对领导交代。<br>我们还主动给了办案民警1万，感谢他们这么早给结案了。——真是讽刺</p>
+<p><strong>最后</strong><br>支付宝的转账，引发了卖银行卡，卖银行卡勾起了做软件<br>要说自己一点事没有，没人会信<br>人的一生不可能一帆风顺，通过这件事我也知道了派出所的民警都是一帮什么人。他们的那些方法可能对真正的犯人会好使，但是却用在了我的身上<br>审讯室中，墙上贴着的白纸黑字：禁止对犯罪嫌疑人进行骗供、诱供。——这就是真实的写照<br>1万2，当作是花钱请民警给我上了一课吧，无奈。<br>真就是一点法都不能犯啊，擦边也不行！</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
   <entry>
     <title>for循环遍历</title>
@@ -1885,7 +1941,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#120;&#x78;&#x78;&#x78;&#120;&#x78;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#120;&#x78;&#x78;&#x78;&#120;&#x78;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#x78;&#x78;&#120;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -1900,7 +1956,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#120;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#120;&#120;&#120;&#120;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a></td>
+<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#120;&#120;&#120;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#x78;&#x78;&#x78;&#120;&#120;&#120;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -5581,7 +5637,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>简写为<code>hexo s</code>，hexo本地服务启动后，在浏览器端输入localhost:4000即可查看效果<br>ctrl+c 可结束hexo本地服务（git窗口中有提示）<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h2 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h2><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，可以参看站点文章 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h3 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h3><p>登录github：<a href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private（私有的）</p>
-<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#x6f;&#117;&#x72;&#95;&#x65;&#x6d;&#x61;&#x69;&#108;&#64;&#121;&#x6f;&#x75;&#x72;&#x65;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#121;&#x6f;&#117;&#x72;&#95;&#x65;&#x6d;&#x61;&#x69;&#108;&#64;&#121;&#x6f;&#x75;&#x72;&#x65;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></strong>为GitHub创建时用的邮箱</p>
+<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#117;&#114;&#x5f;&#x65;&#x6d;&#97;&#x69;&#108;&#64;&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x79;&#111;&#117;&#114;&#x5f;&#x65;&#x6d;&#97;&#x69;&#108;&#64;&#x79;&#111;&#x75;&#x72;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></strong>为GitHub创建时用的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>回车后出现如下提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
@@ -5650,7 +5706,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>部署部分的设置，下面有详细说明</p>
 <h2 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h2><p>用编译软件打开blog文件夹，在根目录中找到<code>_config.yml</code><br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#121;&#x6f;&#x75;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#121;&#x6f;&#x75;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;">&#x79;&#x6f;&#117;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h2 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h2><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——将本地生成的静态文件部署到网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h2 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h2><p>好的博客当然需要一个好的主题来衬托</p>

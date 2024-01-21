@@ -1,54 +1,57 @@
-/** search.js*/
-!function(){
+/*!
+ * search.js
+ * 全局搜索
+ */
+!function () {
     //添加清空输入内容按钮
     var $searchInput = document.getElementById('js-searchInput');
     var $clearInput = document.getElementById('js-searchTextCancel');
-    $searchInput.onfocus=function () {
-        if(this.value != ''){
-            $clearInput.style.display='block';
+    $searchInput.onfocus = function () {
+        if (this.value != '') {
+            $clearInput.style.display = 'block';
         }
     };
     $searchInput.addEventListener('input', function () {
-        if(this.value == ''){
-            $clearInput.style.display='none';
-        }else{
-            $clearInput.style.display='block';
+        if (this.value == '') {
+            $clearInput.style.display = 'none';
+        } else {
+            $clearInput.style.display = 'block';
         }
     });
-    function stopBodyScroll(){
-        let $body=document.body;
+    function stopBodyScroll() {
+        let $body = document.body;
         //获取页面滚动的距离
-        let value=window.scrollY;
+        let value = window.scrollY;
         //将body标签在当前位置固定
-        $body.style.position='fixed';
-        $body.style.top=-value+'px';
-        $body.style.width='100%';
+        $body.style.position = 'fixed';
+        $body.style.top = -value + 'px';
+        $body.style.width = '100%';
         return value;
     };
-    window.addEventListener("DOMContentLoaded",function(){
-        $clearInput.onclick=function(){
-            $searchInput.value='';
-            document.getElementById("js-searchResult").innerHTML='';
-            $clearInput.style.display='none';
+    window.addEventListener("DOMContentLoaded", function () {
+        $clearInput.onclick = function () {
+            $searchInput.value = '';
+            document.getElementById("js-searchResult").innerHTML = '';
+            $clearInput.style.display = 'none';
         };
         //给搜索图标添加点击事件
         let open = document.getElementById('js-icon-search');
         let close = document.getElementById('js-modal-overlay');
-        let $searchModal=document.getElementById('js-searchModal');
-        let scrollTopValue=0;
-        open.onclick = function(){
+        let $searchModal = document.getElementById('js-searchModal');
+        let scrollTopValue = 0;
+        open.onclick = function () {
             //弹窗出现时淡入动画
-            $searchModal.style.display="block";
-            close.style.display="block";
+            $searchModal.style.display = "block";
+            close.style.display = "block";
             setTimeout(function () {
                 $searchModal.style.opacity = 1;
                 close.style.opacity = 0.3;
             }, .1);
             //返回滚动条位置并固定body
-            scrollTopValue=stopBodyScroll();
+            scrollTopValue = stopBodyScroll();
         };
         //关闭搜索
-        close.onclick = function(){
+        close.onclick = function () {
             //弹窗关闭时淡出动画
             $searchModal.style.opacity = 0;
             close.style.opacity = 0;
@@ -59,7 +62,7 @@
             //移除body固定
             document.body.removeAttribute("style");
             //页面回到获取的位置
-            window.scrollTo(0,scrollTopValue);
+            window.scrollTo(0, scrollTopValue);
         }
     });
 }();
@@ -113,9 +116,9 @@ var searchFunc = function (path, search_id, content_id) {
                 }
                 // show search results
                 if (isMatch) {
-                    if(yiliaConfig.open_in_new){
+                    if (yiliaConfig.open_in_new) {
                         str += "<li><a href='" + data_url + "' class='search-result-title' target='_blank'>" + data_title + "</a>";
-                    }else{
+                    } else {
                         str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
                     }
                     var content = data.content.trim().replace(/<[^>]+>/g, "");
