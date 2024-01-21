@@ -1,6 +1,0 @@
-<a href="<%- url_for(post.path) %>" class="<%= class_name %>">
-  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><i class="icon-calendar icon"></i><%= date(post.date, date_format) %></time>
-  <% if(!index && post.updated && post.updated > post.date){ %>
-  <time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated"> | <i class="icon-updated icon"></i><%- _p('dateUpdated')%> <%= date(post.updated, date_format) %></time>
-  <% } %>
-</a>

@@ -1,0 +1,20 @@
+<% if (theme.local_search && theme.local_search.enable){ %>
+  <div id="js-searchModal">
+    <div style="padding: 24px;">
+      <div class="search-header">
+        <span><i class="icon-search icon"></i>&nbsp;&nbsp;<%- _p('search') %></span>
+        <input class="search-ipt" type="text" placeholder="<%- _p('keywords_placeholder') %>" id="js-searchInput">
+        <i class="icon-close icon" id="js-searchTextCancel"></i>
+      </div>
+      <div id="js-searchResult"></div>
+    </div>
+    <script src="/js/search.js"></script>
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded",function(){
+        document.getElementById("js-icon-search").setAttribute("title","<%- _p('search') %>");
+        searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+      });
+    </script>
+  </div>
+  <div id="js-modal-overlay"></div>
+<% } %>

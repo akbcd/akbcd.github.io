@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
-<%- partial('_partial/head') %>
+<%- partial('partial/head') %>
 <body>
-  <%- partial('_partial/search') %>
+  <%- partial('partial/search') %>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
-      <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+      <%- partial('partial/left-col', null, {cache: !config.relative_link}) %>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+      <%- partial('partial/mobile-nav', null, {cache: !config.relative_link}) %>
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
@@ -17,15 +17,15 @@
           </div>
           <div id="js-content" class="content-ll">
             <%- body %>
-            <%- partial('_partial/aside', {index: true}) %>
+            <%- partial('partial/aside', {index: true}) %>
           </div>
         </div>
       </div>
-      <%- partial('_partial/footer') %>
+      <%- partial('partial/footer') %>
     </div>
-    <%- partial('_partial/tools') %>
-    <%- partial('_partial/viewer') %>
-    <%- partial('_partial/after-footer') %>
+    <%- partial('partial/tools') %>
+    <%- partial('partial/viewer') %>
+    <%- partial('partial/after-footer') %>
   </div>
 </body>
 </html>

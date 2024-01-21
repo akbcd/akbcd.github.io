@@ -2,7 +2,17 @@ hexo-theme-yilia
 ================
 
 Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
+
 本主题是 Yilia 主题的修改版。原版 [hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)
+
+## 插件
+
+主题需要使用的hexo插件
+* hexo-generator-feed
+* hexo-generator-searchdb
+* hexo-generator-json-content
+* hexo-wordcount
+* hexo-generator-index-pin-top（需要卸载hexo-generator-index）
 
 ## 配置
 
@@ -160,7 +170,6 @@ show_all_link: '展开全文'
 # 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
 # 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行
 mathjax: false
-mathjax_js: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
 # 需要浏览器允许cookie
@@ -191,7 +200,7 @@ anchor: true
 # 本功能实现需要插件hexo-wordcount
 # 设定：0-不显示字数； 1-文章对应的md文件里有wordcount: true属性，才显示字数； 2-所有文章均显示字数
 # 不需要使用，直接设置值为false，或注释掉
-wordcount: 2
+wordcount: 0
 
 # 文章转载
 # default 配置文章的默认转载规则
@@ -237,7 +246,6 @@ share_jia: true
 # 评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment；6、waline
 # 不需要使用某项，直接设置值为false，或注释掉
 # 想要关闭某篇文章的评论，请在文章对应的md文件中添加'comments: false'属性即可
-# 具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
 # 1、valine 参考官网：https://valine.js.org
 # ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
@@ -256,8 +264,6 @@ valine:
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
   ADMIN_URL: false # Web主机二级域名，若没有请设为false
   serverURLs: https://xxx # REST API 服务器地址
-valine_css: /css/valine/valine.css
-valine_js: //unpkg.com/valine@latest/dist/Valine.min.js
 
 # 2、gitalk
 gitalk:
@@ -268,8 +274,6 @@ gitalk:
     clientId:
     clientSecret:
   admin:
-gitalk_css: //unpkg.com/gitalk@latest/dist/gitalk.css
-gitalk_js: //unpkg.com/gitalk@latest/dist/gitalk.min.js
 
 # 3、畅言（域名需要备案）
 changyan_appid: false
@@ -291,59 +295,32 @@ waline:
   enable: false
   serverURL: https://xxx.vercel.app/ # 服务端的地址
   meta: "'nick','mail','link'" # 评论者相关属性。字符串类型，可选值:'nick','mail','link'
-  requiredMeta: "" # # 匿名选项。字符串类型，空为允许匿名。可选值:'nick','mail'
+  requiredMeta: "" # 匿名选项。字符串类型，空为允许匿名。可选值:'nick','mail'
   login: enable # 登录模式状态，可选值：'enable'，'disable'，'force'
   wordLimit: 0 # 评论字数限制。填入单个数字时为最大字数限制。设置为0时无限制。
   pageSize: 10 # 评论列表分页，每页条数。
   copyright: true # 是否显示页脚版权信息。
   placeholder: '请留言。(填写邮箱可在被回复时收到邮件提醒)' # 评论框占位提示符（js替换实现）
-waline_css: //unpkg.com/@waline/client@v2/dist/waline.css
-waline_js: //unpkg.com/@waline/client@v2/dist/waline.js
 
 # 前端库
 # Front-end libraries
-
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
-# 发布使用加载速度快，本地调试使用便于阅读
-# 修改请先在本地调试修改，完成后压缩放置发布使用
-
-# 发布使用
-
 css:
-  main: /css/main.min.css
-  mobile: /css/mobile/mobile.min.css
-  photoswipe: /css/photoswipe/photoswipe.css
-  photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-  aplayer: /css/APlayer/APlayer.min.css #1.10.1
+  photoswipe: /css/lib/photoswipe/photoswipe.css
+  photoswipe_default_skin: /css/lib/photoswipe/default-skin/default-skin.css
+  aplayer: /css/lib/APlayer/APlayer.min.css #1.10.1
+  gitalk: //unpkg.com/gitalk@latest/dist/gitalk.css
+  gitment: //imsun.github.io/gitment/dist/gitment.browser.js
+  waline: //unpkg.com/@waline/client@v2/dist/waline.css
 js:
-  search: /js/search/search.min.js
-  aplayer: /js/APlayer/APlayer.min.js #1.9.1
-  crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-  photoswipe: /js/photoswipe/photoswipe.min.js
-  photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-  scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-  mobile: /js/mobile/mobile.min.js
-  main: /js/main.min.js
-  clipboard: /js/clipboard/clipboard.min.js
-  slider: /js/slider.min.js
-
-# 本地调试使用
-
-# css:
-#   main: /css/main.css
-#   mobile: /css/mobile/mobile.css
-#   photoswipe: /css/photoswipe/photoswipe.css
-#   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-#   aplayer: /css/APlayer/APlayer.min.css #1.10.1
-# js:
-#   search: /js/search/search.js
-#   aplayer: /js/APlayer/APlayer.min.js #1.9.1
-#   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-#   photoswipe: /js/photoswipe/photoswipe.min.js
-#   photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-#   scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-#   mobile: /js/mobile/mobile.js
-#   main: /js/main.js
-#   clipboard: /js/clipboard/clipboard.min.js
-#   slider: /js/slider.js
+  aplayer: /js/lib/APlayer/APlayer.min.js #1.9.1
+  crypto: /js/lib/crypto-js/crypto-js.min.js #3.1.9-1
+  photoswipe: /js/lib/photoswipe/photoswipe.min.js
+  photoswipe_ui_default: /js/lib/photoswipe/photoswipe-ui-default.min.js
+  clipboard: /js/lib/clipboard/clipboard.min.js
+  mathjax: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
+  valine: //unpkg.com/valine@latest/dist/Valine.min.js
+  gitalk: //unpkg.com/gitalk@latest/dist/gitalk.min.js
+  gitment: //imsun.github.io/gitment/style/default.css
+  waline: //unpkg.com/@waline/client@v2/dist/waline.js
 ```

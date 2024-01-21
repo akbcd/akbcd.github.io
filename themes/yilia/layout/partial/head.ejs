@@ -1,0 +1,67 @@
+<%
+  var title = page.title;
+
+  if (is_archive()){
+    title = 'Archives';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+  }
+  var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)';
+  // keywords.
+  var keyWords = config.keywords ? config.keywords : config.title;
+  keyWords = title ? title  + ', ' + keyWords : keyWords;
+  // highlight
+  var highlight = JSON.stringify({
+    highlight_lang: theme.highlight_lang,
+    highlight_show: theme.highlight_show
+  });
+%>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width">
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta name="keywords" content="<%= keyWords %>">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <link rel="dns-prefetch" href="<%= config.url %>">
+  <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <%- partial('css') %>
+  <style type="text/css">
+    #container.show,#js-searchModal {
+      background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
+    }
+  </style>
+  <%- partial('google-analytics') %>
+  <%- partial('baidu-analytics') %>
+  <script>
+    var yiliaConfig = {
+      mathjax: <%=theme.mathjax ? true : false%>,
+      isHome: <%=is_home()%>,
+      isPost: <%=is_post()%>,
+      isArchive: <%=is_archive()%>,
+      isTag: <%=is_tag()%>,
+      isCategory: <%=is_category()%>,
+      open_in_new: <%=theme.open_in_new ? true : false%>,
+      toc_hide_index: <%=theme.toc_hide_index ? true : false%>,
+      root: "<%=config.root%>",
+      innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+      showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>,
+      anchor: <%=theme.anchor ? true : false%>,
+      scrollPos: <%=theme.scrollPos ? true : false%>,
+      highlight: JSON.parse('<%- highlight %>')
+    }
+  </script>
+  <%- js(["js/Q.js","js/browser.js"]) %>
+</head>

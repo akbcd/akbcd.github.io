@@ -8,7 +8,7 @@ menu:
   随笔: /tags/随笔/
 
 # SubNav
-# subnav:
+subnav:
 #   github: http://github.com/
 #   weibo: https://weibo.com/
 #   rss: "#"
@@ -20,13 +20,13 @@ menu:
 #   segmentfault: "#"
 #   bilibili: "#"
 #   acfun: "#"
-#   mail: "mailto:litten225@qq.com"
+  mail: "mailto:2226227487@qq.com"
 #   facebook: "#"
 #   google: "#"
 #   twitter: "#"
 #   linkedin: "#"
 #   csdn: "#"
-#   mayun: "#"
+  mayun: "https://gitee.com/akbcd/hexo-theme-yilia"
 
 # rss订阅实现需要插件hexo-generator-feed
 rss: false #/atom.xml
@@ -132,15 +132,10 @@ friends:
   聚合图床 - 微博图床: http://tool.mkblog.cn/tuchuang/
   菜鸟工具 - 不止于工具: https://c.runoob.com/
   CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
-  NO404 - 让天下不再有消失的网站！: https://www.no404.me/
-  # So导航 | 最懂你的网址导航: https://www.soeg.cn/
   磁力宝: http://www.clb.biz/
-  磁力爬: https://www.clp6.xyz/
-  音乐搜索器 - 多站合一音乐搜索,音乐在线试听: http://music.yujianpay.com/
+  音乐搜索器 - 多站合一音乐搜索,音乐在线试听 - 鳀鱼音乐搜索器: http://tool.tesiber.com/music/
   GitHub加速下载工具: http://tool.mkblog.cn/github/
-  LeanCloud国际版: https://leancloud.app/
-  LeanCloud评论管理: https://akbcd.avosapps.us/
-  在线动画 动漫下载 - AGE动漫: https://www.age.tv/
+  在线动画 动漫下载 - AGE动漫: http://agedm3.com/
   hexo-theme-matery主题: https://github.com/blinkfox/hexo-theme-matery
 
 #aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
@@ -155,7 +150,6 @@ show_all_link: '展开全文'
 # 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
 # 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行
 mathjax: false
-mathjax_js: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
 # 是否通过cookie记录文章页面浏览位置
 # 访问文章时，可快速定位到上次浏览位置
 # 需要浏览器允许cookie
@@ -232,7 +226,6 @@ share_jia: true
 # 评论：1、valine；2、gitalk；3、畅言；4、Disqus；5、Gitment；6、waline
 # 不需要使用某项，直接设置值为false，或注释掉
 # 想要关闭某篇文章的评论，请在文章对应的md文件中添加'comments: false'属性即可
-# 具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
 # 1、valine 参考官网：https://valine.js.org
 # ADMIN_URL参考https://deserts.io/valine-admin-document/，用于唤醒云引擎
@@ -249,10 +242,8 @@ valine:
   highlight: true # 代码块高亮
   recordIP: false # 是否记录评论者IP
   enableQQ: true # 是否启用昵称框自动获取QQ昵称和QQ头像, 默认关闭
-  ADMIN_URL:  # Web主机二级域名，若没有请设为false
-  serverURLs:  # REST API 服务器地址
-valine_css: /css/valine/valine.css
-valine_js: //unpkg.com/valine@latest/dist/Valine.min.js
+  ADMIN_URL: false # Web主机二级域名，若没有请设为false
+  serverURLs: https://xxx # REST API 服务器地址
 
 # 2、gitalk
 gitalk:
@@ -263,8 +254,6 @@ gitalk:
     clientId:
     clientSecret:
   admin:
-gitalk_css: //unpkg.com/gitalk@latest/dist/gitalk.css
-gitalk_js: //unpkg.com/gitalk@latest/dist/gitalk.min.js
 
 # 3、畅言（域名需要备案）
 changyan_appid: false
@@ -284,7 +273,7 @@ gitment_oauth:
 # 字符串类型请手动添加引号
 waline:
   enable: false
-  serverURL: https://waline-akbcd.vercel.app/ # 服务端的地址
+  serverURL: https://xxx.vercel.app/ # 服务端的地址
   meta: "'nick','mail','link'" # 评论者相关属性。字符串类型，可选值:'nick','mail','link'
   requiredMeta: "" # 匿名选项。字符串类型，空为允许匿名。可选值:'nick','mail'
   login: enable # 登录模式状态，可选值：'enable'，'disable'，'force'
@@ -292,52 +281,25 @@ waline:
   pageSize: 10 # 评论列表分页，每页条数。
   copyright: true # 是否显示页脚版权信息。
   placeholder: '请留言。(填写邮箱可在被回复时收到邮件提醒)' # 评论框占位提示符（js替换实现）
-waline_css: //unpkg.com/@waline/client@v2/dist/waline.css
-waline_js: //unpkg.com/@waline/client@v2/dist/waline.js
 
 # 前端库
 # Front-end libraries
-
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
-# 发布使用加载速度快，本地调试使用便于阅读
-# 修改请先在本地调试修改，完成后压缩放置发布使用
-
-# 发布使用
-
 css:
-  main: /css/main.min.css
-  mobile: /css/mobile/mobile.min.css
-  photoswipe: /css/photoswipe/photoswipe.css
-  photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-  aplayer: /css/APlayer/APlayer.min.css #1.10.1
+  photoswipe: /css/lib/photoswipe/photoswipe.css
+  photoswipe_default_skin: /css/lib/photoswipe/default-skin/default-skin.css
+  aplayer: /css/lib/APlayer/APlayer.min.css #1.10.1
+  gitalk: //unpkg.com/gitalk@latest/dist/gitalk.css
+  gitment: //imsun.github.io/gitment/dist/gitment.browser.js
+  waline: //unpkg.com/@waline/client@v2/dist/waline.css
 js:
-  search: /js/search/search.min.js
-  aplayer: /js/APlayer/APlayer.min.js #1.9.1
-  crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-  photoswipe: /js/photoswipe/photoswipe.min.js
-  photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-  scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-  mobile: /js/mobile/mobile.min.js
-  main: /js/main.min.js
-  clipboard: /js/clipboard/clipboard.min.js
-  slider: /js/slider.min.js
-
-# 本地调试使用
-
-# css:
-#   main: /css/main.css
-#   mobile: /css/mobile/mobile.css
-#   photoswipe: /css/photoswipe/photoswipe.css
-#   photoswipe_default_skin: /css/photoswipe/default-skin/default-skin.css
-#   aplayer: /css/APlayer/APlayer.min.css #1.10.1
-# js:
-#   search: /js/search/search.js
-#   aplayer: /js/APlayer/APlayer.min.js #1.9.1
-#   crypto_js: /js/crypto-js/crypto-js.min.js #3.1.9-1
-#   photoswipe: /js/photoswipe/photoswipe.min.js
-#   photoswipe_ui_default: /js/photoswipe/photoswipe-ui-default.min.js
-#   scrollProgress: /js/scrollProgress/scrollProgress.min.js #3.0.2
-#   mobile: /js/mobile/mobile.js
-#   main: /js/main.js
-#   clipboard: /js/clipboard/clipboard.min.js
-#   slider: /js/slider.js
+  aplayer: /js/lib/APlayer/APlayer.min.js #1.9.1
+  crypto: /js/lib/crypto-js/crypto-js.min.js #3.1.9-1
+  photoswipe: /js/lib/photoswipe/photoswipe.min.js
+  photoswipe_ui_default: /js/lib/photoswipe/photoswipe-ui-default.min.js
+  clipboard: /js/lib/clipboard/clipboard.min.js
+  mathjax: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
+  valine: //unpkg.com/valine@latest/dist/Valine.min.js
+  gitalk: //unpkg.com/gitalk@latest/dist/gitalk.min.js
+  gitment: //imsun.github.io/gitment/style/default.css
+  waline: //unpkg.com/@waline/client@v2/dist/waline.js

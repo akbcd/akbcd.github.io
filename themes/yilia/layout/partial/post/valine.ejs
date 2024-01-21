@@ -1,0 +1,38 @@
+<div id="valine"></div>
+<script src="<%- theme.js.valine %>"></script>
+<script>
+  new Valine({
+    el: '#valine',
+    appId: '<%- theme.valine.appId %>',
+    appKey: '<%- theme.valine.appKey %>',
+    placeholder: '<%= theme.valine.placeholder %>',
+    avatar: '<%- theme.valine.avatar %>',
+    pageSize: '<%- theme.valine.pageSize %>',
+    lang: '<%- config.language %>',
+    visitor: ("localhost" != document.domain)?<%- theme.valine.visitor %>:false,
+    highlight: '<%- theme.valine.highlight %>' === 'true',
+    recordIp: '<%- theme.valine.recordIP %>' === 'true',
+    enableQQ: '<%- theme.valine.enableQQ %>' === 'true',
+    serverURLs: '<%= theme.valine.serverURLs %>'
+  });
+  document.getElementById('veditor').maxLength='<%- theme.valine.maxLength %>';
+  <% if(theme.valine.ADMIN_URL){ %>
+    // ADMIN_URL
+    var engine = document.cookie.replace(/(?:(?:^|.*;\s*)engine\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    if(engine!='1') {
+      fetch('https://quan.suning.com/getSysTime.do')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(date) {
+        var hours = new Date(date.sysTime2).getHours();
+        if(hours>7 && hours<23){
+          fetch('<%- theme.valine.ADMIN_URL %>');
+          var exp = new Date(date.sysTime2);
+          exp.setTime(exp.getTime() + 20*60*1000);
+          document.cookie = "engine=1;path=/;expires="+ exp.toGMTString();
+        }
+      })
+    }
+  <% } %>
+</script>
