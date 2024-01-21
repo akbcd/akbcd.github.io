@@ -310,7 +310,7 @@ css:
   photoswipe_default_skin: /css/lib/photoswipe/default-skin/default-skin.css
   aplayer: /css/lib/APlayer/APlayer.min.css #1.10.1
   gitalk: //unpkg.com/gitalk@latest/dist/gitalk.css
-  gitment: //imsun.github.io/gitment/dist/gitment.browser.js
+  gitment: //imsun.github.io/gitment/style/default.css
   waline: //unpkg.com/@waline/client@v2/dist/waline.css
 js:
   aplayer: /js/lib/APlayer/APlayer.min.js #1.9.1
@@ -318,9 +318,9 @@ js:
   photoswipe: /js/lib/photoswipe/photoswipe.min.js
   photoswipe_ui_default: /js/lib/photoswipe/photoswipe-ui-default.min.js
   clipboard: /js/lib/clipboard/clipboard.min.js
-  mathjax: https://unpkg.com/mathjax@3/es5/tex-svg.js #version 3
+  mathjax: //unpkg.com/mathjax@3/es5/tex-svg.js #version 3
   valine: //unpkg.com/valine@latest/dist/Valine.min.js
   gitalk: //unpkg.com/gitalk@latest/dist/gitalk.min.js
-  gitment: //imsun.github.io/gitment/style/default.css
+  gitment: //imsun.github.io/gitment/dist/gitment.browser.js
   waline: //unpkg.com/@waline/client@v2/dist/waline.js
 ```
