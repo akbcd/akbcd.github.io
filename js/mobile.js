@@ -66,7 +66,7 @@ function mobile() {
     function handleScroll() {
         let $overlay = document.querySelector('.js-overlay');
         let $menu = document.querySelector('.js-header-menu');
-        let $scrollTop = parseInt(window.scrollY) || parseInt(document.querySelector("#container").scrollTop);
+        let $scrollTop = parseInt(document.body.scrollTop) || parseInt(document.querySelector("#container").scrollTop);
         scrollStop($overlay, $scrollTop, -63, 2, 0);
         // 动画微调，修复pc页面getElementTop($menu)=0
         if (document.body.clientWidth > 800) {
@@ -80,11 +80,11 @@ function mobile() {
         // 初始化
         handleScroll();
         // pc页面滚动时执行
-        document.querySelector('#container').addEventListener('scroll', (e) => {
+        document.querySelector('#container').addEventListener('scroll', () => {
             handleScroll()
         });
         // mobile页面滚动时执行
-        window.addEventListener('scroll', (e) => {
+        document.body.addEventListener('scroll', () => {
             handleScroll()
         })
     }
