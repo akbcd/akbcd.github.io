@@ -3,13 +3,15 @@ html {
 }
 
 body {
-    overflow-y: hidden;
     height: 100%;
     min-height: 100%;
     background: #eaeaea;
 }
 
-audio,canvas,progress,video {
+audio,
+canvas,
+progress,
+video {
     display: inline-block;
 }
 
@@ -22,9 +24,11 @@ progress {
     vertical-align: baseline;
 }
 
-[hidden],template {
+[hidden],
+template {
     display: none;
 }
+
 /* 添加word-break: break-word */
 a {
     background: transparent;
@@ -41,7 +45,8 @@ abbr[title] {
     border-bottom: 1px dotted;
 }
 
-b,strong {
+b,
+strong {
     font-weight: 700;
 }
 
@@ -58,7 +63,8 @@ small {
     font-size: 80%;
 }
 
-sub,sup {
+sub,
+sup {
     position: relative;
     vertical-align: baseline;
     font-size: 75%;
@@ -82,6 +88,7 @@ img {
 svg:not(:root) {
     overflow: hidden;
 }
+
 /* 删除white-space:pre-wrap; */
 /* overflow:auto; */
 pre {
@@ -89,27 +96,40 @@ pre {
     word-break: break-word;
 }
 
-code,kbd,pre,samp {
+code,
+kbd,
+pre,
+samp {
     font-size: 1em;
-    font-family: monospace,monospace;
+    font-family: monospace, monospace;
 }
 
-button,input,optgroup,select,textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0;
     color: inherit;
     vertical-align: middle;
     font: inherit;
 }
 
-button,input,select {
+button,
+input,
+select {
     overflow: visible;
 }
 
-button,select {
+button,
+select {
     text-transform: none;
 }
 
-button,html input[type=button],input[type=reset],input[type=submit] {
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
     cursor: pointer;
     -webkit-appearance: button;
 }
@@ -118,7 +138,8 @@ button,html input[type=button],input[type=reset],input[type=submit] {
     cursor: default;
 }
 
-button::-moz-focus-inner,input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
@@ -127,12 +148,14 @@ input {
     line-height: normal;
 }
 
-input[type=checkbox],input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     box-sizing: border-box;
     padding: 0;
 }
 
-input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     height: auto;
 }
 
@@ -141,7 +164,8 @@ input[type=search] {
     -webkit-appearance: textfield;
 }
 
-input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -166,27 +190,35 @@ optgroup {
     font-weight: 700;
 }
 
-button,input,select,textarea {
+button,
+input,
+select,
+textarea {
     outline: 0;
 }
 
-input,textarea {
+input,
+textarea {
     -webkit-user-modify: read-write-plaintext-only;
 }
 
-input::-ms-clear,input::-ms-reveal {
+input::-ms-clear,
+input::-ms-reveal {
     display: none;
 }
 
-input::-moz-placeholder,textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
     color: #999;
 }
 
-input:-ms-input-placeholder,textarea:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
     color: #999;
 }
 
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
     color: #999;
 }
 
@@ -195,24 +227,41 @@ table {
     border-spacing: 0;
 }
 
-td,th {
+td,
+th {
     padding: 0;
 }
 
-blockquote,figure,form,h1,h2,h3,h4,h5,h6,p {
+blockquote,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
-dd,dl,li,ol,ul {
+dd,
+dl,
+li,
+ol,
+ul {
     margin: 0;
     padding: 0;
 }
 
-ol,ul {
+ol,
+ul {
     list-style: none outside none;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-weight: 400;
     line-height: 2;
 }
@@ -239,24 +288,40 @@ i {
     padding: 0;
 }
 
-body,button,input,select,textarea {
+body,
+button,
+input,
+select,
+textarea {
     color: #1a1a1a;
     font-size: 1rem;
     /* font-family: lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif; */
-    font-family: helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei;
+    font-family: helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei;
     line-height: 1.75;
 }
 
 /* 代码区块高亮通用 */
-pre .at_rule,pre .at_rule .keyword,pre .css~* .tag,pre .preprocessor,pre .preprocessor .keyword,pre .title {
+pre .at_rule,
+pre .at_rule .keyword,
+pre .css~* .tag,
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .title {
     color: #f92672;
 }
 
-pre .attribute,pre .built_in,pre .class,pre .css~* .class,pre .function .title {
+pre .attribute,
+pre .built_in,
+pre .class,
+pre .css~* .class,
+pre .function .title {
     color: #a6e22e;
 }
 
-pre .class .params,pre .function .keyword,pre .keyword,pre .type {
+pre .class .params,
+pre .function .keyword,
+pre .keyword,
+pre .type {
     color: #0000ff;
 }
 
@@ -264,7 +329,8 @@ pre .comment {
     color: #008000;
 }
 
-pre .css~* .id,pre .id {
+pre .css~* .id,
+pre .id {
     color: #fd971f;
 }
 
@@ -284,23 +350,30 @@ pre .punctuation {
     color: #0431fa;
 }
 
-pre .selector,pre .selector-class {
+pre .selector,
+pre .selector-class {
     color: #800000;
 }
 
-pre .string,pre .value {
+pre .string,
+pre .value {
     color: #a31515;
 }
+
 /* html */
-pre .tag,.html pre .name {
+pre .tag,
+.html pre .name {
     color: #800000;
 }
 
-pre .attr-name,.html pre .attr {
+pre .attr-name,
+.html pre .attr {
     color: #ff0000;
 }
 
-pre .attr-value,.html pre .string {
+pre .attr-value,
+.html pre .string {
     color: #0000ff;
 }
+
 /* 代码块相关样式结束 */

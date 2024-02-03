@@ -1,11 +1,14 @@
 /* 矢量图标（iconfont）共36个 */
 @font-face {
-    font-family: 'iconfont';  /* Project id 692003 */
+    font-family: 'iconfont';
+    /* Project id 692003 */
     src: url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.woff2?t=1653717863933') format('woff2'),
-         url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.woff?t=1653717863933') format('woff'),
-         url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.ttf?t=1653717863933') format('truetype');
+        url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.woff?t=1653717863933') format('woff'),
+        url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.ttf?t=1653717863933') format('truetype');
 }
-[class*=" icon-"],[class^=icon-] {
+
+[class*=" icon-"],
+[class^=icon-] {
     text-transform: none;
     font-weight: 400;
     font-style: normal;
@@ -153,7 +156,7 @@
     content: "\e6da";
 }
 
-.icon-mayun:before {
+.icon-gitee:before {
     content: "\e6d8";
 }
 
@@ -328,11 +331,11 @@
     border: 1px solid #d81e06;
 }
 
-.header-inner .header-nav .social a.mayun {
+.header-inner .header-nav .social a.gitee {
     border: 1px solid #d81e06;
     background: #d81e06;
 }
 
-.header-inner .header-nav .social a.mayun:hover {
+.header-inner .header-nav .social a.gitee:hover {
     border: 1px solid #d81e06;
 }

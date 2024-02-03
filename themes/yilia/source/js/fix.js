@@ -87,7 +87,7 @@ function fix() {
             // container平滑跳转
             $container.scrollTo({ "behavior": "smooth", "top": document.body.clientWidth <= 800 ? scrollPositionTop - 50 : scrollPositionTop });
             // mobile平滑跳转
-            window.scrollTo({ "behavior": "smooth", "top": scrollPositionTop - 50 });
+            document.body.scrollTo({ "behavior": "smooth", "top": scrollPositionTop - 50 });
         };
         // 文章主体内容标签
         const $article_content = document.getElementsByClassName('article-content')[0];
@@ -116,15 +116,12 @@ function fix() {
                 $em.style.display = 'none';
             })
         };
-        // 目录元素点击跳转
-        $toc_article.addEventListener('click', e => {
-            e.preventDefault();
-            const target = e.target.classList;
-            if (target.contains('toc-article') || target.contains('toc-item')) return;
-            const $target = target.contains('toc-link')
-                ? e.target
-                : e.target.parentElement;
-            toToc(decodeURI($target.getAttribute('href')));
+        // 目录元素点击跳转（a标签）
+        $toc_article.querySelectorAll('a').forEach(i => {
+            i.addEventListener('click', e => {
+                e.preventDefault(); // 取消默认跳转
+                toToc(decodeURI(i.getAttribute('href')));
+            })
         });
         // 目录滚动
         autoScrollToc = item => {
@@ -134,16 +131,28 @@ function fix() {
             if (!item.offsetParent) return;
             const activeParentTop = item.offsetParent.getBoundingClientRect().top;
             // active对于其定位的祖辈元素的位置（position().top）
-            const activePosition = activeTop - activeParentTop;
-            // 目录滚动位置
-            const articleScrolltop = $toc_article.scrollTop;
-            // 目录滚动
+            let activePosition = activeTop - activeParentTop;
+            // 目录当前滚动条位置
+            let articleScrolltop = $toc_article.scrollTop;
+            // 目录滚动条每次滚动距离
+            const scrollPixels = 150;
+            // 目录滚动（向下）
             if (activePosition > $toc_article.clientHeight - 50) {
-                $toc_article.scrollTop = articleScrolltop + 150;
+                while (true) {
+                    activePosition -= scrollPixels;
+                    articleScrolltop += scrollPixels;
+                    if (!(activePosition > $toc_article.clientHeight - 50)) break;
+                }
+                $toc_article.scrollTo({ "behavior": "smooth", "top": articleScrolltop });
             }
+            // 目录滚动（向上）
             if (activePosition < 50) {
-                $toc_article.scrollTop = articleScrolltop - 150;
-                if (activePosition < 0) $toc_article.scrollTop = 0;
+                while (true) {
+                    activePosition += scrollPixels;
+                    articleScrolltop -= scrollPixels;
+                    if (!(activePosition < 50)) break;
+                }
+                $toc_article.scrollTo({ "behavior": "smooth", "top": articleScrolltop });
             }
         };
         // find head position & add active class
@@ -160,7 +169,10 @@ function fix() {
                     currentIndex = index;
                 }
             });
-            if (detectItem === currentIndex) return;
+            if (detectItem === currentIndex) {
+                if (currentIndex != '') autoScrollToc($toc_link[currentIndex]);
+                return;
+            }
             // 更新url
             if (isanchor) updateAnchor(currentId);
             detectItem = currentIndex;
@@ -178,12 +190,12 @@ function fix() {
             }
         };
         // pc动态目录
-        $container.addEventListener('scroll', (e) => {
+        $container.addEventListener('scroll', () => {
             const currentTop = $container.scrollTop;
             findHeadPosition(document.body.clientWidth <= 800 ? currentTop + 50 : currentTop);
         });
         // mobile动态目录
-        window.addEventListener('scroll', (e) => {
+        document.body.addEventListener('scroll', () => {
             const currentTop = document.body.scrollTop || document.documentElement.scrollTop;
             findHeadPosition(currentTop + 50);
         });

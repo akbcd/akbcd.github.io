@@ -26,7 +26,7 @@ subnav:
 #   twitter: "#"
 #   linkedin: "#"
 #   csdn: "#"
-  mayun: "https://gitee.com/akbcd/hexo-theme-yilia"
+  gitee: "https://gitee.com/akbcd/hexo-theme-yilia"
 
 # rss订阅实现需要插件hexo-generator-feed
 rss: false #/atom.xml

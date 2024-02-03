@@ -1,14 +1,18 @@
 @media screen and (max-width: 800px) {
+
     /* 代码块复制 */
     .js-btn-copy {
         right: 5%;
     }
 
-    #container,body,html {
+    #container,
+    body,
+    html {
         overflow-x: hidden;
         overflow-y: auto;
         height: auto;
     }
+
     /* 滚动条 */
     ::-webkit-scrollbar {
         display: none;
@@ -30,26 +34,31 @@
         left: 0;
     }
 
-    .header-inner .header-nav,.mid-col {
+    .header-inner .header-nav,
+    .mid-col {
         position: relative;
     }
+
     /* 修改移动端aside标签样式 */
     .wrap-side-operation {
         right: 10px;
     }
+
     /* 移动端返回顶部按钮点击样式 */
     .jump-container:hover .icon-back {
         background: #ccc;
     }
 
     .jump-container:active .icon-back {
-        background: rgba(36,193,246,.9);
+        background: rgba(36, 193, 246, .9);
     }
+
     /* 移动端目录样式优化 */
     .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article {
         max-height: 60vh;
         font-size: smaller;
     }
+
     /* 一级目录不换行 */
     .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article .toc>li {
         white-space: nowrap;
@@ -58,9 +67,11 @@
     .toc-container.tooltip-left .tooltip-east .tooltip-content .toc-article li {
         white-space: normal;
     }
+
     /* 修改结束 */
     /* 添加.tools-col.show */
-    .tools-col,.tools-col.show {
+    .tools-col,
+    .tools-col.show {
         left: -300px;
         width: 300px;
     }
@@ -69,19 +80,25 @@
         padding-top: 48px;
     }
 
-    .tools-col .tools-section,.tools-col .tools-wrap {
+    .tools-col .tools-section,
+    .tools-col .tools-wrap {
         width: 300px;
     }
+
     /* 修复移动端搜索框长度溢出 */
-    .tools-col .tools-section .search-wrap,.tools-col .tools-section .search-wrap .search-ipt {
+    .tools-col .tools-section .search-wrap,
+    .tools-col .tools-section .search-wrap .search-ipt {
         width: 280px;
     }
+
     /* 修改移动端所有文章显示标签按钮样式 */
-    .tools-col .tools-section .search-tag.tagcloud,.tools-col .tools-wrap .search-tag.tagcloud {
+    .tools-col .tools-section .search-tag.tagcloud,
+    .tools-col .tools-wrap .search-tag.tagcloud {
         margin-right: -28px;
     }
 
-    .tools-col .tools-section .search-ul .search-li,.tools-col .tools-wrap .search-ul .search-li {
+    .tools-col .tools-section .search-ul .search-li,
+    .tools-col .tools-wrap .search-ul .search-li {
         padding: 5px 20px;
     }
 
@@ -103,7 +120,7 @@
         z-index: 999;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,.85);
+        background: rgba(0, 0, 0, .85);
     }
 
     .btnctn {
@@ -200,12 +217,14 @@
     .article .article-more-link {
         margin: 0;
     }
+
     /* 美化文章结束样式，与pc页面同步 */
     .article .article-entry {
         padding: 10px 0 20px;
     }
 
-    .article .article-inner h1.article-title,.article .article-title {
+    .article .article-inner h1.article-title,
+    .article .article-title {
         display: block;
         margin: 0;
         font-weight: 300;
@@ -434,15 +453,18 @@
         margin-right: 28px;
     }
 
-    .header-menu.tools-nav li,.header-menu.tools-nav ul {
+    .header-menu.tools-nav li,
+    .header-menu.tools-nav ul {
         border-color: #fff;
     }
 
-    .header-menu.tools-nav li a,.header-menu.tools-nav ul a {
+    .header-menu.tools-nav li a,
+    .header-menu.tools-nav ul a {
         color: #fff;
     }
 
-    .header-menu.tools-nav li a.active,.header-menu.tools-nav ul a.active {
+    .header-menu.tools-nav li a.active,
+    .header-menu.tools-nav ul a.active {
         background: #81b5cc;
     }
 
@@ -484,8 +506,10 @@
         white-space: nowrap;
         font-size: 14px;
     }
+
     /* 头部a标签添加点击样式 */
-    .header-menu li a.active,.header-menu li a:active {
+    .header-menu li a.active,
+    .header-menu li a:active {
         background: #a0a0a0;
         color: #eaeaea;
     }
@@ -513,7 +537,7 @@
         margin: .67em 0;
         text-align: center;
         font-size: 30px;
-        font-family: Roboto,serif;
+        font-family: Roboto, serif;
         transition: .3s;
     }
 

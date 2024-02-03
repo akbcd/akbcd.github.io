@@ -48,7 +48,7 @@ subnav:
   twitter: "#"
   linkedin: "#"
   csdn: "#"
-  mayun: "#"
+  gitee: "#"
 
 # rss订阅实现需要插件hexo-generator-feed
 rss: /atom.xml

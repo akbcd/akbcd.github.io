@@ -4,15 +4,13 @@
  */
 const backTop = function (domE, ctn, distance) {
     if (!domE) return;
-    var _onscroll = window.onscroll,
-        _onclick = domE.onclick;
+    var _onclick = domE.onclick;
     // pc
     ctn.onscroll = throttle(function () {
-        typeof _onscroll === 'function' && _onscroll.apply(this, arguments);
         toggleDomE();
     }, 100);
     // mobile
-    window.onscroll = ctn.onscroll;
+    document.body.addEventListener('scroll', ctn.onscroll);
     domE.onclick = function () {
         let timer = null;
         typeof _onclick === 'function' && _onclick.apply(this, arguments);
@@ -22,10 +20,10 @@ const backTop = function (domE, ctn, distance) {
             ct -= diff;
             if (ct > 0) {//如果与顶部的距离大于零
                 ctn.scrollTop = ctn.scrollTop - diff;
-                window.scrollTo(0, ct);//向上移动10px
+                document.body.scrollTo(0, ct);//向上移动10px
             } else {//如果距离小于等于零
                 ctn.scrollTop = 0;
-                window.scrollTo(0, 0);//移动到顶部
+                document.body.scrollTo(0, 0);//移动到顶部
                 clearInterval(timer);//清除计时器
             }
         }, 10);//隔10ms执行一次前面的function，展现一种平滑滑动效果
