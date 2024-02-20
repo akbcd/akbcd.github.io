@@ -1,13 +1,14 @@
 /*!
- * 动画
+ * 冒泡动画
  * anm.js
  * See https://github.com/litten/hexo-theme-yilia/tree/master/source-src/js/anm.js
  */
 function anm() {
-    var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = true;
+    var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = false;
     // Main
     initHeader();
     addListeners();
+    executeCheck();
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -28,8 +29,28 @@ function anm() {
     }
     // Event handling
     function addListeners() {
-        window.addEventListener('scroll', scrollCheck);
-        window.addEventListener('resize', resize);
+        window.addEventListener('scroll', throttle(scrollCheck, 100));
+        window.addEventListener('resize', throttle(resize, 100));
+    }
+    // performance optimization
+    function executeCheck() {
+        // get element
+        var element = document.getElementById('container');
+        // create MutationObserver
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                // if it's class
+                if (mutation.attributeName === 'class') {
+                    // when class has value
+                    if (document.getElementById('container').getAttribute('class')) animateHeader = true;
+                    // class has no value
+                    else animateHeader = false;
+                }
+            })
+        })
+        // configure MutationObserver
+        var config = { attributes: true }
+        observer.observe(element, config)
     }
     function scrollCheck() {
         if (document.body.scrollTop > height) animateHeader = false;

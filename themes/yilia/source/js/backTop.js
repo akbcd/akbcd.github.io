@@ -6,9 +6,7 @@ const backTop = function (domE, ctn, distance) {
     if (!domE) return;
     var _onclick = domE.onclick;
     // pc
-    ctn.onscroll = throttle(function () {
-        toggleDomE();
-    }, 100);
+    ctn.onscroll = throttle(() => toggleDomE(), 100);
     // mobile
     document.body.addEventListener('scroll', ctn.onscroll);
     domE.onclick = function () {
@@ -30,15 +28,5 @@ const backTop = function (domE, ctn, distance) {
     };
     function toggleDomE() {
         domE.style.display = (ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > distance ? 'block' : 'none';
-    }
-    function throttle(func, wait) {
-        let timer = null;
-        return function () {
-            var self = this, args = arguments;
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(function () {
-                return typeof func === 'function' && func.apply(self, args);
-            }, wait);
-        }
     }
 };

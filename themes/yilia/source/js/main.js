@@ -3,7 +3,7 @@
  * js方法调用
  */
 (function main() {
-    // pc页面且宽度大于800，执行anm.js动画（影响性能）
+    // pc页面且宽度大于800，执行冒泡动画
     if (!(browser.versions.mobile || document.body.clientWidth <= 800)) {
         anm();
     }

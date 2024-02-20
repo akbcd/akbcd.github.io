@@ -1,6 +1,6 @@
 /*!
  * 浏览器判断
- * browser.js
+ * browser
  * See https://github.com/litten/hexo-theme-yilia/tree/master/source-src/js/browser.js
  */
 var browser = {
@@ -21,3 +21,16 @@ var browser = {
         };
     }()
 };
+/*!
+ * 节流
+ * throttle
+ */
+function throttle(func, wait) {
+    let timer;
+    return function () {
+        const self = this;
+        const args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(self, args), wait);
+    }
+}
