@@ -67,3 +67,5 @@ function share() {
     document.querySelector('.mask').onclick = hideWX;
     document.querySelector('.js-modal-close').onclick = hideWX;
 }
+// 分享
+share();

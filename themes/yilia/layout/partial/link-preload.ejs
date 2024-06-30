@@ -1,0 +1,42 @@
+<%# preload css #%>
+<link rel="preload" href="/css/main.css" as="style">
+<link rel="preload" href="/css/mobile.css" as="style">
+<link rel="preload" href="/css/iconfont.css" as="style">
+<link rel="preload" href="/css/com.css" as="style">
+<link rel="preload" href="<%- theme.css.photoswipe %>" as="style">
+<link rel="preload" href="<%- theme.css.photoswipe_default_skin %>" as="style">
+<% if (theme.music && theme.aplayer.enable || theme.music && theme.mobile_aplayer.enable) { %>
+  <link rel="preload" href="<%- theme.css.aplayer %>" as="style">
+<% } if (theme.valine && theme.valine.enable){ %>
+  <link rel="preload" href="/css/lib/valine/valine.css" as="style">
+<% } if (theme.gitalk && theme.gitalk.enable){ %>
+  <link rel="preload" href="<%- theme.css.gitalk %>" as="style">
+<% } if (theme.gitment_owner && theme.gitment_repo && theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
+  <link rel="preload" href="<%- theme.css.gitment %>" as="style">
+<% } if (theme.waline && theme.waline.enable){ %>
+  <link rel="preload" href="<%- theme.css.waline %>" as="style">
+<% } %>
+<%# preload js #%>
+<link rel="preload" href="/js/Q.js" as="script">
+<link rel="preload" href="/js/Util.js" as="script">
+<link rel="preload" href="<%- theme.js.photoswipe %>" as="script">
+<link rel="preload" href="<%- theme.js.photoswipe_ui_default %>" as="script">
+<% if (theme.highlight_copy) { %>
+  <link rel="preload" href="<%- theme.js.clipboard %>" as="script">
+<% } %>
+<% if (theme.top){ %>
+  <link rel="preload" href="/js/backTop.js" as="script">
+<% } %>
+<% if (theme.share_jia){ %>
+  <link rel="preload" href="/js/share.js" as="script">
+<% } %>
+<% if (theme.mathjax && page.mathjax){ %>
+  <link rel="preload" href="<%- theme.js.mathjax %>" as="script">
+<% } %>
+<link rel="preload" href="/js/anm.js" as="script">
+<link rel="preload" href="/js/fix.js" as="script">
+<link rel="preload" href="/js/slider.js" as="script">
+<link rel="preload" href="/js/addHighlightTool.js" as="script">
+<link rel="preload" href="/js/viewer.js" as="script">
+<link rel="preload" href="/js/mobile.js" as="script">
+<link rel="preload" href="/js/main.js" as="script">

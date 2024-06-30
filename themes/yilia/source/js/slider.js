@@ -177,4 +177,6 @@ function slider() {
             return false;
         }
     }
-}
+};
+// 文章标题搜索
+slider();

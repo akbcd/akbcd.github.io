@@ -8,10 +8,10 @@
     }
   </style>
 <% } if (theme.valine && theme.valine.enable){ %>
-  <link rel="stylesheet" type="text/css" href="css/lib/valine/valine.css">
+  <link rel="stylesheet" type="text/css" href="/css/lib/valine/valine.css">
 <% } if (theme.gitalk && theme.gitalk.enable){ %>
   <link rel="stylesheet" type="text/css" href="<%- theme.css.gitalk %>">
-<% } if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
+<% } if (theme.gitment_owner && theme.gitment_repo && theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
   <link rel="stylesheet" type="text/css" href="<%- theme.css.gitment %>">
 <% } if (theme.waline && theme.waline.enable){ %>
   <link rel="stylesheet" type="text/css" href="<%- theme.css.waline %>">

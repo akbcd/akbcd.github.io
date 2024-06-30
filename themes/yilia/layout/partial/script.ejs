@@ -4,14 +4,18 @@
   <script src="/js/copyFn.js"></script>
   <script>copyFn("<%- _p('copy') %>", "<%- _p('copy_success') %>", "<%- _p('copy_error') %>");</script>
 <% } %>
-<%- js(["js/anm.js","js/fix.js","js/viewer.js","js/slider.js","js/mobile.js"]) %>
-<script src="/js/addHighlightTool.js"></script>
-<script src="/js/backTop.js"></script>
+<% if (theme.top){ %>
+  <script async src="/js/backTop.js"></script>
+<% } %>
 <% if (theme.share_jia){ %>
-  <script src="/js/share.js"></script>
-  <script>share();</script>
+  <script async src="/js/share.js"></script>
 <% } %>
 <% if (theme.mathjax && page.mathjax){ %>
-  <%- partial('mathjax') %>
+  <%- partial('js/mathjax') %>
 <% } %>
+<script async src="/js/anm.js"></script>
+<script async src="/js/fix.js"></script>
+<script async src="/js/slider.js"></script>
+<script async src="/js/addHighlightTool.js"></script>
+<%- js(["js/viewer.js","js/mobile.js"]) %>
 <script src="/js/main.js"></script>

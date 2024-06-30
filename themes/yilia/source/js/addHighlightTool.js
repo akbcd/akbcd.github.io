@@ -1,6 +1,6 @@
 /*!
  * addHighlightTool.js
- * 代码块隐藏，只适用于hexo默认的代码渲染
+ * 代码块扩展，只适用于hexo默认的代码渲染
  */
 function addHighlightTool() {
     // 导入代码块配置
@@ -148,3 +148,5 @@ function addHighlightTool() {
         }
     }
 };
+// 代码块扩展
+addHighlightTool();

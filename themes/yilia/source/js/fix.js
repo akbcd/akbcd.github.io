@@ -200,4 +200,6 @@ function fix() {
             findHeadPosition(currentTop + 50);
         });
     };
-}
+};
+// hexo 不支持的配置
+fix();
