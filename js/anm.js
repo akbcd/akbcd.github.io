@@ -100,4 +100,8 @@ function anm() {
             ctx.fill();
         };
     }
+};
+// pc页面且宽度大于800，执行冒泡动画
+if (!(browser.versions.mobile || document.body.clientWidth <= 800)) {
+    anm();
 }

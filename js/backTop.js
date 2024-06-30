@@ -30,3 +30,5 @@ const backTop = function (domE, ctn, distance) {
         domE.style.display = (ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > distance ? 'block' : 'none';
     }
 };
+// 返回顶部
+backTop(document.getElementById('js-jump-container'), document.getElementById('container'), 500);
