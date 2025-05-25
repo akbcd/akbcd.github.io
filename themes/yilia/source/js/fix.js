@@ -201,5 +201,5 @@ function fix() {
         });
     };
 };
-// hexo 不支持的配置
+// 执行 hexo 不支持的配置
 fix();

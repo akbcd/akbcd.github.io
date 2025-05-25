@@ -1,5 +1,25 @@
 /*!
- * mobile.js
+ * 移动端真实布局
+ * enforceMoblieLayout
+ */
+function enforceMobileLayout() {
+    // 获取设备真实宽度（考虑横屏/竖屏）
+    const realWidth = Math.min(window.screen.width, window.innerWidth);
+    // 尝试检查是否为移动端pc模式
+    const isMobilePC = realWidth <= 800 && document.body.clientWidth > 800;
+    if (isMobilePC) {
+        // 添加移动端布局class
+        document.documentElement.classList.add('mobile-layout');
+    } else {
+        // 移除移动端布局class
+        if (document.documentElement.classList.contains('mobile-layout')) document.documentElement.classList.remove('mobile-layout');
+    }
+};
+// 执行 移动端真实布局（页面加载和窗口变化时）
+enforceMobileLayout();
+window.addEventListener('resize', enforceMobileLayout());
+/*!
+ * mobile
  * 移动端样式美化
  */
 function mobile() {
@@ -99,3 +119,5 @@ function mobile() {
         n.setAttribute("style", "height:" + height + "px")
     }
 }
+// 执行 移动端样式美化
+mobile();

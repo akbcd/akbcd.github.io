@@ -1,26 +1,33 @@
 /*!
- * 浏览器判断
- * browser
- * See https://github.com/litten/hexo-theme-yilia/tree/master/source-src/js/browser.js
+ * 浏览器检测
+ * detectDevice
  */
-var browser = {
-    versions: function () {
-        var u = window.navigator.userAgent;
-        return {
-            trident: u.indexOf('Trident') > -1, //IE内核
-            presto: u.indexOf('Presto') > -1, //opera内核
-            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-            mobile: !!u.match(/Mobile/), //是否为移动终端
-            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-            iPad: u.indexOf('iPad') > -1, //是否为iPad
-            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-            weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
-        };
-    }()
-};
+function detectDevice() {
+    const isMobile = {
+        Android: () => navigator.userAgent.match(/Android/i),
+        BlackBerry: () => navigator.userAgent.match(/BlackBerry/i),
+        iOS: () => navigator.userAgent.match(/iPhone|iPad|iPod/i),
+        Windows: () => navigator.userAgent.match(/IEMobile|Windows Phone/i),
+        HarmonyOS: () => navigator.userAgent.match(/HarmonyOS/i),
+        any: function () {
+            return (this.Android() || this.BlackBerry() || this.iOS() || this.Windows() || this.HarmonyOS());
+        }
+    };
+    // 检测 iPadOS 13+ 的 Safari（UA 为 Macintosh 但支持触摸）
+    const isiPad = navigator.userAgent.match(/Macintosh/i) &&
+        navigator.maxTouchPoints > 0 &&
+        window.screen.width > 768;
+    if (isiPad) isMobile.iOS = () => true;
+    // 更严格的触摸设备判断
+    const isTouchDevice = ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
+        (isMobile.any() || window.screen.width < 1024);
+    return {
+        isMobile: isMobile.any(),
+        isDesktop: !isMobile.any(),
+        isTouchDevice,
+        isiPad
+    };
+}
 /*!
  * 节流
  * throttle

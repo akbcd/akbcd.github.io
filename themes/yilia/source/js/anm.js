@@ -101,7 +101,7 @@ function anm() {
         };
     }
 };
-// pc页面且宽度大于800，执行冒泡动画
-if (!(browser.versions.mobile || document.body.clientWidth <= 800)) {
+// 执行 冒泡动画（pc浏览器且宽度大于800）
+if (!document.documentElement.classList.contains('mobile-layout') && (detectDevice().isDesktop || document.body.clientWidth > 800)) {
     anm();
 }

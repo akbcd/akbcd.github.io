@@ -3,10 +3,10 @@
 <div class="intrude-less">
   <header class="header-inner">
     <a href="<%=theme.root%>" class="profilepic">
-      <img src="<%=theme.avatar%>" class="js-avatar">
+      <img src="<%=theme.avatar%>" class="js-avatar" alt="avatar">
     </a>
     <hgroup>
-      <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
+      <h1 class="header-author"><a href="<%=theme.root%>" aria-label="root"><%=theme.author%></a></h1>
     </hgroup>
     <% if (theme.subtitle){ %>
       <p class="header-subtitle"><%=theme.subtitle%></p>
