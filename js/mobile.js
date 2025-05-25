@@ -8,6 +8,13 @@ function enforceMobileLayout() {
     // 尝试检查是否为移动端pc模式
     const isMobilePC = realWidth <= 800 && document.body.clientWidth > 800;
     if (isMobilePC) {
+        const viewport = document.createElement('meta');
+        viewport.name = 'viewport';
+        viewport.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+        // 替换现有 viewport
+        const oldViewport = document.querySelector('meta[name="viewport"]');
+        if (oldViewport) oldViewport.replaceWith(viewport);
+        else document.head.appendChild(viewport);
         // 添加移动端布局class
         document.documentElement.classList.add('mobile-layout');
     } else {
@@ -86,7 +93,9 @@ function mobile() {
     function handleScroll() {
         let $overlay = document.querySelector('.js-overlay');
         let $menu = document.querySelector('.js-header-menu');
-        let $scrollTop = parseInt(document.body.scrollTop) || parseInt(document.querySelector("#container").scrollTop);
+        let $scrollTop = parseInt(document.body.scrollTop) ||
+             parseInt(document.querySelector("#container").scrollTop) ||
+             parseInt(document.documentElement.scrollTop);
         scrollStop($overlay, $scrollTop, -63, 2, 0);
         // 动画微调，修复pc页面getElementTop($menu)=0
         if (document.body.clientWidth > 800) {
@@ -106,7 +115,20 @@ function mobile() {
         // mobile页面滚动时执行
         document.body.addEventListener('scroll', () => {
             handleScroll()
-        })
+        });
+        // MobilePC特殊处理
+        document.addEventListener('scroll', function(event) {
+            // 获取实际的滚动元素
+            const scrollTarget = event.target === document ? 
+                                document.scrollingElement || document.documentElement : 
+                                event.target;
+            // 检查是否是目标HTML元素
+            if (scrollTarget === document.documentElement &&
+                document.documentElement.lang === 'zh-CN' &&
+                document.documentElement.classList.contains('mobile-layout')) {
+                handleScroll();
+            }
+        });
     }
     // 当前页面菜单样式美化
     tabActive();

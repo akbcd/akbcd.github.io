@@ -421,7 +421,7 @@
   <entry>
     <title>腾讯PC应用宝如何安装第三方apk</title>
     <url>/2025/05/25/%E8%85%BE%E8%AE%AFPC%E5%BA%94%E7%94%A8%E5%AE%9D%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9apk/</url>
-    <content><![CDATA[<p>腾讯应用宝，腾讯开发的一款Windows安卓模拟器，之前微软在Windows11上开发过，现在已经停止开发。腾讯与微软合作，在微软应用商店推出了中国区特供的应用宝。<br>目前，对于未适配的应用，使用应用宝默认的安装方式，会启用应用宝检测，可能会提示无法安装。<br>本篇文章主要分享一下如何跳过应用宝检测安装第三方apk的方法。</p>
+    <content><![CDATA[<p>腾讯应用宝，腾讯开发的一款Windows安卓模拟器，之前微软在Windows11上开发过安卓模拟器，现在已经停止开发。腾讯与微软合作，在微软应用商店推出了中国区特供的应用宝。<br>目前，对于未适配的应用，使用应用宝默认的安装方式，会启用应用宝检测，可能会提示无法安装。<br>本篇文章主要分享一下如何跳过应用宝检测安装第三方apk的方法。</p>
 <span id="more"></span>
 <h3 id="通过内部安装"><a href="#通过内部安装" class="headerlink" title="通过内部安装"></a>通过内部安装</h3><p>顾名思义，就是直接在应用宝内的App里安装，比如你用应用宝启动浏览器，在浏览器下载的Apk文件，直接点Apk文件就可以安装，同理，只要是应用宝内有文件管理功能的App均可通过此方法安装第三方Apk，推荐直接在应用宝商店任意下载一个文件管理器（比如MT管理器），并通过应用宝启动后自动创建的腾讯应用宝共享文件夹安装Apk文件，详细步骤如下：</p>
 <p>打开我的电脑 – 你会发现有一个腾讯应用宝虚拟磁盘，进入后打开腾讯应用宝共享文件夹，将你要安装的Apk文件复制到此文件夹<br>补充：如果我的电脑里没有腾讯应用宝虚拟磁盘，请进入到应用宝设置界面，找到文件设置，里面有虚拟磁盘相关设定，启用即可。<br>回到腾讯应用宝电脑版，顶部直接搜索MT管理器并安装<br>打开后默认定位在/storage/emulated/0/目录下，往下翻就能看到腾讯应用宝共享文件夹，打开后就能看到你刚才复制的Apk文件，点击即可安装，安装调用的是安卓内部的安装器，会跳过应用宝的检测<br>举一反三，你也可以把Apk文件上传到比如百度云盘或阿里云盘之类，然后应用宝电脑版里安装百度云盘或阿里云盘后下载安装</p>
@@ -1973,7 +1973,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SMTP_USER</td>
-<td align="left"><a href="mailto:&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;">&#x78;&#x78;&#x78;&#120;&#x78;&#120;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a></td>
 <td align="left">[必填]SMTP登录用户，就是输入自己的邮箱</td>
 </tr>
 <tr>
@@ -1988,7 +1988,7 @@ document可以更换为已经获取的元素，需要注意的点与querySelecto
 </tr>
 <tr>
 <td align="left">SENDER_EMAIL</td>
-<td align="left"><a href="mailto:&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#120;&#120;&#120;&#x78;&#x78;&#x78;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;</a></td>
+<td align="left"><a href="mailto:&#120;&#120;&#120;&#120;&#120;&#120;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#120;&#120;&#120;&#120;&#120;&#120;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a></td>
 <td align="left">[必填]发件邮箱，填写自己的邮箱即可</td>
 </tr>
 <tr>
@@ -5669,7 +5669,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>简写为<code>hexo s</code>，hexo本地服务启动后，在浏览器端输入localhost:4000即可查看效果<br>ctrl+c 可结束hexo本地服务（git窗口中有提示）<br>说明：hexo服务默认端口为4000，如果被占用，请自行在百度里搜索相关解决办法。浏览器端输入localhost:4000，访问后会出现博客初始化效果，ctrl+c结束本地服务后（需要在git窗口中执行），localhost:4000无法访问<br>友情提示：hexo命令以及介绍参看hexo官方文档：<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
 <h2 id="创建GitHub账户"><a href="#创建GitHub账户" class="headerlink" title="创建GitHub账户"></a>创建GitHub账户</h2><p>既然是在GitHub上托管自己的博客，当然需要有一个GitHub账户<br>进入GitHub网站创建账户，点击<a href="https://github.com/">github</a>，记住自己的用户名和邮箱，下面需要用到<br>GitHub在国内可以访问，如不能访问，可以参看站点文章 <strong>电脑无法访问GitHub解决办法</strong></p>
 <h3 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h3><p>登录github：<a href="https://github.com/login">https://github.com/login</a><br>单击<strong>Create repository</strong>创建一个repository，<strong>Repository name</strong>输入<code>yourname</code>+<code>.github.io</code>，yourname为Owner名<br>下面的创建选项根据自己需要进行选择，也可以不动，直接创建，切记不要选择Private（私有的）</p>
-<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#121;&#111;&#x75;&#x72;&#x5f;&#x65;&#x6d;&#x61;&#105;&#x6c;&#64;&#121;&#x6f;&#117;&#114;&#101;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#121;&#111;&#x75;&#x72;&#x5f;&#x65;&#x6d;&#x61;&#105;&#x6c;&#64;&#121;&#x6f;&#117;&#114;&#101;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></strong>为GitHub创建时用的邮箱</p>
+<h3 id="本地创建ssh-key"><a href="#本地创建ssh-key" class="headerlink" title="本地创建ssh key"></a>本地创建ssh key</h3><p>git中输入以下命令，在本地创建<strong>ssh key</strong>，<strong><a href="mailto:&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#121;&#x6f;&#117;&#x72;&#101;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x79;&#111;&#x75;&#x72;&#x5f;&#101;&#x6d;&#97;&#105;&#x6c;&#64;&#121;&#x6f;&#117;&#x72;&#101;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a></strong>为GitHub创建时用的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p>回车后出现如下提示：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C&quot;your_email@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
@@ -5738,7 +5738,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg" /></div>
 <p>部署部分的设置，下面有详细说明</p>
 <h2 id="配置本地blog文件夹"><a href="#配置本地blog文件夹" class="headerlink" title="配置本地blog文件夹"></a>配置本地blog文件夹</h2><p>用编译软件打开blog文件夹，在根目录中找到<code>_config.yml</code><br>用编译软件打开，在里面找到deploy，修改为如下模式，yourname改为Owner名</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#x6f;&#117;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x6f;&#117;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
+<p>blog文件夹，右键打开选择<strong>git bash here</strong>输入以下命令：<br>1.<code>git config --global user.email &quot;you@example.com&quot;</code> ——git确认信息，<a href="mailto:&#x79;&#111;&#x75;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#x79;&#111;&#x75;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a>为注册GitHub所用邮箱<br>2.<code>git config --global user.name &quot;Your Name&quot;</code> ——git确认信息，Your Name为注册GitHub用户名<br>3.<code>npm install hexo-deployer-git --save</code> ——安装hexo-deployer-git插件，在hexo初始化生成的<strong>package.json</strong>文件中，如果有此插件，无需再次安装<br>4.<code>hexo g</code> ——生成静态文件<br>5.<code>hexo d</code> ——部署网站，需要安装hexo-deployer-git插件使用<br>正常情况会弹出一个<code>OpenSSH</code>对话框进行警告，输入<code>yes</code>点击<code>ok</code>，也有可能直接在窗口提示<code>Are you sure you want to continue connecting</code>，取决于安装的git版本<br>最后在浏览器输入：<code>https://yourname.github.io</code>，yourname为GitHub用户名<br>可以访问表明GITHUB+HEXO搭建个人博客完成<br>注：如果本地blog文件夹内容部署不了，需要从<strong>本地创建ssh key</strong>重新开始。</p>
 <h2 id="博客新建文章"><a href="#博客新建文章" class="headerlink" title="博客新建文章"></a>博客新建文章</h2><p>上面介绍了如何搭建博客，既然博客搭建完成，那就需要开始写文章了<br>找到blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo new &quot;example&quot;</code>——创建文章，example为文章名<br>git中一会儿会提示<code>INFO  Created: 路径\blog\source\_posts\example.md</code>，路径为自己blog文件夹所在路径<br>2.用编译器在相应的文件中进行书写保存（.md是支持markdown语法的文件，需要用markdown语法进行书写），参看 <strong>markdown基本语法（GITHUB+HEXO搭建的博客）</strong><br>写完后 在编译器中保存<br>3.在git中输入<code>hexo s</code>进行本地预览，通过访问localhost:4000查看，本地没有问题后，部署网站</p>
 <h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><p>blog文件夹，右键<strong>git bash here</strong>输入<br>1.<code>hexo g</code> ——生成静态文件<br>2.<code>hexo d</code> ——将本地生成的静态文件部署到网站<br>上面两个命令可以简记为一个命令<br><code>hexo g -d</code> ——先生成静态文件，之后部署网站</p>
 <h2 id="博客更换主题"><a href="#博客更换主题" class="headerlink" title="博客更换主题"></a>博客更换主题</h2><p>好的博客当然需要一个好的主题来衬托</p>

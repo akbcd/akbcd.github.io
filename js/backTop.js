@@ -2,33 +2,86 @@
  * backTop.js
  * 返回顶部
  */
-const backTop = function (domE, ctn, distance) {
+const backTop = (domE, ctn, distance) => {
     if (!domE) return;
-    var _onclick = domE.onclick;
-    // pc
-    ctn.onscroll = throttle(() => toggleDomE(), 100);
-    // mobile
-    document.body.addEventListener('scroll', ctn.onscroll);
-    domE.onclick = function () {
-        let timer = null;
-        typeof _onclick === 'function' && _onclick.apply(this, arguments);
-        timer = setInterval(function () { //设置一个计时器
-            var ct = ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop; //获取距离顶部的距离
-            var diff = Math.max(10, ct / 6);
-            ct -= diff;
-            if (ct > 0) {//如果与顶部的距离大于零
-                ctn.scrollTop = ctn.scrollTop - diff;
-                document.body.scrollTo(0, ct);//向上移动10px
-            } else {//如果距离小于等于零
-                ctn.scrollTop = 0;
-                document.body.scrollTo(0, 0);//移动到顶部
-                clearInterval(timer);//清除计时器
-            }
-        }, 10);//隔10ms执行一次前面的function，展现一种平滑滑动效果
+    let animationFrameId = null;
+    const _onclick = domE.onclick;
+    // 获取高度
+    const getScrollTop = () => ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+    // 设定高度
+    const setScrollTop = value => {
+        ctn.scrollTop = value;
+        document.documentElement.scrollTop = value;
+        document.body.scrollTop = value;
     };
-    function toggleDomE() {
-        domE.style.display = (ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > distance ? 'block' : 'none';
+    // 节流显示逻辑
+    const throttledToggle = throttle(() => {
+        domE.style.display = getScrollTop() > distance ? 'block' : 'none';
+    }, 100);
+    // 事件配置
+    const scrollOptions = { passive: true };
+    // 事件监听
+    const events = [
+        // pc
+        [ctn, 'scroll', throttledToggle],
+        // mobile
+        [document.body, 'scroll', throttledToggle],
+        // MobilePC
+        [document, 'scroll', handleMobileScroll]
+    ];
+    events.forEach(([target, event, handler]) => {
+        target.addEventListener(event, handler, scrollOptions);
+    });
+    // MobilePC特殊处理
+    function handleMobileScroll(event) {
+        const scrollTarget = event.target === document 
+            ? document.scrollingElement || document.documentElement 
+            : event.target;
+        if (scrollTarget === document.documentElement && 
+            scrollTarget.classList.contains('mobile-layout')) {
+            throttledToggle();
+        }
     }
+    // 点击处理
+    domE.onclick = function() {
+        // 清理前序动画
+        cancelAnimation();
+        // 执行原始点击回调
+        typeof _onclick === 'function' && _onclick.apply(this, arguments);
+        // 动画参数
+        const start = getScrollTop();
+        const duration = 500;
+        let startTime = null;
+        // 动画帧回调
+        const animate = timestamp => {
+            startTime = startTime || timestamp;
+            const progress = timestamp - startTime;
+            const percent = Math.min(progress / duration, 1);
+            // 缓动函数（easeOutQuad）
+            const eased = percent * (2 - percent);
+            setScrollTop(start - start * eased);
+            if (percent < 1) {
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                animationFrameId = null;
+            }
+        };
+        animationFrameId = requestAnimationFrame(animate);
+    };
+    // 取消动画
+    const cancelAnimation = () => {
+        if (animationFrameId !== null) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    };
+    // 清理函数
+    return () => {
+        cancelAnimation();
+        events.forEach(([target, event, handler]) => {
+            target.removeEventListener(event, handler, scrollOptions);
+        });
+    };
 };
 // 执行 返回顶部
 backTop(document.getElementById('js-jump-container'), document.getElementById('container'), 500);
