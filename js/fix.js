@@ -189,15 +189,23 @@ function fix() {
                 if (parent.matches('li')) parent.classList.add('active')
             }
         };
-        // pc动态目录
-        $container.addEventListener('scroll', () => {
-            const currentTop = $container.scrollTop;
-            findHeadPosition(document.body.clientWidth <= 800 ? currentTop + 50 : currentTop);
-        });
-        // mobile动态目录
-        document.body.addEventListener('scroll', () => {
-            const currentTop = document.body.scrollTop || document.documentElement.scrollTop;
-            findHeadPosition(currentTop + 50);
+        // 事件配置
+        const scrollOptions = { passive: true };
+        // 事件监听
+        const events = [
+            // pc
+            [$container, 'scroll', () => {
+                const currentTop = $container.scrollTop;
+                findHeadPosition(document.body.clientWidth <= 800 ? currentTop + 50 : currentTop);
+            }],
+            // mobile
+            [document.body, 'scroll', () => {
+                const currentTop = document.body.scrollTop || document.documentElement.scrollTop;
+                findHeadPosition(currentTop + 50);
+            }]
+        ];
+        events.forEach(([target, event, handler]) => {
+            target.addEventListener(event, handler, scrollOptions);
         });
     };
 };

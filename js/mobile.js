@@ -1,31 +1,4 @@
 /*!
- * 移动端真实布局
- * enforceMoblieLayout
- */
-function enforceMobileLayout() {
-    // 获取设备真实宽度（考虑横屏/竖屏）
-    const realWidth = Math.min(window.screen.width, window.innerWidth);
-    // 尝试检查是否为移动端pc模式
-    const isMobilePC = realWidth <= 800 && document.body.clientWidth > 800;
-    if (isMobilePC) {
-        const viewport = document.createElement('meta');
-        viewport.name = 'viewport';
-        viewport.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
-        // 替换现有 viewport
-        const oldViewport = document.querySelector('meta[name="viewport"]');
-        if (oldViewport) oldViewport.replaceWith(viewport);
-        else document.head.appendChild(viewport);
-        // 添加移动端布局class
-        document.documentElement.classList.add('mobile-layout');
-    } else {
-        // 移除移动端布局class
-        if (document.documentElement.classList.contains('mobile-layout')) document.documentElement.classList.remove('mobile-layout');
-    }
-};
-// 执行 移动端真实布局（页面加载和窗口变化时）
-enforceMobileLayout();
-window.addEventListener('resize', enforceMobileLayout());
-/*!
  * mobile
  * 移动端样式美化
  */
@@ -41,7 +14,7 @@ function mobile() {
             let $tab = $tabs[i];
             // 中文URL可能存在加密，使用decodeURI
             if (isPathMatch(decodeURI(path), decodeURI($tab.getAttribute('href')))) {
-                $tab.classList.add('active')
+                $tab.classList.add('active');
             }
         }
     }
@@ -93,9 +66,7 @@ function mobile() {
     function handleScroll() {
         let $overlay = document.querySelector('.js-overlay');
         let $menu = document.querySelector('.js-header-menu');
-        let $scrollTop = parseInt(document.body.scrollTop) ||
-             parseInt(document.querySelector("#container").scrollTop) ||
-             parseInt(document.documentElement.scrollTop);
+        let $scrollTop = parseInt(document.body.scrollTop) || parseInt(document.querySelector("#container").scrollTop);
         scrollStop($overlay, $scrollTop, -63, 2, 0);
         // 动画微调，修复pc页面getElementTop($menu)=0
         if (document.body.clientWidth > 800) {
@@ -108,28 +79,19 @@ function mobile() {
     function bindScroll() {
         // 初始化
         handleScroll();
-        // pc页面滚动时执行
-        document.querySelector('#container').addEventListener('scroll', () => {
-            handleScroll()
+        // 事件配置
+        const scrollOptions = { passive: true };
+        // 事件监听
+        const events = [
+            // mobile
+            [document.body, 'scroll', handleScroll],
+            // pc
+            [document.querySelector("#container"), 'scroll', handleScroll]
+        ];
+        events.forEach(([target, event, handler]) => {
+            target.addEventListener(event, handler, scrollOptions);
         });
-        // mobile页面滚动时执行
-        document.body.addEventListener('scroll', () => {
-            handleScroll()
-        });
-        // MobilePC特殊处理
-        document.addEventListener('scroll', function(event) {
-            // 获取实际的滚动元素
-            const scrollTarget = event.target === document ? 
-                                document.scrollingElement || document.documentElement : 
-                                event.target;
-            // 检查是否是目标HTML元素
-            if (scrollTarget === document.documentElement &&
-                document.documentElement.lang === 'zh-CN' &&
-                document.documentElement.classList.contains('mobile-layout')) {
-                handleScroll();
-            }
-        });
-    }
+    };
     // 当前页面菜单样式美化
     tabActive();
     // 页面滚动时的样式美化

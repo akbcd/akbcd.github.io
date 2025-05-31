@@ -7,11 +7,10 @@ const backTop = (domE, ctn, distance) => {
     let animationFrameId = null;
     const _onclick = domE.onclick;
     // 获取高度
-    const getScrollTop = () => ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+    const getScrollTop = () => ctn.scrollTop || document.body.scrollTop;
     // 设定高度
     const setScrollTop = value => {
         ctn.scrollTop = value;
-        document.documentElement.scrollTop = value;
         document.body.scrollTop = value;
     };
     // 节流显示逻辑
@@ -25,23 +24,11 @@ const backTop = (domE, ctn, distance) => {
         // pc
         [ctn, 'scroll', throttledToggle],
         // mobile
-        [document.body, 'scroll', throttledToggle],
-        // MobilePC
-        [document, 'scroll', handleMobileScroll]
+        [document.body, 'scroll', throttledToggle]
     ];
     events.forEach(([target, event, handler]) => {
         target.addEventListener(event, handler, scrollOptions);
     });
-    // MobilePC特殊处理
-    function handleMobileScroll(event) {
-        const scrollTarget = event.target === document 
-            ? document.scrollingElement || document.documentElement 
-            : event.target;
-        if (scrollTarget === document.documentElement && 
-            scrollTarget.classList.contains('mobile-layout')) {
-            throttledToggle();
-        }
-    }
     // 点击处理
     domE.onclick = function() {
         // 清理前序动画
