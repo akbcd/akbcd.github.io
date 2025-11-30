@@ -28,6 +28,16 @@
               <% if (theme.excerpt_link) { %>
                 <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
               <% } %>
+            <% } else if (theme.excerpt_first_paragraph && index){ %>
+              <%
+                // 获取文章第一段内容作为摘要
+                let content = post.content;
+                let excerpt = content.split('\n').slice(0,1);
+              %>
+              <%- excerpt %>
+              <% if (theme.excerpt_link) { %>
+                <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+              <% } %>
             <% } else { %>
               <%- post.content %>
             <% } %>
