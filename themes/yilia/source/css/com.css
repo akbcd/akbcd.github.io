@@ -1,124 +1,33 @@
-html {
+/* 基础重置和全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
     height: 100%;
 }
 
 body {
-    height: 100%;
     min-height: 100%;
     background: #eaeaea;
+    color: #1a1a1a;
+    font-family: Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
-audio,
-canvas,
-progress,
-video {
-    display: inline-block;
-}
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-progress {
-    vertical-align: baseline;
-}
-
-[hidden],
-template {
-    display: none;
-}
-
-/* 添加word-break: break-word */
-a {
-    background: transparent;
-    color: #08c;
-    text-decoration: none;
-    word-break: break-word;
-}
-
-a:active {
-    outline: 0;
-}
-
-abbr[title] {
-    border-bottom: 1px dotted;
-}
-
-b,
-strong {
-    font-weight: 700;
-}
-
-dfn {
-    font-style: italic;
-}
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
-small {
-    font-size: 80%;
-}
-
-sub,
-sup {
-    position: relative;
-    vertical-align: baseline;
-    font-size: 75%;
-    line-height: 0;
-}
-
-sup {
-    top: -.5em;
-}
-
-sub {
-    bottom: -.25em;
-}
-
-img {
-    max-width: 100%;
-    border: 0;
-    vertical-align: middle;
-}
-
-svg:not(:root) {
-    overflow: hidden;
-}
-
-/* 删除white-space:pre-wrap; */
-/* overflow:auto; */
-pre {
-    white-space: pre;
-    word-break: break-word;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-size: 1em;
-    font-family: monospace, monospace;
-}
-
+/* 表单元素重置 */
 button,
 input,
-optgroup,
 select,
 textarea {
     margin: 0;
     color: inherit;
-    vertical-align: middle;
     font: inherit;
-}
-
-button,
-input,
-select {
-    overflow: visible;
+    vertical-align: middle;
+    outline: 0;
 }
 
 button,
@@ -127,9 +36,9 @@ select {
 }
 
 button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     cursor: pointer;
     -webkit-appearance: button;
 }
@@ -138,40 +47,184 @@ input[type=submit] {
     cursor: default;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-
-input {
+/* 输入框和文本域 */
+input,
+textarea {
     line-height: normal;
 }
 
-input[type=checkbox],
-input[type=radio] {
+input[type="checkbox"],
+input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    height: auto;
-}
-
-input[type=search] {
+input[type="search"] {
     box-sizing: border-box;
     -webkit-appearance: textfield;
 }
 
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+}
+
+/* 占位符样式 */
+::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+    color: #999;
+}
+
+/* 文本和排版 */
+a {
+    color: #08c;
+    text-decoration: none;
+    background: transparent;
+    word-break: break-word;
+}
+
+a:active {
+    outline: 0;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6, p, blockquote, figure, form {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    line-height: 2;
+}
+
+h1 { font-size: 1.125rem; }  /* 18px */
+h2 { font-size: 1rem; }      /* 16px */
+h3 { font-size: 0.875rem; }  /* 14px */
+
+/* 列表和表格 */
+ul, ol, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+
+/* 媒体元素 */
+img {
+    max-width: 100%;
+    border: 0;
+    vertical-align: middle;
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* 代码和预格式化文本 */
+pre, code, kbd, samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre;
+    word-break: break-word;
+}
+
+/* 代码高亮 - 简化选择器 */
+pre .comment { color: #008000; }
+pre .string, 
+pre .value { color: #a31515; }
+pre .keyword,
+pre .type { color: #0000ff; }
+pre .number { color: #7163d7; }
+pre .property { color: #ff0000; }
+pre .function { color: #795e26; }
+pre .attribute,
+pre .class,
+pre .built_in { color: #a6e22e; }
+
+/* HTML特定高亮 */
+pre .tag,
+.html pre .name { color: #800000; }
+pre .attr-name,
+.html pre .attr { color: #ff0000; }
+pre .attr-value,
+.html pre .string { color: #0000ff; }
+
+/* 工具类 */
+[hidden],
+template {
+    display: none;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+dfn {
+    font-style: italic;
+}
+
+i {
+    font-style: normal;
 }
 
 fieldset {
     margin: 0 2px;
-    padding: .35em .625em .75em;
+    padding: 0.35em 0.625em 0.75em;
     border: 1px solid silver;
 }
 
@@ -190,190 +243,6 @@ optgroup {
     font-weight: 700;
 }
 
-button,
-input,
-select,
-textarea {
-    outline: 0;
+progress {
+    vertical-align: baseline;
 }
-
-input,
-textarea {
-    -webkit-user-modify: read-write-plaintext-only;
-}
-
-input::-ms-clear,
-input::-ms-reveal {
-    display: none;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-    color: #999;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-    color: #999;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-    color: #999;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-td,
-th {
-    padding: 0;
-}
-
-blockquote,
-figure,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0;
-}
-
-dd,
-dl,
-li,
-ol,
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-ol,
-ul {
-    list-style: none outside none;
-}
-
-h1,
-h2,
-h3 {
-    font-weight: 400;
-    line-height: 2;
-}
-
-h1 {
-    font-size: 18px;
-}
-
-h2 {
-    font-size: 16px;
-}
-
-h3 {
-    font-size: 14px;
-}
-
-i {
-    font-style: normal;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-    color: #1a1a1a;
-    font-size: 1rem;
-    /* font-family: lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif; */
-    font-family: helvetica, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei;
-    line-height: 1.75;
-}
-
-/* 代码区块高亮通用 */
-pre .at_rule,
-pre .at_rule .keyword,
-pre .css~* .tag,
-pre .preprocessor,
-pre .preprocessor .keyword,
-pre .title {
-    color: #f92672;
-}
-
-pre .attribute,
-pre .built_in,
-pre .class,
-pre .css~* .class,
-pre .function .title {
-    color: #a6e22e;
-}
-
-pre .class .params,
-pre .function .keyword,
-pre .keyword,
-pre .type {
-    color: #0000ff;
-}
-
-pre .comment {
-    color: #008000;
-}
-
-pre .css~* .id,
-pre .id {
-    color: #fd971f;
-}
-
-pre .function {
-    color: #795e26;
-}
-
-pre .number {
-    color: #7163d7;
-}
-
-pre .property {
-    color: #ff0000;
-}
-
-pre .punctuation {
-    color: #0431fa;
-}
-
-pre .selector,
-pre .selector-class {
-    color: #800000;
-}
-
-pre .string,
-pre .value {
-    color: #a31515;
-}
-
-/* html */
-pre .tag,
-.html pre .name {
-    color: #800000;
-}
-
-pre .attr-name,
-.html pre .attr {
-    color: #ff0000;
-}
-
-pre .attr-value,
-.html pre .string {
-    color: #0000ff;
-}
-
-/* 代码块相关样式结束 */
