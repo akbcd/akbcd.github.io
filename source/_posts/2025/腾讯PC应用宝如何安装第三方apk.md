@@ -13,9 +13,19 @@ toc: true
 
 打开我的电脑 – 你会发现有一个腾讯应用宝虚拟磁盘，进入后打开腾讯应用宝共享文件夹，将你要安装的Apk文件复制到此文件夹
 补充：如果我的电脑里没有腾讯应用宝虚拟磁盘，请进入到应用宝设置界面，找到文件设置，里面有虚拟磁盘相关设定，启用即可。
-回到腾讯应用宝电脑版，顶部直接搜索MT管理器并安装
-打开后默认定位在/storage/emulated/0/目录下，往下翻就能看到腾讯应用宝共享文件夹，打开后就能看到你刚才复制的Apk文件，点击即可安装，安装调用的是安卓内部的安装器，会跳过应用宝的检测
-举一反三，你也可以把Apk文件上传到比如百度云盘或阿里云盘之类，然后应用宝电脑版里安装百度云盘或阿里云盘后下载安装
+~回到腾讯应用宝电脑版，顶部直接搜索MT管理器并安装~
+~打开后默认定位在/storage/emulated/0/目录下，往下翻就能看到腾讯应用宝共享文件夹，打开后就能看到你刚才复制的Apk文件，点击即可安装，安装调用的是安卓内部的安装器，会跳过应用宝的检测~
+~举一反三，你也可以把Apk文件上传到比如百度云盘或阿里云盘之类，然后应用宝电脑版里安装百度云盘或阿里云盘后下载安装~
+在桌面构建安卓设置快捷方式
+- 在桌面应用宝快捷方式处右键属性
+- 在原有的快捷方式中添加`--launch-pkg-name "com.tencent.portfolio"`字段，其中包名替换为设置APK的包名：`com.android.settings`
+
+原有快捷方式：
+`"D:\Program Files\Tencent\Androws\Application\AndrowsLauncher.exe" --from "2" --launch-proc-name "AndrowsStore.exe"`
+替换后快捷方式：
+`"D:\Program Files\Tencent\Androws\Application\AndrowsLauncher.exe" --from "2" --launch-pkg-name "com.android.settings" --launch-proc-name "Androws.exe"`
+
+打开安卓设置，所有应用中找到安卓系统默认的`文件`应用，在`文件`应用中找到下载好的apk文件，点击安装即可。
 
 ### 通过ADB安装
 腾讯应用宝安装后的程序文件中默认提供`adb.exe`程序。
