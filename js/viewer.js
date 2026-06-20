@@ -1,1 +1,5 @@
-function viewer(){let i=document.querySelectorAll(".pswp")[0],r=document.querySelectorAll(".article-entry img:not(.reward-img)");r.forEach((t,e)=>{t.onclick=()=>{if(!document.querySelector(".left-col.show")){let o=[];r.forEach((t,e)=>{t.getAttribute("data-idx",e);var e=t.getAttribute("data-target")||t.getAttribute("src"),i=t.getAttribute("alt"),r=new Image;r.src=e,o.push({src:e,w:r.width||t.width,h:r.height||t.height,title:i})}),new PhotoSwipe(i,PhotoSwipeUI_Default,o,{index:parseInt(e)}).init()}}})}window.addEventListener("load",viewer());
+/*!
+ * viewer.js
+ * photoswipe
+ */
+import PhotoSwipeLightbox from"/js/lib/photoswipe/photoswipe-lightbox.esm.min.js";function viewer(){const t=document.querySelectorAll(".article-entry img:not(.reward-img)");if(!t.length)return;const e=Array.from(t).map(t=>({src:t.getAttribute("data-target")||t.getAttribute("src"),width:t.naturalWidth||t.width,height:t.naturalHeight||t.height,alt:t.getAttribute("alt")||""})),i=new PhotoSwipeLightbox({dataSource:e,pswpModule:()=>import("/js/lib/photoswipe/photoswipe.esm.min.js")});t.forEach((t,e)=>{t.addEventListener("click",t=>{t.preventDefault(),document.querySelector(".left-col.show")||i.loadAndOpen(e)})}),i.init()}window.addEventListener("load",viewer);
