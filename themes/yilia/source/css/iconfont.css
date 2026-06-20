@@ -1,12 +1,18 @@
-/* 矢量图标字体定义（共36个） */
+/* 矢量图标字体定义（共37个） */
 @font-face {
-    font-family: 'iconfont';
-    /* Project id 692003 */
-    src: 
-        url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.woff2?t=1653717863933') format('woff2'),
-        url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.woff?t=1653717863933') format('woff'),
-        url('//at.alicdn.com/t/font_692003_iv7j8oaex4p.ttf?t=1653717863933') format('truetype');
-    font-display: swap;
+  font-family: 'iconfont';  /* Project id 692003 */
+  src: url('//at.alicdn.com/t/c/font_692003_sbzcrdhgwd.woff2?t=1781944104981') format('woff2'),
+       url('/fonts/iconfont.woff2') format('woff2'),
+       url('//at.alicdn.com/t/c/font_692003_sbzcrdhgwd.woff?t=1781944104981') format('woff'),
+       url('/fonts/iconfont.woff') format('woff'),
+       url('//at.alicdn.com/t/c/font_692003_sbzcrdhgwd.ttf?t=1781944104981') format('truetype'),
+       url('/fonts/iconfont.ttf') format('truetype');
+}
+
+/* tooltip */
+.tooltip-left .tooltip-content::after {
+    font-family: "iconfont" !important;
+    content: "\e600";
 }
 
 /* 图标基础样式 */

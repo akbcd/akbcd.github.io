@@ -1,8 +1,9 @@
-<%- js([theme.js.photoswipe,theme.js.photoswipe_ui_default]) %>
 <% if (theme.highlight_copy) { %>
-  <script src="<%- theme.js.clipboard %>"></script>
-  <script src="/js/copyFn.js"></script>
-  <script>copyFn("<%- _p('copy') %>", "<%- _p('copy_success') %>", "<%- _p('copy_error') %>");</script>
+  <%- js(theme.js.clipboard) %>
+  <script type="module">
+    import copyFn from "/js/copyFn.js";
+    copyFn("<%- _p('copy') %>", "<%- _p('copy_success') %>", "<%- _p('copy_error') %>");
+  </script>
 <% } %>
 <% if (theme.top){ %>
   <script async src="/js/backTop.js"></script>
@@ -11,10 +12,11 @@
   <script async src="/js/share.js"></script>
 <% } %>
 <% if (theme.mathjax && page.mathjax){ %>
-  <%- partial('js/mathjax') %>
+  <%- js("js/mathjax") %>
 <% } %>
 <script async src="/js/anm.js"></script>
 <script async src="/js/fix.js"></script>
 <script async src="/js/slider.js"></script>
 <script async src="/js/addHighlightTool.js"></script>
-<%- js(["js/viewer.js","js/mobile.js"]) %>
+<%- js({async:true,src:"js/viewer.js",type:"module"}) %>
+<%- js("js/mobile.js") %>

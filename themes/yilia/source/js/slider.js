@@ -136,10 +136,18 @@ function slider() {
         app.$set('search', searchWording);
         searchWording !== '' && handleSearch(searchWording);
     }).catch((err) => {
+        const $jsonContent = document.getElementById('js-jsonContent');
+        err = "<p style='padding: 20px 20px 0 20px;'>" + err;
+        err += "<br/>缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-json-content --save<br/>";
+        err += "3、在根目录_config.yml里添加配置：<pre style='padding-left: 20px'>jsonContent:\n  meta: false\n  pages: false\n  posts:\n";
+        err += "    title: true\n    date: true\n    path: true\n    text: false\n    raw: false\n    content: false\n    slug: false\n    updated: false\n";
+        err += "    comments: false\n    link: false\n    permalink: false\n    excerpt: false\n    categories: false\n    tags: true</pre>"
+        $jsonContent.innerHTML = err;
+        $jsonContent.style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
         app.$set('jsonFail', true)
     });
     // 隐藏
-    document.querySelector('#container').onclick = (e) => {
+    document.getElementById('container').onclick = (e) => {
         if (app.isShow) {
             app.$set('isShow', false);
             setTimeout(() => {

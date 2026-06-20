@@ -22,13 +22,17 @@
     window.addEventListener("DOMContentLoaded", function () {
         $clearInput.onclick = function () {
             $searchInput.value = '';
-            document.getElementById("js-searchResult").innerHTML = '';
+            const $searchdbFail = document.getElementById('js-searchdbFail');
+            // 不显示错误提示时，清空内容
+            if (!$searchdbFail) {
+                $searchdbFail.innerHTML = '';
+            }
             $clearInput.style.display = 'none';
         };
         //给搜索图标添加点击事件
-        let open = document.getElementById('js-icon-search');
-        let close = document.getElementById('js-modal-overlay');
-        let $searchModal = document.getElementById('js-searchModal');
+        const open = document.getElementById('js-icon-search');
+        const close = document.getElementById('js-modal-overlay');
+        const $searchModal = document.getElementById('js-searchModal');
         open.onclick = function () {
             //弹窗出现时淡入动画
             $searchModal.style.display = "block";
@@ -138,10 +142,11 @@ var searchFunc = function (path, search_id, content_id) {
         });
     })
     .catch((err) => {
-        err = "<ul class='search-result-list'><li>" + err;
+        err = "<ul class='search-result-list'><li id='js-searchdbFail'>" + err;
         err += "<br/>缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-searchdb --save<br/>";
-        err += "3、在根目录_config.yml里添加配置：<br/><pre>search:</pre><pre>  path: search.xml</pre><pre>  field: post</pre>";
+        err += "3、在根目录_config.yml里添加配置：<pre>search:\n  path: search.xml\n  field: post</pre>";
         err += "</li></ul>";
         $resultContent.innerHTML = err;
+        document.getElementById('js-searchdbFail').style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
     })
 };

@@ -100,6 +100,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: yilia
+
+# hexo-generator-json-content
 jsonContent:
     meta: false
     pages: false
@@ -124,8 +126,25 @@ search:
   path: search.xml
   field: post
 
-# hexo-all-minifier
-all_minifier: true
+# hexo-yam
+minify:
+  enable: true
+  html:
+    enable: true
+  css:
+    enable: true
+    exclude: 
+      - '*.min.css'
+  js:
+    enable: true
+    exclude:
+      - '*.min.js'
+  xml:
+    enable: true
+  gzip:
+    enable: false
+  brotli:
+    enable: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

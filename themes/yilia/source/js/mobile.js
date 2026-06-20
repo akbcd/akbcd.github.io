@@ -3,6 +3,10 @@
  * 移动端样式美化
  */
 function mobile() {
+    // pc
+    const $container = document.getElementById("container");
+    // mobile
+    const $body = document.body;
     function isPathMatch(path, href) {
         let reg = /\/|index.html/g;
         return (path.replace(reg, '')) === (href.replace(reg, ''))
@@ -66,10 +70,10 @@ function mobile() {
     function handleScroll() {
         let $overlay = document.querySelector('.js-overlay');
         let $menu = document.querySelector('.js-header-menu');
-        let $scrollTop = parseInt(document.body.scrollTop) || parseInt(document.querySelector("#container").scrollTop);
+        let $scrollTop = parseInt($body.scrollTop) || parseInt($container.scrollTop);
         scrollStop($overlay, $scrollTop, -63, 2, 0);
         // 动画微调，修复pc页面getElementTop($menu)=0
-        if (document.body.clientWidth > 800) {
+        if ($body.clientWidth > 800) {
             // 手动设置pc页面getElementTop($menu)=158
             scrollStop($menu, $scrollTop - 158, -1, 3, 10)
         } else {
@@ -84,9 +88,9 @@ function mobile() {
         // 事件监听
         const events = [
             // mobile
-            [document.body, 'scroll', handleScroll],
+            [$body, 'scroll', handleScroll],
             // pc
-            [document.querySelector("#container"), 'scroll', handleScroll]
+            [$container, 'scroll', handleScroll]
         ];
         events.forEach(([target, event, handler]) => {
             target.addEventListener(event, handler, scrollOptions);
@@ -97,10 +101,9 @@ function mobile() {
     // 页面滚动时的样式美化
     bindScroll();
     // 优化移动端页面内容过短可能出现的样式问题
-    if (document.body.clientHeight < window.innerHeight) {
-        var n = document.querySelector("#container");
+    if ($body.clientHeight < window.innerHeight) {
         var height = window.innerHeight;
-        n.setAttribute("style", "height:" + height + "px")
+        $container.setAttribute("style", "height:" + height + "px")
     }
 }
 // 执行 移动端样式美化

@@ -47,34 +47,7 @@
         </ul>
       </div>
         <ul class="search-ul">
-          <li>
-            <p q-show="jsonFail" style="padding: 20px 20px 0 20px; font-size: 12px;">
-              缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-json-content --save<br/>
-              3、在根目录_config.yml里添加配置：
-            </p>
-          </li>
-          <li>
-            <pre style="font-size: 12px; padding-left: 20px" q-show="jsonFail">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true
-            </pre>
-          </li>
+          <li id="js-jsonContent" q-show="jsonFail"></li>
           <li class="search-li" q-repeat="items" q-show="isShow">
             <%if(theme.open_in_new){%>
             <a q-attr="href:path|urlformat" class="search-title" target="_blank"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>

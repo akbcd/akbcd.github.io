@@ -133,8 +133,8 @@ friends:
   菜鸟工具 - 不止于工具: https://c.runoob.com/
   CSS, JavaScript 压缩, 美化, 加密, 解密: https://tool.css-js.com/
   歌曲宝: https://www.gequbao.com/
-  GitHub加速下载工具: http://tool.mkblog.cn/github/
-  在线动画 动漫下载 - AGE动漫: https://www.7acg.com/
+  GitHub 文件加速器 | MoreTools: https://www.moretools.app/zh-CN/github-proxy
+  AGE动漫-专注动漫在线网站-AGE动漫官网: https://m.agedongman.net/
   hexo-theme-matery主题: https://github.com/blinkfox/hexo-theme-matery
 
 #aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
@@ -216,6 +216,7 @@ copyright:
 # 比如
 # password: 加密的密文
 # 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解
+# 验证密码时'SHA256'的计算使用crypto-js
 verifyPassword:
   enable: true
   promptMessage: 请输入访问本文章的密码
@@ -287,8 +288,7 @@ waline:
 # Front-end libraries
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 css:
-  photoswipe: /css/lib/photoswipe/photoswipe.css
-  photoswipe_default_skin: /css/lib/photoswipe/default-skin/default-skin.css
+  photoswipe: /css/lib/photoswipe/photoswipe.min.css #5.4.4
   aplayer: /css/lib/APlayer/APlayer.min.css #1.10.1
   gitalk: //unpkg.com/gitalk@latest/dist/gitalk.css
   gitment: //imsun.github.io/gitment/style/default.css
@@ -296,8 +296,6 @@ css:
 js:
   aplayer: /js/lib/APlayer/APlayer.min.js #1.9.1
   crypto: /js/lib/crypto-js/crypto-js.min.js #3.1.9-1
-  photoswipe: /js/lib/photoswipe/photoswipe.min.js
-  photoswipe_ui_default: /js/lib/photoswipe/photoswipe-ui-default.min.js
   clipboard: /js/lib/clipboard/clipboard.min.js
   mathjax: //unpkg.com/mathjax@3/es5/tex-svg.js #version 3
   valine: //unpkg.com/valine@latest/dist/Valine.min.js

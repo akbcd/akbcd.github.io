@@ -2,35 +2,33 @@
  * viewer.js
  * photoswipe
  */
+import PhotoSwipeLightbox from "/js/lib/photoswipe/photoswipe-lightbox.esm.min.js"; // Include Lightbox (photoswipe-lightbox.esm.js)
 function viewer() {
-    let pswpElement = document.querySelectorAll('.pswp')[0];
-    let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'));
-    $imgArr.forEach(($em, i) => {
-        $em.onclick = () => {
-            // slider展开状态
-            // todo: 这样不好，后面改成状态
+    const gallerySelector = '.article-entry'; // 图片父容器
+    const imageSelector = 'img:not(.reward-img)'; // 排除打赏图片
+    const $imgArr = document.querySelectorAll(`${gallerySelector} ${imageSelector}`);
+    if (!$imgArr.length) return;
+    // 将图片信息存储为items
+    const items = Array.from($imgArr).map(($img) => ({
+        src: $img.getAttribute('data-target') || $img.getAttribute('src'),
+        width: $img.naturalWidth || $img.width,
+        height: $img.naturalHeight || $img.height,
+        alt: $img.getAttribute('alt') || ''
+    }));
+    // 创建 Lightbox 实例
+    const lightbox = new PhotoSwipeLightbox({
+        dataSource: items,
+        pswpModule: () => import("/js/lib/photoswipe/photoswipe.esm.min.js") // Include Core (photoswipe.esm.js)
+    });
+    // 绑定点击事件
+    $imgArr.forEach(($img, index) => {
+        $img.addEventListener('click', (e) => {
+            e.preventDefault();
             if (document.querySelector('.left-col.show')) return;
-            let items = [];
-            $imgArr.forEach(($em2, i2) => {
-                let img = $em2.getAttribute('data-idx', i2);
-                let src = $em2.getAttribute('data-target') || $em2.getAttribute('src');
-                let title = $em2.getAttribute('alt');
-                // 获得原图尺寸
-                const image = new Image();
-                image.src = src;
-                items.push({
-                    src: src,
-                    w: image.width || $em2.width,
-                    h: image.height || $em2.height,
-                    title: title
-                })
-            });
-            var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                index: parseInt(i)
-            });
-            gallery.init();
-        }
-    })
+            lightbox.loadAndOpen(index);
+        });
+    });
+    lightbox.init();
 }
 // 执行 photoswipe（页面载入完成后执行）
-window.addEventListener("load", viewer());
+window.addEventListener("load", viewer);

@@ -18,7 +18,7 @@ function fix() {
         if (yiliaConfig.isPost) document.querySelectorAll(".article-title,.archive-article-date").forEach(i => { i.removeAttribute("target") });
     }
     // about me 转义
-    var $aboutme = document.querySelector('#js-aboutme');
+    const $aboutme = document.getElementById("js-aboutme");
     if ($aboutme && $aboutme.length !== 0) {
         $aboutme.innerHTML = $aboutme.innerText
     }
@@ -26,29 +26,27 @@ function fix() {
     if (yiliaConfig.isPost && yiliaConfig.scrollPos) {
         // container标签
         const $container = document.getElementById("container");
+        // body标签
+        const $body = document.body;
         // 存储滚动条位置到cookie中
         function writeCookie() {
-            const scrollPos = parseInt($container.scrollTop) || parseInt(document.documentElement.scrollTop) || parseInt(document.body.scrollTop);
+            const scrollPos = parseInt($container.scrollTop) || parseInt($body.scrollTop) || 0;
             document.cookie = "scrollTop=" + scrollPos; //存储滚动条位置到cookies中
         }
-        //在即将离开当前页面（刷新或关闭）时触发
-        window.onbeforeunload = function () {
-            writeCookie();
-        };
-        //在离在开网页时（点击链接，刷新页面，关闭浏览器等）触发
-        window.onpagehide = function () {
-            writeCookie();
-        };
+        // 在即将离开当前页面（刷新或关闭）时触发
+        window.addEventListener('beforeunload', writeCookie);
+        // 在离在开网页时（点击链接，刷新页面，关闭浏览器等）触发
+        window.addEventListener('pagehide', writeCookie);
+        // 恢复滚动位置
         window.addEventListener("load", function () {
             // 判断是否已经滚动页面
-            let $scrollTop = Math.trunc($container.scrollTop || document.documentElement.scrollTop || document.body.scrollTop);
+            let $scrollTop = Math.trunc(parseInt($container.scrollTop) || parseInt($body.scrollTop) || 0);
             if (!$scrollTop && document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
-                const arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+                const $top = document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
                 // 大于0时跳转至上次记录位置
-                if (arr[1] > 0) {
-                    $container.scrollTop = arr[1];
-                    document.documentElement.scrollTop = arr[1];
-                    document.body.scrollTop = arr[1];
+                if ($top[1] > 0) {
+                    $container.scrollTop = $top[1];
+                    $body.scrollTop = $top[1];
                 }
             }
         });
@@ -57,6 +55,8 @@ function fix() {
     if (yiliaConfig.isPost) {
         // container标签
         const $container = document.getElementById("container");
+        // body标签
+        const $body = document.body;
         // 获取标签绝对位置
         function getElementTop(element) {
             let actualTop = element.offsetTop;
@@ -85,9 +85,9 @@ function fix() {
             // 目标元素绝对位置
             const scrollPositionTop = getElementTop($name);
             // container平滑跳转
-            $container.scrollTo({ "behavior": "smooth", "top": document.body.clientWidth <= 800 ? scrollPositionTop - 50 : scrollPositionTop });
+            $container.scrollTo({ "behavior": "smooth", "top": $body.clientWidth <= 800 ? scrollPositionTop - 50 : scrollPositionTop });
             // mobile平滑跳转
-            document.body.scrollTo({ "behavior": "smooth", "top": scrollPositionTop - 50 });
+            $body.scrollTo({ "behavior": "smooth", "top": scrollPositionTop - 50 });
         };
         // 文章主体内容标签
         const $article_content = document.getElementsByClassName('article-content')[0];
@@ -196,11 +196,11 @@ function fix() {
             // pc
             [$container, 'scroll', () => {
                 const currentTop = $container.scrollTop;
-                findHeadPosition(document.body.clientWidth <= 800 ? currentTop + 50 : currentTop);
+                findHeadPosition($body.clientWidth <= 800 ? currentTop + 50 : currentTop);
             }],
             // mobile
-            [document.body, 'scroll', () => {
-                const currentTop = document.body.scrollTop || document.documentElement.scrollTop;
+            [$body, 'scroll', () => {
+                const currentTop = $body.scrollTop;
                 findHeadPosition(currentTop + 50);
             }]
         ];

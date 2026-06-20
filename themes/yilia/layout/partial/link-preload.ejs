@@ -4,7 +4,6 @@
 <link rel="preload" href="/css/iconfont.css" as="style">
 <link rel="preload" href="/css/com.css" as="style">
 <link rel="preload" href="<%- theme.css.photoswipe %>" as="style">
-<link rel="preload" href="<%- theme.css.photoswipe_default_skin %>" as="style">
 <% if (theme.music && theme.aplayer.enable || theme.music && theme.mobile_aplayer.enable) { %>
   <link rel="preload" href="<%- theme.css.aplayer %>" as="style">
 <% } if (theme.valine && theme.valine.enable){ %>
@@ -19,10 +18,9 @@
 <%# preload js #%>
 <link rel="preload" href="/js/Util.js" as="script">
 <link rel="preload" href="/js/Q.js" as="script">
-<link rel="preload" href="<%- theme.js.photoswipe %>" as="script">
-<link rel="preload" href="<%- theme.js.photoswipe_ui_default %>" as="script">
 <% if (theme.highlight_copy) { %>
   <link rel="preload" href="<%- theme.js.clipboard %>" as="script">
+  <link rel="modulepreload" href="/js/copyFn.js">
 <% } %>
 <% if (theme.top){ %>
   <link rel="preload" href="/js/backTop.js" as="script">
@@ -37,5 +35,7 @@
 <link rel="preload" href="/js/fix.js" as="script">
 <link rel="preload" href="/js/slider.js" as="script">
 <link rel="preload" href="/js/addHighlightTool.js" as="script">
-<link rel="preload" href="/js/viewer.js" as="script">
+<link rel="modulepreload" href="/js/viewer.js">
+<link rel="modulepreload" href="/js/lib/photoswipe/photoswipe.esm.min.js">
+<link rel="modulepreload" href="/js/lib/photoswipe/photoswipe-lightbox.esm.min.js">
 <link rel="preload" href="/js/mobile.js" as="script">
