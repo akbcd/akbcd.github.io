@@ -8,13 +8,13 @@
       </div>
       <div id="js-searchResult"></div>
     </div>
-    <script src="/js/search.js"></script>
-    <script type="text/javascript">
-      window.addEventListener("DOMContentLoaded",function(){
-        document.getElementById("js-icon-search").setAttribute("title","<%- _p('search') %>");
-        searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
-      });
-    </script>
   </div>
   <div id="js-modal-overlay"></div>
+  <script src="/js/search.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",function(){
+      document.getElementById("js-icon-search").setAttribute("title","<%- _p('search') %>");
+      // searchFunc("/" + "search.xml", 'js-searchInput', 'js-searchResult');
+    });
+  </script>
 <% } %>

@@ -18,6 +18,11 @@ function slider() {
             em.scrollTop = 0;
         })
     }
+    function updateYiliaConfig(key, value) {
+        if (window.yiliaConfig && key in window.yiliaConfig) {
+            yiliaConfig[key] = value;
+        }
+    }
     let app = new Q({
         el: '#container',
         data: {
@@ -60,6 +65,8 @@ function slider() {
                 app.$set('isShow', true);
                 app.$set('isCtnShow', true);
                 setScrollZero();
+                // slider展开状态
+                updateYiliaConfig('isShowSlider', true);
             }
         },
         filters: {
@@ -136,14 +143,14 @@ function slider() {
         app.$set('search', searchWording);
         searchWording !== '' && handleSearch(searchWording);
     }).catch((err) => {
-        const $jsonContent = document.getElementById('js-jsonContent');
+        const failEl = document.getElementById('js-jsonContentFail');
         err = "<p style='padding: 20px 20px 0 20px;'>" + err;
         err += "<br/>缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-json-content --save<br/>";
         err += "3、在根目录_config.yml里添加配置：<pre style='padding-left: 20px'>jsonContent:\n  meta: false\n  pages: false\n  posts:\n";
         err += "    title: true\n    date: true\n    path: true\n    text: false\n    raw: false\n    content: false\n    slug: false\n    updated: false\n";
         err += "    comments: false\n    link: false\n    permalink: false\n    excerpt: false\n    categories: false\n    tags: true</pre>"
-        $jsonContent.innerHTML = err;
-        $jsonContent.style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
+        failEl.innerHTML = err;
+        failEl.style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
         app.$set('jsonFail', true)
     });
     // 隐藏
@@ -152,7 +159,9 @@ function slider() {
             app.$set('isShow', false);
             setTimeout(() => {
                 app.$set('isCtnShow', false)
-            }, 300)
+            }, 300);
+            // slider展开状态
+            updateYiliaConfig('isShowSlider', false);
         }
     };
     // tag 显示/隐藏

@@ -24,7 +24,8 @@ function viewer() {
     $imgArr.forEach(($img, index) => {
         $img.addEventListener('click', (e) => {
             e.preventDefault();
-            if (document.querySelector('.left-col.show')) return;
+            // slider展开状态
+            if (yiliaConfig.isShowSlider) return;
             lightbox.loadAndOpen(index);
         });
     });
