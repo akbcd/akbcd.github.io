@@ -8,43 +8,53 @@ function searchFunc() {
     const path = '/search.xml';
     // 存储所有文章数据
     let postData = null;
-    // 标记数据是否加载
+    // 标记数据是否加载完成
     let dataLoaded = false;
+    // 标记数据加载过程中的Promise
+    let loadingPromise = null;
     // DOM元素（在 UI 初始化时赋值）
     let $searchInput, $clearInput, $resultContent, $open, $close, $searchModal;
     // 加载数据
     function loadData() {
+        // 数据加载完成，不重复加载
         if (dataLoaded) return;
-        fetch(path)
-        .then(function (response) {
-            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
-            return response.text();
-        })
-        .then(function (res) {
-            const xml = new window.DOMParser().parseFromString(res, 'text/xml');
-            const entries = xml.querySelectorAll('entry');
-            postData = Array.from(entries).map(function (item) {
-                return {
-                    title: item.querySelector('title').textContent,
-                    content: item.querySelector('content').textContent,
-                    url: item.querySelector('url').textContent
-                };
+        // 如果数据正在加载中，直接返回已有的Promise，避免重复请求
+        if (loadingPromise) return loadingPromise;
+        // 加载数据
+        loadingPromise = fetch(path)
+            .then(function (response) {
+                if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+                return response.text();
+            })
+            .then(function (res) {
+                const xml = new window.DOMParser().parseFromString(res, 'text/xml');
+                const entries = xml.querySelectorAll('entry');
+                postData = Array.from(entries).map(function (item) {
+                    return {
+                        title: item.querySelector('title').textContent,
+                        content: item.querySelector('content').textContent,
+                        url: item.querySelector('url').textContent
+                    };
+                });
+                dataLoaded = true;
+                // 绑定输入事件
+                bindInputEvent();
+            })
+            .catch(function (err) {
+                let errMsg = "<ul class='search-result-list'><li id='js-searchdbFail'>" + err;
+                errMsg += "<br/>缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-searchdb --save<br/>";
+                errMsg += "3、在根目录_config.yml里添加配置：<pre>search:\n  path: search.xml\n  field: post</pre>";
+                errMsg += "</li></ul>";
+                $resultContent.innerHTML = errMsg;
+                const failEl = document.getElementById('js-searchdbFail');
+                if (failEl) {
+                    failEl.style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
+                }
+            }).finally(function () {
+                // 无论成功或失败，加载完成后清除缓存标记，允许再次加载数据
+                loadingPromise = null;
             });
-            dataLoaded = true;
-            // 绑定输入事件
-            bindInputEvent();
-        })
-        .catch(function (err) {
-            let errMsg = "<ul class='search-result-list'><li id='js-searchdbFail'>" + err;
-            errMsg += "<br/>缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/>npm i hexo-generator-searchdb --save<br/>";
-            errMsg += "3、在根目录_config.yml里添加配置：<pre>search:\n  path: search.xml\n  field: post</pre>";
-            errMsg += "</li></ul>";
-            $resultContent.innerHTML = errMsg;
-            const failEl = document.getElementById('js-searchdbFail');
-            if (failEl) {
-                failEl.style.cssText = "font-size: 12px; color: rgba(77, 77, 77, 0.75)";
-            }
-        });
+        return loadingPromise;
     }
     // 绑定输入事件（搜索逻辑）
     function bindInputEvent() {
