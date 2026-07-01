@@ -105,6 +105,10 @@ function searchFunc() {
             str += '</ul>';
             $resultContent.innerHTML = str;
         });
+        // 事件绑定后，若已有输入则立即搜索
+        if ($searchInput.value.trim().length > 0) {
+            $searchInput.dispatchEvent(new Event('input'));
+        }
     }
     // 获取DOM元素（UI初始化）
     function initUI() {
