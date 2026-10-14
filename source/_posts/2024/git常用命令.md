@@ -29,3 +29,9 @@ git记录提交时的文言描述，-m参数指定在当前命令中编辑文言
 将本地git仓库推送到远程仓库
 12. `git push --force-with-lease`
 本地git仓库记录与远程仓库不一致时使用，将本地仓库记录强制推送到远程git分支
+13. `git submodule init`
+初始化子模块配置
+14. `git submodule update`
+更新子模块工作区，拉取代码
+15. `git submodule update --remote`
+子模块更新到远程仓库的最新版本
